@@ -6,12 +6,11 @@ public class Ex02_Variable01 {
 		int number;
 		number = 100;
 		
-		// 2 byte 크기의 정수 공간을 확보하고 score라는 이름표를 붙여보세요
-		short score;
+		// 2byte 크기의 정수 공간을 확보하고 score라는 이름표를 붙인다.
+		short score; // short 타입은 2byte 크기
 		score = 20;
 		
 		System.out.printf("1. number = %d%n", number);
 		System.out.printf("2. score = %d%n", score);
 	}
-
 }
