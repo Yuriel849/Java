@@ -1,6 +1,6 @@
 package study;
 
-public class MathRandom {
+public class Ex35_MathRandom {
 	public static void main(String[] args) {
 		// The range of Math.random() is 0.0 <= X < 1.0
 		for(int i = 1; i<=10; i++) {
@@ -9,18 +9,18 @@ public class MathRandom {
 		System.out.println();
 		
 		for(int i = 1; i<=10; i++) {
-			// ÁÖ»çÀ§ ´øÁö±â 
+			// ì£¼ì‚¬ìœ„ ë˜ì§€ê¸° 
 			System.out.print("Throwing dice for the...");
 			System.out.printf("%2dth time : " + (int)(Math.random()*6) + "\n", i);
 		}
 		System.out.println();
 		
-		/* -5 ~ 5 »çÀÌÀÇ ÀÓÀÇÀÇ Á¤¼ö¸¦ 10°³ Ãâ·ÂÇÏ½Ã¿À
-		 * 	>> -5 -4 -3 -2 -1 0 1 2 3 4 5 >> 11°³
+		/* -5 ~ 5 ì‚¬ì´ì˜ ì„ì˜ì˜ ì •ìˆ˜ë¥¼ 10ê°œ ì¶œë ¥í•˜ì‹œì˜¤
+		 * 	>> -5 -4 -3 -2 -1 0 1 2 3 4 5 >> 11ê°œ
 		 * 	>> 1 ~ 11 >> (1-6) ~ (11-6) >> -5 ~ 5
 		 */
 		for(int i = 1; i <= 10; i++) {
-			System.out.println((int)(Math.random()*11)-5); // ¿ì¼±¼øÀ§ --> (Å¸ÀÔ) ¿¬»êÀÚ > »ê¼ú ¿¬»êÀÚ
+			System.out.println((int)(Math.random()*11)-5); // ìš°ì„ ìˆœìœ„ --> (íƒ€ì…) ì—°ì‚°ì > ì‚°ìˆ  ì—°ì‚°ì
 		}
 	}
 }

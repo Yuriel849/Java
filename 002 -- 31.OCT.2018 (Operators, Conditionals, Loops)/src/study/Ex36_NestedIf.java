@@ -1,6 +1,6 @@
 package study;
 
-public class NestedIf {
+public class Ex36_NestedIf {
 	public static void main(String[] args) {
 		int aNumber = 3;
 		if (aNumber >= 0)
@@ -8,6 +8,5 @@ public class NestedIf {
 		        System.out.println("first string");
 		else System.out.println("second string");
 		System.out.println("third string");
-	}
-	
+	}	
 }
