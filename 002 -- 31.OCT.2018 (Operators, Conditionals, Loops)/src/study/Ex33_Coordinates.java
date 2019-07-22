@@ -1,8 +1,8 @@
 package study;
 
-public class Coordinates {
+public class Ex33_Coordinates {
 	public static void main(String[] args) throws Exception {
-		// ÁÂÇ¥ Âï±â --> ¸ÕÀú ÀüÃ¼ ÁÂÇ¥ÀÇ À§Ä¡ È®ÀÎ
+		// [x,y] í˜•ì‹ìœ¼ë¡œ ì¢Œí‘œ ì¶œë ¥í•˜ê¸°
 		for(int i = 1; i <= 5; i++) {
 			for(int j = 1; j <= 5; j++) {
 				if(true) {
@@ -15,7 +15,7 @@ public class Coordinates {
 		}
 		System.out.println();
 		
-		// Âï±â ½ÍÀº ÁÂÇ¥¸¸ ÂïÀ» Á¶°ÇÀ» ³Ö±â
+		// [x,y]ì—ì„œ yê°’ë³´ë‹¤ ì‘ê±°ë‚˜ ê°™ì„ ë•Œë§Œ ì¢Œí‘œ ì¶œë ¥í•˜ê¸°
 		for(int i = 1; i <= 5; i++) {
 			for(int j = 1; j <= 5; j++) {
 				if(i >= j) {
@@ -28,6 +28,7 @@ public class Coordinates {
 		}
 		System.out.println();
 		
+		// ì™¼ìª½ ìœ„ì—ì„œ ì˜¤ë¥¸ìª½ ì•„ë˜ë¡œ ëŒ€ê°ì„ ìœ¼ë¡œ ë‚´ë ¤ê°€ë©° ì•ŒíŒŒë²³ ì¶œë ¥í•˜ê¸°
 		for(int i = 1; i <= 5; i++) {
 			for(int j = 1; j <= 5; j++) {
 				if(i<=j) {
@@ -37,8 +38,6 @@ public class Coordinates {
 				}
 			}
 			System.out.println();
-		}
-		
+		}	
 	}
-
 }
