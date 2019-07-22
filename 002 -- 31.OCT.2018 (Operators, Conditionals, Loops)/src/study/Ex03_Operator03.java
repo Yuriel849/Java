@@ -29,6 +29,4 @@ public class Ex03_Operator03 {
 		num = 10;
 		System.out.printf("%d %d %d %d %d %d\n", num++, ++num, num--, ++num, num++, num);
 	}
-
 }
-

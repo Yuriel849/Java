@@ -12,8 +12,7 @@ public class Ex06_Operator06 {
 		 * 		5     --> 0 0 1 0 1
 		 * (num << 2) --> 1 0 1 0 0 
 		 */
-		num <<= 2;
-		// num = num << 2;와 동일
+		num <<= 2; // num = num << 2;와 동일
 		System.out.println("1. left shift w/ assignment (num <<= 2): " + num);
 		// 사전에 "num = num << 2;"를 시행했기 때문에 num의 값이 완전히 바뀌어버린 것
 		
@@ -36,5 +35,4 @@ public class Ex06_Operator06 {
 		System.out.println("4. right shift wo assignment (num >> 2): " + (num >> 2));
 		System.out.println("\t >> num remains unchanged (num == " + num + ")");
 	}
-
 }

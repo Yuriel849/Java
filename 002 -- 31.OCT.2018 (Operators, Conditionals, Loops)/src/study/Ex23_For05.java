@@ -12,13 +12,13 @@ public class Ex23_For05 {
 		sum = max = min = 0;
 				
 		for(int i=1, input; i<=3; i++) {
-			System.out.printf("%d ��° ������ �Է��ϼ��� : \n", i);
+			System.out.printf("%d 정수를 입력해주세요 : \n", i);
 			// 입력받은 정수를 input에 할당하고 변수 sum에 누적시킨다
 			sum += input = scan.nextInt();
 			/* input은 scan.nextInt()로 기존값을 덮어쓰기 때문에 초기화 필요없다
 			 * max & min은 비교연산을 하는데, 비교연산이 if-else 때문에 항상 실행하는 것도 아니기에 초기화가 필요
-			 * 		>> if를 실행 안한다면 max & min은 input이 대입되지 않는다
-			 * 		>> else에서 초기화되지 않은 상태로 비교연산을 시도하게 된다... 
+			 * 	>> if를 실행 안한다면 max & min은 input이 대입되지 않는다
+			 * 	>> else에서 초기화되지 않은 상태로 비교연산을 시도하게 된다... 
 			 */
 			
 			// 최대값 & 최소값 구하기

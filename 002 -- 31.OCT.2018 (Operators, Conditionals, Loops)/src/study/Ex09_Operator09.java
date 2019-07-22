@@ -18,7 +18,7 @@ public class Ex09_Operator09 {
 		int score = sc.nextInt();
 		
 		char grade = (score >= 90) ? 'A' : (score >= 80) ? 'B' : (score >= 70) ? 'C' : (score >= 60) ? 'D' : 'F';
-		// 삼항연산자를 중첩하여 사용할 수 있다... 하지만 많이 중첩될 수록 헷갈리게되고 그래서 자제하는게 좋다...
+		// 삼항연산자를 중첩하여 사용할 수 있다... 하지만 많이 중첩할수록 헷갈리게되고 그래서 자제하는게 좋다...
 		System.out.printf("당신의 학점은 %c입니다\n", grade);
 	}
 }

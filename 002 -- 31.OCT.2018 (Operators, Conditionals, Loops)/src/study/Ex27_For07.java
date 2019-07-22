@@ -17,16 +17,13 @@ public class Ex27_For07 {
 			System.out.println("array[" + i + "] : " + array[i]);
 		}
 
-		/*		 전체 주석처리
-		 * left ctrl + left shift + slash(/)
-		 * 전체 주석처리 해제
-		 * left ctrl + left shift + reverse slash(\)
-*/		 
-		
+	/* 전체 주석처리 --> left ctrl + left shift + slash(/)
+	 * 전체 주석처리 해제 --> left ctrl + left shift + reverse slash(\)
+	 */
+
 		String str = "abc";
-		// index의 위치에 있는 문자를 반환
+		// String.charAt(index) index의 위치에 있는 문자를 반환
 		char ch = str.charAt(1);
-		System.out.print(ch);
-		// ch값은 str의 1번째 자리의 값, 'b'
+		System.out.print(ch); // ch값은 str의 1번째 자리의 값, 'b'
 	}
 }

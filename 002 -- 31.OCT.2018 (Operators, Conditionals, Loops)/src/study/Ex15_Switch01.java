@@ -7,6 +7,7 @@ package study;
  * 		>> ctrl+c + ctrl+v로 파일 복사본 만들 수 있다.
  * 		>> 기존 파일의 내용 전체를 재사용하고 싶을 때 사용 가능
  */
+
 public class Ex15_Switch01 {
 	public static void main(String args[]) {
 		int number = 1;

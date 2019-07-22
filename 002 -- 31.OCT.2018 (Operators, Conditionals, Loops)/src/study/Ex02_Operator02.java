@@ -11,7 +11,7 @@ public class Ex02_Operator02 {
 		 * 좌항과 우항이 모두 참인 경우에만 참을 반환
 		 * AND 연산자는 좌항의 식이 false인 경우 우항의 식을 실행하지 않음
 		 */
-		System.out.printf("%b && %b = %b\n", false, false, false && false);
+		System.out.printf("%b && %b = %b\n", false, false, false && false); // && 우항을 "dead code"라고 경고 --> 좌항이 false이기에 우항은 고려하지 않는다
 		System.out.printf("%b && %b = %b\n", false, true, false && true);
 		System.out.printf("%b && %b = %b\n", true, false, true && false);
 		System.out.printf("%b && %b = %b\n\n", true, true, true && true);
@@ -28,8 +28,6 @@ public class Ex02_Operator02 {
 		
 		// NOT 연산자 (!)
 		System.out.printf("!%b = %b\n", true, !true);
-		System.out.printf("!%b = %b\n", false, !false);
-		
+		System.out.printf("!%b = %b\n", false, !false);	
 	}
-
 }

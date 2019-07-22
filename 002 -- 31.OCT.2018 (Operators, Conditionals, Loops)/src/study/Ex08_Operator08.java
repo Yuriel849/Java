@@ -4,9 +4,7 @@ import java.util.Scanner;
 
 public class Ex08_Operator08 {
 	public static void main(String args[]) {
-		/* 세 과목의 총점과 평균 구하기
-		 * 		>> 22OCT2018의 Ex06_Variable05의 변형
-		 */
+		// 세 과목의 총점과 평균 구하기
 		
 		int score1 = 90;
 		int score2 = 97;
@@ -14,38 +12,38 @@ public class Ex08_Operator08 {
 		
 		Scanner sc = new Scanner(System.in);
 		/* program & process처럼...
-		 * 		>> Scanner라는 파일을 활성화시켜 sc라는 이름을 붙인다
-		 * 		>> sc의 실체는 Scanner (프로그램의 한 프로세스처럼)
-		 * 		>> sc을 이용하여 Scanner 클래스 하위의 모든 멤버와 메소드 사용 가능
+		 * 	>> Scanner라는 파일을 활성화시켜 sc라는 이름을 붙인다
+		 * 	>> sc의 실체는 Scanner (프로그램의 한 프로세스처럼)
+		 * 	>> sc을 이용하여 Scanner 클래스 하위의 모든 멤버와 메소드 사용 가능
 		 */
 				
 		/* String과 비교...
 		 * String str = new String("abc");
-		 * 		>> "str"이라고 이름붙인 String 타입 변수 선언
-		 * 		>> new String()으로 "abc"라는 문자열을 메모리 어딘가에 저장하고 그 주소값을 반환
-		 * 		>> 대입연산자로 반환된 주소값을 "str" 변수의 값으로  저장
+		 * 	>> "str"이라고 이름붙인 String 타입 변수 선언
+		 * 	>> new String()으로 "abc"라는 문자열을 메모리 어딘가에 저장하고 그 주소값을 반환
+		 * 	>> 대입연산자로 반환된 주소값을 "str" 변수의 값으로  저장
 		 * 
 		 * !!! 변수는 자신의 자료형과 동일한 자료형만 저장될 수 있다 !!!
-		 * 		>> int는 int형 자료만 받을 수 있고, String은 String 타입 주소값만 받을 수 있다
+		 * 	>> int는 int형 자료만 받을 수 있고, String은 String 타입 주소값만 받을 수 있다
 		 * 
 		 * String은 Scanner와 달리 java.lang package 안에 위치
-		 * 		>> java.util & et al.과 달리 java.lang은 별도로 import 필요없이 접근 가능하게 설정됨
+		 * 	>> java.util & et al.과 달리 java.lang은 별도로 import 필요없이 접근 가능하게 설정됨
 		 * 
 		 * String str = new String("");
 		 * str.equals("A")
-		 * 		>> String 클래스 속에 있는 equals() 메소드 호출, str의 내용물이 "A"와 똑같은지 판별하는 메소드
+		 * 	>> String 클래스 속에 있는 equals() 메소드 호출, str의 내용물이 "A"와 똑같은지 판별하는 메소드
 		 */
 
 		/* Scanner
 		 * java에서 제공하는 클래스... i.e. API
-		 * 		>> 이미 제3자에 의해 정의된 클래스들을 우리가 사용할 수 있도록 java 설치 시 default로 포함되는 파일들
-		 * 		>> 입출력에 필요한 여러 메소드들을 하나의 클래스 안에 묶어 놓은 것
+		 * 	>> 이미 제3자에 의해 정의된 클래스들을 우리가 사용할 수 있도록 java 설치 시 default로 포함되는 파일들
+		 * 	>> 입출력에 필요한 여러 메소드들을 하나의 클래스 안에 묶어 놓은 것
 		 * 
 		 * Scanner의 실제 위치
-		 * 		>> C: Program Files Java jdk1.8.0_192 src.zip java util
+		 * 	>> C: Program Files Java jdk1.8.0_192 src.zip java util
 		 * 
 		 * 원래 Scanner의 경로는 java.util.Scanner sc = new Scanner(System.in);
-		 * 		>> "System.in"... 표준입출력이라는 의미
+		 * 	>> "System.in"... 표준입출력이라는 의미
 		 */
 		
 		System.out.printf("첫번째 성적을 입력하세요 : ");
