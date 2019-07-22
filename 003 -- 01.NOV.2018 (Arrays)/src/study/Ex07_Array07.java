@@ -1,11 +1,11 @@
 package study;
 
-// °¡º¯¹è¿­
+// ê°€ë³€ë°°ì—´
 public class Ex07_Array07 {
 	public static void main(String[] args) {
 		int[][] score = new int[5][];
 		
-		/* °¡º¯¹è¿­Àº ¹è¿­ÀÇ ¿ä¼Ò °³¼ö°¡ ´Ù¸¦ ÇÊ¿ä°¡ ¾ø´Ù --> ¹è¿­ÀÇ ¿ä¼Ò °³¼ö¸¦ ¶È°°ÀÌ ¸ÂÃâ ¼öµµ ÀÖ´Ù.
+		/* ê°€ë³€ë°°ì—´ì—ì„œ ë°°ì—´ì˜ ìš”ì†Œ ê°œìˆ˜ê°€ ë‹¤ë¥¼ í•„ìš”ëŠ” ì—†ë‹¤ (i.e. ë°°ì—´ì˜ ìš”ì†Œ ê°œìˆ˜ë¥¼ ë˜‘ê°™ì´ ë§žì¶œ ìˆ˜ë„ ìžˆë‹¤.)
 		 * the following is an example
 		 */
 		score[0] = new int[4];
@@ -14,9 +14,10 @@ public class Ex07_Array07 {
 		score[3] = new int[2];
 		score[4] = new int[3];
 		
-		/* score.length    --> 2Â÷¿ø ¹è¿­¿¡°Ô length ÇÔ¼ö¸¦ »ç¿ëÇÏ¸é ÇàÀÇ °³¼ö¸¦ ¹ÝÈ¯ÇÑ´Ù
-		 * score[A].length --> 2Â÷¿ø ¹è¿­ÀÇ Æ¯Á¤ Çà¿¡°Ô length ÇÔ¼ö¸¦ »ç¿ëÇÏ¸é ±× ÇàÀÇ ¿­ÀÇ °³¼ö¸¦ ¹ÝÈ¯ÇÑ´Ù
+		/* score.length    --> 2ì°¨ì› ë°°ì—´ì—ê²Œ length í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•˜ë©´ í–‰ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤
+		 * score[A].length --> 2ì°¨ì› ë°°ì—´ì˜ íŠ¹ì • í–‰ì—ê²Œ length í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•˜ë©´ ê·¸ í–‰ì˜ ì—´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤
 		 */
+		
 		for(int i = 0; i<score.length; i++) {
 			for(int j = 0; j<score[i].length; j++) {
 				score[i][j] += i;
@@ -24,5 +25,4 @@ public class Ex07_Array07 {
 			}
 		}
 	}
-
 }

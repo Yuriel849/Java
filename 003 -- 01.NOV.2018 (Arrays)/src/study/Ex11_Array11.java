@@ -2,10 +2,10 @@ package study;
 
 public class Ex11_Array11 {
 	public static void main(String[] args) {
-		// 1. 5X5 2Â÷¿ø ¹è¿­ ¼±¾ğ
+		// 1. 5X5 2ì°¨ì› ë°°ì—´ ì„ ì–¸
 		int[][] array = new int[5][5]; 
 		
-		// 2. ¹è¿­¿¡ 1 ~ 25 °ª ÀÔ·Â (ÃÊ±âÈ­)
+		// 2. ë°°ì—´ì— 1 ~ 25 ê°’ ì…ë ¥ (ì´ˆê¸°í™”)
 		int add = 1;
 		for(int i = 0; i < 5; i++) {
 			for(int j = 0; j < 5; j++) {
@@ -14,8 +14,8 @@ public class Ex11_Array11 {
 			}
 		}
 		
-		// 3. 2Â÷¿ø ÇüÅÂ·Î ¹è¿­ Ãâ·Â
-		System.out.println("5 X 5 2Â÷¿ø ¹è¿­ : ");
+		// 3. 2ì°¨ì› í˜•íƒœë¡œ ë°°ì—´ ì¶œë ¥
+		System.out.println("5 X 5 2ì°¨ì› ë°°ì—´ : ");
 		for(int i = 0; i < 5; i++) {
 			for(int j = 0; j < 5; j++) {
 				System.out.printf("%2d ", array[i][j]);
@@ -24,7 +24,7 @@ public class Ex11_Array11 {
 		}
 		System.out.println();
 		
-		// 4. ¼¯±â
+		// 4. ì„ê¸°
 		int a = 0, b = 0;
 		int temp = 0;
 		for(int i = 0; i < 100; i++) {
@@ -34,7 +34,7 @@ public class Ex11_Array11 {
 			array[0][0] = array[a][b];
 			array[a][b] = temp;
 		}
-		System.out.println("5 X 5 ¹è¿­ ¼¯Àº ÈÄ: ");
+		System.out.println("5 X 5 ë°°ì—´ ì„ì€ í›„: ");
 		for(int i = 0; i < 5; i++) {
 			for(int j = 0; j < 5; j++) {
 				System.out.printf("%2d ", array[i][j]);
@@ -42,5 +42,4 @@ public class Ex11_Array11 {
 			System.out.println();
 		}
 	}
-
 }

@@ -11,8 +11,8 @@ public class Ex08_Array08 {
 		score[3] = 70;
 		score[4] = 60;
 		/* score[5] = 50;
-		 * 	>> ¹è¿­Àº score[0] ~ score[4]±îÁö¸¸ Á¸Àç
-		 * 	>> ÄÚµå¸¦ ÀÛ¼ºÇÒ ¶§´Â ¿¡·¯ ¾È³ªÁö¸¸ ½ÇÇàÇÏ¸é ¿¡·¯
+		 * 	>> ë°°ì—´ì€ score[0] ~ score[4]ê¹Œì§€ë§Œ ì¡´ìž¬
+		 * 	>> ì½”ë“œë¥¼ ìž‘ì„±í•  ë•ŒëŠ” ì—ëŸ¬ ì•ˆë‚˜ì§€ë§Œ ì‹¤í–‰í•˜ë©´ ì—ëŸ¬
 		 */
 		
 		int[] score1 = {100, 90, 80, 70, 60};
@@ -24,13 +24,12 @@ public class Ex08_Array08 {
 		int[] score2;
 		score2 = new int [] {100, 90, 80, 70, 60};
 				
-		// ¹è¿­ÀÇ ³»¿ëÀ» ´Ü ¹ø¿¡ Ãâ·Â
+		// ë°°ì—´ì˜ ë‚´ìš©ì„ ë‹¨ ë²ˆì— ì¶œë ¥
 		System.out.println(Arrays.toString(score2));
 		
-		// score.length -> ¹è¿­ÀÇ ±æÀÌ ¹ÝÈ¯ --> ¹è¿­ÀÇ ¿ä¼Ò ¼ö¸¦ ¹Ù²ãµµ ¹®Á¦ ¾øÀÌ for¹®¿¡ ¹Ý¿µ
+		// score.length -> ë°°ì—´ì˜ ê¸¸ì´ ë°˜í™˜ --> ë°°ì—´ì˜ ìš”ì†Œ ìˆ˜ë¥¼ ë°”ê¿”ë„ ë¬¸ì œ ì—†ì´ forë¬¸ì— ë°˜ì˜
 		for(int i = 0; i < score.length; i++) {
 			System.out.println(score1[i]);
 		}
 	}
-
 }

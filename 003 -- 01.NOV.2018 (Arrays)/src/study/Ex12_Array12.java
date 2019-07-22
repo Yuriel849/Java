@@ -8,7 +8,7 @@ public class Ex12_Array12 {
 	}
 	
 	private static void noCheckRepetition() {
-		// µÎ ¹è¿­¿¡ °°Àº ¼ıÀÚ°¡ ¸î°Ô ÀÖ´ÂÁö ¼¼¾î¼­ Ãâ·ÂÇÏ¶ó.
+		// ë‘ ë°°ì—´ì— ê°™ì€ ìˆ«ìê°€ ëª‡ê²Œ ìˆëŠ”ì§€ ì„¸ì–´ì„œ ì¶œë ¥í•˜ë¼.
 		int[] arr1 = {1,2,3};
 		int[] arr2 = {1,1,3,1,1,};
 		int cnt = 0;
@@ -20,12 +20,12 @@ public class Ex12_Array12 {
 				}
 			}
 		}
-		System.out.println("°°Àº ¼ıÀÚÀÇ °³¼ö = " + cnt);
+		System.out.println("ê°™ì€ ìˆ«ìì˜ ê°œìˆ˜ = " + cnt);
 	}
 	
 	// INCOMPLETE!!! --> rethink the logic...
 	private static void checkRepetition() {
-		// µÎ ¹è¿­¿¡ °°Àº ¼ıÀÚ°¡ ¸î°Ô ÀÖ´ÂÁö ¼¼°í, ´Ù¸¸ Áßº¹µÇ´Â °ªÀº Áßº¹ÇÏ¿© ¼¼Áö ¾Ê´Â´Ù.
+		// ë‘ ë°°ì—´ì— ê°™ì€ ìˆ«ìê°€ ëª‡ê²Œ ìˆëŠ”ì§€ ì„¸ê³ , ë‹¤ë§Œ ì¤‘ë³µë˜ëŠ” ê°’ì€ ì¤‘ë³µí•˜ì—¬ ì„¸ì§€ ì•ŠëŠ”ë‹¤.
 		int[] arr1 = {1,2,3};
 		int[] arr2 = {1,1,3,1,1,};
 		int array;
@@ -50,25 +50,25 @@ public class Ex12_Array12 {
 				}
 			}
 		}
-		System.out.println("°°Àº ¼ıÀÚÀÇ °³¼ö = " + a);
+		System.out.println("ê°™ì€ ìˆ«ìì˜ ê°œìˆ˜ = " + a);
 	}
 	
 	private static void baseballGame() {
-		// µÎ ¹è¿­¿¡ °°Àº ¼ıÀÚ°¡ ¸î°Ô ÀÖ´ÂÁö ¼¼¾î¼­ Ãâ·ÂÇÏ¶ó.
+		// ë‘ ë°°ì—´ì— ê°™ì€ ìˆ«ìê°€ ëª‡ê²Œ ìˆëŠ”ì§€ ì„¸ì–´ì„œ ì¶œë ¥í•˜ë¼.
 		int[] arr1 = {1,2,3};
 		int[] arr2 = {2,1,3};
 
-		// ball °°Àº ¼ıÀÚ°¡ ÀÖ´Âµ¥, À§Ä¡°¡ ´Ù¸¦ ¶§
+		// ball ê°™ì€ ìˆ«ìê°€ ìˆëŠ”ë°, ìœ„ì¹˜ê°€ ë‹¤ë¥¼ ë•Œ
 		int b = 0;
-		// strike °°Àº ¼ıÀÚ°¡ ÀÖ´Âµ¥, À§Ä¡°¡ °°À» ¶§
+		// strike ê°™ì€ ìˆ«ìê°€ ìˆëŠ”ë°, ìœ„ì¹˜ê°€ ê°™ì„ ë•Œ
 		int s = 0;
 		
 		for(int i = 0; i < arr1.length; i++) {
 			for(int j = 0; j < arr2.length; j++) {
-				if (arr1[i] == arr2[j]) { // µÎ °ªÀÌ °°À» ¶§, ball or strike
-					if (i != j) { // °ªÀº °°Àºµ¥ À§Ä¡°¡ ´Ù¸¦ ¶§
+				if (arr1[i] == arr2[j]) { // ë‘ ê°’ì´ ê°™ì„ ë•Œ, ball or strike
+					if (i != j) { // ê°’ì€ ê°™ì€ë° ìœ„ì¹˜ê°€ ë‹¤ë¥¼ ë•Œ
 						b++;
-					} else { // °ªÀº °°Àºµ¥ À§Ä¡°¡ °°À» ¶§
+					} else { // ê°’ì€ ê°™ì€ë° ìœ„ì¹˜ê°€ ê°™ì„ ë•Œ
 						s++;
 					}
 				}
@@ -77,4 +77,3 @@ public class Ex12_Array12 {
 		System.out.printf("%dS%dB\n", s, b);
 	}
 }
-

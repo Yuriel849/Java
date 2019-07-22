@@ -4,34 +4,33 @@ import java.util.Scanner;
 
 public class Ex04_Array04 {
 	public static void main(String args[]) {
-		// 3°ú¸ñÀÇ ¼ºÀûÀ» ÀÔ·Â¹Ş¾Æ¼­ ÃÑÁ¡, Æò±Õ ±¸ÇÏ±â
+		// 3ê³¼ëª©ì˜ ì„±ì ì„ ì…ë ¥ë°›ì•„ì„œ ì´ì , í‰ê·  êµ¬í•˜ê¸°
 		Scanner sc = new Scanner(System.in);
-		System.out.print("°ú¸ñÀÇ ¼ö¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä : ");
+		System.out.print("ê³¼ëª©ì˜ ìˆ˜ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš” : ");
 		int subject_number = sc.nextInt();
 		
-		// ¹è¿­ : index 0, 1, 2 <-- ¼ºÀû ÀúÀå, index 3 <-- ÃÑÁ¡
+		// ë°°ì—´ : index 0, 1, 2 <-- ì„±ì  ì €ì¥, index 3 <-- ì´ì 
 		int[] score = new int[subject_number+1];
 			// score.length <-- 4
-			// ÀÎµ¦½ºÀÇ ÃÖ´ñ°ª = ¹è¿­ÀÇ Å©±â - 1
+			// ì¸ë±ìŠ¤ì˜ ìµœëŒ“ê°’ = ë°°ì—´ì˜ í¬ê¸° - 1
 		float average;
 		
-		// index 1 ~ 2 ±îÁö 3°ú¸ñÀÇ ¼ºÀûÀ» ÀÔ·ÂÇÏ¸é¼­ index 3¿¡ °ªÀ» ´©Àûµ¡¼ÀÇÏ±â
+		// index 1 ~ 2 ê¹Œì§€ 3ê³¼ëª©ì˜ ì„±ì ì„ ì…ë ¥í•˜ë©´ì„œ index 3ì— ê°’ì„ ëˆ„ì ë§ì…ˆí•˜ê¸°
 		for(int i = 0; i < score.length-1 ; i++) {
-			System.out.printf("%d ¹øÂ° ¼ºÀûÀ» ÀÔ·ÂÇÏ¼¼¿ä : ", (i+1));
-			// ¼ºÀû ÀÔ·Â
+			System.out.printf("%d ë²ˆì§¸ ì„±ì ì„ ì…ë ¥í•˜ì„¸ìš” : ", (i+1));
+			// ì„±ì  ì…ë ¥
 			score[i] = sc.nextInt();
-			// ÃÑÁ¡ : ¼ºÀû ´©Àûµ¡¼À --> score[3] += score[i];
+			// ì´ì  : ì„±ì  ëˆ„ì ë§ì…ˆ --> score[3] += score[i];
 			score[score.length-1] += score[i];
 		}
 		
 		// average = (float)score[3] / 3;
 		average = (float)score[subject_number] / (score.length-1);
-		/* A / (score.length-1) --> °ıÈ£¸¦ ÇØ¾ßÁö ¼ø¼­´ë·Î °è»êÀÌµÈ´Ù
-		 * 						--> °ıÈ£°¡ ¾øÀ¸¸é ³ª´°¼À ÈÄ »©±â¸¦ ½Ç½ÃÇÑ´Ù -> (A / score.length) - 1
+		/* A / (score.length-1) --> ê´„í˜¸ë¥¼ í•´ì•¼ì§€ ìˆœì„œëŒ€ë¡œ ê³„ì‚°ì´ëœë‹¤
+		 * 						--> ê´„í˜¸ê°€ ì—†ìœ¼ë©´ ë‚˜ëˆ—ì…ˆ í›„ ë¹¼ê¸°ë¥¼ ì‹¤ì‹œí•œë‹¤ -> (A / score.length) - 1
 		 */
 		
-		// System.out.printf("ÃÑÁ¡ : %dÁ¡, Æò±Õ : %.2fÁ¡", score[3], average);	
-		System.out.printf("ÃÑÁ¡ : %dÁ¡, Æò±Õ : %.2fÁ¡", score[score.length-1], average);	
+		// System.out.printf("ì´ì  : %dì , í‰ê·  : %.2fì ", score[3], average);
+		System.out.printf("ì´ì  : %dì , í‰ê·  : %.2fì ", score[score.length-1], average);
 	}
-
 }
