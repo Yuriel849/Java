@@ -2,20 +2,20 @@ package study;
 
 public class Ex_Array01 {
 	public static void main(String[] args) {
-		// 1. 5X5 2Â÷¿ø ¹è¿­ ¸¸µç´Ù --> bingo[0][0] - bingo [4][4]
+		// 1. 5X5 2ì°¨ì› ë°°ì—´ ë§Œë“ ë‹¤ --> bingo[0][0] - bingo [4][4]
 		int[][] bingo = new int[5][5]; 
 		
-		// 2. 1 ~ 25 ÀÇ ¼ıÀÚ·Î ÃÊ±âÈ­
+		// 2. 1 ~ 25 ì˜ ìˆ«ìë¡œ ì´ˆê¸°í™”
 		int cnt = 0;
 		for(int i = 0; i < bingo.length; i++) {
 			for(int j = 0; j < bingo[i].length; j++) {
-				bingo[i][j] = ++cnt; // cnt »ç¿ëÇÏ´Â ´ë½Å --> i*5+j+1
+				bingo[i][j] = ++cnt; // cnt ì‚¬ìš©í•˜ëŠ” ëŒ€ì‹  --> i*5+j+1
 			}
 		}
 		
-		// 3. ¹è¿­ÀÇ ¸ğµç ¿ä¼Ò¸¦ Ãâ·Â
+		// 3. ë°°ì—´ì˜ ëª¨ë“  ìš”ì†Œë¥¼ ì¶œë ¥
 		for(int i = 0; i < bingo.length; i++) {
-			/* 2¹øÂ° for¹® & print(bingo[i][j]) »ç¿ëÇÏ´Â ´ë½Å 2Â÷¿ø ¹è¿­Àº 1Â÷¿ø ¹è¿­ÀÇ ÁıÇÕÀÌ¶ó´Â Æ¯¼º »ç¿ë
+			/* 2ë²ˆì§¸ forë¬¸ & print(bingo[i][j]) ì‚¬ìš©í•˜ëŠ” ëŒ€ì‹  2ì°¨ì› ë°°ì—´ì€ 1ì°¨ì› ë°°ì—´ì˜ ì§‘í•©ì´ë¼ëŠ” íŠ¹ì„± ì‚¬ìš©
 			 * 		>> System.out.println(Arrays.toString(bingo[i]));
 			 */
 			for(int j = 0; j < bingo[i].length; j++) {
@@ -24,7 +24,7 @@ public class Ex_Array01 {
 			System.out.println();
 		}
 		
-		// 4. °¢ ¿ä¼ÒÀÇ ¼ø¼­¸¦ ¹Ù²Û´Ù (¼¯´Â´Ù)
+		// 4. ê° ìš”ì†Œì˜ ìˆœì„œë¥¼ ë°”ê¾¼ë‹¤ (ì„ëŠ”ë‹¤)
 		for(int i = 0; i < bingo.length; i++) {
 			for(int j = 0; j < bingo[i].length; j++) {
 				int x = (int)(Math.random()*5);
@@ -36,7 +36,7 @@ public class Ex_Array01 {
 			}
 		}
 		
-		// 5. ¹è¿­ÀÇ ¸ğµç ¿ä¼Ò ´Ù½Ã Ãâ·Â
+		// 5. ë°°ì—´ì˜ ëª¨ë“  ìš”ì†Œ ë‹¤ì‹œ ì¶œë ¥
 		System.out.println();
 		for(int i = 0; i < bingo.length; i++) {
 			for(int j = 0; j < bingo[i].length; j++) {
@@ -45,5 +45,4 @@ public class Ex_Array01 {
 			System.out.println();
 		}
 	}
-
 }
