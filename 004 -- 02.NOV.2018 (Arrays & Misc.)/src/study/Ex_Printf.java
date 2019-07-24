@@ -10,14 +10,14 @@ public class Ex_Printf {
 		long big = 100_000_000_000L;
 		long hex = 0xFFFF_FFFF_FFFF_FFFFL;
 		
-		int octNum = 010; // 8Áø¼ö·Î 10, 10Áø¼ö·Î´Â 8
-		int hexNum = 0x10; // 16Áø¼ö·Î 10, 10Áø¼ö·Î´Â 16
-		int binNum = 0b10; // 2Áø¼ö·Î 10, 10Áø¼ö·Î´Â 2
+		int octNum = 010; // 8ì§„ìˆ˜ë¡œ 10, 10ì§„ìˆ˜ë¡œëŠ” 8
+		int hexNum = 0x10; // 16ì§„ìˆ˜ë¡œ 10, 10ì§„ìˆ˜ë¡œëŠ” 16
+		int binNum = 0b10; // 2ì§„ìˆ˜ë¡œ 10, 10ì§„ìˆ˜ë¡œëŠ” 2
 		
 		System.out.printf("b=%d%n", b);
 		System.out.printf("s=%d%n", s);
 		System.out.printf("c=%c, %d%n", c, (int) c);
-		System.out.printf("finger=[%5d]%n", finger); // %Ad¿¡¼­ ¼ıÀÚ°¡ A ÀÌ»ó ÀÚ¸®¼ö¶ó¸é ¼ıÀÚ°¡ ¸ğµÎ ÂïÈù´Ù 
+		System.out.printf("finger=[%5d]%n", finger); // %Adì—ì„œ ìˆ«ìê°€ A ì´ìƒ ìë¦¬ìˆ˜ë¼ë©´ ìˆ«ìê°€ ëª¨ë‘ ì°íŒë‹¤ 
 		System.out.printf("finger=[%-5d]%n", finger);
 		System.out.printf("finger=[%05d]%n", finger);
 		System.out.printf("big=%d%n", big);
@@ -26,5 +26,4 @@ public class Ex_Printf {
 		System.out.printf("hexNum=%x, d%n", hexNum, hexNum);
 		System.out.printf("binNum=%s, d%n", Integer.toBinaryString(binNum), binNum);
 	}
-
 }

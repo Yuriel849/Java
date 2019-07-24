@@ -25,8 +25,8 @@ public class Calendar {
 	private static char[] makeWeekdays() {
 		char[] weekday;
 		weekday = new char[] {'S', 'M', 'T', 'W', 'T', 'F', 'S'};
-		// 'ÀÏ' --> char
-		//  ÀÏ    --> º¯¼ö¸í --> ¿©±â¼­´Â ÀÌ·± º¯¼ö ¾ø´Ù°í ¿¡·¯³­ °Í
+		// 'ì¼' --> char
+		//  ì¼    --> ë³€ìˆ˜ëª… --> ì—¬ê¸°ì„œëŠ” ì´ëŸ° ë³€ìˆ˜ ì—†ë‹¤ê³  ì—ëŸ¬ë‚œ ê²ƒ
 		return weekday;
 	}
 	
@@ -573,5 +573,4 @@ public class Calendar {
 		}
 		System.out.println();
 	}
-
 }

@@ -2,10 +2,10 @@ package study;
 
 public class BingoUpdate {
 	public static void main(String[] args) {
-		// 1. 5X5 2Â÷¿ø ¹è¿­ ¼±¾ğ
+		// 1. 5X5 2ì°¨ì› ë°°ì—´ ì„ ì–¸
 		int[][] array = new int[5][5]; 
 		
-		// 2. ¹è¿­¿¡ 1 ~ 25 °ª ÀÔ·Â (ÃÊ±âÈ­)
+		// 2. ë°°ì—´ì— 1 ~ 25 ê°’ ì…ë ¥ (ì´ˆê¸°í™”)
 		int add = 1;
 		for(int i = 0; i < array.length; i++) {
 			for(int j = 0; j < array[i].length; j++) {
@@ -14,8 +14,8 @@ public class BingoUpdate {
 			}
 		}
 		
-		// 3. 2Â÷¿ø ÇüÅÂ·Î ¹è¿­ Ãâ·Â
-		System.out.println("5 X 5 2Â÷¿ø ¹è¿­ : ");
+		// 3. 2ì°¨ì› í˜•íƒœë¡œ ë°°ì—´ ì¶œë ¥
+		System.out.println("5 X 5 2ì°¨ì› ë°°ì—´ : ");
 		for(int i = 0; i < array.length; i++) {
 			for(int j = 0; j < array[i].length; j++) {
 				System.out.printf("%2d ", array[i][j]);
@@ -24,7 +24,7 @@ public class BingoUpdate {
 		}
 		System.out.println();
 		
-		// 4. ¼¯±â
+		// 4. ì„ê¸°
 		int a = 0, b = 0;
 		int temp = 0;
 		for(int i = 0; i < 100; i++) {
@@ -35,10 +35,10 @@ public class BingoUpdate {
 			array[a][b] = temp;
 		}
 		
-		// 5. »ç¿ëÀÚ ÀÔ·Â ¹Ş±â
+		// 5. ì‚¬ìš©ì ì…ë ¥ ë°›ê¸°
 		int input = BingoScanner.main(null);
 		
-		// 6. »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ °ª°ú ÀÏÄ¡ÇÏ´Â °ªÀ» Ã£¾Æ¼­ 0À¸·Î ¹Ù²Ù±â 
+		// 6. ì‚¬ìš©ìê°€ ì…ë ¥í•œ ê°’ê³¼ ì¼ì¹˜í•˜ëŠ” ê°’ì„ ì°¾ì•„ì„œ 0ìœ¼ë¡œ ë°”ê¾¸ê¸° 
 		search : for(int i = 0; i < array.length; i++) {
 			for(int j = 0; j < array[i].length; j++) {
 				if(array[i][j] == input) {
@@ -54,5 +54,4 @@ public class BingoUpdate {
 			System.out.println();
 		}
 	}
-
 }

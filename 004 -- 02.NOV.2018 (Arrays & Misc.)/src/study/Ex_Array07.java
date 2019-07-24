@@ -1,12 +1,12 @@
 package study;
 
-/* ºóµµ¼ö ±¸ÇÏ±â (Counting)--> ¹è¿­¿¡ ¾î¶² °ªÀÌ ¸î °³ ÀúÀåµÇ¾î ÀÖ´ÂÁö ¼¼¾î¼­ º¸¿©ÁØ´Ù.
+/* ë¹ˆë„ìˆ˜ êµ¬í•˜ê¸° (Counting)--> ë°°ì—´ì— ì–´ë–¤ ê°’ì´ ëª‡ ê°œ ì €ì¥ë˜ì–´ ìˆëŠ”ì§€ ì„¸ì–´ì„œ ë³´ì—¬ì¤€ë‹¤.
  * 
- * Counting ÈÄ ±× ÀÚ·á·Î ½±°Ô ÇÒ ¼ö ÀÖ´Â ÀÏ
- * 	>> Á¤·Ä --> ÀÌ°ÍÀÌ bucket sort
- * 	>> Áßº¹Á¦°Å
- * 		>> counting ÈÄ bucket sort´Â ÇÑ ¹ø¸¸ countingÇÏ¸é µÇ±â¿¡ °¡º±°í È¿À²ÀûÀÌ´Ù
- * 			<--> bubble sort´Â ¸Å¿ì ¸¹ÀÌ ¹İº¹ÇÏ¸é¼­ Á¤·ÄÇÏ±â¿¡ ºñÈ¿À²Àû (ÄÚµå´Â °£´ÜÇÏÁö¸¸...)
+ * Counting í›„ ê·¸ ìë£Œë¡œ ì‰½ê²Œ í•  ìˆ˜ ìˆëŠ” ì¼
+ * 	>> ì •ë ¬ --> ì´ê²ƒì´ bucket sort
+ * 	>> ì¤‘ë³µì œê±°
+ * 		>> counting í›„ bucket sortëŠ” í•œ ë²ˆë§Œ countingí•˜ë©´ ë˜ê¸°ì— ê°€ë³ê³  íš¨ìœ¨ì ì´ë‹¤
+ * 			<--> bubble sortëŠ” ë§¤ìš° ë§ì´ ë°˜ë³µí•˜ë©´ì„œ ì •ë ¬í•˜ê¸°ì— ë¹„íš¨ìœ¨ì  (ì½”ë“œëŠ” ê°„ë‹¨í•˜ì§€ë§Œ...)
  */
 
 public class Ex_Array07 {
@@ -25,11 +25,11 @@ public class Ex_Array07 {
 			counter[numArr[i]]++;
 		} 
 		for(int i = 0; i < numArr.length; i++) {
-			System.out.println(i + "ÀÇ °³¼ö :" + counter[i]);
+			System.out.println(i + "ì˜ ê°œìˆ˜ :" + counter[i]);
 		}
 		System.out.println();
 		
-		// Áßº¹Á¦°Å --> if counter[i] not empty print i
+		// ì¤‘ë³µì œê±° --> if counter[i] not empty print i
 		for(int i = 0; i < counter.length; i++) {
 			if(counter[i] != 0) {
 				System.out.print(i);
@@ -38,7 +38,7 @@ public class Ex_Array07 {
 		System.out.println();
 		System.out.println();
 		
-		// Á¤·ÄÇÏ±â --> if counter[i] not empty print i as many times as counter[i]
+		// ì •ë ¬í•˜ê¸° --> if counter[i] not empty print i as many times as counter[i]
 		for(int i = 0; i < counter.length; i++) {
 			if(counter[i] != 0) {
 				for(int j = 0; j < counter[i]; j++) {
@@ -48,5 +48,4 @@ public class Ex_Array07 {
 		}
 		System.out.println();
 	}
-
 }

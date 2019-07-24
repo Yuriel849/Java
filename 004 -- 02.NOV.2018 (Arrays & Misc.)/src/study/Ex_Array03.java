@@ -1,6 +1,6 @@
 package study;
 
-// ÃÖ´ë°ª°ú ÃÖ¼Ò°ª --> ¹è¿­ÀÇ ¿ä¼Ò Áß¿¡¼­ Á¦ÀÏ Å« °ª°ú Á¦ÀÏ ÀÛÀº °ªÀ» Ã£´Â´Ù.
+//ìµœëŒ€ê°’ê³¼ ìµœì†Œê°’ --> ë°°ì—´ì˜ ìš”ì†Œ ì¤‘ì—ì„œ ì œì¼ í° ê°’ê³¼ ì œì¼ ì‘ì€ ê°’ì„ ì°¾ëŠ”ë‹¤.
 public class Ex_Array03 {
 	public static void main(String[] args) {
 		int[] score = {79, 88, 91, 33, 100, 55, 95};
@@ -16,8 +16,7 @@ public class Ex_Array03 {
 			}
 		}
 		
-		System.out.println("ÃÖ´ë°ª : " + max);
-		System.out.println("ÃÖ¼Ò°ª : " + min);
+		System.out.println("ìµœëŒ€ê°’ : " + max);
+		System.out.println("ìµœì†Œê°’ : " + min);
 	}
-
 }

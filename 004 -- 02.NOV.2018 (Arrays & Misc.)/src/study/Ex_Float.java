@@ -7,10 +7,9 @@ public class Ex_Float {
 		double d = 9.12345678901234567890;
 		
 		System.out.printf("    123456789012345678901234%n");
-		System.out.printf("f  :   %f%n", f); // ÀÚµ¿À¸·Î ¼Ò¼öÁ¡ ÀÌÇÏ 6ÀÚ¸®±îÁö Ãâ·ÂÇÑ´Ù --> 7ÀÚ¸®¿¡¼­ ¹İ¿Ã¸²ÇØ¼­ "9.123457"
+		System.out.printf("f  :   %f%n", f); // ìë™ìœ¼ë¡œ ì†Œìˆ˜ì  ì´í•˜ 6ìë¦¬ê¹Œì§€ ì¶œë ¥í•œë‹¤ --> 7ìë¦¬ì—ì„œ ë°˜ì˜¬ë¦¼í•´ì„œ "9.123457"
 		System.out.printf("f  : %24.20f%n", f);
 		System.out.printf("f2 : %24.20f%n", f2);
 		System.out.printf("d  : %24.20f%n", d);
 	}
-
 }

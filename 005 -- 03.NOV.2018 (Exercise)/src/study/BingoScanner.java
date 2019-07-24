@@ -7,13 +7,13 @@ public class BingoScanner {
 		Scanner scan = new Scanner(System.in);
 		int input = 0;
 		do {
-			System.out.println("¼ıÀÚ ÇÏ³ª¸¦ ÀÔ·ÂÇÏ¼¼¿ä (1 ~ 25) >>");
-			System.out.print("ÀÔ·ÂÀ» Ãë¼ÒÇÏ½Ã·Á¸é À½¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-			// printf()¿¡¼­¸¸ \nÀ» %n·Î ´ëÃ¼ÇÒ ¼ö ÀÖ´Ù!!!
+			System.out.println("ìˆ«ì í•˜ë‚˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” (1 ~ 25) >>");
+			System.out.print("ì…ë ¥ì„ ì·¨ì†Œí•˜ì‹œë ¤ë©´ ìŒìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+			// printf()ì—ì„œë§Œ \nì„ %në¡œ ëŒ€ì²´í•  ìˆ˜ ìˆë‹¤!!!
 			input = scan.nextInt();
 			if (input < 0) {
-				System.out.println("ÀÔ·ÂÀ» Ãë¼ÒÇÏ¼Ì½À´Ï´Ù.");
-				System.out.println("¿ø·¡ °ª´ë·Î Ãâ·ÂÇÕ´Ï´Ù.");
+				System.out.println("ì…ë ¥ì„ ì·¨ì†Œí•˜ì…¨ìŠµë‹ˆë‹¤.");
+				System.out.println("ì›ë˜ ê°’ëŒ€ë¡œ ì¶œë ¥í•©ë‹ˆë‹¤.");
 				break;
 			}
 //			if(input >= 1 && input <= 25) {

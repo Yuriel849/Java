@@ -1,14 +1,12 @@
 package study;
 
 public class Ex_PrintingBooleanAndNull {
-
 	public static void main(String[] args) {
-		System.out.println("true" + null); // ¹®ÀÚ¿­°úÀÇ µ¡¼À¿¬»êÀÇ °á°ú´Â ¹®ÀÚ¿­
-		System.out.println(true); // boolean °ª È¥ÀÚ´Â Ãâ·Â °¡´É
-		// System.out.println(true + null); // boolean °ªÀÎ true, null °ªÀº µ¡¼À¿¬»êÀÌ ºÒ°¡´É
-		// System.out.println(null); // null °ª ±× ÀÚÃ¼´Â Ãâ·Âµµ ºÒ°¡´É
+		System.out.println("true" + null); // ë¬¸ìì—´ê³¼ì˜ ë§ì…ˆì—°ì‚°ì˜ ê²°ê³¼ëŠ” ë¬¸ìì—´
+		System.out.println(true); // boolean ê°’ í˜¼ìëŠ” ì¶œë ¥ ê°€ëŠ¥
+		// System.out.println(true + null); // boolean ê°’ì¸ true, null ê°’ì€ ë§ì…ˆì—°ì‚°ì´ ë¶ˆê°€ëŠ¥
+		// System.out.println(null); // null ê°’ ê·¸ ìì²´ëŠ” ì¶œë ¥ë„ ë¶ˆê°€ëŠ¥
 
 		System.out.println(3 << 96);
 	}
-
 }

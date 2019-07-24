@@ -1,6 +1,6 @@
 package study;
 
-// ÃÑÇÕ°ú Æò±Õ --> ¹è¿­ÀÇ ¸ğµç ¿ä¼Ò¸¦ ´õÇØ¼­ ÃÑÇÕ°ú Æò±ÕÀ» ±¸ÇÑ´Ù.
+//ì´í•©ê³¼ í‰ê·  --> ë°°ì—´ì˜ ëª¨ë“  ìš”ì†Œë¥¼ ë”í•´ì„œ ì´í•©ê³¼ í‰ê· ì„ êµ¬í•œë‹¤.
 public class Ex_Array02 {
 	public static void main(String[] args) {
 		int sum = 0;
@@ -14,8 +14,7 @@ public class Ex_Array02 {
 		
 		average = sum / (float) score.length;
 		
-		System.out.println("ÃÑÁ¡ : " + sum);
-		System.out.println("Æò±Õ : " + average);
+		System.out.println("ì´ì  : " + sum);
+		System.out.println("í‰ê·  : " + average);
 	}
-
 }

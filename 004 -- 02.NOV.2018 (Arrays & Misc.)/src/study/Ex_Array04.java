@@ -1,6 +1,6 @@
 package study;
 
-// ¼¯±â(Shuffle) --> ¹è¿­ÀÇ ¿ä¼ÒÀÇ ¼ø¼­¸¦ ¹İº¹ÇØ¼­ ¹Ù²Û´Ù (Ä«µå¼¯±â, ·Î¶Ç¹øÈ£»ı¼º)
+//ì„ê¸°(Shuffle) --> ë°°ì—´ì˜ ìš”ì†Œì˜ ìˆœì„œë¥¼ ë°˜ë³µí•´ì„œ ë°”ê¾¼ë‹¤ (ì¹´ë“œì„ê¸°, ë¡œë˜ë²ˆí˜¸ìƒì„±)
 public class Ex_Array04 {
 	public static void main(String[] args) {
 		Shuffle01();
@@ -51,5 +51,4 @@ public class Ex_Array04 {
 			System.out.printf("ball[%d} = %d%n", i, ball[i]);
 		}
 	}
-
 }

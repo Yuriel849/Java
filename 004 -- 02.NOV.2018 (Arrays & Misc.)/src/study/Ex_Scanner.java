@@ -3,16 +3,14 @@ package study;
 import java.util.Scanner;
 
 public class Ex_Scanner {
-
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.print("µÎ ÀÚ¸® Á¤¼ö¸¦ ÇÏ³ª ÀÔ·ÂÇÏ¼¼¿ä >> ");
+		System.out.print("ë‘ ìžë¦¬ ì •ìˆ˜ë¥¼ í•˜ë‚˜ ìž…ë ¥í•˜ì„¸ìš” >> ");
 		String input = scan.nextLine();
 		int num = Integer.parseInt(input);
 		
-		System.out.println("ÀÔ·Â³»¿ë : " + input);
+		System.out.println("ìž…ë ¥ë‚´ìš© : " + input);
 		System.out.printf("num = %d%n", num);
 	}
-
 }

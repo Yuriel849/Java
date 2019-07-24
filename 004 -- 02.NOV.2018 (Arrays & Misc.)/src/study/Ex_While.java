@@ -7,25 +7,24 @@ public class Ex_While {
 		int num = 0;
 		int sum = 0;
 		
-		System.out.print("¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä (¿¹:12345)");
+		System.out.print("ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš” (ì˜ˆ:12345)");
 		Scanner scanner = new Scanner(System.in);
-		String tmp = scanner.nextLine(); // È­¸éÀ» ÅëÇØ ÀÔ·Â¹ŞÀº ³»¿ëÀ» tmp¿¡ ÀúÀå
-		num = Integer.parseInt(tmp); // ÀÔ·Â¹ŞÀº ¹®ÀÚ¿­(tmp)À» ¼ıÀÚ·Î º¯È¯
-			/* Integer.parseInt(A)´Â A¶ó´Â ¹®ÀÚ¿­À» int Å¸ÀÔ ¼ıÀÚ·Î º¯È¯ÇÏ´Â ¸Ş¼Òµå
-			 * 		>> ¹®ÀÚ¿­ÀÌ intÀÇ ¹üÀ§ (¾à +/-20¾ï) ¾ÈÀÇ ¼ıÀÚ¿©¾ß ÇÑ´Ù!!
-			 * 		>> tmp¿¡ ³Ê¹« Å« °ªÀ» ÀÔ·ÂÇÑ´Ù¸é NumberFormatException ¿¡·¯³­´Ù
-			 * 		>> intÀÇ ¹üÀ§¸¦ ÃÊ°úÇÑ ¼ıÀÚ¸¦ »ç¿ëÇÏ°íÀÚ ÇÑ´Ù¸é, Long.parseLong(tmp) »ç¿ë 
+		String tmp = scanner.nextLine(); // í™”ë©´ì„ í†µí•´ ì…ë ¥ë°›ì€ ë‚´ìš©ì„ tmpì— ì €ì¥
+		num = Integer.parseInt(tmp); // ì…ë ¥ë°›ì€ ë¬¸ìì—´(tmp)ì„ ìˆ«ìë¡œ ë³€í™˜
+			/* Integer.parseInt(A)ëŠ” Aë¼ëŠ” ë¬¸ìì—´ì„ int íƒ€ì… ìˆ«ìë¡œ ë³€í™˜í•˜ëŠ” ë©”ì†Œë“œ
+			 * 		>> ë¬¸ìì—´ì´ intì˜ ë²”ìœ„ (ì•½ +/-20ì–µ) ì•ˆì˜ ìˆ«ìì—¬ì•¼ í•œë‹¤!!
+			 * 		>> tmpì— ë„ˆë¬´ í° ê°’ì„ ì…ë ¥í•œë‹¤ë©´ NumberFormatException ì—ëŸ¬ë‚œë‹¤
+			 * 		>> intì˜ ë²”ìœ„ë¥¼ ì´ˆê³¼í•œ ìˆ«ìë¥¼ ì‚¬ìš©í•˜ê³ ì í•œë‹¤ë©´, Long.parseLong(tmp) ì‚¬ìš© 
 			 */
 		
 		while(num != 0) {
-			// numÀ» 10À¸·Î ³ª´« ³ª¸ÓÁö¸¦ sum¿¡ ´õÇÔ
+			// numì„ 10ìœ¼ë¡œ ë‚˜ëˆˆ ë‚˜ë¨¸ì§€ë¥¼ sumì— ë”í•¨
 			sum += num%10; // sum = sum + num%10;
 			System.out.printf("sum=%3d num=%d%n", sum, num);
 			
-			num /= 10; // num = num / 10; --> numÀ» 10À¸·Î ³ª´« °ªÀ» ´Ù½Ã num¿¡ ÀúÀå
+			num /= 10; // num = num / 10; --> numì„ 10ìœ¼ë¡œ ë‚˜ëˆˆ ê°’ì„ ë‹¤ì‹œ numì— ì €ì¥
 		}
 		
-		System.out.println("°¢ ÀÚ¸®¼öÀÇ ÇÕ: " + sum);
+		System.out.println("ê° ìë¦¬ìˆ˜ì˜ í•©: " + sum);
 	}
-
 }

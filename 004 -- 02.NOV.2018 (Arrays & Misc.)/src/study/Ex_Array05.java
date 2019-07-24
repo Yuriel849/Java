@@ -2,7 +2,7 @@ package study;
 
 import java.util.Arrays;
 
-// ÀÓÀÇÀÇ °ªÀ¸·Î ¹è¿­ Ã¤¿ì±â --> ¿¬¼Ó ¶Ç´Â ºÒ¿¬¼ÓÀûÀÎ °ªµé·Î ¹è¿­À» ÃÊ±âÈ­ ÇÑ´Ù.
+//ì„ì˜ì˜ ê°’ìœ¼ë¡œ ë°°ì—´ ì±„ìš°ê¸° --> ì—°ì† ë˜ëŠ” ë¶ˆì—°ì†ì ì¸ ê°’ë“¤ë¡œ ë°°ì—´ì„ ì´ˆê¸°í™” í•œë‹¤.
 public class Ex_Array05 {
 	public static void main(String[] args) {
 		int[] code = {-4, -1, 3, 6, 11};
@@ -15,5 +15,4 @@ public class Ex_Array05 {
 		
 		System.out.println(Arrays.toString(arr));
 	}
-
 }
