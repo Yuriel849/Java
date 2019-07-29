@@ -1,25 +1,23 @@
 package study;
 
-/* º¯¼öÀÇ »ý¸í ÁÖ±â (Life Cycle)
- * 	1) ¸â¹öº¯¼ö (== ¸â¹öÇÊµå == ÇÊµå)
- * 		Å¬·¡½º°¡ È°¼ºÈ­µÇ¾î ÀÖ´Â ÇÑ »ç¶óÁöÁö ¾Ê´Â´Ù
- * 	2) Áö¿ªº¯¼ö-1
- * 		¸Þ¼Òµå ³»ºÎ¿¡¼­ ¼±¾ðµÈ º¯¼ö
- * 		¸Þ¼Òµå ½ÇÇà ½Ã ¸Þ¸ð¸®¿¡ ·Îµù, ¸Þ¼ÒµåÀÇ Á¾·á ½Ã ¸Þ¸ð¸®¿¡¼­ ÇØÁ¦ (¾ø¾îÁü)
- * 			>> ¸Þ¸ð¸®¿¡¼­ ÀÚµ¿À¸·Î ÇØÁ¦µÈ´Ù
- * 	3) Áö¿ªº¯¼ö-2
- * 		¸Þ¼Òµå ³»ºÎÀÇ ¶Ç´Ù¸¥ ÄÚµåºí·°(Áß°ýÈ£ {}) ¾È¿¡¼­ ¼±¾ðµÈ º¯¼ö
- * 		ex) for, while, if µîÀÇ ÄÚµåºí·° ¾È¿¡¼­ ¼±¾ðµÈ º¯¼ö
+/* ë³€ìˆ˜ì˜ ìƒëª… ì£¼ê¸° (Life Cycle)
+ * 	1) ë©¤ë²„ë³€ìˆ˜ (== ë©¤ë²„í•„ë“œ == í•„ë“œ)
+ * 		í´ëž˜ìŠ¤ê°€ í™œì„±í™”ë˜ì–´ ìžˆëŠ” í•œ ì‚¬ë¼ì§€ì§€ ì•ŠëŠ”ë‹¤
+ * 	2) ì§€ì—­ë³€ìˆ˜-1
+ * 		ë©”ì†Œë“œ ë‚´ë¶€ì—ì„œ ì„ ì–¸ëœ ë³€ìˆ˜
+ * 		ë©”ì†Œë“œ ì‹¤í–‰ ì‹œ ë©”ëª¨ë¦¬ì— ë¡œë”©, ë©”ì†Œë“œì˜ ì¢…ë£Œ ì‹œ ë©”ëª¨ë¦¬ì—ì„œ í•´ì œ (ì—†ì–´ì§)
+ * 			>> ë©”ëª¨ë¦¬ì—ì„œ ìžë™ìœ¼ë¡œ í•´ì œëœë‹¤
+ * 	3) ì§€ì—­ë³€ìˆ˜-2
+ * 		ë©”ì†Œë“œ ë‚´ë¶€ì˜ ë˜ë‹¤ë¥¸ ì½”ë“œë¸”ëŸ­(ì¤‘ê´„í˜¸ {}) ì•ˆì—ì„œ ì„ ì–¸ëœ ë³€ìˆ˜
+ * 		ex) for, while, if ë“±ì˜ ì½”ë“œë¸”ëŸ­ ì•ˆì—ì„œ ì„ ì–¸ëœ ë³€ìˆ˜
  */
 		
 public class Ex01_VariableLifeCycle {
 	public static void main(String args[]) {
-		int lv; // Áö¿ªº¯¼ö-1
+		int lv; // ì§€ì—­ë³€ìˆ˜-1
 		
-		// i <-- Áö¿ªº¯¼ö-2
-		for(int i=0; i<3; i++) {
+		for(int i=0; i<3; i++) { // i <-- ì§€ì—­ë³€ìˆ˜-2
 			System.out.println(i);
 		}
 	}
-
 }
