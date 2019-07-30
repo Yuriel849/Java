@@ -10,8 +10,7 @@ public class Ex09_Class02 {
 		// 				 --> 인스턴스를 생성하지 않은 시점에서 접근할 수 없다
 		
 		Variables vary1 = new Variables();
-		System.out.println("인스턴스 vary1의 지역변수 초기값 --> vary1.iv : " + vary1.iv);
-															// 초기화될 뿐, 값이 없다
+		System.out.println("인스턴스 vary1의 지역변수 초기값 --> vary1.iv : " + vary1.iv); // 0으로 초기화될 뿐, 값이 없다
 		vary1.iv = 20;
 		System.out.println("인스턴스 vary1의 지역변수 바꾼 후 --> vary1.iv : " + vary1.iv);
 		System.out.println("인스턴스 vary1에서 static variable 접근 --> vary1.cv : " + vary1.cv);
@@ -20,12 +19,12 @@ public class Ex09_Class02 {
 		Variables.cv = 240;
 		Variables vary2 = new Variables();
 		System.out.println("Variables에서 static variable 바꾼 후 --> vary2.cv : " + vary2.cv);
-		System.out.println("인스턴스 vary2의 지역변수 초기값 --> vary2.iv : " + vary2.iv); // 초기화될 뿐, 값이 없다
+		System.out.println("인스턴스 vary2의 지역변수 초기값 --> vary2.iv : " + vary2.iv); // 0으로 초기화될 뿐, 값이 없다
 		vary1.iv = 40;
 		System.out.println("인스턴스 vary2의 지역변수 바꾼 후 -->vary1.iv : " + vary1.iv);
 		vary2.cv = 500;
-		System.out.println("인스턴스 vary2에서 static variable 바꾼 후 -->vary1.cv : " + vary1.cv);
-		System.out.println("인스턴스 vary1에서 static variable 접근 --> vary1.cv : " + Variables.cv);
+		System.out.println("인스턴스 vary2에서 static variable 바꾼 후 -->vary2.cv : " + vary2.cv);
+		System.out.println("인스턴스 vary1에서 static variable 접근 --> vary1.cv : " + vary1.cv);
 		System.out.println("Variables에서 static variable 접근 --> Variables.cv : " + Variables.cv);
 	}
 }

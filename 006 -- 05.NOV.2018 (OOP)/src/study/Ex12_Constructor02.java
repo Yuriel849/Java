@@ -4,8 +4,7 @@ package study;
 
 class A {
 	public A() {
-		this(10); // 같은 클래스 내의 다른 생성자 호출
-				  //  	--> 생성자는 재귀호출 불가능하기에 괄호 혹 자료형과 메소드 자료형이 같으면 에러
+		this(10); // 같은 클래스 내의 다른 생성자 호출 --> 생성자는 재귀호출 불가능하기에 괄호 속 자료형과 메소드 자료형이 같으면 에러
 		System.out.println("public A()");
 	}
 	public A(int i) {
