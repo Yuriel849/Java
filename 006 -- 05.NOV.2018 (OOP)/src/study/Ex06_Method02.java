@@ -1,12 +1,12 @@
 package study;
 
 /* Call by Value & Call by Reference
- * 	>> Java¿¡¼­ÀÇ call by value´Â C¾ğ¾î¿Í µ¿ÀÏ
- * 	>> Java¿¡¼­ÀÇ call by reference´Â ´Ù¸£´Ù
+ * 	>> Javaì—ì„œì˜ call by valueëŠ” Cì–¸ì–´ì™€ ë™ì¼
+ * 	>> Javaì—ì„œì˜ call by referenceëŠ” ë‹¤ë¥´ë‹¤
  */
 
 public class Ex06_Method02 {
-	// Call by Value °ª¿¡ ÀÇÇÑ È£Ãâ
+	// Call by Value ê°’ì— ì˜í•œ í˜¸ì¶œ
 	public static void method(int number) {
 		number = 332;
 	}
@@ -15,8 +15,7 @@ public class Ex06_Method02 {
 		
 		System.out.println("number : " + number);
 		
-		method(number); // number == 10À» ÀÎ¼öÀü´ŞÇÏ¸é¼­ method ¸Ş¼Òµå¸¦ È£Ãâ
+		method(number); // number == 10ì„ ì¸ìˆ˜ì „ë‹¬í•˜ë©´ì„œ method ë©”ì†Œë“œë¥¼ í˜¸ì¶œ
 		System.out.println("number : " + number);
 	}
-
 }

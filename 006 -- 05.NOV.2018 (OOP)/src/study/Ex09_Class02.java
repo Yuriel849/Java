@@ -2,38 +2,37 @@ package study;
 
 public class Ex09_Class02 {
 	public static void main(String[] args) {
-		Variables.cv = 20; // ÂüÁ¶º¯¼öµµ ÀÎ½ºÅÏ½ºµµ ¾ø´Â »óÈ²¿¡¼­ ¹Ù·Î Å¬·¡½º·Î Á¢±ÙÇÒ ¼ö ÀÖ´Â °ÍÀÌ static variable
-		System.out.println("ÂüÁ¶º¯¼öµµ ÀÎ½ºÅÏ½ºµµ ¾ø´Â »óÅÂ¿¡¼­ Variables.cv : " + Variables.cv);
+		Variables.cv = 20; // ì°¸ì¡°ë³€ìˆ˜ë„ ì¸ìŠ¤í„´ìŠ¤ë„ ì—†ëŠ” ìƒí™©ì—ì„œ ë°”ë¡œ í´ëž˜ìŠ¤ë¡œ ì ‘ê·¼í•  ìˆ˜ ìžˆëŠ” ê²ƒì´ static variable
+		System.out.println("ì°¸ì¡°ë³€ìˆ˜ë„ ì¸ìŠ¤í„´ìŠ¤ë„ ì—†ëŠ” ìƒíƒœì—ì„œ Variables.cv : " + Variables.cv);
 		
-		// cv = 20; --> ÂüÁ¶º¯¼ö¸¦ ¼±¾ð/»ý¼ºÇÏÁö ¾Ê¾Æ¼­ ¾îµð¿¡ ÀÖ´Â cvÀÎÁö ¾Ë ¼ö°¡ ¾ø¾î ¿¡·¯³­´Ù
-		// vary.iv = 10; --> ÂüÁ¶º¯¼ö¸¦ ¼±¾ð/»ý¼ºÇÏÁö ¾ÊÀº ½ÃÁ¡¿¡¼­ Á¢±ÙÇÒ ¼ö ¾ø´Ù
-		// 				 --> ÀÎ½ºÅÏ½º¸¦ »ý¼ºÇÏÁö ¾ÊÀº ½ÃÁ¡¿¡¼­ Á¢±ÙÇÒ ¼ö ¾ø´Ù
+		// cv = 20; --> ì°¸ì¡°ë³€ìˆ˜ë¥¼ ì„ ì–¸/ìƒì„±í•˜ì§€ ì•Šì•„ì„œ ì–´ë””ì— ìžˆëŠ” cvì¸ì§€ ì•Œ ìˆ˜ê°€ ì—†ì–´ ì—ëŸ¬ë‚œë‹¤
+		// vary.iv = 10; --> ì°¸ì¡°ë³€ìˆ˜ë¥¼ ì„ ì–¸/ìƒì„±í•˜ì§€ ì•Šì€ ì‹œì ì—ì„œ ì ‘ê·¼í•  ìˆ˜ ì—†ë‹¤
+		// 				 --> ì¸ìŠ¤í„´ìŠ¤ë¥¼ ìƒì„±í•˜ì§€ ì•Šì€ ì‹œì ì—ì„œ ì ‘ê·¼í•  ìˆ˜ ì—†ë‹¤
 		
 		Variables vary1 = new Variables();
-		System.out.println("ÀÎ½ºÅÏ½º vary1ÀÇ Áö¿ªº¯¼ö ÃÊ±â°ª --> vary1.iv : " + vary1.iv);
-															// ÃÊ±âÈ­µÉ »Ó, °ªÀÌ ¾ø´Ù
+		System.out.println("ì¸ìŠ¤í„´ìŠ¤ vary1ì˜ ì§€ì—­ë³€ìˆ˜ ì´ˆê¸°ê°’ --> vary1.iv : " + vary1.iv);
+															// ì´ˆê¸°í™”ë  ë¿, ê°’ì´ ì—†ë‹¤
 		vary1.iv = 20;
-		System.out.println("ÀÎ½ºÅÏ½º vary1ÀÇ Áö¿ªº¯¼ö ¹Ù²Û ÈÄ --> vary1.iv : " + vary1.iv);
-		System.out.println("ÀÎ½ºÅÏ½º vary1¿¡¼­ static variable Á¢±Ù --> vary1.cv : " + vary1.cv);
+		System.out.println("ì¸ìŠ¤í„´ìŠ¤ vary1ì˜ ì§€ì—­ë³€ìˆ˜ ë°”ê¾¼ í›„ --> vary1.iv : " + vary1.iv);
+		System.out.println("ì¸ìŠ¤í„´ìŠ¤ vary1ì—ì„œ static variable ì ‘ê·¼ --> vary1.cv : " + vary1.cv);
 		vary1.cv = 120;
-		System.out.println("ÀÎ½ºÅÏ½º vary1¿¡¼­ static variable ¹Ù²Û ÈÄ --> vary1.cv : " + vary1.cv);
+		System.out.println("ì¸ìŠ¤í„´ìŠ¤ vary1ì—ì„œ static variable ë°”ê¾¼ í›„ --> vary1.cv : " + vary1.cv);
 		Variables.cv = 240;
 		Variables vary2 = new Variables();
-		System.out.println("Variables¿¡¼­ static variable ¹Ù²Û ÈÄ --> vary2.cv : " + vary2.cv);
-		System.out.println("ÀÎ½ºÅÏ½º vary2ÀÇ Áö¿ªº¯¼ö ÃÊ±â°ª --> vary2.iv : " + vary2.iv); // ÃÊ±âÈ­µÉ »Ó, °ªÀÌ ¾ø´Ù
+		System.out.println("Variablesì—ì„œ static variable ë°”ê¾¼ í›„ --> vary2.cv : " + vary2.cv);
+		System.out.println("ì¸ìŠ¤í„´ìŠ¤ vary2ì˜ ì§€ì—­ë³€ìˆ˜ ì´ˆê¸°ê°’ --> vary2.iv : " + vary2.iv); // ì´ˆê¸°í™”ë  ë¿, ê°’ì´ ì—†ë‹¤
 		vary1.iv = 40;
-		System.out.println("ÀÎ½ºÅÏ½º vary2ÀÇ Áö¿ªº¯¼ö ¹Ù²Û ÈÄ -->vary1.iv : " + vary1.iv);
+		System.out.println("ì¸ìŠ¤í„´ìŠ¤ vary2ì˜ ì§€ì—­ë³€ìˆ˜ ë°”ê¾¼ í›„ -->vary1.iv : " + vary1.iv);
 		vary2.cv = 500;
-		System.out.println("ÀÎ½ºÅÏ½º vary2¿¡¼­ static variable ¹Ù²Û ÈÄ -->vary1.cv : " + vary1.cv);
-		System.out.println("ÀÎ½ºÅÏ½º vary1¿¡¼­ static variable Á¢±Ù --> vary1.cv : " + Variables.cv);
-		System.out.println("Variables¿¡¼­ static variable Á¢±Ù --> Variables.cv : " + Variables.cv);
+		System.out.println("ì¸ìŠ¤í„´ìŠ¤ vary2ì—ì„œ static variable ë°”ê¾¼ í›„ -->vary1.cv : " + vary1.cv);
+		System.out.println("ì¸ìŠ¤í„´ìŠ¤ vary1ì—ì„œ static variable ì ‘ê·¼ --> vary1.cv : " + Variables.cv);
+		System.out.println("Variablesì—ì„œ static variable ì ‘ê·¼ --> Variables.cv : " + Variables.cv);
 	}
-
 }
 
 class Variables {
 	int iv; // "iv" --> instance variable
-	static int cv; // "cv" --> class variable == static variable == °øÀ¯º¯¼ö
+	static int cv; // "cv" --> class variable == static variable == ê³µìœ ë³€ìˆ˜
 	
 	public void method() {
 		int lv; // "lv" --> local variable

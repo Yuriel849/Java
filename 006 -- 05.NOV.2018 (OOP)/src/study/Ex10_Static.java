@@ -8,20 +8,19 @@ public class Ex10_Static {
 	static void staticMethod01() { 	}
 	
 	void instanceMethod02() {
-		System.out.println(iv); // ÀÎ½ºÅÏ½º ¸Ş¼Òµå´Â °´Ã¼ »ı¼º ÈÄ¿¡¾ß »ç¿ë°¡´ÉÇÏ´Ï±î ÀÎ½ºÅÏ½º ¸â¹ö »ç¿ë¿¡ ¹®Á¦ ¾øÀ½
+		System.out.println(iv); // ì¸ìŠ¤í„´ìŠ¤ ë©”ì†Œë“œëŠ” ê°ì²´ ìƒì„± í›„ì—ì•¼ ì‚¬ìš©ê°€ëŠ¥í•˜ë‹ˆê¹Œ ì¸ìŠ¤í„´ìŠ¤ ë©¤ë²„ ì‚¬ìš©ì— ë¬¸ì œ ì—†ìŒ
 		System.out.println(cv);
 		instanceMethod01();
 		staticMethod01();
 	}
 	
 	static void staticMethod02() {
-		// System.out.println(iv); --> °´Ã¼ »ı¼º Àü ½ÇÇàÇÏ·ÁÇÏ´Ï±î ¿¡·¯
+		// System.out.println(iv); --> ê°ì²´ ìƒì„± ì „ ì‹¤í–‰í•˜ë ¤í•˜ë‹ˆê¹Œ ì—ëŸ¬
 		System.out.println(cv);
-		// instanceMethod01(); --> °´Ã¼ »ı¼º Àü ½ÇÇàÇÏ·ÁÇÏ´Ï±î ¿¡·¯
+		// instanceMethod01(); --> ê°ì²´ ìƒì„± ì „ ì‹¤í–‰í•˜ë ¤í•˜ë‹ˆê¹Œ ì—ëŸ¬
 		staticMethod01();
 		Ex10_Static st = new Ex10_Static();
 		System.out.println(st.iv);
 		st.instanceMethod01();
 	}
-
 }

@@ -1,8 +1,8 @@
 package study;
 
-// Ex01_Class01¿¡¼­ È£ÃâÇÏ´Â class
+// Ex01_Class01ì—ì„œ í˜¸ì¶œí•˜ëŠ” class
 public class Time {
-	// ÀÚµ¿À¸·Î 0À¸·Î ÃÊ±âÈ­
+	// ìë™ìœ¼ë¡œ 0ìœ¼ë¡œ ì´ˆê¸°í™”
 	int hour;
 	int minute;
 	int second;

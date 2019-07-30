@@ -2,31 +2,30 @@ package study;
 
 public class Ex05_Method01 {
 	static void test01() {
-		System.out.println("test01() ½ÇÇà1");
-		return; // return;À» ¾²Áö ¾Ê¾Æµµ (º¸ÀÌÁö´Â ¾ÊÁö¸¸) ¸Ş¼ÒµåÀÇ ³¡¿¡ Á¸ÀçÇÑ´Ù
-		/* System.out.println("test01() ½ÇÇà2");
-		 * 		>> return;¿¡¼­ ¸Ş¼Òµå´Â ÀÚµ¿Á¾·áÇÏ±â¿¡ ±× ÀÌÈÄ¿¡ À§Ä¡ÇÑ ÄÚµå´Â ¹«½Ã 
+		System.out.println("test01() ì‹¤í–‰1");
+		return; // return;ì„ ì“°ì§€ ì•Šì•„ë„ (ë³´ì´ì§€ëŠ” ì•Šì§€ë§Œ) ë©”ì†Œë“œì˜ ëì— ì¡´ì¬í•œë‹¤
+		/* System.out.println("test01() ì‹¤í–‰2");
+		 * 		>> return;ì—ì„œ ë©”ì†Œë“œëŠ” ìë™ì¢…ë£Œí•˜ê¸°ì— ê·¸ ì´í›„ì— ìœ„ì¹˜í•œ ì½”ë“œëŠ” ë¬´ì‹œ 
 		 */
 	}
 	
-	// main ¸Ş¼Òµå´Â ¹İÈ¯°ªÀÌ ¾ø´Ù --> void¸¦ ¹İÈ¯ÇÑ´Ù --> void ¸Ş¼Òµå´Ù
+	// main ë©”ì†Œë“œëŠ” ë°˜í™˜ê°’ì´ ì—†ë‹¤ --> voidë¥¼ ë°˜í™˜í•œë‹¤ --> void ë©”ì†Œë“œë‹¤
 	public static void main(String[] args) {
-		System.out.println("ÇÁ·Î±×·¥ ½ÃÀÛ");
+		System.out.println("í”„ë¡œê·¸ë¨ ì‹œì‘");
 		test01();
-		test01(4F); // ½Ç¼ö 4¸¦ ¹İÈ¯ ¹ŞÁö¸¸ ¾îµò°¡¿¡ »ç¿ëÇÏÁö ¾Ê±â¿¡ ¹ö·ÁÁø´Ù
-		System.out.println("test01(4F)ÀÇ µÎ¹øÂ° ½ÇÇà");
+		test01(4F); // ì‹¤ìˆ˜ 4ë¥¼ ë°˜í™˜ ë°›ì§€ë§Œ ì–´ë”˜ê°€ì— ì‚¬ìš©í•˜ì§€ ì•Šê¸°ì— ë²„ë ¤ì§„ë‹¤
+		System.out.println("test01(4F)ì˜ ë‘ë²ˆì§¸ ì‹¤í–‰");
 		System.out.println(test01(4F));
-		System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+		System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 	}
 	
 	static float test01(float number) {
-		System.out.println("test01(int number) ½ÇÇà1");
-		/* ¸Å°³º¯¼ö·Î Àü´Ş¹ŞÀº µ¥ÀÌÅÍ¸¦ ½áµµ ¾È ½áµµ »ó°ü ¾ø´Ù
-		 * ÇÏÁö¸¸ ¸Å°³º¯¼ö·Î °ªÀ» Àü´Ş ¹ŞÁö ¾ÊÀ¸¸é ½ÇÇàÁ¶Â÷ ¾ÈµÈ´Ù
+		System.out.println("test01(int number) ì‹¤í–‰1");
+		/* ë§¤ê°œë³€ìˆ˜ë¡œ ì „ë‹¬ë°›ì€ ë°ì´í„°ë¥¼ ì¨ë„ ì•ˆ ì¨ë„ ìƒê´€ ì—†ë‹¤
+		 * í•˜ì§€ë§Œ ë§¤ê°œë³€ìˆ˜ë¡œ ê°’ì„ ì „ë‹¬ ë°›ì§€ ì•Šìœ¼ë©´ ì‹¤í–‰ì¡°ì°¨ ì•ˆëœë‹¤
 		 */		
 		System.out.println(number);
-		return number * 4.2F; // void ¸Ş¼Òµå´Â void¸¸À» ¹İÈ¯ÇÒ ¼ö ÀÖ´Ù!!!
-		// return µÚÀÇ °ÍÀ» return keyword¶ó°í ºÎ¸¥´Ù (==¹İÈ¯°ª)
+		return number * 4.2F; // void ë©”ì†Œë“œëŠ” voidë§Œì„ ë°˜í™˜í•  ìˆ˜ ìˆë‹¤!!!
+		// return ë’¤ì˜ ê²ƒì„ return keywordë¼ê³  ë¶€ë¥¸ë‹¤ (==ë°˜í™˜ê°’)
 	}
-
 }

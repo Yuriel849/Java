@@ -5,11 +5,10 @@ public class Ex11_Constructor01 {
 		Data1 dt1 = new Data1();
 		Data2 dt2 = new Data2(100);
 		
-		/* ±âº»»ı¼ºÀÚ »ç¿ëÇÏ·Á¸é >>
+		/* ê¸°ë³¸ìƒì„±ì ì‚¬ìš©í•˜ë ¤ë©´ >>
 		 * Data2 dt22 = new Data2();
 		 */
 	}
-
 }
 
 class Data1 {
@@ -21,7 +20,7 @@ class Data2 {
 	Data2(int x) {
 		value = x;
 	}
-	/* ±âº»»ı¼ºÀÚ »ç¿ëÇÏ·Á¸é
+	/* ê¸°ë³¸ìƒì„±ì ì‚¬ìš©í•˜ë ¤ë©´
 	 * Data2() {	}
 	 */
 }

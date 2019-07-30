@@ -9,8 +9,8 @@ public class Test {
 		array[1] = 20;
 		array[2] = 30;
 		
-		// eclipse´Â ÀúÀåÇÏ´Â ¼ø°£ ÄÄÆÄÀÏ...»¡°£ ÁÙÀÌ ±×¾îÁö¸é ÄÄÆÄÀÏ ¿¡·¯ (¹®¹ý ¿¡·¯)
-		// ¿©±â¼­´Â ÄÄÆÄÀÏ ¿¡·¯´Â ¾øÁö¸¸ ½ÇÁ¦·Î ÆÄÀÏÀ» ½ÇÇàÇÏ¿© Ãâ·ÂÇÏ·ÁÇÏ¸é ·±Å¸ÀÓ ¿¡·¯ ¹ß»ý
+		// eclipseëŠ” ì €ìž¥í•˜ëŠ” ìˆœê°„ ì»´íŒŒì¼...ë¹¨ê°„ ì¤„ì´ ê·¸ì–´ì§€ë©´ ì»´íŒŒì¼ ì—ëŸ¬ (ë¬¸ë²• ì—ëŸ¬)
+		// ì—¬ê¸°ì„œëŠ” ì»´íŒŒì¼ ì—ëŸ¬ëŠ” ì—†ì§€ë§Œ ì‹¤ì œë¡œ íŒŒì¼ì„ ì‹¤í–‰í•˜ì—¬ ì¶œë ¥í•˜ë ¤í•˜ë©´ ëŸ°íƒ€ìž„ ì—ëŸ¬ ë°œìƒ
 		
 		System.out.println(array[0]);
 		/*
@@ -19,7 +19,5 @@ public class Test {
 			
 		}
         */
-
 	}
-
 }
