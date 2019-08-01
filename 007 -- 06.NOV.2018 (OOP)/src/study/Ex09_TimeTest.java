@@ -18,7 +18,6 @@ class Time {
 	int hour;
 	int minute;
 	int second;
-
 }
 
 public class Ex09_TimeTest {

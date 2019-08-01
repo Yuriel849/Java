@@ -18,7 +18,6 @@ public class Ex01_BaseballGame {
 		 * 		>> keep count of how many loops
 		 */
 		
-		
 		int[] std = new int[3];
 		int[] entry = new int[3];
 		int cnt = 0;

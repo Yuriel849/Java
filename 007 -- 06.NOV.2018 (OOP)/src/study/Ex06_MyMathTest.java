@@ -43,5 +43,4 @@ public class Ex06_MyMathTest {
 		long result = MyMath.add2(5, 5);
 		System.out.println(result);
 	}
-
 }

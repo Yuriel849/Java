@@ -17,5 +17,4 @@ class StaticBlockTest {
 public class Ex08_StaticTest {
 	public static void main(String[] args) {
 	}
-
 }
