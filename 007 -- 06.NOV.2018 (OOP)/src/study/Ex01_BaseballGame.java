@@ -4,17 +4,17 @@ import java.util.Scanner;
 
 public class Ex01_BaseballGame {
 	public static void main(String[] args) {
-		/* 1. 1 ~ 9 »çÀÌÀÇ ¼ıÀÚ·Î ÀÌ·ç¾îÁø 3ÀÚ¸® Á¤¼ö(Áßº¹ X)¸¦ ÀÓÀÇ·Î »ı¼º
+		/* 1. 1 ~ 9 ì‚¬ì´ì˜ ìˆ«ìë¡œ ì´ë£¨ì–´ì§„ 3ìë¦¬ ì •ìˆ˜(ì¤‘ë³µ X)ë¥¼ ì„ì˜ë¡œ ìƒì„±
 		 * 		>> use Math.random() to get digits b/w 0 ~ 9
 		 * 		>> put digits into 3-element array
 		 * 		>> if digits are the same as previous, get new digit
-		 * 2. ¹İº¹ÀûÀ¸·Î 3ÀÚ¸® Á¤¼ö¸¦ ÀÔ·Â¹Ş´Â´Ù.
+		 * 2. ë°˜ë³µì ìœ¼ë¡œ 3ìë¦¬ ì •ìˆ˜ë¥¼ ì…ë ¥ë°›ëŠ”ë‹¤.
 		 * 		>> Scanner & while loop
 		 * 		>> take user input and put into 3-element array
-		 * 3. ÀÔ·Â¹ŞÀº ¼ıÀÚ¿Í (1)ÀÇ ¼ıÀÚ¸¦ ºñ±³ÇØ¼­ °á°ú¸¦ Ãâ·Â (ex) 1S2B)
-		 * 4. ºñ±³°á°ú°¡ 3S0B µÉ ¶§±îÁö (2)~(3) ¹İº¹ ½ÇÇà
+		 * 3. ì…ë ¥ë°›ì€ ìˆ«ìì™€ (1)ì˜ ìˆ«ìë¥¼ ë¹„êµí•´ì„œ ê²°ê³¼ë¥¼ ì¶œë ¥ (ex) 1S2B)
+		 * 4. ë¹„êµê²°ê³¼ê°€ 3S0B ë  ë•Œê¹Œì§€ (2)~(3) ë°˜ë³µ ì‹¤í–‰
  		 * 		>> incl. if and break to escape loop when 3S0B
-		 * 5. ¸î ¹ø ¸¸¿¡ ¸ÂÃè´ÂÁö ÀÔ·ÂÈ½¼ö Ãâ·Â 
+		 * 5. ëª‡ ë²ˆ ë§Œì— ë§ì·„ëŠ”ì§€ ì…ë ¥íšŸìˆ˜ ì¶œë ¥ 
 		 * 		>> keep count of how many loops
 		 */
 		
@@ -23,14 +23,14 @@ public class Ex01_BaseballGame {
 		int[] entry = new int[3];
 		int cnt = 0;
 		
-		// ¹æ¹ı 01 --> ÀÓÀÇÀÇ 3ÀÚ¸® Á¤¼ö »ı¼º
+		// ë°©ë²• 01 --> ì„ì˜ì˜ 3ìë¦¬ ì •ìˆ˜ ìƒì„±
 		for(int i = 0; i < std.length; i++) {
 			do {
 				std[i] = (int)((Math.random() * 9) + 1);
 			} while((i == 0) ? false : ((i == 1) ? (std[i] == std[0]) : (std[i] == std[0] || std[i] == std[1])));
 		}
 
-		// ¹æ¹ı 02 --> ÀÓÀÇÀÇ 3ÀÚ¸® Á¤¼ö »ı¼º
+		// ë°©ë²• 02 --> ì„ì˜ì˜ 3ìë¦¬ ì •ìˆ˜ ìƒì„±
 //		int[] ran = new int[9];
 //		int temp, j;
 //		for(j = 1; j < 10; j++) {
@@ -48,24 +48,24 @@ public class Ex01_BaseballGame {
 	
 		Scanner scan = new Scanner(System.in);
 		while(true) {
-			System.out.println("3ÀÚ¸® Á¤¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+			System.out.println("3ìë¦¬ ì •ìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” : ");
 			int input = scan.nextInt();
 			for(int k = 0; k < entry.length; k++) {
 				entry[2-k] = input%10;
 				input /= 10;
 			}
 			
-			// ball --> °°Àº ¼ıÀÚ°¡ ÀÖ´Âµ¥, À§Ä¡°¡ ´Ù¸¦ ¶§
+			// ball --> ê°™ì€ ìˆ«ìê°€ ìˆëŠ”ë°, ìœ„ì¹˜ê°€ ë‹¤ë¥¼ ë•Œ
 			int b = 0;
-			// strike --> °°Àº ¼ıÀÚ°¡ ÀÖ´Âµ¥, À§Ä¡°¡ °°À» ¶§
+			// strike --> ê°™ì€ ìˆ«ìê°€ ìˆëŠ”ë°, ìœ„ì¹˜ê°€ ê°™ì„ ë•Œ
 			int s = 0;
 			
 			for(int i = 0; i < std.length; i++) {
 				for(int k = 0; k < entry.length; k++) {
-					if (std[i] == entry[k]) { // µÎ °ªÀÌ °°À» ¶§, ball or strike
-						if (i != k) { // °ªÀº °°Àºµ¥ À§Ä¡°¡ ´Ù¸¦ ¶§
+					if (std[i] == entry[k]) { // ë‘ ê°’ì´ ê°™ì„ ë•Œ, ball or strike
+						if (i != k) { // ê°’ì€ ê°™ì€ë° ìœ„ì¹˜ê°€ ë‹¤ë¥¼ ë•Œ
 							b++;
-						} else { // °ªÀº °°Àºµ¥ À§Ä¡°¡ °°À» ¶§
+						} else { // ê°’ì€ ê°™ì€ë° ìœ„ì¹˜ê°€ ê°™ì„ ë•Œ
 							s++;
 						}
 					}
@@ -74,11 +74,10 @@ public class Ex01_BaseballGame {
 			System.out.printf("%dS%dB\n", s, b);
 			cnt++;
 			if(s == 3) {
-				System.out.printf("%d¹ø¸¸¿¡ ¸ÂÃß¼Ì½À´Ï´Ù!!", cnt);
+				System.out.printf("%dë²ˆë§Œì— ë§ì¶”ì…¨ìŠµë‹ˆë‹¤!!", cnt);
 				break;
 			}
 		}
 		scan.close();
 	}
 }
-

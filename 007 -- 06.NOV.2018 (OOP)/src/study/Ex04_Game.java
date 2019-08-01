@@ -1,12 +1,12 @@
 package study;
 
 // class variable - instance variable exercise
-class Marine { // º´»ç
-	static int maxHP = 100; // º´»çÀÇ ÃÖ´ë Ã¼·Â --> °øÅë
-	int hp; // °³º° º´»çÀÇ Ã¼·Â --> °³º°
-	static int power = 6; // º´»çÀÇ °ø°İ·Â --> °øÅë
+class Marine { // ë³‘ì‚¬
+	static int maxHP = 100; // ë³‘ì‚¬ì˜ ìµœëŒ€ ì²´ë ¥ --> ê³µí†µ
+	int hp; // ê°œë³„ ë³‘ì‚¬ì˜ ì²´ë ¥ --> ê°œë³„
+	static int power = 6; // ë³‘ì‚¬ì˜ ê³µê²©ë ¥ --> ê³µí†µ
 	
-	void attack() { } // º´»çÀÇ °ø°İÇÏ´Â ±â´É
+	void attack() { } // ë³‘ì‚¬ì˜ ê³µê²©í•˜ëŠ” ê¸°ëŠ¥
 	void move() { }
 	void stop() { } 
 }

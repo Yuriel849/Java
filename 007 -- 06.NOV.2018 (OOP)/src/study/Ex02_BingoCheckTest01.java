@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class Ex02_BingoCheckTest01 {
-	/* 2Â÷¿ø ¹è¿­À» ¹Ş¾Æ¼­ bingoÀÇ °³¼ö¸¦ ¼¼¼­ ¹İÈ¯
-	 * ¸Ş¼­µå ÀÌ¸§ : bingoCheck
-	 * ¸Å°³º¯¼ö(ÀÔ·Â) : 2Â÷¿ø int ¹è¿­
-	 * ¹İÈ¯°ª : bingoÀÇ °³¼ö
+	/* 2ì°¨ì› ë°°ì—´ì„ ë°›ì•„ì„œ bingoì˜ ê°œìˆ˜ë¥¼ ì„¸ì„œ ë°˜í™˜
+	 * ë©”ì„œë“œ ì´ë¦„ : bingoCheck
+	 * ë§¤ê°œë³€ìˆ˜(ì…ë ¥) : 2ì°¨ì› int ë°°ì—´
+	 * ë°˜í™˜ê°’ : bingoì˜ ê°œìˆ˜
 	 */
 
 	int bingoCheck(int[][] arr) {
@@ -16,7 +16,7 @@ class Ex02_BingoCheckTest01 {
 		
 		int num = 0;
 		
-		// 1st --> Çà, ¿­, ´ë°¢¼± 2°³¸¦ µû·Î µû·Î È®ÀÎÇÏ´Â ÄÚµå ÀÛ¼º
+		// 1st --> í–‰, ì—´, ëŒ€ê°ì„  2ê°œë¥¼ ë”°ë¡œ ë”°ë¡œ í™•ì¸í•˜ëŠ” ì½”ë“œ ì‘ì„±
 //		// check left-top --> right-bottom bingo
 //		for(int i = 0; i < 5; i++) {
 //			if(bingo[i][i] != 0) { check1++; } 
@@ -43,8 +43,8 @@ class Ex02_BingoCheckTest01 {
 //			}
 //		}
 		
-		// 2nd --> º°°³ ÄÚµå ÀÛ¼º ÈÄ ÇÕÄ¡±â
-		// ¹æ¹ı 01 >>
+		// 2nd --> ë³„ê°œ ì½”ë“œ ì‘ì„± í›„ í•©ì¹˜ê¸°
+		// ë°©ë²• 01 >>
 //		for(int i = 0; i < 5; i++) {
 //			if(bingo[i][0] == 1 && bingo[i][1] == 1 && bingo[i][2] == 1 && bingo[i][3] == 1 && bingo[i][4] == 1) {
 //				num++;
@@ -60,7 +60,7 @@ class Ex02_BingoCheckTest01 {
 //			num++;
 //		}
 
-		// ¹æ¹ı 02 >>
+		// ë°©ë²• 02 >>
 //		int check1 = 0, check2 = 0;
 //		for(int i = 0; i < 5; i++) {
 //			for(int j = 0; j < 5; j++) {
@@ -77,7 +77,7 @@ class Ex02_BingoCheckTest01 {
 //		if (check1 == 5) { num++; }
 //		if (check2 == 5) { num++; }
 		
-		// ¹æ¹ı 03 >> ¹æ¹ı 02ÀÇ °³·®Çü
+		// ë°©ë²• 03 >> ë°©ë²• 02ì˜ ê°œëŸ‰í˜•
 		for(int i = 0, k = 0; i < 5; i++) {
 			for(int j = 0; j < 5; j++) {
 				if (bingo[i][j] == 0) { break; }

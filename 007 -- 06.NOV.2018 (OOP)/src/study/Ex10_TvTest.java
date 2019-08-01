@@ -1,41 +1,41 @@
 package study;
 
-// 1. Å¬·¡½º Á¤ÀÇ
-class Tv { // Tv Å¬·¡½ºÀÇ ½ÃÀÛ
-	String color; // TvÀÇ »ö±ò
-	boolean power; // Àü¿ø on/off --> true¸é on, false¸é off
-	int channel; // Ã¤³Î
+// 1. í´ë˜ìŠ¤ ì •ì˜
+class Tv { // Tv í´ë˜ìŠ¤ì˜ ì‹œì‘
+	String color; // Tvì˜ ìƒ‰ê¹”
+	boolean power; // ì „ì› on/off --> trueë©´ on, falseë©´ off
+	int channel; // ì±„ë„
 	
 	void power() {
-		power = !power; // Àü¿ø on/off ÀüÈ¯ÇÏ±â
-		// À§ ÇÑ ÁÙ°ú °°Àº if-else¹®
+		power = !power; // ì „ì› on/off ì „í™˜í•˜ê¸°
+		// ìœ„ í•œ ì¤„ê³¼ ê°™ì€ if-elseë¬¸
 //		if(power==true)
 //			power = false;
 //		else
 //			power = true;
 	}
 	void channelUp() {
-		channel++; // Ã¤³Î ¿Ã¸®±â
+		channel++; // ì±„ë„ ì˜¬ë¦¬ê¸°
 	}
 	void channelDown() {
-		channel--; // Ã¤³Î ³»¸®±â
+		channel--; // ì±„ë„ ë‚´ë¦¬ê¸°
 	}
-} // Tv Å¬·¡½ºÀÇ ³¡
+} // Tv í´ë˜ìŠ¤ì˜ ë
 
 public class Ex10_TvTest {
 	public static void main(String[] args) {
-		// 2. °´Ã¼ÀÇ »ı¼º
+		// 2. ê°ì²´ì˜ ìƒì„±
 		Tv tv = new Tv();
 		Tv tv2 = new Tv();
 		
-		// 3. °´Ã¼ÀÇ »ç¿ë == °´Ã¼ÀÇ ¼Ó¼º & ±â´É »ç¿ë
-		tv.power(); // tv°¡ °¡Áø ±â´ÉÀ» »ç¿ë
+		// 3. ê°ì²´ì˜ ì‚¬ìš© == ê°ì²´ì˜ ì†ì„± & ê¸°ëŠ¥ ì‚¬ìš©
+		tv.power(); // tvê°€ ê°€ì§„ ê¸°ëŠ¥ì„ ì‚¬ìš©
 		tv.channel = 7;
 		tv.channelUp();
-		tv.color = "white"; // tvÀÇ ¼Ó¼ºÀ» º¯°æ --> tvÀÇ »ö±òÀ» whiteÀ¸·Î º¯°æ
+		tv.color = "white"; // tvì˜ ì†ì„±ì„ ë³€ê²½ --> tvì˜ ìƒ‰ê¹”ì„ whiteìœ¼ë¡œ ë³€ê²½
 		
-		tv2.power(); // --> ²À ÂüÁ¶º¯¼ö°¡ ÇÊ¿ä
+		tv2.power(); // --> ê¼­ ì°¸ì¡°ë³€ìˆ˜ê°€ í•„ìš”
 		
-		System.out.println("ÇöÀç Ã¤³ÎÀº " + tv.channel + "ÀÔ´Ï´Ù.");
+		System.out.println("í˜„ì¬ ì±„ë„ì€ " + tv.channel + "ì…ë‹ˆë‹¤.");
 	}
 }
