@@ -1,24 +1,24 @@
 package study.copy;
 
 class Product {
-	int price; // Á¦Ç°ÀÇ °¡°İ
-	int bonusPoint; // Á¦Ç°±¸¸Å ½Ã Á¦°øÇÏ´Â º¸³Ê½º Á¡¼ö
+	int price; // ì œí’ˆì˜ ê°€ê²©
+	int bonusPoint; // ì œí’ˆêµ¬ë§¤ ì‹œ ì œê³µí•˜ëŠ” ë³´ë„ˆìŠ¤ ì ìˆ˜
 	
 	Product(int price) {
 		this.price = price;
 		bonusPoint = (int)(price/10.0);
 	}
 	
-	Product() { } // ±âº»»ı¼ºÀÚ
+	Product() { } // ê¸°ë³¸ìƒì„±ì
 }
 
 class Tv extends Product {
 	Tv() { 
-		// Á¶»óÅ¬·¡½ºÀÇ »ı¼ºÀÚ Product(int price)¸¦ È£ÃâÇÏ°í TvÀÇ °¡°İÀº 100¸¸¿øÀ¸·Î ¼³Á¤ÇÑ´Ù.
+		// ì¡°ìƒí´ë˜ìŠ¤ì˜ ìƒì„±ì Product(int price)ë¥¼ í˜¸ì¶œí•˜ê³  Tvì˜ ê°€ê²©ì€ 100ë§Œì›ìœ¼ë¡œ ì„¤ì •í•œë‹¤.
 		super(100);
 	}
 	
-	public String toString() { // Object Å¬·¡½ºÀÇ toString()À» ¿À¹ö¶óÀÌµùÇÑ´Ù.
+	public String toString() { // Object í´ë˜ìŠ¤ì˜ toString()ì„ ì˜¤ë²„ë¼ì´ë”©í•œë‹¤.
 		return "Tv";
 	}
 }
@@ -43,36 +43,36 @@ class Audio extends Product {
 	}
 }
 
-class Buyer { // °í°´, ¹°°ÇÀ» »ç´Â »ç¶÷
-	int money = 1000; // ¼ÒÀ¯±İ¾×
-	int bonusPoint = 0; // º¸³Ê½º Á¡¼ö
-	Product[] item = new Product[10]; // ±¸ÀÔÇÑ Á¦Ç°À» ÀúÀåÇÏ±â À§ÇÑ ¹è¿­
-	int i = 0; // Product2 ¹è¿­¿¡ »ç¿ëµÉ Ä«¿îÅÍ
+class Buyer { // ê³ ê°, ë¬¼ê±´ì„ ì‚¬ëŠ” ì‚¬ëŒ
+	int money = 1000; // ì†Œìœ ê¸ˆì•¡
+	int bonusPoint = 0; // ë³´ë„ˆìŠ¤ ì ìˆ˜
+	Product[] item = new Product[10]; // êµ¬ì…í•œ ì œí’ˆì„ ì €ì¥í•˜ê¸° ìœ„í•œ ë°°ì—´
+	int i = 0; // Product2 ë°°ì—´ì— ì‚¬ìš©ë  ì¹´ìš´í„°
 	
 	void buy(Product p) {
 		if(money < p.price) {
-			System.out.println("ÀÜ¾×ÀÌ ºÎÁ·ÇÏ¿© ¹°°ÇÀ» »ì ¼ö ¾ø½À´Ï´Ù.");
+			System.out.println("ì”ì•¡ì´ ë¶€ì¡±í•˜ì—¬ ë¬¼ê±´ì„ ì‚´ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			return;
 		}
 		
-		money -= p.price; // °¡Áø µ·¿¡¼­ ±¸ÀÔÇÑ Á¦Ç°ÀÇ °¡°İÀ» »«´Ù.
-		bonusPoint += p.bonusPoint; // Á¦Ç°ÀÇ º¸³Ê½º Á¡¼ö¸¦ Ãß°¡ÇÑ´Ù.
-		item[i++] = p; // Á¦Ç°À» Product[] item¿¡ ÀúÀåÇÑ´Ù.
-		System.out.println(p + "À»/¸¦ ±¸ÀÔÇÏ¼Ì½À´Ï´Ù.");
+		money -= p.price; // ê°€ì§„ ëˆì—ì„œ êµ¬ì…í•œ ì œí’ˆì˜ ê°€ê²©ì„ ëº€ë‹¤.
+		bonusPoint += p.bonusPoint; // ì œí’ˆì˜ ë³´ë„ˆìŠ¤ ì ìˆ˜ë¥¼ ì¶”ê°€í•œë‹¤.
+		item[i++] = p; // ì œí’ˆì„ Product[] itemì— ì €ì¥í•œë‹¤.
+		System.out.println(p + "ì„/ë¥¼ êµ¬ì…í•˜ì…¨ìŠµë‹ˆë‹¤.");
 	}
 	
-	void summary() { // ±¸¸ÅÇÑ ¹°Ç°¿¡ ´ëÇÑ Á¤º¸¸¦ ¿ä¾àÇØ¼­ º¸¿©ÁØ´Ù.
-		int sum = 0; // ±¸ÀÔÇÑ ¹°Ç°ÀÇ °¡°İÇÕ°è
-		String  itemList = ""; // ±¸ÀÔÇÑ ¹°Ç°¸ñ·Ï
+	void summary() { // êµ¬ë§¤í•œ ë¬¼í’ˆì— ëŒ€í•œ ì •ë³´ë¥¼ ìš”ì•½í•´ì„œ ë³´ì—¬ì¤€ë‹¤.
+		int sum = 0; // êµ¬ì…í•œ ë¬¼í’ˆì˜ ê°€ê²©í•©ê³„
+		String  itemList = ""; // êµ¬ì…í•œ ë¬¼í’ˆëª©ë¡
 		
-		// ¹İº¹¹®À» ÀÌ¿ëÇØ¼­ ±¸ÀÔÇÑ ¹°Ç°ÀÇ ÃÑ °¡°İ°ú ¸ñ·ÏÀ» ¸¸µç´Ù.
+		// ë°˜ë³µë¬¸ì„ ì´ìš©í•´ì„œ êµ¬ì…í•œ ë¬¼í’ˆì˜ ì´ ê°€ê²©ê³¼ ëª©ë¡ì„ ë§Œë“ ë‹¤.
 		for(int i = 0; i < item.length; i++) {
 			if(item[i] == null) break;
 			sum += item[i].price;
 			itemList += item[i] + ", ";
 		}
-		System.out.println("±¸ÀÔÇÏ½Å ¹°Ç°ÀÇ ÃÑ±İ¾×Àº " + sum + "¸¸¿øÀÔ´Ï´Ù.");
-		System.out.println("±¸ÀÔÇÏ½Å Á¦Ç°Àº " + itemList + "ÀÔ´Ï´Ù.");
+		System.out.println("êµ¬ì…í•˜ì‹  ë¬¼í’ˆì˜ ì´ê¸ˆì•¡ì€ " + sum + "ë§Œì›ì…ë‹ˆë‹¤.");
+		System.out.println("êµ¬ì…í•˜ì‹  ì œí’ˆì€ " + itemList + "ì…ë‹ˆë‹¤.");
 	}
 }
 

@@ -2,23 +2,23 @@ package study;
 
 public class Ex01_CardCheck01 {
 	public static void main(String[] args) {
-		Deck d = new Deck(); // Ä«µå ÇÑ ¹ú (Deck)À» ¸¸µç´Ù.
-		Card c = d.pick(0); // ¼¯±â Àü¿¡ Á¦ÀÏ À§ÀÇ Ä«µå¸¦ »Ì´Â´Ù.
-							// Card Å¬·¡½ºÀÇ pick ¸Ş¼­µå --> ÁöÁ¤µÈ À§Ä¡ÀÇ Ä«µå ÇÑ ÀåÀ» »Ì¾Æ¼­ ¹İÈ¯
-		System.out.println(c); // System.out.println(c.toString()); °ú °°´Ù.
+		Deck d = new Deck(); // ì¹´ë“œ í•œ ë²Œ (Deck)ì„ ë§Œë“ ë‹¤.
+		Card c = d.pick(0); // ì„ê¸° ì „ì— ì œì¼ ìœ„ì˜ ì¹´ë“œë¥¼ ë½‘ëŠ”ë‹¤.
+							// Card í´ë˜ìŠ¤ì˜ pick ë©”ì„œë“œ --> ì§€ì •ëœ ìœ„ì¹˜ì˜ ì¹´ë“œ í•œ ì¥ì„ ë½‘ì•„ì„œ ë°˜í™˜
+		System.out.println(c); // System.out.println(c.toString()); ê³¼ ê°™ë‹¤.
 		
-	//	d.shuffle(); // Ä«µå¸¦ ¼¯´Â´Ù.
-		c = d.pick(); // ¼¯Àº ÈÄ¿¡ Á¦ÀÏ À§ÀÇ Ä«µå¸¦ »Ì´Â´Ù.
+	//	d.shuffle(); // ì¹´ë“œë¥¼ ì„ëŠ”ë‹¤.
+		c = d.pick(); // ì„ì€ í›„ì— ì œì¼ ìœ„ì˜ ì¹´ë“œë¥¼ ë½‘ëŠ”ë‹¤.
 		System.out.println(c);
 	}
 }
 
-// Deck Å¬·¡½º --> Ä«µå ÇÑ ¹ú (one deck) ÀÇ¹Ì
+// Deck í´ë˜ìŠ¤ --> ì¹´ë“œ í•œ ë²Œ (one deck) ì˜ë¯¸
 class Deck {
-	final int CARD_NUM = 52; // Ä«µåÀÇ °³¼ö
-	Card cardArr[] = new Card[CARD_NUM]; // Card°´Ã¼ ¹è¿­À» Æ÷ÇÔ --> Æ÷ÇÔ °ü°è!!!
+	final int CARD_NUM = 52; // ì¹´ë“œì˜ ê°œìˆ˜
+	Card cardArr[] = new Card[CARD_NUM]; // Cardê°ì²´ ë°°ì—´ì„ í¬í•¨ --> í¬í•¨ ê´€ê³„!!!
 	
-	Deck () { // DeckÀÇ Ä«µå¸¦ ÃÊ±âÈ­ÇÑ´Ù.
+	Deck () { // Deckì˜ ì¹´ë“œë¥¼ ì´ˆê¸°í™”í•œë‹¤.
 		int i = 0;
 		
 		for (int k = Card.KIND_MAX; k > 0; k--) { // KIND_MAX = 4
@@ -28,17 +28,17 @@ class Deck {
 		}
 	}
 	
-	// ¿©±â¼­ "Card"´Â pick ¸Ş¼­µåÀÇ ¸®ÅÏÅ¸ÀÔÀ» ÀÇ¹Ì --> ¸®ÅÏÅ¸ÀÔÀÌ Å¬·¡½º¸íÀÌ¸é ¹İÈ¯°ªÀº ÂüÁ¶Çü Å¸ÀÔ¿ë ÁÖ¼Ò°ªÀÌ¶ó´Â ÀÇ¹Ì
-	Card pick(int index) { // ÁöÁ¤µÈ À§Ä¡(index)¿¡ ÀÖ´Â Ä«µå ÇÏ³ª¸¦ ²¨³»¼­ ¹İÈ¯
+	// ì—¬ê¸°ì„œ "Card"ëŠ” pick ë©”ì„œë“œì˜ ë¦¬í„´íƒ€ì…ì„ ì˜ë¯¸ --> ë¦¬í„´íƒ€ì…ì´ í´ë˜ìŠ¤ëª…ì´ë©´ ë°˜í™˜ê°’ì€ ì°¸ì¡°í˜• íƒ€ì…ìš© ì£¼ì†Œê°’ì´ë¼ëŠ” ì˜ë¯¸
+	Card pick(int index) { // ì§€ì •ëœ ìœ„ì¹˜(index)ì— ìˆëŠ” ì¹´ë“œ í•˜ë‚˜ë¥¼ êº¼ë‚´ì„œ ë°˜í™˜
 		return cardArr[index];
 	}
 	
-	Card pick() { // Deck¿¡¼­ Ä«µå ÇÏ³ª¸¦ ¼±ÅÃÇÑ´Ù.
+	Card pick() { // Deckì—ì„œ ì¹´ë“œ í•˜ë‚˜ë¥¼ ì„ íƒí•œë‹¤.
 		int index = (int)(Math.random() * CARD_NUM);
 		return pick(index);
 	}
 	
-	void shuffle() { // Ä«µåÀÇ ¼ø¼­¸¦ ¼¯´Â´Ù.
+	void shuffle() { // ì¹´ë“œì˜ ìˆœì„œë¥¼ ì„ëŠ”ë‹¤.
 		for(int i = 0; i < cardArr.length; i++) {
 			int r = (int)(Math.random() * CARD_NUM);
 			
@@ -47,12 +47,12 @@ class Deck {
 			cardArr[r] = temp;
 		}
 	}
-} // Deck Å¬·¡½ºÀÇ ³¡
+} // Deck í´ë˜ìŠ¤ì˜ ë
 
-// Card Å¬·¡½º
+// Card í´ë˜ìŠ¤
 class Card {
-	static final int KIND_MAX = 4; // Ä«µå ¹«´ÌÀÇ ¼ö
-	static final int NUM_MAX = 13; // ¹«´Ìº° Ä«µå ¼ö
+	static final int KIND_MAX = 4; // ì¹´ë“œ ë¬´ëŠ¬ì˜ ìˆ˜
+	static final int NUM_MAX = 13; // ë¬´ëŠ¬ë³„ ì¹´ë“œ ìˆ˜
 	
 	static final int SPADE = 4;
 	static final int DIAMOND = 4;
@@ -76,5 +76,5 @@ class Card {
 		String numbers = "A123456789JQK";
 		
 		return "kind : " + kinds[this.kind] + ", number : " + numbers.charAt(this.number);
-	} // toString()ÀÇ ³¡
-} // Card Å¬·¡½ºÀÇ ³¡
+	} // toString()ì˜ ë
+} // Card í´ë˜ìŠ¤ì˜ ë

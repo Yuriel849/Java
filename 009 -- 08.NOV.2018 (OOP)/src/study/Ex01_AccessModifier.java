@@ -1,19 +1,19 @@
 package study;
 
 class Time {
-	// Å¬·¡½º ¿µ¿ª¿¡´Â ¼Ó¼º°ú ±â´É¸¸ ÀÛ¼ºÇÒ ¼ö ÀÖ´Ù --> ¹®Àå(ex) println)Àº ¸Ş¼­µå ¿µ¿ª¿¡¼­ ÀÛ¼ºÇØ¾ß ÇÑ´Ù
+	// í´ë˜ìŠ¤ ì˜ì—­ì—ëŠ” ì†ì„±ê³¼ ê¸°ëŠ¥ë§Œ ì‘ì„±í•  ìˆ˜ ìˆë‹¤ --> ë¬¸ì¥(ex) println)ì€ ë©”ì„œë“œ ì˜ì—­ì—ì„œ ì‘ì„±í•´ì•¼ í•œë‹¤
 	
 	private int hour;
 	private int minute;
 	private int second;
 	
-	// private Time() { } --> »ı¼ºÀÚ¸¦ privateÀ¸·Î ¸¸µé¸é ¿ÜºÎ¿¡¼­ »ı¼ºÀÚ »ç¿ë ºÒ°¡´É --> °´Ã¼ »ı¼º ºÒ°¡´É
+	// private Time() { } --> ìƒì„±ìë¥¼ privateìœ¼ë¡œ ë§Œë“¤ë©´ ì™¸ë¶€ì—ì„œ ìƒì„±ì ì‚¬ìš© ë¶ˆê°€ëŠ¥ --> ê°ì²´ ìƒì„± ë¶ˆê°€ëŠ¥
 	
-	int getHour() { // Á¢±ÙÁ¦¾îÀÚ°¡ default
+	int getHour() { // ì ‘ê·¼ì œì–´ìê°€ default
 		return hour;
 	}
 	
-	// ¸Å°³º¯¼öÀÇ °ªÀ¸·Î hour º¯¼öÀÇ °ªÀ» ¹Ù²Û´Ù
+	// ë§¤ê°œë³€ìˆ˜ì˜ ê°’ìœ¼ë¡œ hour ë³€ìˆ˜ì˜ ê°’ì„ ë°”ê¾¼ë‹¤
 	void setHour(int hour) {
 		if (hour < 0 || hour > 23) return;
 		this.hour = hour;
@@ -24,15 +24,14 @@ public class Ex01_AccessModifier {
 	public static void main(String[] args) {
 		Time t = new Time();
 		// t.hour = 10;
-			/* hour º¯¼ö¸¦ privateÀ¸·Î ¹Ù²Ù¸é "not visible" ¿¡·¯³­´Ù
-			 * 	>> not visible --> º¸ÀÌÁö ¾Ê´Â´Ù --> privateÀÌ±â ¶§¹®¿¡ "Á¸ÀçÇÏÁö¸¸ ¹Û¿¡¼­ ¾Èº¸ÀÎ´Ù" ÀÇ¹Ì
-			 * º¯¼öÀÇ Æ¯Â¡ --> scope & visibility
-			 * 	>> scope --> º¯¼ö°¡ ¾îµğ ÄÚµåºÎÅÍ ¾îµğ ÄÚµå±îÁö »ì¾Æ ÀÖ´Â°¡?
-			 * 	>> visibility --> »ì¾Æ ÀÖ´Âµ¥ º¸ÀÌ´Â°¡? ¿©±â¼­ ±×°ÍÀ» »ç¿ëÇÒ ¼ö ÀÖ´Â°¡?
+			/* hour ë³€ìˆ˜ë¥¼ privateìœ¼ë¡œ ë°”ê¾¸ë©´ "not visible" ì—ëŸ¬ë‚œë‹¤
+			 * 	>> not visible --> ë³´ì´ì§€ ì•ŠëŠ”ë‹¤ --> privateì´ê¸° ë•Œë¬¸ì— "ì¡´ì¬í•˜ì§€ë§Œ ë°–ì—ì„œ ì•ˆë³´ì¸ë‹¤" ì˜ë¯¸
+			 * ë³€ìˆ˜ì˜ íŠ¹ì§• --> scope & visibility
+			 * 	>> scope --> ë³€ìˆ˜ê°€ ì–´ë”” ì½”ë“œë¶€í„° ì–´ë”” ì½”ë“œê¹Œì§€ ì‚´ì•„ ìˆëŠ”ê°€?
+			 * 	>> visibility --> ì‚´ì•„ ìˆëŠ”ë° ë³´ì´ëŠ”ê°€? ì—¬ê¸°ì„œ ê·¸ê²ƒì„ ì‚¬ìš©í•  ìˆ˜ ìˆëŠ”ê°€?
 			 */
 		System.out.println(t.getHour());
 		t.setHour(10);
 		System.out.println(t.getHour());
 	}
-
 }

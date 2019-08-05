@@ -1,18 +1,18 @@
 package study;
 
 interface Parseable {
-	// ±¸¹® ºĞ¼®ÀÛ¾÷À» ¼öÇàÇÑ´Ù.
+	// êµ¬ë¬¸ ë¶„ì„ì‘ì—…ì„ ìˆ˜í–‰í•œë‹¤.
 	public abstract void parse(String fileName);
 }
 
 class ParserManager {
-	// ¸®ÅÏÅ¸ÀÔÀÌ Parseable ÀÎÅÍÆäÀÌ½º´Ù.
+	// ë¦¬í„´íƒ€ì…ì´ Parseable ì¸í„°í˜ì´ìŠ¤ë‹¤.
 	public static Parseable getParser(String type) {
 		if(type.equals("XML")) {
 			return new XMLParser();
 		} else {
 			return new HTMLParser();
-			/* ¾Æ·¡ ÄÚµåÀÇ ¾ĞÃà¹öÀü
+			/* ì•„ë˜ ì½”ë“œì˜ ì••ì¶•ë²„ì „
 			 * 	>> Parseable p = new HTMLParser();
 			 * 	>> return p;
 			 */
@@ -22,22 +22,22 @@ class ParserManager {
 
 class XMLParser implements Parseable {
 	public void parse(String fileName) {
-		/* ±¸ºĞ ºĞ¼®ÀÛ¾÷À» ¼öÇàÇÏ´Â ÄÚµå¸¦ Àû´Â´Ù. */
+		/* êµ¬ë¶„ ë¶„ì„ì‘ì—…ì„ ìˆ˜í–‰í•˜ëŠ” ì½”ë“œë¥¼ ì ëŠ”ë‹¤. */
 		System.out.println(fileName + " - XML parsing completed.");
 	}
 }
 
 class HTMLParser implements Parseable {
 	public void parse(String fileName) {
-		/* ±¸ºĞ ºĞ¼®ÀÛ¾÷À» ¼öÇàÇÏ´Â ÄÚµå¸¦ Àû´Â´Ù. */
+		/* êµ¬ë¶„ ë¶„ì„ì‘ì—…ì„ ìˆ˜í–‰í•˜ëŠ” ì½”ë“œë¥¼ ì ëŠ”ë‹¤. */
 		System.out.println(fileName + " - HTML parsing completed.");
 	}
 }
 
 class Ex04_ParserTest {
 	public static void main(String[] args) {
-		Parseable parser = ParserManager.getParser("XML"); // parser ÂüÁ¶º¯¼ö´Â XMLParser °´Ã¼¸¦ ÂüÁ¶ÇÏ°Ô µÈ´Ù
-		parser.parse("document.xml"); // XMLParser.parse("document.xml")¿Í µ¿ÀÏÇÏ´Ù
+		Parseable parser = ParserManager.getParser("XML"); // parser ì°¸ì¡°ë³€ìˆ˜ëŠ” XMLParser ê°ì²´ë¥¼ ì°¸ì¡°í•˜ê²Œ ëœë‹¤
+		parser.parse("document.xml"); // XMLParser.parse("document.xml")ì™€ ë™ì¼í•˜ë‹¤
 		parser = ParserManager.getParser("HTML");
 		parser.parse("document.html");
 	}

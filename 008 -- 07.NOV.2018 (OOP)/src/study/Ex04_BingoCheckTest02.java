@@ -9,10 +9,10 @@ import org.junit.jupiter.api.Test;
 //Project "007 -- 06.NOV.2018 (OOP)" >> package "study" >> file "OOP_BingoCheckTest"
 
 class Ex04_BingoCheckTest02 {
-	/* 2Â÷¿ø ¹è¿­À» ¹Ş¾Æ¼­ bingoÀÇ °³¼ö¸¦ ¼¼¼­ ¹İÈ¯
-	 * ¸Ş¼­µå ÀÌ¸§ : bingoCheck
-	 * ¸Å°³º¯¼ö(ÀÔ·Â) : 2Â÷¿ø int ¹è¿­
-	 * ¹İÈ¯°ª : bingoÀÇ °³¼ö
+	/* 2ì°¨ì› ë°°ì—´ì„ ë°›ì•„ì„œ bingoì˜ ê°œìˆ˜ë¥¼ ì„¸ì„œ ë°˜í™˜
+	 * ë©”ì„œë“œ ì´ë¦„ : bingoCheck
+	 * ë§¤ê°œë³€ìˆ˜(ì…ë ¥) : 2ì°¨ì› int ë°°ì—´
+	 * ë°˜í™˜ê°’ : bingoì˜ ê°œìˆ˜
 	 */
 
 	int bingoCheck(int[][] arr) {
@@ -20,7 +20,7 @@ class Ex04_BingoCheckTest02 {
 		
 		int num = 0;
 		
-		// 1st --> Çà, ¿­, ´ë°¢¼± 2°³¸¦ µû·Î µû·Î È®ÀÎÇÏ´Â ÄÚµå ÀÛ¼º
+		// 1st --> í–‰, ì—´, ëŒ€ê°ì„  2ê°œë¥¼ ë”°ë¡œ ë”°ë¡œ í™•ì¸í•˜ëŠ” ì½”ë“œ ì‘ì„±
 //		// check left-top --> right-bottom bingo
 //		for(int i = 0; i < 5; i++) {
 //			if(bingo[i][i] != 0) { check1++; } 
@@ -47,8 +47,8 @@ class Ex04_BingoCheckTest02 {
 //			}
 //		}
 		
-		// 2nd --> º°°³ ÄÚµå ÀÛ¼º ÈÄ ÇÕÄ¡±â
-		// ¹æ¹ı 01 >>
+		// 2nd --> ë³„ê°œ ì½”ë“œ ì‘ì„± í›„ í•©ì¹˜ê¸°
+		// ë°©ë²• 01 >>
 //		for(int i = 0; i < 5; i++) {
 //			if(bingo[i][0] == 1 && bingo[i][1] == 1 && bingo[i][2] == 1 && bingo[i][3] == 1 && bingo[i][4] == 1) {
 //				num++;
@@ -64,7 +64,7 @@ class Ex04_BingoCheckTest02 {
 //			num++;
 //		}
 
-		// ¹æ¹ı 02 >>
+		// ë°©ë²• 02 >>
 //		int check1 = 0, check2 = 0;
 //		for(int i = 0; i < 5; i++) {
 //			for(int j = 0; j < 5; j++) {
@@ -81,7 +81,7 @@ class Ex04_BingoCheckTest02 {
 //		if (check1 == 5) { num++; }
 //		if (check2 == 5) { num++; }
 		
-		// ¹æ¹ı 03 >> ¹æ¹ı 02ÀÇ °³·®Çü
+		// ë°©ë²• 03 >> ë°©ë²• 02ì˜ ê°œëŸ‰í˜•
 //		for(int i = 0, k = 0; i < 5; i++) {
 //			for(int j = 0; j < 5; j++) {
 //				if (bingo[i][j] == 0) { break; }
@@ -113,7 +113,7 @@ class Ex04_BingoCheckTest02 {
 		int row, col, leftD, rightD;
 		row = col = leftD = rightD = 0;
 		
-		// ¹æ¹ı 04 >> ¹æ¹ı 03Àº ¹İº¹¹®ÀÌ ³Ê¹« ¸¹¾Æ¼­ ¼ö¸¦ ÁÙÀÌ°í ÀüÃ¼ÀûÀ¸·Î °³·®	
+		// ë°©ë²• 04 >> ë°©ë²• 03ì€ ë°˜ë³µë¬¸ì´ ë„ˆë¬´ ë§ì•„ì„œ ìˆ˜ë¥¼ ì¤„ì´ê³  ì „ì²´ì ìœ¼ë¡œ ê°œëŸ‰	
 		for(int i = 0; i < 5; i++, row = 0, col = 0) {
 			for(int j = 0; j < 5; j++) {
 				if (bingo[i][j] == 1) {
@@ -189,5 +189,4 @@ class Ex04_BingoCheckTest02 {
 		
 		assertTrue(bingoCheck(arr) == 1);
 	}
-
 }

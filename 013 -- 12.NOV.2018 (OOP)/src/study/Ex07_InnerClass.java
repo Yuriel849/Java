@@ -2,16 +2,16 @@ package study;
 
 class Ex07_InnerClass {
 	public static void main(String[] args) {
-		Outer o = new Outer(); // Outer Å¬·¡½ºÀÇ °´Ã¼ »ı¼º
-		System.out.println("o.iv = " + o.iv); // '100' Ãâ·Â --> Outer Å¬·¡½ºÀÇ ÀÎ½ºÅÏ½ºº¯¼ö iv
+		Outer o = new Outer(); // Outer í´ë˜ìŠ¤ì˜ ê°ì²´ ìƒì„±
+		System.out.println("o.iv = " + o.iv); // '100' ì¶œë ¥ --> Outer í´ë˜ìŠ¤ì˜ ì¸ìŠ¤í„´ìŠ¤ë³€ìˆ˜ iv
 
-		// Inner ³»ºÎÅ¬·¡½º¸¦ »ç¿ëÇÏ·Á¸é Outer Å¬·¡½ºÀÇ °´Ã¼¸¦ ¸ÕÀú »ı¼ºÇØ¾ß ÇÑ´Ù.
-//		Outer.Inner i = o.new Inner(); // Inner¶ó°í¸¸ ÇÏ¸é ³»ºÎ Å¬·¡½º¸¦ Ã£Áö ¸øÇÑ´Ù.
-//									   // ³»ºÎÅ¬·¡½º´Â ¿ÜºÎÅ¬·¡½º ³»ºÎ¿¡¼­¸¸ »ç¿ëÇÏ±â À§ÇÑ °ÍÀÌ±â¿¡ »ç¿ëÇÏ±â°¡ ºÒÆíÇÏ´Ù.
-//		System.out.println("i.iv = " + i.iv); // '200' Ãâ·Â
+		// Inner ë‚´ë¶€í´ë˜ìŠ¤ë¥¼ ì‚¬ìš©í•˜ë ¤ë©´ Outer í´ë˜ìŠ¤ì˜ ê°ì²´ë¥¼ ë¨¼ì € ìƒì„±í•´ì•¼ í•œë‹¤.
+//		Outer.Inner i = o.new Inner(); // Innerë¼ê³ ë§Œ í•˜ë©´ ë‚´ë¶€ í´ë˜ìŠ¤ë¥¼ ì°¾ì§€ ëª»í•œë‹¤.
+//									   // ë‚´ë¶€í´ë˜ìŠ¤ëŠ” ì™¸ë¶€í´ë˜ìŠ¤ ë‚´ë¶€ì—ì„œë§Œ ì‚¬ìš©í•˜ê¸° ìœ„í•œ ê²ƒì´ê¸°ì— ì‚¬ìš©í•˜ê¸°ê°€ ë¶ˆí¸í•˜ë‹¤.
+//		System.out.println("i.iv = " + i.iv); // '200' ì¶œë ¥
 
-		Outer.StaticInner i = new Outer.StaticInner(); // Inner Å¬·¡½º°¡ staticÀÌ±â¿¡ Outer °´Ã¼ »ı¼º ¾øÀÌ Á¢±Ù °¡´ÉÇÏ´Ù.
-		System.out.println("Outer.StaticInner.cv = " + Outer.StaticInner.cv); // '500' Ãâ·Â
+		Outer.StaticInner i = new Outer.StaticInner(); // Inner í´ë˜ìŠ¤ê°€ staticì´ê¸°ì— Outer ê°ì²´ ìƒì„± ì—†ì´ ì ‘ê·¼ ê°€ëŠ¥í•˜ë‹¤.
+		System.out.println("Outer.StaticInner.cv = " + Outer.StaticInner.cv); // '500' ì¶œë ¥
 		System.out.println();
 	}
 }
@@ -19,13 +19,13 @@ class Ex07_InnerClass {
 class Outer {
 	int iv = 100;
 
-	// Outer °´Ã¼¸¦ ¸ÕÀú »ı¼ºÇØ¾ß InstanceInner °´Ã¼¸¦ »ı¼º °¡´É
+	// Outer ê°ì²´ë¥¼ ë¨¼ì € ìƒì„±í•´ì•¼ InstanceInner ê°ì²´ë¥¼ ìƒì„± ê°€ëŠ¥
 	class InstanceInner {
 		int iv = 200;
-//		static int cv = 300; // ¿¡·¯! --> Å¬·¡½º°¡ staticÀÌ ¾Æ´Ñµ¥ (Outer °´Ã¼¸¦ ¸¸µéÁö ¾Ê°í´Â »ç¿ëÇÒ ¼ö ¾ø´Âµ¥), ¾î¶»°Ô ³»ºÎ¿¡ static¸â¹ö°¡ ÀÖ³ª?
+//		static int cv = 300; // ì—ëŸ¬! --> í´ë˜ìŠ¤ê°€ staticì´ ì•„ë‹Œë° (Outer ê°ì²´ë¥¼ ë§Œë“¤ì§€ ì•Šê³ ëŠ” ì‚¬ìš©í•  ìˆ˜ ì—†ëŠ”ë°), ì–´ë–»ê²Œ ë‚´ë¶€ì— staticë©¤ë²„ê°€ ìˆë‚˜?
 	}
 		
-	// Outer °´Ã¼ »ı¼º ¾øÀÌ StaticInner °´Ã¼¸¦ »ı¼º °¡´ÉÇÏ´Ù.
+	// Outer ê°ì²´ ìƒì„± ì—†ì´ StaticInner ê°ì²´ë¥¼ ìƒì„± ê°€ëŠ¥í•˜ë‹¤.
 	static class StaticInner {
 		int iv = 400;
 		static int cv = 500;

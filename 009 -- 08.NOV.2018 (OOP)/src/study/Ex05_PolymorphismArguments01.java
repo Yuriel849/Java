@@ -12,11 +12,11 @@ class Product {
 
 class Tv extends Product {
 	Tv() { 
-		// Á¶»óÅ¬·¡½ºÀÇ »ı¼ºÀÚ Product(int price)¸¦ È£ÃâÇÏ°í TvÀÇ °¡°İÀº 100¸¸¿øÀ¸·Î ¼³Á¤ÇÑ´Ù.
+		// ì¡°ìƒí´ë˜ìŠ¤ì˜ ìƒì„±ì Product(int price)ë¥¼ í˜¸ì¶œí•˜ê³  Tvì˜ ê°€ê²©ì€ 100ë§Œì›ìœ¼ë¡œ ì„¤ì •í•œë‹¤.
 		super(100);
 	}
 	
-	public String toString() { // Object Å¬·¡½ºÀÇ toString()À» ¿À¹ö¶óÀÌµùÇÑ´Ù.
+	public String toString() { // Object í´ë˜ìŠ¤ì˜ toString()ì„ ì˜¤ë²„ë¼ì´ë”©í•œë‹¤.
 		return "Tv";
 	}
 }
@@ -31,19 +31,19 @@ class Computer extends Product {
 	}
 }
 
-class Buyer { // °í°´, ¹°°ÇÀ» »ç´Â »ç¶÷
-	int money = 1000; // ¼ÒÀ¯±İ¾×
-	int bonusPoint = 0; // º¸³Ê½º Á¡¼ö
+class Buyer { // ê³ ê°, ë¬¼ê±´ì„ ì‚¬ëŠ” ì‚¬ëŒ
+	int money = 1000; // ì†Œìœ ê¸ˆì•¡
+	int bonusPoint = 0; // ë³´ë„ˆìŠ¤ ì ìˆ˜
 	
 	void buy(Product p) {
 		if(money < p.price) {
-			System.out.println("ÀÜ¾×ÀÌ ºÎÁ·ÇÏ¿© ¹°°ÇÀ» »ì ¼ö ¾ø½À´Ï´Ù.");
+			System.out.println("ì”ì•¡ì´ ë¶€ì¡±í•˜ì—¬ ë¬¼ê±´ì„ ì‚´ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			return;
 		}
 		
-		money -= p.price; // °¡Áø µ·¿¡¼­ ±¸ÀÔÇÑ Á¦Ç°ÀÇ °¡°İÀ» »«´Ù.
-		bonusPoint += p.bonusPoint; // Á¦Ç°ÀÇ º¸³Ê½º Á¡¼ö¸¦ Ãß°¡ÇÑ´Ù.
-		System.out.println(p + "À»/¸¦ ±¸ÀÔÇÏ¼Ì½À´Ï´Ù.");
+		money -= p.price; // ê°€ì§„ ëˆì—ì„œ êµ¬ì…í•œ ì œí’ˆì˜ ê°€ê²©ì„ ëº€ë‹¤.
+		bonusPoint += p.bonusPoint; // ì œí’ˆì˜ ë³´ë„ˆìŠ¤ ì ìˆ˜ë¥¼ ì¶”ê°€í•œë‹¤.
+		System.out.println(p + "ì„/ë¥¼ êµ¬ì…í•˜ì…¨ìŠµë‹ˆë‹¤.");
 	}
 }
 
@@ -54,7 +54,7 @@ public class Ex05_PolymorphismArguments01 {
 		b.buy(new Tv());
 		b.buy(new Computer());
 		
-		System.out.println("ÇöÀç ³²Àº µ·Àº " + b.money + "¸¸¿øÀÔ´Ï´Ù.");
-		System.out.println("ÇöÀç º¸³Ê½ºÁ¡¼ö´Â " + b.bonusPoint + "Á¡ÀÔ´Ï´Ù.");
+		System.out.println("í˜„ì¬ ë‚¨ì€ ëˆì€ " + b.money + "ë§Œì›ì…ë‹ˆë‹¤.");
+		System.out.println("í˜„ì¬ ë³´ë„ˆìŠ¤ì ìˆ˜ëŠ” " + b.bonusPoint + "ì ì…ë‹ˆë‹¤.");
 	}
 }

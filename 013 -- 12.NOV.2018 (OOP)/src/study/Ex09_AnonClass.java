@@ -4,7 +4,7 @@ import java.awt.Button;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-// ¾Æ¹«°Íµµ Ãâ·ÂµÇÁö ¾Ê´Â °ÍÀÌ Á¤»ó!
+// ì•„ë¬´ê²ƒë„ ì¶œë ¥ë˜ì§€ ì•ŠëŠ” ê²ƒì´ ì •ìƒ!
 class Ex09_AnonClass {
 	public static void main(String[] args) {
 		Button b = new Button("Start");

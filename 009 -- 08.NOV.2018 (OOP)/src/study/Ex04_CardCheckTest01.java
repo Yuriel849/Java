@@ -31,7 +31,7 @@ class Ex04_CardCheckTest01 {
 //		String result = "";
 //		int[] counter = new int[13];
 
-		// ¹æ¹ý 01
+		// ë°©ë²• 01
 //		int cnt = 0;
 //		int pairCnt = 0;
 //
@@ -66,7 +66,7 @@ class Ex04_CardCheckTest01 {
 //			 	{ result = "1 PAIR"; }
 //		}
 		
-		// ¹æ¹ý 02 --> ¹æ¹ý01À» ÇÏ³ª·Î ÇÕÄ£ °á°ú
+		// ë°©ë²• 02 --> ë°©ë²•01ì„ í•˜ë‚˜ë¡œ í•©ì¹œ ê²°ê³¼
 //		for(int i = 0; i < input.length; i++) {
 //			counter[input[i].num]++;
 //			if (i != 0 && (input[i].num == input[i-1].num + 1))
@@ -101,7 +101,7 @@ class Ex04_CardCheckTest01 {
 //			return result;
 //			}
 		
-		// ¹æ¹ý 03
+		// ë°©ë²• 03
 		Card[] input = cArr;
 		
 		int cntS = 0;
@@ -122,7 +122,7 @@ class Ex04_CardCheckTest01 {
 					break; }
 				cnt++;
 			}
-		} // for¹® Á¾·á
+		} // forë¬¸ ì¢…ë£Œ
 		
 		if (cntS == 4 && cntF == 4) { result = "STRAIGHTFLUSH"; }
 		else if (cntF == 4) { result = "FLUSH"; }
@@ -140,7 +140,7 @@ class Ex04_CardCheckTest01 {
 		}
 	}
 
-	// 5°³ÀÇ ¼ýÀÚ°¡ ¿¬¼ÓÀÌ¸é "STRAIGHT"
+	// 5ê°œì˜ ìˆ«ìžê°€ ì—°ì†ì´ë©´ "STRAIGHT"
 	@Test
 	void test() {
 		Card[] cArr = {
@@ -150,7 +150,7 @@ class Ex04_CardCheckTest01 {
 		assertTrue(rankCheck(cArr).equals("STRAIGHT"));
 	}
 	
-	// °°Àº ¼ýÀÚÀÇ Ä«µå°¡ ÇÑ ½ÖÀÌ¸é "1 PAIR"
+	// ê°™ì€ ìˆ«ìžì˜ ì¹´ë“œê°€ í•œ ìŒì´ë©´ "1 PAIR"
 	@Test
 	void test2() {
 		Card[] cArr = {
@@ -160,7 +160,7 @@ class Ex04_CardCheckTest01 {
 		assertTrue(rankCheck(cArr).equals("1 PAIR"));
 	}
 	
-	// °°Àº ¼ýÀÚÀÇ Ä«µå°¡ 2½ÖÀÌ¸é "2 PAIR"
+	// ê°™ì€ ìˆ«ìžì˜ ì¹´ë“œê°€ 2ìŒì´ë©´ "2 PAIR"
 	@Test
 	void test3() {
 		Card[] cArr = {
@@ -170,7 +170,7 @@ class Ex04_CardCheckTest01 {
 		assertTrue(rankCheck(cArr).equals("2 PAIR"));
 	}
 	
-	// °°Àº ¼ýÀÚÀÇ Ä«µå°¡ 3ÀåÀÌ¸é "THREE CARD"
+	// ê°™ì€ ìˆ«ìžì˜ ì¹´ë“œê°€ 3ìž¥ì´ë©´ "THREE CARD"
 	@Test
 	void test4() {
 		Card[] cArr = {
@@ -180,7 +180,7 @@ class Ex04_CardCheckTest01 {
 		assertTrue(rankCheck(cArr).equals("THREE CARD"));
 	}
 
-	// °°Àº ¼ýÀÚÀÇ Ä«µå°¡ 4ÀåÀÌ¸é "FOUR CARD"
+	// ê°™ì€ ìˆ«ìžì˜ ì¹´ë“œê°€ 4ìž¥ì´ë©´ "FOUR CARD"
 	@Test
 	void test5() {
 		Card[] cArr = {
@@ -190,7 +190,7 @@ class Ex04_CardCheckTest01 {
 		assertTrue(rankCheck(cArr).equals("FOUR CARD"));
 	}
 	
-	// ¸ðµç Ä«µåÀÇ ¹«´Ì°¡ °°À¸¸é "FLUSH"
+	// ëª¨ë“  ì¹´ë“œì˜ ë¬´ëŠ¬ê°€ ê°™ìœ¼ë©´ "FLUSH"
 	@Test
 	void test6() {
 		Card[] cArr = {
@@ -200,7 +200,7 @@ class Ex04_CardCheckTest01 {
 		assertTrue(rankCheck(cArr).equals("FLUSH"));
 	}
 	
-	// ¸ðµç Ä«µåÀÇ ¹«´Ìµµ °°°í 5°³ÀÇ ¼ýÀÚµµ ¿¬¼ÓµÇ¸é "STRAIGHTFLUSH"
+	// ëª¨ë“  ì¹´ë“œì˜ ë¬´ëŠ¬ë„ ê°™ê³  5ê°œì˜ ìˆ«ìžë„ ì—°ì†ë˜ë©´ "STRAIGHTFLUSH"
 	@Test
 	void test7() {
 		Card[] cArr = {

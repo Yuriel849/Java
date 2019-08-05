@@ -10,11 +10,11 @@ class Ex05_RepairableTest {
 		scv.repair(tank);
 		scv.repair(dropship);
 		scv.repair(scv);
-//		scv.repair(marine); --> ¿¡·¯! --> repair(Repairable) in SCV cannot be applied to class Marine
+//		scv.repair(marine); --> ì—ëŸ¬! --> repair(Repairable) in SCV cannot be applied to class Marine
 	}
 }
 
-interface Repairable {} // ³»¿ë ¾ø´Â ÀÎÅÍÆäÀÌ½º ÀÛ¼º
+interface Repairable {} // ë‚´ìš© ì—†ëŠ” ì¸í„°í˜ì´ìŠ¤ ì‘ì„±
 
 class Unit {
 	int hitPoint;
@@ -24,12 +24,12 @@ class Unit {
 		MAX_HP = hp;
 	}
 	
-	// ±âÅ¸µîµî......
+	// ê¸°íƒ€ë“±ë“±......
 }
 
 class GroundUnit extends Unit {
-	GroundUnit(int hp) { // GroundUnit Å¬·¡½ºÀÇ »ı¼ºÀÚ
-		super(hp); // GroundUnitÀÇ parentÀÎ Unit Å¬·¡½ºÀÇ »ı¼ºÀÚ È£Ãâ
+	GroundUnit(int hp) { // GroundUnit í´ë˜ìŠ¤ì˜ ìƒì„±ì
+		super(hp); // GroundUnitì˜ parentì¸ Unit í´ë˜ìŠ¤ì˜ ìƒì„±ì í˜¸ì¶œ
 	}
 }
 
@@ -43,11 +43,11 @@ class Tank extends GroundUnit implements Repairable {
 	Tank() {
 		super(150);
 		hitPoint = MAX_HP;
-		/* Tank »ı¼ºÀÚ¿¡¼­ GroundUnit »ı¼ºÀÚ È£Ãâ
-		 *	--> GroundUnit »ı¼ºÀÚ¿¡¼­ Unit »ı¼ºÀÚ È£Ãâ
-		 * 	--> Unit¿¡¼­ TankÀÇ °íÀ¯ MAX_HP ¼³Á¤
-		 * 	--> MAX_HP¸¦ hitPoint¿¡ ´ëÀÔ
-		 * 		(Ã¼·ÂÀÇ ÇÑ°è(MAX_HP)´Â Á¸ÀçÇÏµÇ Ã¼·ÂÀ» ÀÒ°í Ã¤¿ï ¶§ »ç¿ëÇÏ±â À§ÇÑ hitPoint)
+		/* Tank ìƒì„±ìì—ì„œ GroundUnit ìƒì„±ì í˜¸ì¶œ
+		 *	--> GroundUnit ìƒì„±ìì—ì„œ Unit ìƒì„±ì í˜¸ì¶œ
+		 * 	--> Unitì—ì„œ Tankì˜ ê³ ìœ  MAX_HP ì„¤ì •
+		 * 	--> MAX_HPë¥¼ hitPointì— ëŒ€ì…
+		 * 		(ì²´ë ¥ì˜ í•œê³„(MAX_HP)ëŠ” ì¡´ì¬í•˜ë˜ ì²´ë ¥ì„ ìƒê³  ì±„ìš¸ ë•Œ ì‚¬ìš©í•˜ê¸° ìœ„í•œ hitPoint)
 		 */
 	}
 	
@@ -55,7 +55,7 @@ class Tank extends GroundUnit implements Repairable {
 		return "Tank";
 	}
 	
-	// ±âÅ¸ µîµî......
+	// ê¸°íƒ€ ë“±ë“±......
 }
 
 class Dropship extends AirUnit implements Repairable {
@@ -68,7 +68,7 @@ class Dropship extends AirUnit implements Repairable {
 		return "Dropship";
 	}
 	
-	// ±âÅ¸ µîµî......
+	// ê¸°íƒ€ ë“±ë“±......
 }
 
 class Marine extends GroundUnit {
@@ -81,7 +81,7 @@ class Marine extends GroundUnit {
 		return "Marine";
 	}
 	
-	// ±âÅ¸ µîµî......
+	// ê¸°íƒ€ ë“±ë“±......
 }
 
 class SCV extends GroundUnit implements Repairable {
@@ -94,10 +94,10 @@ class SCV extends GroundUnit implements Repairable {
 		if(r instanceof Unit) {
 			Unit u = (Unit) r;
 			while(u.hitPoint != u.MAX_HP) {
-				/* UnitÀÇ HP¸¦ Áõ°¡½ÃÅ²´Ù. */
+				/* Unitì˜ HPë¥¼ ì¦ê°€ì‹œí‚¨ë‹¤. */
 				u.hitPoint++;
 			}
-			System.out.println(u.toString() + "ÀÇ ¼ö¸®°¡ ³¡³µ½À´Ï´Ù.");
+			System.out.println(u.toString() + "ì˜ ìˆ˜ë¦¬ê°€ ëë‚¬ìŠµë‹ˆë‹¤.");
 		}
 	}
 	

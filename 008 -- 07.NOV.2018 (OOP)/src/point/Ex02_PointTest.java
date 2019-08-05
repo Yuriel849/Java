@@ -4,20 +4,20 @@ public class Ex02_PointTest {
 	public static void main(String[] args) {
 		Ex01_Point p1 = new Ex01_Point(); // (x,y) == (1,1)
 		Ex01_Point p2 = new Ex01_Point(3, 5);
-		System.out.println(p1); // Q1-3 ¹®Á¦
+		System.out.println(p1); // Q1-3 ë¬¸ì œ
 		System.out.println(p2.toString());
-		/* println(°´Ã¼¸í) == println(°´Ã¼.toString())
-		 * 	>> toString Ãâ·ÂÇØµµ ¶È°°ÀÌ ³ª¿À´Â °ÍÀÌ printlnÀÇ ±â´É
-		 * 	>> printlnÀÇ signature --> println(Object o) --> ´ÙÇü¼º!!!
-		 * 		>> ÃÖ°íÀ§ parentÀÎ Object Å¸ÀÔ ÂüÁ¶º¯¼ö·Î ¹ŞÀº ÈÄ toString ÇÔ¼ö·Î ¹®ÀÚ¿­·Î ¸¸µç ÈÄ Ãâ·ÂÇÏ´Â °Í
+		/* println(ê°ì²´ëª…) == println(ê°ì²´.toString())
+		 * 	>> toString ì¶œë ¥í•´ë„ ë˜‘ê°™ì´ ë‚˜ì˜¤ëŠ” ê²ƒì´ printlnì˜ ê¸°ëŠ¥
+		 * 	>> printlnì˜ signature --> println(Object o) --> ë‹¤í˜•ì„±!!!
+		 * 		>> ìµœê³ ìœ„ parentì¸ Object íƒ€ì… ì°¸ì¡°ë³€ìˆ˜ë¡œ ë°›ì€ í›„ toString í•¨ìˆ˜ë¡œ ë¬¸ìì—´ë¡œ ë§Œë“  í›„ ì¶œë ¥í•˜ëŠ” ê²ƒ
 		 */
 		
 		double d = Ex01_Point.getDistance(p1, p2);
 		double d2 = p2.getDistance(p2);
-		System.out.println("Á¡ p1 & p2 °£ °Å¸® : " + d); // Q1-7 ¹®Á¦
-		System.out.println("Á¡ p2 & p2 °£ °Å¸® : " + d2); // Q1-6 ¹®Á¦
-		/* static ¸Ş¼­µå´Â Ç×»ó Å¬·¡½º¸íÀ¸·Î È£Ãâ (°´Ã¼¸í »ç¿ëÇÏÁö ¸» °Í)
-		 * 	>> ¿¡·¯°¡ ³ªÁö´Â ¾ÊÁö¸¸, ÁÁÁö ¾Ê´Ù
+		System.out.println("ì  p1 & p2 ê°„ ê±°ë¦¬ : " + d); // Q1-7 ë¬¸ì œ
+		System.out.println("ì  p2 & p2 ê°„ ê±°ë¦¬ : " + d2); // Q1-6 ë¬¸ì œ
+		/* static ë©”ì„œë“œëŠ” í•­ìƒ í´ë˜ìŠ¤ëª…ìœ¼ë¡œ í˜¸ì¶œ (ê°ì²´ëª… ì‚¬ìš©í•˜ì§€ ë§ ê²ƒ)
+		 * 	>> ì—ëŸ¬ê°€ ë‚˜ì§€ëŠ” ì•Šì§€ë§Œ, ì¢‹ì§€ ì•Šë‹¤
 		 */
 		
 		p1 = new Ex01_Point(1,2);
@@ -26,13 +26,12 @@ public class Ex02_PointTest {
 		
 		Ex03_Point3D p3 = new Ex03_Point3D(1,2,5);
 		Ex03_Point3D p4 = new Ex03_Point3D(1,2,5);
-		System.out.println(p3); // Q1-11 ¹®Á¦
+		System.out.println(p3); // Q1-11 ë¬¸ì œ
 		System.out.println(p3.equals(p4));
 		
 		Ex04_Point4D p5 = new Ex04_Point4D(1,2,5,8);
 		Ex04_Point4D p6 = new Ex04_Point4D(1,2,5,8);
-		System.out.println(p5); // Q1-11 ¹®Á¦
+		System.out.println(p5); // Q1-11 ë¬¸ì œ
 		System.out.println(p5.equals(p6));
 	}
-
 }

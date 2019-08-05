@@ -5,8 +5,8 @@ class Ex08_InnerClass02 {
 		Outer2 outer = new Outer2();
 		Outer2.Inner2 inner = outer.new Inner2();
 		inner.method1();
-	} // main() ³¡.
-} // InnerClass2 ³¡.
+	} // main() ë.
+} // InnerClass2 ë.
 
 class Outer2 {
 	int value = 10;
@@ -15,9 +15,9 @@ class Outer2 {
 		int value = 20;
 		void method1() {
 			int value = 30;
-			System.out.println("           value : " + value); // method1 ¸Ş¼­µåÀÇ value --> method1¿¡ value°¡ ¾øÀ¸¸é this.value¿Í °°´Ù.
-			System.out.println("      this.value : " + this.value);	// ³»ºÎ Å¬·¡½ºÀÇ value
-			System.out.println("Outer.this.value : " + Outer2.this.value); // ¿ÜºÎ Å¬·¡½ºÀÇ value
+			System.out.println("           value : " + value); // method1 ë©”ì„œë“œì˜ value --> method1ì— valueê°€ ì—†ìœ¼ë©´ this.valueì™€ ê°™ë‹¤.
+			System.out.println("      this.value : " + this.value);	// ë‚´ë¶€ í´ë˜ìŠ¤ì˜ value
+			System.out.println("Outer.this.value : " + Outer2.this.value); // ì™¸ë¶€ í´ë˜ìŠ¤ì˜ value
 		}
-	} // Inner Å¬·¡½º ³¡.
-} // Outer Å¬·¡½º ³¡.
+	} // Inner í´ë˜ìŠ¤ ë.
+} // Outer í´ë˜ìŠ¤ ë.

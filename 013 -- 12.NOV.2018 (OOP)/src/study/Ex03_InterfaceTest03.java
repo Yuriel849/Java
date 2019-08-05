@@ -9,15 +9,15 @@ class Ex03_InterfaceTest03 {
 
 class A3 {
 	void methodA() { // OR methodA(I3 i)
-		I3 i = InstanceManager.getInstance(); // A Å¬·¡½º¿¡ ¸Å°³º¯¼ö¸¦ Ç¥½ÃÇÏ´Â ´ë½Å Á¦3ÀÇ Å¬·¡½ºÀÇ º°µµ ¸Ş¼­µå¿¡°Ô ÀÏÀ» ¸Ã±ä´Ù.
+		I3 i = InstanceManager.getInstance(); // A í´ë˜ìŠ¤ì— ë§¤ê°œë³€ìˆ˜ë¥¼ í‘œì‹œí•˜ëŠ” ëŒ€ì‹  ì œ3ì˜ í´ë˜ìŠ¤ì˜ ë³„ë„ ë©”ì„œë“œì—ê²Œ ì¼ì„ ë§¡ê¸´ë‹¤.
 		i.methodB();
-		System.out.println(i.toString()); // i·Î ObjectÅ¬·¡½ºÀÇ ¸Ş¼­µå È£Ãâ °¡´É
+		System.out.println(i.toString()); // ië¡œ Objectí´ë˜ìŠ¤ì˜ ë©”ì„œë“œ í˜¸ì¶œ ê°€ëŠ¥
 	}
 }
 
 interface I3 {
-	public static int add() { return 1 + 2; } // ÀÎÅÍÆäÀÌ½º¿¡ static ¸Ş¼­µå¸¦ ³Ö¾îµµ ¹®Á¦¾ø´Ù.
-											  // ÀÌ¹Ì ±¸ÇöµÈ °ÍÀÌ±â¿¡ <ÀÎÅÍÆäÀÌ½º¸í>.<static¸Ş¼­µå¸í>·Î ¹Ù·Î »ç¿ëÇÒ ¼ö ÀÖ´Ù.  
+	public static int add() { return 1 + 2; } // ì¸í„°í˜ì´ìŠ¤ì— static ë©”ì„œë“œë¥¼ ë„£ì–´ë„ ë¬¸ì œì—†ë‹¤.
+											  // ì´ë¯¸ êµ¬í˜„ëœ ê²ƒì´ê¸°ì— <ì¸í„°í˜ì´ìŠ¤ëª…>.<staticë©”ì„œë“œëª…>ë¡œ ë°”ë¡œ ì‚¬ìš©í•  ìˆ˜ ìˆë‹¤.  
 	public abstract void methodB();
 }
 

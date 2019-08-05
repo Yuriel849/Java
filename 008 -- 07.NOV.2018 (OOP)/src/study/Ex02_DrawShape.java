@@ -2,12 +2,12 @@ package study;
 
 public class Ex02_DrawShape {
 	public static void main(String[] args) {
-		/* 15¹øÂ° ÁÙ°ú °°Àº ³»¿ë
+		/* 15ë²ˆì§¸ ì¤„ê³¼ ê°™ì€ ë‚´ìš©
 		 * Point p1 = new Point(1,1);
 		 * Point p2 = new Point(2,2);
 		 * Point p3 = new Point(3,3);
 		 * 
-		 * Point[] pArr = new Point[3]; --> °´Ã¼ ¹è¿­ --> ÂüÁ¶º¯¼ö ¹è¿­ --> ¿©·¯ ÂüÁ¶º¯¼ö¸¦ ÇÏ³ª·Î ¹­¾î³õÀº °Í
+		 * Point[] pArr = new Point[3]; --> ê°ì²´ ë°°ì—´ --> ì°¸ì¡°ë³€ìˆ˜ ë°°ì—´ --> ì—¬ëŸ¬ ì°¸ì¡°ë³€ìˆ˜ë¥¼ í•˜ë‚˜ë¡œ ë¬¶ì–´ë†“ì€ ê²ƒ
 		 * pArr[0] = p1;
 		 * pArr[1] = p2;
 		 * pArr[2] = p3;
@@ -18,14 +18,14 @@ public class Ex02_DrawShape {
 		
 		Triangle t = new Triangle(p);
 		
-		/* 25¹øÂ° ÁÙ°ú °°Àº ³»¿ë 
+		/* 25ë²ˆì§¸ ì¤„ê³¼ ê°™ì€ ë‚´ìš© 
 		 * Point p = new Point(150,150);
 		 * Circle c = new Circle(p,50);
 		 */
 		Circle c = new Circle(new Point(150,150), 50);
 		
-		t.draw(); // »ï°¢ÇüÀ» ±×¸°´Ù.
-		c.draw(); // ¿øÀ» ±×¸°´Ù.
+		t.draw(); // ì‚¼ê°í˜•ì„ ê·¸ë¦°ë‹¤.
+		c.draw(); // ì›ì„ ê·¸ë¦°ë‹¤.
 	}
 }
 
@@ -50,16 +50,16 @@ class Point {
 	}
 	
 	String getXY() {
-		return "(" + x + "," + y + ")"; // x & yÀÇ °ªÀ» ¹®ÀÚ¿­·Î ¹İÈ¯
+		return "(" + x + "," + y + ")"; // x & yì˜ ê°’ì„ ë¬¸ìì—´ë¡œ ë°˜í™˜
 	}
 }
 
 class Circle extends Shape {
-	Point center; // ¿øÀÇ ¿øÁ¡ÁÂÇ¥
-	int r; // ¹İÁö¸§
+	Point center; // ì›ì˜ ì›ì ì¢Œí‘œ
+	int r; // ë°˜ì§€ë¦„
 	
 	Circle() {
-		this(new Point(0,0), 100); // Circle(Point center, int r)¸¦ È£Ãâ
+		this(new Point(0,0), 100); // Circle(Point center, int r)ë¥¼ í˜¸ì¶œ
 	}
 	
 	Circle(Point center, int r) {
@@ -67,7 +67,7 @@ class Circle extends Shape {
 		this.r = r;
 	}
 	
-	void draw() { // ¿øÀ» ±×¸®´Â ´ë½Å¿¡ ¿øÀÇ Á¤º¸¸¦ Ãâ·ÂÇÏµµ·Ï ÇÑ´Ù.
+	void draw() { // ì›ì„ ê·¸ë¦¬ëŠ” ëŒ€ì‹ ì— ì›ì˜ ì •ë³´ë¥¼ ì¶œë ¥í•˜ë„ë¡ í•œë‹¤.
 		System.out.printf("[center=(%d, %d), r=%d, color=%s]%n", center.x, center.y, r, color);
 	}
 }

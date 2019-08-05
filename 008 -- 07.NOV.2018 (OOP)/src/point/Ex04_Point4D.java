@@ -7,24 +7,24 @@ public class Ex04_Point4D extends Ex03_Point3D {
 		this(1,1,1,1);
 	}
 	
-	/* super() »ý¼ºÀÚ & super ÂüÁ¶º¯¼ö
-	 * 	>> ¹Ù·Î À§ÀÇ parent class ÇÏ³ª¿¡ Á¢±ÙÇÑ´Ù (grandparent ÀÌ»ó¿¡ Á¢±ÙÇÏÁö ¾Ê´Â´Ù)
-	 * 	>> ¿©·¯ Å¬·¡½º°¡ »ó¼ÓÀ¸·Î ÀÏ·Ä·Î ÀÌ¾îÁ®ÀÖ´Ù¸é, super & super() ½èÀ» ¶§´Â ±× Å¬·¡½º ¹Ù·Î À§ÀÇ parent ÇÏ³ª¿¡¸¸ Á¢±ÙÇÑ´Ù
+	/* super() ìƒì„±ìž & super ì°¸ì¡°ë³€ìˆ˜
+	 * 	>> ë°”ë¡œ ìœ„ì˜ parent class í•˜ë‚˜ì— ì ‘ê·¼í•œë‹¤ (grandparent ì´ìƒì— ì ‘ê·¼í•˜ì§€ ì•ŠëŠ”ë‹¤)
+	 * 	>> ì—¬ëŸ¬ í´ëž˜ìŠ¤ê°€ ìƒì†ìœ¼ë¡œ ì¼ë ¬ë¡œ ì´ì–´ì ¸ìžˆë‹¤ë©´, super & super() ì¼ì„ ë•ŒëŠ” ê·¸ í´ëž˜ìŠ¤ ë°”ë¡œ ìœ„ì˜ parent í•˜ë‚˜ì—ë§Œ ì ‘ê·¼í•œë‹¤
 	 */
 	Ex04_Point4D(int x, int y, int z, int a) {
 		super(x,y,z);
 		this.a = a;
 	}
 	
-	// System.out.println(p3.equals(p4)); --> true ³ª¿Í¾ß ÇÑ´Ù.
-	// Object·ÎºÎÅÍ »ó¼Ó¹Þ¾Æ Point¿¡¼­ ¿À¹ö¶óÀÌµù ÇÏ°í Point3D¿¡¼­ ¿À¹ö¶óÀÌµùÇÑ equals¸¦ ¿©±â¼­ ´Ù½Ã ¿À¹ö¶óÀÌµù ÇÏ¼¼¿ä.
-		// parent Å¸ÀÔ ÂüÁ¶º¯¼ö·Î Point4D ÀÎ½ºÅÏ½º¸¦ Á¶ÀÛÇØµµ ¸Þ¼­µå´Â ÇöÀç ÀÎ½ºÅÏ½º¿¡¼­ ¿À¹ö¶óÀÌµùÇÑ ¸Þ¼­µå¸¦ ½ÇÇàÇÑ´Ù.
+	// System.out.println(p3.equals(p4)); --> true ë‚˜ì™€ì•¼ í•œë‹¤.
+	// Objectë¡œë¶€í„° ìƒì†ë°›ì•„ Pointì—ì„œ ì˜¤ë²„ë¼ì´ë”© í•˜ê³  Point3Dì—ì„œ ì˜¤ë²„ë¼ì´ë”©í•œ equalsë¥¼ ì—¬ê¸°ì„œ ë‹¤ì‹œ ì˜¤ë²„ë¼ì´ë”© í•˜ì„¸ìš”.
+		// parent íƒ€ìž… ì°¸ì¡°ë³€ìˆ˜ë¡œ Point4D ì¸ìŠ¤í„´ìŠ¤ë¥¼ ì¡°ìž‘í•´ë„ ë©”ì„œë“œëŠ” í˜„ìž¬ ì¸ìŠ¤í„´ìŠ¤ì—ì„œ ì˜¤ë²„ë¼ì´ë”©í•œ ë©”ì„œë“œë¥¼ ì‹¤í–‰í•œë‹¤.
 	public boolean equals(Object obj) {
-		// µÎ Á¡ÀÇ x, y¸¦ ºñ±³ÇØ¼­ °°À¸¸é true.
-		// ¾Æ´Ï¸é false¸¦ ¹ÝÈ¯ÇÏ½Ã¿ä.
+		// ë‘ ì ì˜ x, yë¥¼ ë¹„êµí•´ì„œ ê°™ìœ¼ë©´ true.
+		// ì•„ë‹ˆë©´ falseë¥¼ ë°˜í™˜í•˜ì‹œìš”.
 		if (obj instanceof Ex04_Point4D) {
-			Ex04_Point4D point = (Ex04_Point4D) obj; // parent Å¸ÀÔ¿¡¼­ childÀÇ childÀÇ child Å¸ÀÔ ÂüÁ¶º¯¼ö·Î ´Ü¹ø¿¡ Çüº¯È¯
-										   // Object --> Point --> Point3D --> Point4D Çüº¯È¯
+			Ex04_Point4D point = (Ex04_Point4D) obj; // parent íƒ€ìž…ì—ì„œ childì˜ childì˜ child íƒ€ìž… ì°¸ì¡°ë³€ìˆ˜ë¡œ ë‹¨ë²ˆì— í˜•ë³€í™˜
+										   // Object --> Point --> Point3D --> Point4D í˜•ë³€í™˜
 			if (this.x == point.x && this.y == point.y && this.z == point.z && this.a == point.a) {
 				return true;
 			}

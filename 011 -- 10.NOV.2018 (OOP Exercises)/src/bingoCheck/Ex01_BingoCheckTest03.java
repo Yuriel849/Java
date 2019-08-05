@@ -8,19 +8,19 @@ import org.junit.jupiter.api.Test;
 // Project "008 -- 08.NOV.2018 (OOP)" >> package "study" >> file "BingoCheckTestUpdate"
 
 class Ex01_BingoCheckTest03 {
-	/* 2Â÷¿ø ¹è¿­À» ¹Ş¾Æ¼­ bingoÀÇ °³¼ö¸¦ ¼¼¼­ ¹İÈ¯
-	 * ¸Ş¼­µå ÀÌ¸§ : bingoCheck
-	 * ¸Å°³º¯¼ö(ÀÔ·Â) : 2Â÷¿ø int ¹è¿­
-	 * ¹İÈ¯°ª : bingoÀÇ °³¼ö
+	/* 2ì°¨ì› ë°°ì—´ì„ ë°›ì•„ì„œ bingoì˜ ê°œìˆ˜ë¥¼ ì„¸ì„œ ë°˜í™˜
+	 * ë©”ì„œë“œ ì´ë¦„ : bingoCheck
+	 * ë§¤ê°œë³€ìˆ˜(ì…ë ¥) : 2ì°¨ì› int ë°°ì—´
+	 * ë°˜í™˜ê°’ : bingoì˜ ê°œìˆ˜
 	 */
 
 	int bingoCheck(int[][] arr) {
-		int[][] bingo = arr; // bingo ¹è¿­¿¡ ¸Å°³º¯¼ö·Î Àü´ŞÇÑ arr¸¦ ´ëÀÔÇÒ ÇÊ¿ä°¡ ¾ø´Ù.
-							 // ¾îÂ÷ÇÇ ÁÖ¼Ò°ªÀ» ÁÖ°í ¹Ş±â¿¡ ¸Å°³º¯¼öÀÇ arr¸¦ ±×´ë·Î »ç¿ëÇØµµ ¹®Á¦ ¾ø´Ù.
+		int[][] bingo = arr; // bingo ë°°ì—´ì— ë§¤ê°œë³€ìˆ˜ë¡œ ì „ë‹¬í•œ arrë¥¼ ëŒ€ì…í•  í•„ìš”ê°€ ì—†ë‹¤.
+							 // ì–´ì°¨í”¼ ì£¼ì†Œê°’ì„ ì£¼ê³  ë°›ê¸°ì— ë§¤ê°œë³€ìˆ˜ì˜ arrë¥¼ ê·¸ëŒ€ë¡œ ì‚¬ìš©í•´ë„ ë¬¸ì œ ì—†ë‹¤.
 		
 		int num = 0;
 		
-		// 1st --> Çà, ¿­, ´ë°¢¼± 2°³¸¦ µû·Î µû·Î È®ÀÎÇÏ´Â ÄÚµå ÀÛ¼º
+		// 1st --> í–‰, ì—´, ëŒ€ê°ì„  2ê°œë¥¼ ë”°ë¡œ ë”°ë¡œ í™•ì¸í•˜ëŠ” ì½”ë“œ ì‘ì„±
 //		// check left-top --> right-bottom bingo
 //		for(int i = 0; i < 5; i++) {
 //			if(bingo[i][i] != 0) { check1++; } 
@@ -47,8 +47,8 @@ class Ex01_BingoCheckTest03 {
 //			}
 //		}
 		
-		// 2nd --> º°°³ ÄÚµå ÀÛ¼º ÈÄ ÇÕÄ¡±â
-		// ¹æ¹ı 01 >>
+		// 2nd --> ë³„ê°œ ì½”ë“œ ì‘ì„± í›„ í•©ì¹˜ê¸°
+		// ë°©ë²• 01 >>
 //		for(int i = 0; i < 5; i++) {
 //			if(bingo[i][0] == 1 && bingo[i][1] == 1 && bingo[i][2] == 1 && bingo[i][3] == 1 && bingo[i][4] == 1) {
 //				num++;
@@ -64,7 +64,7 @@ class Ex01_BingoCheckTest03 {
 //			num++;
 //		}
 
-		// ¹æ¹ı 02 >>
+		// ë°©ë²• 02 >>
 //		int check1 = 0, check2 = 0;
 //		for(int i = 0; i < 5; i++) {
 //			for(int j = 0; j < 5; j++) {
@@ -81,7 +81,7 @@ class Ex01_BingoCheckTest03 {
 //		if (check1 == 5) { num++; }
 //		if (check2 == 5) { num++; }
 		
-		// ¹æ¹ı 03 >> ¹æ¹ı 02ÀÇ °³·®Çü
+		// ë°©ë²• 03 >> ë°©ë²• 02ì˜ ê°œëŸ‰í˜•
 //		for(int i = 0, k = 0; i < 5; i++) {
 //			for(int j = 0; j < 5; j++) {
 //				if (bingo[i][j] == 0) { break; }
@@ -113,15 +113,15 @@ class Ex01_BingoCheckTest03 {
 		int row, col, leftD, rightD;
 		row = col = leftD = rightD = 0;
 		
-		// ¹æ¹ı 04		
+		// ë°©ë²• 04		
 		for(int i = 0; i < 5; i++, row = 0, col = 0) {
 			for(int j = 0; j < 5; j++) {
 				if (bingo[i][j] == 1) {
 					row++;
-					if (row == 5) { num++; } } // °¡·Îºù°í ¼¼±â ³¡.
+					if (row == 5) { num++; } } // ê°€ë¡œë¹™ê³  ì„¸ê¸° ë.
 				if (bingo[j][i] == 1) {
 					col++;
-					if (col == 5) { num++; } } // ¼¼·Îºù°í ¼¼±â ³¡.
+					if (col == 5) { num++; } } // ì„¸ë¡œë¹™ê³  ì„¸ê¸° ë.
 				if (j == 0 && bingo[i][i] == 1) {
 					leftD++;
 					if (leftD == 5) { num++; }
@@ -129,14 +129,14 @@ class Ex01_BingoCheckTest03 {
 				if (j == 0 && bingo[i][4-i] == 1) {
 					rightD++;
 					if (rightD == 5) { num++; }
-				} } } // ¹æ¹ı 04 ³¡.
+				} } } // ë°©ë²• 04 ë.
 		return num;
 	}
 		
-//	// °­»ç´Ô ÄÚµå
+//	// ê°•ì‚¬ë‹˜ ì½”ë“œ
 //	int bingoCheck(int[][] arr) {
-//		int gcnt = 0; // °¡·Î ºù°í¸¦ ¼¾´Ù
-//		int scnt = 0; // ¼¼·Î ºù°í¸¦ ¼¾´Ù
+//		int gcnt = 0; // ê°€ë¡œ ë¹™ê³ ë¥¼ ì„¼ë‹¤
+//		int scnt = 0; // ì„¸ë¡œ ë¹™ê³ ë¥¼ ì„¼ë‹¤
 //		int dcnt = 0;
 //		int rcnt = 0;
 //		int bingoCnt = 0;
@@ -156,7 +156,7 @@ class Ex01_BingoCheckTest03 {
 //		}
 //
 //
-//		// ´ë°¢¼± ºù°í °¹¼ö¸¦ ¼¾´Ù.
+//		// ëŒ€ê°ì„  ë¹™ê³  ê°¯ìˆ˜ë¥¼ ì„¼ë‹¤.
 //		int dcnt = 0;
 //		for(int i = 0; i < arr.length; i++) {
 //			for(int j = 0; j < arr[i].length; j++) {
@@ -165,7 +165,7 @@ class Ex01_BingoCheckTest03 {
 //		}
 //		if(dcnt == 5) {bingoCnt++; }
 //		
-//		// ¿ª´ë°¢¼± ºù°í °¹¼ö¸¦ ¼¾´Ù.
+//		// ì—­ëŒ€ê°ì„  ë¹™ê³  ê°¯ìˆ˜ë¥¼ ì„¼ë‹¤.
 //		int rcnt = 0;
 //		for(int i = 0; i < arr.length; i++) {
 //			for(int j = 0; j < arr[i].length; j++) {
@@ -228,5 +228,4 @@ class Ex01_BingoCheckTest03 {
 		
 		assertTrue(bingoCheck(arr) == 1);
 	}
-
 }

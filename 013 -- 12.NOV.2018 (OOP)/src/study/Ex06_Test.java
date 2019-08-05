@@ -3,13 +3,13 @@ package study;
 class Ex06_Test {
 	public static void main(String[] args) {
 		Child c = new Child();
-			/* »ı¼ºÀÚ È£Ãâ ¼ø¼­
+			/* ìƒì„±ì í˜¸ì¶œ ìˆœì„œ
 			 * 	>> Child() --> Child(int x) --> Parent() --> Parent(int x) --> Object()
 			 */
 		System.out.println("x="+c.getX(5));
-			/* Ãâ·Â°á°ú´Â "x=200"
-			 * 	>> getX ¸Ş¼­µå´Â x¸¦ ¹İÈ¯ÇÒ »Ó, x°¡ ¹«¾ùÀÎÁö ¸í½ÃÇÏÁö ¾Ê¾Ò´Ù. ±×·¡¼­ ¼Ò¼Ó Å¬·¡½ºÀÇ ÀÎ½ºÅÏ½º º¯¼ö x¸¦ ¹İÈ¯ÇÑ´Ù.
-			 * 	>> ¸¸¾à Child Å¬·¡½º¿¡¼­ ¿À¹ö¶óÀÌµùÇßÀ¸¸é °á°ú´Â ´Ş¶óÁ³À» °Í.
+			/* ì¶œë ¥ê²°ê³¼ëŠ” "x=200"
+			 * 	>> getX ë©”ì„œë“œëŠ” xë¥¼ ë°˜í™˜í•  ë¿, xê°€ ë¬´ì—‡ì¸ì§€ ëª…ì‹œí•˜ì§€ ì•Šì•˜ë‹¤. ê·¸ë˜ì„œ ì†Œì† í´ë˜ìŠ¤ì˜ ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜ xë¥¼ ë°˜í™˜í•œë‹¤.
+			 * 	>> ë§Œì•½ Child í´ë˜ìŠ¤ì—ì„œ ì˜¤ë²„ë¼ì´ë”©í–ˆìœ¼ë©´ ê²°ê³¼ëŠ” ë‹¬ë¼ì¡Œì„ ê²ƒ.
 			 */
 	}
 }
@@ -17,7 +17,7 @@ class Ex06_Test {
 class Parent {
 	int x=100;
 	Parent() {
-		this(200); // Parent(int x)¸¦ È£Ãâ
+		this(200); // Parent(int x)ë¥¼ í˜¸ì¶œ
 		}
 	Parent(int x) {
 		this.x = x;
@@ -30,7 +30,7 @@ class Parent {
 class Child extends Parent {
 	int x = 3000;
 	Child() {
-		this(1000); // Child(int x)¸¦ È£Ãâ
+		this(1000); // Child(int x)ë¥¼ í˜¸ì¶œ
 		}
 	Child(int x) {
 		this.x = x;

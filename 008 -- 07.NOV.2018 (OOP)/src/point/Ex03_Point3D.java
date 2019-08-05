@@ -8,17 +8,17 @@ public class Ex03_Point3D extends Ex01_Point {
 	}
 
 	Ex03_Point3D(int x, int y, int z) {
-		super(x,y); // ¿©±â¼­ ´Ù½Ã x, y °ü·Ã ÄÚµå¸¦ ÀÛ¼ºÇÏ´Â ´ë½Å parentÀÇ ¸â¹öÀÎ x, y Á¶ÀÛÀº parent »ı¼ºÀÚ¿¡°Ô ¸Ã±ä´Ù.
+		super(x,y); // ì—¬ê¸°ì„œ ë‹¤ì‹œ x, y ê´€ë ¨ ì½”ë“œë¥¼ ì‘ì„±í•˜ëŠ” ëŒ€ì‹  parentì˜ ë©¤ë²„ì¸ x, y ì¡°ì‘ì€ parent ìƒì„±ìì—ê²Œ ë§¡ê¸´ë‹¤.
 		this.z = z;
 	}
 	
-	// System.out.println(p3.equals(p4)); --> true ³ª¿Í¾ß ÇÑ´Ù.
-	// Object·ÎºÎÅÍ »ó¼Ó¹Ş¾Æ Point¿¡¼­ ¿À¹ö¶óÀÌµù ÇÑ equals¸¦ ¿©±â¼­ ´Ù½Ã ¿À¹ö¶óÀÌµù ÇÏ¼¼¿ä.
+	// System.out.println(p3.equals(p4)); --> true ë‚˜ì™€ì•¼ í•œë‹¤.
+	// Objectë¡œë¶€í„° ìƒì†ë°›ì•„ Pointì—ì„œ ì˜¤ë²„ë¼ì´ë”© í•œ equalsë¥¼ ì—¬ê¸°ì„œ ë‹¤ì‹œ ì˜¤ë²„ë¼ì´ë”© í•˜ì„¸ìš”.
 	public boolean equals(Object obj) {
-		// µÎ Á¡ÀÇ x, y¸¦ ºñ±³ÇØ¼­ °°À¸¸é true.
-		// ¾Æ´Ï¸é false¸¦ ¹İÈ¯ÇÏ½Ã¿ä.
+		// ë‘ ì ì˜ x, yë¥¼ ë¹„êµí•´ì„œ ê°™ìœ¼ë©´ true.
+		// ì•„ë‹ˆë©´ falseë¥¼ ë°˜í™˜í•˜ì‹œìš”.
 		if (obj instanceof Ex03_Point3D) {
-			Ex03_Point3D point = (Ex03_Point3D) obj; // parent Å¸ÀÔ¿¡¼­ childÀÇ child Å¸ÀÔ ÂüÁ¶º¯¼ö·Î ´Ü¹ø¿¡ Çüº¯È¯
+			Ex03_Point3D point = (Ex03_Point3D) obj; // parent íƒ€ì…ì—ì„œ childì˜ child íƒ€ì… ì°¸ì¡°ë³€ìˆ˜ë¡œ ë‹¨ë²ˆì— í˜•ë³€í™˜
 			if (this.x == point.x && this.y == point.y && this.z == point.z) {
 				return true;
 			}
