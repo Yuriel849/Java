@@ -1,24 +1,24 @@
 package study;
 
-// Object Å¬·¡½ºÀÇ equals() ¸Ş¼­µå¸¦ ¿À¹ö¶óÀÌµùÇÑ´Ù¸é hashCode() ¸Ş¼­µåµµ ¿À¹ö¶óÀÌµùÇØ¾ß ÇÑ´Ù
+// Object í´ë˜ìŠ¤ì˜ equals() ë©”ì„œë“œë¥¼ ì˜¤ë²„ë¼ì´ë”©í•œë‹¤ë©´ hashCode() ë©”ì„œë“œë„ ì˜¤ë²„ë¼ì´ë”©í•´ì•¼ í•œë‹¤
 public class HashCode {
 	public static void main(String[] args) {
 		Object obj1 = new Object();
 		Object obj2 = new Object();
 		Object obj3 = new Object();
 		
-		System.out.println("<ÀÏ¹İ ¿ÀºêÁ§Æ®>");
-		System.out.println(obj1.hashCode()); // <°´Ã¼¸í>.hashCode() --> ½ÇÁ¦ ¸Ş¸ğ¸® ÁÖ¼Ò°ªÀ» ¹İÈ¯
-		System.out.println(obj2.hashCode()); // 	--> ÁÖ¼Ò°¡ ´Ù¸£´Ù´Â °ÍÀº ´Ù¸¥ °´Ã¼¶ó´Â ÀÇ¹Ì
+		System.out.println("<ì¼ë°˜ ì˜¤ë¸Œì íŠ¸>");
+		System.out.println(obj1.hashCode()); // <ê°ì²´ëª…>.hashCode() --> ì‹¤ì œ ë©”ëª¨ë¦¬ ì£¼ì†Œê°’ì„ ë°˜í™˜
+		System.out.println(obj2.hashCode()); // 	--> ì£¼ì†Œê°€ ë‹¤ë¥´ë‹¤ëŠ” ê²ƒì€ ë‹¤ë¥¸ ê°ì²´ë¼ëŠ” ì˜ë¯¸
 		System.out.println(obj3.hashCode());
 		
 		// BUT
-		System.out.println("\n<¹®ÀÚ¿­>");
+		System.out.println("\n<ë¬¸ìì—´>");
 		
 		String str1 = new String("abc");
 		String str2 = new String("abc");
 		
-		System.out.println(str1.hashCode()); // StringÀº ÁÖ¼Ò°ªÀÌ °°´Ù --> °°Àº ¹®ÀÚ¿­ Å¸ÀÔ °´Ã¼ÀÌ´Ù
-		System.out.println(str2.hashCode()); // 	--> why?? --> String Å¬·¡½º¿¡¼­ Object Å¬·¡½º hashCode()¸Ş¼­µå¸¦ ¿À¹ö¶óÀÌµù Çß´Ù
+		System.out.println(str1.hashCode()); // Stringì€ ì£¼ì†Œê°’ì´ ê°™ë‹¤ --> ê°™ì€ ë¬¸ìì—´ íƒ€ì… ê°ì²´ì´ë‹¤
+		System.out.println(str2.hashCode()); // 	--> why?? --> String í´ë˜ìŠ¤ì—ì„œ Object í´ë˜ìŠ¤ hashCode()ë©”ì„œë“œë¥¼ ì˜¤ë²„ë¼ì´ë”© í–ˆë‹¤
 	}
 }

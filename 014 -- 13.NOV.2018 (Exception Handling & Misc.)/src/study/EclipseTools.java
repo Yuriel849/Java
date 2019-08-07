@@ -1,7 +1,7 @@
 package study;
 
 // "source" tab --> "Generate hashCode() and equals()", "Generate toString" etc.
-//						--> hashCode() & equals() °°ÀÌ ÀÖ´Â °ÍÀº µÑÀ» µ¿½Ã¿¡ ¿À¹ö¶óÀÌµùÇØ¾ß ÇÑ´Ù´Â ÀÇ¹ÌÀÌ´Ù.
+//						--> hashCode() & equals() ê°™ì´ ìˆëŠ” ê²ƒì€ ë‘˜ì„ ë™ì‹œì— ì˜¤ë²„ë¼ì´ë”©í•´ì•¼ í•œë‹¤ëŠ” ì˜ë¯¸ì´ë‹¤.
 
 public class EclipseTools {
 	int a;

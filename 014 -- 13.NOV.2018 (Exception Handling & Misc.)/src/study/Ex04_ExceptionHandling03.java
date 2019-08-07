@@ -2,23 +2,23 @@ package study;
 
 import java.io.File;
 
-//¿¹¿Ü ¼±¾ğÇÏ±â (¿¹¿Ü¸¦ Ã³¸®ÇÏ´Â °ÍÀÌ ¾Æ´Ï¶ó ÇØ´ç ¸Ş¼­µå¸¦ È£ÃâÇÑ °÷¿¡¼­ Ã³¸®ÇÏµµ·Ï Áö½Ã)
+//ì˜ˆì™¸ ì„ ì–¸í•˜ê¸° (ì˜ˆì™¸ë¥¼ ì²˜ë¦¬í•˜ëŠ” ê²ƒì´ ì•„ë‹ˆë¼ í•´ë‹¹ ë©”ì„œë“œë¥¼ í˜¸ì¶œí•œ ê³³ì—ì„œ ì²˜ë¦¬í•˜ë„ë¡ ì§€ì‹œ)
 class Ex04_ExceptionHandling03 {
 	public static void main(String[] args) {
 		try {
 			File f = createFile(args[0]);
-			System.out.println(f.getName() + "ÆÄÀÏÀÌ ¼º°øÀûÀ¸·Î »ı¼ºµÇ¾ú½À´Ï´Ù.");
+			System.out.println(f.getName() + "íŒŒì¼ì´ ì„±ê³µì ìœ¼ë¡œ ìƒì„±ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		} catch (Exception e) {
-			System.out.println(e.getMessage() + " ´Ù½Ã ÀÔ·ÂÇØ ÁÖ½Ã±â ¹Ù¶ø´Ï´Ù.");
+			System.out.println(e.getMessage() + " ë‹¤ì‹œ ì…ë ¥í•´ ì£¼ì‹œê¸° ë°”ëë‹ˆë‹¤.");
 		}
-	} // main()ÀÇ ³¡.
+	} // main()ì˜ ë.
 
-	static File createFile(String fileName) throws Exception { // createFile¿¡¼­ ¿¹¿Ü ¹ß»ıÇÏ¸é ¸Ş¼­µå¸¦ È£ÃâÇÑ °÷¿¡¼­ Ã³¸®ÇØ¾ß ÇÑ´Ù.
+	static File createFile(String fileName) throws Exception { // createFileì—ì„œ ì˜ˆì™¸ ë°œìƒí•˜ë©´ ë©”ì„œë“œë¥¼ í˜¸ì¶œí•œ ê³³ì—ì„œ ì²˜ë¦¬í•´ì•¼ í•œë‹¤.
 		if(fileName == null || fileName.equals(""))
-			throw new Exception("ÆÄÀÏÀÌ¸§ÀÌ À¯È¿ÇÏÁö ¾Ê½À´Ï´Ù.");
+			throw new Exception("íŒŒì¼ì´ë¦„ì´ ìœ íš¨í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 		File f = new File(fileName);
-		// File °´Ã¼ÀÇ createNewFile ¸Ş¼­µå¸¦ ÀÌ¿ëÇØ¼­ ½ÇÁ¦ ÆÄÀÏÀ» »ı¼ºÇÑ´Ù.
+		// File ê°ì²´ì˜ createNewFile ë©”ì„œë“œë¥¼ ì´ìš©í•´ì„œ ì‹¤ì œ íŒŒì¼ì„ ìƒì„±í•œë‹¤.
 		f.createNewFile();
-		return f; // »ı¼ºµÈ °´Ã¼ÀÇ ÂüÁ¶¸¦ ¹İÈ¯ÇÑ´Ù.
-	} // createFile ¸Ş¼­µïÀÇ ³¡.
-} // Å¬·¡½ºÀÇ ³¡.
+		return f; // ìƒì„±ëœ ê°ì²´ì˜ ì°¸ì¡°ë¥¼ ë°˜í™˜í•œë‹¤.
+	} // createFile ë©”ì„œë“¸ì˜ ë.
+} // í´ë˜ìŠ¤ì˜ ë.

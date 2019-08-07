@@ -1,7 +1,7 @@
 package study;
 
-// ÄÚµå ÇÑ ÁÙ ÀÌ»óÀ» ÇÏÀÌ¶óÀÌÆ®ÇÏ°í alt + shift + zÇÏ¸é try-catch, if, for, while ºí·° µîÀ» Àû¿ëÇÒ ¼ö ÀÖ´Ù
-// source ÅÇ¿¡ toString, getter & setter »ı¼ºÇÒ ¼ö ÀÖ´Ù
+// ì½”ë“œ í•œ ì¤„ ì´ìƒì„ í•˜ì´ë¼ì´íŠ¸í•˜ê³  alt + shift + zí•˜ë©´ try-catch, if, for, while ë¸”ëŸ­ ë“±ì„ ì ìš©í•  ìˆ˜ ìˆë‹¤
+// source íƒ­ì— toString, getter & setter ìƒì„±í•  ìˆ˜ ìˆë‹¤
 
 //public class Ex01_ExceptionHandling {
 //	public static void main(String[] args) {
@@ -13,10 +13,10 @@ package study;
 //			System.out.println(4);
 //		} catch (Exception e) {
 //			System.out.println(5);
-//		} // try-catchÀÇ ³¡.
+//		} // try-catchì˜ ë.
 //		System.out.println(6);
-//	} //main()ÀÇ ³¡.
-//} // Å¬·¡½ºÀÇ ³¡.
+//	} //main()ì˜ ë.
+//} // í´ë˜ìŠ¤ì˜ ë.
 
 class Ex01_ExceptionHandling {
 	public static void main(String[] args) {
@@ -25,13 +25,13 @@ class Ex01_ExceptionHandling {
 		
 		try {
 			System.out.println(3);
-			System.out.println(0/0); // Ãâ·Â°á°ú´Â 1 2 5 6
-			System.out.println(4);   // 	>> À­ÁÙ¿¡¼­ ¿¹¿ÜÃ³¸® µé¾î°¡´Ï±î ¾Æ·¡ ÄÚµå´Â ½ÇÇàµÇÁö ¾Ê´Â´Ù
-									 // 	>> ¿¹¿ÜÃ³¸® µé¾î°¡¸é catchÀÇ ¿¹¿Ü¸¦ ÇÏ³ª¾¿ È®ÀÎÇÏ¿© ÀÏÄ¡ÇÏ´Â ¿¡·¯¸¦ Ã£À½
-									 // 	>> Ã£À¸¸é ±× ÇÏÀ§ ÄÚµåºí·°À» ¼öÇàÇÏ°í try-catch ºÎ¹®À» Á¾·á
+			System.out.println(0/0); // ì¶œë ¥ê²°ê³¼ëŠ” 1 2 5 6
+			System.out.println(4);   // 	>> ìœ—ì¤„ì—ì„œ ì˜ˆì™¸ì²˜ë¦¬ ë“¤ì–´ê°€ë‹ˆê¹Œ ì•„ë˜ ì½”ë“œëŠ” ì‹¤í–‰ë˜ì§€ ì•ŠëŠ”ë‹¤
+									 // 	>> ì˜ˆì™¸ì²˜ë¦¬ ë“¤ì–´ê°€ë©´ catchì˜ ì˜ˆì™¸ë¥¼ í•˜ë‚˜ì”© í™•ì¸í•˜ì—¬ ì¼ì¹˜í•˜ëŠ” ì—ëŸ¬ë¥¼ ì°¾ìŒ
+									 // 	>> ì°¾ìœ¼ë©´ ê·¸ í•˜ìœ„ ì½”ë“œë¸”ëŸ­ì„ ìˆ˜í–‰í•˜ê³  try-catch ë¶€ë¬¸ì„ ì¢…ë£Œ
 		} catch (ArithmeticException ae) {
 			System.out.println(5);
-		} // try-catchÀÇ ³¡.
+		} // try-catchì˜ ë.
 		System.out.println(6);
-	} //main()ÀÇ ³¡.
-} // Å¬·¡½ºÀÇ ³¡.
+	} //main()ì˜ ë.
+} // í´ë˜ìŠ¤ì˜ ë.

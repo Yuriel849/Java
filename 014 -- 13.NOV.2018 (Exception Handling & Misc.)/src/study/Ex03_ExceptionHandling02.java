@@ -2,33 +2,32 @@ package study;
 
 import java.io.File;
 
-// ¿¹¿Ü Ã³¸®ÇÏ±â
+// ì˜ˆì™¸ ì²˜ë¦¬í•˜ê¸°
 class Ex03_ExceptionHandling02 {
 	public static void main(String[] args) {
-		// command line¿¡¼­ ÀÔ·Â¹ŞÀº °ªÀ»                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ÀÌ¸§À¸·Î °®´Â ÆÄÀÏÀ» »ı¼ºÇÑ´Ù.
+		// command lineì—ì„œ ì…ë ¥ë°›ì€ ê°’ì„                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ì´ë¦„ìœ¼ë¡œ ê°–ëŠ” íŒŒì¼ì„ ìƒì„±í•œë‹¤.
 		File f = createFile(args[0]);
-		// ¿ø·¡´Â ½ÇÇàÇÒ ¶§ command line¿¡¼­ main(¸Å°³º¯¼ö)·Î ½ÇÇàÇØ¾ß... (incomplete)
-		System.out.println(f.getName() + " ÆÄÀÏÀÌ ¼º°øÀûÀ¸·Î »ı¼ºµÇ¾ú½À´Ï´Ù.");
-	} /// main()ÀÇ ³¡.
+		// ì›ë˜ëŠ” ì‹¤í–‰í•  ë•Œ command lineì—ì„œ main(ë§¤ê°œë³€ìˆ˜)ë¡œ ì‹¤í–‰í•´ì•¼... (incomplete)
+		System.out.println(f.getName() + " íŒŒì¼ì´ ì„±ê³µì ìœ¼ë¡œ ìƒì„±ë˜ì—ˆìŠµë‹ˆë‹¤.");
+	} /// main()ì˜ ë.
 
 	static File createFile(String fileName) {
 		try {
 			if(fileName == null || fileName.equals(""))
-				throw new Exception("ÆÄÀÏÀÌ¸§ÀÌ À¯È¿ÇÏÁö ¾Ê½À´Ï´Ù.");
+				throw new Exception("íŒŒì¼ì´ë¦„ì´ ìœ íš¨í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 		} catch (Exception e) {
-			// fileNameÀÌ ºÎÀûÀıÇÑ °æ¿ì, ÆÄÀÏÀÌ¸§À» 'Á¦¸ñ¾øÀ½.txt'·Î ÇÑ´Ù.
-			fileName = "Á¦¸ñ¾øÀ½.txt";
+			// fileNameì´ ë¶€ì ì ˆí•œ ê²½ìš°, íŒŒì¼ì´ë¦„ì„ 'ì œëª©ì—†ìŒ.txt'ë¡œ í•œë‹¤.
+			fileName = "ì œëª©ì—†ìŒ.txt";
 		} finally {
-			File f = new File(fileName); // FileÅ¬·¡½ºÀÇ °´Ã¼¸¦ ¸¸µç´Ù.
-			createNewFile(f); // »ı¼ºµÈ °´Ã¼¸¦ ÀÌ¿ëÇØ¼­ ÆÄÀÏÀ» »ı¼ºÇÑ´Ù.
+			File f = new File(fileName); // Fileí´ë˜ìŠ¤ì˜ ê°ì²´ë¥¼ ë§Œë“ ë‹¤.
+			createNewFile(f); // ìƒì„±ëœ ê°ì²´ë¥¼ ì´ìš©í•´ì„œ íŒŒì¼ì„ ìƒì„±í•œë‹¤.
 			return f;
 		}
-	} // createFile ¸Ş¼­µåÀÇ ³¡.
+	} // createFile ë©”ì„œë“œì˜ ë.
 	
 	static void createNewFile(File f) {
 		try {
-			f.createNewFile(); // ÆÄÀÏÀ» »ı¼ºÇÑ´Ù.
-		} catch (Exception e) { } // createNewFile ¸Ş¼­µåÀÇ ³¡.
+			f.createNewFile(); // íŒŒì¼ì„ ìƒì„±í•œë‹¤.
+		} catch (Exception e) { } // createNewFile ë©”ì„œë“œì˜ ë.
 	}
-
 }
