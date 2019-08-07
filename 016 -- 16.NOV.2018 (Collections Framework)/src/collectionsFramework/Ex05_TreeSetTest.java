@@ -3,17 +3,16 @@ package collectionsFramework;
 import java.util.Set;
 import java.util.TreeSet;
 
-// TreeSetÀº °´Ã¼°¡ ComparableÀ» ±¸ÇöÇÏ´ø°¡ º°µµÀÇ Comparator°¡ ÇÊ¿äÇÏ´Ù
-// 	>> ÀÌ »óÅÂ·Î´Â ½ÇÇà ½Ã ¿¡·¯!
+// TreeSetì€ ê°ì²´ê°€ Comparableì„ êµ¬í˜„í•˜ë˜ê°€ ë³„ë„ì˜ Comparatorê°€ í•„ìš”í•˜ë‹¤
+// 	>> ì´ ìƒíƒœë¡œëŠ” ì‹¤í–‰ ì‹œ ì—ëŸ¬!
 
 class Ex05_TreeSetTest {
 	public static void main(String[] args) {
 		Set set = new TreeSet();
 		
-		set.add(new Student("È«±æµ¿", 50, 15));
-		set.add(new Temp()); // ¿¡·¯! --> Temp¿¡ ComparableÀÌ µé¾î ÀÖ°Å³ª, º°µµÀÇ Comparator¸¦ Á¦°øÇØ¾ß ÇÑ´Ù.
-	} // main() ³¡.
-} // Student Å¬·¡½º ³¡.
+		set.add(new Student("í™ê¸¸ë™", 50, 15));
+		set.add(new Temp()); // ì—ëŸ¬! --> Tempì— Comparableì´ ë“¤ì–´ ìˆê±°ë‚˜, ë³„ë„ì˜ Comparatorë¥¼ ì œê³µí•´ì•¼ í•œë‹¤.
+	} // main() ë.
+} // Student í´ë˜ìŠ¤ ë.
 
 class Temp { }
-

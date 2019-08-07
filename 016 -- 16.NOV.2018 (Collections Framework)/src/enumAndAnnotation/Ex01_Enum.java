@@ -1,14 +1,14 @@
 package enumAndAnnotation;
 
-// "Direction"ÀÌ¶ó´Â Å¸ÀÔÀÇ °´Ã¼´Â 4°³ÀÇ °ª¸¸À» °¡Áú ¼ö ÀÖ´Ù.
+// "Direction"ì´ë¼ëŠ” íƒ€ì…ì˜ ê°ì²´ëŠ” 4ê°œì˜ ê°’ë§Œì„ ê°€ì§ˆ ìˆ˜ ìˆë‹¤.
 enum Direction { EAST, SOUTH, WEST, NORTH }
 
 class Ex01_Enum {
 	public static void main(String[] args) {
 		Direction d1 = Direction.EAST;
-			// new Direction("EAST")¶ó°í ÇÏ´Â °Í°ú µ¿ÀÏÇÏ´Ù --> ÇÏÁö¸¸ ½ÇÁ¦·Î »ı¼ºÀÚ¸¦ »ç¿ëÇÏ¸é ¾ÈµÈ´Ù!
-			// ÀÌ·¸°Ô ÁÖ·Î »ç¿ëÇÏ°í, ±× ¿Ü ¾Æ·¡ 2°¡Áö ¹æ¹ıµµ »ç¿ëÇÒ ¼ö ÀÖ´Ù.
-			// EAST µîÀº intÇüÀÌ ¾Æ´Ï¶ó °´Ã¼´Ù!
+			// new Direction("EAST")ë¼ê³  í•˜ëŠ” ê²ƒê³¼ ë™ì¼í•˜ë‹¤ --> í•˜ì§€ë§Œ ì‹¤ì œë¡œ ìƒì„±ìë¥¼ ì‚¬ìš©í•˜ë©´ ì•ˆëœë‹¤!
+			// ì´ë ‡ê²Œ ì£¼ë¡œ ì‚¬ìš©í•˜ê³ , ê·¸ ì™¸ ì•„ë˜ 2ê°€ì§€ ë°©ë²•ë„ ì‚¬ìš©í•  ìˆ˜ ìˆë‹¤.
+			// EAST ë“±ì€ intí˜•ì´ ì•„ë‹ˆë¼ ê°ì²´ë‹¤!
 		Direction d2 = Direction.valueOf("WEST");
 		Direction d3 = Enum.valueOf(Direction.class, "EAST");
 		
@@ -19,12 +19,12 @@ class Ex01_Enum {
 		System.out.println("d1==d2 ? " + (d1==d2));
 		System.out.println("d1==d3 ? " + (d1==d3));
 		System.out.println("d1.equals(d3) ? " + d1.equals(d3));
-//		System.out.println("d2 > d3 ? " + (d2 > d3)); --> ¿¡·¯! --> enum°ú ºñ±³¿¬»êÀÚ¸¦ °°ÀÌ ¾µ ¼ö ¾ø´Ù.
+//		System.out.println("d2 > d3 ? " + (d2 > d3)); --> ì—ëŸ¬! --> enumê³¼ ë¹„êµì—°ì‚°ìë¥¼ ê°™ì´ ì“¸ ìˆ˜ ì—†ë‹¤.
 		System.out.println("d1.compareTo(d3) ? " + d1.compareTo(d3));
 		System.out.println("d1.compareTo(d2) ? " + d1.compareTo(d2));
 		
 		switch(d1) {
-			case EAST: // Direction.EAST¶ó°í ¾µ ¼ö ¾ø´Ù.
+			case EAST: // Direction.EASTë¼ê³  ì“¸ ìˆ˜ ì—†ë‹¤.
 				System.out.println("The direction is EAST."); break;
 			case SOUTH:
 				System.out.println("The direction is SOUTH."); break;
@@ -40,5 +40,5 @@ class Ex01_Enum {
 		
 		for(Direction d : dArr) // for(Direction d : Direction.values())
 			System.out.printf("%s=%d%n", d.name(), d.ordinal());
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.

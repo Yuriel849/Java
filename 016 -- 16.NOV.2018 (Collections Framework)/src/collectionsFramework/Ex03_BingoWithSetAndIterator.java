@@ -6,12 +6,12 @@ import java.util.Set;
 
 class Ex03_BingoWithSetAndIterator {
 	public static void main(String[] args) {
-//		Set set = new HashSet(); // HashSetÀÌ ¼ø¼­´Â ¾øÁö¸¸ ³ª¸§ÀÇ ±ÔÄ¢¿¡ µû¶ó °ªÀ» ÀúÀåÇÑ´Ù --> ¾Æ·¡ ÄÚµå¸¦ ½ÇÇàÇÏ¸é ºñ½ÁÇÑ ¼ıÀÚ³¢¸® ¹¶Ä¡´Â Çö»ó ¹ß»ı 
-		Set set = new LinkedHashSet(); // °ñ°í·ç ¼¯±â À§ÇØ ¼ø¼­¸¦ À¯ÁöÇÏ´Â LinkedHashSet »ç¿ëÇÑ´Ù.
+//		Set set = new HashSet(); // HashSetì´ ìˆœì„œëŠ” ì—†ì§€ë§Œ ë‚˜ë¦„ì˜ ê·œì¹™ì— ë”°ë¼ ê°’ì„ ì €ì¥í•œë‹¤ --> ì•„ë˜ ì½”ë“œë¥¼ ì‹¤í–‰í•˜ë©´ ë¹„ìŠ·í•œ ìˆ«ìë¼ë¦¬ ë­‰ì¹˜ëŠ” í˜„ìƒ ë°œìƒ 
+		Set set = new LinkedHashSet(); // ê³¨ê³ ë£¨ ì„ê¸° ìœ„í•´ ìˆœì„œë¥¼ ìœ ì§€í•˜ëŠ” LinkedHashSet ì‚¬ìš©í•œë‹¤.
 		int[][] board = new int[5][5];
 		
 		for(int i = 0; set.size() < 25; i++) {
-			set.add((int)(Math.random()*50) + 1 + ""); // ³¡¿¡ ºó¹®ÀÚ¿­°ú µ¡¼À¿¬»êÇÏ¸é¼­ ÀÓÀÇÀÇ Á¤¼ö°ªÀº ¹®ÀÚ¿­ ÇüÅÂ·Î addµÈ´Ù.
+			set.add((int)(Math.random()*50) + 1 + ""); // ëì— ë¹ˆë¬¸ìì—´ê³¼ ë§ì…ˆì—°ì‚°í•˜ë©´ì„œ ì„ì˜ì˜ ì •ìˆ˜ê°’ì€ ë¬¸ìì—´ í˜•íƒœë¡œ addëœë‹¤.
 		}
 		
 		Iterator it = set.iterator();
@@ -23,5 +23,5 @@ class Ex03_BingoWithSetAndIterator {
 			}
 			System.out.println();
 		}
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.

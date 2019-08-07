@@ -7,53 +7,53 @@ class Fruit {
 	public String toString() {
 		return "Fruit";
 	}
-} // Fruit Å¬·¡½º ³¡.
+} // Fruit í´ë˜ìŠ¤ ë.
 
 class Apple extends Fruit implements Eatable {
 	public String toString() {
 		return "Apple";
 	}
-} // Apple Å¬·¡½º ³¡.
+} // Apple í´ë˜ìŠ¤ ë.
 
 class Grape extends Fruit {
 	public String toString() {
 		return "Grape";
 	}
-} // Grape Å¬·¡½º ³¡.
+} // Grape í´ë˜ìŠ¤ ë.
 
 class Toy {
 	public String toString() {
 		return "Toy";
 	}
-} // Toy Å¬·¡½º ³¡.
+} // Toy í´ë˜ìŠ¤ ë.
 
 class Ex02_GenericsTest {
 	public static void main(String[] args) {
-		// ArrayList<T> list = new ArrayList<T>(); --> 2°³ÀÇ T¿¡ °°Àº Å¬·¡½º¸íÀ» Àû¾î¾ß ÇÑ´Ù.
-		// ArrayList<Fruit> list = new ArrayList<Apple>(); --> T¿¡ µé¾î°¡´Â Å¬·¡½º¸í °£ parent-child °ü°è ºÒÀÎÁ¤!
-		List<Apple> list = new ArrayList<Apple>(); // --> Å¬·¡½º °£ parent-child °ü°è´Â ¹®Á¦ ¾ø´Ù.
+		// ArrayList<T> list = new ArrayList<T>(); --> 2ê°œì˜ Tì— ê°™ì€ í´ë˜ìŠ¤ëª…ì„ ì ì–´ì•¼ í•œë‹¤.
+		// ArrayList<Fruit> list = new ArrayList<Apple>(); --> Tì— ë“¤ì–´ê°€ëŠ” í´ë˜ìŠ¤ëª… ê°„ parent-child ê´€ê³„ ë¶ˆì¸ì •!
+		List<Apple> list = new ArrayList<Apple>(); // --> í´ë˜ìŠ¤ ê°„ parent-child ê´€ê³„ëŠ” ë¬¸ì œ ì—†ë‹¤.
 		
-		FruitBox<Apple> appleBox = new FruitBox<Apple>(); // Fruit¿¡¼­´Â Eatable ÀÎÅÍÆäÀÌ½º¸¦ ±¸ÇöÇÏÁö ¾Ê¾ÒÁö¸¸, Apple¿¡¼­ ±¸ÇöÇßÀ½À¸·Î »ç¿ë °¡´ÉÇÏ´Ù.
-//		FruitBox<Fruit> fruitBox = new FruitBox<Fruit>(); // FruitÀÇ childÅ¬·¡½ºÀÌÁö¸¸ Eatable ÀÎÅÍÆäÀÌ½º¸¦ ±¸ÇöÇÏÁö ¾Ê¾Ò´Ù.
-//		FruitBox<Toy> toyBox = new FruitBox<Toy>(); // <T> À§Ä¡¿¡ µé¾î°¥ ¼ö ÀÖ´Â Å¬·¡½º´Â FruitÀÇ childÅ¬·¡½ºÀÌ°í Eatable ÀÎÅÍÆäÀÌ½º¸¦ ±¸ÇöÇÑ Å¬·¡½º¸¸ µÉ ¼ö ÀÖ´Ù.
+		FruitBox<Apple> appleBox = new FruitBox<Apple>(); // Fruitì—ì„œëŠ” Eatable ì¸í„°í˜ì´ìŠ¤ë¥¼ êµ¬í˜„í•˜ì§€ ì•Šì•˜ì§€ë§Œ, Appleì—ì„œ êµ¬í˜„í–ˆìŒìœ¼ë¡œ ì‚¬ìš© ê°€ëŠ¥í•˜ë‹¤.
+//		FruitBox<Fruit> fruitBox = new FruitBox<Fruit>(); // Fruitì˜ childí´ë˜ìŠ¤ì´ì§€ë§Œ Eatable ì¸í„°í˜ì´ìŠ¤ë¥¼ êµ¬í˜„í•˜ì§€ ì•Šì•˜ë‹¤.
+//		FruitBox<Toy> toyBox = new FruitBox<Toy>(); // <T> ìœ„ì¹˜ì— ë“¤ì–´ê°ˆ ìˆ˜ ìˆëŠ” í´ë˜ìŠ¤ëŠ” Fruitì˜ childí´ë˜ìŠ¤ì´ê³  Eatable ì¸í„°í˜ì´ìŠ¤ë¥¼ êµ¬í˜„í•œ í´ë˜ìŠ¤ë§Œ ë  ìˆ˜ ìˆë‹¤.
 		
 		fruitBox.add(new Fruit());
-		fruitBox.add(new Apple()); // void add(Fruit item) --> Fruit Å¬·¡½ºÀÇ childÀÎ Apple Å¬·¡½º ÀÎ½ºÅÏ½º¸¦ ³ÖÀ» ¼ö ÀÖ´Ù.
+		fruitBox.add(new Apple()); // void add(Fruit item) --> Fruit í´ë˜ìŠ¤ì˜ childì¸ Apple í´ë˜ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ë¥¼ ë„£ì„ ìˆ˜ ìˆë‹¤.
 		
 		appleBox.add(new Apple());
 		appleBox.add(new Apple());
-//		appleBox.add(new Toy()); --> ¿¡·¯ --> Box(Apple)¿¡´Â AppleÀ» ´ãÀ» ¼ö ¾ø´Ù.
+//		appleBox.add(new Toy()); --> ì—ëŸ¬ --> Box(Apple)ì—ëŠ” Appleì„ ë‹´ì„ ìˆ˜ ì—†ë‹¤.
 		
 		toyBox.add(new Toy());
-//		toyBox.add(new Apple()); --> ¿¡·¯ --> Box(Toy)¿¡´Â AppleÀ» ´ãÀ» ¼ö ¾ø´Ù.
+//		toyBox.add(new Apple()); --> ì—ëŸ¬ --> Box(Toy)ì—ëŠ” Appleì„ ë‹´ì„ ìˆ˜ ì—†ë‹¤.
 		
 		System.out.println(fruitBox);
 		System.out.println(appleBox);
 		System.out.println(toyBox);
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.
 
-interface Eatable { } // ÀÎÅÍÆäÀÌ½ºµµ ¶È°°ÀÌ extends »ç¿ë
+interface Eatable { } // ì¸í„°í˜ì´ìŠ¤ë„ ë˜‘ê°™ì´ extends ì‚¬ìš©
 class FruitBox<T extends Fruit & Eatable> extends Box<T> { }
 
 class Box<T> {
@@ -62,4 +62,4 @@ class Box<T> {
 	T get(int i) { return list.get(i); }
 	int size() { return list.size(); }
 	public String toString() { return list.toString(); }
-} // Box<T> Áö³×¸¯ Å¬·¡½º ³¡.
+} // Box<T> ì§€ë„¤ë¦­ í´ë˜ìŠ¤ ë.

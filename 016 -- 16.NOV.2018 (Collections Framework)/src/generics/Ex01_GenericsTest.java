@@ -6,24 +6,24 @@ import java.util.Iterator;
 
 class Ex01_GenericsTest {
 	public static void main(String[] args) {
-		/* ArrayList´Â ³»ºÎ¿¡¼­ Object ¹è¿­À» »ç¿ëÇÏ±â ¸ğµç Å¸ÀÔÀÇ °´Ã¼¸¦ ´ëÀÔÇÒ ¼ö ÀÖ´Ù.
-		 * ÇÏÁö¸¸ ÀÏ¹İÀûÀ¸·Î °°Àº Å¸ÀÔÀÇ °´Ã¼µé¸¸ »ç¿ëÇÑ´Ù. Generics´Â ¾Æ¿¹ ÁöÁ¤µÈ Å¸ÀÔÀÇ °´Ã¼µé¸¸ ³ÖÀ» ¼ö ÀÖ°Ô Á¦ÇÑÇÑ´Ù.
+		/* ArrayListëŠ” ë‚´ë¶€ì—ì„œ Object ë°°ì—´ì„ ì‚¬ìš©í•˜ê¸° ëª¨ë“  íƒ€ì…ì˜ ê°ì²´ë¥¼ ëŒ€ì…í•  ìˆ˜ ìˆë‹¤.
+		 * í•˜ì§€ë§Œ ì¼ë°˜ì ìœ¼ë¡œ ê°™ì€ íƒ€ì…ì˜ ê°ì²´ë“¤ë§Œ ì‚¬ìš©í•œë‹¤. GenericsëŠ” ì•„ì˜ˆ ì§€ì •ëœ íƒ€ì…ì˜ ê°ì²´ë“¤ë§Œ ë„£ì„ ìˆ˜ ìˆê²Œ ì œí•œí•œë‹¤.
 		 * 
-		 * GenericsÀÇ ÀåÁ¡ - 01 -->> ÁöÁ¤ Å¸ÀÔ ÀÌ¿ÜÀÇ Å¸ÀÔÀÌ µé¾î°¡´Â °ÍÀ» ¸·¾ÆÁØ´Ù.
+		 * Genericsì˜ ì¥ì  - 01 -->> ì§€ì • íƒ€ì… ì´ì™¸ì˜ íƒ€ì…ì´ ë“¤ì–´ê°€ëŠ” ê²ƒì„ ë§‰ì•„ì¤€ë‹¤.
 		 */
-		ArrayList<String> list = new ArrayList<String>(); //--> i.e. list¿¡ StringÅ¸ÀÔ °´Ã¼¸¸ ³ÖÀ» °Å¾ß!
+		ArrayList<String> list = new ArrayList<String>(); //--> i.e. listì— Stringíƒ€ì… ê°ì²´ë§Œ ë„£ì„ ê±°ì•¼!
 		list.add("String");
 		
-		/* GenericsÀÇ ÀåÁ¡ - 02 -->> ºÒÇÊ¿äÇÑ Å¸ÀÔÃ¼Å©(instanceof) & Çüº¯È¯À» Á¦°ÅÇÑ´Ù.
+		/* Genericsì˜ ì¥ì  - 02 -->> ë¶ˆí•„ìš”í•œ íƒ€ì…ì²´í¬(instanceof) & í˜•ë³€í™˜ì„ ì œê±°í•œë‹¤.
 		 */
 		HashSet<String> set = new HashSet<String>();
-		set.add("abc"); // boolean add(Object o) --> ¹«¾ùÀ» ÀÎ¼ö·Î Àü´ŞÇÏ´ø ¹ŞÀ» ¼ö ÀÖ¾î¾ß ÇÑ´Ù. --> ¹«¾ùÀ» ÀÎ¼ö·Î Àü´ŞÇÏ´ø ObjectÅ¸ÀÔÀ¸·Î ¹Ş´Â´Ù.
+		set.add("abc"); // boolean add(Object o) --> ë¬´ì—‡ì„ ì¸ìˆ˜ë¡œ ì „ë‹¬í•˜ë˜ ë°›ì„ ìˆ˜ ìˆì–´ì•¼ í•œë‹¤. --> ë¬´ì—‡ì„ ì¸ìˆ˜ë¡œ ì „ë‹¬í•˜ë˜ Objectíƒ€ì…ìœ¼ë¡œ ë°›ëŠ”ë‹¤.
 		set.add("ABC");
 		
 		Iterator<String> it = set.iterator();
 		while(it.hasNext()) {
-//			String str = (String)it.next(); // next() ¸®ÅÏÅ¸ÀÔÀº Object --> Çüº¯È¯ ÇÊ¿ä --> Generics ¾È ½èÀ» ¶§ 
+//			String str = (String)it.next(); // next() ë¦¬í„´íƒ€ì…ì€ Object --> í˜•ë³€í™˜ í•„ìš” --> Generics ì•ˆ ì¼ì„ ë•Œ 
 			String str = it.next();
 		}
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.

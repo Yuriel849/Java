@@ -9,10 +9,10 @@ class Ex07_SetToListTest {
 	public static void main(String[] args) {
 		List list = Arrays.asList(1,2,1,2,3,1,1);
 		
-		// list¿¡¼­ Áßº¹ °ª Á¦°Å --> ´ëºÎºĞÀÇ ÄÃ·º¼Ç Å¬·¡½ºµéÀº »óÈ£ º¯È¯ÀÌ °¡´ÉÇÏ´Ù		
-		Set set = new HashSet(list); // HashSet(Collection c) »ı¼ºÀÚ »ç¿ë
+		// listì—ì„œ ì¤‘ë³µ ê°’ ì œê±° --> ëŒ€ë¶€ë¶„ì˜ ì»¬ë ‰ì…˜ í´ë˜ìŠ¤ë“¤ì€ ìƒí˜¸ ë³€í™˜ì´ ê°€ëŠ¥í•˜ë‹¤		
+		Set set = new HashSet(list); // HashSet(Collection c) ìƒì„±ì ì‚¬ìš©
 		
 		System.out.println(set);
-		// [1, 2, 3] Ãâ·Â
+		// [1, 2, 3] ì¶œë ¥
 	}
 }

@@ -9,37 +9,37 @@ class Ex08_HashMap_IN_HashMap {
 	static HashMap phoneBook = new HashMap();
 	
 	public static void main(String[] args) {
-		addPhoneNo("Ä£±¸", "ÀÌÀÚ¸¶", "010-111-1111");
-		addPhoneNo("Ä£±¸", "±èÀÚ¹Ù", "010-222-2222");
-		addPhoneNo("Ä£±¸", "±èÀÚ¹Ù", "010-333-3333");
-		addPhoneNo("È¸»ç", "±è´ë¸®", "010-444-4444");
-		addPhoneNo("È¸»ç", "±è´ë¸®", "010-555-5555");
-		addPhoneNo("È¸»ç", "¹Ú´ë¸®", "010-666-6666");
-		addPhoneNo("È¸»ç", "ÀÌ°úÀå", "010-777-7777");
-		addPhoneNo("¼¼Å¹", "010-888-8888");
+		addPhoneNo("ì¹œêµ¬", "ì´ìë§ˆ", "010-111-1111");
+		addPhoneNo("ì¹œêµ¬", "ê¹€ìë°”", "010-222-2222");
+		addPhoneNo("ì¹œêµ¬", "ê¹€ìë°”", "010-333-3333");
+		addPhoneNo("íšŒì‚¬", "ê¹€ëŒ€ë¦¬", "010-444-4444");
+		addPhoneNo("íšŒì‚¬", "ê¹€ëŒ€ë¦¬", "010-555-5555");
+		addPhoneNo("íšŒì‚¬", "ë°•ëŒ€ë¦¬", "010-666-6666");
+		addPhoneNo("íšŒì‚¬", "ì´ê³¼ì¥", "010-777-7777");
+		addPhoneNo("ì„¸íƒ", "010-888-8888");
 		
 		printList();
-	} // main() ³¡.
+	} // main() ë.
 	
-	// ±×·ìÀ» Ãß°¡ÇÏ´Â ¸Ş¼­µå
+	// ê·¸ë£¹ì„ ì¶”ê°€í•˜ëŠ” ë©”ì„œë“œ
 	static void addGroup(String groupName) {
 		if(!phoneBook.containsKey(groupName)) {
 			phoneBook.put(groupName, new HashMap());
 		}
-	} // addGroup() ³¡.
+	} // addGroup() ë.
 	
-	// ±×·ì¿¡ ÀüÈ­¹øÈ£¸¦ Ãß°¡ÇÏ´Â ¸Ş¼­µå
+	// ê·¸ë£¹ì— ì „í™”ë²ˆí˜¸ë¥¼ ì¶”ê°€í•˜ëŠ” ë©”ì„œë“œ
 	static void addPhoneNo(String groupName, String name, String tel) {
 		addGroup(groupName);
 		HashMap group = (HashMap)phoneBook.get(groupName);
-		group.put(tel,  name); // ÀÌ¸§Àº Áßº¹µÉ ¼ö ÀÖÀ¸´Ï ÀüÈ­¹øÈ£¸¦ key·Î ÀúÀåÇÑ´Ù.
-	} // addPhoneNo() ³¡.
+		group.put(tel,  name); // ì´ë¦„ì€ ì¤‘ë³µë  ìˆ˜ ìˆìœ¼ë‹ˆ ì „í™”ë²ˆí˜¸ë¥¼ keyë¡œ ì €ì¥í•œë‹¤.
+	} // addPhoneNo() ë.
 	
 	static void addPhoneNo(String name, String tel) {
-		addPhoneNo("±âÅ¸", name, tel);
+		addPhoneNo("ê¸°íƒ€", name, tel);
 	}
 	
-	// ÀüÈ­¹øÈ£ºÎ ÀüÃ¼¸¦ Ãâ·ÂÇÏ´Â ¸Ş¼­µå
+	// ì „í™”ë²ˆí˜¸ë¶€ ì „ì²´ë¥¼ ì¶œë ¥í•˜ëŠ” ë©”ì„œë“œ
 	static void printList() {
 		Set set = phoneBook.entrySet();
 		Iterator it = set.iterator();
@@ -60,5 +60,5 @@ class Ex08_HashMap_IN_HashMap {
 			}
 			System.out.println();
 		}
-	} // printList() ³¡.
-} // Å¬·¡½º ³¡.
+	} // printList() ë.
+} // í´ë˜ìŠ¤ ë.

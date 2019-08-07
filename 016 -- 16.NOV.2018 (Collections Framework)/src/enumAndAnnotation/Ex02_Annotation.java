@@ -9,9 +9,9 @@ class Parent {
 }
 
 class Child extends Parent {
-	@Override // "@Override"¸¦ ¸Þ¼­µå ¾Õ¿¡ ºÙÀÌ¸é ÄÄÆÄÀÏ·¯¿¡¼­ ¿À¹ö¶óÀÌµùÀ» Á¦´ë·Î Çß´ÂÁö ¾ÈÁ™´ÂÁö¸¦ È®ÀÎÇØÁØ´Ù.
-	@Deprecated // ¹Ù·Î ¾Æ·¡ ¸Þ¼­µå(method01())°¡ deprecated¶ó°í ¾Ë¸®´Â ¸ñÀû
-	@SuppressWarnings("deprecation") // °æ°í ¸Þ¼¼Áö ¾ïÁö¿ë, °ýÈ£ ¼Ó ¹®Á¦¿¡ ´ëÇÑ °æ°í¸¦ ÇÏ¸éÁö ¾Ê´Â´Ù
+	@Override // "@Override"ë¥¼ ë©”ì„œë“œ ì•žì— ë¶™ì´ë©´ ì»´íŒŒì¼ëŸ¬ì—ì„œ ì˜¤ë²„ë¼ì´ë”©ì„ ì œëŒ€ë¡œ í–ˆëŠ”ì§€ ì•ˆí—€ëŠ”ì§€ë¥¼ í™•ì¸í•´ì¤€ë‹¤.
+	@Deprecated // ë°”ë¡œ ì•„ëž˜ ë©”ì„œë“œ(method01())ê°€ deprecatedë¼ê³  ì•Œë¦¬ëŠ” ëª©ì 
+	@SuppressWarnings("deprecation") // ê²½ê³  ë©”ì„¸ì§€ ì–µì§€ìš©, ê´„í˜¸ ì† ë¬¸ì œì— ëŒ€í•œ ê²½ê³ ë¥¼ í•˜ë©´ì§€ ì•ŠëŠ”ë‹¤
 	void method01() {
 		System.out.println("Child Method");
 	}
@@ -20,8 +20,8 @@ class Child extends Parent {
 class Ex02_Annotation {
 	public static void main(String[] args) {
 		Child c = new Child();
-		c.method01(); // @SupressWarnings ¾øÀÌ @Deprecated¸¸ ÇÏ¸é ¿©±â¼­ °æ°í°¡ ¶á´Ù
+		c.method01(); // @SupressWarnings ì—†ì´ @Deprecatedë§Œ í•˜ë©´ ì—¬ê¸°ì„œ ê²½ê³ ê°€ ëœ¬ë‹¤
 		Date d = new Date();
-		d.getDate(); // DeprecatedÇÏ´Ù°í Ãë¼Ò¼± ÃÄÁö°í °æ°í »ý±ä´Ù. --> ½ÇÇàÀº °¡´ÉÇÏÁö¸¸
+		d.getDate(); // Deprecatedí•˜ë‹¤ê³  ì·¨ì†Œì„  ì³ì§€ê³  ê²½ê³  ìƒê¸´ë‹¤. --> ì‹¤í–‰ì€ ê°€ëŠ¥í•˜ì§€ë§Œ
 	}
 }

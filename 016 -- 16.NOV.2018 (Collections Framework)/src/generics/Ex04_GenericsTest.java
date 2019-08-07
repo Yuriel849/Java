@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 class Ex04_GenericsTest {
 	public static void main(String[] args) {
-		FruitBox.<Apple>makeJuice(new FruitBox<Apple>()); // °´Ã¼ »ı¼º ¾øÀÌ Áö³×¸¯ ¸Ş¼­µå makeJuice È£Ãâ
-			// ÀÏ¹İÀûÀ¸·Î ¸®ÅÏÅ¸ÀÔ ¾Õ¿¡ À§Ä¡ÇÑ <T>´Â ¸Å°³º¯¼öÀÇ <T>¿Í °°±â ¶§¹®¿¡ »ı·«ÇÒ ¼ö ÀÖ´Ù.
+		FruitBox.<Apple>makeJuice(new FruitBox<Apple>()); // ê°ì²´ ìƒì„± ì—†ì´ ì§€ë„¤ë¦­ ë©”ì„œë“œ makeJuice í˜¸ì¶œ
+			// ì¼ë°˜ì ìœ¼ë¡œ ë¦¬í„´íƒ€ì… ì•ì— ìœ„ì¹˜í•œ <T>ëŠ” ë§¤ê°œë³€ìˆ˜ì˜ <T>ì™€ ê°™ê¸° ë•Œë¬¸ì— ìƒëµí•  ìˆ˜ ìˆë‹¤.
 		FruitBox.makeJuice(new FruitBox<Apple>());
-		FruitBox.makeJuice(new FruitBox<Toy>()); // ¿ÍÀÏµåÄ«µå »ç¿ëÀ¸·Î FruitÀÇ child Å¸ÀÔ¸¸ ÀÔ·ÂµÉ ¼ö ÀÖ´Ù --> Toy »ç¿ë ºÒ°¡
+		FruitBox.makeJuice(new FruitBox<Toy>()); // ì™€ì¼ë“œì¹´ë“œ ì‚¬ìš©ìœ¼ë¡œ Fruitì˜ child íƒ€ì…ë§Œ ì…ë ¥ë  ìˆ˜ ìˆë‹¤ --> Toy ì‚¬ìš© ë¶ˆê°€
 	}
 
 }
@@ -18,14 +18,14 @@ class Grape extends Fruit { }
 class Juice { }
 class Toy { }
 
-class FruitBox1<T> { // Å¬·¡½ºÀÇ <T>´Â °´Ã¼ »ı¼º ½ÃÁ¡¿¡ Å¸ÀÔÀÌ °áÁ¤µÈ´Ù
-	// Áö³×¸¯ ¸Ş¼­µå --> <T>´Â ¸Ş¼­µå ³»¿¡¼­¸¸ »ç¿ëÇÒ ¸ñÀûÀ¸·Î Áö³×¸¯ »ç¿ë
-	static <T extends Fruit> Juice makeJuice(FruitBox<? extends Fruit> box) { // ToyÅ¬·¡½º °°Àº ¿øÄ¡ ¾Ê´Â Å¸ÀÔÀÇ °´Ã¼°¡ ÀÔ·ÂµÇ´Â °ÍÀ» ¸·±â À§ÇØ ¿ÍÀÏµåÄ«µå »ç¿ë
-		// ¸®ÅÏÅ¸ÀÔ Juice ¾Õ¿¡ À§Ä¡ÇÑ <T>´Â Å¬·¡½º ¼±¾ğºÎÀÇ <T>¿Í °ü·Ã¾ø´Ù! --> ÇØ´ç ¸Ş¼­µåÀÇ È£Ãâ ½ÃÁ¡¿¡ <T>ÀÇ Å¸ÀÔÀÌ °áÁ¤µÈ´Ù
+class FruitBox1<T> { // í´ë˜ìŠ¤ì˜ <T>ëŠ” ê°ì²´ ìƒì„± ì‹œì ì— íƒ€ì…ì´ ê²°ì •ëœë‹¤
+	// ì§€ë„¤ë¦­ ë©”ì„œë“œ --> <T>ëŠ” ë©”ì„œë“œ ë‚´ì—ì„œë§Œ ì‚¬ìš©í•  ëª©ì ìœ¼ë¡œ ì§€ë„¤ë¦­ ì‚¬ìš©
+	static <T extends Fruit> Juice makeJuice(FruitBox<? extends Fruit> box) { // Toyí´ë˜ìŠ¤ ê°™ì€ ì›ì¹˜ ì•ŠëŠ” íƒ€ì…ì˜ ê°ì²´ê°€ ì…ë ¥ë˜ëŠ” ê²ƒì„ ë§‰ê¸° ìœ„í•´ ì™€ì¼ë“œì¹´ë“œ ì‚¬ìš©
+		// ë¦¬í„´íƒ€ì… Juice ì•ì— ìœ„ì¹˜í•œ <T>ëŠ” í´ë˜ìŠ¤ ì„ ì–¸ë¶€ì˜ <T>ì™€ ê´€ë ¨ì—†ë‹¤! --> í•´ë‹¹ ë©”ì„œë“œì˜ í˜¸ì¶œ ì‹œì ì— <T>ì˜ íƒ€ì…ì´ ê²°ì •ëœë‹¤
 		return null;
 	}
 	
-	// ¿ÍÀÏµå Ä«µå°¡ »ç¿ëµÈ ¸Ş¼­µå --> ¿©·¯ Å¸ÀÔÀÇ Áö³×¸¯À» ÀÔ·ÂÇÒ ¸ñÀûÀ¸·Î Áö³×¸¯ »ç¿ë
+	// ì™€ì¼ë“œ ì¹´ë“œê°€ ì‚¬ìš©ëœ ë©”ì„œë“œ --> ì—¬ëŸ¬ íƒ€ì…ì˜ ì§€ë„¤ë¦­ì„ ì…ë ¥í•  ëª©ì ìœ¼ë¡œ ì§€ë„¤ë¦­ ì‚¬ìš©
 	static Juice makeJuiceW(FruitBox<Fruit> box) {
 		return null;
 	}
@@ -39,4 +39,4 @@ class FruitBox1<T> { // Å¬·¡½ºÀÇ <T>´Â °´Ã¼ »ı¼º ½ÃÁ¡¿¡ Å¸ÀÔÀÌ °áÁ¤µÈ´Ù
 	T get(int i) {
 		return list.get(i);
 	}
-} // FruitBox<T> Å¬·¡½º ³¡.
+} // FruitBox<T> í´ë˜ìŠ¤ ë.

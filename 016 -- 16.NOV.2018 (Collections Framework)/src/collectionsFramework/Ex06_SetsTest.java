@@ -3,7 +3,7 @@ package collectionsFramework;
 import java.util.HashSet;
 import java.util.Iterator;
 
-// ÇÕÁıÇÕ, Â÷ÁıÇÕ, ±³ÁıÇÕ ±¸ÇÏ´Â ¿¹Á¦ --> ÀÌ¹Ì Àü¿ë ¸Ş¼­µå°¡ Á¸ÀçÇÏÁö¸¸, ½Ç½ÀÂ÷¿ø¿¡¼­ ÇÑ °Í 
+// í•©ì§‘í•©, ì°¨ì§‘í•©, êµì§‘í•© êµ¬í•˜ëŠ” ì˜ˆì œ --> ì´ë¯¸ ì „ìš© ë©”ì„œë“œê°€ ì¡´ì¬í•˜ì§€ë§Œ, ì‹¤ìŠµì°¨ì›ì—ì„œ í•œ ê²ƒ 
 class Ex06_SetsTest {
 	public static void main(String[] args) {
 		HashSet setA = new HashSet();
@@ -48,10 +48,8 @@ class Ex06_SetsTest {
 			setHab.add(it.next());
 		}
 		
-		System.out.println("A ¡û B = " + setKyo);
-		System.out.println("A ¡ú B = " + setHab);
+		System.out.println("A âˆ© B = " + setKyo);
+		System.out.println("A âˆª B = " + setHab);
 		System.out.println("A - B = " + setCha);
-
 	}
-
 }

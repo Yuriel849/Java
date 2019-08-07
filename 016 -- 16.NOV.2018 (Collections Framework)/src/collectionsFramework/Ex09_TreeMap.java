@@ -26,14 +26,14 @@ class Ex09_TreeMap {
 		
 		Iterator it = map.entrySet().iterator();
 		
-		System.out.println("= ±âº»Á¤·Ä =");
+		System.out.println("= ê¸°ë³¸ì •ë ¬ =");
 		while(it.hasNext()) {
 			Map.Entry entry = (Map.Entry)it.next();
 			int value = ((Integer)entry.getValue()).intValue();
 			System.out.println(entry.getKey() + " : " + printBar('#', value) + " " + value);
 		}
 		
-		// mapÀ» ArrayList·Î º¯È¯ÇÑ ´ÙÀ½¿¡ Collections.sort()·Î Á¤·Ä
+		// mapì„ ArrayListë¡œ ë³€í™˜í•œ ë‹¤ìŒì— Collections.sort()ë¡œ ì •ë ¬
 		Set set = map.entrySet();
 		List list = new ArrayList(set); // ArrayList(Collection c
 		
@@ -42,13 +42,13 @@ class Ex09_TreeMap {
 		
 		it = list.iterator();
 		
-		System.out.println("°ªÀÇ Å©±â°¡ Å« ¼ø¼­·Î Á¤·Ä");
+		System.out.println("ê°’ì˜ í¬ê¸°ê°€ í° ìˆœì„œë¡œ ì •ë ¬");
 		while(it.hasNext()) {
 			Map.Entry entry = (Map.Entry)it.next();
 			int value = ((Integer)entry.getValue()).intValue();
 			System.out.println(entry.getKey() + " : " + printBar('#', value) + " " + value);
 		}
-	} // main() ³¡.
+	} // main() ë.
 
 	static class ValueComparator implements Comparator {
 		public int compare(Object o1, Object o2) {
@@ -63,7 +63,7 @@ class Ex09_TreeMap {
 			}
 			return -1;
 		}
-	} // ValueComparator() ³¡.
+	} // ValueComparator() ë.
 	
 	public static String printBar(char ch, int value) {
 		char[] bar = new char[value];
@@ -73,5 +73,5 @@ class Ex09_TreeMap {
 		}
 		
 		return new String(bar);
-	} // printBar() ³¡.
-} // Å¬·¡½º ³¡.
+	} // printBar() ë.
+} // í´ë˜ìŠ¤ ë.

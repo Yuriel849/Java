@@ -15,26 +15,26 @@ class Ex05_WildCardTest {
 		
 		System.out.println(Juicer.makeJuice(fruitBox));
 		System.out.println(Juicer.makeJuice(appleBox));
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.
 
 class Fruit {
 	public String toString() {
 		return "Fruit";
 	}
-} // Fruit Å¬·¡½º ³¡.
+} // Fruit í´ë˜ìŠ¤ ë.
 
 class Apple extends Fruit {
 	public String toString() {
 		return "Apple";
 	}
-} // Apple Å¬·¡½º ³¡.
+} // Apple í´ë˜ìŠ¤ ë.
 
 class Grape extends Fruit {
 	public String toString() {
 		return "Grape";
 	}
-} // Grape Å¬·¡½º ³¡.
+} // Grape í´ë˜ìŠ¤ ë.
 
 class Juice {
 	String name;
@@ -46,7 +46,7 @@ class Juice {
 	public String toString() {
 		return name;
 	}
-} // Juice Å¬·¡½º ³¡.
+} // Juice í´ë˜ìŠ¤ ë.
 
 class Juicer {
 	static Juice makeJuice(FruitBox<? extends Fruit> box) {
@@ -56,9 +56,9 @@ class Juicer {
 			{ tmp += f + " "; }
 		return new Juice(tmp);	
 	}
-} // Juicer Å¬·¡½º ³¡.
+} // Juicer í´ë˜ìŠ¤ ë.
 
-class FruitBox<T extends Fruit> extends Box<T> { } // FruitBox Å¬·¡½º ³¡.
+class FruitBox<T extends Fruit> extends Box<T> { } // FruitBox í´ë˜ìŠ¤ ë.
 
 class Box<T> {
 	ArrayList<T> list = new ArrayList<T>();
@@ -72,4 +72,4 @@ class Box<T> {
 		{ return list.size(); }
 	public String toString()
 		{ return list.toString(); }
-}  // Box<T> Å¬·¡½º ³¡.
+}  // Box<T> í´ë˜ìŠ¤ ë.

@@ -10,7 +10,7 @@ public class Ex04_BracketValidCheck {
 			System.out.println("Example : java Ex04_BracketValidCheck \"((2+3)*1)+3\"");
 			System.exit(0);
 		}
-		/* Ä¿¸Çµå¶óÀÎ ÀÔ·ÂÀ» eclipse¿¡¼­ ÇÏ·Á¸é...
+		/* ì»¤ë§¨ë“œë¼ì¸ ì…ë ¥ì„ eclipseì—ì„œ í•˜ë ¤ë©´...
 		 * 	>> "Run" >> "Run Configurations" >> "Arguments" >> "Program Arguments" >> "Apply" & "Run"
 		 */
 		
@@ -27,10 +27,10 @@ public class Ex04_BracketValidCheck {
 				else if(ch == ')') { st.pop(); }
 			}
 			
-			if(st.isEmpty()) { System.out.println("°ıÈ£°¡ ÀÏÄ¡ÇÕ´Ï´Ù."); }
-			else { System.out.println("°ıÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù."); }			
+			if(st.isEmpty()) { System.out.println("ê´„í˜¸ê°€ ì¼ì¹˜í•©ë‹ˆë‹¤."); }
+			else { System.out.println("ê´„í˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤."); }			
 		} catch (EmptyStackException e) {
-			System.out.println("°ıÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.");
-		} // try-catch¹® ³¡.
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+			System.out.println("ê´„í˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
+		} // try-catchë¬¸ ë.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.

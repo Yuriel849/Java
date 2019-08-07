@@ -10,19 +10,17 @@ class Ex02_FillSetTest {
 	public static void main(String[] args) {
 		Set set = new HashSet();
 		
-		// ÀÓÀÇÀÇ °ªÀ¸·Î set Ã¤¿ì±â
-		for(int i = 0; set.size() < 10; i++) { // Áßº¹µÇ´Â °ªÀº ÀÔ·Â ½ÇÆĞÇÏ±â¿¡, ½ÇÁ¦ ¹İº¹ È½¼ö´Â 3º¸´Ù ¸¹À» ¼ö ÀÖ´Ù.
+		// ì„ì˜ì˜ ê°’ìœ¼ë¡œ set ì±„ìš°ê¸°
+		for(int i = 0; set.size() < 10; i++) { // ì¤‘ë³µë˜ëŠ” ê°’ì€ ì…ë ¥ ì‹¤íŒ¨í•˜ê¸°ì—, ì‹¤ì œ ë°˜ë³µ íšŸìˆ˜ëŠ” 3ë³´ë‹¤ ë§ì„ ìˆ˜ ìˆë‹¤.
 			int r = (int)(Math.random()*100) + 1;
 			set.add(r);
 			System.out.println("r = " + r);
 		}
 		System.out.println(set);
 		
-		// set °ªµéÀ» Á¤·ÄÇÏ±â
-		List list = new LinkedList(set); // LinkedList(Collection c) »ı¼ºÀÚ »ç¿ë
-		Collections.sort(list); // ¸Å°³º¯¼ö°¡ list, setÀº »ç¿ëÇÒ ¼ö ¾ø´Ù.
+		// set ê°’ë“¤ì„ ì •ë ¬í•˜ê¸°
+		List list = new LinkedList(set); // LinkedList(Collection c) ìƒì„±ì ì‚¬ìš©
+		Collections.sort(list); // ë§¤ê°œë³€ìˆ˜ê°€ list, setì€ ì‚¬ìš©í•  ìˆ˜ ì—†ë‹¤.
 		System.out.println(list);
-
 	}
-
 }

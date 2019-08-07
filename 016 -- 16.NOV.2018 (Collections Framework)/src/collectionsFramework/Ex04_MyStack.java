@@ -2,55 +2,54 @@ package collectionsFramework;
 
 import java.util.Stack;
 
-// À¥ºê¶ó¿ìÀúÀÇ 'µÚ·Î' & '¾ÕÀ¸·Î' ¹öÆ°ÀÇ ±â´ÉÀ» ±¸ÇöÇÑ ¿¹Á¦
+// ì›¹ë¸Œë¼ìš°ì €ì˜ 'ë’¤ë¡œ' & 'ì•ìœ¼ë¡œ' ë²„íŠ¼ì˜ ê¸°ëŠ¥ì„ êµ¬í˜„í•œ ì˜ˆì œ
 
 class Ex04_MyStack {
 	public static Stack back = new Stack();
 	public static Stack forward = new Stack();
 
 	public static void main(String[] args) {
-		goURL("1.³×ÀÌÆ®");
-		goURL("2.¾ßÈÄ");
-		goURL("3.³×ÀÌ¹ö");
-		goURL("4.´ÙÀ½");
+		goURL("1.ë„¤ì´íŠ¸");
+		goURL("2.ì•¼í›„");
+		goURL("3.ë„¤ì´ë²„");
+		goURL("4.ë‹¤ìŒ");
 				
 		printStatus();
 		
 		goBack();
-		System.out.println("= µÚ·Î°¡±â ¹öÆ°À» ´©¸¥ ÈÄ =");
+		System.out.println("= ë’¤ë¡œê°€ê¸° ë²„íŠ¼ì„ ëˆ„ë¥¸ í›„ =");
 		printStatus();
 		
 		goBack();
-		System.out.println("= 'µÚ·Î' ¹öÆ°À» ´©¸¥ ÈÄ =");
+		System.out.println("= 'ë’¤ë¡œ' ë²„íŠ¼ì„ ëˆ„ë¥¸ í›„ =");
 		printStatus();
 		
 		goForward();
-		System.out.println("= '¾ÕÀ¸·Î' ¹öÆ°À» ´©¸¥ ÈÄ =");
+		System.out.println("= 'ì•ìœ¼ë¡œ' ë²„íŠ¼ì„ ëˆ„ë¥¸ í›„ =");
 		printStatus();
 		
 		goURL("codechobo.com");
-		System.out.println("= »õ·Î¿î ÁÖ¼Ò·Î ÀÌµ¿ ÈÄ =");
+		System.out.println("= ìƒˆë¡œìš´ ì£¼ì†Œë¡œ ì´ë™ í›„ =");
 		printStatus();		
-	} // main() ³¡.
+	} // main() ë.
 	
 	public static void printStatus() {
 		System.out.println("back:" + back);
 		System.out.println("forward:" + forward);
-		System.out.println("ÇöÀçÈ­¸éÀº '" + back.peek() + "' ÀÔ´Ï´Ù.");
+		System.out.println("í˜„ì¬í™”ë©´ì€ '" + back.peek() + "' ì…ë‹ˆë‹¤.");
 		System.out.println();
-	} // printStatus() ³¡.
+	} // printStatus() ë.
 	
 	public static void goURL(String url) {
 		back.push(url);
 		if(!forward.empty()) { forward.clear(); }
-	} // goURL() ³¡.
+	} // goURL() ë.
 	
 	public static void goForward() {
 		if(!forward.empty()) { back.push(forward.pop()); }
-	} // goForward() ³¡.
+	} // goForward() ë.
 		
 	public static void goBack() {
 		if(!back.empty()) { forward.push(back.pop()); }
-	} // goBack() ³¡.
-
+	} // goBack() ë.
 }

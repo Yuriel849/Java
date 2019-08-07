@@ -12,11 +12,9 @@ public class Ex03_Sorting {
 		}
 		System.out.println(list);
 		
-		Collections.sort(list); // Á¤·ÄÀÌ µÈ´Ù --> ±×·±µ¥ ³ª´Â Á¤·ÄÀÇ ±âÁØÀ» ¾È Áá´Âµ¥??
-						// »ç½Ç Collections.sort()¿¡´Â ¸Å°³º¯¼ö°¡ 2°³ --> µÎ¹øÂ° ¸Å°³º¯¼ö°¡ »ç¿ëÀÚ°¡ ÁöÁ¤ÇÒ ¼ö ÀÖ´Â Á¤·Ä±âÁØ¿ë ¸Å°³º¯¼ö
-						// ¿©±â¼­´Â °´Ã¼ÀÎ Integer°¡ "¿À¸§Â÷¼ø" Á¤·Ä±âÁØ ±âº»°ªÀ» °¡Áö°í ÀÖ°í, ±× ±âº»°ªÀ» Collections.sort()¿¡°Ô Á¦°øÇÑ´Ù
+		Collections.sort(list); // ì •ë ¬ì´ ëœë‹¤ --> ê·¸ëŸ°ë° ë‚˜ëŠ” ì •ë ¬ì˜ ê¸°ì¤€ì„ ì•ˆ ì¤¬ëŠ”ë°??
+						// ì‚¬ì‹¤ Collections.sort()ì—ëŠ” ë§¤ê°œë³€ìˆ˜ê°€ 2ê°œ --> ë‘ë²ˆì§¸ ë§¤ê°œë³€ìˆ˜ê°€ ì‚¬ìš©ìžê°€ ì§€ì •í•  ìˆ˜ ìžˆëŠ” ì •ë ¬ê¸°ì¤€ìš© ë§¤ê°œë³€ìˆ˜
+						// ì—¬ê¸°ì„œëŠ” ê°ì²´ì¸ Integerê°€ "ì˜¤ë¦„ì°¨ìˆœ" ì •ë ¬ê¸°ì¤€ ê¸°ë³¸ê°’ì„ ê°€ì§€ê³  ìžˆê³ , ê·¸ ê¸°ë³¸ê°’ì„ Collections.sort()ì—ê²Œ ì œê³µí•œë‹¤
 		System.out.println(list);
-
 	}
-
 }

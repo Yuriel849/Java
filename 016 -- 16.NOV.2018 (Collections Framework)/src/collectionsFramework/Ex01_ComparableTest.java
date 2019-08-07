@@ -8,41 +8,41 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
-// Comparable & Comparator ½Ç½À
+// Comparable & Comparator ì‹¤ìŠµ
 
-/* <ºÎ°¡¼³¸í>
- * 	>> sort()ÀÇ ÄÚµå¿Í ·ÎÁ÷Àº ¿Ï¼ºµÇ¾î ÀÖ°í, ³ª´Â ¾î¶»°Ô ±¸ÇöµÇ¾ú´ÂÁö ½Å°æ ¾µ ÇÊ¿ä°¡ ¾ø´Ù.
- * 	>> sort()¿¡°Ô ºÎÁ·ÇÑ °Í, ³»°¡ Á¦°øÇØ¾ß ÇÏ´Â °ÍÀº ¹è¿­°ú Á¤·ÄÀÇ ±âÁØ (¹«¾ùÀ» ±âÁØÀ¸·Î ¼ø¼­¸¦ Á¤ÇÒ °ÍÀÎ°¡?)
- * 		>> sortingÇÒ ¶§ 2°³ °ªÀ» ºñ±³ÇÏ¿© Á¶°Ç¿¡ ÃæÁ·ÇÏ¸é ÀÚ¸®¹Ù²ŞÀ» ÇÑ´Ù.
- * 			>> Á¤È®È÷ ¾î¶² 2°³ °ªÀ» ºñ±³ÇÏ´ÂÁö´Â sort ¸Ş¼­µå¸¶´Ù ´Ù¸£´Ù (ex) quick sort, bubble sort µîµî)
- * 		>> ºñ±³ÇÒ ¶§ ¾²´Â Á¶°Ç½ÄÀ» Á¦°øÇÏ´Â°Ô "Á¤·Ä±âÁØ"!!!
+/* <ë¶€ê°€ì„¤ëª…>
+ * 	>> sort()ì˜ ì½”ë“œì™€ ë¡œì§ì€ ì™„ì„±ë˜ì–´ ìˆê³ , ë‚˜ëŠ” ì–´ë–»ê²Œ êµ¬í˜„ë˜ì—ˆëŠ”ì§€ ì‹ ê²½ ì“¸ í•„ìš”ê°€ ì—†ë‹¤.
+ * 	>> sort()ì—ê²Œ ë¶€ì¡±í•œ ê²ƒ, ë‚´ê°€ ì œê³µí•´ì•¼ í•˜ëŠ” ê²ƒì€ ë°°ì—´ê³¼ ì •ë ¬ì˜ ê¸°ì¤€ (ë¬´ì—‡ì„ ê¸°ì¤€ìœ¼ë¡œ ìˆœì„œë¥¼ ì •í•  ê²ƒì¸ê°€?)
+ * 		>> sortingí•  ë•Œ 2ê°œ ê°’ì„ ë¹„êµí•˜ì—¬ ì¡°ê±´ì— ì¶©ì¡±í•˜ë©´ ìë¦¬ë°”ê¿ˆì„ í•œë‹¤.
+ * 			>> ì •í™•íˆ ì–´ë–¤ 2ê°œ ê°’ì„ ë¹„êµí•˜ëŠ”ì§€ëŠ” sort ë©”ì„œë“œë§ˆë‹¤ ë‹¤ë¥´ë‹¤ (ex) quick sort, bubble sort ë“±ë“±)
+ * 		>> ë¹„êµí•  ë•Œ ì“°ëŠ” ì¡°ê±´ì‹ì„ ì œê³µí•˜ëŠ”ê²Œ "ì •ë ¬ê¸°ì¤€"!!!
  * 
- * 	>> Á¤·Ä±âÁØÀ» ¼ıÀÚ·Î ¾Ë·ÁÁÖ´Â °ÍÀÌ °¡Àå °£ÆíÇÏ´Ù
- * 		ex) ¹öºí¼ÒÆ®¿¡¼­ ¿À¸§Â÷¼ø Á¤·ÄÇÏ·Á¸é... i °ª°ú (i+1) °ªÀ» ºñ±³ --> i-(i+1) --> À½¼ö¸é i°¡ ´õ ÀÛÀº °Í, 0ÀÌ¸é °°Àº °Í, ¾ç¼ö¸é i°¡ ´õ Å« °Í 
+ * 	>> ì •ë ¬ê¸°ì¤€ì„ ìˆ«ìë¡œ ì•Œë ¤ì£¼ëŠ” ê²ƒì´ ê°€ì¥ ê°„í¸í•˜ë‹¤
+ * 		ex) ë²„ë¸”ì†ŒíŠ¸ì—ì„œ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬í•˜ë ¤ë©´... i ê°’ê³¼ (i+1) ê°’ì„ ë¹„êµ --> i-(i+1) --> ìŒìˆ˜ë©´ iê°€ ë” ì‘ì€ ê²ƒ, 0ì´ë©´ ê°™ì€ ê²ƒ, ì–‘ìˆ˜ë©´ iê°€ ë” í° ê²ƒ 
  */ 
 
 class Ex01_ComparableTest {
 	public static void main(String[] args) {
 		List list = new ArrayList();
-		list.add(new Student("È«±æµ¿", 50, 15));
+		list.add(new Student("í™ê¸¸ë™", 50, 15));
 		list.add(new Student("IWS ", 100, 20));
-		list.add(new Student("±èÀÚ¹Ù", 75, 25));
+		list.add(new Student("ê¹€ìë°”", 75, 25));
 		list.add(new Student("AUG ", 100, 10));
-		list.add(new Student("ÀÌÀá¹Ù", 25, 35));
+		list.add(new Student("ì´ì ë°”", 25, 35));
 
-		// Ã³¸®ÇÏ±â Àü¿¡ ÇÑ ¹ø Ãâ·Â
+		// ì²˜ë¦¬í•˜ê¸° ì „ì— í•œ ë²ˆ ì¶œë ¥
 		Iterator it = list.iterator();
 		
 		while(it.hasNext()) {
 			System.out.println(it.next());
 		}
 		
-//		Collections.sort(list); // ÀÌ »óÅÂ·Î´Â Á¤·Ä ±âÁØÀÌ ¾ø±â ¶§¹®¿¡ ¿¡·¯!
+//		Collections.sort(list); // ì´ ìƒíƒœë¡œëŠ” ì •ë ¬ ê¸°ì¤€ì´ ì—†ê¸° ë•Œë¬¸ì— ì—ëŸ¬!
 		
-		// ±âº» Á¤·Ä±âÁØÀ¸·Î Á¤·Ä
+		// ê¸°ë³¸ ì •ë ¬ê¸°ì¤€ìœ¼ë¡œ ì •ë ¬
 		Collections.sort(list);
 		
-		System.out.println("\nÀÌ¸§(»çÀü ¼ø)À¸·Î Á¤·ÄÇÏ¿´´Ù.");
+		System.out.println("\nì´ë¦„(ì‚¬ì „ ìˆœ)ìœ¼ë¡œ ì •ë ¬í•˜ì˜€ë‹¤.");
 		it = list.iterator();
 		
 		while(it.hasNext()) {
@@ -50,19 +50,19 @@ class Ex01_ComparableTest {
 		}
 		
 		
-		// ¼ºÀû ±âÁØÀ¸·Î Á¤·Ä
+		// ì„±ì  ê¸°ì¤€ìœ¼ë¡œ ì •ë ¬
 		Collections.sort(list, new ScoreComp());
 		
-		System.out.println("\n¼ºÀû ¼øÀ¸·Î Á¤·ÄÇÏ¿´´Ù.");
+		System.out.println("\nì„±ì  ìˆœìœ¼ë¡œ ì •ë ¬í•˜ì˜€ë‹¤.");
 		it = list.iterator();
 		
 		while(it.hasNext()) {
 			System.out.println(it.next());
 		}
-	} // main() ³¡.
-} // Student Å¬·¡½º ³¡.
+	} // main() ë.
+} // Student í´ë˜ìŠ¤ ë.
 
-// (Q1) StudentÀÇ ±âº»Á¤·ÄÀ» ÀÌ¸§(»çÀü ¼ø)À¸·Î ÇÏ¶ó.
+// (Q1) Studentì˜ ê¸°ë³¸ì •ë ¬ì„ ì´ë¦„(ì‚¬ì „ ìˆœ)ìœ¼ë¡œ í•˜ë¼.
 class Student implements Comparable {
 	String name;
 	int score;
@@ -81,9 +81,9 @@ class Student implements Comparable {
 	}
 
 	@Override
-	public int compareTo(Object o) { // this & ÁöÁ¤µÈ °´Ã¼ o¸¦ ºñ±³ --> o´Â Student °´Ã¼°¡ µé¾î¿Â´Ù!
-		if(o instanceof Student) { // o°¡ Student °´Ã¼ÀÎÁö È®ÀÎ
-//			Student stud = (Student) o; // StudentÅ¸ÀÔ ÂüÁ¶º¯¼ö·Î o¸¦ Çüº¯È¯
+	public int compareTo(Object o) { // this & ì§€ì •ëœ ê°ì²´ oë¥¼ ë¹„êµ --> oëŠ” Student ê°ì²´ê°€ ë“¤ì–´ì˜¨ë‹¤!
+		if(o instanceof Student) { // oê°€ Student ê°ì²´ì¸ì§€ í™•ì¸
+//			Student stud = (Student) o; // Studentíƒ€ì… ì°¸ì¡°ë³€ìˆ˜ë¡œ oë¥¼ í˜•ë³€í™˜
 			return this.name.compareTo(((Student) o).name);
 		}
 		return 0;
@@ -93,14 +93,14 @@ class Student implements Comparable {
 		return Objects.hash(name, score, age);
 	}
 	
-} // Student Å¬·¡½º ³¡.
+} // Student í´ë˜ìŠ¤ ë.
 
-// (Q2) Á¤·Ä±âÁØÀÌ ¼ºÀû¼ø(³»¸²Â÷¼ø)ÀÎ Comparator¸¦ ±¸ÇöÇÑ Å¬·¡½º ScoreComp¸¦ ÀÛ¼ºÇÏ¶ó.
-//		>> ¼ºÀûÀÌ °°Àº °æ¿ì ³ªÀÌ¼ø(³»¸²Â÷¼ø)À¸·Î Á¤·ÄÇÒ °Í.
+// (Q2) ì •ë ¬ê¸°ì¤€ì´ ì„±ì ìˆœ(ë‚´ë¦¼ì°¨ìˆœ)ì¸ Comparatorë¥¼ êµ¬í˜„í•œ í´ë˜ìŠ¤ ScoreCompë¥¼ ì‘ì„±í•˜ë¼.
+//		>> ì„±ì ì´ ê°™ì€ ê²½ìš° ë‚˜ì´ìˆœ(ë‚´ë¦¼ì°¨ìˆœ)ìœ¼ë¡œ ì •ë ¬í•  ê²ƒ.
 class ScoreComp implements Comparator {
 	public int compare(Object o1, Object o2) {
 		if(o1 instanceof Student && o2 instanceof Student) {
-			// »ïÇ×¿¬»êÀÚ·Î ³»°¡ °è»êÇÏ´Â ´ë½Å Integer·Î autoboxing & unboxingÇÏ¿© IntegerÅ¬·¡½ºÀÇ compareTo()¸¦ »ç¿ëÇÑ´Ù.
+			// ì‚¼í•­ì—°ì‚°ìë¡œ ë‚´ê°€ ê³„ì‚°í•˜ëŠ” ëŒ€ì‹  Integerë¡œ autoboxing & unboxingí•˜ì—¬ Integerí´ë˜ìŠ¤ì˜ compareTo()ë¥¼ ì‚¬ìš©í•œë‹¤.
 			Integer oneVal = ((Student) o1).score;
 			Integer anoVal = ((Student) o2).score;
 			Integer oneAge = ((Student) o1).age;
@@ -108,7 +108,7 @@ class ScoreComp implements Comparator {
 			int i = oneVal.compareTo(anoVal) * -1;
 			return (i==0 ? (oneAge.compareTo(anoAge) * -1) : i);
 			
-			// int º¯¼öµé¿¡ score, age °ªµéÀ» ÀúÀåÇÑ ÈÄ Áßº¹ »ïÇ×¿¬»êÀÚ¸¦ ÀÌ¿ëÇÑ´Ù.
+			// int ë³€ìˆ˜ë“¤ì— score, age ê°’ë“¤ì„ ì €ì¥í•œ í›„ ì¤‘ë³µ ì‚¼í•­ì—°ì‚°ìë¥¼ ì´ìš©í•œë‹¤.
 //			int oneVal = ((Student) o1).score;
 //			int anoVal = ((Student) o2).score;
 //			int oneAge = ((Student) o1).age;
@@ -116,5 +116,5 @@ class ScoreComp implements Comparator {
 //			return (oneVal < anoVal ? 1 : (oneVal == anoVal ? (oneAge < anoAge ? 1 : (oneAge == anoAge ? 0 : -1)) : -1));
 		}
 		return 0;
-	} // compare() ³¡.
-} // ScoreComp Å¬·¡½º ³¡.
+	} // compare() ë.
+} // ScoreComp í´ë˜ìŠ¤ ë.
