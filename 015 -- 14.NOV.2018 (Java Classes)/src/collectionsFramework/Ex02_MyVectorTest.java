@@ -5,7 +5,7 @@ import java.util.Vector;
 class Ex02_MyVectorTest {
 	public static void main(String[] args) {
 		Ex02_MyVector v = new Ex02_MyVector(5);
-		// Àß ¾ÈµÈ´Ù¸é Vector °´Ã¼¸¦ ¼±¾ğ/»ı¼ºÇÏ¿© ½ÇÇà, ºñ±³ÇØº¸ÀÚ
+		// ì˜ ì•ˆëœë‹¤ë©´ Vector ê°ì²´ë¥¼ ì„ ì–¸/ìƒì„±í•˜ì—¬ ì‹¤í–‰, ë¹„êµí•´ë³´ì
 		Vector v4 = new Vector();
 		System.out.println(v.isEmpty());
 //		v4.add("3");

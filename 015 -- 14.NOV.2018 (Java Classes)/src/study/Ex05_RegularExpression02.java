@@ -16,12 +16,12 @@ public class Ex05_RegularExpression02 {
 		int i = 0;
 		
 		while(m.find()) {
-			System.out.println(++i + "¹øÂ° ¸ÅÄª: " + m.start() + "~" + m.end());
+			System.out.println(++i + "ë²ˆì§¸ ë§¤ì¹­: " + m.start() + "~" + m.end());
 			m.appendReplacement(sb, "drunken");
 		}
 		
 		m.appendTail(sb);
 		System.out.println("Replacement count : " + i);
-		System.out.println("result : " + sb.toString()); // source ¹®ÀÚ¿­Àº ±×´ë·Î µÎ°í sb ¹®ÀÚ¿­¿¡ °íÃÄÁø ³»¿ëÀ» ´ã´Â´Ù.
-	} // main() ³¡.
+		System.out.println("result : " + sb.toString()); // source ë¬¸ìì—´ì€ ê·¸ëŒ€ë¡œ ë‘ê³  sb ë¬¸ìì—´ì— ê³ ì³ì§„ ë‚´ìš©ì„ ë‹´ëŠ”ë‹¤.
+	} // main() ë.
 }

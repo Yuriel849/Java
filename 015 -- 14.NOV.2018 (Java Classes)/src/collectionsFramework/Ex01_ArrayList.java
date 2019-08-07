@@ -11,16 +11,16 @@ class Ex01_ArrayList {
 		list1.add(new Integer(2));
 		list1.add(new Integer(0));
 		list1.add(new Integer(1));
-		list1.add(3); // add(Object obj)ÀÌ±â¿¡ intÇüÀÎ ¼ıÀÚ¸¦ ³ÖÀ» ¼ö ¾ø´Ù --> autoboxing¿¡ ÀÇÇØ ÀÚµ¿À¸·Î Integer Å¬·¡½ºÀÇ °´Ã¼ °ª "3"ÀÌ µÈ´Ù
+		list1.add(3); // add(Object obj)ì´ê¸°ì— intí˜•ì¸ ìˆ«ìë¥¼ ë„£ì„ ìˆ˜ ì—†ë‹¤ --> autoboxingì— ì˜í•´ ìë™ìœ¼ë¡œ Integer í´ë˜ìŠ¤ì˜ ê°ì²´ ê°’ "3"ì´ ëœë‹¤
 		
 		ArrayList list2 = new ArrayList(list1.subList(1,4));
 		print(list1, list2);
 		
-		Collections.sort(list1); // list1°ú list2¸¦ Á¤·ÄÇÑ´Ù.
+		Collections.sort(list1); // list1ê³¼ list2ë¥¼ ì •ë ¬í•œë‹¤.
 		Collections.sort(list2);
 		print(list1, list2);
 		
-		// list1.containsAll(list2) --> list1ÀÌ list2ÀÇ ¸ğµç ¿ä¼Ò¸¦ Æ÷ÇÔÇÏ°í ÀÖÀ» ¶§¸¸ true
+		// list1.containsAll(list2) --> list1ì´ list2ì˜ ëª¨ë“  ìš”ì†Œë¥¼ í¬í•¨í•˜ê³  ìˆì„ ë•Œë§Œ true
 		System.out.println("list1.containsAll(list2) : " + list1.containsAll(list2));
 		
 		list2.add("B");
@@ -31,20 +31,20 @@ class Ex01_ArrayList {
 		list2.set(3, "AA");
 		print(list1, list2);
 		
-		// list1¿¡¼­ list2¿Í °ãÄ¡´Â ºÎºĞ¸¸ ³²±â°í ³ª¸ÓÁö´Â »èÁ¦ÇÑ´Ù.
+		// list1ì—ì„œ list2ì™€ ê²¹ì¹˜ëŠ” ë¶€ë¶„ë§Œ ë‚¨ê¸°ê³  ë‚˜ë¨¸ì§€ëŠ” ì‚­ì œí•œë‹¤.
 		System.out.println("list1.retainAll(list2) : " + list1.retainAll(list2));
 		print(list1, list2);
 		
-		// list2¿¡¼­ list1¿¡ Æ÷ÇÔµÈ °´Ã¼µéÀ» »èÁ¦ÇÑ´Ù.
-		for(int i = list2.size()-1; i >= 0; i--) { // listÀÇ °´Ã¼¸¦ »èÁ¦ÇÒ ¶§´Â µÚ¿¡¼­ ºÎÅÍ »èÁ¦ÇØ¾ß ÇÑ´Ù --> ¾Õ¿¡¼­ »èÁ¦ÇÏ¸é i°¡ Áõ°¡ÇÏ¸é¼­ »èÁ¦µÇÁö ¾Ê´Â´Ù!!
+		// list2ì—ì„œ list1ì— í¬í•¨ëœ ê°ì²´ë“¤ì„ ì‚­ì œí•œë‹¤.
+		for(int i = list2.size()-1; i >= 0; i--) { // listì˜ ê°ì²´ë¥¼ ì‚­ì œí•  ë•ŒëŠ” ë’¤ì—ì„œ ë¶€í„° ì‚­ì œí•´ì•¼ í•œë‹¤ --> ì•ì—ì„œ ì‚­ì œí•˜ë©´ iê°€ ì¦ê°€í•˜ë©´ì„œ ì‚­ì œë˜ì§€ ì•ŠëŠ”ë‹¤!!
 			if(list1.contains(list2.get(i))) { list2.remove(i); }
 		}
 		print(list1, list2);
-	} // main() ³¡.
+	} // main() ë.
 	
 	static void print(ArrayList list1, ArrayList list2) {
 		System.out.println("list1 : " + list1);
 		System.out.println("list2 : " + list2);
 		System.out.println();
-	} // print() ³¡.
-} // Å¬·¡½º ³¡.
+	} // print() ë.
+} // í´ë˜ìŠ¤ ë.

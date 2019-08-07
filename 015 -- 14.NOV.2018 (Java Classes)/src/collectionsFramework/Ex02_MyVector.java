@@ -1,52 +1,52 @@
 package collectionsFramework;
 
-// ÀÌ¹Ì Á¸ÀçÇÏ´Â Vector Å¬·¡½º¸¦ ¸ð¹æÇÏ´Â ³ª¸¸ÀÇ Å¬·¡½º¸¦ ¸¸µé¾îº¸ÀÚ.
+// ì´ë¯¸ ì¡´ìž¬í•˜ëŠ” Vector í´ëž˜ìŠ¤ë¥¼ ëª¨ë°©í•˜ëŠ” ë‚˜ë§Œì˜ í´ëž˜ìŠ¤ë¥¼ ë§Œë“¤ì–´ë³´ìž.
 class Ex02_MyVector {
 	Object[] objArr;
 	int size;
 	int capacity;
 	
-	// »ç¿ëÀÚ°¡ capacity¸¦ ÁöÁ¤ÇÒ ¼ö ÀÖ´Â »ý¼ºÀÚ
+	// ì‚¬ìš©ìžê°€ capacityë¥¼ ì§€ì •í•  ìˆ˜ ìžˆëŠ” ìƒì„±ìž
 	Ex02_MyVector(int capacity) {
-		if(capacity < 0) { System.exit(0); } // 0º¸´Ù ÀÛÀº ÀÎÀÚ¸¦ »ç¿ëÇÏ¸é Á¾·áÇÏµµ·Ï ÇÑ´Ù.
+		if(capacity < 0) { System.exit(0); } // 0ë³´ë‹¤ ìž‘ì€ ì¸ìžë¥¼ ì‚¬ìš©í•˜ë©´ ì¢…ë£Œí•˜ë„ë¡ í•œë‹¤.
 		this.capacity = capacity;
 		objArr = new Object[capacity];
 	}
 	
-	// ±âº»»ý¼ºÀÚ (default capacity = 16)
+	// ê¸°ë³¸ìƒì„±ìž (default capacity = 16)
 	Ex02_MyVector() {
 		this(16);
 	}
 
-	// ¹è¿­¿¡ ÀúÀåµÈ °´Ã¼ÀÇ °³¼ö¸¦ ¹ÝÈ¯
+	// ë°°ì—´ì— ì €ìž¥ëœ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜
 	int size() {
 		return size;
 	}
 	
-	// ¹è¿­ÀÇ Å©±â¸¦ ¹ÝÈ¯
+	// ë°°ì—´ì˜ í¬ê¸°ë¥¼ ë°˜í™˜
 	int capacity() {
 		return capacity;
 	}
 	
-	// ¹è¿­ÀÌ ºñ¾ú´ÂÁö È®ÀÎ
+	// ë°°ì—´ì´ ë¹„ì—ˆëŠ”ì§€ í™•ì¸
 	boolean isEmpty() {
 		if(size == 0) { return true; }
 		else { return false; }
 	}
 	
-	// ¹è¿­¿¡ Ãß°¡
-	void add(Object obj) { // ÀúÀåÇÒ °ø°£ÀÌ ÀÖ´ÂÁö¸¦ È®ÀÎÇØ¾ß!
-		if(size >= capacity) { // i.e. ÇöÀç °´Ã¼¹è¿­¿¡ ºó ÀÚ¸®°¡ ¾øÀ» ½Ã
-			ensureCapacity(capacity*2); // ¹è¿­À» ´Ã¸®±â
+	// ë°°ì—´ì— ì¶”ê°€
+	void add(Object obj) { // ì €ìž¥í•  ê³µê°„ì´ ìžˆëŠ”ì§€ë¥¼ í™•ì¸í•´ì•¼!
+		if(size >= capacity) { // i.e. í˜„ìž¬ ê°ì²´ë°°ì—´ì— ë¹ˆ ìžë¦¬ê°€ ì—†ì„ ì‹œ
+			ensureCapacity(capacity*2); // ë°°ì—´ì„ ëŠ˜ë¦¬ê¸°
 			objArr[size++] = obj;
 		}
-		else { objArr[size++] = obj; } // ¹è¿­¿¡ °´Ã¼ Ãß°¡ ÈÄ size °ª 1 Áõ°¡
+		else { objArr[size++] = obj; } // ë°°ì—´ì— ê°ì²´ ì¶”ê°€ í›„ size ê°’ 1 ì¦ê°€
 	}
 	
-	// ´õ Ä¿Áø »õ ¹è¿­À» »ý¼ºÇÏ°í ±âÁ¸ ¹è¿­ÀÇ °ªµéÀ» º¹»ç ºÙ¿©³Ö´Â´Ù
+	// ë” ì»¤ì§„ ìƒˆ ë°°ì—´ì„ ìƒì„±í•˜ê³  ê¸°ì¡´ ë°°ì—´ì˜ ê°’ë“¤ì„ ë³µì‚¬ ë¶™ì—¬ë„£ëŠ”ë‹¤
 	void ensureCapacity(int newSize) {
 		if(newSize <= capacity) {
-			System.out.println("Àß¸øµÈ °ªÀ» ÀÔ·ÂÇß½À´Ï´Ù.");
+			System.out.println("ìž˜ëª»ëœ ê°’ì„ ìž…ë ¥í–ˆìŠµë‹ˆë‹¤.");
 			System.exit(0);
 		}
 		Object[] obj = new Object[newSize];
@@ -55,12 +55,12 @@ class Ex02_MyVector {
 		capacity = newSize;
 	}
 	
-	// ÁöÁ¤µÈ À§Ä¡(index)¿¡ ÀÖ´Â °ªÀ» ¹ÝÈ¯
+	// ì§€ì •ëœ ìœ„ì¹˜(index)ì— ìžˆëŠ” ê°’ì„ ë°˜í™˜
 	Object get(int index) {
 		return objArr[index];
 	}
 	
-	// ÁöÁ¤µÈ °´Ã¼ÀÇ À§Ä¡(index)¸¦ ¹ÝÈ¯
+	// ì§€ì •ëœ ê°ì²´ì˜ ìœ„ì¹˜(index)ë¥¼ ë°˜í™˜
 	int indexOf(Object obj3) {
 		int index = 0;
 		boolean flag = false;
@@ -70,15 +70,15 @@ class Ex02_MyVector {
 //				System.out.println("meow");
 				flag = true;
 				index = i;
-			} } // for¹® ³¡.
+			} } // forë¬¸ ë.
 		if(flag == false) {
-			System.out.println("ÁöÁ¤µÈ °´Ã¼°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+			System.out.println("ì§€ì •ëœ ê°ì²´ê°€ ì¡´ìž¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 			System.exit(0);
 		}
 		return index;
 	}
 	
-	// ÁöÁ¤µÈ °´Ã¼¸¦ »èÁ¦
+	// ì§€ì •ëœ ê°ì²´ë¥¼ ì‚­ì œ
 	boolean remove(Object obj) {
 		int index = indexOf(obj);
 		System.arraycopy(objArr, index+1, objArr, index, size-1-index);

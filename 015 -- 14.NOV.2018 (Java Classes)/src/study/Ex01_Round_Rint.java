@@ -1,8 +1,7 @@
 package study;
 
-// ÄÚµå ¿Ã·ÁÁÖ¸é ±×°ÍÀ» º¸°í ¿Ï¼ºÇÏ±â
+// ì½”ë“œ ì˜¬ë ¤ì£¼ë©´ ê·¸ê²ƒì„ ë³´ê³  ì™„ì„±í•˜ê¸°
 public class Ex01_Round_Rint {
-
 	public static void main(String[] args) {
 		double sum = 0;
 		double sum1 = 0;

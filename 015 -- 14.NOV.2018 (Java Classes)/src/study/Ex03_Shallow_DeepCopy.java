@@ -11,33 +11,33 @@ public class Ex03_Shallow_DeepCopy {
 		System.out.println("c3=" + c3);
 		c1.p.x = 9;
 		c1.p.y = 9;
-		System.out.println("= c1ÀÇ º¯°æ ÈÄ =");
+		System.out.println("= c1ì˜ ë³€ê²½ í›„ =");
 		System.out.println("c1=" + c1);
 		System.out.println("c2=" + c2);
 		System.out.println("c3=" + c3);
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.
 
 class Circle implements Cloneable {
-	Point p; // ¿øÁ¡
-	double r; // ¹İÁö¸§
+	Point p; // ì›ì 
+	double r; // ë°˜ì§€ë¦„
 	
 	Circle(Point p, double r) {
 		this.p = p;
 		this.r = r;
 	}
 	
-	public Circle shallowCopy() { // ¾èÀº º¹»ç
+	public Circle shallowCopy() { // ì–•ì€ ë³µì‚¬
 		Object obj = null;
 		
 		try {
-			obj = super.clone(); // super.clone() --> ¸®ÅÏÅ¸ÀÔÀº ObjectÀÌÁö¸¸ ½ÇÁ¦ ¹İÈ¯ÇÏ´Â °ÍÀº ÀÌ ÄÚµå¸¦ ½ÇÇàÇÑ Å¬·¡½ºÀÇ °´Ã¼
+			obj = super.clone(); // super.clone() --> ë¦¬í„´íƒ€ì…ì€ Objectì´ì§€ë§Œ ì‹¤ì œ ë°˜í™˜í•˜ëŠ” ê²ƒì€ ì´ ì½”ë“œë¥¼ ì‹¤í–‰í•œ í´ë˜ìŠ¤ì˜ ê°ì²´
 		} catch (CloneNotSupportedException e) { }
 		
 		return (Circle) obj;
 	}
 	
-	public Circle deepCopy() { // ±íÀº º¹»ç
+	public Circle deepCopy() { // ê¹Šì€ ë³µì‚¬
 		Object obj = null;
 		
 		try {

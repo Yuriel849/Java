@@ -4,17 +4,17 @@ class Ex02_Wrapping {
 	public static void main(String[] args) {
 		int i = 10;
 		
-		// ±âº»ÇüÀ» ÂüÁ¶ÇüÀ¸·Î Çüº¯È¯ (Çüº¯È¯ »ı·« °¡´É) --> autoboxing
+		// ê¸°ë³¸í˜•ì„ ì°¸ì¡°í˜•ìœ¼ë¡œ í˜•ë³€í™˜ (í˜•ë³€í™˜ ìƒëµ ê°€ëŠ¥) --> autoboxing
 		Integer intg = (Integer) i; // Integer intg = Integer.valueOf(i);
 		Object obj = (Object) i; // Object obj = (Object)Integer.valueOf(i);
 		
 		Long lng = 100L; // Long lng = new Long(100L);
 		
-		int i2 = intg + 10; // ÂüÁ¶Çü°ú ±âº»Çü °£ ¿¬»ê °¡´É
-		long l = intg + lng; // ÂüÁ¶Çü °£ µ¡¼Àµµ °¡´É
+		int i2 = intg + 10; // ì°¸ì¡°í˜•ê³¼ ê¸°ë³¸í˜• ê°„ ì—°ì‚° ê°€ëŠ¥
+		long l = intg + lng; // ì°¸ì¡°í˜• ê°„ ë§ì…ˆë„ ê°€ëŠ¥
 
 		Integer intg2 = new Integer(20);
-		int i3 = (int) intg2; // ÂüÁ¶ÇüÀ» ±âº»ÇüÀ¸·Î Çüº¯È¯ °¡´É (Çüº¯È¯ »ı·«°¡´É)
+		int i3 = (int) intg2; // ì°¸ì¡°í˜•ì„ ê¸°ë³¸í˜•ìœ¼ë¡œ í˜•ë³€í™˜ ê°€ëŠ¥ (í˜•ë³€í™˜ ìƒëµê°€ëŠ¥)
 		
 		Integer intg3 = intg2 + i3;
 		
@@ -28,5 +28,4 @@ class Ex02_Wrapping {
 		System.out.println("i3         =" +i3);
 		System.out.println("intg2 + i3 =" +intg3);
 	}
-
 }

@@ -5,24 +5,24 @@ import java.util.Date;
 
 public class Ex07_Date_Calendar {
 	public static void main(String[] args) {
-		Calendar cal = Calendar.getInstance(); // ÇöÀç ³¯Â¥¿Í ½Ã°£À¸·Î Calendar °´Ã¼ »ı¼º
+		Calendar cal = Calendar.getInstance(); // í˜„ì¬ ë‚ ì§œì™€ ì‹œê°„ìœ¼ë¡œ Calendar ê°ì²´ ìƒì„±
 		Calendar cal2 = Calendar.getInstance();
 		
-		System.out.println("ÇöÀç ³¯Â¥¿Í ½Ã°£À¸·Î Calendar »ı¼ºÇÑ Á÷ÈÄ");
+		System.out.println("í˜„ì¬ ë‚ ì§œì™€ ì‹œê°„ìœ¼ë¡œ Calendar ìƒì„±í•œ ì§í›„");
 		System.out.println(cal);
 		System.out.println(cal2);
 		
-		cal.clear(); // ±âÁ¸¿¡ ¼³Á¤µÈ ³¯Â¥¿Í ½Ã°£À» »èÁ¦ --> »õ·Ó°Ô ¼³Á¤ÇÒ ¼ö ÀÖ´Ù
-		cal2.clear(); // clear() »ç¿ëÇÏÁö ¾Ê°í set()ÇÏ¸é ¼­·Î ´Ù¸¥ °ªÀÌ ÀúÀåµÈ´Ù --> ½Ã°£À» nanosecond ¼öÁØÀ¸·Î ±â·ÏÇÏ±â ¶§¹®ÀÌ´Ù
+		cal.clear(); // ê¸°ì¡´ì— ì„¤ì •ëœ ë‚ ì§œì™€ ì‹œê°„ì„ ì‚­ì œ --> ìƒˆë¡­ê²Œ ì„¤ì •í•  ìˆ˜ ìˆë‹¤
+		cal2.clear(); // clear() ì‚¬ìš©í•˜ì§€ ì•Šê³  set()í•˜ë©´ ì„œë¡œ ë‹¤ë¥¸ ê°’ì´ ì €ì¥ëœë‹¤ --> ì‹œê°„ì„ nanosecond ìˆ˜ì¤€ìœ¼ë¡œ ê¸°ë¡í•˜ê¸° ë•Œë¬¸ì´ë‹¤
 		
-		System.out.println("clear()·Î ±âÁ¸ ¼³Á¤ »èÁ¦ Á÷ÈÄ");
-		System.out.println(cal); // clear()ÇÑ »óÅÂ¿¡¼­ °ªÀÌ ¸ğµÎ "?"ÀÌ°Å³ª ÃÊ±â°ªÀÎ °ÍÀ» º¼ ¼ö°¡ ÀÖ´Ù
+		System.out.println("clear()ë¡œ ê¸°ì¡´ ì„¤ì • ì‚­ì œ ì§í›„");
+		System.out.println(cal); // clear()í•œ ìƒíƒœì—ì„œ ê°’ì´ ëª¨ë‘ "?"ì´ê±°ë‚˜ ì´ˆê¸°ê°’ì¸ ê²ƒì„ ë³¼ ìˆ˜ê°€ ìˆë‹¤
 		
-		cal.set(2008, 10, 13); // Month´Â 0ÀÌ January, Date´Â ¿ì¸®°¡ ¾Æ´Âµ¥·Î
+		cal.set(2008, 10, 13); // MonthëŠ” 0ì´ January, DateëŠ” ìš°ë¦¬ê°€ ì•„ëŠ”ë°ë¡œ
 		cal2.set(2008, 10, 13);
 		
-		System.out.println("set()À¸·Î ³â,¿ù,ÀÏ »õ·Ó°Ô ¼³Á¤ Á÷ÈÄ");
-		System.out.println(cal); // clear() ÈÄ set()ÇÏ¸é¼­ setÇÒ ¶§ ¼³Á¤ÇÑ °ªµé¸¸ Ã¤¿öÁø °ÍÀ» º¼ ¼ö°¡ ÀÖ´Ù
+		System.out.println("set()ìœ¼ë¡œ ë…„,ì›”,ì¼ ìƒˆë¡­ê²Œ ì„¤ì • ì§í›„");
+		System.out.println(cal); // clear() í›„ set()í•˜ë©´ì„œ setí•  ë•Œ ì„¤ì •í•œ ê°’ë“¤ë§Œ ì±„ì›Œì§„ ê²ƒì„ ë³¼ ìˆ˜ê°€ ìˆë‹¤
 		System.out.println(cal2);
 		
 		System.out.println();
@@ -31,7 +31,6 @@ public class Ex07_Date_Calendar {
 		System.out.println(cal.get(Calendar.MONTH)+1);
 		System.out.println(cal.get(Calendar.DAY_OF_MONTH));
 		
-		System.out.println(new Date(cal.getTimeInMillis())); // calÀÇ ¸ğµç Á¤º¸°¡ ¾Æ´Ñ, Date Çü½Ä¿¡ ¸ÂÃç Ãâ·ÂÇÏµµ·Ï Date·Î º¯È¯ÇÑ´Ù.
-
+		System.out.println(new Date(cal.getTimeInMillis())); // calì˜ ëª¨ë“  ì •ë³´ê°€ ì•„ë‹Œ, Date í˜•ì‹ì— ë§ì¶° ì¶œë ¥í•˜ë„ë¡ Dateë¡œ ë³€í™˜í•œë‹¤.
 	}
 }

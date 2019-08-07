@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 class Ex06_Scanner {
 	public static void main(String[] args) throws Exception {
-		Scanner scan = new Scanner(new File ("data2.txt")); // PackageExplorer >> File >> New >> File (ÆÄÀÏ »ı¼º)
-															// »õ FileÀÇ À§Ä¡´Â Project Æú´õ ¹Ù·Î ¹Ø¿¡ (´Ù¸¥ °÷¿¡ ³ÖÁö ¸»°í)
+		Scanner scan = new Scanner(new File ("data2.txt")); // PackageExplorer >> File >> New >> File (íŒŒì¼ ìƒì„±)
+															// ìƒˆ Fileì˜ ìœ„ì¹˜ëŠ” Project í´ë” ë°”ë¡œ ë°‘ì— (ë‹¤ë¥¸ ê³³ì— ë„£ì§€ ë§ê³ )
 		int sum = 0;
 		int cnt = 0;
 		
@@ -17,5 +17,5 @@ class Ex06_Scanner {
 		
 		System.out.println("sum = " + sum);
 		System.out.println("average = " + (double)sum/cnt);
-	} // main() ³¡.
+	} // main() ë.
 }
