@@ -6,17 +6,17 @@ public class Ex12_FlowLayoutTest {
 	public static void main(String args[]) {
 		Frame f = new Frame("FlowLayoutTest");
 		f.setSize(500, 250);
-		f.setLayout(new FlowLayout(FlowLayout.LEFT)); // FlowLayout ¿ŞÂÊÁ¤·ÄÀÇ »ı¼º
-		f.add(new Button("Ã¹ ¹øÂ°"));
-		f.add(new Button("µÎ ¹øÂ°"));
-		f.add(new Button("¼¼ ¹øÂ°"));
-		f.add(new Button("³× ¹øÂ°"));
-		f.add(new Button("´Ù¼¸ ¹øÂ°"));
-		f.add(new Button("¿©¼¸ ¹øÂ°"));
-		f.add(new Button("ÀÏ°ö ¹øÂ°"));
-		f.add(new Button("¿©´ü ¹øÂ°"));
-		f.add(new Button("¾ÆÈ© ¹øÂ°"));
-		f.add(new Button("¿­ ¹øÂ°"));
+		f.setLayout(new FlowLayout(FlowLayout.LEFT)); // FlowLayout ì™¼ìª½ì •ë ¬ì˜ ìƒì„±
+		f.add(new Button("ì²« ë²ˆì§¸"));
+		f.add(new Button("ë‘ ë²ˆì§¸"));
+		f.add(new Button("ì„¸ ë²ˆì§¸"));
+		f.add(new Button("ë„¤ ë²ˆì§¸"));
+		f.add(new Button("ë‹¤ì„¯ ë²ˆì§¸"));
+		f.add(new Button("ì—¬ì„¯ ë²ˆì§¸"));
+		f.add(new Button("ì¼ê³± ë²ˆì§¸"));
+		f.add(new Button("ì—¬ëŸ ë²ˆì§¸"));
+		f.add(new Button("ì•„í™‰ ë²ˆì§¸"));
+		f.add(new Button("ì—´ ë²ˆì§¸"));
 		f.setVisible(true);
 	}
 }

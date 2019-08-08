@@ -1,6 +1,6 @@
 package threads;
 
-// Ex10_Thread10ÀÇ ¾÷±×·¹ÀÌµå!! --> º¸´Ù °´Ã¼ÁöÇâÀûÀ¸·Î °³¼±
+// Ex10_Thread10ì˜ ì—…ê·¸ë ˆì´ë“œ!! --> ë³´ë‹¤ ê°ì²´ì§€í–¥ì ìœ¼ë¡œ ê°œì„ 
 
 class Ex11_Thread11 {
 	public static void main(String[] args) throws Exception {
@@ -25,8 +25,8 @@ class Ex11_Thread11 {
 			Thread.sleep(2000);
 			th3.stop();
 		} catch (InterruptedException e) {}
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.
 
 class Ex11_Thread11_1 implements Runnable {
 	volatile boolean suspended = false;
@@ -35,7 +35,7 @@ class Ex11_Thread11_1 implements Runnable {
 	Thread th;
 	
 	Ex11_Thread11_1(String name) {
-		th = new Thread(this, name); // Thread(Runnable r, String name) »ç¿ë
+		th = new Thread(this, name); // Thread(Runnable r, String name) ì‚¬ìš©
 	}
 	
 	public void run() {
@@ -48,10 +48,10 @@ class Ex11_Thread11_1 implements Runnable {
 			}
 		}
 		System.out.println(Thread.currentThread().getName() + " - stopped");
-	} // run() ³¡.
+	} // run() ë.
 	
 	public void suspend() { suspended = true; }
 	public void resume() { suspended = false; }
 	public void stop() { stopped = true; }
 	public void start() { th.start(); }
-} // Å¬·¡½º ³¡.
+} // í´ë˜ìŠ¤ ë.

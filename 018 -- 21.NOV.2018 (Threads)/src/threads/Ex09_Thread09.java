@@ -1,6 +1,6 @@
 package threads;
 
-//Ex10_Thread10¿Í ºñ±³!!
+//Ex10_Thread10ì™€ ë¹„êµ!!
 
 class Ex09_Thread09 {
 	@SuppressWarnings("deprecation")
@@ -16,19 +16,19 @@ class Ex09_Thread09 {
 		
 		try {
 			Thread.sleep(2000);
-			th1.suspend(); // ¾²·¹µå th1À» Àá½Ã Áß´Ü½ÃÅ²´Ù.
+			th1.suspend(); // ì“°ë ˆë“œ th1ì„ ì ì‹œ ì¤‘ë‹¨ì‹œí‚¨ë‹¤.
 			Thread.sleep(2000);
 			th2.suspend();
 			Thread.sleep(3000);
-			th1.resume(); // ¾²·¹µå th1ÀÌ ´Ù½Ã µ¿ÀÛÇÏµµ·Ï ÇÑ´Ù.
+			th1.resume(); // ì“°ë ˆë“œ th1ì´ ë‹¤ì‹œ ë™ì‘í•˜ë„ë¡ í•œë‹¤.
 			Thread.sleep(3000);
-			th1.stop(); // ¾²·¹µå th1À» °­Á¦Á¾·á½ÃÅ²´Ù.
+			th1.stop(); // ì“°ë ˆë“œ th1ì„ ê°•ì œì¢…ë£Œì‹œí‚¨ë‹¤.
 			th2.stop();
 			Thread.sleep(2000);
 			th3.stop();
 		} catch (InterruptedException e) {}
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.
 
 class RunImplEx09 implements Runnable {
 	public void run() {
@@ -38,5 +38,5 @@ class RunImplEx09 implements Runnable {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {}
 		}
-	} // run() ³¡.
-} // Å¬·¡½º ³¡.
+	} // run() ë.
+} // í´ë˜ìŠ¤ ë.

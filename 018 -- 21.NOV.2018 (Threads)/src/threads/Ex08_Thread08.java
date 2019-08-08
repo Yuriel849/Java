@@ -2,19 +2,19 @@ package threads;
 
 import javax.swing.JOptionPane;
 
-// Ex07_Thread07¿Í ºñ±³!!
+// Ex07_Thread07ì™€ ë¹„êµ!!
 
 class Ex08_Thread08 {
 	public static void main(String[] args) throws Exception {
 		Ex08_Thread08_1 th1 = new Ex08_Thread08_1();
 		th1.start();
 		
-		String input = JOptionPane.showInputDialog("¾Æ¹« °ªÀÌ³ª ÀÔ·ÂÇÏ¼¼¿ä. ");
-		System.out.println("ÀÔ·ÂÇÏ½Å °ªÀº " + input + "ÀÔ´Ï´Ù.");
-		th1.interrupt(); // interrupt()¸¦ È£ÃâÇÏ¸é, interrupted »óÅÂ°¡ true°¡ µÈ´Ù.
-		System.out.println("isInterrupted(): " + th1.isInterrupted()); // trueµµ falseµµ ³ª¿Ã ¼ö ÀÖ´Ù --> ¿Ö? who cares --> ¸ØÃè´Ù´Â°Ô Áß¿äÇÏ´Ù
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+		String input = JOptionPane.showInputDialog("ì•„ë¬´ ê°’ì´ë‚˜ ì…ë ¥í•˜ì„¸ìš”. ");
+		System.out.println("ì…ë ¥í•˜ì‹  ê°’ì€ " + input + "ì…ë‹ˆë‹¤.");
+		th1.interrupt(); // interrupt()ë¥¼ í˜¸ì¶œí•˜ë©´, interrupted ìƒíƒœê°€ trueê°€ ëœë‹¤.
+		System.out.println("isInterrupted(): " + th1.isInterrupted()); // trueë„ falseë„ ë‚˜ì˜¬ ìˆ˜ ìˆë‹¤ --> ì™œ? who cares --> ë©ˆì·„ë‹¤ëŠ”ê²Œ ì¤‘ìš”í•˜ë‹¤
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.
 
 class Ex08_Thread08_1 extends Thread {
 	public void run() {
@@ -23,12 +23,12 @@ class Ex08_Thread08_1 extends Thread {
 		while(i!=0 && !isInterrupted())	{
 			System.out.println(i--);
 			try {
-				Thread.sleep(1000); // 1ÃÊ¾¿ Áö¿¬
+				Thread.sleep(1000); // 1ì´ˆì”© ì§€ì—°
 			} catch (InterruptedException e) {
 				interrupt();
 			}
 		}
 		
-		System.out.println("Ä«¿îÆ®°¡ Á¾·áµÇ¾ú½À´Ï´Ù.");
-	} // run() ³¡.
-} // Å¬·¡½º ³¡.
+		System.out.println("ì¹´ìš´íŠ¸ê°€ ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
+	} // run() ë.
+} // í´ë˜ìŠ¤ ë.

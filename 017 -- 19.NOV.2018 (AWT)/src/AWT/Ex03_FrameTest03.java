@@ -7,10 +7,10 @@ class Ex03_FrameTest03 {
 		Frame f = new Frame("Login");
 		f.setSize(300, 200);
 		
-		Button b = new Button("È® ÀÎ"); // ButtonÀ§¿¡ "È® ÀÎ"ÀÌ¶ó´Â ±ÛÀÚ°¡ ³ªÅ¸³­´Ù
-		b.setSize(100, 50); // ButtonÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù
+		Button b = new Button("í™• ì¸"); // Buttonìœ„ì— "í™• ì¸"ì´ë¼ëŠ” ê¸€ìê°€ ë‚˜íƒ€ë‚œë‹¤
+		b.setSize(100, 50); // Buttonì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤
 		
-		f.add(b); // »ı¼ºµÈ ButtonÀ» Frame¿¡ Æ÷ÇÔ½ÃÅ²´Ù
+		f.add(b); // ìƒì„±ëœ Buttonì„ Frameì— í¬í•¨ì‹œí‚¨ë‹¤
 		f.setVisible(true);
 	}
 }

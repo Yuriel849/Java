@@ -1,13 +1,13 @@
 package AWT;
 
-// Image¸¦ ÀÌ¿ëÇØ¼­ ÀÌ¹ÌÁö Ãâ·ÂÇÏ±â
-// ³»°¡ Á÷Á¢ ±×¸®´Â °ÍÀÇ ¹®Á¦Á¡ --> ÇöÀçÁøÇàÇüÀ¸·Î ±×¸®°í Ãâ·ÂÇÏ´Ï±î, °è¼Ó ±ôºı°Å¸®¸é¼­ repaint()°¡ ÁøÇàµÈ´Ù
-// ÇØ°áÃ¥ --> Á÷Á¢ ±×¸®´Â ÀÔ·ÂÀ» ¹ŞÀ» °¡»ó È­¸éÀ» ÇÏ³ª ¸¸µé°í, ±×°ÍÀ» ´Ù½Ã º¹»çÇØ¼­ Ãâ·Â¿ë È­¸é¿¡ ¿Å±ä´Ù --> double buffering ±â¹ı
-// ÄÚµå
-// 1. °¡»ó ÀÌ¹ÌÁö »ı¼º
-// 2. °¡»ó ÀÌ¹ÌÁöÀÇ ±×·¡ÇÈ½º ¾ò¾î¿À±â
-// 3. ±×¸² ±×¸®±â
-// 4. º¹¼Ò
+// Imageë¥¼ ì´ìš©í•´ì„œ ì´ë¯¸ì§€ ì¶œë ¥í•˜ê¸°
+// ë‚´ê°€ ì§ì ‘ ê·¸ë¦¬ëŠ” ê²ƒì˜ ë¬¸ì œì  --> í˜„ì¬ì§„í–‰í˜•ìœ¼ë¡œ ê·¸ë¦¬ê³  ì¶œë ¥í•˜ë‹ˆê¹Œ, ê³„ì† ê¹œë¹¡ê±°ë¦¬ë©´ì„œ repaint()ê°€ ì§„í–‰ëœë‹¤
+// í•´ê²°ì±… --> ì§ì ‘ ê·¸ë¦¬ëŠ” ì…ë ¥ì„ ë°›ì„ ê°€ìƒ í™”ë©´ì„ í•˜ë‚˜ ë§Œë“¤ê³ , ê·¸ê²ƒì„ ë‹¤ì‹œ ë³µì‚¬í•´ì„œ ì¶œë ¥ìš© í™”ë©´ì— ì˜®ê¸´ë‹¤ --> double buffering ê¸°ë²•
+// ì½”ë“œ
+// 1. ê°€ìƒ ì´ë¯¸ì§€ ìƒì„±
+// 2. ê°€ìƒ ì´ë¯¸ì§€ì˜ ê·¸ë˜í”½ìŠ¤ ì–»ì–´ì˜¤ê¸°
+// 3. ê·¸ë¦¼ ê·¸ë¦¬ê¸°
+// 4. ë³µì†Œ
 
 import java.awt.*;
 import java.awt.event.*;
@@ -15,8 +15,8 @@ import java.awt.event.*;
 class Ex19_Graphics03 extends Frame implements MouseMotionListener {
 	int x = 0;
 	int y = 0;
-	Image img = null; // °¡»óÈ­¸é¸¦ ´Ù·ç±â À§ÇÑ ÂüÁ¶º¯¼ö
-	Graphics gImg = null; // °¡»óÈ­¸éÀÇ ±×·¡ÇÈ½º¸¦ ´Ù·ç±â À§ÇÑ ÂüÁ¶º¯¼ö
+	Image img = null; // ê°€ìƒí™”ë©´ë¥¼ ë‹¤ë£¨ê¸° ìœ„í•œ ì°¸ì¡°ë³€ìˆ˜
+	Graphics gImg = null; // ê°€ìƒí™”ë©´ì˜ ê·¸ë˜í”½ìŠ¤ë¥¼ ë‹¤ë£¨ê¸° ìœ„í•œ ì°¸ì¡°ë³€ìˆ˜
 	
 	public static void main(String[] args) {
 		new Ex19_Graphics03("Ex19_Graphics03");
@@ -31,24 +31,24 @@ class Ex19_Graphics03 extends Frame implements MouseMotionListener {
 			}
 		});
 		
-		// Frame (100, 100) width 500, height 500 . À» ÀÇ À§Ä¡¿¡ Å©±â·Î º¸ÀÌ°Ô ÇÑ´Ù
+		// Frame (100, 100) width 500, height 500 . ì„ ì˜ ìœ„ì¹˜ì— í¬ê¸°ë¡œ ë³´ì´ê²Œ í•œë‹¤
 		setBounds(100,100, 500,500);
 		setVisible(true);
 		img = createImage(500, 500);
 		gImg = img.getGraphics();
-		gImg.drawString("¿ŞÂÊ¹öÆ°À» ´©¸¥ Ã¤·Î ¸¶¿ì½º¸¦ ¿òÁ÷¿©º¸¼¼¿ä." ,10, 50);
+		gImg.drawString("ì™¼ìª½ë²„íŠ¼ì„ ëˆ„ë¥¸ ì±„ë¡œ ë§ˆìš°ìŠ¤ë¥¼ ì›€ì§ì—¬ë³´ì„¸ìš”." ,10, 50);
 		repaint();
 	}
 	
 	public void paint(Graphics g) {
 		if(img!=null)
-			g.drawImage(img,0,0,this); // Frame °¡»óÈ­¸é¿¡ ±×·ÁÁø ±×¸²À» ¿¡ º¹»ç
+			g.drawImage(img,0,0,this); // Frame ê°€ìƒí™”ë©´ì— ê·¸ë ¤ì§„ ê·¸ë¦¼ì„ ì— ë³µì‚¬
 	}
 	
 	public void mouseMoved(MouseEvent me) {}
 	
 	public void mouseDragged(MouseEvent me) {
-		if (me.getModifiersEx()==MouseEvent.BUTTON1_DOWN_MASK ) { // BUTTON1Àº ¸¶¿ì½º ¿ŞÂÊ ¹öÆ°À» ÀÇ¹Ì
+		if (me.getModifiersEx()==MouseEvent.BUTTON1_DOWN_MASK ) { // BUTTON1ì€ ë§ˆìš°ìŠ¤ ì™¼ìª½ ë²„íŠ¼ì„ ì˜ë¯¸
 			x = me.getX();
 			y = me.getY();
 			gImg.drawString("*", x, y);

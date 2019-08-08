@@ -7,12 +7,12 @@ class Ex02_FrameTest02 {
 		Frame f = new Frame("Login");
 		f.setSize(300, 200);
 	
-		Toolkit tk = Toolkit.getDefaultToolkit(); // ±¸ÇöµÈ Toolkit¸¦ ¾ò´Â´Ù
-		Dimension screenSize = tk.getScreenSize(); // È­¸éÀÇ Å©±â¸¦ ±¸ÇÑ´Ù
+		Toolkit tk = Toolkit.getDefaultToolkit(); // êµ¬í˜„ëœ Toolkitë¥¼ ì–»ëŠ”ë‹¤
+		Dimension screenSize = tk.getScreenSize(); // í™”ë©´ì˜ í¬ê¸°ë¥¼ êµ¬í•œë‹¤
 		
-		// È­¸éÅ©±âÀÇ Àı¹İ°ª¿¡¼­ Frame Å©±âÀÇ Àı¹İ°ªÀ» »« À§Ä¡·Î ÇÏ¸é
-		// FrameÀÌ È­¸é °¡¿îµ¥ À§Ä¡ÇÏ°Ô µÈ´Ù
+		// í™”ë©´í¬ê¸°ì˜ ì ˆë°˜ê°’ì—ì„œ Frame í¬ê¸°ì˜ ì ˆë°˜ê°’ì„ ëº€ ìœ„ì¹˜ë¡œ í•˜ë©´
+		// Frameì´ í™”ë©´ ê°€ìš´ë° ìœ„ì¹˜í•˜ê²Œ ëœë‹¤
 		f.setLocation(screenSize.width/2 - 150, screenSize.height/2 - 100);
-		f.setVisible(true); // »ı¼ºÇÑ FrameÀ» È­¸é¿¡ º¸ÀÌµµ·Ï ÇÑ´Ù
+		f.setVisible(true); // ìƒì„±í•œ Frameì„ í™”ë©´ì— ë³´ì´ë„ë¡ í•œë‹¤
 	}
 }

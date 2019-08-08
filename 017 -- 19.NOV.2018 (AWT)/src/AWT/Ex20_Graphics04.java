@@ -22,18 +22,18 @@ class Ex20_Graphics04 extends Frame implements MouseMotionListener {
 			}
 		});
 		
-		// Frame (100, 100) width 500, height 500 . À» ÀÇ À§Ä¡¿¡ Å©±â·Î º¸ÀÌ°Ô ÇÑ´Ù
+		// Frame (100, 100) width 500, height 500 . ì„ ì˜ ìœ„ì¹˜ì— í¬ê¸°ë¡œ ë³´ì´ê²Œ í•œë‹¤
 		setBounds(100,100, 500,500);
 		setVisible(true);
 		img = createImage(500, 500);
 		gImg = img.getGraphics();
-		gImg.drawString("¿ŞÂÊ¹öÆ°À» ´©¸¥ Ã¤·Î ¸¶¿ì½º¸¦ ¿òÁ÷¿©º¸¼¼¿ä." ,10, 50);
+		gImg.drawString("ì™¼ìª½ë²„íŠ¼ì„ ëˆ„ë¥¸ ì±„ë¡œ ë§ˆìš°ìŠ¤ë¥¼ ì›€ì§ì—¬ë³´ì„¸ìš”." ,10, 50);
 		repaint();
 	}
 	
 	public void paint(Graphics g) {
 		if(img==null) return;
-		g.drawImage(img,0,0,this); // Frame °¡»óÈ­¸é¿¡ ±×·ÁÁø ±×¸²À» ¿¡ º¹»ç
+		g.drawImage(img,0,0,this); // Frame ê°€ìƒí™”ë©´ì— ê·¸ë ¤ì§„ ê·¸ë¦¼ì„ ì— ë³µì‚¬
 	}
 	
 	public void mouseMoved(MouseEvent me) {

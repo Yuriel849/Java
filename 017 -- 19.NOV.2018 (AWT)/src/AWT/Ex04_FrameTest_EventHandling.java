@@ -5,56 +5,56 @@ import java.awt.event.*;
 
 class Ex04_FrameTest_EventHandling {
 	public static void main(String args[]) {
-		Frame f = new Frame("Login"); // Frame °´Ã¼¸¦ »ı¼ºÇÑ´Ù
-		f.setSize(300, 200); // FrameÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù
+		Frame f = new Frame("Login"); // Frame ê°ì²´ë¥¼ ìƒì„±í•œë‹¤
+		f.setSize(300, 200); // Frameì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤
 		Button b = new Button("OK");
 		
-		// 2. ¹öÆ°¿¡ ÀÌº¥Æ® Ã³¸®±â¸¦ µî·Ï(¿¬°á)ÇÑ´Ù
+		// 2. ë²„íŠ¼ì— ì´ë²¤íŠ¸ ì²˜ë¦¬ê¸°ë¥¼ ë“±ë¡(ì—°ê²°)í•œë‹¤
 		b.addActionListener(new ButtonHandler());
 		f.add(b);
-		b.addMouseMotionListener(new MouseHandler()); // ¸¶¿ì½º ¿òÁ÷ÀÓ ÀÌº¥Æ®Ã³¸®¸¦ b¿¡¼­ ÇØ¾ß ÇÑ´Ù. b°¡ f¸¦ ¿ÏÀüÈ÷ µ¤±â ¶§¹®¿¡, ¸¶¿ì½º ¿òÁ÷ÀÓ ÀÌº¥Æ®¸¦ f°¡ ¹ŞÁö ¸øÇÏ°í b°¡ ¹Ş±â ¶§¹®ÀÌ´Ù.
+		b.addMouseMotionListener(new MouseHandler()); // ë§ˆìš°ìŠ¤ ì›€ì§ì„ ì´ë²¤íŠ¸ì²˜ë¦¬ë¥¼ bì—ì„œ í•´ì•¼ í•œë‹¤. bê°€ fë¥¼ ì™„ì „íˆ ë®ê¸° ë•Œë¬¸ì—, ë§ˆìš°ìŠ¤ ì›€ì§ì„ ì´ë²¤íŠ¸ë¥¼ fê°€ ë°›ì§€ ëª»í•˜ê³  bê°€ ë°›ê¸° ë•Œë¬¸ì´ë‹¤.
 		
-		// EventHandler Å¬·¡½ºÀÇ °´Ã¼¸¦ »ı¼ºÇØ¼­ FrameÀÇ WindowListener·Î µî·ÏÇÑ´Ù
+		// EventHandler í´ë˜ìŠ¤ì˜ ê°ì²´ë¥¼ ìƒì„±í•´ì„œ Frameì˜ WindowListenerë¡œ ë“±ë¡í•œë‹¤
 		f.addWindowListener(new EventHandler());
-		f.setVisible(true); // Frame . »ı¼ºÇÑ À» È­¸é¿¡ º¸ÀÌµµ·Ï ÇÑ´Ù
+		f.setVisible(true); // Frame . ìƒì„±í•œ ì„ í™”ë©´ì— ë³´ì´ë„ë¡ í•œë‹¤
 	}
 }
 
-// OOPÀÇ Adapter ÆĞÅÏÀÌ±â¿¡ Window"Adapter"¶ó°í ºÎ¸¥´Ù.
-// Adapter Å¬·¡½º´Â Ãß»óÅ¬·¡½º·Î ÀÎÅÍÆäÀÌ½ºÀÇ Ãß»ó¸Ş¼­µå¸¦ ¸ğµÎ ºó (³»¿ë ¾ø´Â) ¸Ş¼­µå·Î ±¸ÇöÇØ³ù´Ù. (¾Æ¸¶...?)
-	// Ãß»óÅ¬·¡½º·Î ¸¸µç ÀÌÀ¯´Â °´Ã¼ »ı¼º ¸øÇÏ°Ô ÇÏ±â À§ÇØ¼­ --> AdapterÅ¬·¡½º¸¦ °´Ã¼ »ı¼ºÇØºÁ¾ß ³»¿ëÀÌ ¾ø¾î¼­ ÀÇ¹Ì°¡ ¾ø´Ù --> ¾Æ¿¹ °´Ã¼ »ı¼º ¸øÇÏ°Ô ¸·´Â °Í
-// »ç¿ëÀÚ´Â ÀÎÅÍÆäÀÌ½º¸¦ Á÷Á¢ ±¸ÇöÇÒ ÇÊ¿ä ¾øÀÌ adapter¸¦ »ó¼Ó¹Ş¾Æ¼­ ¿øÇÏ´Â ¸Ş¼­µå¸¸ ¿À¹ö¶óÀÌµù ÇÏ¸é µÈ´Ù.
-// Adapter Å¬·¡½º¸¦ »ç¿ëÇÏ´Âµ¥ ¹®Á¦Á¡Àº Adapter Å¬·¡½º¸¦ »ó¼Ó¹Ş±â¿¡ ´Ù¸¥ °ÍÀ» »ó¼Ó ¹ŞÀ» ¼ö ¾ø´Ù.
+// OOPì˜ Adapter íŒ¨í„´ì´ê¸°ì— Window"Adapter"ë¼ê³  ë¶€ë¥¸ë‹¤.
+// Adapter í´ë˜ìŠ¤ëŠ” ì¶”ìƒí´ë˜ìŠ¤ë¡œ ì¸í„°í˜ì´ìŠ¤ì˜ ì¶”ìƒë©”ì„œë“œë¥¼ ëª¨ë‘ ë¹ˆ (ë‚´ìš© ì—†ëŠ”) ë©”ì„œë“œë¡œ êµ¬í˜„í•´ë†¨ë‹¤. (ì•„ë§ˆ...?)
+	// ì¶”ìƒí´ë˜ìŠ¤ë¡œ ë§Œë“  ì´ìœ ëŠ” ê°ì²´ ìƒì„± ëª»í•˜ê²Œ í•˜ê¸° ìœ„í•´ì„œ --> Adapterí´ë˜ìŠ¤ë¥¼ ê°ì²´ ìƒì„±í•´ë´ì•¼ ë‚´ìš©ì´ ì—†ì–´ì„œ ì˜ë¯¸ê°€ ì—†ë‹¤ --> ì•„ì˜ˆ ê°ì²´ ìƒì„± ëª»í•˜ê²Œ ë§‰ëŠ” ê²ƒ
+// ì‚¬ìš©ìëŠ” ì¸í„°í˜ì´ìŠ¤ë¥¼ ì§ì ‘ êµ¬í˜„í•  í•„ìš” ì—†ì´ adapterë¥¼ ìƒì†ë°›ì•„ì„œ ì›í•˜ëŠ” ë©”ì„œë“œë§Œ ì˜¤ë²„ë¼ì´ë”© í•˜ë©´ ëœë‹¤.
+// Adapter í´ë˜ìŠ¤ë¥¼ ì‚¬ìš©í•˜ëŠ”ë° ë¬¸ì œì ì€ Adapter í´ë˜ìŠ¤ë¥¼ ìƒì†ë°›ê¸°ì— ë‹¤ë¥¸ ê²ƒì„ ìƒì† ë°›ì„ ìˆ˜ ì—†ë‹¤.
 class EventHandler extends WindowAdapter {
-	// ÀÎÅÍÆäÀÌ½º WindowListener´Â ¸ğµç Ãß»ó¸Ş¼­µå¸¦  °ıÈ£¶óµµ ºÙ¿©¼­ ¸ğµÎ ±¸ÇöÇØ¾ß ÇÑ´Ù.
-	// Å¬·¡½º WindowAdapter´Â WindowListenerÀÇ Ãß»ó¸Ş¼­µå¸¦ ºó (³»¿ëÀÌ ¾ø´Â) ¸Ş¼­µå·Î ±¸ÇöÇØ³õ¾Ò°í, ±×·¡¼­ »ç¿ëÀÚ´Â »ç¿ëÇÏ±â ½ÍÀº ¸Ş¼­µå¸¸ ¿À¹ö¶óÀÌµùÇÏ¸é µÈ´Ù.
-	public void windowClosing(WindowEvent e) { // FrameÀÇ ´İ±â ¹öÆ°À» ´­·¶À» ¶§ ÀÚµ¿À¸·Î È£ÃâµÈ´Ù
-		e.getWindow().setVisible(false); // FrameÀ» È­¸é¿¡¼­ º¸ÀÌÁö ¾Êµµ·Ï ÇÏ°í,
-		e.getWindow().dispose(); // ¸Ş¸ğ¸®¿¡¼­ Á¦°ÅÇÑ´Ù
-		System.exit(0); // ÇÁ·Î±×·¥À» Á¾·áÇÑ´Ù
+	// ì¸í„°í˜ì´ìŠ¤ WindowListenerëŠ” ëª¨ë“  ì¶”ìƒë©”ì„œë“œë¥¼  ê´„í˜¸ë¼ë„ ë¶™ì—¬ì„œ ëª¨ë‘ êµ¬í˜„í•´ì•¼ í•œë‹¤.
+	// í´ë˜ìŠ¤ WindowAdapterëŠ” WindowListenerì˜ ì¶”ìƒë©”ì„œë“œë¥¼ ë¹ˆ (ë‚´ìš©ì´ ì—†ëŠ”) ë©”ì„œë“œë¡œ êµ¬í˜„í•´ë†“ì•˜ê³ , ê·¸ë˜ì„œ ì‚¬ìš©ìëŠ” ì‚¬ìš©í•˜ê¸° ì‹¶ì€ ë©”ì„œë“œë§Œ ì˜¤ë²„ë¼ì´ë”©í•˜ë©´ ëœë‹¤.
+	public void windowClosing(WindowEvent e) { // Frameì˜ ë‹«ê¸° ë²„íŠ¼ì„ ëˆŒë €ì„ ë•Œ ìë™ìœ¼ë¡œ í˜¸ì¶œëœë‹¤
+		e.getWindow().setVisible(false); // Frameì„ í™”ë©´ì—ì„œ ë³´ì´ì§€ ì•Šë„ë¡ í•˜ê³ ,
+		e.getWindow().dispose(); // ë©”ëª¨ë¦¬ì—ì„œ ì œê±°í•œë‹¤
+		System.exit(0); // í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•œë‹¤
 	}
 }
 
 //class EventHandler implements WindowListener {
 //	public void windowOpened(WindowEvent e) {}
-//	public void windowClosing(WindowEvent e) { // FrameÀÇ ´İ±â ¹öÆ°À» ´­·¶À» ¶§ ÀÚµ¿À¸·Î È£ÃâµÈ´Ù
-//		e.getWindow().setVisible(false); // FrameÀ» È­¸é¿¡¼­ º¸ÀÌÁö ¾Êµµ·Ï ÇÏ°í,
-//		e.getWindow().dispose(); // ¸Ş¸ğ¸®¿¡¼­ Á¦°ÅÇÑ´Ù
-//		System.exit(0); // ÇÁ·Î±×·¥À» Á¾·áÇÑ´Ù
+//	public void windowClosing(WindowEvent e) { // Frameì˜ ë‹«ê¸° ë²„íŠ¼ì„ ëˆŒë €ì„ ë•Œ ìë™ìœ¼ë¡œ í˜¸ì¶œëœë‹¤
+//		e.getWindow().setVisible(false); // Frameì„ í™”ë©´ì—ì„œ ë³´ì´ì§€ ì•Šë„ë¡ í•˜ê³ ,
+//		e.getWindow().dispose(); // ë©”ëª¨ë¦¬ì—ì„œ ì œê±°í•œë‹¤
+//		System.exit(0); // í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•œë‹¤
 //	}
 //	
-//	// ¾Æ·¡ ¸Ş¼­µåµéÀº WindowListener ÀÎÅÍÆäÀÌ½º¿¡ ÀÖ´Â °Íµé --> Ã¢À» ´İ´Âµ¥´Â ÇÊ¿äÇÏÁö ¾Ê´Ù.
-//	public void windowClosed(WindowEvent e) {} // ¾Æ¹«³»¿ëµµ ¾ø´Â ¸Ş¼­µå ±¸Çö --> ÀÎÅÍÆäÀÌ½ºÀÇ Ãß»ó¸Ş¼­µåÀÌ±â ¶§¹®¿¡
+//	// ì•„ë˜ ë©”ì„œë“œë“¤ì€ WindowListener ì¸í„°í˜ì´ìŠ¤ì— ìˆëŠ” ê²ƒë“¤ --> ì°½ì„ ë‹«ëŠ”ë°ëŠ” í•„ìš”í•˜ì§€ ì•Šë‹¤.
+//	public void windowClosed(WindowEvent e) {} // ì•„ë¬´ë‚´ìš©ë„ ì—†ëŠ” ë©”ì„œë“œ êµ¬í˜„ --> ì¸í„°í˜ì´ìŠ¤ì˜ ì¶”ìƒë©”ì„œë“œì´ê¸° ë•Œë¬¸ì—
 //	public void windowIconified(WindowEvent e) {}
 //	public void windowDeiconified(WindowEvent e) {}
 //	public void windowActivated(WindowEvent e) {}
 //	public void windowDeactivated(WindowEvent e) {}
 //}
 
-// 1. ÀÌº¥Æ® Ã³¸®±â¸¦ ÀÛ¼º (¿øÇÏ´Â ¸Ş¼­µå¸¦ °¡Áø ÀÎÅÍÆäÀÌ½º ±¸Çö)
+// 1. ì´ë²¤íŠ¸ ì²˜ë¦¬ê¸°ë¥¼ ì‘ì„± (ì›í•˜ëŠ” ë©”ì„œë“œë¥¼ ê°€ì§„ ì¸í„°í˜ì´ìŠ¤ êµ¬í˜„)
 class ButtonHandler implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("OK ¹öÆ°ÀÌ ´­·¯Á³¾î¿ä.");
+		System.out.println("OK ë²„íŠ¼ì´ ëˆŒëŸ¬ì¡Œì–´ìš”.");
 	}
 }
 
@@ -64,5 +64,4 @@ class MouseHandler implements MouseMotionListener {
 	public void mouseMoved(MouseEvent me) {
 		System.out.println("x = " + me.getX() + ", y = " + me.getY());
 	}
-
 }

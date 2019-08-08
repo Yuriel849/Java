@@ -2,14 +2,14 @@ package AWT;
 
 import java.awt.*;
 
-//GridLayoutÀº ¹öÆ°ÀÇ Å©±â°¡ µ¿ÀÏÇÏ´Ù
+//GridLayoutì€ ë²„íŠ¼ì˜ í¬ê¸°ê°€ ë™ì¼í•˜ë‹¤
 
 class Ex13_GridLayoutTest {
 	public static void main(String args[]) {
 		Frame f = new Frame("GridLayoutTest");
 		f.setSize(150, 150);
-		f.setLayout(new GridLayout(3, 2)); // 3Çà 2¿­ÀÇ Å×ÀÌºíÀ» ¸¸µç´Ù.
-		f.add(new Button("1")); 		   // Ãß°¡µÇ´Â ¼ø¼­´ë·Î Button¿¡ ¹øÈ£¸¦ ºÙ¿´´Ù.
+		f.setLayout(new GridLayout(3, 2)); // 3í–‰ 2ì—´ì˜ í…Œì´ë¸”ì„ ë§Œë“ ë‹¤.
+		f.add(new Button("1")); 		   // ì¶”ê°€ë˜ëŠ” ìˆœì„œëŒ€ë¡œ Buttonì— ë²ˆí˜¸ë¥¼ ë¶™ì˜€ë‹¤.
 		f.add(new Button("2"));
 		f.add(new Button("3"));
 		f.add(new Button("4"));
@@ -17,5 +17,5 @@ class Ex13_GridLayoutTest {
 		f.add(new Button("6"));
 		
 		f.setVisible(true);
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.

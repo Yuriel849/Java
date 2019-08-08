@@ -1,6 +1,6 @@
 package threads;
 
-// join() »ç¿ëÇÏ±â
+// join() ì‚¬ìš©í•˜ê¸°
 
 class Ex12_Thread12 {
 	static long startTime = 0;
@@ -14,26 +14,26 @@ class Ex12_Thread12 {
 		startTime = System.currentTimeMillis();
 		
 		try {
-			th1.join(); // main ¾²·¹µå°¡ th1ÀÇ ÀÛ¾÷ÀÌ ³¡³¯ ¶§±îÁö ±â´Ù¸°´Ù.
-			th2.join(); // main ¾²·¹µå°¡ th2ÀÇ ÀÛ¾÷ÀÌ ³¡³¯ ¶§±îÁö ±â´Ù¸°´Ù.
+			th1.join(); // main ì“°ë ˆë“œê°€ th1ì˜ ì‘ì—…ì´ ëë‚  ë•Œê¹Œì§€ ê¸°ë‹¤ë¦°ë‹¤.
+			th2.join(); // main ì“°ë ˆë“œê°€ th2ì˜ ì‘ì—…ì´ ëë‚  ë•Œê¹Œì§€ ê¸°ë‹¤ë¦°ë‹¤.
 		} catch (InterruptedException e) {}
 
-		System.out.println("¼Ò¿ä½Ã°£ : " + (System.currentTimeMillis() - Ex12_Thread12.startTime));
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+		System.out.println("ì†Œìš”ì‹œê°„ : " + (System.currentTimeMillis() - Ex12_Thread12.startTime));
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.
 
 class Ex12_Thread12_1 extends Thread {
 	public void run() {
 		for(int i = 0; i < 300; i++) {
 			System.out.print(new String("-"));
 		}
-	} // run() ³¡.
-} // Å¬·¡½º ³¡.
+	} // run() ë.
+} // í´ë˜ìŠ¤ ë.
 
 class Ex12_Thread12_2 extends Thread {
 	public void run() {
 		for(int i = 0; i < 300; i++) {
 			System.out.print(new String("|"));
 		}
-	} // run() ³¡.
-} // Å¬·¡½º ³¡.
+	} // run() ë.
+} // í´ë˜ìŠ¤ ë.

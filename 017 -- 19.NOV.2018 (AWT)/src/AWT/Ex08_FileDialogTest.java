@@ -1,21 +1,20 @@
 package AWT;
 
 import java.awt.*;
-import java.awt.event.*;
 
 public class Ex08_FileDialogTest {
 	public static void main(String args[]) {
 		Frame f = new Frame("Parent");
 		f.setSize(300, 200);
 
-		FileDialog fileOpen = new FileDialog(f, "ÆÄÀÏ¿­±â", FileDialog.LOAD);
+		FileDialog fileOpen = new FileDialog(f, "íŒŒì¼ì—´ê¸°", FileDialog.LOAD);
 		
 		f.setVisible(true);
 		fileOpen.setDirectory("c:\\jdk1.5");
 		fileOpen.setVisible(true);
 		
-		// ÆÄÀÏÀ» ¼±ÅÃÇÑ ´ÙÀ½, FileDialogÀÇ ¿­±â¹öÆ°À» ´©¸£¸é,
-		// 		getFile()°ú getDirectory()¸¦ ÀÌ¿ëÇØ¼­ ÆÄÀÏÀÌ¸§°ú À§Ä¡ÇÑ µğ·ºÅä¸®¸¦ ¾òÀ» ¼ö ÀÖ´Ù
+		// íŒŒì¼ì„ ì„ íƒí•œ ë‹¤ìŒ, FileDialogì˜ ì—´ê¸°ë²„íŠ¼ì„ ëˆ„ë¥´ë©´,
+		// 		getFile()ê³¼ getDirectory()ë¥¼ ì´ìš©í•´ì„œ íŒŒì¼ì´ë¦„ê³¼ ìœ„ì¹˜í•œ ë””ë ‰í† ë¦¬ë¥¼ ì–»ì„ ìˆ˜ ìˆë‹¤
 		System.out.println(fileOpen.getDirectory() + fileOpen.getFile());
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.

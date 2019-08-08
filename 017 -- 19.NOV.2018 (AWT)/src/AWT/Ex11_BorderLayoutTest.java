@@ -2,15 +2,15 @@ package AWT;
 
 import java.awt.*;
 
-// Layout Manager¿¡ ÀÇÇØ Ã¢ÀÇ Å©±â¸¦ ¼öÁ¤ÇÒ ¶§ ÀÚµ¿À¸·Î Å©±â Á¶ÀıÀ» ÇØÁØ´Ù.
+// Layout Managerì— ì˜í•´ ì°½ì˜ í¬ê¸°ë¥¼ ìˆ˜ì •í•  ë•Œ ìë™ìœ¼ë¡œ í¬ê¸° ì¡°ì ˆì„ í•´ì¤€ë‹¤.
 
-// BorderLayoutÀº Layout ManagerÀÇ 5°³ Á¾·ù Áß ÇÏ³ª
+// BorderLayoutì€ Layout Managerì˜ 5ê°œ ì¢…ë¥˜ ì¤‘ í•˜ë‚˜
 
 public class Ex11_BorderLayoutTest {
 	public static void main(String args[]) {
 		Frame f = new Frame("BorderLayoutTest");
 		f.setSize(400, 400);
-		//FrameÀº ±âº»ÀûÀ¸·Î BorderLayout·Î ¼³Á¤µÇ¾î ÀÖÀ¸¹Ç·Î µû·Î ¼³Á¤ÇÏÁö ¾Ê¾Æµµ µÊ
+		//Frameì€ ê¸°ë³¸ì ìœ¼ë¡œ BorderLayoutë¡œ ì„¤ì •ë˜ì–´ ìˆìœ¼ë¯€ë¡œ ë”°ë¡œ ì„¤ì •í•˜ì§€ ì•Šì•„ë„ ë¨
 		f.setLayout(new BorderLayout());
 		Button north = new Button("North");
 		Button south = new Button("South");
@@ -18,14 +18,14 @@ public class Ex11_BorderLayoutTest {
 		Button west = new Button("West");
 		Button center = new Button("Center");
 		
-		// FrameÀÇ 5°³ÀÇ °¢ ¿µ¿ª¿¡ ButtonÀ» ÇÏ³ª¾¿ Ãß°¡ÇÑ´Ù
-//		f.add(north, "North"); // f.add("North",north);¿Í °°ÀÌ ¾µ ¼öµµ ÀÖ´Ù
-		f.add(south, "South"); // SouthÀÇ ´ë¼Ò¹®ÀÚ Á¤È®È÷
-		f.add(east, "East"); // East ´ë½Å, BorderLayout.EAST »ç¿ë°¡´É
+		// Frameì˜ 5ê°œì˜ ê° ì˜ì—­ì— Buttonì„ í•˜ë‚˜ì”© ì¶”ê°€í•œë‹¤
+//		f.add(north, "North"); // f.add("North",north);ì™€ ê°™ì´ ì“¸ ìˆ˜ë„ ìˆë‹¤
+		f.add(south, "South"); // Southì˜ ëŒ€ì†Œë¬¸ì ì •í™•íˆ
+		f.add(east, "East"); // East ëŒ€ì‹ , BorderLayout.EAST ì‚¬ìš©ê°€ëŠ¥
 //		f.add(west, "West");
 		f.add(center, "Center");
-		// Æ¯Á¤ ¿µ¿ª¿¡ ¹öÆ° ÇÊ¿ä¾ø´Ù¸é, ±× ºÎºĞ¿¡ add()ÇÏÁö ¾ÊÀ¸¸é ±× ¿µ¿ªÀ» »©°í È­¸éÀ» Ã¤¿î´Ù.
+		// íŠ¹ì • ì˜ì—­ì— ë²„íŠ¼ í•„ìš”ì—†ë‹¤ë©´, ê·¸ ë¶€ë¶„ì— add()í•˜ì§€ ì•Šìœ¼ë©´ ê·¸ ì˜ì—­ì„ ë¹¼ê³  í™”ë©´ì„ ì±„ìš´ë‹¤.
 		
 		f.setVisible(true);
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.

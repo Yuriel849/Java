@@ -2,21 +2,21 @@ package threads;
 
 import java.util.ArrayList;
 
-// wait & notify »ç¿ëÇÏ±â --> »ç¿ëÇÏÁö ¾Ê¾ÒÀ» ¶§, µ¿±âÈ­ÇÏÁö ¾Ê¾Ò±â ¶§¹®¿¡ ¿¹¿Ü ¹ß»ı
+// wait & notify ì‚¬ìš©í•˜ê¸° --> ì‚¬ìš©í•˜ì§€ ì•Šì•˜ì„ ë•Œ, ë™ê¸°í™”í•˜ì§€ ì•Šì•˜ê¸° ë•Œë¬¸ì— ì˜ˆì™¸ ë°œìƒ
 
 class Ex14_Thread14 {
 	public static void main(String[] args) throws Exception {
-		Table table = new Table(); // ¿©·¯ ¾²·¹µå°¡ °øÀ¯ÇÏ´Â °´Ã¼
+		Table table = new Table(); // ì—¬ëŸ¬ ì“°ë ˆë“œê°€ ê³µìœ í•˜ëŠ” ê°ì²´
 		
 		new Thread(new Cook(table), "COOK1").start();
 		new Thread(new Customer(table, "donut"), "CUST1").start();
 		new Thread(new Customer(table, "burger"), "CUST2").start();
 
-		// 0.1ÃÊ (100 millis) ÈÄ¿¡ °­Á¦ Á¾·áÇÑ´Ù.
+		// 0.1ì´ˆ (100 millis) í›„ì— ê°•ì œ ì¢…ë£Œí•œë‹¤.
 		Thread.sleep(100);
 		System.exit(0);
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.
 
 class Customer implements Runnable {
 	private Table table;
@@ -43,7 +43,7 @@ class Customer implements Runnable {
 	}
 	
 	boolean eatFood() { return table.remove(food); }
-} // Å¬·¡½º ³¡.
+} // í´ë˜ìŠ¤ ë.
 
 class Cook implements Runnable {
 	private Table table;
@@ -54,7 +54,7 @@ class Cook implements Runnable {
 	
 	public void run() {
 		while(true) {
-			// ÀÓÀÇÀÇ ¿ä¸®¸¦ ÇÏ³ª ¼±ÅÃÇØ¼­ table¿¡ Ãß°¡ÇÑ´Ù.
+			// ì„ì˜ì˜ ìš”ë¦¬ë¥¼ í•˜ë‚˜ ì„ íƒí•´ì„œ tableì— ì¶”ê°€í•œë‹¤.
 			int idx = (int)(Math.random() * table.dishNum());
 			table.add(table.dishNames[idx]);
 			
@@ -63,23 +63,23 @@ class Cook implements Runnable {
 			} catch (InterruptedException e) {}
 		}
 	}
-} // Å¬·¡½º ³¡.
+} // í´ë˜ìŠ¤ ë.
 
 class Table {
-	String[] dishNames = { "donut", "donut", "burger" }; // donutÀÌ ´õ ÀÚÁÖ ³ª¿Â´Ù.
-	final int MAX_FOOD = 6; // Å×ÀÌºí¿¡ ³õÀ» ¼ö ÀÖ´Â ÃÖ´ë À½½ÄÀÇ °³¼ö
+	String[] dishNames = { "donut", "donut", "burger" }; // donutì´ ë” ìì£¼ ë‚˜ì˜¨ë‹¤.
+	final int MAX_FOOD = 6; // í…Œì´ë¸”ì— ë†“ì„ ìˆ˜ ìˆëŠ” ìµœëŒ€ ìŒì‹ì˜ ê°œìˆ˜
 	
 	private ArrayList<String> dishes = new ArrayList<> ();
 	
 	public void add(String dish) {
-		// Å×ÀÌºí¿¡ À½½ÄÀÌ °¡µæÃ¡À¸¸é, Å×ÀÌºí¿¡ À½½ÄÀ» Ãß°¡ÇÏÁö ¾Ê´Â´Ù.
+		// í…Œì´ë¸”ì— ìŒì‹ì´ ê°€ë“ì°¼ìœ¼ë©´, í…Œì´ë¸”ì— ìŒì‹ì„ ì¶”ê°€í•˜ì§€ ì•ŠëŠ”ë‹¤.
 		if(dishes.size() >= MAX_FOOD	 ) { return; }
 		dishes.add(dish);
 		System.out.println("Dishes: " + dishes.toString());
 	}
 	
 	public boolean remove(String dishName) {
-		// ÁöÁ¤µÈ ¿ä¸®¿Í ÀÏÄ¡ÇÏ´Â ¿ä¸®¸¦ Å×ÀÌºí¿¡¼­ Á¦°ÅÇÑ´Ù.
+		// ì§€ì •ëœ ìš”ë¦¬ì™€ ì¼ì¹˜í•˜ëŠ” ìš”ë¦¬ë¥¼ í…Œì´ë¸”ì—ì„œ ì œê±°í•œë‹¤.
 		for(int i = 0; i < dishes.size(); i++) {
 			if(dishName.equals(dishes.get(i))) {
 				dishes.remove(i);
@@ -90,4 +90,4 @@ class Table {
 	}
 	
 	public int dishNum() { return dishNames.length; }
-} // Å¬·¡½º ³¡.
+} // í´ë˜ìŠ¤ ë.

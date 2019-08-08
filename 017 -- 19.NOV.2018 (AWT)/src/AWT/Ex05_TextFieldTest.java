@@ -6,21 +6,21 @@ class Ex05_TextFieldTest {
 	public static void main(String args[]) {
 		Frame f = new Frame("Login");
 		f.setSize(400, 100);
-		f.setLayout(new FlowLayout()); // LayoutManager¸¦ FlowLayoutÀ¸·Î ÇÑ´Ù
+		f.setLayout(new FlowLayout()); // LayoutManagerë¥¼ FlowLayoutìœ¼ë¡œ í•œë‹¤
 		
-		// ½ÇÇà ½Ã ³ªÅ¸³ª´Â Ã¢¿¡¼­ "ID: " & "Password: "°¡ ¹Ù·Î ·¹ÀÌºí
-		Label lid = new Label("ID :", Label.RIGHT); // Á¤·ÄÀ» ¿À¸¥ÂÊÀ¸·Î
+		// ì‹¤í–‰ ì‹œ ë‚˜íƒ€ë‚˜ëŠ” ì°½ì—ì„œ "ID: " & "Password: "ê°€ ë°”ë¡œ ë ˆì´ë¸”
+		Label lid = new Label("ID :", Label.RIGHT); // ì •ë ¬ì„ ì˜¤ë¥¸ìª½ìœ¼ë¡œ
 		Label lpwd = new Label("Password :", Label.RIGHT);
 		
-		// ½ÇÇà ½Ã ³ªÅ¸³ª´Â Ã¢¿¡¼­ »ç¿ëÀÚ°¡ ÀÔ·ÂÇÒ ¼ö ÀÖ´Â ¹Ú½º°¡ textfield
-		TextField id = new TextField(10);//¾à 10°³ÀÇ ±ÛÀÚ¸¦ ÀÔ·ÂÇÒ ¼ö ÀÖ´Â TextField »ı¼º
+		// ì‹¤í–‰ ì‹œ ë‚˜íƒ€ë‚˜ëŠ” ì°½ì—ì„œ ì‚¬ìš©ìê°€ ì…ë ¥í•  ìˆ˜ ìˆëŠ” ë°•ìŠ¤ê°€ textfield
+		TextField id = new TextField(10);//ì•½ 10ê°œì˜ ê¸€ìë¥¼ ì…ë ¥í•  ìˆ˜ ìˆëŠ” TextField ìƒì„±
 		TextField pwd = new TextField(10);
-		pwd.setEchoChar('*'); // ÀÔ·ÂÇÑ °ª ´ë½Å '*'°¡ º¸ÀÌµµ·Ï ÇÑ´Ù
+		pwd.setEchoChar('*'); // ì…ë ¥í•œ ê°’ ëŒ€ì‹  '*'ê°€ ë³´ì´ë„ë¡ í•œë‹¤
 		
-		f.add(lid); // »ı¼ºÇÑ ÄÄÆ÷³ÍÆ®µéÀ» Frame¿¡ Æ÷ÇÔ½ÃÅ²´Ù
+		f.add(lid); // ìƒì„±í•œ ì»´í¬ë„ŒíŠ¸ë“¤ì„ Frameì— í¬í•¨ì‹œí‚¨ë‹¤
 		f.add(id);
 		f.add(lpwd);
 		f.add(pwd);
 		f.setVisible(true);
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.

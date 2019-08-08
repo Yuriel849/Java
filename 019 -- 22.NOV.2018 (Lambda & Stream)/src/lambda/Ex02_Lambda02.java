@@ -7,15 +7,15 @@ class Ex02_Lambda02 {
 		ArrayList<Integer> list = new ArrayList<> ();
 		for(int i = 0; i < 10; i++) { list.add(i); }
 		
-		// listÀÇ ¸ðµç ¿ä¼Ò¸¦ Ãâ·Â
+		// listì˜ ëª¨ë“  ìš”ì†Œë¥¼ ì¶œë ¥
 		list.forEach(i -> System.out.print(i + ","));
 		System.out.println();
 		
-		// list¿¡¼­ 2 ¶Ç´Â 3ÀÇ ¹è¼ö¸¦ Á¦°ÅÇÑ´Ù.
+		// listì—ì„œ 2 ë˜ëŠ” 3ì˜ ë°°ìˆ˜ë¥¼ ì œê±°í•œë‹¤.
 		list.removeIf(x -> x % 2 == 0 || x % 3 == 0);
 		System.out.println(list);
 	
-		// listÀÇ °¢ ¿ä¼Ò¿¡ 10À» °öÇÑ´Ù.
+		// listì˜ ê° ìš”ì†Œì— 10ì„ ê³±í•œë‹¤.
 		list.replaceAll(i -> i * 10);
 		System.out.println(list);
 		
@@ -25,7 +25,7 @@ class Ex02_Lambda02 {
 		map.put("3", "3");
 		map.put("4", "4");
 		
-		// mapÀÇ ¸ðµç ¿ä¼Ò¸¦ {k,v}ÀÇ Çü½ÄÀ¸·Î Ãâ·ÂÇÑ´Ù.
+		// mapì˜ ëª¨ë“  ìš”ì†Œë¥¼ {k,v}ì˜ í˜•ì‹ìœ¼ë¡œ ì¶œë ¥í•œë‹¤.
 		map.forEach((k,v) -> System.out.print("{" + k + "," + v + "}"));
 		System.out.println();
 	}

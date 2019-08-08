@@ -12,13 +12,13 @@ class Ex09_MenuTest {
 		
 		MenuItem miNew = new MenuItem("New");
 		MenuItem miOpen = new MenuItem("Open");
-		Menu mOthers = new Menu("Others"); // MenuItemÀÌ ¾Æ´Ï¶ó MenuÀÓ¿¡ ÁÖÀÇ
+		Menu mOthers = new Menu("Others"); // MenuItemì´ ì•„ë‹ˆë¼ Menuì„ì— ì£¼ì˜
 		MenuItem miExit = new MenuItem("Exit");
 		
-		mFile.add(miNew); // Menu¿¡ MenuItemµéÀ» Ãß°¡ÇÑ´Ù
+		mFile.add(miNew); // Menuì— MenuItemë“¤ì„ ì¶”ê°€í•œë‹¤
 		mFile.add(miOpen);
-		mFile.add(mOthers); // Menu¿¡ Menu¸¦ Ãß°¡ÇÑ´Ù
-		mFile.addSeparator(); // ¸Ş´º ºĞ¸®¼±À» ³Ö´Â´Ù
+		mFile.add(mOthers); // Menuì— Menuë¥¼ ì¶”ê°€í•œë‹¤
+		mFile.addSeparator(); // ë©”ë‰´ ë¶„ë¦¬ì„ ì„ ë„£ëŠ”ë‹¤
 		mFile.add(miExit);
 		
 		MenuItem miPrint = new MenuItem("Print ...");
@@ -34,12 +34,12 @@ class Ex09_MenuTest {
 		CheckboxMenuItem miStatusbar = new CheckboxMenuItem("Statusbar");
 		mView.add(miStatusbar);
 		
-		mb.add(mFile); // MenuBar¿¡ Menu¸¦ Ãß°¡ÇÑ´Ù
+		mb.add(mFile); // MenuBarì— Menuë¥¼ ì¶”ê°€í•œë‹¤
 		mb.add(mEdit);
 		mb.add(mView);
-		mb.setHelpMenu(mHelp); // mHelp¸¦ HelpMenu·Î ÁöÁ¤ÇÑ´Ù
+		mb.setHelpMenu(mHelp); // mHelpë¥¼ HelpMenuë¡œ ì§€ì •í•œë‹¤
 		
-		f.setMenuBar(mb); // Frame¿¡ MenuBar¸¦ Æ÷ÇÔ½ÃÅ²´Ù
+		f.setMenuBar(mb); // Frameì— MenuBarë¥¼ í¬í•¨ì‹œí‚¨ë‹¤
 		f.setVisible(true);
 	}
 }

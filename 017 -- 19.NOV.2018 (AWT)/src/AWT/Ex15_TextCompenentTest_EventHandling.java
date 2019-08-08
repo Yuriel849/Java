@@ -8,7 +8,7 @@ class Ex15_TextCompenentTest_EventHandling extends Frame {
 	TextArea ta;
 	
 	Ex15_TextCompenentTest_EventHandling(String title) {
-		super(title); // Frame(String title)À» È£ÃâÇÑ´Ù.
+		super(title); // Frame(String title)ì„ í˜¸ì¶œí•œë‹¤.
 		
 		tf = new TextField();
 		ta = new TextArea();
@@ -17,21 +17,21 @@ class Ex15_TextCompenentTest_EventHandling extends Frame {
 	
 		tf.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				// TextField¿¡¼­ Enter¸¦ Ä¡¸é, tf¿¡ ÀÔ·ÂµÈ text¸¦ TextArea¿¡ Ãß°¡ÇÑ´Ù.
+				// TextFieldì—ì„œ Enterë¥¼ ì¹˜ë©´, tfì— ì…ë ¥ëœ textë¥¼ TextAreaì— ì¶”ê°€í•œë‹¤.
 				ta.append(tf.getText() + "\n");
-				tf.setText(""); // tfÀÇ text¸¦ Áö¿î´Ù.
+				tf.setText(""); // tfì˜ textë¥¼ ì§€ìš´ë‹¤.
 				tf.requestFocus();
 			}
 		});
 		
-		ta.setEditable(false); // TextAreaÀÇ text¸¦ ÆíÁıÇÏÁö ¸øÇÏ°Ô ÇÑ´Ù.
+		ta.setEditable(false); // TextAreaì˜ textë¥¼ í¸ì§‘í•˜ì§€ ëª»í•˜ê²Œ í•œë‹¤.
 		setSize(300, 200);
 		setVisible(true);
-		tf.requestFocus(); // focus°¡ TextField¿¡ À§Ä¡ÇÏµµ·Ï ÇÑ´Ù.
+		tf.requestFocus(); // focusê°€ TextFieldì— ìœ„ì¹˜í•˜ë„ë¡ í•œë‹¤.
 	}
 	
 	public static void main(String args[]) {
 		Ex15_TextCompenentTest_EventHandling mainWin = 
 				new Ex15_TextCompenentTest_EventHandling("TextComponentEventTest");
-	} // main¸Ş¼­µåÀÇ ³¡.
-} // Å¬·¡½º ³¡.
+	} // mainë©”ì„œë“œì˜ ë.
+} // í´ë˜ìŠ¤ ë.

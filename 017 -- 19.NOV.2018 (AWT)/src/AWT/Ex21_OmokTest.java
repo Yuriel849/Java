@@ -3,34 +3,34 @@ package AWT;
 import java.awt.*;
 import java.awt.event.*;
 
-// ¿À¸ñ°ÔÀÓÀÌ´Ù.
-// Frame¿¡ ¿À¸ñÆÇÀ» ±×¸®°í ±× À§¿¡ ¿ŞÂÊ ¹öÆ°À» ´©¸£¸é °ËÀº µ¹ÀÌ, ¿À¸¥ÂÊ ¹öÆ°À» ´©¸£¸é Èò µ¹ÀÌ ±×·ÁÁöµµ·Ï ¾Ë¸ÂÀº ÄÚµå¸¦ ¿Ï¼ºÇÏ½Ã¿À.
-// ´Ü µ¹Àº Å¬¸¯ÇÑ °÷ÀÇ °¡Àå °¡±î¿î ±³Â÷Á¡¿¡ ³õ¿©¾ß ÇÑ´Ù.
+// ì˜¤ëª©ê²Œì„ì´ë‹¤.
+// Frameì— ì˜¤ëª©íŒì„ ê·¸ë¦¬ê³  ê·¸ ìœ„ì— ì™¼ìª½ ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ ê²€ì€ ëŒì´, ì˜¤ë¥¸ìª½ ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ í° ëŒì´ ê·¸ë ¤ì§€ë„ë¡ ì•Œë§ì€ ì½”ë“œë¥¼ ì™„ì„±í•˜ì‹œì˜¤.
+// ë‹¨ ëŒì€ í´ë¦­í•œ ê³³ì˜ ê°€ì¥ ê°€ê¹Œìš´ êµì°¨ì ì— ë†“ì—¬ì•¼ í•œë‹¤.
 
 class Ex21_OmokTest extends Frame implements MouseListener {
 	public static void main(String[] args) {
 		new Ex21_OmokTest("OmokTest");
-	} // main() ³¡.
+	} // main() ë.
 
-	final int LINE_NUM = 9; // ¿À¸ñÆÇ ÁÙ ¼ö
-	final int LINE_WIDTH = 30; // ¿À¸ñÆÇ ÁÙ °£°İ
-	final int BOARD_SIZE = LINE_WIDTH * (LINE_NUM-1); // ¿À¸ñÆÇÀÇ Å©±â
-	final int STONE_SIZE = (int)(LINE_WIDTH * 0.8); // µ¹ÀÇ Å©±â
+	final int LINE_NUM = 9; // ì˜¤ëª©íŒ ì¤„ ìˆ˜
+	final int LINE_WIDTH = 30; // ì˜¤ëª©íŒ ì¤„ ê°„ê²©
+	final int BOARD_SIZE = LINE_WIDTH * (LINE_NUM-1); // ì˜¤ëª©íŒì˜ í¬ê¸°
+	final int STONE_SIZE = (int)(LINE_WIDTH * 0.8); // ëŒì˜ í¬ê¸°
 
-	final int X0; // x ¿À¸ñÆÇ ½ÃÀÛÀ§Ä¡ ÁÂÇ¥
-	final int Y0; // y ¿À¸ñÆÇ ½ÃÀÛÀ§Ä¡ ÁÂÇ¥
+	final int X0; // x ì˜¤ëª©íŒ ì‹œì‘ìœ„ì¹˜ ì¢Œí‘œ
+	final int Y0; // y ì˜¤ëª©íŒ ì‹œì‘ìœ„ì¹˜ ì¢Œí‘œ
 	
-	final int FRAME_WIDTH; // FrameÀÇ Æø
-	final int FRAME_HEIGHT; // FrameÀÇ ³ôÀÌ
+	final int FRAME_WIDTH; // Frameì˜ í­
+	final int FRAME_HEIGHT; // Frameì˜ ë†’ì´
 	
 	Image img = null;
 	Graphics gImg = null;
 	
-	// »ı¼ºÀÚ!!
+	// ìƒì„±ì!!
 	public Ex21_OmokTest(String title) {
 		super(title);
 		
-		// Event Handler¸¦ µî·ÏÇÑ´Ù.
+		// Event Handlerë¥¼ ë“±ë¡í•œë‹¤.
 		addMouseListener(this);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent we) {
@@ -38,86 +38,86 @@ class Ex21_OmokTest extends Frame implements MouseListener {
 			}
 		});
 		
-		setVisible(true); // FrameÀ» È­¸é¿¡ º¸ÀÌ°Ô ÇÑ´Ù.
-		Insets insets = getInsets(); // setVisibleÀ» ÀÌ¿ëÇÏ¿© È­¸é¿¡ º¸ÀÌ±â Àü¿¡´Â InsetsÀÇ °ªÀ» ¾òÀ» ¼ö ¾ø´Ù.
+		setVisible(true); // Frameì„ í™”ë©´ì— ë³´ì´ê²Œ í•œë‹¤.
+		Insets insets = getInsets(); // setVisibleì„ ì´ìš©í•˜ì—¬ í™”ë©´ì— ë³´ì´ê¸° ì „ì—ëŠ” Insetsì˜ ê°’ì„ ì–»ì„ ìˆ˜ ì—†ë‹¤.
 
-		// ¿À¸ñÆÇ ±×·ÁÁú À§Ä¡(LEFT, TOP)ÀÇ ÁÂÇ¥ X0, Y0¸¦ ÁöÁ¤ÇÑ´Ù.
+		// ì˜¤ëª©íŒ ê·¸ë ¤ì§ˆ ìœ„ì¹˜(LEFT, TOP)ì˜ ì¢Œí‘œ X0, Y0ë¥¼ ì§€ì •í•œë‹¤.
 		X0 = insets.left + LINE_WIDTH;
 		Y0 = insets.top + LINE_WIDTH;
 		
-		// FrameÀÇ Å©±â¸¦ °è»êÇÑ´Ù.
+		// Frameì˜ í¬ê¸°ë¥¼ ê³„ì‚°í•œë‹¤.
 		FRAME_WIDTH = BOARD_SIZE+LINE_WIDTH*2+insets.left+insets.right;
 		FRAME_HEIGHT = BOARD_SIZE+LINE_WIDTH*2+insets.top+insets.bottom;
 
-		// FrameÀ» È­¸éÀÇ (100,100)ÀÇ À§Ä¡¿¡ °è»êµÈ Å©±â·Î º¸ÀÌ°Ô ÇÑ´Ù.
+		// Frameì„ í™”ë©´ì˜ (100,100)ì˜ ìœ„ì¹˜ì— ê³„ì‚°ëœ í¬ê¸°ë¡œ ë³´ì´ê²Œ í•œë‹¤.
 		setBounds(100,100, FRAME_WIDTH, FRAME_HEIGHT);
 	
 		img = createImage(FRAME_WIDTH, FRAME_HEIGHT);
 		gImg = img.getGraphics();
 	
-		setResizable(false); // FrameÀÇ Å©±â¸¦ º¯°æÇÏÁö ¸øÇÏ°Ô ÇÑ´Ù
-							 // true·Î ¼³Á¤ÇÒ °æ¿ì, FrameÀÇ Å©±â¸¦ º¯°æÇÒ ¼ö ÀÖÀ¸³ª ¿À¸ñÆÇÀÇ Å©±â´Â ´Ã¾î³ªÁö ¾Ê´Â´Ù.
+		setResizable(false); // Frameì˜ í¬ê¸°ë¥¼ ë³€ê²½í•˜ì§€ ëª»í•˜ê²Œ í•œë‹¤
+							 // trueë¡œ ì„¤ì •í•  ê²½ìš°, Frameì˜ í¬ê¸°ë¥¼ ë³€ê²½í•  ìˆ˜ ìˆìœ¼ë‚˜ ì˜¤ëª©íŒì˜ í¬ê¸°ëŠ” ëŠ˜ì–´ë‚˜ì§€ ì•ŠëŠ”ë‹¤.
 		drawBoard(gImg);
-	} // »ı¼ºÀÚ Ex21_OmokTest(String title) ³¡.
+	} // ìƒì„±ì Ex21_OmokTest(String title) ë.
 	
 	public void drawBoard(Graphics g) {
 		for(int i=0; i<LINE_NUM;i++) {
 			g.drawLine(X0,Y0+i*LINE_WIDTH,X0+BOARD_SIZE, Y0+i*LINE_WIDTH);
 			g.drawLine(X0+i*LINE_WIDTH,Y0, X0+i*LINE_WIDTH, Y0+BOARD_SIZE);
 		}
-	} // drawBoard() ³¡.
+	} // drawBoard() ë.
 	
 	public void paint(Graphics g) {
 		if(img==null) return;
-		g.drawImage(img,0,0,this); // °¡»óÈ­¸é¿¡ ±×·ÁÁø ±×¸²À» Frame¿¡ º¹»ç
-	} // paint() ³¡.
+		g.drawImage(img,0,0,this); // ê°€ìƒí™”ë©´ì— ê·¸ë ¤ì§„ ê·¸ë¦¼ì„ Frameì— ë³µì‚¬
+	} // paint() ë.
 	
 	public void mousePressed(MouseEvent e) { // MouseListener
-		int x = e.getX(); // ¸¶¿ì½º Æ÷ÀÎÅÍÀÇ xÁÂÇ¥
-		int y = e.getY(); // ¸¶¿ì½º Æ÷ÀÎÅÍÀÇ yÁÂÇ¥
+		int x = e.getX(); // ë§ˆìš°ìŠ¤ í¬ì¸í„°ì˜ xì¢Œí‘œ
+		int y = e.getY(); // ë§ˆìš°ìŠ¤ í¬ì¸í„°ì˜ yì¢Œí‘œ
 		
-		// 1. x¿Í yÀÇ °ªÀÌ ¿À¸ñÆÇÀÇ ¹ÛÀ» ¹ş¾î³­ °÷ÀÌ¸é µ¹À» ±×¸®Áö ¾Ê´Â´Ù.
+		// 1. xì™€ yì˜ ê°’ì´ ì˜¤ëª©íŒì˜ ë°–ì„ ë²—ì–´ë‚œ ê³³ì´ë©´ ëŒì„ ê·¸ë¦¬ì§€ ì•ŠëŠ”ë‹¤.
 		if((x <= (X0-LINE_WIDTH/2) || X0+BOARD_SIZE+LINE_WIDTH/2 <= x) || (y <= (Y0-LINE_WIDTH/2) || Y0+BOARD_SIZE+LINE_WIDTH/2 <= y))
 			{ return; }
 		
-		// 2. x¿Í yÀÇ °ªÀ» Å¬¸¯ÇÑ °÷¿¡¼­ °¡Àå °¡±î¿î ±³Â÷Á¡À¸·Î º¯°æÇÑ´Ù. (¹İ¿Ã¸²)
+		// 2. xì™€ yì˜ ê°’ì„ í´ë¦­í•œ ê³³ì—ì„œ ê°€ì¥ ê°€ê¹Œìš´ êµì°¨ì ìœ¼ë¡œ ë³€ê²½í•œë‹¤. (ë°˜ì˜¬ë¦¼)
 		x = (x-X0 + LINE_WIDTH/2) / LINE_WIDTH * LINE_WIDTH + X0;
-		/* (ÇØ¼³)
-		 * 	>> ¸¶¿ì½º Å¬¸¯À¸·Î ÁöÁ¤ÇÑ xÀÇ °ª¿¡¼­ X0(¿øÁ¡)À» »©°í, °Å±â´Ù°¡ LINE_WIDTHÀÇ Àı¹İÀ» ´õÇÑ´Ù.
-		 * 	>> ¸¸¾à ¹İ¿Ã¸²ÀÌ µÉ °ªÀÌ¶ó¸é (LINE_WIDTHÀÇ Àı¹İ ÀÌ»óÀÌ±â¿¡ ´õ Å« ±³Â÷Á¡¿¡ ´õ °¡±õ´Ù¸é) ¹İ¿Ã¸²ÀÌ µÆÀ» °ÍÀÌ´Ù.
-		 * 		>> ¹İ¿Ã¸²ÀÌ ¾È µÆ´Ù¸é ¾ÖÃÊ¿¡ ´õ ÀÛÀº ±³Â÷Á¡¿¡ °¡±î¿î °ªÀÌ´Ù.
-		 * 	>> intÀÎ LINE_WIDTHÀ¸·Î ³ª´©±âÇØ¼­ ¼Ò¼öÁ¡ ÀÌÇÏ¸¦ ¹ö¸°´Ù.
-		 * 	>> ´Ù½Ã LINE_WIDTH °öÇÏ°í X0 ´õÇØ¼­ ±³Â÷Á¡À¸·Î ÀÌµ¿ÇÑ ¿ø·¡ x °ªÀ» ±¸ÇÑ´Ù.
+		/* (í•´ì„¤)
+		 * 	>> ë§ˆìš°ìŠ¤ í´ë¦­ìœ¼ë¡œ ì§€ì •í•œ xì˜ ê°’ì—ì„œ X0(ì›ì )ì„ ë¹¼ê³ , ê±°ê¸°ë‹¤ê°€ LINE_WIDTHì˜ ì ˆë°˜ì„ ë”í•œë‹¤.
+		 * 	>> ë§Œì•½ ë°˜ì˜¬ë¦¼ì´ ë  ê°’ì´ë¼ë©´ (LINE_WIDTHì˜ ì ˆë°˜ ì´ìƒì´ê¸°ì— ë” í° êµì°¨ì ì— ë” ê°€ê¹ë‹¤ë©´) ë°˜ì˜¬ë¦¼ì´ ëì„ ê²ƒì´ë‹¤.
+		 * 		>> ë°˜ì˜¬ë¦¼ì´ ì•ˆ ëë‹¤ë©´ ì• ì´ˆì— ë” ì‘ì€ êµì°¨ì ì— ê°€ê¹Œìš´ ê°’ì´ë‹¤.
+		 * 	>> intì¸ LINE_WIDTHìœ¼ë¡œ ë‚˜ëˆ„ê¸°í•´ì„œ ì†Œìˆ˜ì  ì´í•˜ë¥¼ ë²„ë¦°ë‹¤.
+		 * 	>> ë‹¤ì‹œ LINE_WIDTH ê³±í•˜ê³  X0 ë”í•´ì„œ êµì°¨ì ìœ¼ë¡œ ì´ë™í•œ ì›ë˜ x ê°’ì„ êµ¬í•œë‹¤.
 		 */
 		y = (y-Y0 + LINE_WIDTH/2) / LINE_WIDTH * LINE_WIDTH + Y0;
 		
-		// 3. x¿Í yÀÇ °ª¿¡¼­ µ¹ÀÇ Å©±â (STONE_SIZE)ÀÇ Àı¹İÀ» »©¾ß Å¬¸¯ÇÑ °÷¿¡ µ¹ÀÌ ±×·ÁÁø´Ù.
-		// 	>> drawOval(), fillOval()·Î ±×¸± ‹š, x,y´Â ¾î´À ÁöÁ¡¿¡¼­ºÎÅÍ ±×¸®´ÂÁö¸¦ Ç¥½ÃÇÑ´Ù --> µÎ ¼±ÀÇ ±³Â÷Á¡À» ¿øÁ¡À¸·Î ±×·ÁÁö·Á¸é x,y¸¦ ¿ŞÂÊ À§·Î ÀÌµ¿½ÃÄÑ¾ß ÇÑ´Ù. 
+		// 3. xì™€ yì˜ ê°’ì—ì„œ ëŒì˜ í¬ê¸° (STONE_SIZE)ì˜ ì ˆë°˜ì„ ë¹¼ì•¼ í´ë¦­í•œ ê³³ì— ëŒì´ ê·¸ë ¤ì§„ë‹¤.
+		// 	>> drawOval(), fillOval()ë¡œ ê·¸ë¦´ ë–„, x,yëŠ” ì–´ëŠ ì§€ì ì—ì„œë¶€í„° ê·¸ë¦¬ëŠ”ì§€ë¥¼ í‘œì‹œí•œë‹¤ --> ë‘ ì„ ì˜ êµì°¨ì ì„ ì›ì ìœ¼ë¡œ ê·¸ë ¤ì§€ë ¤ë©´ x,yë¥¼ ì™¼ìª½ ìœ„ë¡œ ì´ë™ì‹œì¼œì•¼ í•œë‹¤. 
 		x -= STONE_SIZE/2;
 		y -= STONE_SIZE/2;
 		
-		/* 4. ´­·¯Áø ¹öÆ°ÀÌ ¸¶¿ì½º ¿ŞÂÊ ¹öÆ°ÀÌ¸é (x,y)ÀÇ À§Ä¡¿¡ °ËÀº µ¹À» ±×¸®°í, --> ¸¶¿ì½º ¿ŞÂÊ ¹öÆ°ÀÌ BUTTON1
-			    ´­·¯Áø ¹öÆ°ÀÌ ¸¶¿ì½º ¿À¸¥ÂÊ ¹öÆ°ÀÌ¸é (x,y)ÀÇ À§Ä¡¿¡ Èò µ¹À» ±×¸°´Ù. --> ¸¶¿ì½º ¿À¸¥ÂÊ ¹öÆ°ÀÌ BUTTON3
-			 (Èò µ¹À» ±×¸± ¶§ °ËÀº »ö Å×µÎ¸®µµ °°ÀÌ ±×¸°´Ù.) */
+		/* 4. ëˆŒëŸ¬ì§„ ë²„íŠ¼ì´ ë§ˆìš°ìŠ¤ ì™¼ìª½ ë²„íŠ¼ì´ë©´ (x,y)ì˜ ìœ„ì¹˜ì— ê²€ì€ ëŒì„ ê·¸ë¦¬ê³ , --> ë§ˆìš°ìŠ¤ ì™¼ìª½ ë²„íŠ¼ì´ BUTTON1
+			    ëˆŒëŸ¬ì§„ ë²„íŠ¼ì´ ë§ˆìš°ìŠ¤ ì˜¤ë¥¸ìª½ ë²„íŠ¼ì´ë©´ (x,y)ì˜ ìœ„ì¹˜ì— í° ëŒì„ ê·¸ë¦°ë‹¤. --> ë§ˆìš°ìŠ¤ ì˜¤ë¥¸ìª½ ë²„íŠ¼ì´ BUTTON3
+			 (í° ëŒì„ ê·¸ë¦´ ë•Œ ê²€ì€ ìƒ‰ í…Œë‘ë¦¬ë„ ê°™ì´ ê·¸ë¦°ë‹¤.) */
 		gImg = img.getGraphics();
 		if(e.getModifiersEx()==MouseEvent.BUTTON1_DOWN_MASK ) {
 			gImg.setColor(Color.black);
-			gImg.fillOval(x,y, STONE_SIZE,STONE_SIZE); // fillOvalÀº Ã¤¿î´Ù.
+			gImg.fillOval(x,y, STONE_SIZE,STONE_SIZE); // fillOvalì€ ì±„ìš´ë‹¤.
 		} else if(e.getModifiersEx()==MouseEvent.BUTTON3_DOWN_MASK ) {
 			gImg.setColor(Color.white);
 			gImg.fillOval(x,y, STONE_SIZE, STONE_SIZE);
 			gImg.setColor(Color.black);
-			gImg.drawOval(x,y, STONE_SIZE,STONE_SIZE); // drawOvalÀº Å×µÎ¸®¸¸ ±×¸°´Ù.
+			gImg.drawOval(x,y, STONE_SIZE,STONE_SIZE); // drawOvalì€ í…Œë‘ë¦¬ë§Œ ê·¸ë¦°ë‹¤.
 		}
 		
-		// 5. repaint()¸¦ È£ÃâÇÑ´Ù.
+		// 5. repaint()ë¥¼ í˜¸ì¶œí•œë‹¤.
 		repaint();
 
-	} // mousePressed() ³¡.
+	} // mousePressed() ë.
 
-	// MouseListener ÀÎÅÍÆäÀÌ½ºÀÇ ´Ù¸¥ ¸Ş¼­µåµé, »ç¿ëÇÏÁö ¾ÊÀ¸´Ï±î ºó ¸Ş¼­µå·Î ±¸Çö
+	// MouseListener ì¸í„°í˜ì´ìŠ¤ì˜ ë‹¤ë¥¸ ë©”ì„œë“œë“¤, ì‚¬ìš©í•˜ì§€ ì•Šìœ¼ë‹ˆê¹Œ ë¹ˆ ë©”ì„œë“œë¡œ êµ¬í˜„
 	public void mouseClicked(MouseEvent e) {}
 	public void mouseEntered(MouseEvent e) {}
 	public void mouseExited(MouseEvent e) {}
 	public void mouseReleased(MouseEvent e) {}
-} // Å¬·¡½º ³¡.
+} // í´ë˜ìŠ¤ ë.

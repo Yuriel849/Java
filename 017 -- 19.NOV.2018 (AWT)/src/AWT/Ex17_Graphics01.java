@@ -8,10 +8,10 @@ class Ex17_Graphics01 extends Frame {
 	public static void main(String[] args) throws InterruptedException {
 		Frame f = new Ex17_Graphics01("Ex17_Graphics");
 		f.setVisible(true);
-		// FrameÀÇ Graphics¸¦ ¾ò¾î¿Â´Ù.
+		// Frameì˜ Graphicsë¥¼ ì–»ì–´ì˜¨ë‹¤.
 		Graphics fg = f.getGraphics();
-		// Frame¿¡ Hello¶ó°í ¾´´Ù.
-		// Frame¿¡ ½Ã°£À» Âï´Â´Ù.
+		// Frameì— Helloë¼ê³  ì“´ë‹¤.
+		// Frameì— ì‹œê°„ì„ ì°ëŠ”ë‹¤.
 		for(int i = 1; i < 1000; i++) {
 			fg.drawString("Hello", 200, 80);
 			fg.drawString(new Date().toString(), 200, 200);
@@ -22,21 +22,21 @@ class Ex17_Graphics01 extends Frame {
 	
 	public void paint(Graphics g) {
 		g.setFont(new Font("Serif", Font.PLAIN, 15));
-		g.drawString("Graphics¸¦ ÀÌ¿ëÇØ¼­ ±×¸²À» ±×¸³´Ï´Ù." ,10, 50);
+		g.drawString("Graphicsë¥¼ ì´ìš©í•´ì„œ ê·¸ë¦¼ì„ ê·¸ë¦½ë‹ˆë‹¤." ,10, 50);
 		
-		g.drawOval(50,100, 50,50); // Ã¹¹øÂ° ¿ø ±×¸®±â
+		g.drawOval(50,100, 50,50); // ì²«ë²ˆì§¸ ì› ê·¸ë¦¬ê¸°
 		g.setColor(Color.blue);
-		g.fillOval(100,100, 50,50); // µÎ¹øÂ° ¿ø ±×¸®±â
+		g.fillOval(100,100, 50,50); // ë‘ë²ˆì§¸ ì› ê·¸ë¦¬ê¸°
 		
 		g.setColor(Color.red);
-		g.drawLine(100,100, 150,150); // ´ë°¢¼± ±×¸®±â
+		g.drawLine(100,100, 150,150); // ëŒ€ê°ì„  ê·¸ë¦¬ê¸°
 		
-		g.fillRoundRect(200, 100, 120, 80, 30, 30); // Á÷»ç°¢Çü ±×¸®±â
+		g.fillRoundRect(200, 100, 120, 80, 30, 30); // ì§ì‚¬ê°í˜• ê·¸ë¦¬ê¸°
 		g.setColor(Color.orange);
-		g.fillPolygon(new int[]{ 50, 100, 150, 200}, // µµÇü ±×¸®±â
+		g.fillPolygon(new int[]{ 50, 100, 150, 200}, // ë„í˜• ê·¸ë¦¬ê¸°
 					new int[]{250, 200, 200, 250}, 4);
 		g.setColor(Color.cyan);
-		g.fillArc(250, 200, 100, 100, 0, 120); // ºÎÃ¤²Ã ±×¸®±â
+		g.fillArc(250, 200, 100, 100, 0, 120); // ë¶€ì±„ê¼´ ê·¸ë¦¬ê¸°
 	}
 	
 	public Ex17_Graphics01(String title) {
@@ -47,7 +47,7 @@ class Ex17_Graphics01 extends Frame {
 			}
 		});
 
-		// FrameÀ» (100,100)ÀÇ À§Ä¡¿¡ width 400, height 300 Å©±â·Î º¸ÀÌ°Ô ÇÑ´Ù.
+		// Frameì„ (100,100)ì˜ ìœ„ì¹˜ì— width 400, height 300 í¬ê¸°ë¡œ ë³´ì´ê²Œ í•œë‹¤.
 		setBounds(100,100, 400,300);
 		setVisible(true);
 	}

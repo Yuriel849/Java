@@ -1,11 +1,10 @@
 package AWT;
 
 import java.awt.*;
-import java.awt.event.*;
 
 public class Ex14_CardLayout {
 	public static void main(String args[]) {
-		Frame f = new Frame("∞ËªÍ±‚");
+		Frame f = new Frame("Í≥ÑÏÇ∞Í∏∞");
 		TextField tf = new TextField("0");
 		tf.setEditable(false);
 		f.setSize(190, 160);
@@ -14,7 +13,7 @@ public class Ex14_CardLayout {
 		f.add("North", tf);
 		Panel numPanel = new Panel();
 		Button[] numButtons = null;
-		numPanel.setLayout(new GridLayout(4, 5, 4, 4)); // 4«‡ 5ø≠, button ∞£¿« ∞£∞›¿ª 4,4∑Œ º≥¡§
+		numPanel.setLayout(new GridLayout(4, 5, 4, 4)); // 4Ìñâ 5Ïó¥, button Í∞ÑÏùò Í∞ÑÍ≤©ÏùÑ 4,4Î°ú ÏÑ§Ï†ï
 		numPanel.setBackground(Color.lightGray);
 		f.add("Center", numPanel);
 		

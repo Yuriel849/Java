@@ -7,10 +7,10 @@ public class Ex07_DialogTest {
 		Frame f = new Frame("Parent");
 		f.setSize(300, 200);
 		
-		// parent FrameÀ» f·Î ÇÏ°í, modalÀ» true·Î ÇØ¼­ ÇÊ¼öÀÀ´ä Dialog·Î ÇÔ
+		// parent Frameì„ fë¡œ í•˜ê³ , modalì„ trueë¡œ í•´ì„œ í•„ìˆ˜ì‘ë‹µ Dialogë¡œ í•¨
 		Dialog info = new Dialog(f, "Information", true);
 		info.setSize(140, 90);
-		info.setLocation(50, 50); // parent FrameÀÌ ¾Æ´Ñ, È­¸éÀÌ À§Ä¡ÀÇ ±âÁØÀÌ µÈ´Ù
+		info.setLocation(50, 50); // parent Frameì´ ì•„ë‹Œ, í™”ë©´ì´ ìœ„ì¹˜ì˜ ê¸°ì¤€ì´ ëœë‹¤
 		info.setLayout(new FlowLayout());
 		
 		Label msg = new Label("This is modal Dialog", Label.CENTER);
@@ -19,6 +19,6 @@ public class Ex07_DialogTest {
 		info.add(ok);
 	
 		f.setVisible(true);
-		info.setVisible(true); // Dialog¸¦ È­¸é¿¡ º¸ÀÌ°Ô ÇÑ´Ù
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+		info.setVisible(true); // Dialogë¥¼ í™”ë©´ì— ë³´ì´ê²Œ í•œë‹¤
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.

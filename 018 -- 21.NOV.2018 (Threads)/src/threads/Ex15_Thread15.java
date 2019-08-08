@@ -2,11 +2,11 @@ package threads;
 
 import java.util.ArrayList;
 
-/* µ¿±âÈ­ ÇßÀ» ¶§ ¿¹Á¦
- * 	>> ¿©ÀüÈ÷ ¹®Á¦°¡ ÀÖ´Ù!!
- *  	>> µ¿±âÈ­ÇßÀ¸³ª ÇÑ ¾²·¹µå°¡ ±â´Ù¸®¸é¼­ lockÀ» Áã°í ÀÖ±â ¶§¹®¿¡, ´Ù¸¥ ¾²·¹µå°¡ ÀÛµ¿À» ¸øÇÑ´Ù
- *  	>> ³¡¾øÀÌ ÇÑ ¾²·¹µå´Â lockÀ» Áã°í ±â´Ù¸®¸ç, ³ª¸ÓÁö ¾²·¹µå´Â ±× ÇÑ ¾²·¹µå ¶§¹®¿¡ ÀÚ±âµé ÀÏµµ ÇÏÁö ¸øÇÏ°í ±â´Ù¸°´Ù.
- *  		>> wait() & notify()·Î ÇØ°á!
+/* ë™ê¸°í™” í–ˆì„ ë•Œ ì˜ˆì œ
+ * 	>> ì—¬ì „íˆ ë¬¸ì œê°€ ìˆë‹¤!!
+ *  	>> ë™ê¸°í™”í–ˆìœ¼ë‚˜ í•œ ì“°ë ˆë“œê°€ ê¸°ë‹¤ë¦¬ë©´ì„œ lockì„ ì¥ê³  ìˆê¸° ë•Œë¬¸ì—, ë‹¤ë¥¸ ì“°ë ˆë“œê°€ ì‘ë™ì„ ëª»í•œë‹¤
+ *  	>> ëì—†ì´ í•œ ì“°ë ˆë“œëŠ” lockì„ ì¥ê³  ê¸°ë‹¤ë¦¬ë©°, ë‚˜ë¨¸ì§€ ì“°ë ˆë“œëŠ” ê·¸ í•œ ì“°ë ˆë“œ ë•Œë¬¸ì— ìê¸°ë“¤ ì¼ë„ í•˜ì§€ ëª»í•˜ê³  ê¸°ë‹¤ë¦°ë‹¤.
+ *  		>> wait() & notify()ë¡œ í•´ê²°!
  */
 
 class Customer2 implements Runnable {
@@ -34,7 +34,7 @@ class Customer2 implements Runnable {
 	}
 	
 	boolean eatFood() { return table.remove(food); }
-} // Å¬·¡½º ³¡.
+} // í´ë˜ìŠ¤ ë.
 
 class Cook2 implements Runnable {
 	private Table2 table;
@@ -45,7 +45,7 @@ class Cook2 implements Runnable {
 	
 	public void run() {
 		while(true) {
-			// ÀÓÀÇÀÇ ¿ä¸®¸¦ ÇÏ³ª ¼±ÅÃÇØ¼­ table¿¡ Ãß°¡ÇÑ´Ù.
+			// ì„ì˜ì˜ ìš”ë¦¬ë¥¼ í•˜ë‚˜ ì„ íƒí•´ì„œ tableì— ì¶”ê°€í•œë‹¤.
 			int idx = (int)(Math.random() * table.dishNum());
 			table.add(table.dishNames[idx]);
 			
@@ -54,16 +54,16 @@ class Cook2 implements Runnable {
 			} catch (InterruptedException e) {}
 		}
 	}
-} // Å¬·¡½º ³¡.
+} // í´ë˜ìŠ¤ ë.
 
 class Table2 {
-	String[] dishNames = { "donut", "donut", "burger" }; // donutÀÌ ´õ ÀÚÁÖ ³ª¿Â´Ù.
-	final int MAX_FOOD = 6; // Å×ÀÌºí¿¡ ³õÀ» ¼ö ÀÖ´Â ÃÖ´ë À½½ÄÀÇ °³¼ö
+	String[] dishNames = { "donut", "donut", "burger" }; // donutì´ ë” ìì£¼ ë‚˜ì˜¨ë‹¤.
+	final int MAX_FOOD = 6; // í…Œì´ë¸”ì— ë†“ì„ ìˆ˜ ìˆëŠ” ìµœëŒ€ ìŒì‹ì˜ ê°œìˆ˜
 	
 	private ArrayList<String> dishes = new ArrayList<> ();
 	
-	public synchronized void add(String dish) { // synchronized¸¦ Ãß°¡
-		// Å×ÀÌºí¿¡ À½½ÄÀÌ °¡µæÃ¡À¸¸é, Å×ÀÌºí¿¡ À½½ÄÀ» Ãß°¡ÇÏÁö ¾Ê´Â´Ù.
+	public synchronized void add(String dish) { // synchronizedë¥¼ ì¶”ê°€
+		// í…Œì´ë¸”ì— ìŒì‹ì´ ê°€ë“ì°¼ìœ¼ë©´, í…Œì´ë¸”ì— ìŒì‹ì„ ì¶”ê°€í•˜ì§€ ì•ŠëŠ”ë‹¤.
 		if(dishes.size() >= MAX_FOOD	 ) { return; }
 		dishes.add(dish);
 		System.out.println("Dishes: " + dishes.toString());
@@ -71,7 +71,7 @@ class Table2 {
 	
 	public boolean remove(String dishName) {
 		synchronized(this) {
-			// ÁöÁ¤µÈ ¿ä¸®¿Í ÀÏÄ¡ÇÏ´Â ¿ä¸®¸¦ Å×ÀÌºí¿¡¼­ Á¦°ÅÇÑ´Ù.
+			// ì§€ì •ëœ ìš”ë¦¬ì™€ ì¼ì¹˜í•˜ëŠ” ìš”ë¦¬ë¥¼ í…Œì´ë¸”ì—ì„œ ì œê±°í•œë‹¤.
 			while(dishes.size() == 0) {
 				String name = Thread.currentThread().getName();
 				System.out.println(name + " is waiting.");
@@ -91,18 +91,18 @@ class Table2 {
 	}
 	
 	public int dishNum() { return dishNames.length; }
-} // Å¬·¡½º ³¡.
+} // í´ë˜ìŠ¤ ë.
 
 class Ex15_Thread15 {
 	public static void main(String[] args) throws Exception {
-		Table2 table = new Table2(); // ¿©·¯ ¾²·¹µå°¡ °øÀ¯ÇÏ´Â °´Ã¼
+		Table2 table = new Table2(); // ì—¬ëŸ¬ ì“°ë ˆë“œê°€ ê³µìœ í•˜ëŠ” ê°ì²´
 		
 		new Thread(new Cook2(table), "COOK1").start();
 		new Thread(new Customer2(table, "donut"), "CUST1").start();
 		new Thread(new Customer2(table, "burger"), "CUST2").start();
 
-		// 0.1ÃÊ (100 millis) ÈÄ¿¡ °­Á¦ Á¾·áÇÑ´Ù.
+		// 0.1ì´ˆ (100 millis) í›„ì— ê°•ì œ ì¢…ë£Œí•œë‹¤.
 		Thread.sleep(5000);
 		System.exit(0);
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.

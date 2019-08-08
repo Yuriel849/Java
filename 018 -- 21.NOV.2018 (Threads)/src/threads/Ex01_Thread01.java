@@ -5,38 +5,38 @@ class Ex01_Thread01 {
 		ThreadEx01 t1 = new ThreadEx01();
 		
 		Runnable r = new ThreadEx02();
-		Thread t2 = new Thread(r); // »ı¼ºÀÚ --> Thread(Runnable target)
+		Thread t2 = new Thread(r); // ìƒì„±ì --> Thread(Runnable target)
 		
 		t1.start();
-//		t1.start(); --> start()´Â ¾²·¹µå °´Ã¼ ´ç ´Ü ÇÑ ¹ø¸¸ ½ÇÇà °¡´É --> ´Ù½Ã start()ÇÏ·Á¸é ¾²·¹µå °´Ã¼¸¦ ´Ù½Ã »ı¼ºÇØ¾ß!
+//		t1.start(); --> start()ëŠ” ì“°ë ˆë“œ ê°ì²´ ë‹¹ ë‹¨ í•œ ë²ˆë§Œ ì‹¤í–‰ ê°€ëŠ¥ --> ë‹¤ì‹œ start()í•˜ë ¤ë©´ ì“°ë ˆë“œ ê°ì²´ë¥¼ ë‹¤ì‹œ ìƒì„±í•´ì•¼!
 		t2.start();
 		
 		for(int i = 0; i < 5; i++) {
 			System.out.println("0." + Thread.currentThread().getName());
 		}
-		// ¾²·¹µå ½ÇÇà Áß ¿¡·¯/¿¹¿Ü°¡ ¹ß»ıÇØµµ ±× ¾²·¹µå¸¸ ¿µÇâÀ» ¹ŞÁö, ´Ù¸¥ ¾²·¹µå´Â ¿µÇâ ¹ŞÁö ¾Ê´Â´Ù.
-	} // main() ³¡. --> ÇÏÁö¸¸ main ¿Ü ´Ù¸¥ ¾²·¹µå°¡ ½ÇÇà ÁßÀÓÀ¸·Î ÇÁ·Î±×·¥ÀÌ Á¾·áµÇÁö ¾Ê´Â´Ù.
-} // Å¬·¡½º ³¡.
+		// ì“°ë ˆë“œ ì‹¤í–‰ ì¤‘ ì—ëŸ¬/ì˜ˆì™¸ê°€ ë°œìƒí•´ë„ ê·¸ ì“°ë ˆë“œë§Œ ì˜í–¥ì„ ë°›ì§€, ë‹¤ë¥¸ ì“°ë ˆë“œëŠ” ì˜í–¥ ë°›ì§€ ì•ŠëŠ”ë‹¤.
+	} // main() ë. --> í•˜ì§€ë§Œ main ì™¸ ë‹¤ë¥¸ ì“°ë ˆë“œê°€ ì‹¤í–‰ ì¤‘ì„ìœ¼ë¡œ í”„ë¡œê·¸ë¨ì´ ì¢…ë£Œë˜ì§€ ì•ŠëŠ”ë‹¤.
+} // í´ë˜ìŠ¤ ë.
 
-// ¾²·¹µå¸¦ ¸¸µé¸é ±× ÈÄ´Â ¾²·¹µå°¡ ÇÒ ÀÏÀ» Á¦°øÇØ¾ß ÇÑ´Ù --> ÇÒ ÀÏÀ» ¸í½ÃÇÑ °ÍÀÌ run() --> ±×·¡¼­ run()À» ¿À¹ö¶óÀÌµùÇÏ°Å³ª ±¸ÇöÇÏ´Â °ÍÀÌ´Ù.
+// ì“°ë ˆë“œë¥¼ ë§Œë“¤ë©´ ê·¸ í›„ëŠ” ì“°ë ˆë“œê°€ í•  ì¼ì„ ì œê³µí•´ì•¼ í•œë‹¤ --> í•  ì¼ì„ ëª…ì‹œí•œ ê²ƒì´ run() --> ê·¸ë˜ì„œ run()ì„ ì˜¤ë²„ë¼ì´ë”©í•˜ê±°ë‚˜ êµ¬í˜„í•˜ëŠ” ê²ƒì´ë‹¤.
 
-class ThreadEx01 extends Thread { // Thread Å¬·¡½º¸¦ »ó¼Ó ¹Ş¾Æ¼­ run() ¿À¹ö¶óÀÌµù
+class ThreadEx01 extends Thread { // Thread í´ë˜ìŠ¤ë¥¼ ìƒì† ë°›ì•„ì„œ run() ì˜¤ë²„ë¼ì´ë”©
 	public void run() {
 		for(int i = 0; i < 5; i++) {
-			System.out.println("1." + getName()); // superclass ThreadÀÇ getName() ¹Ù·Î È£Ãâ
+			System.out.println("1." + getName()); // superclass Threadì˜ getName() ë°”ë¡œ í˜¸ì¶œ
 		}
-	} // run() ³¡.
-} // Å¬·¡½º ³¡.
+	} // run() ë.
+} // í´ë˜ìŠ¤ ë.
 
-class ThreadEx02 implements Runnable { // Runnable ÀÎÅÍÆäÀÌ½º¸¦ ±¸Çö --> Runnable¿¡´Â Ãß»ó¸Ş¼­µå run() ¹Û¿¡ ¾ø±â¿¡ Runnable ±¸Çö means run() ±¸Çö
+class ThreadEx02 implements Runnable { // Runnable ì¸í„°í˜ì´ìŠ¤ë¥¼ êµ¬í˜„ --> Runnableì—ëŠ” ì¶”ìƒë©”ì„œë“œ run() ë°–ì— ì—†ê¸°ì— Runnable êµ¬í˜„ means run() êµ¬í˜„
 	public void run() {
 		for(int i = 0; i < 5; i++) {
-			// Thread.currentThread() -->  ÇöÀç ½ÇÇàÁßÀÎ Thread¸¦ ¹İÈ¯ÇÑ´Ù.
+			// Thread.currentThread() -->  í˜„ì¬ ì‹¤í–‰ì¤‘ì¸ Threadë¥¼ ë°˜í™˜í•œë‹¤.
 			System.out.println("2." + Thread.currentThread().getName());
-			/* ThreadEx02´Â ThreadÅ¬·¡½º¿Í ¿¬°á°í¸®°¡ ¾ø´Ù!
-			 * 	>> ±×·¡¼­ ¹Ù·Î Á¢±ÙÇÏÁö ¸øÇÏ°í ThreadÅ¬·¡½ºÀÇ currentThread() ¸Ş¼­µå »ç¿ëÇÑ´Ù.
-			 * 	>> currentThread()°¡ ÇöÀç ½ÇÇàÁßÀÎ Thread¸¦ ¹İÈ¯ÇÏ¸é, ÀÌÁ¦ ±×°ÍÀ» ÀÌ¿ëÇØ¼­ Thread Å¬·¡½º¿¡ Á¢±ÙÇÒ ¼ö ÀÖ´Ù.
+			/* ThreadEx02ëŠ” Threadí´ë˜ìŠ¤ì™€ ì—°ê²°ê³ ë¦¬ê°€ ì—†ë‹¤!
+			 * 	>> ê·¸ë˜ì„œ ë°”ë¡œ ì ‘ê·¼í•˜ì§€ ëª»í•˜ê³  Threadí´ë˜ìŠ¤ì˜ currentThread() ë©”ì„œë“œ ì‚¬ìš©í•œë‹¤.
+			 * 	>> currentThread()ê°€ í˜„ì¬ ì‹¤í–‰ì¤‘ì¸ Threadë¥¼ ë°˜í™˜í•˜ë©´, ì´ì œ ê·¸ê²ƒì„ ì´ìš©í•´ì„œ Thread í´ë˜ìŠ¤ì— ì ‘ê·¼í•  ìˆ˜ ìˆë‹¤.
 			 */
 		}
-	} // run() ³¡.
-} // Å¬·¡½º ³¡.
+	} // run() ë.
+} // í´ë˜ìŠ¤ ë.

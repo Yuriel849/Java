@@ -8,7 +8,7 @@ class Ex03_Lambda03 {
 		Supplier<Integer> s = () -> (int)(Math.random()*100) + 1;
 		Consumer<Integer> c = i -> System.out.print(i + ", ");
 		Predicate<Integer> p = i -> i % 2 == 0;
-		Function<Integer, Integer> f = i -> i/10*10; // 1ÀÇ ÀÚ¸®¸¦ ¾ø¾Ø´Ù
+		Function<Integer, Integer> f = i -> i/10*10; // 1ì˜ ìë¦¬ë¥¼ ì—†ì•¤ë‹¤
 	
 	List<Integer> list = new ArrayList<> ();
 	makeRandomList(s,list);

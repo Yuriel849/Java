@@ -1,27 +1,27 @@
 package threads;
 
-// sleep() Å×½ºÆ®
+// sleep() í…ŒìŠ¤íŠ¸
 
 class Ex06_Thread06 {
 	public static void main(String[] args) throws Exception {
 		MyThread t = new MyThread();
 		t.start();
 		
-		// main ¾²·¹µå¸¦ 5ÃÊ °£ ¸ØÃè´Ù°¡...
-		Thread.sleep(3 * 1000); // mainÀÌ ÀÜ´Ù
-		// ...3ÃÊ ÈÄ¿¡ t ¾²·¹µå¸¦ ±ú¿î´Ù
-		System.out.println("main ¾²·¹µå°¡ ±ú¿ó´Ï´Ù.");
-		t.sleep(500); // t¶ó°í ½áµµ ½ÇÇàÁÖÃ¼ÀÎ mainÀÌ ÀÜ´Ù
+		// main ì“°ë ˆë“œë¥¼ 5ì´ˆ ê°„ ë©ˆì·„ë‹¤ê°€...
+		Thread.sleep(3 * 1000); // mainì´ ì”ë‹¤
+		// ...3ì´ˆ í›„ì— t ì“°ë ˆë“œë¥¼ ê¹¨ìš´ë‹¤
+		System.out.println("main ì“°ë ˆë“œê°€ ê¹¨ì›ë‹ˆë‹¤.");
+		t.sleep(500); // të¼ê³  ì¨ë„ ì‹¤í–‰ì£¼ì²´ì¸ mainì´ ì”ë‹¤
 		t.interrupt();
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.
 
 class MyThread extends Thread {
 	public void run() {
 		try {
 			Thread.sleep(10 * 1000);
 		} catch (InterruptedException e) { }
-			// ¹®Á¦°¡ »ı±ä °ÍÀÌ ¾Æ´Ï¶ó ¿¹¿Ü¸¦ ¹ß»ı½ÃÄÑ¼­ ±ú¿ì´Â °ÍÀÌ±â¿¡ catch¹® ³»¿ëÀÌ ¾ø¾îµµ µÈ´Ù.
-		System.out.println("ÀÏ¾î³µ½À´Ï´Ù.");
-	} // run() ³¡.
-} // Å¬·¡½º ³¡.
+			// ë¬¸ì œê°€ ìƒê¸´ ê²ƒì´ ì•„ë‹ˆë¼ ì˜ˆì™¸ë¥¼ ë°œìƒì‹œì¼œì„œ ê¹¨ìš°ëŠ” ê²ƒì´ê¸°ì— catchë¬¸ ë‚´ìš©ì´ ì—†ì–´ë„ ëœë‹¤.
+		System.out.println("ì¼ì–´ë‚¬ìŠµë‹ˆë‹¤.");
+	} // run() ë.
+} // í´ë˜ìŠ¤ ë.

@@ -20,13 +20,13 @@ public class Ex18_Graphics02 extends Frame implements MouseMotionListener {
 			}
 		});
 
-		// Frame (100, 100) width 500, height 500 . À» ÀÇ À§Ä¡¿¡ Å©±â·Î º¸ÀÌ°Ô ÇÑ´Ù
+		// Frame (100, 100) width 500, height 500 . ì„ ì˜ ìœ„ì¹˜ì— í¬ê¸°ë¡œ ë³´ì´ê²Œ í•œë‹¤
 		setBounds(100,100, 500,500);
 		setVisible(true);
 	}
 	
 	public void paint(Graphics g) {
-		g.drawString("¸¶¿ì½º¸¦ ¿òÁ÷¿©º¸¼¼¿ä." ,10, 50);
+		g.drawString("ë§ˆìš°ìŠ¤ë¥¼ ì›€ì§ì—¬ë³´ì„¸ìš”." ,10, 50);
 		g.drawString("*", x, y);
 	}
 	
@@ -37,8 +37,8 @@ public class Ex18_Graphics02 extends Frame implements MouseMotionListener {
 	public void mouseMoved(MouseEvent me) {
 		x = me.getX();
 		y = me.getY();
-		repaint(); // update()¸¦ È£ÃâÇÏ´Âµ¥, update()´Â È­¸éÀ» Áö¿î ÈÄ paint()¸¦ È£ÃâÇÏ±â¿¡, ¸¶¿ì½º°¡ ¿òÁ÷ÀÎ ÀÚÃë°¡ ³²Áö ¾Ê´Â´Ù.
-				   // ¸¶¿ì½º ¿òÁ÷ÀÏ ¶§¸¶´Ù È­¸éÀÌ ±ôºı°Å¸®´Â °ÍÀº ¿òÁ÷ÀÏ ¶§¸¶´Ù ´Ù½Ã ±×¸®±â ¶§¹®ÀÌ´Ù.
+		repaint(); // update()ë¥¼ í˜¸ì¶œí•˜ëŠ”ë°, update()ëŠ” í™”ë©´ì„ ì§€ìš´ í›„ paint()ë¥¼ í˜¸ì¶œí•˜ê¸°ì—, ë§ˆìš°ìŠ¤ê°€ ì›€ì§ì¸ ìì·¨ê°€ ë‚¨ì§€ ì•ŠëŠ”ë‹¤.
+				   // ë§ˆìš°ìŠ¤ ì›€ì§ì¼ ë•Œë§ˆë‹¤ í™”ë©´ì´ ê¹œë¹¡ê±°ë¦¬ëŠ” ê²ƒì€ ì›€ì§ì¼ ë•Œë§ˆë‹¤ ë‹¤ì‹œ ê·¸ë¦¬ê¸° ë•Œë¬¸ì´ë‹¤.
 	}
 	
 	public void mouseDragged(MouseEvent me) {}

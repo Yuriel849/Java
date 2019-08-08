@@ -1,14 +1,14 @@
 package threads;
 
-// µ¿±âÈ­ ¿¹Á¦ --> µ¿±âÈ­°¡ ¾È µÇ¾îÀÖ´Ù.
+// ë™ê¸°í™” ì˜ˆì œ --> ë™ê¸°í™”ê°€ ì•ˆ ë˜ì–´ìˆë‹¤.
 
 public class Ex13_Thread13 {
 	public static void main(String[] args) {
 		Runnable r = new RunnableEx13();
-		new Thread(r).start(); // ThreadGroup¿¡ ÀÇÇØ ÂüÁ¶µÇ¹Ç·Î gc ´ë»óÀÌ ¾Æ´Ï´Ù.
+		new Thread(r).start(); // ThreadGroupì— ì˜í•´ ì°¸ì¡°ë˜ë¯€ë¡œ gc ëŒ€ìƒì´ ì•„ë‹ˆë‹¤.
 		new Thread(r).start();
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.
 
 class Account {
 	private int balance = 1000;
@@ -24,17 +24,17 @@ class Account {
 			balance -= money;
 		}
 	}
-} // Å¬·¡½º ³¡.
+} // í´ë˜ìŠ¤ ë.
 
 class RunnableEx13 implements Runnable {
 	Account acc = new Account();
 	
 	public void run() {
 		while(acc.getBalance() > 0) {
-			// 100, 200, 300 ÁßÀÇ ÇÑ °ªÀ» ÀÓÀÇ·Î ¼±ÅÃÇØ¼­ Ãâ±İ (withdraw)
+			// 100, 200, 300 ì¤‘ì˜ í•œ ê°’ì„ ì„ì˜ë¡œ ì„ íƒí•´ì„œ ì¶œê¸ˆ (withdraw)
 			int money = (int)(Math.random() * 3 + 1) * 100;
 			acc.withdraw(money);
 			System.out.println("balance:" + acc.getBalance());
 		}
 	}
-} // Å¬·¡½º ³¡.
+} // í´ë˜ìŠ¤ ë.

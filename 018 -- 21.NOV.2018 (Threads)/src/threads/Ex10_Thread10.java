@@ -1,9 +1,8 @@
 package threads;
 
-//Ex09_Thread09¿Í ºñ±³!!
+//Ex09_Thread09ì™€ ë¹„êµ!!
 
 class Ex10_Thread10 {
-	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws Exception {
 		RunImplEx10 r1 = new RunImplEx10();
 		RunImplEx10 r2 = new RunImplEx10();
@@ -18,7 +17,7 @@ class Ex10_Thread10 {
 		
 		try {
 			Thread.sleep(2000);
-			r1.suspend(); // r1ÀÌ ÂüÁ¶ÇÏ´Â RunImplEx10 Å¬·¡½ºÀÇ suspend ¸Ş¼­µå È£Ãâ! --> th1.suspend()°¡ ¾Æ´Ï´Ù!
+			r1.suspend(); // r1ì´ ì°¸ì¡°í•˜ëŠ” RunImplEx10 í´ë˜ìŠ¤ì˜ suspend ë©”ì„œë“œ í˜¸ì¶œ! --> th1.suspend()ê°€ ì•„ë‹ˆë‹¤!
 			Thread.sleep(2000);
 			r2.suspend();
 			Thread.sleep(3000);
@@ -29,8 +28,8 @@ class Ex10_Thread10 {
 			Thread.sleep(2000);
 			r3.stop();
 		} catch (InterruptedException e) {}
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.
 
 class RunImplEx10 implements Runnable {
 	volatile boolean suspended = false;
@@ -46,9 +45,9 @@ class RunImplEx10 implements Runnable {
 			}
 		}
 		System.out.println(Thread.currentThread().getName() + " - stopped");
-	} // run() ³¡.
+	} // run() ë.
 	
 	public void suspend() { suspended = true; }
 	public void resume() { suspended = false; }
 	public void stop() { stopped = true; }
-} // Å¬·¡½º ³¡.
+} // í´ë˜ìŠ¤ ë.

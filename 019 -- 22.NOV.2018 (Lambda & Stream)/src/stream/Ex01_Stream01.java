@@ -6,17 +6,17 @@ import java.util.stream.*;
 class Ex01_Stream01 {
 	public static void main(String[] args) {
 		Stream<Student> studentStream = Stream.of(
-				new Student("ÀÌÀÚ¹Ù", 3, 300),
-				new Student("±èÀÚ¹Ù", 1, 200),
-				new Student("¾ÈÀÚ¹Ù", 2, 100),
-				new Student("¹ÚÀÚ¹Ù", 2, 150),
-				new Student("¼ÒÀÚ¹Ù", 1, 200),
-				new Student("³ªÀÚ¹Ù", 3, 290),
-				new Student("°¨ÀÚ¹Ù", 3, 180)
+				new Student("ì´ìë°”", 3, 300),
+				new Student("ê¹€ìë°”", 1, 200),
+				new Student("ì•ˆìë°”", 2, 100),
+				new Student("ë°•ìë°”", 2, 150),
+				new Student("ì†Œìë°”", 1, 200),
+				new Student("ë‚˜ìë°”", 3, 290),
+				new Student("ê°ìë°”", 3, 180)
 				);
 		
-		studentStream.sorted(Comparator.comparing(Student::getBan) // ¹İº° Á¤·Ä
-					.thenComparing(Comparator.naturalOrder())) // ±âº» Á¤·Ä (¹İº°·Î Á¤·Ä ÈÄ °°Àº ¹İ³¢¸®´Â ÀÌ¸§ ¼øÀ¸·Î ±âº»Á¤·ÄÇÏ´Â °Í)
+		studentStream.sorted(Comparator.comparing(Student::getBan) // ë°˜ë³„ ì •ë ¬
+					.thenComparing(Comparator.naturalOrder())) // ê¸°ë³¸ ì •ë ¬ (ë°˜ë³„ë¡œ ì •ë ¬ í›„ ê°™ì€ ë°˜ë¼ë¦¬ëŠ” ì´ë¦„ ìˆœìœ¼ë¡œ ê¸°ë³¸ì •ë ¬í•˜ëŠ” ê²ƒ)
 					.forEach(System.out::println);
 	}
 }
@@ -39,7 +39,7 @@ class Student implements Comparable<Student>{
 	int getBan() { return ban; }
 	int getTotalScore() { return totalScore; }
 	
-	// ÃÑÁ¡ ³»¸²Â÷¼øÀ» ±âº»Á¤·Ä·Î ÇÑ´Ù.
+	// ì´ì  ë‚´ë¦¼ì°¨ìˆœì„ ê¸°ë³¸ì •ë ¬ë¡œ í•œë‹¤.
 	public int compareTo(Student s) {
 		return s.totalScore - this.totalScore;
 	}

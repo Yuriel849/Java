@@ -1,13 +1,13 @@
 package threads;
 
-// µ¥¸ó¾²·¹µå
+// ë°ëª¬ì“°ë ˆë“œ
 
 class Ex05_Thread05 implements Runnable {
 	static boolean autoSave = false;
 
 	public static void main(String[] args) {
 		Thread t = new Thread(new Ex05_Thread05());
-		t.setDaemon(true); // ÀÌ ºÎºĞÀÌ ¾øÀ¸¸é run()¿¡¼­´Â ¹«ÇÑ¹İº¹ÀÌ µ¹±â ‹š¹®¿¡ Á¾·áµÇÁö ¾Ê´Â´Ù.
+		t.setDaemon(true); // ì´ ë¶€ë¶„ì´ ì—†ìœ¼ë©´ run()ì—ì„œëŠ” ë¬´í•œë°˜ë³µì´ ëŒê¸° ë–„ë¬¸ì— ì¢…ë£Œë˜ì§€ ì•ŠëŠ”ë‹¤.
 		t.start();
 		
 		for(int i = 1; i <= 10; i++) {
@@ -19,22 +19,22 @@ class Ex05_Thread05 implements Runnable {
 			if(i == 5) { autoSave = true; }
 		}
 		
-		System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
-	} // main() ³¡.
+		System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
+	} // main() ë.
 
 	public void run() {
 		while(true) {
 			try {
-				Thread.sleep(3 * 1000); // 3ÃÊ¸¶´Ù
+				Thread.sleep(3 * 1000); // 3ì´ˆë§ˆë‹¤
 			} catch (InterruptedException e) {}
-			// autoSaveÀÇ °ªÀÌ trueÀÌ¸é autoSave()¸¦ È£ÃâÇÑ´Ù.
+			// autoSaveì˜ ê°’ì´ trueì´ë©´ autoSave()ë¥¼ í˜¸ì¶œí•œë‹¤.
 			if(autoSave) {
 				autoSave();
 			}
 		}
-	} // run() ³¡.
+	} // run() ë.
 	
 	public void autoSave() {
-		System.out.println("ÀÛ¾÷ÆÄÀÏÀÌ ÀÚµ¿ÀúÀåµÇ¾ú½À´Ï´Ù.");
-	} // autoSave() ³¡.
-} // Å¬·¡½º ³¡.
+		System.out.println("ì‘ì—…íŒŒì¼ì´ ìë™ì €ì¥ë˜ì—ˆìŠµë‹ˆë‹¤.");
+	} // autoSave() ë.
+} // í´ë˜ìŠ¤ ë.

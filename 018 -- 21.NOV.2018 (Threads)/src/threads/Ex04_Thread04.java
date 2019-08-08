@@ -1,6 +1,6 @@
 package threads;
 
-// ¾²·¹µåÀÇ ¿ì¼±¼øÀ§
+// ì“°ë ˆë“œì˜ ìš°ì„ ìˆœìœ„
 
 public class Ex04_Thread04 {
 	public static void main(String[] args) {
@@ -14,8 +14,8 @@ public class Ex04_Thread04 {
 		
 		th1.start();
 		th2.start();
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.
 
 class ThreadEx04 extends Thread {
 	public void run() {
@@ -23,8 +23,8 @@ class ThreadEx04 extends Thread {
 			System.out.print("-");
 			for(int x = 0; x < 10000000; x++);
 		}
-	} // run() ³¡.
-} // Å¬·¡½º ³¡.
+	} // run() ë.
+} // í´ë˜ìŠ¤ ë.
 
 class ThreadEx05 extends Thread {
 	public void run() {
@@ -32,5 +32,5 @@ class ThreadEx05 extends Thread {
 			System.out.print("|");
 			for(int x = 0; x < 10000000; x++);
 		}
-	} // run() ³¡.
-} // Å¬·¡½º ³¡.
+	} // run() ë.
+} // í´ë˜ìŠ¤ ë.

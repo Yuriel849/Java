@@ -6,18 +6,18 @@ public class Ex06_PanelTest {
 	public static void main(String args[]) {
 		Frame f = new Frame("Panel");
 		f.setSize(300, 200);
-		f.setLayout(null); // FrameÀÌ Layout Manager¸¦ »ç¿ëÇÏÁö ¾Êµµ·Ï ÇÑ´Ù
+		f.setLayout(null); // Frameì´ Layout Managerë¥¼ ì‚¬ìš©í•˜ì§€ ì•Šë„ë¡ í•œë‹¤
 		
 		Panel p = new Panel();
-		p.setBackground(Color.green); // PanelÀÇ ¹è°æÀ» ³ì»öÀ¸·Î ÇÑ´Ù
+		p.setBackground(Color.green); // Panelì˜ ë°°ê²½ì„ ë…¹ìƒ‰ìœ¼ë¡œ í•œë‹¤
 		p.setSize(100, 100);
 		p.setLocation(50, 50);
 		
 		Button ok = new Button("OK");
 		
-		p.add(ok); // ButtonÀ» Panel¿¡ Æ÷ÇÔ½ÃÅ²´Ù
-		f.add(p); // PanelÀ» Frame¿¡ Æ÷ÇÔ½ÃÅ²´Ù
+		p.add(ok); // Buttonì„ Panelì— í¬í•¨ì‹œí‚¨ë‹¤
+		f.add(p); // Panelì„ Frameì— í¬í•¨ì‹œí‚¨ë‹¤
 		f.setVisible(true);
-			// Frame ÄÁÅ×ÀÌ³Ê ¾È¿¡ Panel ÄÁÅ×ÀÌ³Ê°¡ ÀÖ°í, Panel ¾È¿¡ Button ÄÁÅ×ÀÌ³Ê°¡ ÀÖ´Ù
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+			// Frame ì»¨í…Œì´ë„ˆ ì•ˆì— Panel ì»¨í…Œì´ë„ˆê°€ ìˆê³ , Panel ì•ˆì— Button ì»¨í…Œì´ë„ˆê°€ ìˆë‹¤
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.

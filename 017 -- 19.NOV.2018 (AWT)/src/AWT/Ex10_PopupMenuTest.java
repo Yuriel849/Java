@@ -1,7 +1,7 @@
 package AWT;
 
 import java.awt.*;
-import java.awt.event.*; // ÀÌº¥Æ® Ã³¸®¸¦ À§ÇØ¼­ Ãß°¡Çß´Ù
+import java.awt.event.*; // ì´ë²¤íŠ¸ ì²˜ë¦¬ë¥¼ ìœ„í•´ì„œ ì¶”ê°€í–ˆë‹¤
 
 public class Ex10_PopupMenuTest {
 	public static void main(String args[]) {
@@ -12,14 +12,14 @@ public class Ex10_PopupMenuTest {
 		MenuItem miCut = new MenuItem("Cut");
 		MenuItem miCopy = new MenuItem("Copy");
 		MenuItem miPaste = new MenuItem("Paste");
-		pMenu.add(miCut); // PopupMenu¿¡ MenuItemµéÀ» Ãß°¡ÇÑ´Ù
+		pMenu.add(miCut); // PopupMenuì— MenuItemë“¤ì„ ì¶”ê°€í•œë‹¤
 		pMenu.add(miCopy);
 		pMenu.add(miPaste);
 		
-		f.add(pMenu); // PopupMenu¸¦ Frame¿¡ Ãß°¡ÇÑ´Ù
-		f.addMouseListener( new MouseAdapter() { // ÀÍ¸íÅ¬·¡½º
+		f.add(pMenu); // PopupMenuë¥¼ Frameì— ì¶”ê°€í•œë‹¤
+		f.addMouseListener( new MouseAdapter() { // ìµëª…í´ë˜ìŠ¤
 			public void mousePressed(MouseEvent me) {
-				// ¿À¸¥ÂÊ ¸¶¿ì½º¹öÆ°À» ´©¸£¸é PopupMenu¸¦ È­¸é¿¡ º¸¿©ÁØ´Ù
+				// ì˜¤ë¥¸ìª½ ë§ˆìš°ìŠ¤ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ PopupMenuë¥¼ í™”ë©´ì— ë³´ì—¬ì¤€ë‹¤
 				if(me.getModifiers() == me.BUTTON3_MASK)
 					pMenu.show(f, me.getX(), me.getY());
 			}
