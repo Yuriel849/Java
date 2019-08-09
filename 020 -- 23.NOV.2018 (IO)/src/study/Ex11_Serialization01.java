@@ -1,12 +1,12 @@
 package study;
 
-// Ex07_Serialization02 * Ex08_Serialization03¿¡¼­ »ç¿ëÇÒ UserInfo¸¦ ³Ö´Â Å¬·¡½ºÀÌ´Ù.
+// Ex07_Serialization02 * Ex08_Serialization03ì—ì„œ ì‚¬ìš©í•  UserInfoë¥¼ ë„£ëŠ” í´ë˜ìŠ¤ì´ë‹¤.
 
 @SuppressWarnings("serial")
 class Ex11_Serialization01 implements java.io.Serializable {
 	String name;
-	transient String password; // "transient" ºÙ¿´±â¿¡ "password"¶ó´Â ÀÌ¸§À» °¡Áø ÀÌ ¹®ÀÚ¿­Àº Á÷·ÄÈ­¿¡¼­ Á¦¿ÜµÈ´Ù!
-	int age;				   // 	 >> ½ÇÁ¦·Î ¿ªÁ÷·ÄÈ­ÇØ¼­ º¸¸é, "password"°¡ µé¾î°¥ ÀÚ¸®¿¡ ±âº»°ª "null"ÀÌ¶ó°í ½áÀÖ´Ù!	
+	transient String password; // "transient" ë¶™ì˜€ê¸°ì— "password"ë¼ëŠ” ì´ë¦„ì„ ê°€ì§„ ì´ ë¬¸ìì—´ì€ ì§ë ¬í™”ì—ì„œ ì œì™¸ëœë‹¤!
+	int age;				   // 	 >> ì‹¤ì œë¡œ ì—­ì§ë ¬í™”í•´ì„œ ë³´ë©´, "password"ê°€ ë“¤ì–´ê°ˆ ìë¦¬ì— ê¸°ë³¸ê°’ "null"ì´ë¼ê³  ì¨ìˆë‹¤!	
 	
 	public Ex11_Serialization01() {
 		this("Unknown", "1111", 0);
@@ -21,4 +21,4 @@ class Ex11_Serialization01 implements java.io.Serializable {
 	public String toString() {
 		return "(" + name + "," + password + "," + age + ")";
 	}
-} // Å¬·¡½º ³¡.
+} // í´ë˜ìŠ¤ ë.

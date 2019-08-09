@@ -2,7 +2,7 @@ package study;
 
 import java.io.*;
 
-// 15-33 ¿¹Á¦
+// 15-33 ì˜ˆì œ
 
 class Ex10_IO10 {
 	static int found = 0;
@@ -17,7 +17,7 @@ class Ex10_IO10 {
 		String keyword = args[1];
 		
 		if(!dir.exists() || !dir.isDirectory()) {
-			System.out.println("À¯È¿ÇÏÁö ¾ÊÀº µğ·ºÅä¸®ÀÔ´Ï´Ù.");
+			System.out.println("ìœ íš¨í•˜ì§€ ì•Šì€ ë””ë ‰í† ë¦¬ì…ë‹ˆë‹¤.");
 			System.exit(0);
 		}
 		
@@ -28,8 +28,8 @@ class Ex10_IO10 {
 		}
 		
 		System.out.println();
-		System.out.println("ÃÑ " + found + "°³ÀÇ ¶óÀÎ¿¡¼­ '" + keyword + "'À»/¸¦ ¹ß°ßÇÏ¿´½À´Ï´Ù.");
-	} // main() ³¡.
+		System.out.println("ì´ " + found + "ê°œì˜ ë¼ì¸ì—ì„œ '" + keyword + "'ì„/ë¥¼ ë°œê²¬í•˜ì˜€ìŠµë‹ˆë‹¤.");
+	} // main() ë.
 	
 	public static void findInFiles(File dir, String keyword) throws IOException {
 		File[] files = dir.listFiles();
@@ -40,9 +40,9 @@ class Ex10_IO10 {
 			} else {
 				String filename = files[i].getName();
 				String extension = filename.substring(filename.lastIndexOf(".")+1);
-				extension = "," + extension + ","; // ¾ÕµÚ¿¡ ½°Ç¥·Î ºÙÀÎ ÀÌÀ¯´Â ±¸ºĞÀÚ¸¦ Á¤È®È÷ÇÏ±â À§ÇÑ °Í. 
+				extension = "," + extension + ","; // ì•ë’¤ì— ì‰¼í‘œë¡œ ë¶™ì¸ ì´ìœ ëŠ” êµ¬ë¶„ìë¥¼ ì •í™•íˆí•˜ê¸° ìœ„í•œ ê²ƒ. 
 				
-				if(",java,txt,bak,".indexOf(extension) == -1) { // file extensionÀÌ java OR txt OR bakÀÌ ¾Æ´Ò °æ¿ì continue.
+				if(",java,txt,bak,".indexOf(extension) == -1) { // file extensionì´ java OR txt OR bakì´ ì•„ë‹ ê²½ìš° continue.
 					continue;
 				}
 				
@@ -60,10 +60,10 @@ class Ex10_IO10 {
 						found++;
 						System.out.println("[" + filename + "(" + lineNum + ")" + "]" + data);
 					}
-				} // while¹® ³¡.
+				} // whileë¬¸ ë.
 				
 				br.close();
 			}
-		} // for¹® ³¡.
-	} // findInFiles() ³¡.
-} // Å¬·¡½º ³¡.
+		} // forë¬¸ ë.
+	} // findInFiles() ë.
+} // í´ë˜ìŠ¤ ë.

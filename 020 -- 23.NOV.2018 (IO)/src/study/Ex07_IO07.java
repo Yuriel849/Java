@@ -2,7 +2,7 @@ package study;
 
 import java.io.*;
 
-// 15-11 ¿¹Á¦
+// 15-11 ì˜ˆì œ
 
 class Ex07_IO07 {
 	public static void main(String[] args) {
@@ -19,6 +19,6 @@ class Ex07_IO07 {
 			dos.close();
 		} catch(IOException e) {
 			e.printStackTrace();
-		} // try-catch¹® ³¡.
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+		} // try-catchë¬¸ ë.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.

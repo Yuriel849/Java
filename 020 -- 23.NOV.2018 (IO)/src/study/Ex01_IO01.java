@@ -16,13 +16,13 @@ class Ex01_IO01 {
 		
 		int data = 0;
 		
-		while((data = input.read()) != -1) { // input.readÀÇ °á°ú°¡ -1ÀÌ¶ó´Â ÀÇ¹Ì´Â, ´õ ÀÌ»ó ÀĞ¾î¿Ã °ÍÀÌ ¾ø´Ù´Â ÀÇ¹Ì
-			output.write(data); // void write(int b) ¸Ş¼­µå¸¦ »ç¿ëÇÑ´Ù.
+		while((data = input.read()) != -1) { // input.readì˜ ê²°ê³¼ê°€ -1ì´ë¼ëŠ” ì˜ë¯¸ëŠ”, ë” ì´ìƒ ì½ì–´ì˜¬ ê²ƒì´ ì—†ë‹¤ëŠ” ì˜ë¯¸
+			output.write(data); // void write(int b) ë©”ì„œë“œë¥¼ ì‚¬ìš©í•œë‹¤.
 		}
 		
-		outSrc = output.toByteArray(); // ½ºÆ®¸²ÀÇ ³»¿ëÀ» byte ¹è¿­·Î ¹İÈ¯ÇÑ´Ù.
+		outSrc = output.toByteArray(); // ìŠ¤íŠ¸ë¦¼ì˜ ë‚´ìš©ì„ byte ë°°ì—´ë¡œ ë°˜í™˜í•œë‹¤.
 		
 		System.out.println("Input Source : " + Arrays.toString(inSrc));
 		System.out.println("Output Source: " + Arrays.toString(outSrc));
 	}
-} // Å¬·¡½º ³¡.
+} // í´ë˜ìŠ¤ ë.

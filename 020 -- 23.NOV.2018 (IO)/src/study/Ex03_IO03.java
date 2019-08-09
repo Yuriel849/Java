@@ -3,14 +3,14 @@ package study;
 import java.io.*;
 import java.util.Arrays;
 
-// Ex01_IO01 ¾÷±×·¹ÀÌµå --> ¹è¿­À» ÀÌ¿ëÇØ¼­ IO È¿À²À» Çâ»ó
+// Ex01_IO01 ì—…ê·¸ë ˆì´ë“œ --> ë°°ì—´ì„ ì´ìš©í•´ì„œ IO íš¨ìœ¨ì„ í–¥ìƒ
 
 class Ex03_IO03 {
 	public static void main(String[] args) {
 		byte[] inSrc = { 0,1,2,3,4,5,6,7,8,9 };
 		byte[] outSrc = null;
 		
-		byte[] temp = new byte[4]; // ÀÌÀü ¿¹Á¦¿Í ¹è¿­ÀÇ Å©±â°¡ ´Ù¸£´Ù.
+		byte[] temp = new byte[4]; // ì´ì „ ì˜ˆì œì™€ ë°°ì—´ì˜ í¬ê¸°ê°€ ë‹¤ë¥´ë‹¤.
 		
 		ByteArrayInputStream input = null;
 		ByteArrayOutputStream output = null;
@@ -22,21 +22,21 @@ class Ex03_IO03 {
 
 		try {
 			while(input.available() > 0) {
-				input.read(temp); // read() --> inputÀ¸·ÎºÎÅÍ ÀĞ¾î¿Â ³»¿ëÀ» ¹è¿­ temp¿¡ ´ã´Â´Ù.
-					// read(byte[] b, 0, b.length)¿Í °°´Ù --> input¿¡¼­ °¡Á®¿Í¼­ b¿¡ µé¾î°¥ ¼ö ÀÖ´Â¸¸Å­ ²Ë Ã¤¿î´Ù (input¿¡¼­ ÀĞ¾î¿Ã °ÍÀÌ ³²¾Ò´Ù´Â ÀüÁ¦ ÇÏ)
-					// ±âÁ¸¿¡ temp ¹è¿­¿¡ ÀÖ´Â ³»¿ëÀ» µ¤¾î¾´´Ù --> ¸¸¾à tempÀÇ ¸ğµç Ä­À» ¿ÏÀüÈ÷ µ¤¾î¾²Áö ¾Ê´Â´Ù¸é, ±âÁ¸ ³»¿ëµµ °°ÀÌ ³²´Â´Ù.
-					// read() ¹İÈ¯°ªÀº ¸î °³¸¦ ÀĞ¾ú´ÂÁö intÇü ¼ıÀÚ´Ù!
-				output.write(temp); // write() --> ¹è¿­ temp¿¡ ´ã±ä ¸ğµç ³»¿ëÀ» Ãâ·ÂÇÑ´Ù.
+				input.read(temp); // read() --> inputìœ¼ë¡œë¶€í„° ì½ì–´ì˜¨ ë‚´ìš©ì„ ë°°ì—´ tempì— ë‹´ëŠ”ë‹¤.
+					// read(byte[] b, 0, b.length)ì™€ ê°™ë‹¤ --> inputì—ì„œ ê°€ì ¸ì™€ì„œ bì— ë“¤ì–´ê°ˆ ìˆ˜ ìˆëŠ”ë§Œí¼ ê½‰ ì±„ìš´ë‹¤ (inputì—ì„œ ì½ì–´ì˜¬ ê²ƒì´ ë‚¨ì•˜ë‹¤ëŠ” ì „ì œ í•˜)
+					// ê¸°ì¡´ì— temp ë°°ì—´ì— ìˆëŠ” ë‚´ìš©ì„ ë®ì–´ì“´ë‹¤ --> ë§Œì•½ tempì˜ ëª¨ë“  ì¹¸ì„ ì™„ì „íˆ ë®ì–´ì“°ì§€ ì•ŠëŠ”ë‹¤ë©´, ê¸°ì¡´ ë‚´ìš©ë„ ê°™ì´ ë‚¨ëŠ”ë‹¤.
+					// read() ë°˜í™˜ê°’ì€ ëª‡ ê°œë¥¼ ì½ì—ˆëŠ”ì§€ intí˜• ìˆ«ìë‹¤!
+				output.write(temp); // write() --> ë°°ì—´ tempì— ë‹´ê¸´ ëª¨ë“  ë‚´ìš©ì„ ì¶œë ¥í•œë‹¤.
 				outSrc = output.toByteArray();
 				printArrays(temp, outSrc);
 			}
 		} catch(IOException e) {}
-	} // main() ³¡.
+	} // main() ë.
 		
 
 	static void printArrays(byte[] temp, byte[] outSrc) {
 		System.out.println("temp 	     : " + Arrays.toString(temp));
 		System.out.println("Output Source: " + Arrays.toString(outSrc));
 
-	} // printArrays() ³¡.
-} // Å¬·¡½º ³¡.
+	} // printArrays() ë.
+} // í´ë˜ìŠ¤ ë.

@@ -2,11 +2,11 @@ package study;
 
 import java.io.*;
 
-// 15-26 ¿¹Á¦
+// 15-26 ì˜ˆì œ
 
 class Ex09_IO09 {
 	public static void main(String[] args) {
-//					   	¹øÈ£, ±¹¾î, ¿µ¾î, ¼öÇĞ
+//					   	ë²ˆí˜¸, êµ­ì–´, ì˜ì–´, ìˆ˜í•™
 		int[] score = {  1, 100,  90,  90,
 						 2,  70,  90, 100,
 						 3, 100, 100, 100,
@@ -19,16 +19,16 @@ class Ex09_IO09 {
 			RandomAccessFile raf = new RandomAccessFile("score2.dat", "rw");
 			for(int i = 0; i < score.length; i++) {
 				raf.writeInt(score[i]);
-			} // ÆÄÀÏÆ÷ÀÎÅÍ°¡ ³¡À¸·Î ÀÌµ¿ÇÑ »óÅÂ´Ù (´ç¿¬È÷ ÆÄÀÏ¿¡ Ãâ·ÂÇÏ¸é¼­ ÆÄÀÏÆ÷ÀÎÅÍ´Â ¸Ç µÚ¿¡ À§Ä¡ÇÑ´Ù)
+			} // íŒŒì¼í¬ì¸í„°ê°€ ëìœ¼ë¡œ ì´ë™í•œ ìƒíƒœë‹¤ (ë‹¹ì—°íˆ íŒŒì¼ì— ì¶œë ¥í•˜ë©´ì„œ íŒŒì¼í¬ì¸í„°ëŠ” ë§¨ ë’¤ì— ìœ„ì¹˜í•œë‹¤)
 			
-			raf.seek(0); // ÆÄÀÏÆ÷ÀÎÅÍ¸¦ ¸Ç Ã³À½À¸·Î ÀÌµ¿½ÃÅ²´Ù --> ¾øÀ¸¸é ÆÄÀÏÆ÷ÀÎÅÍ°¡ ÀÌ¹Ì ³¡¿¡ ÀÖ´À´Ï±î °ğ¹Ù·Î EOF ³ª¿Â´Ù!
+			raf.seek(0); // íŒŒì¼í¬ì¸í„°ë¥¼ ë§¨ ì²˜ìŒìœ¼ë¡œ ì´ë™ì‹œí‚¨ë‹¤ --> ì—†ìœ¼ë©´ íŒŒì¼í¬ì¸í„°ê°€ ì´ë¯¸ ëì— ìˆëŠë‹ˆê¹Œ ê³§ë°”ë¡œ EOF ë‚˜ì˜¨ë‹¤!
 			while(true) {
 				System.out.println(raf.readInt());
 			}
 		} catch(EOFException eof) {
-			// readInt()¸¦ È£Ãâ ÇßÀ» ¶§ ´õ ÀÌ»ó ÀĞÀ» ³»¿ëÀÌ ¾øÀ¸¸é EOFException ¹ß»ı!
+			// readInt()ë¥¼ í˜¸ì¶œ í–ˆì„ ë•Œ ë” ì´ìƒ ì½ì„ ë‚´ìš©ì´ ì—†ìœ¼ë©´ EOFException ë°œìƒ!
 		} catch(IOException ioe) {
 			ioe.printStackTrace();
-		} // try-catch¹® ³¡.
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+		} // try-catchë¬¸ ë.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.

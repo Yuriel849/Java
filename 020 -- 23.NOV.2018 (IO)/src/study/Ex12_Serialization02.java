@@ -13,7 +13,7 @@ class Ex12_Serialization02 {
 			
 			ObjectOutputStream out = new ObjectOutputStream(bos);
 			
-			Ex11_Serialization01 u1 = new Ex11_Serialization01("JavaMan", "1234", 30); // u1ÀÇ Å¸ÀÔÀº ¹İµå½Ã "java.io.Serializable"À» ±¸ÇöÇÑ Å¬·¡½ºÀÌ¾î¾ß ÇÑ´Ù.
+			Ex11_Serialization01 u1 = new Ex11_Serialization01("JavaMan", "1234", 30); // u1ì˜ íƒ€ì…ì€ ë°˜ë“œì‹œ "java.io.Serializable"ì„ êµ¬í˜„í•œ í´ë˜ìŠ¤ì´ì–´ì•¼ í•œë‹¤.
 			Ex11_Serialization01 u2 = new Ex11_Serialization01("C++ Man", "4321", 26);
 			
 			ArrayList<Ex11_Serialization01> list = new ArrayList<>();
@@ -21,14 +21,14 @@ class Ex12_Serialization02 {
 			list.add(u2);
 			
 			
-			// °´Ã¼¸¦ Á÷·ÄÈ­ÇÑ´Ù.
+			// ê°ì²´ë¥¼ ì§ë ¬í™”í•œë‹¤.
 			out.writeObject(u1);
 			out.writeObject(u2);
 			out.writeObject(list);
 			out.close();
-			System.out.println("Á÷·ÄÈ­°¡ ¼º°øÀûÀ¸·Î ³¡³µ½À´Ï´Ù.");
+			System.out.println("ì§ë ¬í™”ê°€ ì„±ê³µì ìœ¼ë¡œ ëë‚¬ìŠµë‹ˆë‹¤.");
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.

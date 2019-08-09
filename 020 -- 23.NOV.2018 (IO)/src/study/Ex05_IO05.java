@@ -1,22 +1,21 @@
 package study;
 
 import java.io.*;
-import java.util.Arrays;
 
 class Ex05_IO05 {
 	public static void main(String[] args) {
 		try {
 			FileOutputStream fos = new FileOutputStream("123.txt");
-			// BufferedOutputStreamÀÇ ¹öÆÛ Å©±â¸¦ 5·Î ÇÑ´Ù.
+			// BufferedOutputStreamì˜ ë²„í¼ í¬ê¸°ë¥¼ 5ë¡œ í•œë‹¤.
 			BufferedOutputStream bos = new BufferedOutputStream(fos, 5);
-			// ÆÄÀÏ 123.txt¿¡ 1ºÎÅÍ 9±îÁö Ãâ·ÂÇÑ´Ù.
+			// íŒŒì¼ 123.txtì— 1ë¶€í„° 9ê¹Œì§€ ì¶œë ¥í•œë‹¤.
 			for(int i = '1'; i <= '9'; i++) {
 				bos.write(i);
 			}
-			bos.close(); // º¸Á¶½ºÆ®¸²À» ´İ¾Æ¾ß ÇÑ´Ù! --> flush()¸¦ ¸ÕÀú È£ÃâÇÏ¿© ¹öÆÛ¿¡ ³²Àº ³»¿ëÀ» Ãâ·ÂÇÑ ÈÄ ±â¹İ½ºÆ®¸²ÀÇ close()¸¦ È£ÃâÇÑ´Ù.
+			bos.close(); // ë³´ì¡°ìŠ¤íŠ¸ë¦¼ì„ ë‹«ì•„ì•¼ í•œë‹¤! --> flush()ë¥¼ ë¨¼ì € í˜¸ì¶œí•˜ì—¬ ë²„í¼ì— ë‚¨ì€ ë‚´ìš©ì„ ì¶œë ¥í•œ í›„ ê¸°ë°˜ìŠ¤íŠ¸ë¦¼ì˜ close()ë¥¼ í˜¸ì¶œí•œë‹¤.
 //			fos.close();
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.

@@ -3,7 +3,7 @@ package study;
 import java.io.*;
 import java.util.Arrays;
 
-// Ex01_IO01 ¾÷±×·¹ÀÌµå --> ¹è¿­À» ÀÌ¿ëÇØ¼­ IO È¿À²À» Çâ»ó
+// Ex01_IO01 ì—…ê·¸ë ˆì´ë“œ --> ë°°ì—´ì„ ì´ìš©í•´ì„œ IO íš¨ìœ¨ì„ í–¥ìƒ
 
 class Ex02_IO02 {
 	public static void main(String[] args) {
@@ -18,13 +18,13 @@ class Ex02_IO02 {
 		input = new ByteArrayInputStream(inSrc);
 		output = new ByteArrayOutputStream();
 		
-		input.read(temp, 0, temp.length); // input¹è¿­¿¡¼­ index°ª 0ºÎÅÍ tempÀÇ ±æÀÌ¸¸Å­ÀÇ °ªµéÀ» temp¿¡ ¾´´Ù
-		output.write(temp, 5, 5); // temp ¹è¿­¿¡¼­ index°ª 5ºÎÅÍ 5°³ °ª¸¸ °¡Á®¿Í¼­ output¿¡ ¾´´Ù
+		input.read(temp, 0, temp.length); // inputë°°ì—´ì—ì„œ indexê°’ 0ë¶€í„° tempì˜ ê¸¸ì´ë§Œí¼ì˜ ê°’ë“¤ì„ tempì— ì“´ë‹¤
+		output.write(temp, 5, 5); // temp ë°°ì—´ì—ì„œ indexê°’ 5ë¶€í„° 5ê°œ ê°’ë§Œ ê°€ì ¸ì™€ì„œ outputì— ì“´ë‹¤
 				
-		outSrc = output.toByteArray(); // ½ºÆ®¸²ÀÇ ³»¿ëÀ» byte ¹è¿­·Î ¹İÈ¯ÇÑ´Ù.
+		outSrc = output.toByteArray(); // ìŠ¤íŠ¸ë¦¼ì˜ ë‚´ìš©ì„ byte ë°°ì—´ë¡œ ë°˜í™˜í•œë‹¤.
 		
 		System.out.println("Input Source : " + Arrays.toString(inSrc));
 		System.out.println("temp 	     : " + Arrays.toString(temp));
 		System.out.println("Output Source: " + Arrays.toString(outSrc));
 	}
-} // Å¬·¡½º ³¡.
+} // í´ë˜ìŠ¤ ë.

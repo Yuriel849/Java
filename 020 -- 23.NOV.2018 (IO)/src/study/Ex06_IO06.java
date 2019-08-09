@@ -1,7 +1,8 @@
 package study;
 
 import java.io.*;
-// 15-8 ¿¹Á¦
+
+// 15-8 ì˜ˆì œ
 
 class Ex06_IO06 {
 	public static void main(String[] args) {
@@ -14,14 +15,14 @@ class Ex06_IO06 {
 			dos.writeInt(100);
 			dos.writeFloat(20f);
 			dos.writeBoolean(true);
-			// binary data(2Áø¼ö)·Î ÀúÀåµÈ´Ù --> ÆÄÀÏÀ» ¿­¾îµµ »ç¶÷ÀÌ ÀÐÀ» ¼ö ¾ø´Ù!
-			//		>> eclipse¿¡¼­ ¿­¾úÀ» ¶§´Â intÀÎÁö floatÀÎÁö boolean °ªÀÎÁö ¸ð¸¥´Ù --> Å¸ÀÔÀ» ¸ð¸£´Ï±î 2Áø¼ö ¿øÇü ±×´ë·Î º¸¿©ÁØ´Ù!
-			//					<--> ¹Ý¸é, printlnÀº ¸ðµç °ÍÀ» ¹®ÀÚ·Î Ãë±ÞÇÏ¿© Ãâ·ÂÇÑ´Ù.
-			// 		>> 16Áø¼ö¿ë ¿¡µðÅÍ¿¡¼­ ¿­¸é Á¦´ë·Î ÀÐÀ» ¼ö ÀÖ´Ù (16Áø¼ö·Î Ç¥ÇöµÇ°ÚÁö¸¸)
+			// binary data(2ì§„ìˆ˜)ë¡œ ì €ìž¥ëœë‹¤ --> íŒŒì¼ì„ ì—´ì–´ë„ ì‚¬ëžŒì´ ì½ì„ ìˆ˜ ì—†ë‹¤!
+			//		>> eclipseì—ì„œ ì—´ì—ˆì„ ë•ŒëŠ” intì¸ì§€ floatì¸ì§€ boolean ê°’ì¸ì§€ ëª¨ë¥¸ë‹¤ --> íƒ€ìž…ì„ ëª¨ë¥´ë‹ˆê¹Œ 2ì§„ìˆ˜ ì›í˜• ê·¸ëŒ€ë¡œ ë³´ì—¬ì¤€ë‹¤!
+			//					<--> ë°˜ë©´, printlnì€ ëª¨ë“  ê²ƒì„ ë¬¸ìžë¡œ ì·¨ê¸‰í•˜ì—¬ ì¶œë ¥í•œë‹¤.
+			// 		>> 16ì§„ìˆ˜ìš© ì—ë””í„°ì—ì„œ ì—´ë©´ ì œëŒ€ë¡œ ì½ì„ ìˆ˜ ìžˆë‹¤ (16ì§„ìˆ˜ë¡œ í‘œí˜„ë˜ê² ì§€ë§Œ)
 			
 			dos.close();
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ëž˜ìŠ¤ ë.

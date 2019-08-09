@@ -2,7 +2,7 @@ package study;
 
 import java.io.*;
 
-// 15-12 ¿¹Á¦
+// 15-12 ì˜ˆì œ
 
 class Ex08_IO08 {
 	public static void main(String[] args) {
@@ -20,17 +20,17 @@ class Ex08_IO08 {
 				score = dis.readInt();
 				System.out.println(score);
 				sum += score;
-			} // ¹«ÇÑ¹Ýº¹ÀÎµ¥, ÆÄÀÏÀ» ´Ù ÀÐÀ¸¸é EOF ¿¹¿Ü°¡ ¹ß»ýÇÏ¸é¼­ while¹®À» ¹þ¾î³­´Ù.
+			} // ë¬´í•œë°˜ë³µì¸ë°, íŒŒì¼ì„ ë‹¤ ì½ìœ¼ë©´ EOF ì˜ˆì™¸ê°€ ë°œìƒí•˜ë©´ì„œ whileë¬¸ì„ ë²—ì–´ë‚œë‹¤.
 		} catch(EOFException e) {
-			System.out.println("Á¡¼öÀÇ ÃÑÇÕÀº " + sum + "ÀÔ´Ï´Ù.");
+			System.out.println("ì ìˆ˜ì˜ ì´í•©ì€ " + sum + "ìž…ë‹ˆë‹¤.");
 		} catch(IOException ie) {
 			ie.printStackTrace();
 		} finally {
-			try { // ¿¹¿Ü°¡ ¹ß»ýÇÏ´ø ¾ÈÇÏ´ø ¸¶Áö¸·¿¡ dis¸¦ closeÇÑ´Ù. --> ¸Å¹ø closeÇÏ±â°¡ ±ÍÂúÀ¸´Ï±î try-with-resources »ç¿ë (Å« ÀÇ¹Ì´Â ¾ø´Ù)
+			try { // ì˜ˆì™¸ê°€ ë°œìƒí•˜ë˜ ì•ˆí•˜ë˜ ë§ˆì§€ë§‰ì— disë¥¼ closeí•œë‹¤. --> ë§¤ë²ˆ closeí•˜ê¸°ê°€ ê·€ì°®ìœ¼ë‹ˆê¹Œ try-with-resources ì‚¬ìš© (í° ì˜ë¯¸ëŠ” ì—†ë‹¤)
 				if(dis != null) { dis.close(); }
-			} catch(IOException ie) { // close()°¡ ¿ø·¡ IOException ¿¹¿Ü¸¦ ¹ß»ý½ÃÅ³ ¼ö ÀÖ´Ù.
+			} catch(IOException ie) { // close()ê°€ ì›ëž˜ IOException ì˜ˆì™¸ë¥¼ ë°œìƒì‹œí‚¬ ìˆ˜ ìžˆë‹¤.
 				ie.printStackTrace();
 			}
-		} // try-catch¹® ³¡.
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+		} // try-catchë¬¸ ë.
+	} // main() ë.
+} // í´ëž˜ìŠ¤ ë.

@@ -3,14 +3,14 @@ package study;
 import java.io.*;
 import java.util.Arrays;
 
-// Ex03_IO03 ¾÷±×·¹ÀÌµå --> ¹è¿­À» ÀÌ¿ëÇØ¼­ IO È¿À²À» Çâ»ó
+// Ex03_IO03 ì—…ê·¸ë ˆì´ë“œ --> ë°°ì—´ì„ ì´ìš©í•´ì„œ IO íš¨ìœ¨ì„ í–¥ìƒ
 
 class Ex04_IO04 {
 	public static void main(String[] args) {
 		byte[] inSrc = { 0,1,2,3,4,5,6,7,8,9 };
 		byte[] outSrc = null;
 		
-		byte[] temp = new byte[4]; // ÀÌÀü ¿¹Á¦¿Í ¹è¿­ÀÇ Å©±â°¡ ´Ù¸£´Ù.
+		byte[] temp = new byte[4]; // ì´ì „ ì˜ˆì œì™€ ë°°ì—´ì˜ í¬ê¸°ê°€ ë‹¤ë¥´ë‹¤.
 		
 		ByteArrayInputStream input = null;
 		ByteArrayOutputStream output = null;
@@ -20,15 +20,15 @@ class Ex04_IO04 {
 		
 		try {
 			while(input.available() > 0) {
-				int len = input.read(temp); // read() ¹İÈ¯°ªÀº ¸î °³¸¦ ÀĞ¾ú´ÂÁö intÇü ¼ıÀÚ´Ù!
-				output.write(temp, 0, len); // Á¤È®È÷ read()·Î ÀĞ¾î ¿Â °³¼ö¸¸Å­¸¸ writeÇÑ´Ù.
+				int len = input.read(temp); // read() ë°˜í™˜ê°’ì€ ëª‡ ê°œë¥¼ ì½ì—ˆëŠ”ì§€ intí˜• ìˆ«ìë‹¤!
+				output.write(temp, 0, len); // ì •í™•íˆ read()ë¡œ ì½ì–´ ì˜¨ ê°œìˆ˜ë§Œí¼ë§Œ writeí•œë‹¤.
 			}
 		} catch(IOException e) {}
 		
-		outSrc = output.toByteArray(); // ½ºÆ®¸²ÀÇ ³»¿ëÀ» byte ¹è¿­·Î ¹İÈ¯ÇÑ´Ù.
+		outSrc = output.toByteArray(); // ìŠ¤íŠ¸ë¦¼ì˜ ë‚´ìš©ì„ byte ë°°ì—´ë¡œ ë°˜í™˜í•œë‹¤.
 		
 		System.out.println("Input Source : " + Arrays.toString(inSrc));
 		System.out.println("temp 	     : " + Arrays.toString(temp));
 		System.out.println("Output Source: " + Arrays.toString(outSrc));
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ë.
+} // í´ë˜ìŠ¤ ë.
