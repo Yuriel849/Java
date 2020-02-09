@@ -1,4 +1,4 @@
-package study;
+package other;
 
 public class Ex01_PrintMethods {
 	public static void main(String args[]) {

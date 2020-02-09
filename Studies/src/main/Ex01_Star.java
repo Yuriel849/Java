@@ -1,6 +1,6 @@
-package study;
+package main;
 
-public class N02_Star {
+public class Ex01_Star {
 	public static void main(String[] args) {
 		// sysout 입력 후 ctrl + space --> System.out.println();
 		System.out.println();

@@ -1,6 +1,6 @@
-package study;
+package main;
 
-public class N03_StarAccessories {
+public class Ex02_StarAccessories {
 	public static void main(String[] args) {
 		int i, j, k;
 		
