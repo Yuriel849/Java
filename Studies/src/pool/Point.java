@@ -1,16 +1,22 @@
-package point;
+package pool;
 
 public class Point {
-	int x; // --> this.x --> instance variable, only exists when instance is created 
-	int y;
+	private int x; // --> this.x --> instance variable, only exists when instance is created 
+	private int y;
 	
-	Point() {
-		this(1, 1); // == Point(1,1) --> calls constructor Point(int, int)
+	// Default constructor --> Should be defined , regardless of whether there is another constructor
+	public Point() {
+		this(1,1); // == Point(1,1); --> Calls another constructor in the same class
 	}
-	
-	Point(int x, int y) {
+
+	// Constructor receiving values for variables x and y
+	public Point(int x, int y) {
 		this.x = x;
 		this.y = y;
+			/* this is a reference type variable, referencing the object itself
+			 * this.x --> NOT instance variable or paramter (local variable),
+			 * 			  without "this", cannot differentiat from parameters
+			 */
 	}
 	
 	/* equals 호출하면서 parent의 참조변수를 이용했다.
@@ -41,7 +47,7 @@ public class Point {
 		return "x : " + x + ", y : " + y;
 	}
 	
-	double getDistance(Point p) {
+	public double getDistance(Point p) {
 		return getDistance(p, this); // 같은 클래스 내 메서드니까 소속 클래스를 명시하지 않아도 찾아간다
 		/* static double getDistance(Point p) -->> 에러!!!
 		 * 	>> "this" 자체는 지역변수이지만 this는 인스턴스 자신을 가리키는 참조변수다
@@ -52,7 +58,23 @@ public class Point {
 		 */
 	}
 	
-	static double getDistance(Point p1, Point p2) {
+	public static double getDistance(Point p1, Point p2) {
 		return Math.sqrt(Math.pow((p2.x - p1.x), 2) + Math.pow((p2.y - p1.y), 2)); // local variables, not instance variables
+	}
+	
+	public int getX() {
+		return x;
+	}
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public void setY(int y) {
+		this.y = y;
 	}
 }
