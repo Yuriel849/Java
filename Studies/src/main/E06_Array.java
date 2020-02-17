@@ -1,6 +1,6 @@
 package main;
 
-public class Ex02_Array02 {
+public class E06_Array {
 	public static void main(String[] args) {
 		// 배열의 선언과 생성을 두 줄로 함
 		int[] array1;

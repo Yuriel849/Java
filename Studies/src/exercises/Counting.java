@@ -1,4 +1,4 @@
-package main;
+package exercises;
 
 /* 빈도수 구하기 (Counting)--> 배열에 어떤 값이 몇 개 저장되어 있는지 세어서 보여준다.
  * 
@@ -9,7 +9,7 @@ package main;
  * 			<--> bubble sort는 매우 많이 반복하면서 정렬하기에 비효율적 (코드는 간단하지만...)
  */
 
-public class Ex_Array07 {
+public class Counting {
 	public static void main(String[] args) {
 		int[] numArr = new int[10];
 		int[] counter = new int[10];

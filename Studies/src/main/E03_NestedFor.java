@@ -1,33 +1,18 @@
 package main;
 
-public class Ex01_Star {
+public class E03_NestedFor {
 	public static void main(String[] args) {
-		// sysout 입력 후 ctrl + space --> System.out.println();
-		System.out.println();
-
-		// ctrl + "/" --> 주석처리
-//		System.out.println("Hello");
-//		System.out.println("Hello");
-//		System.out.println("Hello");
-//		System.out.println("Hello");
-//		System.out.println("Hello");
-		
-		// ctrl + "+" & ctrl + "-" --> Eclipse/Spring STS 글씨 크기 키우기 & 줄이기
-		// ctrl + "D" --> 해당 줄 삭제
-		
 		System.out.println("특정 위치에만 (x,y) 좌표 출력>>");
-		// for 문 - 반복문, 1~5까지 모두 5번 반복
 		for(int i = 1; i <= 5; i++) {
-			for(int j = 1; j <= 5; j++) { // for 문 시작
-			// alt + arrow key --> 해당 줄 위/아래 이동
+			for(int j = 1; j <= 5; j++) {
 				if (i == j) { // i & j가 같을 때
 					System.out.print(" [" + i + "," + j + "]");
 				} else { // i & j가 같지 않을 때
-					System.out.print(" - - -"); // 빈칸 5칸 출력 ([i,j]가 5칸이기에)
+					System.out.print(" - - -");
 				}	
 			}
 			System.out.println();
-		} // for 문 끝.
+		}
 		
 		System.out.println("\n특정 위치에만 \"STAR\" 출력 >>");
 		for(int i = 1; i <= 5; i++) {

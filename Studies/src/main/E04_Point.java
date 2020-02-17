@@ -1,6 +1,10 @@
-package point;
+package main;
 
-public class PointTest {
+import pool.Point;
+import pool.Point3D;
+import pool.Point4D;
+
+public class E04_Point {
 	public static void main(String[] args) {
 		Point p1 = new Point(); // (x,y) == (1,1)
 		Point p2 = new Point(3, 5);

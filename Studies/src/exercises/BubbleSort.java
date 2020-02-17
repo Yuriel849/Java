@@ -1,7 +1,6 @@
-package main;
+package exercises;
 
-//정렬하기 (Bubble Sort) --> 오름차순 / 내림차순으로 배열을 정렬
-public class Ex_Array06 {
+public class BubbleSort {
 	public static void main(String[] args) {
 		int[] numArr = new int[10];
 		
@@ -33,19 +32,7 @@ public class Ex_Array06 {
 			
 			if(!changed) { // 자리바꿈이 일어나지 않았으면 반복문을 벗어난다 --> 자리바꿈이 일어나지 않으면 정렬이 완료되었다는 의미다
 				break;
-			}
-			/* 실행 예시)
-			 * 	>> 8226422989
-			 * 	>> 2264228899
-			 * 	>> 2242268899
-			 * 	>> 2222468899
-			 * 
-			 * 바깥 for문이 3회 반복만에 정렬 완료 --> changed == false --> break
-			 * 	--> changed가 바뀌지 않았다는 것은 값의 교환이 일어나지 않았다는 의미
-			 * 	--> 이미 정렬 완료되어서 교환이 일어나지 않는 것
-			 * 	--> break로 반복을 종료 
-			 */
-			
+			}			
 			
 			for(int k = 0; k < numArr.length; k++) {
 				System.out.print(numArr[k]);
