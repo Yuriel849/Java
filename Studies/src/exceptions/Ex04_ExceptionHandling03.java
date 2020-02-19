@@ -20,5 +20,5 @@ class Ex04_ExceptionHandling03 {
 		// File 객체의 createNewFile 메서드를 이용해서 실제 파일을 생성한다.
 		f.createNewFile();
 		return f; // 생성된 객체의 참조를 반환한다.
-	} // createFile 메서듸의 끝.
-} // 클래스의 끝.
+	} // createFile 메서드의 끝.
+}
