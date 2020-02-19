@@ -12,9 +12,9 @@ class ParserManager {
 			return new XMLParser();
 		} else {
 			return new HTMLParser();
-			/* 아래 코드의 압축버전
-			 * 	>> Parseable p = new HTMLParser();
-			 * 	>> return p;
+			/* SAME AS...
+			 * 	Parseable p = new HTMLParser();
+			 * 	return p;
 			 */
 		}
 	}
@@ -34,7 +34,7 @@ class HTMLParser implements Parseable {
 	}
 }
 
-class Ex04_ParserTest {
+class E13_ParserInterface {
 	public static void main(String[] args) {
 		Parseable parser = ParserManager.getParser("XML"); // parser 참조변수는 XMLParser 객체를 참조하게 된다
 		parser.parse("document.xml"); // XMLParser.parse("document.xml")와 동일하다

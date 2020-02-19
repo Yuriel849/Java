@@ -1,9 +1,15 @@
 package main;
 
-class Ex03_InterfaceTest03 {
+class E12_UsingInterface {
 	public static void main(String[] args) {
 		A3 a = new A3();
 		a.methodA(); // OR a.methodA(new B3());
+	}
+}
+
+class InstanceManager {
+	public static I3 getInstance() {
+		return new B3();
 	}
 }
 
@@ -28,10 +34,4 @@ class B3 implements I3 {
 	}
 	
 	public String toString() { return "class B3"; }
-}
-
-class InstanceManager {
-	public static I3 getInstance() {
-		return new B3();
-	}
 }

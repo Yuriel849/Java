@@ -1,6 +1,6 @@
 package main;
 
-class Ex07_InnerClass {
+class E14_NestedClass {
 	public static void main(String[] args) {
 		Outer o = new Outer(); // Outer 클래스의 객체 생성
 		System.out.println("o.iv = " + o.iv); // '100' 출력 --> Outer 클래스의 인스턴스변수 iv
