@@ -1,13 +1,8 @@
-package exceptions;
+package main;
 
-class Point {
-	int x;
-	int y;
-	
-	Point() { }
-}
+import pool.Point;
 
-public class ClassClass {
+public class E16_ClassClass {
 	public static void main(String[] args) throws ClassNotFoundException { // forName 때문에 예외 추가
 		Point p = new Point();
 		

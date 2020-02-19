@@ -1,7 +1,7 @@
-package exceptions;
+package main;
 
 // Object 클래스의 equals() 메서드를 오버라이딩한다면 hashCode() 메서드도 오버라이딩해야 한다
-public class HashCode {
+public class E17_HashCodeFunction {
 	public static void main(String[] args) {
 		Object obj1 = new Object();
 		Object obj2 = new Object();
@@ -19,6 +19,6 @@ public class HashCode {
 		String str2 = new String("abc");
 		
 		System.out.println(str1.hashCode()); // String은 주소값이 같다 --> 같은 문자열 타입 객체이다
-		System.out.println(str2.hashCode()); // 	--> why?? --> String 클래스에서 Object 클래스 hashCode()메서드를 오버라이딩 했다
+		System.out.println(str2.hashCode()); // 	--> String 클래스에서 Object 클래스 hashCode()메서드를 오버라이딩 했다
 	}
 }

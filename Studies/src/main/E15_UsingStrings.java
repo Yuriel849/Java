@@ -1,6 +1,6 @@
-package exceptions;
+package main;
 
-public class StringClass {
+public class E15_UsingStrings {
 	String str = "abc"; // 기존에 만들어져 이미 존재하는 객체를 str가 참조하게 한다.
 						// 여러 참조변수가 같은 문자열을 참조할 수 있다 (i.e. 여러 참조변수가 담고 있는 주소값이 같다)
 	String str2 = new String("abc"); // 완전히 새로운 객체를 새롭게 생성하여 str2가 참조하게 한다 (여러번 실행할 때마다 각각 다른 주소값을 가진다)
