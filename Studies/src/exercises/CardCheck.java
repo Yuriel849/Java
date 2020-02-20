@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import pool.Card;
 
-class Ex02_CardCheckTest {
+class CardCheck {
 	String rankCheck(Card[] cArr) {
 		Card[] input = cArr;
 		Card temp;
