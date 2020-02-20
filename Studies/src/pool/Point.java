@@ -77,4 +77,8 @@ public class Point {
 	public void setY(int y) {
 		this.y = y;
 	}
+	
+	public String getXY() {
+		return "(" + x + "," + y + ")"; // x & y의 값을 문자열로 반환
+	}
 }
