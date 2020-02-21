@@ -3,7 +3,7 @@ package exceptions;
 import java.io.File;
 
 //예외 선언하기 (예외를 처리하는 것이 아니라 해당 메서드를 호출한 곳에서 처리하도록 지시)
-class Ex04_ExceptionHandling03 {
+class Ex03_ExceptionHandling {
 	public static void main(String[] args) {
 		try {
 			File f = createFile(args[0]);

@@ -3,7 +3,7 @@ package exceptions;
 import java.io.File;
 
 // 예외 처리하기
-class Ex03_ExceptionHandling02 {
+class Ex02_ExceptionHandling {
 	public static void main(String[] args) {
 		// command line에서 입력받은 값을 이름으로 갖는 파일을 생성한다.
 		File f = createFile(args[0]);

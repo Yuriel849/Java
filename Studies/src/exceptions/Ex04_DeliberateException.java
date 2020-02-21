@@ -1,6 +1,6 @@
 package exceptions;
 
-class Ex02_DeliberateException {
+class Ex04_DeliberateException {
 	public static void main(String[] args) {
 		try {
 			Exception ex = new ArithmeticException("다시 고의로 발생시켰음");

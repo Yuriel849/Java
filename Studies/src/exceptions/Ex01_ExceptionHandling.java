@@ -3,7 +3,7 @@ package exceptions;
 // 코드 한 줄 이상을 하이라이트하고 alt + shift + z하면 try-catch, if, for, while 블럭 등을 적용할 수 있다
 // source 탭에 toString, getter & setter 생성할 수 있다
 
-class Ex01_ExceptionHandling01 {
+class Ex01_ExceptionHandling {
 	public static void main(String[] args) {
 		System.out.println(1);
 		System.out.println(2);
