@@ -4,13 +4,14 @@ import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class E26_BracketValidCheck {
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void main(String[] args) {
 		if(args.length != 1) {
-			System.out.println("Usage : java Ex04_BracketValidCheck \"EXPRESSION\"");
-			System.out.println("Example : java Ex04_BracketValidCheck \"((2+3)*1)+3\"");
+			System.out.println("Usage : java E26_BracketValidCheck \"EXPRESSION\"");
+			System.out.println("Example : java E26_BracketValidCheck \"((2+3)*1)+3\"");
 			System.exit(0);
 		}
-		/* 커맨드라인 입력을 eclipse에서 하려면...
+		/* To use command line input on Eclipse IDE...
 		 * 	>> "Run" >> "Run Configurations" >> "Arguments" >> "Program Arguments" >> "Apply" & "Run"
 		 */
 		
@@ -31,6 +32,6 @@ public class E26_BracketValidCheck {
 			else { System.out.println("괄호가 일치하지 않습니다."); }			
 		} catch (EmptyStackException e) {
 			System.out.println("괄호가 일치하지 않습니다.");
-		} // try-catch문 끝.
-	} // main() 끝.
-} // 클래스 끝.
+		} // End of try-catch
+	}
+}
