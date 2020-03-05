@@ -2,17 +2,19 @@ package collectionsFramework;
 
 import java.util.Stack;
 
-// 웹브라우저의 '뒤로' & '앞으로' 버튼의 기능을 구현한 예제
+// Emulate the "forward" and "back" buttons on a web browser
 
 class E06_MyStack {
+	@SuppressWarnings("rawtypes")
 	public static Stack back = new Stack();
+	@SuppressWarnings("rawtypes")
 	public static Stack forward = new Stack();
 
 	public static void main(String[] args) {
-		goURL("1.네이트");
-		goURL("2.야후");
-		goURL("3.네이버");
-		goURL("4.다음");
+		goURL("www.google.com");
+		goURL("www.github.com");
+		goURL("www.amazon.com");
+		goURL("www.reddit.com");
 				
 		printStatus();
 		
@@ -40,15 +42,18 @@ class E06_MyStack {
 		System.out.println();
 	} // printStatus() 끝.
 	
+	@SuppressWarnings("unchecked")
 	public static void goURL(String url) {
 		back.push(url);
 		if(!forward.empty()) { forward.clear(); }
 	} // goURL() 끝.
 	
+	@SuppressWarnings("unchecked")
 	public static void goForward() {
 		if(!forward.empty()) { back.push(forward.pop()); }
 	} // goForward() 끝.
 		
+	@SuppressWarnings("unchecked")
 	public static void goBack() {
 		if(!back.empty()) { forward.push(back.pop()); }
 	} // goBack() 끝.

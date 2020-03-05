@@ -5,6 +5,7 @@ import java.util.Iterator;
 
 // 합집합, 차집합, 교집합 구하는 예제 --> 이미 전용 메서드가 존재하지만, 실습차원에서 한 것 
 class E08_SetsTest {
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void main(String[] args) {
 		HashSet setA = new HashSet();
 		HashSet setB = new HashSet();
