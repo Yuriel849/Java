@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 class E01_ArrayList {
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void main(String[] args) {
 		ArrayList list1 = new ArrayList(10);
 		list1.add(new Integer(5));
@@ -11,16 +12,16 @@ class E01_ArrayList {
 		list1.add(new Integer(2));
 		list1.add(new Integer(0));
 		list1.add(new Integer(1));
-		list1.add(3); // add(Object obj)이기에 int형인 숫자를 넣을 수 없다 --> autoboxing에 의해 자동으로 Integer 클래스의 객체 값 "3"이 된다
+		list1.add(3); // add(Object obj) --> Cannot give int as argument --> autoboxing, int to Integer
 		
-		ArrayList list2 = new ArrayList(list1.subList(1,4));
+		ArrayList list2 = new ArrayList(list1.subList(1,4)); // Creates list2 with sublist of list1
 		print(list1, list2);
 		
-		Collections.sort(list1); // list1과 list2를 정렬한다.
+		Collections.sort(list1);
 		Collections.sort(list2);
 		print(list1, list2);
 		
-		// list1.containsAll(list2) --> list1이 list2의 모든 요소를 포함하고 있을 때만 true
+		// list1.containsAll(list2) --> TRUE only when list1 contains all elements of list2
 		System.out.println("list1.containsAll(list2) : " + list1.containsAll(list2));
 		
 		list2.add("B");
@@ -31,20 +32,26 @@ class E01_ArrayList {
 		list2.set(3, "AA");
 		print(list1, list2);
 		
-		// list1에서 list2와 겹치는 부분만 남기고 나머지는 삭제한다.
+		// list1 only retains what elements in both list1 and list2
 		System.out.println("list1.retainAll(list2) : " + list1.retainAll(list2));
 		print(list1, list2);
 		
-		// list2에서 list1에 포함된 객체들을 삭제한다.
-		for(int i = list2.size()-1; i >= 0; i--) { // list의 객체를 삭제할 때는 뒤에서 부터 삭제해야 한다 --> 앞에서 삭제하면 i가 증가하면서 삭제되지 않는다!!
+		// Removes from list2 the elements which are also in list1
+		for(int i = list2.size()-1; i >= 0; i--) {
 			if(list1.contains(list2.get(i))) { list2.remove(i); }
+			/* Arraylist.remove(int index)
+			 * 	--> Removes element at designated index, then moves forward following elements
+			 * 		ex) If first element is removed, second element becomes new first element
+			 * 	--> With a list, start looping from the end
+			 */
 		}
 		print(list1, list2);
-	} // main() 끝.
+	}
 	
+	@SuppressWarnings("rawtypes")
 	static void print(ArrayList list1, ArrayList list2) {
 		System.out.println("list1 : " + list1);
 		System.out.println("list2 : " + list2);
 		System.out.println();
-	} // print() 끝.
-} // 클래스 끝.
+	}
+}

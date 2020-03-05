@@ -1,7 +1,6 @@
 package collectionsFramework;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -22,35 +21,31 @@ import java.util.Objects;
  */ 
 
 class E03_ComparableTest {
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void main(String[] args) {
 		List list = new ArrayList();
-		list.add(new Student("홍길동", 50, 15));
-		list.add(new Student("IWS ", 100, 20));
-		list.add(new Student("김자바", 75, 25));
-		list.add(new Student("AUG ", 100, 10));
-		list.add(new Student("이잠바", 25, 35));
+		list.add(new Student("Hamburg", 50, 15));
+		list.add(new Student("Seoul", 100, 20));
+		list.add(new Student("Portsmouth", 75, 25));
+		list.add(new Student("St.Petersburg", 100, 10));
+		list.add(new Student("Boston", 25, 35));
 
-		// 처리하기 전에 한 번 출력
-		Iterator it = list.iterator();
-		
+		Iterator it = list.iterator();		
 		while(it.hasNext()) {
 			System.out.println(it.next());
 		}
 		
-//		Collections.sort(list); // 이 상태로는 정렬 기준이 없기 때문에 에러!
-		
-		// 기본 정렬기준으로 정렬
+		// Sort with the basic Comparable specified by Student class
 		Collections.sort(list);
 		
 		System.out.println("\n이름(사전 순)으로 정렬하였다.");
 		it = list.iterator();
-		
 		while(it.hasNext()) {
 			System.out.println(it.next());
 		}
 		
 		
-		// 성적 기준으로 정렬
+		// Sort by score, descending with Comparator specified in ScoreComp class
 		Collections.sort(list, new ScoreComp());
 		
 		System.out.println("\n성적 순으로 정렬하였다.");
@@ -59,10 +54,11 @@ class E03_ComparableTest {
 		while(it.hasNext()) {
 			System.out.println(it.next());
 		}
-	} // main() 끝.
-} // Student 클래스 끝.
+	}
+}
 
 // (Q1) Student의 기본정렬을 이름(사전 순)으로 하라.
+@SuppressWarnings("rawtypes")
 class Student implements Comparable {
 	String name;
 	int score;
@@ -81,9 +77,8 @@ class Student implements Comparable {
 	}
 
 	@Override
-	public int compareTo(Object o) { // this & 지정된 객체 o를 비교 --> o는 Student 객체가 들어온다!
-		if(o instanceof Student) { // o가 Student 객체인지 확인
-//			Student stud = (Student) o; // Student타입 참조변수로 o를 형변환
+	public int compareTo(Object o) { // Compare this & o --> Student instance is provided as o
+		if(o instanceof Student) { // Check if o is instance of Student
 			return this.name.compareTo(((Student) o).name);
 		}
 		return 0;
@@ -97,6 +92,7 @@ class Student implements Comparable {
 
 // (Q2) 정렬기준이 성적순(내림차순)인 Comparator를 구현한 클래스 ScoreComp를 작성하라.
 //		>> 성적이 같은 경우 나이순(내림차순)으로 정렬할 것.
+@SuppressWarnings("rawtypes")
 class ScoreComp implements Comparator {
 	public int compare(Object o1, Object o2) {
 		if(o1 instanceof Student && o2 instanceof Student) {

@@ -2,9 +2,12 @@ package collectionsFramework;
 
 import java.util.Vector;
 
+import pool.MyVector;
+
 class E02_MyVectorTest {
+	@SuppressWarnings({ "rawtypes", "unused" })
 	public static void main(String[] args) {
-		E02_MyVector v = new E02_MyVector(5);
+		MyVector v = new MyVector(5);
 		// 잘 안된다면 Vector 객체를 선언/생성하여 실행, 비교해보자
 		Vector v4 = new Vector();
 		System.out.println(v.isEmpty());
