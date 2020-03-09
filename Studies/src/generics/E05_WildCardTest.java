@@ -1,7 +1,7 @@
 package generics;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import pool.Fruit;
+import pool.FruitBox;
 
 class E05_WildCardTest {
 	public static void main(String[] args) {
@@ -17,24 +17,6 @@ class E05_WildCardTest {
 		System.out.println(Juicer.makeJuice(appleBox));
 	} // main() 끝.
 } // 클래스 끝.
-
-class Fruit {
-	public String toString() {
-		return "Fruit";
-	}
-} // Fruit 클래스 끝.
-
-class Apple extends Fruit {
-	public String toString() {
-		return "Apple";
-	}
-} // Apple 클래스 끝.
-
-class Grape extends Fruit {
-	public String toString() {
-		return "Grape";
-	}
-} // Grape 클래스 끝.
 
 class Juice {
 	String name;
@@ -57,19 +39,3 @@ class Juicer {
 		return new Juice(tmp);	
 	}
 } // Juicer 클래스 끝.
-
-class FruitBox<T extends Fruit> extends Box<T> { } // FruitBox 클래스 끝.
-
-class Box<T> {
-	ArrayList<T> list = new ArrayList<T>();
-	void add(T item)
-		{ list.add(item); }
-	T get(int i)
-		{ return list.get(i); }
-	ArrayList<T> getList()
-		{ return list; }
-	int size()
-		{ return list.size(); }
-	public String toString()
-		{ return list.toString(); }
-}  // Box<T> 클래스 끝.
