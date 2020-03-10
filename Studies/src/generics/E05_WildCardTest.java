@@ -1,7 +1,10 @@
 package generics;
 
+import pool.Apple;
 import pool.Fruit;
 import pool.FruitBox;
+import pool.Grape;
+import pool.Juice;
 
 class E05_WildCardTest {
 	public static void main(String[] args) {
@@ -17,18 +20,6 @@ class E05_WildCardTest {
 		System.out.println(Juicer.makeJuice(appleBox));
 	} // main() 끝.
 } // 클래스 끝.
-
-class Juice {
-	String name;
-	
-	Juice(String name) {
-		this.name = name + "Juice";
-	}
-	
-	public String toString() {
-		return name;
-	}
-} // Juice 클래스 끝.
 
 class Juicer {
 	static Juice makeJuice(FruitBox<? extends Fruit> box) {
