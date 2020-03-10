@@ -10,6 +10,7 @@ import java.util.Set;
 import java.util.TreeMap;
 
 class E11_TreeMap {
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void main(String[] args) {
 		String[] data = {"A", "K", "A", "K", "D", "K", "A", "K", "K", "K", "Z", "D" };
 		
@@ -35,7 +36,7 @@ class E11_TreeMap {
 		
 		// map을 ArrayList로 변환한 다음에 Collections.sort()로 정렬
 		Set set = map.entrySet();
-		List list = new ArrayList(set); // ArrayList(Collection c
+		List list = new ArrayList(set); // ArrayList(Collection c)
 		
 		// static void sort(List list, Comparator c)
 		Collections.sort(list,  new ValueComparator());
@@ -50,6 +51,7 @@ class E11_TreeMap {
 		}
 	} // main() 끝.
 
+	@SuppressWarnings("rawtypes")
 	static class ValueComparator implements Comparator {
 		public int compare(Object o1, Object o2) {
 			if(o1 instanceof Map.Entry && o2 instanceof Map.Entry) {
