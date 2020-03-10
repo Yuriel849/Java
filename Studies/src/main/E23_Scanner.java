@@ -17,5 +17,7 @@ class E23_Scanner {
 		
 		System.out.println("sum = " + sum);
 		System.out.println("average = " + (double)sum/cnt);
+		
+		scan.close();
 	}
 }

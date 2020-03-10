@@ -3,6 +3,7 @@ package main;
 import pool.Point;
 
 public class E16_ClassClass {
+	@SuppressWarnings({ "rawtypes", "unused" })
 	public static void main(String[] args) throws ClassNotFoundException { // forName 때문에 예외 추가
 		Point p = new Point();
 		

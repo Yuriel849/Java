@@ -1,6 +1,7 @@
 package main;
 
 public class E04_TypeConversion {
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		float f = 3.99f; // same as float f = (float) 3.99;
 		System.out.println((int) f); // 반올림 없이 소수점 이하를 그냥 버린다

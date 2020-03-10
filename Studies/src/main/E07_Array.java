@@ -1,6 +1,7 @@
 package main;
 
 public class E07_Array {
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		// 배열의 선언과 생성을 두 줄로 함
 		int[] array1;

@@ -37,6 +37,7 @@ package main;
 
 // main이 담긴 클래스만 앞에 public이 필요하다
 public class E11_Memory {
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		String str = new String("abc");
 		

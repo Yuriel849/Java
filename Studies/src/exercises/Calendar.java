@@ -14,6 +14,8 @@ public class Calendar {
 		char[] MakeWeek = makeWeekdays();
 		int[][] Month = makeMonth(choice);
 		getMonth(choice, Month, MakeWeek);
+		
+		scan.close();
 	}
 	
 	private static void getWeekdays(char[] weekday) {

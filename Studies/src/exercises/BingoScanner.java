@@ -20,6 +20,8 @@ public class BingoScanner {
 				break;
 			}
 		} while (input < 1 || input > 25);
+	
+		scan.close();
 		
 		return input;
 	}
