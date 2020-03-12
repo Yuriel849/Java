@@ -1,7 +1,8 @@
 package threads;
 
-//Ex10_Thread10와 비교!!
+//E10_Thread10와 비교!!
 
+// Using deprecated suspend(), resume(), stop()
 class E09_Thread09 {
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws Exception {
@@ -28,7 +29,7 @@ class E09_Thread09 {
 			th3.stop();
 		} catch (InterruptedException e) {}
 	} // main() 끝.
-} // 클래스 끝.
+}
 
 class RunImplEx09 implements Runnable {
 	public void run() {
@@ -39,4 +40,4 @@ class RunImplEx09 implements Runnable {
 			} catch (InterruptedException e) {}
 		}
 	} // run() 끝.
-} // 클래스 끝.
+}

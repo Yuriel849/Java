@@ -25,7 +25,7 @@ class E05_Thread05 implements Runnable {
 	public void run() {
 		while(true) {
 			try {
-				Thread.sleep(3 * 1000); // 3초마다
+				Thread.sleep(3 * 1000); // 3초마다 작동한다.
 			} catch (InterruptedException e) {}
 			// autoSave의 값이 true이면 autoSave()를 호출한다.
 			if(autoSave) {
@@ -37,4 +37,4 @@ class E05_Thread05 implements Runnable {
 	public void autoSave() {
 		System.out.println("작업파일이 자동저장되었습니다.");
 	} // autoSave() 끝.
-} // 클래스 끝.
+}

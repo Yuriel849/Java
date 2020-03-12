@@ -2,7 +2,7 @@ package threads;
 
 import javax.swing.JOptionPane;
 
-// Ex07_Thread07와 비교!!
+// E07_Thread07와 비교!!
 
 class E08_Thread08 {
 	public static void main(String[] args) throws Exception {
@@ -14,7 +14,7 @@ class E08_Thread08 {
 		th1.interrupt(); // interrupt()를 호출하면, interrupted 상태가 true가 된다.
 		System.out.println("isInterrupted(): " + th1.isInterrupted()); // true도 false도 나올 수 있다 --> 왜? who cares --> 멈췄다는게 중요하다
 	} // main() 끝.
-} // 클래스 끝.
+}
 
 class Ex08_Thread08_1 extends Thread {
 	public void run() {
@@ -31,4 +31,4 @@ class Ex08_Thread08_1 extends Thread {
 		
 		System.out.println("카운트가 종료되었습니다.");
 	} // run() 끝.
-} // 클래스 끝.
+}

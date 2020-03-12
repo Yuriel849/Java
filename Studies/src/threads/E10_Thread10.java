@@ -1,6 +1,6 @@
 package threads;
 
-//Ex09_Thread09와 비교!!
+//E09_Thread09와 비교!!
 
 class E10_Thread10 {
 	public static void main(String[] args) throws Exception {
@@ -29,7 +29,7 @@ class E10_Thread10 {
 			r3.stop();
 		} catch (InterruptedException e) {}
 	} // main() 끝.
-} // 클래스 끝.
+}
 
 class RunImplEx10 implements Runnable {
 	volatile boolean suspended = false;
@@ -50,4 +50,4 @@ class RunImplEx10 implements Runnable {
 	public void suspend() { suspended = true; }
 	public void resume() { suspended = false; }
 	public void stop() { stopped = true; }
-} // 클래스 끝.
+}

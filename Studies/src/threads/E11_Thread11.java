@@ -1,6 +1,6 @@
 package threads;
 
-// Ex10_Thread10의 업그레이드!! --> 보다 객체지향적으로 개선
+// E10_Thread10의 업그레이드!! --> 보다 객체지향적으로 개선
 
 class E11_Thread11 {
 	public static void main(String[] args) throws Exception {
@@ -26,7 +26,7 @@ class E11_Thread11 {
 			th3.stop();
 		} catch (InterruptedException e) {}
 	} // main() 끝.
-} // 클래스 끝.
+}
 
 class Ex11_Thread11_1 implements Runnable {
 	volatile boolean suspended = false;
@@ -54,4 +54,4 @@ class Ex11_Thread11_1 implements Runnable {
 	public void resume() { suspended = false; }
 	public void stop() { stopped = true; }
 	public void start() { th.start(); }
-} // 클래스 끝.
+}
