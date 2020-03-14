@@ -1,6 +1,6 @@
 package threads;
 
-// 동기화 예제 --> 동기화가 안 되어있다.
+// Not synchronized
 
 public class E13_Thread13 {
 	public static void main(String[] args) {

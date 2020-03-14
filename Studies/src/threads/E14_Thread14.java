@@ -2,20 +2,20 @@ package threads;
 
 import java.util.ArrayList;
 
-// wait & notify 사용하기 --> 사용하지 않았을 때, 동기화하지 않았기 때문에 예외 발생
+// wait & notify 사용하기 --> Not always, but exception thrown because it is not synchronized
 
 class E14_Thread14 {
 	public static void main(String[] args) throws Exception {
-		Table table = new Table(); // 여러 쓰레드가 공유하는 객체
+		Table table = new Table(); // Object shared by multiple threads
 		
 		new Thread(new Cook(table), "COOK1").start();
 		new Thread(new Customer(table, "donut"), "CUST1").start();
 		new Thread(new Customer(table, "burger"), "CUST2").start();
 
-		// 0.1초 (100 millis) 후에 강제 종료한다.
+		// Terminate after 0.1 seconds (100 milliseconds)
 		Thread.sleep(100);
 		System.exit(0);
-	} // main() 끝.
+	}
 }
 
 class Customer implements Runnable {
@@ -54,8 +54,7 @@ class Cook implements Runnable {
 	
 	public void run() {
 		while(true) {
-			// 임의의 요리를 하나 선택해서 table에 추가한다.
-			int idx = (int)(Math.random() * table.dishNum());
+			int idx = (int)(Math.random() * table.dishNum()); // Cook randomly adds a dish to table
 			table.add(table.dishNames[idx]);
 			
 			try {
@@ -66,20 +65,18 @@ class Cook implements Runnable {
 }
 
 class Table {
-	String[] dishNames = { "donut", "donut", "burger" }; // donut이 더 자주 나온다.
-	final int MAX_FOOD = 6; // 테이블에 놓을 수 있는 최대 음식의 개수
+	String[] dishNames = { "donut", "donut", "burger" };
+	final int MAX_FOOD = 6; // Maximum number of dishes in table
 	
 	private ArrayList<String> dishes = new ArrayList<> ();
 	
 	public void add(String dish) {
-		// 테이블에 음식이 가득찼으면, 테이블에 음식을 추가하지 않는다.
-		if(dishes.size() >= MAX_FOOD	 ) { return; }
+		if(dishes.size() >= MAX_FOOD) { return; } // Does not add dish to table, if table is full
 		dishes.add(dish);
 		System.out.println("Dishes: " + dishes.toString());
 	}
 	
-	public boolean remove(String dishName) {
-		// 지정된 요리와 일치하는 요리를 테이블에서 제거한다.
+	public boolean remove(String dishName) { // Removes the designated dish from table
 		for(int i = 0; i < dishes.size(); i++) {
 			if(dishName.equals(dishes.get(i))) {
 				dishes.remove(i);
