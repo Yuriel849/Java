@@ -3,6 +3,7 @@ package AWT;
 import java.awt.*;
 import java.awt.event.*;
 
+@SuppressWarnings("serial")
 class Ex15_TextCompenentTest_EventHandling extends Frame {
 	TextField tf;
 	TextArea ta;
@@ -30,6 +31,7 @@ class Ex15_TextCompenentTest_EventHandling extends Frame {
 		tf.requestFocus(); // focus가 TextField에 위치하도록 한다.
 	}
 	
+	@SuppressWarnings("unused")
 	public static void main(String args[]) {
 		Ex15_TextCompenentTest_EventHandling mainWin = 
 				new Ex15_TextCompenentTest_EventHandling("TextComponentEventTest");

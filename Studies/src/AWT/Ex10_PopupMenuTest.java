@@ -18,6 +18,7 @@ public class Ex10_PopupMenuTest {
 		
 		f.add(pMenu); // PopupMenu를 Frame에 추가한다
 		f.addMouseListener( new MouseAdapter() { // 익명클래스
+			@SuppressWarnings("static-access")
 			public void mousePressed(MouseEvent me) {
 				// 오른쪽 마우스버튼을 누르면 PopupMenu를 화면에 보여준다
 				if(me.getModifiers() == me.BUTTON3_MASK)

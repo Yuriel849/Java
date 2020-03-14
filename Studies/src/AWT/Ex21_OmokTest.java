@@ -7,6 +7,7 @@ import java.awt.event.*;
 // Frame에 오목판을 그리고 그 위에 왼쪽 버튼을 누르면 검은 돌이, 오른쪽 버튼을 누르면 흰 돌이 그려지도록 알맞은 코드를 완성하시오.
 // 단 돌은 클릭한 곳의 가장 가까운 교차점에 놓여야 한다.
 
+@SuppressWarnings("serial")
 class Ex21_OmokTest extends Frame implements MouseListener {
 	public static void main(String[] args) {
 		new Ex21_OmokTest("OmokTest");

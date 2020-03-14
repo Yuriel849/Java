@@ -7,6 +7,7 @@ import java.awt.*;
 // BorderLayout은 Layout Manager의 5개 종류 중 하나
 
 public class Ex11_BorderLayoutTest {
+	@SuppressWarnings("unused")
 	public static void main(String args[]) {
 		Frame f = new Frame("BorderLayoutTest");
 		f.setSize(400, 400);

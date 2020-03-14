@@ -3,6 +3,7 @@ package AWT;
 import java.awt.*;
 import java.awt.event.*;
 
+@SuppressWarnings("serial")
 class Ex20_Graphics04 extends Frame implements MouseMotionListener {
 	int x = 0;
 	int y = 0;

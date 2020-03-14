@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Date;
 
+@SuppressWarnings("serial")
 class Ex17_Graphics01 extends Frame {
 	public static void main(String[] args) throws InterruptedException {
 		Frame f = new Ex17_Graphics01("Ex17_Graphics");
