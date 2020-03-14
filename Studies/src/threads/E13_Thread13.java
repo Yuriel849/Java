@@ -5,10 +5,10 @@ package threads;
 public class E13_Thread13 {
 	public static void main(String[] args) {
 		Runnable r = new RunnableEx13();
-		new Thread(r).start(); // ThreadGroup에 의해 참조되므로 gc 대상이 아니다.
+		new Thread(r).start(); // ThreadGroup에 의해 참조되므로 garbage collector 대상이 아니다.
 		new Thread(r).start();
 	} // main() 끝.
-} // 클래스 끝.
+}
 
 class Account {
 	private int balance = 1000;
@@ -24,17 +24,16 @@ class Account {
 			balance -= money;
 		}
 	}
-} // 클래스 끝.
+}
 
 class RunnableEx13 implements Runnable {
 	Account acc = new Account();
 	
 	public void run() {
 		while(acc.getBalance() > 0) {
-			// 100, 200, 300 중의 한 값을 임의로 선택해서 출금 (withdraw)
-			int money = (int)(Math.random() * 3 + 1) * 100;
+			int money = (int)(Math.random() * 3 + 1) * 100; // Withdraw arbitrary 100, 200, or 300
 			acc.withdraw(money);
 			System.out.println("balance:" + acc.getBalance());
 		}
 	}
-} // 클래스 끝.
+}

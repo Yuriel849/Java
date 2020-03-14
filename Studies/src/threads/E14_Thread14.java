@@ -16,7 +16,7 @@ class E14_Thread14 {
 		Thread.sleep(100);
 		System.exit(0);
 	} // main() 끝.
-} // 클래스 끝.
+}
 
 class Customer implements Runnable {
 	private Table table;
@@ -43,7 +43,7 @@ class Customer implements Runnable {
 	}
 	
 	boolean eatFood() { return table.remove(food); }
-} // 클래스 끝.
+}
 
 class Cook implements Runnable {
 	private Table table;
@@ -63,7 +63,7 @@ class Cook implements Runnable {
 			} catch (InterruptedException e) {}
 		}
 	}
-} // 클래스 끝.
+}
 
 class Table {
 	String[] dishNames = { "donut", "donut", "burger" }; // donut이 더 자주 나온다.
@@ -90,4 +90,4 @@ class Table {
 	}
 	
 	public int dishNum() { return dishNames.length; }
-} // 클래스 끝.
+}

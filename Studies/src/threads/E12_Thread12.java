@@ -20,7 +20,7 @@ class E12_Thread12 {
 
 		System.out.println("소요시간 : " + (System.currentTimeMillis() - E12_Thread12.startTime));
 	} // main() 끝.
-} // 클래스 끝.
+}
 
 class Ex12_Thread12_1 extends Thread {
 	public void run() {
@@ -28,7 +28,7 @@ class Ex12_Thread12_1 extends Thread {
 			System.out.print(new String("-"));
 		}
 	} // run() 끝.
-} // 클래스 끝.
+}
 
 class Ex12_Thread12_2 extends Thread {
 	public void run() {
@@ -36,4 +36,4 @@ class Ex12_Thread12_2 extends Thread {
 			System.out.print(new String("|"));
 		}
 	} // run() 끝.
-} // 클래스 끝.
+}
