@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.TreeMap;
 
 class E11_TreeMap {
-	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@SuppressWarnings({ "rawtypes", "unchecked", "deprecation" })
 	public static void main(String[] args) {
 		String[] data = {"A", "K", "A", "K", "D", "K", "A", "K", "K", "K", "Z", "D" };
 		

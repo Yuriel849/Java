@@ -5,7 +5,7 @@ import java.util.Vector;
 import pool.MyVector;
 
 class E02_MyVectorTest {
-	@SuppressWarnings({ "rawtypes", "unused" })
+	@SuppressWarnings({ "rawtypes", "unused", "deprecation" })
 	public static void main(String[] args) {
 		MyVector v = new MyVector(5);
 		// 잘 안된다면 Vector 객체를 선언/생성하여 실행, 비교해보자

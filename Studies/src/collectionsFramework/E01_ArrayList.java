@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 class E01_ArrayList {
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({ "unchecked", "rawtypes", "deprecation" })
 	public static void main(String[] args) {
 		ArrayList list1 = new ArrayList(10);
 		list1.add(new Integer(5));

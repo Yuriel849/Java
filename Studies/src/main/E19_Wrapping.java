@@ -1,6 +1,7 @@
 package main;
 
 class E19_Wrapping {
+	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 		int i = 10;
 		
