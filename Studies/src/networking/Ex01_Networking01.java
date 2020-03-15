@@ -1,4 +1,4 @@
-package study;
+package networking;
 
 import java.net.*;
 import java.util.*;
@@ -46,5 +46,5 @@ class Ex01_Networking01 {
 		} catch(UnknownHostException e) {
 			e.printStackTrace();
 		}
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ï¿½ï¿½.
+} // Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½.

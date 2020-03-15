@@ -1,23 +1,23 @@
-package study;
+package networking;
 
 import java.io.*;
 import java.net.*;
 import java.util.*;
 
-// 16-14¿¹Á¦
+// 16-14ï¿½ï¿½ï¿½ï¿½
 
 class Ex06_Networking06 {
 	public static void main(String[] args) {
 		if(args.length != 1) {
-			System.out.println("USAGE : java Ex06_Networking06 ´ëÈ­¸í");
+			System.out.println("USAGE : java Ex06_Networking06 ï¿½ï¿½È­ï¿½ï¿½");
 			System.exit(0);
 		}
 		
 		try {
 			String serverIp = "10.10.10.194";
-			// ¼ÒÄÏÀ» »ý¼ºÇÏ¿© ¿¬°áÀ» ¿äÃ»ÇÑ´Ù.
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½Ñ´ï¿½.
 			Socket socket = new Socket(serverIp, 7777);
-			System.out.println("¼­¹ö¿¡ ¿¬°áµÇ¾ú½À´Ï´Ù.");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			Thread sender = new Thread(new ClientSender(socket, args[0]));
 			Thread receiver = new Thread(new ClientReceiver(socket));
 			
@@ -26,7 +26,7 @@ class Ex06_Networking06 {
 		} catch(ConnectException ce) {
 			ce.printStackTrace();
 		} catch(Exception e) {}
-	} // main() ³¡.
+	} // main() ï¿½ï¿½.
 	
 	
 	static class ClientSender extends Thread {
@@ -54,8 +54,8 @@ class Ex06_Networking06 {
 					out.writeUTF("[" + name + "]" + scan.nextLine());
 				}
 			} catch(IOException e) {}
-		} // run() ³¡.
-	} // CLientSender ³»ºÎ Å¬·¡½º ³¡.
+		} // run() ï¿½ï¿½.
+	} // CLientSender ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½.
 	
 	
 	static class ClientReceiver extends Thread {
@@ -75,6 +75,6 @@ class Ex06_Networking06 {
 					System.out.println(in.readUTF());
 				} catch(IOException e) {}
 			}
-		} // run() ³¡.
-	} // ClientReceiver ³»ºÎ Å¬·¡½º ³¡.
-} // Å¬·¡½º ³¡.
+		} // run() ï¿½ï¿½.
+	} // ClientReceiver ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½.
+} // Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½.

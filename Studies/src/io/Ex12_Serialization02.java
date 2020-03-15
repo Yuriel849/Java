@@ -1,8 +1,9 @@
-package study;
+package io;
 
-import study.Ex11_Serialization01;
 import java.io.*;
 import java.util.ArrayList;
+
+import io.Ex11_Serialization01;
 
 class Ex12_Serialization02 {
 	public static void main(String[] args) {

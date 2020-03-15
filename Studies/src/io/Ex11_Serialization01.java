@@ -1,4 +1,4 @@
-package study;
+package io;
 
 // Ex07_Serialization02 * Ex08_Serialization03에서 사용할 UserInfo를 넣는 클래스이다.
 

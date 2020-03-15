@@ -1,9 +1,9 @@
-package study;
+package networking;
 
 import java.io.*;
 import java.net.*;
 
-// 16-4 ¿¹Á¦
+// 16-4 ï¿½ï¿½ï¿½ï¿½
 
 class Ex02_Networking02 {
 	public static void main(String[] args) {
@@ -26,5 +26,5 @@ class Ex02_Networking02 {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-	} // main() ³¡.
-} // Å¬·¡½º ³¡.
+	} // main() ï¿½ï¿½.
+} // Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½.

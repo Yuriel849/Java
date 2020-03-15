@@ -1,10 +1,10 @@
-package study;
+package networking;
 
 import java.io.*;
 import java.net.*;
 import java.util.*;
 
-// 16-13 ¿¹Á¦ --> Ex06_Networking06¿¡ »ç¿ëÇÏ±â À§ÇØ¼­
+// 16-13 ï¿½ï¿½ï¿½ï¿½ --> Ex06_Networking06ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½
 
 class Ex05_Networking05 {
 	@SuppressWarnings("rawtypes")
@@ -29,18 +29,18 @@ class Ex05_Networking05 {
 		
 		try {
 			serverSocket = new ServerSocket(7777);
-			System.out.println("¼­¹ö°¡ ½ÃÀÛµÇ¾ú½À´Ï´Ù.");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÛµÇ¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			
 			while(true) {
 				socket = serverSocket.accept();
-				System.out.println("[" + socket.getInetAddress() + ":" + socket.getPort() + "]" + "¿¡¼­ Á¢¼ÓÇÏ¿´½À´Ï´Ù.");
+				System.out.println("[" + socket.getInetAddress() + ":" + socket.getPort() + "]" + "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 				ServerReceiver thread = new ServerReceiver(socket);
 				thread.start();
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-	} // start() ³¡.
+	} // start() ï¿½ï¿½.
 	
 	
 	@SuppressWarnings("rawtypes")
@@ -53,7 +53,7 @@ class Ex05_Networking05 {
 				out.writeUTF(msg);
 			} catch(Exception e) {}
 		}
-	} // sendToAll() ³¡.
+	} // sendToAll() ï¿½ï¿½.
 	
 	
 	class ServerReceiver extends Thread {
@@ -74,10 +74,10 @@ class Ex05_Networking05 {
 			String name = "";
 			try {
 				name = in.readUTF();
-				sendToAll("#" + name + "´ÔÀÌ µé¾î¿Ô½À´Ï´Ù.");
+				sendToAll("#" + name + "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ô½ï¿½ï¿½Ï´ï¿½.");
 				
 				clients.put(name, out);
-				System.out.println("ÇöÀç ¼­¹öÁ¢¼ÓÀÚ ¼ö´Â " + clients.size() + "ÀÔ´Ï´Ù.");
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ " + clients.size() + "ï¿½Ô´Ï´ï¿½.");
 				
 				while(in != null) {
 					sendToAll(in.readUTF());
@@ -85,11 +85,11 @@ class Ex05_Networking05 {
 			} catch(IOException e) {
 				// ignore
 			} finally {
-				sendToAll("#" + name + "´ÔÀÌ ³ª°¬½À´Ï´Ù.");
+				sendToAll("#" + name + "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 				clients.remove(name);
-				System.out.println("[" + socket.getInetAddress() + ":" + socket.getPort() + "]" + "¿¡¼­ Á¢¼ÓÀ» Á¾·áÇÏ¿´½À´Ï´Ù.");
-				System.out.println("ÇöÀç ¼­¹öÁ¢¼ÓÀÚ ¼ö´Â " + clients.size() + "ÀÔ´Ï´Ù.");
-			} // try-catch-finally¹® ³¡.
-		} // run() ³¡.
-	} // ServerReceiver ³»ºÎ Å¬·¡½º ³¡.
-} // Å¬·¡½º ³¡.
+				System.out.println("[" + socket.getInetAddress() + ":" + socket.getPort() + "]" + "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ " + clients.size() + "ï¿½Ô´Ï´ï¿½.");
+			} // try-catch-finallyï¿½ï¿½ ï¿½ï¿½.
+		} // run() ï¿½ï¿½.
+	} // ServerReceiver ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½.
+} // Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½.
