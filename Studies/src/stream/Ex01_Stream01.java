@@ -15,8 +15,8 @@ class Ex01_Stream01 {
 				new Student("감자바", 3, 180)
 				);
 		
-		studentStream.sorted(Comparator.comparing(Student::getBan) // 반별 정렬
-					.thenComparing(Comparator.naturalOrder())) // 기본 정렬 (반별로 정렬 후 같은 반끼리는 이름 순으로 기본정렬하는 것)
+		studentStream.sorted(Comparator.comparing(Student::getBan) // Sort by class number
+					.thenComparing(Comparator.naturalOrder())) // Natural order sort (First order by class number, then within each class, order by name in alphabetical order)
 					.forEach(System.out::println);
 	}
 }
@@ -39,7 +39,7 @@ class Student implements Comparable<Student>{
 	int getBan() { return ban; }
 	int getTotalScore() { return totalScore; }
 	
-	// 총점 내림차순을 기본정렬로 한다.
+	// Descending order by totalScore
 	public int compareTo(Student s) {
 		return s.totalScore - this.totalScore;
 	}
