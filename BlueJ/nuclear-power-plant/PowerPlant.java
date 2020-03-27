@@ -32,12 +32,16 @@ public class PowerPlant
         
     }
 
+    public double getCapacity()
+    {
+        return capacity;
+    }
+    
     /**
      * 
      */
     public void print()
     {
-        System.out.printf("%-14s %-12s %-20s %-22s %-14s\n", "Power Station", "Capacity", "Construction Start", "Connection Year", "Country");
         System.out.printf("%-14s %-12s %-20s %-22s %-14s\n", name, capacity, constructionStart, connectionYear, country);
     }
 }
