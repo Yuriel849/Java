@@ -16,15 +16,17 @@ class Ex01_Stream01 {
 				);
 		
 		studentStream.sorted(Comparator.comparing(Student::getBan) // Sort by class number
-					.thenComparing(Comparator.naturalOrder())) // Natural order sort (First order by class number, then within each class, order by name in alphabetical order)
+					.thenComparing(Comparator.naturalOrder())) // Natural order -> Uses compareTo()
 					.forEach(System.out::println);
 	}
 }
 
 class Student implements Comparable<Student>{
-	String name;
-	int ban;
-	int totalScore;
+	String name;   	// Student's name
+	int ban;		// Student's class number
+	int totalScore; // Student's total score (grade)
+	
+	// Constructor
 	Student(String name, int ban, int totalScore) {
 		this.name = name;
 		this.ban = ban;
@@ -35,11 +37,12 @@ class Student implements Comparable<Student>{
 		return String.format("[%s, %d, %d]", name, ban, totalScore).toString();
 	}
 	
+	// Getters
 	String getName() { return name; }
 	int getBan() { return ban; }
 	int getTotalScore() { return totalScore; }
 	
-	// Descending order by totalScore
+	// Natural order for sorting -> Descending order by totalScore
 	public int compareTo(Student s) {
 		return s.totalScore - this.totalScore;
 	}
