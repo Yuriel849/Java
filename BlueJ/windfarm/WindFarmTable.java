@@ -52,12 +52,22 @@ public class WindFarmTable
     
     public void printTable()
     {
-        System.out.printf("%-20s %-10s %-15s %-10s %-6s\n",
-            "Name", "Capacity", "Country", "Turbines", "Year");
-        
+        System.out.println("_____________________________________________________________________");
+        System.out.printf("|                      < %-20s >                     |\n",
+            name.toUpperCase());
+        printLine();
+        WindFarm.printHeader();
+        printLine();
         for(WindFarm farm : array)
         {
             farm.print();
         }
+        printLine();
     }
+    
+    private void printLine()
+    {
+        System.out.println("---------------------------------------------------------------------");
+    }
+
 }

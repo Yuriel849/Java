@@ -81,7 +81,13 @@ public class WindFarm
     
     public void print()
     {
-        System.out.printf("%-20s %-10.0f %-15s %-10d %-6d \n",
+        System.out.printf("| %-20s %-10.0f %-15s %-10d %-6d |\n",
             name, capacity, country, numberTurbines, year);
+    }
+    
+    public static void printHeader()
+    {
+        System.out.printf("| %-20s %-10s %-15s %-10s %-6s |\n",
+            "Name", "Capacity", "Country", "Turbines", "Year");
     }
 }
