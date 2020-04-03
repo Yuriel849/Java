@@ -3,9 +3,9 @@ package io;
 import java.io.*;
 import java.util.Arrays;
 
-// Ex01_IO01 업그레이드 --> 배열을 이용해서 IO 효율을 향상
+// IO_01 upgrade --> Use array to increase efficiency
 
-class Ex02_IO02 {
+class IO_02 {
 	public static void main(String[] args) {
 		byte[] inSrc = { 0,1,2,3,4,5,6,7,8,9 };
 		byte[] outSrc = null;
@@ -18,13 +18,13 @@ class Ex02_IO02 {
 		input = new ByteArrayInputStream(inSrc);
 		output = new ByteArrayOutputStream();
 		
-		input.read(temp, 0, temp.length); // input배열에서 index값 0부터 temp의 길이만큼의 값들을 temp에 쓴다
-		output.write(temp, 5, 5); // temp 배열에서 index값 5부터 5개 값만 가져와서 output에 쓴다
+		input.read(temp, 0, temp.length); // Writes temp.length number of elements to temp array, starting from index=0
+		output.write(temp, 5, 5); // Outputs 5 elements from temp array, starting from index=5
 				
-		outSrc = output.toByteArray(); // 스트림의 내용을 byte 배열로 반환한다.
+		outSrc = output.toByteArray(); // Converts from stream to byte array
 		
 		System.out.println("Input Source : " + Arrays.toString(inSrc));
 		System.out.println("temp 	     : " + Arrays.toString(temp));
 		System.out.println("Output Source: " + Arrays.toString(outSrc));
 	}
-} // 클래스 끝.
+}
