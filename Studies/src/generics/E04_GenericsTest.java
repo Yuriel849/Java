@@ -8,12 +8,13 @@ import pool.Grape;
 import pool.Juice;
 import pool.Toy;
 
+@SuppressWarnings("unused")
 class E04_GenericsTest {
 	public static void main(String[] args) {
 		Fruits.<Apple>makeJuice(new Fruits<Apple>()); // 객체 생성 없이 지네릭 메서드 makeJuice 호출
 			// 일반적으로 리턴타입 앞에 위치한 <T>는 매개변수의 <T>와 같기 때문에 생략할 수 있다.
 		Fruits.makeJuice(new Fruits<Apple>());
-		Fruits.makeJuice(new Fruits<Toy>()); // 와일드카드 사용으로 Fruit의 child 타입만 입력될 수 있다 --> Toy 사용 불가
+//		Fruits.makeJuice(new Fruits<Toy>()); // 와일드카드 사용으로 Fruit의 child 타입만 입력될 수 있다 --> Toy 사용 불가
 	}
 
 }
