@@ -3,21 +3,21 @@ package io;
 import java.io.*;
 import java.util.ArrayList;
 
-import io.Ex11_Serialization01;
+import pool.UserInfo_Serialization;
 
-class Ex13_Serialization03 {
+class IO_Serialization_02 {
 	@SuppressWarnings({ "rawtypes" })
 	public static void main(String[] args) {
 		try {
 			String fileName = "UserInfo.ser";
-			FileInputStream fis = new FileInputStream(fileName); 	// 이것 하나가 기반 스트림!
-			BufferedInputStream bis = new BufferedInputStream(fis); // 	>> 보조스트림 01
-			ObjectInputStream in = new ObjectInputStream(bis); 		// 	>> 보조스트림 02
+			FileInputStream fis = new FileInputStream(fileName);
+			BufferedInputStream bis = new BufferedInputStream(fis);
+			ObjectInputStream in = new ObjectInputStream(bis);
 			
-			// 객체를 읽을 때는 출력한 순서와 일치해야한다.
-			Ex11_Serialization01 u1 = (Ex11_Serialization01) in.readObject();
-			Ex11_Serialization01 u2 = (Ex11_Serialization01) in.readObject();
-			ArrayList list = (ArrayList)in.readObject();
+			// Order of deserialization must match order of serialization
+			UserInfo_Serialization u1 = (UserInfo_Serialization) in.readObject();
+			UserInfo_Serialization u2 = (UserInfo_Serialization) in.readObject();
+			ArrayList list = (ArrayList) in.readObject();
 			
 			/* 출력할 때, u1 & u2를 list에 add()한 후에 list의 데이터를 출력했다.
 			 * 	>> 즉, UserInfo.ser에 있는 3번째 데이터는 ArrayList에서 쓸 수 있는 단 하나의 데이터이다.
@@ -33,5 +33,5 @@ class Ex13_Serialization03 {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-	} // main() 끝.
-} // 클래스 끝.
+	}
+}

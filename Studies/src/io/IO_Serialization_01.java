@@ -3,33 +3,32 @@ package io;
 import java.io.*;
 import java.util.ArrayList;
 
-import io.Ex11_Serialization01;
+import pool.UserInfo_Serialization;
 
-class Ex12_Serialization02 {
+class IO_Serialization_01 {
 	public static void main(String[] args) {
 		try {
 			String fileName = "UserInfo.ser";
 			FileOutputStream fos = new FileOutputStream(fileName);
-			BufferedOutputStream bos = new BufferedOutputStream(fos);
-			
+			BufferedOutputStream bos = new BufferedOutputStream(fos);			
 			ObjectOutputStream out = new ObjectOutputStream(bos);
 			
-			Ex11_Serialization01 u1 = new Ex11_Serialization01("JavaMan", "1234", 30); // u1의 타입은 반드시 "java.io.Serializable"을 구현한 클래스이어야 한다.
-			Ex11_Serialization01 u2 = new Ex11_Serialization01("C++ Man", "4321", 26);
+			// UserInfo_Serialization MUST have implemented the java.io.Serializable interface 
+			UserInfo_Serialization u1 = new UserInfo_Serialization("JavaMan", "1234", 30);
+			UserInfo_Serialization u2 = new UserInfo_Serialization("C++ Man", "4321", 26);
 			
-			ArrayList<Ex11_Serialization01> list = new ArrayList<>();
+			ArrayList<UserInfo_Serialization> list = new ArrayList<>();
 			list.add(u1);
 			list.add(u2);
 			
-			
-			// 객체를 직렬화한다.
+			// Serialize objects
 			out.writeObject(u1);
 			out.writeObject(u2);
 			out.writeObject(list);
 			out.close();
-			System.out.println("직렬화가 성공적으로 끝났습니다.");
+			System.out.println("Serialization successful.");
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
-	} // main() 끝.
-} // 클래스 끝.
+	}
+}
