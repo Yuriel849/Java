@@ -2,8 +2,8 @@
 A repository of my studies of the Java language
 
 ## Projects
-"Studies", "Exercises By Topic", and "Exercises By Chapter" were created with JDK1.8_192 & Eclipse IDE. <br>
-> Learning material: 자바의 정석 3판 (저자 남궁성). <br> Reorganized in February 2020
+"Studies" was created with JDK1.8_192 & the Eclipse IDE. <br>
+> Learning material: 자바의 정석 3판 (저자 남궁성). <br> Reorganized in February and April 2020
 
 "BlueJ" is a folder for the BlueJ projects created and utilized in the course Software Construction 2 at HAW Hamburg. <br>
 > BlueJ version: 4.2.2 (Java version 11.0.2)
