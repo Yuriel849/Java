@@ -1,10 +1,10 @@
 package exercises.byChapter.chapter_05;
 
-// ���ĺ��� ���ڸ� �־��� ��ȣǥ�� ��ȣȭ�ϴ� ���α׷��� �ۼ��϶�.
+// Using String.charAt()
 
 class Exercise05_10 {
 	public static void main(String[] args) {
-		char[] abcCode = {
+		char[] abcCode = { // 26 characters corresponding to 26 letters of the alphabet
 				'`', '~', '!', '@', '#', '$', '%', '^', '&', '*',
 				'(', ')', '-', '_', '+', '=', '|', '[', ']', '{',
 				'}', ';', ':', ',', '.', '/'
@@ -15,7 +15,6 @@ class Exercise05_10 {
 		String src = "abc123";
 		String result = "";
 		
-		// ���ڿ� src�� ���ڸ� charAt()���� �ϳ��� �о ��ȯ �� result�� ����
 		for(int i = 0; i < src.length(); i++) {
 			char ch = src.charAt(i);
 		

@@ -1,6 +1,6 @@
 package exercises.byChapter.chapter_04;
 
-/* ������ �� �Ϻθ� ���Ŀ� ���� ����϶�.
+/* Print the following:
  * 
  * 2*1=2	3*1=3	4*1=4
  * 2*2=4	3*2=6	4*2=8
@@ -30,7 +30,6 @@ public class Exercise04_12 {
 				System.out.print(x + "*" + y + "=" + x*y + "\t");
 			}
 			System.out.println();
-		}
-
-	} // main() ��.
-} // Ŭ���� ��.
+		} // outer for loop
+	}
+}

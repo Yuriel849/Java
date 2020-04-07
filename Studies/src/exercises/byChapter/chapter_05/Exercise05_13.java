@@ -2,7 +2,7 @@ package exercises.byChapter.chapter_05;
 
 import java.util.Scanner;
 
-// �ܾ��� ���� ��ġ�� ��� �����ְ� ������ �ܾ ���ߴ� ���α׷��� �ۼ��϶�.
+// Guess what the scrambled words are
 
 class Exercise05_13 {
 	public static void main(String[] args) {
@@ -11,7 +11,7 @@ class Exercise05_13 {
 		Scanner scan = new Scanner(System.in);
 		
 		for(int i = 0; i < words.length; i++) {
-			char[] question = words[i].toCharArray(); // String�� char[]�� ��ȯ
+			char[] question = words[i].toCharArray(); // String.toCharArray();
 			
 			for(int j = 0; j < question.length; j++) {
 				int k = (int)(Math.random() * question.length);
@@ -20,15 +20,17 @@ class Exercise05_13 {
 				question[k] = tmp;
 			}
 			
-			System.out.printf("Q%d. %s�� ������ �Է��ϼ��� >>", i+1, new String(question));
+			System.out.printf("Q%d. What is this word : %s >>", i+1, new String(question));
 			String answer = scan.nextLine();
 			
-			// trim()���� answer�� �¿� ������ ������ ��, equals�� word[i]�� ��
+			// Use String.trim() on the user input to remove whitespaces
 			if(words[i].equals(answer.trim())) {
-				System.out.printf("�¾ҽ��ϴ�.%n%n");
+				System.out.printf("  Correct.%n%n");
 			} else {
-				System.out.printf("Ʋ�Ƚ��ϴ�.%n%n");
+				System.out.printf("Incorrect.%n%n");
 			}
-		} // for�� ��.
-	} // main() ��.
-} // Ŭ���� ��.
+		} // for loop
+		
+		scan.close();
+	}
+}

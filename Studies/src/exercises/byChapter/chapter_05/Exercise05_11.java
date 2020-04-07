@@ -1,6 +1,6 @@
 package exercises.byChapter.chapter_05;
 
-// 2���� �迭�� �����ͺ��� ���ο� ���η� 1�� �� ū �迭�� �����ؼ� �迭�� ��� ���� ������ ��ҿ� �� ���� ���� ������ �����ϰ� ����϶�.
+// Print the sums of each row and column along the right and bottom edges
 
 class Exercise05_11 {
 	public static void main(String[] args) {
@@ -29,5 +29,5 @@ class Exercise05_11 {
 			}
 			System.out.println();
 		}
-	} // main() ��.
-} // Ŭ���� ��.
+	}
+}

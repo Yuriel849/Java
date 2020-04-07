@@ -1,49 +1,44 @@
 package exercises.byChapter.chapter_05;
 
-// Ŀ�ǵ�������κ��� �Ž��� �� �ݾ��� �Է� �޾� ����Ѵ�.
-// ������ ������ ������ �Ž������� ������ �� ������, "�Ž������� �����մϴ�."��� ����ϰ� �����Ѵ�.
-// ������ ���� ����ϴٸ�, �Ž������� ������ ��ŭ ���� ������ ���� ���� ������ ������ ȭ�鿡 ����Ѵ�.
+// Take the amount of money as user input from the command console
 
 class Exercise05_07 {
 	public static void main(String[] args) {
 		if(args.length != 1) {
-			System.out.println("USAGE : java Exercise5_7 3120");
+			System.out.println("USAGE : java Exercise05_7 3120");
 			System.exit(0);
 		}
 		
-		// ���ڿ��� ���ڷ� ��ȯ�Ѵ�. (�Է��� ���� ���ڰ� �ƴ� ��� ���� �߻�)
 		int money = Integer.parseInt(args[0]);
 		
 		System.out.println("money = " + money);
 		
-		int[] coinUnit = { 500, 100, 50, 10 }; // ������ ����
-		int[] coin 	   = {   5,   5,  5,  5 }; // ������ ������ ����
+		int[] billUnit = { 500, 100, 50, 10 };
+		int[] bills    = {  5,   5,  5,  5 };
 		
-		for(int i = 0; i < coinUnit.length; i++) {
-			int coinNum = 0;
-				// 1. �ݾ�(money)�� ���� ������ ������ �ʿ��� ������ ����(coinNum)�� ���Ѵ�.
-			coinNum = money / coinUnit[i];
-				// 2. coin���� coinNum ��ŭ�� ������ ���� (���� ������ ������� �ʴٸ� coin�� �ִ� ��ŭ�� ����.)
-			if(coinNum > coin[i]) {
-				coinNum = coin[i];
-				coin[i] = 0;
+		for(int i = 0; i < billUnit.length; i++) {
+			int billNum = 0;
+			billNum = money / billUnit[i];
+
+			if(billNum > bills[i]) {
+				billNum = bills[i];
+				bills[i] = 0;
 			} else {
-				coin[i] -= coinNum;
+				bills[i] -= billNum;
 			}
-				// 3. �ݾ׿��� ������ ����(coinNum)�� ���� ������ ���� ���� ����.
-				money -= coinNum * coinUnit[i];
-				System.out.println(coinUnit[i] + "�� : " + coinNum);
-		}
+
+			money -= billNum * billUnit[i];
+		} // for loop
 		
 		if(money > 0) {
-			System.out.println("�Ž������� �����մϴ�.");
-			System.exit(0); // ���α׷��� �����Ѵ�.
+			System.out.println("Insufficient number of bills for this amount.");
+			System.exit(0);
 		}
 		
-		System.out.println(" = ���� ������ ���� = ");
+		System.out.println(" = REMAINING BILLS = ");
 		
-		for(int i = 0; i < coinUnit.length; i++) {
-			System.out.println(coinUnit[i] + "�� : " + coin[i]);
+		for(int i = 0; i < billUnit.length; i++) {
+			System.out.println(billUnit[i] + "-euro : " + bills[i]);
 		}
 	}
 }
