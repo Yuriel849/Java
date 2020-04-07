@@ -1,7 +1,5 @@
 package exercises.byChapter.chapter_07;
 
-// BuyerŬ������ �ۼ��ϰ� ������ ���, �� ������ ��ٱ��Ͽ� �����ϰ�, ������ ����� ����ϴ� ����
-
 class Exercise07_19 {
 	public static void main(String[] args) {
 		Buyer b = new Buyer();
@@ -15,8 +13,8 @@ class Exercise07_19 {
 		
 		
 		b.summary();
-	} // main() ��.
-} // Ŭ���� ��.
+	}
+}
 
 class Buyer {
 	int money = 1000;

@@ -1,63 +1,31 @@
 package exercises.byChapter.chapter_06;
 
-// TVŬ������ �ۼ��϶�.
+import pool.MyTV;
 
 public class Exercise06_21 {
 	public static void main(String[] args) {
 		MyTV t = new MyTV();
 		
-		t.channel = 100;
-		t.volume = 0;
-		System.out.println("CH: " + t.channel + ", VOL: " + t.volume);
+		t.setChannel(100);
+		t.setVolume(0);
+		System.out.println("CH: " + t.getChannel() + ", VOL: " + t.getVolume());
 
 		t.channelDown();
-		t.volumeDown();
-		System.out.println("CH: " + t.channel + ", VOL: " + t.volume);
+		t.volumeDown(); // Does nothing because volume is already minimum (0)
+		System.out.println("CH: " + t.getChannel() + ", VOL: " + t.getVolume());
 
-		t.volume = 100;
+		t.setVolume(100);
 		t.channelUp();
-		t.volumeUp();
-		System.out.println("CH: " + t.channel + ", VOL: " + t.volume);
+		t.volumeUp(); // Does nothing because volume is already maximum (100)
+		System.out.println("CH: " + t.getChannel() + ", VOL: " + t.getVolume());
+		
+		t.setChannel(10);
+		System.out.println("CH:"+t.getChannel());
+		t.setChannel(20);
+		System.out.println("CH:"+t.getChannel());
+		t.gotoPrevChannel();
+		System.out.println("CH:"+t.getChannel());
+		t.gotoPrevChannel();
+		System.out.println("CH:"+t.getChannel());
 	}
-
 }
-
-class MyTV {
-	boolean isPowerOn;
-	int channel;
-	int volume;
-	
-	final int MAX_VOLUME = 100;
-	final int MIN_VOLUME = 0;
-	final int MAX_CHANNEL = 100;
-	final int MIN_CHANNEL = 1;
-	
-	void turnOnOff() {
-		// isPowerOn�� ���� true�� false��, false�� true�� �ٲ۴�.
-		isPowerOn = !isPowerOn;
-	}
-	
-	void volumeUp() {
-		// volume�� ���� MAX_VOLUME���� ���� ���� ���� 1 ������Ų��.
-		if(volume < MAX_VOLUME) { volume++; }
-	}
-	
-	void volumeDown() {
-		// volume�� ���� MIN_VOLUME���� Ŭ ���� ���� 1 ���ҽ�Ų��.
-		if(volume > MIN_VOLUME) { volume--; }
-	}
-	
-	void channelUp() {
-		// channel�� ���� 1 ������Ų��.
-		// ���� channel�� MAX_CHANNEL�̸�, channel�� ���� MIN_CHANNEL�� �ٲ۴�.
-		if(channel == MAX_CHANNEL) { channel = MIN_CHANNEL; }
-		else { channel++; } // else �ٿ��� �Ѵ� --> if�� ����ǵ� �� �κ��� �� ������ ����Ǳ� �����̴�.
-	}
-	
-	void channelDown() {
-		// channel�� ���� 1 ���ҽ�Ų��.
-		// ���� channel�� MIN_CHANNEL�̸�, channel�� ���� MAX_CHANNEL�� �ٲ۴�.
-		if(channel == MIN_CHANNEL) { channel = MAX_CHANNEL; }
-		else { channel--; }
-	}
-} // class MyTV ��.
