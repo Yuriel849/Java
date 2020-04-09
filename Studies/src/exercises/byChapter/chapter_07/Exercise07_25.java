@@ -1,27 +1,36 @@
 package exercises.byChapter.chapter_07;
 
-// OuterŬ������ Inner ����Ŭ������ ������� iv�� ���� ���϶�.
+// Outer and inner classes, static and non-static classes
 
 class Outer {
+	int iv = 10;
+	
 	class Inner {
-		int iv = 100;
-	} // ����Ŭ���� Inner ��.
+		int iv = 20;
+		
+		void method() {
+			int iv = 30;
+			
+			System.out.println("\nCalling Inner.method()");
+			System.out.println(			  iv);
+			System.out.println(		 this.iv);
+			System.out.println(Outer.this.iv);
+		} // Inner.method()
+	}
 	
 	static class Inside {
-		int iv = 200;
-	} // ����Ŭ���� Inside ��.
-} // �ܺ�Ŭ���� Outer ��.
-
+		int iv = 40;
+	}
+}
 
 class Exercise07_25 {
 	public static void main(String[] args) {
-		// Outer Ŭ������ ���� Ŭ���� Inside�� ������� iv�� ����Ѵ�.
-		Outer.Inside inside = new Outer.Inside(); // Inside ����Ŭ������ static�̱⿡ �ܺ�Ŭ���� ��ü������ ���ʿ��ϴ�
-		System.out.println(inside.iv);			  // 	>> ������ iv�� �ν��Ͻ������̱⿡ iv�� �����Ϸ��� ��ü ������ �ؾ��Ѵ�
+		Outer.Inside inside = new Outer.Inside();
+		System.out.println(inside.iv);
 		
-		// Outer Ŭ������ ���� Ŭ���� Inner�� ������� iv�� ����Ѵ�.
-		Outer out = new Outer(); 		  // 1. �ܺ� Ŭ���� ��ü�� ����
-		Outer.Inner in = out.new Inner(); // 2. ���� Ŭ���� ��ü�� ����
-		System.out.println(in.iv);		  // 	>> �������� Ÿ���� <�ܺ�>.<����>, ���� �� <�ܺ� ��ü��>.new <���� ������>
-	} // main() ��.
-} // Ŭ���� ��.
+		Outer out = new Outer();
+		Outer.Inner in = out.new Inner();
+		System.out.println(in.iv);
+		in.method();
+	}
+}

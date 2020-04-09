@@ -5,8 +5,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-// ����ڿ��� ��ȭ��ȣ�� �Ϻθ� �Է¹޾� ��ġ�ϴ� ��ȭ��ȣ�� �־��� ���ڿ� �迭���� ã�Ƽ� ����϶�.
-// Pattern & Matcher�� ����϶�.
+// Pattern & Matcher.
 
 class Exercise09_14 {
 	public static void main(String[] args) {
@@ -17,9 +16,7 @@ class Exercise09_14 {
 				"013-3456-7890"
 		};
 		
-		@SuppressWarnings("rawtypes")
-		ArrayList list = new ArrayList();
-		@SuppressWarnings("resource")
+		ArrayList<String> list = new ArrayList<>();
 		Scanner scan = new Scanner(System.in);
 		
 		while(true) {
@@ -27,8 +24,9 @@ class Exercise09_14 {
 			String input = scan.nextLine().trim();
 			
 			if(input.equals("")) {
-				continue;
+				continue; // Continue while loop
 			} else if(input.equalsIgnoreCase("Q")) {
+				scan.close();
 				System.exit(0);
 			}
 
@@ -36,7 +34,7 @@ class Exercise09_14 {
 			for(int i = 0; i < phoneNumArr.length; i++) {
 				String phone = phoneNumArr[i].replace("-", "");
 				
-				Matcher m = p.matcher(phone );
+				Matcher m = p.matcher(phone);
 				if(m.matches()) {
 					list.add(phoneNumArr[i]);
 				}
@@ -46,8 +44,8 @@ class Exercise09_14 {
 				System.out.println(list);
 				list.clear();
 			} else {
-				System.out.println("��ġ�ϴ� ��ȣ�� �����ϴ�.");
+				System.out.println("No matching phone numbers found.");
 			}
-		} // while�� ��.
-	} // main() ��.
-} // Ŭ���� ��.
+		} // while loop
+	} // main()
+}

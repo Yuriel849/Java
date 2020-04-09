@@ -2,7 +2,7 @@ package exercises.byChapter.chapter_09;
 
 class Exercise09_03 {
 	public static void main(String[] args) {
-		String fullPath = "c:\\jdk1.8\\work\\PathSeparateTest.java"; // �̽������� ���� "\\"�� "\" �ϳ��� ����ȴ�
+		String fullPath = "c:\\jdk1.8\\work\\PathSeparateTest.java";
 		String path = "";
 		String fileName = "";
 		
@@ -15,5 +15,5 @@ class Exercise09_03 {
 		System.out.println("fullPath : " + fullPath);
 		System.out.println("path : " + path);
 		System.out.println("fileName : " + fileName);
-	} // main() ��.
-} // Ŭ���� ��.
+	}
+}

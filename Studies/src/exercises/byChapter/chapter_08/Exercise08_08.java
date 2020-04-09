@@ -3,36 +3,33 @@ package exercises.byChapter.chapter_08;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-// 1 ~ 100 ������  ���ڸ� ���ߴ� ������ �����ϴٰ� ���ڰ� �ƴ� �����ڸ� ������ ���ܰ� �߻��Ѵ�.
-// ����ó���� �϶�.
-
 class Exercise08_08 {
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		// 1 ~ 100 ������ ������ ���� �� answer�� �����Ѵ�.
-		int answer = (int)(Math.random() * 100) + 1;
-		int input = 0; // ������Է��� ������ ����
-		int count = 0; // �õ�Ƚ���� ���� ���� ����
+		int answer = (int)(Math.random() * 100) + 1; // Random int between 1 ~ 100
+		int input = 0;
+		int count = 0;
 		
 		do {
 			count++;
-			System.out.println("1�� 100 ������ ���� �Է��ϼ���.");
+			System.out.println("Type an integer between 1 and 100.");
 			
 			try {
 				input = new Scanner(System.in).nextInt();
 			} catch(InputMismatchException e) {
-				System.out.println("��ȿ���� ���� ���Դϴ�. �ٽ� ���� �Է����ּ���.");
-				continue; // do-while�� �ٽ� ����
+				System.out.println("Please enter an integer between 1 and 100.");
+				continue; // Continue the do-while loop
 			}
 			
 			if(answer > input) {
-				System.out.println("�� ū ���� �Է��ϼ���.");
+				System.out.println("Your number is too low.");
 			} else if(answer < input) {
-				System.out.println("�� ���� ���� �Է��ϼ���.");
+				System.out.println("Your number is too high.");
 			} else {
-				System.out.println("������ϴ�.");
-				System.out.println("�õ�Ƚ���� " + count + "���Դϴ�.");
-				break; // do-while���� �����.
+				System.out.println("Correct.");
+				System.out.println("It took you " + count + " tries to guess correctly.");
+				break; // Break the do-while loop
 			}
-		} while(true); // ���ѹݺ���
-	} // main() ��.
-} // Ŭ���� ��.
+		} while(true);
+	}
+}

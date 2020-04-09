@@ -13,6 +13,15 @@ class SutdaCard {
 		this.IS_KWANG = isKwang;
 	}
 
+	// equals() overridden to check if the SutdaCard instances have the same states
+	public boolean equals(Object obj) {
+		if(obj instanceof SutdaCard) {
+			SutdaCard sutdaC = (SutdaCard) obj;
+			return (this.IS_KWANG == sutdaC.IS_KWANG && this.NUM == sutdaC.NUM);
+		}
+		return false;
+	}
+	
 	public String toString() {
 		return NUM + ( IS_KWANG ? "K" : "");
 	}

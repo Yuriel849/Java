@@ -1,17 +1,15 @@
 package exercises.byChapter.chapter_09;
 
-// �ϳ��� �� ���ڿ�(source) �߿��� Ư�� ���ڿ��� ��ġ�ϴ� ���ڿ��� ������ ���϶�.
-
 class Exercise09_13 {
 	public static void main(String[] args) {
 		String src = "aabbccAABBCCaa";
 		System.out.println(src);
-		System.out.println("aa�� " + stringCount(src, "aa") + "�� ã�ҽ��ϴ�.");
-	} // main() ��.
+		System.out.println("\"aa\" appears in this string " + stringCount(src, "aa") + " number of times.");
+	} // main()
 	
 	static int stringCount(String src, String key) {
 		return stringCount(src,key,0);
-	} // stringCount(String, String) ��.
+	} // stringCount(String, String)
 	
 	static int stringCount(String src, String key, int pos) {
 		int count = 0;
@@ -27,5 +25,5 @@ class Exercise09_13 {
 		}
 		
 		return count;
-	} // stringCount(String, String, int) ��.
-} // Ŭ���� ��.
+	} // stringCount(String, String, int)
+}
