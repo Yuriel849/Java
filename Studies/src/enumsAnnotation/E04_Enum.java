@@ -1,6 +1,6 @@
-package exercises.byChapter.chapter_12;
+package enumsAnnotation;
 
-class Exercise12_05 {
+class E04_Enum {
 	public static void main(String args[]) {
 		Deck d = new Deck(); // ī�� �� ��(Deck)�� �����.
 		Card c = d.pick(0); // ���� ���� ���� ���� ī�带 �̴´�.
