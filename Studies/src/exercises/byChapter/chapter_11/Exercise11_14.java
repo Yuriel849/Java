@@ -2,7 +2,7 @@ package exercises.byChapter.chapter_11;
 
 import java.util.*;
 
-// ����ó�� ���α׷��� �Ϻ��̴�. ScannerŬ������ �̿��ؼ� ȭ�����κ��� �����͸� �Է��ϰ� �����ִ� ����� �ϼ��϶�.
+// Needs cleaning up
 
 class Exercise11_14 {
 	@SuppressWarnings("rawtypes")
