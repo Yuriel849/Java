@@ -1,13 +1,19 @@
 package exercises.byChapter.chapter_13;
 
-// Thread Ŭ�����κ��� ��� �޴� �ڵ带 Runnable �������̽��� �����ϵ��� �����϶�.
-
 class Exercise13_01 {
 	public static void main(String args[]) {
 		Thread th1 = new Thread(new Thread1());
+		Thread th2 = new Thread(new Thread2());
+		
 		th1.start();
+		th2.start();
 	}
-} // Ŭ���� ��.
+}
+
+/* TWO ways to create a thread
+ * 	>> Inherit Thread class and "public void run()"
+ * 	>> Implement Runnable interface and "public void run()"
+ */
 
 class Thread1 implements Runnable {
 	public void run() {
@@ -15,13 +21,12 @@ class Thread1 implements Runnable {
 			System.out.print('-');
 		}
 	}
-} // Thread1 Ŭ���� ��.
+} // Thread1 class
 
-	// ������ Thread�� ��ӹ��� Ŭ����
-//class Thread1 extends Thread {
-//	public void run() {
-//		for (int i = 0; i < 300; i++) {
-//			System.out.print('-');
-//		}
-//	}
-//}
+class Thread2 extends Thread {
+	public void run() {
+		for (int i = 0; i < 300; i++) {
+			System.out.print('|');
+		}
+	}
+} // Thread2 class

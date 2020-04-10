@@ -7,13 +7,13 @@ class Exercise13_09 {
 		Exercise13_09_1 th1 = new Exercise13_09_1();
 		th1.start();
 	
-		String input = JOptionPane.showInputDialog("�ƹ� ���̳� �Է��ϼ���.");
+		String input = JOptionPane.showInputDialog("Please type something.");
 	
-		System.out.println("�Է��Ͻ� ���� " + input + "�Դϴ�.");
+		System.out.println("You have entered \"" + input + "\".");
 	
-		th1.interrupt(); // �����忡�� �۾��� ���߶�� ��û�Ѵ�.
-	} // main() ��.
-} // Ŭ���� ��.
+		th1.interrupt();
+	}
+}
 
 class Exercise13_09_1 extends Thread {
 	public void run() {
@@ -22,16 +22,12 @@ class Exercise13_09_1 extends Thread {
 		while(i!=0 && !isInterrupted()) {
 			System.out.println(i--);
 			try {
-				Thread.sleep(1000); // 1�� ����
+				Thread.sleep(1000); // Sleep for 1 second
 			} catch(InterruptedException e) {
 				interrupt();
-				/* Ȥ�� �ڰ� �ִ� ���¿��� interrupt�Ǹ� �ٽ� ����� interrupted ���´� �ٽ� false�� �ʱ�ȭ�ȴ�.
-				 * 	>> ������ main �����忡�� interrupt�ϸ� �װ��� �����ϱ� ���ؼ��� ��
-				 * 		>> �ٽ� �ڽ��� interrupt�ؼ� �����
-				 */
 			}
 		}
 		
-		System.out.println("ī��Ʈ�� ����Ǿ����ϴ�.");
-	} // run() ��.
-} // Ŭ���� ��.
+		System.out.println("Sleep interrupted.");
+	} // run()
+}
