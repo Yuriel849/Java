@@ -3,7 +3,7 @@ package stream;
 import java.util.*;
 import java.util.stream.*;
 
-class Ex01_Stream01 {
+class Ex01_Stream {
 	public static void main(String[] args) {
 		Stream<Student> studentStream = Stream.of(
 				new Student("이자바", 3, 300),

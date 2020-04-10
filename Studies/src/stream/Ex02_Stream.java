@@ -3,7 +3,7 @@ package stream;
 import java.io.File;
 import java.util.stream.Stream;
 
-class Ex02_Stream02 {
+class Ex02_Stream {
 	public static void main(String[] args) {
 		File[] fileArr = { new File("Ex1.java"), new File("Ex1.bak"), new File("Ex2.java"), new File("Ex1"), new File("Ex1.txt") };
 

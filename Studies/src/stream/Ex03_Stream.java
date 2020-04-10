@@ -3,7 +3,7 @@ package stream;
 import java.util.*;
 import java.util.stream.*;
 
-class Ex03_Stream03 {
+class Ex03_Stream {
 	public static void main(String[] args) {
 		Stream<String[]> strArrStrm = Stream.of(new String[] {"abc", "def", "jkl"}, new String[] {"ABC", "GHI", "JKL"});
 		Stream<String> strStrm = strArrStrm.flatMap(Arrays::stream);
