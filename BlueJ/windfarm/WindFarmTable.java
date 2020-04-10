@@ -13,7 +13,9 @@ public class WindFarmTable
     private String name;
     // ArrayList with data on wind farms
     private ArrayList<WindFarm> array;
-
+    // Boolean to indicate for method initList() whether the list has already been initialized or not
+    private boolean initialized = false;
+    
     /**
      * Constructor for objects of class WindFarmTable
      * 
@@ -24,7 +26,35 @@ public class WindFarmTable
         this.name = name;
         array = new ArrayList<WindFarm>();
     }
-
+    
+    /**
+     * Initialize the list with dummy data
+     */
+    public void initList()
+    {
+        if(initialized == false)
+        {
+            addPowerStation(new WindFarm("Thortonbank", "Belgium", 325.0, 54, 2013));
+            addPowerStation(new WindFarm("Sheringham Shoal", "United Kingdom", 315, 88, 2012));
+            addPowerStation(new WindFarm("Thanet", "United Kingdom", 300, 100, 2010));
+            addPowerStation(new WindFarm("Walney", "United Kingdom", 659, 87, 2012));
+            addPowerStation(new WindFarm("London Array", "United Kingdom", 630, 175, 2013));
+            addPowerStation(new WindFarm("Gemini Wind Farm", "Netherlands", 600, 150, 2017));
+            addPowerStation(new WindFarm("Greater Gabbard", "United Kingdom", 504, 140, 2012));
+            addPowerStation(new WindFarm("Anholt", "Denmark", 400, 111, 2013));
+            addPowerStation(new WindFarm("BARD Offshore 1", "Germany", 400, 80, 2013));
+            addPowerStation(new WindFarm("Rampion Wind Farm", "United Kingdom", 400, 116, 2018));
+            
+            System.out.println("WindFarmTable object initialized");
+            
+            initialized = true;
+        }
+        else
+        {
+            System.out.println("Already initialized");
+        }
+    }
+    
     /**
      * Adds the given wind farm to an ArrayList
      * 
@@ -50,6 +80,46 @@ public class WindFarmTable
         }
         
         return totalPower;
+    }
+    
+    /**
+     * Add all WindFarm instances located in the given country to a set that is returned
+     */
+    public HashSet<WindFarm> findWindFarms(String country)
+    {
+        HashSet<WindFarm> result = new HashSet<>();
+        
+        for(WindFarm farm : array)
+        {
+            if(farm.getCountry().equals(country))
+            {
+                result.add(farm);
+            }
+        }
+        
+        return result;
+    }
+
+    
+    /**
+     * Prints all WindFarm instances located in the given country to the terminal window
+     */
+    public void listWindFarms(String country)
+    {
+        System.out.println("_____________________________________________________________________");
+        System.out.printf("|                      < %-20s >                     |\n",
+            name.toUpperCase());
+        printLine();
+        WindFarm.printHeader();
+        printLine();
+        for(WindFarm farm : array)
+        {
+            if(farm.getCountry().equals(country))
+            {
+                farm.print();
+            }
+        }
+        printLine();
     }
     
     /**
