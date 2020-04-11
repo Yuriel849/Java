@@ -83,7 +83,10 @@ public class WindFarmTable
     }
     
     /**
-     * Add all WindFarm instances located in the given country to a set that is returned
+     * Add all WindFarm instances located in the given country to a set that is returned.
+     * 
+     * @param String The string to match with the country field of wind farm objects.
+     * @return HashSet containing wind farm objects where the country field matches the parameter.
      */
     public HashSet<WindFarm> findWindFarms(String country)
     {
@@ -102,7 +105,9 @@ public class WindFarmTable
 
     
     /**
-     * Prints all WindFarm instances located in the given country to the terminal window
+     * Prints all WindFarm instances located in the given country to the terminal window.
+     * 
+     * @param String The string to match with the country field of wind farm objects.
      */
     public void listWindFarms(String country)
     {
