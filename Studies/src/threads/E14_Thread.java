@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 // wait & notify 사용하기 --> Not always, but exception thrown because it is not synchronized
 
-class E14_Thread14 {
+class E14_Thread {
 	public static void main(String[] args) throws Exception {
 		Table table = new Table(); // Object shared by multiple threads
 		

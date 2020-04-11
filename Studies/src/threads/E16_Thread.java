@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * 		>> 재진입 --> wait로 lock 풀고 다시 활성화되는 것 --> 이렇게 다시 활성화된 것이 reentrant
  */
 
-class E16_Thread16 {
+class E16_Thread {
 	public static void main(String[] args) throws Exception {
 		Table3 table = new Table3(); // Object shared by multiple threads
 		

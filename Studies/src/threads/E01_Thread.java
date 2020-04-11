@@ -1,6 +1,11 @@
 package threads;
 
-class E01_Thread01 {
+/* TWO ways to create a thread
+ * 	>> Inherit Thread class and "public void run()"
+ * 	>> Implement Runnable interface and "public void run()"
+ */
+
+class E01_Thread {
 	public static void main(String[] args) {
 		// 1st way to create a thread --> Thread constructor
 		ThreadEx01 t1 = new ThreadEx01();

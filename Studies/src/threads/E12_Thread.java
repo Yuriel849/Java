@@ -2,7 +2,7 @@ package threads;
 
 // join() 사용하기
 
-class E12_Thread12 {
+class E12_Thread {
 	static long startTime = 0;
 	
 	public static void main(String[] args) {
@@ -18,7 +18,7 @@ class E12_Thread12 {
 			th2.join(); // main 쓰레드가 th2의 작업이 끝날 때까지 기다린다.
 		} catch (InterruptedException e) {}
 
-		System.out.println("소요시간 : " + (System.currentTimeMillis() - E12_Thread12.startTime));
+		System.out.println("소요시간 : " + (System.currentTimeMillis() - E12_Thread.startTime));
 	} // main() 끝.
 }
 

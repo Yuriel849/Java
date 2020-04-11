@@ -2,7 +2,7 @@ package threads;
 
 // sleep() 테스트
 
-class E06_Thread06 {
+class E06_Thread {
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) throws Exception {
 		MyThread t = new MyThread();

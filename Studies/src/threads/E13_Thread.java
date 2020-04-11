@@ -2,7 +2,7 @@ package threads;
 
 // Not synchronized
 
-public class E13_Thread13 {
+public class E13_Thread {
 	public static void main(String[] args) {
 		Runnable r = new RunnableEx13();
 		new Thread(r).start(); // ThreadGroup에 의해 참조되므로 garbage collector 대상이 아니다.

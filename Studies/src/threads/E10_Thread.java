@@ -1,12 +1,15 @@
 package threads;
 
-// E10_Thread10의 업그레이드!! --> 보다 객체지향적으로 개선
+//E09_Thread09와 비교!!
 
-class E11_Thread11 {
+class E10_Thread {
 	public static void main(String[] args) throws Exception {
-		Ex11_Thread11_1 th1 = new Ex11_Thread11_1("*");
-		Ex11_Thread11_1 th2 = new Ex11_Thread11_1("**");
-		Ex11_Thread11_1 th3 = new Ex11_Thread11_1("***");
+		RunImplEx10 r1 = new RunImplEx10();
+		RunImplEx10 r2 = new RunImplEx10();
+		RunImplEx10 r3 = new RunImplEx10();
+		Thread th1 = new Thread(r1, "*");
+		Thread th2 = new Thread(r2, "**");
+		Thread th3 = new Thread(r3, "***");
 		
 		th1.start();
 		th2.start();
@@ -14,29 +17,23 @@ class E11_Thread11 {
 		
 		try {
 			Thread.sleep(2000);
-			th1.suspend();
+			r1.suspend(); // r1이 참조하는 RunImplEx10 클래스의 suspend 메서드 호출! --> th1.suspend()가 아니다!
 			Thread.sleep(2000);
-			th2.suspend();
+			r2.suspend();
 			Thread.sleep(3000);
-			th1.resume();
+			r1.resume();
 			Thread.sleep(3000);
-			th1.stop();
-			th2.stop();
+			r1.stop();
+			r2.stop();
 			Thread.sleep(2000);
-			th3.stop();
+			r3.stop();
 		} catch (InterruptedException e) {}
 	} // main() 끝.
 }
 
-class Ex11_Thread11_1 implements Runnable {
+class RunImplEx10 implements Runnable {
 	volatile boolean suspended = false;
 	volatile boolean stopped = false;
-	
-	Thread th;
-	
-	Ex11_Thread11_1(String name) {
-		th = new Thread(this, name); // Thread(Runnable r, String name) 사용
-	}
 	
 	public void run() {
 		while(!stopped) {
@@ -53,5 +50,4 @@ class Ex11_Thread11_1 implements Runnable {
 	public void suspend() { suspended = true; }
 	public void resume() { suspended = false; }
 	public void stop() { stopped = true; }
-	public void start() { th.start(); }
 }

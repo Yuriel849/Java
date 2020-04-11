@@ -3,7 +3,7 @@ package threads;
 //E10_Thread10와 비교!!
 
 // Using deprecated suspend(), resume(), stop()
-class E09_Thread09 {
+class E09_Thread {
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws Exception {
 		RunImplEx09 r = new RunImplEx09();

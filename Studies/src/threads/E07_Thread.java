@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 // E08_Thread08와 비교!!
 
-class E07_Thread07 {
+class E07_Thread {
 	public static void main(String[] args) throws Exception {
 		Ex07_Thread07_1 th1 = new Ex07_Thread07_1();
 		th1.start();

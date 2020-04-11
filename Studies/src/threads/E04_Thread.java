@@ -2,7 +2,7 @@ package threads;
 
 // 쓰레드의 우선순위 --> Threads' priorities are not absolute
 
-public class E04_Thread04 {
+public class E04_Thread {
 	public static void main(String[] args) {
 		ThreadEx04 th1 = new ThreadEx04();
 		ThreadEx05 th2 = new ThreadEx05();

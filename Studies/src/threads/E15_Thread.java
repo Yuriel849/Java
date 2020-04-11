@@ -90,7 +90,7 @@ class Cook2 implements Runnable {
 	}
 }
 
-class E15_Thread15 {
+class E15_Thread {
 	public static void main(String[] args) throws Exception {
 		Table2 table = new Table2();
 		

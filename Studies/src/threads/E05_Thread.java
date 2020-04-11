@@ -2,11 +2,11 @@ package threads;
 
 // 데몬쓰레드
 
-class E05_Thread05 implements Runnable {
+class E05_Thread implements Runnable {
 	static boolean autoSave = false;
 
 	public static void main(String[] args) {
-		Thread t = new Thread(new E05_Thread05());
+		Thread t = new Thread(new E05_Thread());
 		t.setDaemon(true); // 이 부분이 없으면 run()에서는 무한반복이 돌기 떄문에 종료되지 않는다.
 		t.start();
 		
