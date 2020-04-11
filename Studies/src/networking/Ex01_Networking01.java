@@ -9,13 +9,13 @@ class Ex01_Networking01 {
 		InetAddress[] ipArr = null;
 		
 		try {
-			ip = InetAddress.getByName("www.naver.com");
+			ip = InetAddress.getByName("www.google.com");
 			System.out.println("getHostName()    : " + ip.getHostName());
 			System.out.println("getHostAddress() : " + ip.getHostAddress());
-			System.out.println("toSTring()       : " + ip.toString());
+			System.out.println("toString()       : " + ip.toString());
 			
 			byte[] ipAddr = ip.getAddress();
-			System.out.println("\ngetAddress() : " + Arrays.toString(ipAddr));
+			System.out.println("\ngetAddress()       : " + Arrays.toString(ipAddr));
 			
 			String result = "";
 			for(int i = 0; i < ipAddr.length; i++) {
@@ -38,7 +38,7 @@ class Ex01_Networking01 {
 		}
 
 		try {
-			ipArr = InetAddress.getAllByName("www.naver.com");
+			ipArr = InetAddress.getAllByName("www.google.com");
 			
 			for(int i = 0; i < ipArr.length; i++) {
 				System.out.println("ipArr[" + i + "] : " + ipArr[i]);
@@ -46,5 +46,5 @@ class Ex01_Networking01 {
 		} catch(UnknownHostException e) {
 			e.printStackTrace();
 		}
-	} // main() ��.
-} // Ŭ���� ��.
+	}
+}

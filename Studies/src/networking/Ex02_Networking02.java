@@ -3,8 +3,6 @@ package networking;
 import java.io.*;
 import java.net.*;
 
-// 16-4 ����
-
 class Ex02_Networking02 {
 	public static void main(String[] args) {
 		URL url = null;
@@ -18,7 +16,7 @@ class Ex02_Networking02 {
 			input = new BufferedReader(new InputStreamReader(url.openStream()));
 			
 			while((line = input.readLine()) != null) {
-//				if(line.indexOf('@') != -1) {
+//				if(line.indexOf('@') != -1) { // -> Only print a line with '@' in it
 					System.out.println(line);
 //				}
 			}
@@ -26,5 +24,5 @@ class Ex02_Networking02 {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-	} // main() ��.
-} // Ŭ���� ��.
+	}
+}

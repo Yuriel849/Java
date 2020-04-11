@@ -4,20 +4,18 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
-// 16-14����
-
 class Ex06_Networking06 {
 	public static void main(String[] args) {
 		if(args.length != 1) {
-			System.out.println("USAGE : java Ex06_Networking06 ��ȭ��");
+			System.out.println("USAGE : java Ex06_Networking06 test");
 			System.exit(0);
 		}
 		
 		try {
 			String serverIp = "10.10.10.194";
-			// ������ �����Ͽ� ������ ��û�Ѵ�.
+
 			Socket socket = new Socket(serverIp, 7777);
-			System.out.println("������ ����Ǿ����ϴ�.");
+			System.out.println("Connecting to server.");
 			Thread sender = new Thread(new ClientSender(socket, args[0]));
 			Thread receiver = new Thread(new ClientReceiver(socket));
 			
@@ -26,8 +24,7 @@ class Ex06_Networking06 {
 		} catch(ConnectException ce) {
 			ce.printStackTrace();
 		} catch(Exception e) {}
-	} // main() ��.
-	
+	} // main()
 	
 	static class ClientSender extends Thread {
 		Socket socket;
@@ -40,7 +37,7 @@ class Ex06_Networking06 {
 				out = new DataOutputStream(socket.getOutputStream());
 				this.name = name;
 			} catch(Exception e) {}
-		}
+		} // Constructor
 		
 		public void run() {
 			@SuppressWarnings("resource")
@@ -54,9 +51,8 @@ class Ex06_Networking06 {
 					out.writeUTF("[" + name + "]" + scan.nextLine());
 				}
 			} catch(IOException e) {}
-		} // run() ��.
-	} // CLientSender ���� Ŭ���� ��.
-	
+		} // run()
+	} // CLientSender static inner class
 	
 	static class ClientReceiver extends Thread {
 		Socket socket;
@@ -75,6 +71,6 @@ class Ex06_Networking06 {
 					System.out.println(in.readUTF());
 				} catch(IOException e) {}
 			}
-		} // run() ��.
-	} // ClientReceiver ���� Ŭ���� ��.
-} // Ŭ���� ��.
+		} // run()
+	} // ClientReceiver static inner class
+}

@@ -3,29 +3,26 @@ package networking;
 import java.io.*;
 import java.net.*;
 
-// 16-7 ����
+// Client for Ex03_Networking
 
 class Ex04_Networking04 {
 	public static void main(String[] args) {
 		try {
 			String serverIp = "127.0.0.1";
 			
-			System.out.println("������ �������Դϴ�. ����IP : " + serverIp);
-			// ������ �����Ͽ� ������ ��û�մϴ�.
+			System.out.println("Connecting to server at " + serverIp);
+
 			Socket socket = new Socket(serverIp, 7777);
 			
-			// ������ �Է½�Ʈ���� ��´�.
 			InputStream in = socket.getInputStream();
 			DataInputStream dis = new DataInputStream(in);
 			
-			// �������κ��� ���� �����͸� ����Ѵ�.
-			System.out.println("�����κ��� ���� �޼��� : " + dis.readUTF());
-			System.out.println("������ �����մϴ�.");
+			System.out.println("Message received from server\n >> " + dis.readUTF());
+			System.out.println("Terminating client.");
 			
-			// ��Ʈ���� ������ �ݴ´�.
 			dis.close();
 			socket.close();
-			System.out.println("������ ����Ǿ����ϴ�.");
+			System.out.println("Client terminated.");
 		} catch(ConnectException ce) {
 			ce.printStackTrace();
 		} catch(IOException ie) {
@@ -33,5 +30,5 @@ class Ex04_Networking04 {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-	} // main() ��.
-} // Ŭ���� ��.
+	}
+}
