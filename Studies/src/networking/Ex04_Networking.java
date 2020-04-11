@@ -5,7 +5,7 @@ import java.net.*;
 
 // Client for Ex03_Networking
 
-class Ex04_Networking04 {
+class Ex04_Networking {
 	public static void main(String[] args) {
 		try {
 			String serverIp = "127.0.0.1";

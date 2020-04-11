@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
-class Ex06_Networking06 {
+class Ex06_Networking {
 	public static void main(String[] args) {
 		if(args.length != 1) {
 			System.out.println("USAGE : java Ex06_Networking06 test");

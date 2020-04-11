@@ -3,7 +3,7 @@ package networking;
 import java.net.*;
 import java.util.*;
 
-class Ex01_Networking01 {
+class Ex01_Networking {
 	public static void main(String[] args) {
 		InetAddress ip = null;
 		InetAddress[] ipArr = null;

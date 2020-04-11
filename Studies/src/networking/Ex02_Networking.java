@@ -3,7 +3,7 @@ package networking;
 import java.io.*;
 import java.net.*;
 
-class Ex02_Networking02 {
+class Ex02_Networking {
 	public static void main(String[] args) {
 		URL url = null;
 		BufferedReader input = null;

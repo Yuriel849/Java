@@ -7,7 +7,7 @@ import java.util.Date;
 
 // Server for Ex04_Networking
 
-public class Ex03_Networking03 {
+public class Ex03_Networking {
 
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {

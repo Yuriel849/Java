@@ -4,18 +4,18 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
-class Ex05_Networking05 {
+class Ex05_Networking {
 	@SuppressWarnings("rawtypes")
 	HashMap clients;
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	Ex05_Networking05() {
+	Ex05_Networking() {
 		clients = new HashMap();
 		Collections.synchronizedMap(clients);
 	} // Constructor
 	
 	public static void main(String[] args) {
-		new Ex05_Networking05().start();
+		new Ex05_Networking().start();
 	} // main()
 		
 	public void start() {
