@@ -111,18 +111,16 @@ public class WindFarmTable
      */
     public void listWindFarms(String country)
     {
+        HashSet<WindFarm> result = findWindFarms(country);
+        
         System.out.println("_____________________________________________________________________");
-        System.out.printf("|                      < %-20s >                     |\n",
-            name.toUpperCase());
+        System.out.printf("|                      < %-20s >                     |\n", name.toUpperCase());
         printLine();
         WindFarm.printHeader();
         printLine();
-        for(WindFarm farm : array)
+        for(WindFarm farm : result)
         {
-            if(farm.getCountry().equals(country))
-            {
-                farm.print();
-            }
+            farm.print();
         }
         printLine();
     }
