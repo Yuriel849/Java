@@ -13,6 +13,8 @@ public class WindFarmTable
     private String name;
     // ArrayList with data on wind farms
     private ArrayList<WindFarm> array;
+    // HashMap containing countries (key) and the total generation capacity of the wind farms in that country (value)
+    private HashMap<String, Double> powerCapacity;
     // Boolean to indicate for method initList() whether the list has already been initialized or not
     private boolean initialized = false;
     
@@ -80,6 +82,28 @@ public class WindFarmTable
         }
         
         return totalPower;
+    }
+    
+    /**
+     * Stores in a map the country (key) with the total power of all wind farms in that country (value).
+     * Therefore, iterates through all wind farms and adds for each country all the wind farm capacities to the double value. 
+     * 
+     * @return HashMap containing as entries the pair of one country and the total power of all wind farms in that country.
+     */
+    public HashMap<String, Double> powerByCountry()
+    {
+        HashMap<String, Double> result = new HashMap<>();
+        String country;
+        double capacity;
+        
+        for(WindFarm farm : array)
+        {
+            country = farm.getCountry();
+            capacity = result.getOrDefault(country, 0.0);
+            result.put(country, capacity + farm.getCapacity());
+        }
+        
+        return result;
     }
     
     /**
