@@ -126,7 +126,6 @@ public class WindFarmTable
         
         return result;
     }
-
     
     /**
      * Prints all WindFarm instances located in the given country to the terminal window.
@@ -182,6 +181,24 @@ public class WindFarmTable
     }
     
     /**
+     * Print the table of countries together with the total power of wind farms of your list in each country.
+     * 
+     * @param HashMap Map containing a country as the key and the total capacity of that country's wind farms as the value
+     */
+    public void printCapacity(HashMap<String, Double> powerMap)
+    {
+        printTableHeader();
+        System.out.printf("|    %-20s :   %-38s|\n", "COUNTRY", "CAPACITY");
+        printLine();
+        
+        for(String country : powerMap.keySet())
+        {
+            System.out.printf("|    %-20s :   %-38.1f|\n", country.toLowerCase(), powerMap.get(country));
+        }
+        printLine();
+    }
+    
+    /**
      * Print the table header
      */
     private void printTableHeader()
@@ -198,5 +215,4 @@ public class WindFarmTable
     {
         System.out.println("---------------------------------------------------------------------");
     }
-
 }
