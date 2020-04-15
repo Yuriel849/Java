@@ -113,9 +113,7 @@ public class WindFarmTable
     {
         HashSet<WindFarm> result = findWindFarms(country);
         
-        System.out.println("_____________________________________________________________________");
-        System.out.printf("|                      < %-20s >                     |\n", name.toUpperCase());
-        printLine();
+        printTableHeader();
         WindFarm.printHeader();
         printLine();
         for(WindFarm farm : result)
@@ -131,16 +129,23 @@ public class WindFarmTable
      */
     public void printTable()
     {
-        System.out.println("_____________________________________________________________________");
-        System.out.printf("|                      < %-20s >                     |\n",
-            name.toUpperCase());
-        printLine();
+        printTableHeader();
         WindFarm.printHeader();
         printLine();
         for(WindFarm farm : array)
         {
             farm.print();
         }
+        printLine();
+    }
+    
+    /**
+     * Print the table header
+     */
+    private void printTableHeader()
+    {
+        System.out.println("_____________________________________________________________________");
+        System.out.printf("|                      < %-20s >                     |\n", name.toUpperCase());
         printLine();
     }
     
