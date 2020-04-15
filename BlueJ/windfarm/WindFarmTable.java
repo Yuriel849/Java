@@ -124,6 +124,24 @@ public class WindFarmTable
     }
     
     /**
+     * Iterates through the list, printing the country name before printing the full information on each wind farm.
+     */
+    public void listByCountry()
+    {
+        printTableHeader();
+        WindFarm.printHeader();
+        
+        for(WindFarm farm : array)
+        {
+            printLine();
+            System.out.printf("|                     >> %-20s <<                    |\n", farm.getCountry().toLowerCase());
+            printLine();
+            farm.print();
+        }
+        printLine();
+    }
+    
+    /**
      * Print the wind farm table information to the terminal window
      * and delegates the printing of the rows to the WindFarm objects stored in the ArrayList<WindFarm>.
      */
