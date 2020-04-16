@@ -219,7 +219,33 @@ public class WindFarmTable
         }
         printLine();
     }
-   
+    
+    /**
+     * Print the wind farm table, grouped by country, so that for each country the information on the wind farms are printed line by line.
+     * The table now is automatically sorted with respect to the countries.
+     * 
+     * @param HashMap The map containing the country as the key and a set of all the wind farms in that country as the value.
+     */
+    public void printMap(HashMap<String, HashSet<WindFarm>> countryMap)
+    {
+        printTableHeader();
+        
+        for(String country : countryMap.keySet())
+        {
+            System.out.printf("|     >> Country : %-14s                                   |\n", country.toLowerCase());
+            printLine();
+            WindFarm.printHeader();
+            printLine();
+
+            for(WindFarm farm : countryMap.get(country))
+            {
+                farm.print();
+                printLine();
+            }
+
+        }
+    }
+    
     /**
      * Print the table header
      */
