@@ -5,7 +5,7 @@ import java.util.*;
  * all the information as a single table about the wind farms saved in this object.
  *
  * @author Yuriel
- * @date 25.03.2020
+ * @date 16.04.2020
  */
 public class WindFarmTable
 {
@@ -240,9 +240,8 @@ public class WindFarmTable
             for(WindFarm farm : countryMap.get(country))
             {
                 farm.print();
-                printLine();
             }
-
+            printLine();
         }
     }
     
