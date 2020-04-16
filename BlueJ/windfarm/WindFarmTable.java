@@ -13,8 +13,6 @@ public class WindFarmTable
     private String name;
     // ArrayList with data on wind farms
     private ArrayList<WindFarm> array;
-    // HashMap containing countries (key) and the total generation capacity of the wind farms in that country (value)
-    private HashMap<String, Double> powerCapacity;
     // Boolean to indicate for method initList() whether the list has already been initialized or not
     private boolean initialized = false;
     
@@ -165,6 +163,30 @@ public class WindFarmTable
     }
     
     /**
+     * Add all the wind farms to the map.
+     * The key is the country and the value is the set of all wind farms in that country.
+     * 
+     * @return HashMap containing a country as the key and a set of all the wind farms in that country as the value.
+     */
+    public HashMap<String, HashSet<WindFarm>> mapByCountry()
+    {
+        HashMap<String, HashSet<WindFarm>> countryMap = new HashMap<>();
+        String country;
+        HashSet<WindFarm> farmSet;
+        
+        for(WindFarm farm : array)
+        {
+            country = farm.getCountry();
+            farmSet = countryMap.getOrDefault(country, new HashSet<WindFarm>());
+            farmSet.add(farm);
+            
+            countryMap.put(country, farmSet);
+        }
+        
+        return countryMap;
+    }
+    
+    /**
      * Print the wind farm table information to the terminal window
      * and delegates the printing of the rows to the WindFarm objects stored in the ArrayList<WindFarm>.
      */
@@ -183,7 +205,7 @@ public class WindFarmTable
     /**
      * Print the table of countries together with the total power of wind farms of your list in each country.
      * 
-     * @param HashMap Map containing a country as the key and the total capacity of that country's wind farms as the value
+     * @param HashMap containing a country as the key and the total capacity of that country's wind farms as the value.
      */
     public void printCapacity(HashMap<String, Double> powerMap)
     {
@@ -197,7 +219,7 @@ public class WindFarmTable
         }
         printLine();
     }
-    
+   
     /**
      * Print the table header
      */
