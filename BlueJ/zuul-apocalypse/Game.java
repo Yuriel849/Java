@@ -118,12 +118,12 @@ public class Game
      */
     private void setDescriptions(ArrayList<Room> gameMap)
     {
-        // a constant array that holds all valid command words
+        // A constant array that holds all valid Room descriptions
         final String[] descriptions = {
             "laboratory", "security station", "storeroom", "control room", "mechanical room", "hallway"
         };
         
-        int counter = 9; // 9 Rooms set as hallways
+        int counter = 9; // Set 9 Rooms as hallways
         
         // Designate hallways
         gameMap.get(1).setDescription(descriptions[5]);
@@ -136,6 +136,7 @@ public class Game
         gameMap.get(24).setDescription(descriptions[5]);
         gameMap.get(25).setDescription(descriptions[5]);
         
+        // Randomly set descriptions for the Rooms, unless it is already a hallway
         while(counter != 25)
         {
             int randomRoom = (int)(Math.random() * 25 + 1);
