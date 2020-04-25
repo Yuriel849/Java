@@ -112,9 +112,6 @@ public class Game
         }
         
         currentRoom = gameMap.get(0);
-        
-        System.out.println(currentRoom.getLongDescription());
-
     }
 
     /**
