@@ -17,12 +17,13 @@ import java.util.HashMap;
 
 public class Room 
 {
-    private String description;
-    private int identificationCode;
-    private HashMap<String, Room> exits;        // stores exits of this room.
+    private String description;             // String description of this room.
+    private int identificationCode;         // Identification code to differentiate different Room type objects.
+    private HashMap<String, Room> exits;    // Stores exits of this room.
 
     /**
-     * Default constructor.
+     * Create a room with no description and the designated ID code. Initially there are no exits.
+     * @param identificationCode The room's ID code, a two-digit number.
      */
     public Room(int identificationCode)
     {
@@ -30,11 +31,10 @@ public class Room
     }
     
     /**
-     * Create a room described "description". Initially, it has
-     * no exits. "description" is something like "a kitchen" or
-     * "an open court yard".
+     * Create a room with the desginated description and ID code. Initially, there are no exits.
+     * The "description" is something like "a kitchen" or "an open court yard".
      * @param description The room's description.
-     * @param identificationCode The room's ID code, a two-digit number
+     * @param identificationCode The room's ID code, a two-digit number.
      */
     public Room(String description, int identificationCode)
     {
@@ -44,7 +44,7 @@ public class Room
     }
 
     /**
-     * Define an exit from this room.
+     * Define an exit from this room along with which room the exit leads to.
      * @param direction The direction of the exit.
      * @param neighbor  The room to which the exit leads.
      */
@@ -63,8 +63,8 @@ public class Room
     }
 
     /**
-     * @return The short description of the room
-     * (the one that was defined in the constructor).
+     * Get the description of the room.
+     * @return The short description of the room.
      */
     public String getShortDescription()
     {
@@ -72,10 +72,10 @@ public class Room
     }
 
     /**
-     * Return a description of the room in the form:
+     * Return a description of the room in the form of:
      *     You are in the kitchen.
      *     Exits: north west
-     * @return A long description of this room
+     * @return A long description of this room.
      */
     public String getLongDescription()
     {
@@ -83,8 +83,7 @@ public class Room
     }
 
     /**
-     * Return a string describing the room's exits, for example
-     * "Exits: north west".
+     * Return a string describing the room's exits, in the form of "Exits: north west".
      * @return Details of the room's exits.
      */
     private String getExitString()
@@ -98,8 +97,8 @@ public class Room
     }
 
     /**
-     * Return the room that is reached if we go from this room in direction
-     * "direction". If there is no room in that direction, return null.
+     * Return the room that is reached if we go from this room in the designated direction.
+     * If there is no room in that direction, return null.
      * @param direction The exit's direction.
      * @return The room in the given direction.
      */
