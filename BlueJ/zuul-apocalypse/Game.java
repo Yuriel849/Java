@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  *  This class is the main class of the "World of Zuul" application. 
  *  "World of Zuul" is a very simple, text based adventure game.  Users 
@@ -34,30 +36,85 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside, theater, pub, lab, office;
-      
-        // create the rooms
-        outside = new Room("outside the main entrance of the university");
-        theater = new Room("in a lecture theater");
-        pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
+        ArrayList<Room> gameMap = new ArrayList<>();
+        Room temp;
+
+        // 5x5 sized map with two extra rooms for the start and end
+        for(int i = 0; i < 27; i++)
+        {
+            gameMap.add(new Room(i));
+        }
+
+        for(int i = 0; i < 27; i++)
+        {
+            if(i == 0)
+            {
+                temp = gameMap.get(0);
+                temp.setExit("out", gameMap.get(1));
+                temp.setDescription("starting room");
+            }
+            else if(i == 25)
+            {
+                temp = gameMap.get(25);
+                temp.setExit("out", gameMap.get(26));
+                temp.setDescription(i + "");
+            }
+            else if(i == 26)
+            {
+                temp = gameMap.get(26);
+                temp.setDescription("elevator");
+            }
+            else if(i % 5 == 1)
+            {
+                temp = gameMap.get(i);
+                temp.setExit("east", gameMap.get(i + 1));
+                temp.setDescription(i + "");
+            }
+            else if((i % 5 == 2) || (i % 5 == 3) || (i % 5 == 4))
+            {
+                temp = gameMap.get(i);
+                temp.setExit("east", gameMap.get(i + 1));
+                temp.setExit("west", gameMap.get(i - 1));
+                temp.setDescription(i + "");
+            }
+            else if(i % 5 == 0)
+            {
+                temp = gameMap.get(i);
+                temp.setExit("west", gameMap.get(i - 1));
+                temp.setDescription(i + "");
+            }
+            
+            if(i == 1)
+            {
+                for(int j = 0; j < 5; j++)
+                {
+                    temp = gameMap.get(i + j);
+                    temp.setExit("south", gameMap.get(i + j + 5));
+                }
+            }
+            else if(i == 6 || i == 11 || i == 16)
+            {
+                for(int j = 0; j < 5; j++)
+                {
+                    temp = gameMap.get(i + j);
+                    temp.setExit("north", gameMap.get(i + j - 5));
+                    temp.setExit("south", gameMap.get(i + j + 5));
+                }
+            }
+            else if(i == 21)
+            {
+                for(int j = 0; j < 5;j++)
+                {
+                    temp = gameMap.get(i + j);
+                    temp.setExit("north", gameMap.get(i + j - 5));
+                }
+            }
+        }
         
-        // initialise room exits
-        outside.setExit("east", theater);
-        outside.setExit("south", lab);
-        outside.setExit("west", pub);
+        currentRoom = gameMap.get(0);
+        
+        System.out.println(currentRoom.getLongDescription());
 
-        theater.setExit("west", outside);
-
-        pub.setExit("east", outside);
-
-        lab.setExit("north", outside);
-        lab.setExit("east", office);
-
-        office.setExit("west", lab);
-
-        currentRoom = outside;  // start game outside
     }
 
     /**
