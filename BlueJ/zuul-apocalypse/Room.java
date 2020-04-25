@@ -18,17 +18,28 @@ import java.util.HashMap;
 public class Room 
 {
     private String description;
+    private int identificationCode;
     private HashMap<String, Room> exits;        // stores exits of this room.
 
+    /**
+     * Default constructor.
+     */
+    public Room(int identificationCode)
+    {
+        this(null, identificationCode);
+    }
+    
     /**
      * Create a room described "description". Initially, it has
      * no exits. "description" is something like "a kitchen" or
      * "an open court yard".
      * @param description The room's description.
+     * @param identificationCode The room's ID code, a two-digit number
      */
-    public Room(String description) 
+    public Room(String description, int identificationCode)
     {
         this.description = description;
+        this.identificationCode = identificationCode;
         exits = new HashMap<>();
     }
 
@@ -40,6 +51,15 @@ public class Room
     public void setExit(String direction, Room neighbor) 
     {
         exits.put(direction, neighbor);
+    }
+
+    /**
+     * Define the description of this room.
+     * @param description The description for this room.
+     */
+    public void setDescription(String description)
+    {
+        this.description = description;
     }
 
     /**
