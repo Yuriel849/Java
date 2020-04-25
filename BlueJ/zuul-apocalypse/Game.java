@@ -57,7 +57,6 @@ public class Game
             {
                 temp = gameMap.get(25);
                 temp.setExit("out", gameMap.get(26));
-                temp.setDescription(i + "");
             }
             else if(i == 26)
             {
@@ -68,20 +67,17 @@ public class Game
             {
                 temp = gameMap.get(i);
                 temp.setExit("east", gameMap.get(i + 1));
-                temp.setDescription(i + "");
             }
             else if((i % 5 == 2) || (i % 5 == 3) || (i % 5 == 4))
             {
                 temp = gameMap.get(i);
                 temp.setExit("east", gameMap.get(i + 1));
                 temp.setExit("west", gameMap.get(i - 1));
-                temp.setDescription(i + "");
             }
             else if(i % 5 == 0)
             {
                 temp = gameMap.get(i);
                 temp.setExit("west", gameMap.get(i - 1));
-                temp.setDescription(i + "");
             }
             
             if(i == 1)
@@ -111,7 +107,47 @@ public class Game
             }
         }
         
+        setDescriptions(gameMap);
+        //setItems(gameMap);
+        
         currentRoom = gameMap.get(0);
+    }
+    
+    /**
+     * Initialize descriptions for all the rooms.
+     */
+    private void setDescriptions(ArrayList<Room> gameMap)
+    {
+        // a constant array that holds all valid command words
+        final String[] descriptions = {
+            "laboratory", "security station", "storeroom", "control room", "mechanical room", "hallway"
+        };
+        
+        int counter = 9; // 9 Rooms set as hallways
+        
+        // Designate hallways
+        gameMap.get(1).setDescription(descriptions[5]);
+        gameMap.get(2).setDescription(descriptions[5]);
+        gameMap.get(7).setDescription(descriptions[5]);
+        gameMap.get(8).setDescription(descriptions[5]);
+        gameMap.get(13).setDescription(descriptions[5]);
+        gameMap.get(18).setDescription(descriptions[5]);
+        gameMap.get(19).setDescription(descriptions[5]);
+        gameMap.get(24).setDescription(descriptions[5]);
+        gameMap.get(25).setDescription(descriptions[5]);
+        
+        while(counter != 25)
+        {
+            int randomRoom = (int)(Math.random() * 25 + 1);
+            int randomDescription = (int)(Math.random() * 5);
+            Room temp = gameMap.get(randomRoom);
+            
+            if(temp.getShortDescription() == null)
+            {
+                temp.setDescription(descriptions[randomDescription]);
+                counter++;
+            }
+        }
     }
 
     /**
