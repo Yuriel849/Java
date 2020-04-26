@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Pack
 {
@@ -22,20 +23,25 @@ public class Pack
     }
     
     /**
-     * Get an item from the pack and return it.
+     * Get an item from the pack and return it. The retrieved item is removed from the pack.
      * @param name The name of the item to be retrieved.
      * @return The desired item retrieved from the pack.
      */
     public Item getFromPack(String name)
     {
-        Item result = null;
+        Item result = null, temp = null;
         
-        for(Item item : inventory)
+        Iterator<Item> iterator = inventory.iterator();
+        while(iterator.hasNext())
         {
-            if(item.getName().equals(name))
+            temp = iterator.next();
+            
+            if(temp.getName().equals(name))
             {
-                result = item;
-            }
+                result = temp;
+                iterator.remove();
+                break;
+            }            
         }
         
         return result;
