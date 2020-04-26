@@ -4,6 +4,7 @@ import java.util.Iterator;
 public class Pack
 {
     private ArrayList<Item> inventory;
+    int size = 20;
 
     /**
      * Default constructor for the Pack class.
@@ -16,10 +17,20 @@ public class Pack
     /**
      * Add an item to the pack.
      * @param item The item to put in the pack.
+     * @return True, if the item was successfully added to the pack. False, if the pack was full and the item was not added.
      */
-    public void putInPack(Item item)
+    public boolean putInPack(Item item)
     {
-        inventory.add(item);
+        boolean result = false;
+        
+        if(size > 0)
+        {
+            inventory.add(item);
+            size--;
+            result = true;
+        }
+        
+        return result;
     }
     
     /**
@@ -40,6 +51,7 @@ public class Pack
             {
                 result = temp;
                 iterator.remove();
+                size++;
                 break;
             }            
         }
