@@ -1,6 +1,12 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * Class Pack
+ *
+ * @author Yuriel
+ * @version 27.04.2020
+ */
 public class Pack
 {
     private ArrayList<Item> inventory;
