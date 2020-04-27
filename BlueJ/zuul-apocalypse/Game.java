@@ -21,6 +21,9 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
+    
+    private static final int maxItems = 5;
+    private static final int maxZombies = 3;
         
     /**
      * Create the game and initialise its internal map.
@@ -45,6 +48,7 @@ public class Game
             gameMap.add(new Room(i));
         }
 
+        // Connect the rooms together into the desired map
         for(int i = 0; i < 27; i++)
         {
             if(i == 0)
@@ -108,7 +112,7 @@ public class Game
         }
         
         setDescriptions(gameMap);
-        //setItems(gameMap);
+        populateRooms(gameMap);
         
         currentRoom = gameMap.get(0);
     }
@@ -139,7 +143,7 @@ public class Game
         // Randomly set descriptions for the Rooms, unless it is already a hallway
         while(counter != 25)
         {
-            int randomRoom = (int)(Math.random() * 25 + 1);
+            int randomRoom = (int)(Math.random() * 25) + 1;
             int randomDescription = (int)(Math.random() * 5);
             Room temp = gameMap.get(randomRoom);
             
@@ -148,6 +152,43 @@ public class Game
                 temp.setDescription(descriptions[randomDescription]);
                 counter++;
             }
+        }
+    }
+    
+    /**
+     * Create random items and zombies and randomly put the items and zombies in different rooms.
+     * Each room may hold a maximum of five items and/or three zombies.
+     * Hallways may hold only zombies.
+     */
+    private void populateRooms(ArrayList<Room> gameMap)
+    {
+        // A constant array that holds all valid item descriptions
+        final String[] names = {
+            "gun", "round", "medpack"
+        };
+        final String[] descriptions = {
+            "a weapon to kill someone or something", "ammunition for your gun", "item so you can recover health"
+        };
+        
+        int itemCounter = 30, zombieCounter = 60, index = -1;
+        Room temp = null;
+        
+        while(itemCounter-- != 0)
+        {
+            temp = gameMap.get((int) (Math.random() * 25) + 1);
+            if(temp.getShortDescription().equals("hallway")) // No items are put in rooms described as "hallway"
+            {
+                itemCounter++;
+                continue;
+            }
+            
+            index = (int) Math.random() * 3;
+            temp.addToList(new Item(names[index], descriptions[index]));
+        }
+        
+        while(zombieCounter-- != 0)
+        {
+            gameMap.get((int) (Math.random() * 25) + 1).addToList(new Zombie()); // Add new Zombie object to a randomly selected room
         }
     }
 
