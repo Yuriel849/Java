@@ -10,8 +10,11 @@ import java.util.*;
  * connected to other rooms via exits.  For each existing exit, the room 
  * stores a reference to the neighboring room.
  * 
- * @author  Michael Kölling and David J. Barnes
- * @version 2016.02.29
+ * @author (Original) Michael Kölling and David J. Barnes
+ * @version (Original) 2016.02.29
+ * 
+ * @author (Custom) Yuriel
+ * @version (Custom) 2020.04.27
  */
 
 public class Room 

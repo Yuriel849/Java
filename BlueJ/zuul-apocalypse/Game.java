@@ -13,8 +13,11 @@ import java.util.ArrayList;
  *  rooms, creates the parser and starts the game.  It also evaluates and
  *  executes the commands that the parser returns.
  * 
- * @author  Michael Kölling and David J. Barnes
- * @version 2016.02.29
+ * @author (Original) Michael Kölling and David J. Barnes
+ * @version (Original) 2016.02.29
+ * 
+ * @author (Custom) Yuriel
+ * @version (Custom) 2020.04.27
  */
 
 public class Game 
@@ -182,7 +185,7 @@ public class Game
                 continue;
             }
             
-            index = (int) Math.random() * 3;
+            index = (int) (Math.random() * 3);
             temp.addToList(new Item(names[index], descriptions[index]));
         }
         

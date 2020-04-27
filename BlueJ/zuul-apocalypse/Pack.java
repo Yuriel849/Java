@@ -5,7 +5,7 @@ import java.util.Iterator;
  * Class Pack
  *
  * @author Yuriel
- * @version 27.04.2020
+ * @version 2020.04.27
  */
 public class Pack
 {
