@@ -28,22 +28,13 @@ public class Room
      */
     public Room(int identificationCode)
     {
-        this(null, identificationCode);
-    }
-    
-    /**
-     * Create a room with the desginated description and ID code. Initially, there are no exits.
-     * The "description" is something like "a kitchen" or "an open court yard".
-     * @param description The room's description.
-     * @param identificationCode The room's ID code, a two-digit number.
-     */
-    public Room(String description, int identificationCode)
-    {
-        this.description = description;
+        description = null;
         this.identificationCode = identificationCode;
         exits = new HashMap<>();
+        items = new ArrayList<>();
+        zombies = new ArrayList<>();
     }
-
+    
     /**
      * Define an exit from this room along with which room the exit leads to.
      * @param direction The direction of the exit.
@@ -79,7 +70,7 @@ public class Room
         return exits.get(direction);
     }
     
-        /**
+    /**
      * Define the description of this room.
      * @param description The description for this room.
      */
@@ -105,7 +96,7 @@ public class Room
      */
     public String getLongDescription()
     {
-        return "You are " + description + ".\n" + getExitString();
+        return "You are " + description + getAllString() + ".\n" + getExitString();
     }
     
     /**
@@ -143,7 +134,36 @@ public class Room
         
         return result;
     }
+
+    /**
+     * Return a string describing the items and zombies in the room, in the form of "Items: gun food \n Zombies: two walkers".
+     * @return Details of the items and zombies in the room.
+     */
+    private String getAllString()
+    {
+        String returnString = "";
         
-    // get all items (list)
+        if(items.size() > 0)
+        {
+            returnString += "\nItems:";
+
+            for(Item item : items)
+            {
+                returnString += " " + item.getName();
+            }
+        }
+        
+        if(zombies.size() > 0)
+        {
+            returnString += "\nZombies:";
+
+            for(Zombie zombie : zombies) {
+                returnString += " " + zombie.getName();
+            }
+        }
+        
+        return returnString;
+    }
+    
     // get and remove item from items
 }
