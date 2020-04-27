@@ -109,31 +109,41 @@ public class Room
     }
     
     /**
-     * Add an item or a zombie to the room. The maximum number of items in a room is 5, and the maximum number of zombies in a room is 3.
-     * If there are already 5 items and 3 zombies in the room, only more items or zombies will be added.
-     * @param object The object (item or zombie) to put in the room.
-     * @param list The list of items or zombies to add the object to.
-     * @return True, if the item or zombie was successfully added to the room.
-     *         False, if the limit was reached and the item or zombiewas not added.
+     * Add an item to the room. The maximum number of items in a room is 5. If there are already 5 items in the room, no more items will be added.
+     * @param item The item to put in the room.
+     * @return True, if the item was successfully added to the room. False, if the limit was reached and the item was not added.
      */
-    public boolean addToList(Object object, List list)
+    public boolean addToList(Item item)
     {
         boolean result = false;
         
-        if(object instanceof Item && items.size() < 5)
+        if(items.size() < 5)
         {
-            items.add((Item) object);
-            result = true;
-        }
-        else if(object instanceof Zombie && zombies.size() < 3)
-        {
-            zombies.add((Zombie) object);
+            items.add(item);
             result = true;
         }
         
         return result;
     }
-    
+
+    /**
+     * Add a zombie to the room. The maximum number of zombies in a room is 3. If there are already 3 zombies in the room, no more zombies will be added.
+     * @param zombie The zombie to put in the room.
+     * @return True, if the zombie was successfully added to the room. False, if the limit was reached and the zombie was not added.
+     */
+    public boolean addToList(Zombie zombie)
+    {
+        boolean result = false;
+        
+        if(zombies.size() < 3)
+        {
+            zombies.add(zombie);
+            result = true;
+        }
+        
+        return result;
+    }
+        
     // get all items (list)
     // get and remove item from items
 }
