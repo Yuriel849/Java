@@ -165,5 +165,71 @@ public class Room
         return returnString;
     }
     
-    // get and remove item from items
+    /**
+     * Get an item in the room and return it. The taken item is removed from the room.
+     * @param name The name of the item to be retrieved.
+     * @return The desired item taken from the room.
+     */
+    public Item takeItem(String name)
+    {
+        Item result = null, temp = null;
+        
+        Iterator<Item> iterator = items.iterator();
+        while(iterator.hasNext())
+        {
+            temp = iterator.next();
+            
+            if(temp.getName().equals(name))
+            {
+                result = temp;
+                iterator.remove();
+                break;
+            }            
+        }
+        
+        return result;
+    }
+    
+    /**
+     * Get a zombie from the room and return it. The returned zombie is not removed from the room.
+     * @param name The name of the zombie to be returned. The first occurrence of a zombie with the designated name is returned.
+     * @return The zombie in the room that is returned.
+     */
+    public Zombie getZombie(String name)
+    {
+        Zombie result = null;
+        
+        for(Zombie zombie : zombies)
+        {
+            if(zombie.getName().equals(name))
+            {
+                result = zombie;
+                break;
+            }
+        }
+        
+        return result;
+    }
+    
+    /**
+     * Remove a specific zombie from the room.
+     * @param toRemove The specific Zombie type object to be removed. The zombie to be removed must be one of the zombies that are in that room.
+     *                 Nothing is done if the zombie to be removed is not among the zombies in the room.
+     */
+    public void removeZombie(Zombie toRemove)
+    {
+        Zombie temp = null;
+        
+        Iterator<Zombie> iterator = zombies.iterator();
+        while(iterator.hasNext())
+        {
+            temp = iterator.next();
+            
+            if(temp == toRemove)
+            {
+                iterator.remove();
+                break;
+            }            
+        }
+    }
 }
