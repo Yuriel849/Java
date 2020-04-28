@@ -73,24 +73,25 @@ public class Game
                 temp = gameMap.get(26);
                 temp.setDescription("elevator");
             }
-            else if(i % 5 == 1)
+            
+            if(i == 1 || i == 6 || i == 11 || i == 16 || i == 21)
             {
-                temp = gameMap.get(i);
-                temp.setExit("east", gameMap.get(i + 1));
+                for(int j = 0; j < 4; j++)
+                {
+                    temp = gameMap.get(i + j);
+                    temp.setExit("east", gameMap.get(i + j + 1));
+                }
             }
-            else if((i % 5 == 2) || (i % 5 == 3) || (i % 5 == 4))
+            else if(i == 5 || i == 10 || i == 15 || i == 20 || i == 25)
             {
-                temp = gameMap.get(i);
-                temp.setExit("east", gameMap.get(i + 1));
-                temp.setExit("west", gameMap.get(i - 1));
-            }
-            else if(i % 5 == 0)
-            {
-                temp = gameMap.get(i);
-                temp.setExit("west", gameMap.get(i - 1));
+                for(int j = 3; j>= 0; j--)
+                {
+                    temp = gameMap.get(i - j);
+                    temp.setExit("west", gameMap.get(i - j - 1));
+                }
             }
             
-            if(i == 1)
+            if(i == 1 || i == 6 || i == 11 || i == 16)
             {
                 for(int j = 0; j < 5; j++)
                 {
@@ -98,16 +99,7 @@ public class Game
                     temp.setExit("south", gameMap.get(i + j + 5));
                 }
             }
-            else if(i == 6 || i == 11 || i == 16)
-            {
-                for(int j = 0; j < 5; j++)
-                {
-                    temp = gameMap.get(i + j);
-                    temp.setExit("north", gameMap.get(i + j - 5));
-                    temp.setExit("south", gameMap.get(i + j + 5));
-                }
-            }
-            else if(i == 21)
+            if(i == 6 || i == 11 || i == 16 || i == 21)
             {
                 for(int j = 0; j < 5;j++)
                 {
