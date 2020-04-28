@@ -24,6 +24,7 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
+    private Pack pack;
     
     private static final int maxItems = 5;
     private static final int maxZombies = 3;
@@ -35,10 +36,12 @@ public class Game
     {
         createRooms();
         parser = new Parser();
+        pack = new Pack();
     }
 
     /**
-     * Create all the rooms and link their exits together.
+     * Create all the rooms and link their exits together, and randomly set a description for each room and add items to each room.
+     * Each room will be randomly allocated up to five items and three zombies, with the exception of hallways, which will have only zombies.
      */
     private void createRooms()
     {
@@ -130,7 +133,7 @@ public class Game
             "laboratory", "security station", "storeroom", "control room", "mechanical room", "hallway"
         };
         
-        int counter = 9; // Set 9 Rooms as hallways
+        int counter = 9; // Set 9 Rooms as hallways (Route from the starting room to the end room)
         
         // Designate hallways
         gameMap.get(1).setDescription(descriptions[5]);
