@@ -66,6 +66,22 @@ public class Pack
     }
     
     /**
+     * Return a string describing the contents of the pack, in the form of "The pack contains: gun ammo".
+     * @return Details of the pack's contents
+     */
+    public String getContentString()
+    {
+        String result = "The pack contains:";
+
+        for(Item item : inventory)
+        {
+            result += " " + item.getName();
+        }
+        
+        return result;
+    }
+    
+    /**
      * Check if the pack is empty or not.
      * @return True, if the pack is empty. False, if the pack is not empty (has at least one item inside).
      */
