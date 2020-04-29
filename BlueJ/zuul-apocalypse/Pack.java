@@ -10,7 +10,7 @@ import java.util.Iterator;
 public class Pack
 {
     private ArrayList<Item> inventory;
-    int size = 20;
+    int size = 10;
 
     /**
      * Default constructor for the Pack class.
