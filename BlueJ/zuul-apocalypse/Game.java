@@ -17,13 +17,15 @@ import java.util.ArrayList;
  * @version (Original) 2016.02.29
  * 
  * @author (Custom) Yuriel
- * @version (Custom) 2020.04.27
+ * @version (Custom) 2020.04.29
  */
 
 public class Game 
 {
+    private Player player;
     private Parser parser;
     private Room currentRoom;
+    
     private Pack pack;
     
     private static final int maxItems = 5;
@@ -34,9 +36,9 @@ public class Game
      */
     public Game() 
     {
+        player = new Player();
         createRooms();
         parser = new Parser();
-        pack = new Pack();
     }
 
     /**
@@ -239,14 +241,17 @@ public class Game
         if (commandWord.equals("help")) {
             printHelp();
         }
-        else if (commandWord.equals("go")) {
+        else if (commandWord.equals("go") || commandWord.equals("run")) {
             goRoom(command);
         }
         else if (commandWord.equals("take")) {
             takeItem(command);
         }
-        else if (commandWord.equals("remove")) {
-            removeItem(command);
+        else if (commandWord.equals("leave")) {
+            leaveItem(command);
+        }
+        else if (commandWord.equals("fight")) {
+            fight(command);
         }
         else if (commandWord.equals("quit")) {
             wantToQuit = quit(command);
@@ -316,7 +321,7 @@ public class Game
     /**
      * Remove the designated item from the pack and put it back in the room.
      */
-    private void removeItem(Command command)
+    private void leaveItem(Command command)
     {
         Item target = pack.getFromPack(command.getSecondWord());
         
@@ -328,6 +333,14 @@ public class Game
         {
             System.out.println("The room is already full. Your item was thrown away!");
         }
+    }
+    
+    /**
+     * Fight the zombies in the room.
+     */
+    private void fight(Command command)
+    {
+        ;
     }
     
     /** 
