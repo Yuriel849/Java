@@ -117,6 +117,7 @@ public class Game
     
     /**
      * Initialize descriptions for all the rooms.
+     * @param gameMap The ArrayList holding all the rooms.
      */
     private void setDescriptions(ArrayList<Room> gameMap)
     {
@@ -138,7 +139,7 @@ public class Game
         gameMap.get(24).setDescription(descriptions[5]);
         gameMap.get(25).setDescription(descriptions[5]);
         
-        // Randomly set descriptions for the Rooms, unless it is already a hallway
+        // Randomly set descriptions for the Rooms, unless it already has a description (hallways already have descriptions)
         while(counter != 25)
         {
             int randomRoom = (int)(Math.random() * 25) + 1;
@@ -157,6 +158,7 @@ public class Game
      * Create random items and zombies and randomly put the items and zombies in different rooms.
      * Each room may hold a maximum of five items and/or three zombies.
      * Hallways may hold only zombies.
+     * @param gameMap The ArrayList holding all the rooms.
      */
     private void populateRooms(ArrayList<Room> gameMap)
     {
@@ -197,11 +199,9 @@ public class Game
     {            
         printWelcome();
 
-        // Enter the main command loop.  Here we repeatedly read commands and
-        // execute them until the game is over.
-                
+        // Enter the main command loop. Here we repeatedly read commands and execute them until the game is over.
         boolean finished = false;
-        while (! finished) {
+        while(!finished) {
             Command command = parser.getCommand();
             finished = processCommand(command);
         }
@@ -242,6 +242,12 @@ public class Game
         else if (commandWord.equals("go")) {
             goRoom(command);
         }
+        else if (commandWord.equals("take")) {
+            takeItem(command);
+        }
+        else if (commandWord.equals("remove")) {
+            removeItem(command);
+        }
         else if (commandWord.equals("quit")) {
             wantToQuit = quit(command);
         }
@@ -250,7 +256,6 @@ public class Game
     }
 
     // implementations of user commands:
-
     /**
      * Print out some help information.
      * Here we print some stupid, cryptic message and a list of the 
@@ -290,7 +295,41 @@ public class Game
             System.out.println(currentRoom.getLongDescription());
         }
     }
+    
+    /**
+     * Take the designated item from the room and put it in the player's pack (inventory).
+     */
+    private void takeItem(Command command)
+    {
+        Item target = currentRoom.takeItem(command.getSecondWord()); // Returns null if the designated item is not in the room.
+        
+        if(target == null)
+        {
+            System.out.println("There is no such object here!");
+        }
+        else if(pack.putInPack(target) != true)
+        {
+            System.out.println("Your pack is already full! You cannot add another item!");
+        }
+    }
 
+    /**
+     * Remove the designated item from the pack and put it back in the room.
+     */
+    private void removeItem(Command command)
+    {
+        Item target = pack.getFromPack(command.getSecondWord());
+        
+        if(target == null)
+        {
+            System.out.println("Which object do you mean? I can't find it in the pack...");
+        }
+        else if(currentRoom.addToList(target) != true)
+        {
+            System.out.println("The room is already full. Your item was thrown away!");
+        }
+    }
+    
     /** 
      * "Quit" was entered. Check the rest of the command to see
      * whether we really quit the game.
