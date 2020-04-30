@@ -2,19 +2,99 @@
  * Class Player
  *
  * @author Yuriel
- * @version 2020.04.29
+ * @version 2020.04.30
  */
 public class Player extends Character
 {
-    // A pack being carried by the player as an inventory (maximum 10 items)
+    // A pack being carried by the player as an inventory (maximum 10 items).
     private Pack pack;
+    // The room where the player is currently located.
+    private Room currentRoom;
     
     /**
-     * Default constructor for objects of class Zombie.
+     * Default constructor for objects of class Player.
      */
     public Player()
     {
         super("The Player", "Obviously I am I.");
         pack = new Pack();
+    }
+    
+    /** 
+     * The player moves in one direction. If there is an exit in that direction,
+     * move to the new room; otherwise print an error message.
+     */
+    public void move(Command command)
+    {
+        if(!command.hasSecondWord()) {
+            // if there is no second word, we don't know where to go...
+            System.out.println("Go where?");
+            return;
+        }
+
+        String direction = command.getSecondWord();
+
+        // Try to leave current room.
+        Room nextRoom = currentRoom.getExit(direction);
+
+        if (nextRoom == null) {
+            System.out.println("There is no door!");
+        }
+        else {
+            currentRoom = nextRoom;
+            System.out.println(currentRoom.getLongDescription());
+        }
+    }
+    
+    /**
+     * Take the designated item from the room and put it in the player's pack (inventory).
+     */
+    public void takeItem(Command command)
+    {
+        Item target = currentRoom.takeItem(command.getSecondWord()); // Returns null if the designated item is not in the room.
+        
+        if(target == null)
+        {
+            System.out.println("There is no such object here!");
+        }
+        else if(pack.putInPack(target) != true)
+        {
+            System.out.println("Your pack is already full! You cannot add another item!");
+        }
+    }
+
+    /**
+     * Remove the designated item from the player's pack and put it back in the room.
+     */
+    public void leaveItem(Command command)
+    {
+        Item target = pack.getFromPack(command.getSecondWord());
+        
+        if(target == null)
+        {
+            System.out.println("Which object do you mean? I can't find it in the pack...");
+        }
+        else if(currentRoom.addToList(target) != true)
+        {
+            System.out.println("The room is already full. Your item was thrown away!");
+        }
+    }
+    
+    /**
+     * Return the room where the player is right now.
+     * @return The current room.
+     */
+    public Room getCurrentRoom()
+    {
+        return currentRoom;
+    }
+    
+    /**
+     * Set the room where the player is right now.
+     * @param room The current room.
+     */
+    public void setCurrentRoom(Room room)
+    {
+        currentRoom = room;
     }
 }
