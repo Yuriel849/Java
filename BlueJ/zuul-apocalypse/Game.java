@@ -24,7 +24,6 @@ public class Game
 {
     private Player player;
     private Parser parser;
-    private Room currentRoom;
     
     private Pack pack;
     
@@ -114,7 +113,7 @@ public class Game
         setDescriptions(gameMap);
         populateRooms(gameMap);
         
-        currentRoom = gameMap.get(0);
+        player.setCurrentRoom(gameMap.get(0));
     }
     
     /**
@@ -220,7 +219,7 @@ public class Game
         System.out.println("World of Zuul is a new, incredibly boring adventure game.");
         System.out.println("Type 'help' if you need help.");
         System.out.println();
-        System.out.println(currentRoom.getLongDescription());
+        System.out.println(player.getCurrentRoom().getLongDescription());
     }
 
     /**
@@ -242,13 +241,13 @@ public class Game
             printHelp();
         }
         else if (commandWord.equals("go") || commandWord.equals("run")) {
-            goRoom(command);
+            player.move(command);
         }
         else if (commandWord.equals("take")) {
-            takeItem(command);
+            player.takeItem(command);
         }
         else if (commandWord.equals("leave")) {
-            leaveItem(command);
+            player.leaveItem(command);
         }
         else if (commandWord.equals("fight")) {
             fight(command);
@@ -273,66 +272,6 @@ public class Game
         System.out.println();
         System.out.println("Your command words are:");
         parser.showCommands();
-    }
-
-    /** 
-     * Try to in to one direction. If there is an exit, enter the new
-     * room, otherwise print an error message.
-     */
-    private void goRoom(Command command) 
-    {
-        if(!command.hasSecondWord()) {
-            // if there is no second word, we don't know where to go...
-            System.out.println("Go where?");
-            return;
-        }
-
-        String direction = command.getSecondWord();
-
-        // Try to leave current room.
-        Room nextRoom = currentRoom.getExit(direction);
-
-        if (nextRoom == null) {
-            System.out.println("There is no door!");
-        }
-        else {
-            currentRoom = nextRoom;
-            System.out.println(currentRoom.getLongDescription());
-        }
-    }
-    
-    /**
-     * Take the designated item from the room and put it in the player's pack (inventory).
-     */
-    private void takeItem(Command command)
-    {
-        Item target = currentRoom.takeItem(command.getSecondWord()); // Returns null if the designated item is not in the room.
-        
-        if(target == null)
-        {
-            System.out.println("There is no such object here!");
-        }
-        else if(pack.putInPack(target) != true)
-        {
-            System.out.println("Your pack is already full! You cannot add another item!");
-        }
-    }
-
-    /**
-     * Remove the designated item from the pack and put it back in the room.
-     */
-    private void leaveItem(Command command)
-    {
-        Item target = pack.getFromPack(command.getSecondWord());
-        
-        if(target == null)
-        {
-            System.out.println("Which object do you mean? I can't find it in the pack...");
-        }
-        else if(currentRoom.addToList(target) != true)
-        {
-            System.out.println("The room is already full. Your item was thrown away!");
-        }
     }
     
     /**
