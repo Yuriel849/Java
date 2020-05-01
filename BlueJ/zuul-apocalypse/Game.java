@@ -17,7 +17,7 @@ import java.util.ArrayList;
  * @version (Original) 2016.02.29
  * 
  * @author (Custom) Yuriel
- * @version (Custom) 2020.04.29
+ * @version (Custom) 2020.05.01
  */
 
 public class Game 
@@ -250,7 +250,16 @@ public class Game
             player.leaveItem(command);
         }
         else if (commandWord.equals("fight")) {
-            fight(command);
+            String result = Battle.fight(player, parser);
+            
+            if(result.equals("back"))
+            {
+                // Go back to the previous room.
+            }
+            else if(result.equals("dead"))
+            {
+                return true;
+            }
         }
         else if (commandWord.equals("quit")) {
             wantToQuit = quit(command);
@@ -259,7 +268,6 @@ public class Game
         return wantToQuit;
     }
 
-    // implementations of user commands:
     /**
      * Print out some help information.
      * Here we print some stupid, cryptic message and a list of the 
@@ -272,14 +280,6 @@ public class Game
         System.out.println();
         System.out.println("Your command words are:");
         parser.showCommands();
-    }
-    
-    /**
-     * Fight the zombies in the room.
-     */
-    private void fight(Command command)
-    {
-        ;
     }
     
     /** 
