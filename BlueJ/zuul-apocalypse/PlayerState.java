@@ -8,15 +8,15 @@
  */
 public class PlayerState
 {
-    // instance variables
-    public int roomID;
+    // fi
+    public Room room;
 
     /**
      * Constructor for objects of class PlayerState
      */
-    public PlayerState(int currentRoomID)
+    public PlayerState(Room currentRoom)
     {
         
-        this.roomID = currentRoomID;
+        this.room = currentRoom;
     }
 }
