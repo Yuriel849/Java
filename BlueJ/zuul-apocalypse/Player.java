@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /**
  * Class Player
  *
@@ -10,6 +12,8 @@ public class Player extends Character
     private Pack pack;
     // The room where the player is currently located.
     private Room currentRoom;
+    // The Stack holding the previous states of the player.
+    private Stack<PlayerState> previousStates;
     
     /**
      * Default constructor for objects of class Player.
@@ -18,6 +22,7 @@ public class Player extends Character
     {
         super("The Player", "Obviously I am I.");
         pack = new Pack();
+        previousStates = new Stack();
     }
     
     /** 
@@ -41,6 +46,9 @@ public class Player extends Character
             System.out.println("There is no door!");
         }
         else {
+            // Save current room to previousStates stack
+            previousStates.push(new PlayerState(currentRoom));
+            
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
         }
@@ -80,6 +88,29 @@ public class Player extends Character
         }
     }
     
+    /**
+     * Go back to the previous room
+     *
+     * @param command
+     * @return
+     */
+    public void goBack(Command command)
+    {
+        // Field to hold the previous state of the player
+        PlayerState previousState;
+        
+        // Pop the last item on the previousStates stack.
+        previousState = previousStates.pop();
+        
+        if (previousStates.empty()) {
+            System.out.println("You can't go back");
+        }
+        else {
+            currentRoom = previousState.room;
+            System.out.println(currentRoom.getLongDescription());
+        }
+    }
+
     /**
      * Return the room where the player is right now.
      * @return The current room.
