@@ -194,6 +194,15 @@ public class Room
     }
     
     /**
+     * Get the list of all zombies in the room.
+     * @return The list of all zombies in the room.
+     */
+    public ArrayList<Zombie> getAllZombies()
+    {
+        return zombies;
+    }
+    
+    /**
      * Get a zombie from the room and return it. The returned zombie is not removed from the room.
      * @param name The name of the zombie to be returned. The first occurrence of a zombie with the designated name is returned.
      * @return The zombie in the room that is returned.
