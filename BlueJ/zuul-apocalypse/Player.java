@@ -3,8 +3,8 @@ import java.util.Stack;
 /**
  * Class Player
  *
- * @author Yuriel
- * @version 2020.04.30
+ * @author Yuriel and Mo
+ * @version 2020.05.03
  */
 public class Player extends Character
 {
@@ -13,7 +13,7 @@ public class Player extends Character
     // The room where the player is currently located.
     private Room currentRoom;
     // The Stack holding the previous states of the player.
-    private Stack<PlayerState> previousStates;
+    private Stack<Room> previousRooms;
     
     /**
      * Default constructor for objects of class Player.
@@ -22,7 +22,7 @@ public class Player extends Character
     {
         super("The Player", "Obviously I am I.");
         pack = new Pack();
-        previousStates = new Stack();
+        previousRooms = new Stack();
     }
     
     /** 
@@ -47,7 +47,7 @@ public class Player extends Character
         }
         else {
             // Save current room to previousStates stack
-            previousStates.push(new PlayerState(currentRoom));
+            previousRooms.push(currentRoom);
             
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
@@ -97,16 +97,16 @@ public class Player extends Character
     public void goBack(Command command)
     {
         // Field to hold the previous state of the player
-        PlayerState previousState;
+        Room previousRoom;
         
         // Pop the last item on the previousStates stack.
-        previousState = previousStates.pop();
+        previousRoom = previousRooms.pop();
         
-        if (previousStates.empty()) {
+        if (previousRooms.empty()) {
             System.out.println("You can't go back");
         }
         else {
-            currentRoom = previousState.room;
+            currentRoom = previousRoom;
             System.out.println(currentRoom.getLongDescription());
         }
     }
