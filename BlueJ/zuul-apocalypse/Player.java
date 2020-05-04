@@ -99,15 +99,44 @@ public class Player extends Character
         // Field to hold the previous state of the player
         Room previousRoom;
         
-        // Pop the last item on the previousStates stack.
-        previousRoom = previousRooms.pop();
-        
-        if (previousRooms.empty()) {
-            System.out.println("You can't go back");
+        if (command.hasThirdWord()) {
+            
+            previousRoom = previousRooms.pop(); // Pop the last item on the previousStates stack.
+            
+            if (previousRooms.empty()) {
+                System.out.println("You can't go back");
+            }
+            else {
+                currentRoom = previousRoom;
+                System.out.println(currentRoom.getLongDescription());
+            }
+        }
+        else if (command.hasSecondWord()) {
+            
+            previousRooms.pop(); // pop and throw previous room
+            previousRoom = previousRooms.pop(); // Pop the last item on the previousStates stack.
+            
+            if (previousRooms.empty()) {
+                System.out.println("You can't go back two rooms.");
+            }
+            else {
+                currentRoom = previousRoom;
+                System.out.println(currentRoom.getLongDescription());
+            }
         }
         else {
-            currentRoom = previousRoom;
-            System.out.println(currentRoom.getLongDescription());
+            
+            previousRooms.pop(); // pop and throw previous room
+            previousRooms.pop(); // pop and throw previous room
+            previousRoom = previousRooms.pop(); // Pop the last item on the previousStates stack.
+            
+            if (previousRooms.empty()) {
+                System.out.println("You can't go back three rooms.");
+            }
+            else {
+                currentRoom = previousRoom;
+                System.out.println(currentRoom.getLongDescription());
+            }
         }
     }
 
