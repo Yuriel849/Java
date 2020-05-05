@@ -17,7 +17,7 @@ import java.util.ArrayList;
  * @version (Original) 2016.02.29
  * 
  * @author (Custom) Yuriel and Mo
- * @version (Custom) 2020.05.05
+ * @version (Custom) 2020.05.06
  */
 
 public class Game 
@@ -171,7 +171,7 @@ public class Game
             "a weapon to kill someone or something", "ammunition for your gun", "item so you can recover health"
         };
         
-        int itemCounter = 25, zombieCounter = 40, index = -1;
+        int itemCounter = 20, zombieCounter = 25, index = -1;
         Room temp = null;
         
         while(itemCounter-- != 0)
@@ -264,6 +264,11 @@ public class Game
             {
                 wantToQuit = true;
             }
+            else if(result.equals("winGame"))
+            {
+                winGame();
+                wantToQuit = true;
+            }
             else
             {
                 System.out.println(player.getCurrentRoom().getLongDescription());
@@ -285,12 +290,18 @@ public class Game
         return wantToQuit;
     }
 
+    /**
+     * Win the memo before leaving the first room.
+     */
     private void readMemo()
     {
         System.out.println("Memo read.");
         System.out.println("You pick up the gun and step out the door.");
     }
     
+    /**
+     * Leave the first room without reading the memo, and die immediately.
+     */
     private void quickDeath()
     {
         System.out.println("You rush out the door, desperate to find what is this place and why you are here. There has to be some— ");
@@ -299,6 +310,17 @@ public class Game
         System.out.println("GAME OVER");
         System.out.println();
         System.out.println("......well, that was stupid. Try again?");
+    }
+    
+    /**
+     * Reach the elevator and win the game.
+     */
+    private void winGame()
+    {
+        System.out.println("You're finally here... you reached the elevators...");
+        System.out.println();
+        System.out.println("......what? Were you expecting something? Congratulations. You've survived, unfortunately. Yeah~~~~~!!");
+        System.out.println("Play again if you want to.");
     }
     
     /**
