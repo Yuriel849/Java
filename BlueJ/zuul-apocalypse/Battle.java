@@ -14,7 +14,7 @@ public class Battle
         int index = zombies.size() - 1, health = player.getHealth();
         Zombie target = zombies.get(index);
         String result = "", commandWord = "";
-        boolean targetAlive = false;
+        boolean targetDead = false;
         
         System.out.println("You can choose to attack or run back to the last room.\nMake up your mind and type 'attack' or 'run'.");
         
@@ -25,13 +25,20 @@ public class Battle
             
             if(commandWord.equals("run"))
             {
-                System.out.println("You ran away from the zombies.");
-                result = "back";
-                break;
+                if(player.getSizePreviousRooms() == 1)
+                {
+                    System.out.println("There's nowhere to run to... you must fight.");
+                }
+                else
+                {
+                    System.out.println("You ran away from the zombies.");
+                    result = "back";
+                    break;
+                }
             }
             else if(commandWord.equals("attack"))
             {
-                targetAlive = attack(target);
+                targetDead = attack(target);
                 health = zombieAttack(health);
             }
             
@@ -41,8 +48,9 @@ public class Battle
                 result = "dead";
                 break;
             }
-            else if(targetAlive == true)
+            else if(targetDead == true)
             {
+                targetDead = false;
                 System.out.println("The zombie is dead!");
                 player.getCurrentRoom().removeZombie(target);
                 if(index > 0)
