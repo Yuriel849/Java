@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Class Battle
  *
  * @author Yuriel
- * @version 2020.05.01
+ * @version 2020.05.06
  */
 public class Battle
 {
@@ -14,9 +14,13 @@ public class Battle
         int index = zombies.size() - 1, health = player.getHealth();
         Zombie target = zombies.get(index);
         String result = "", commandWord = "";
+        boolean targetAlive = false;
         
-        while(index > 0 || health > 0)
+        System.out.println("You can choose to attack or run back to the last room.\nMake up your mind and type 'attack' or 'run'.");
+        
+        while(index >= 0 || health > 0)
         {
+            System.out.println("Attack or run?");
             commandWord = parser.getCommand().getCommandWord();
             
             if(commandWord.equals("run"))
@@ -27,8 +31,8 @@ public class Battle
             }
             else if(commandWord.equals("attack"))
             {
-                attack(target);
-                zombieAttack(health);
+                targetAlive = attack(target);
+                health = zombieAttack(health);
             }
             
             if(health <= 0)
@@ -37,11 +41,20 @@ public class Battle
                 result = "dead";
                 break;
             }
-            else if(target.getHealth() <= 0)
+            else if(targetAlive == true)
             {
                 System.out.println("The zombie is dead!");
                 player.getCurrentRoom().removeZombie(target);
-                target = zombies.get(--index);
+                if(index > 0)
+                {
+                    System.out.println("There's another one...");
+                    target = zombies.get(--index);
+                }
+                else
+                {
+                    System.out.println("You've won! Your health is " + health + ". Let's move on.");
+                    break;
+                }
             }
         }
         
@@ -51,7 +64,7 @@ public class Battle
     private static boolean attack(Zombie target)
     {
         boolean zombieIsDead = false;
-        int damage = (int) (Math.random() * 40);
+        int damage = (int) (Math.random() * 50);
         
         if(damage == 0)
         {
@@ -60,7 +73,12 @@ public class Battle
         else
         {
             zombieIsDead = target.reduceHealth(damage);
-            System.out.println("Hit! " + damage + " damage inflicted. Zombie's health is now " + target.getHealth() + ".");
+            System.out.println("Hit! " + damage + " damage inflicted. Zombie's health is now " + ((target.getHealth() < 0) ? 0 : target.getHealth()) + ".");
+            
+            if(target.getHealth() <= 0)
+            {
+                zombieIsDead = true;
+            }
         }
         
         return zombieIsDead;
@@ -68,7 +86,7 @@ public class Battle
     
     private static int zombieAttack(int health)
     {
-        int playerHealth = 0, damage = (int) (Math.random() * 15);
+        int playerHealth = health, damage = (int) (Math.random() * 15);
         
         if(damage == 0)
         {
@@ -76,7 +94,7 @@ public class Battle
         }
         else
         {
-            playerHealth = health - damage;
+            playerHealth -= damage;
             System.out.println("No! You took " + damage + " damage. Your health is now " + playerHealth + ".");
         }
         
