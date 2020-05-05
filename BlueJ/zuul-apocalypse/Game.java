@@ -16,8 +16,8 @@ import java.util.ArrayList;
  * @author (Original) Michael Kölling and David J. Barnes
  * @version (Original) 2016.02.29
  * 
- * @author (Custom) Yuriel
- * @version (Custom) 2020.05.01
+ * @author (Custom) Yuriel and Mo
+ * @version (Custom) 2020.05.05
  */
 
 public class Game 

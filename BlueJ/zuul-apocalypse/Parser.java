@@ -13,8 +13,11 @@ import java.util.Scanner;
  * the known commands, and if the input is not one of the known commands, it
  * returns a command object that is marked as an unknown command.
  * 
- * @author  Michael Kölling and David J. Barnes
- * @version 2016.02.29
+ * @author (Original) Michael Kölling and David J. Barnes
+ * @version (Original) 2016.02.29
+ * 
+ * @author (Custom) Yuriel and Mo
+ * @version (Custom) 2020.05.05
  */
 public class Parser 
 {
