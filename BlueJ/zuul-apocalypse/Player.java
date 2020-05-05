@@ -133,7 +133,8 @@ public class Player extends Character
             }
         }
         else {
-            
+
+            previousRooms.pop(); // pop and throw previous room
             previousRooms.pop(); // pop and throw previous room
             previousRoom = previousRooms.pop(); // Pop the last item on the previousStates stack.
             
