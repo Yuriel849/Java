@@ -4,7 +4,7 @@ import java.util.Stack;
  * Class Player
  *
  * @author Yuriel and Mo
- * @version 2020.05.03
+ * @version 2020.05.06
  */
 public class Player extends Character
 {
@@ -31,6 +31,7 @@ public class Player extends Character
      */
     public String move(Command command, Parser parser)
     {
+        int numberEnemies = 0;
         String result = "";
         
         if(!command.hasSecondWord()) {
@@ -50,9 +51,9 @@ public class Player extends Character
                 previousRooms.push(currentRoom);
                 currentRoom = nextRoom;
             
-                if(currentRoom.getAllZombies().size() != 0)
+                if((numberEnemies = currentRoom.getAllZombies().size()) != 0)
                 {
-                    System.out.println("Enemies encountered! Starting battle...");
+                    System.out.println("Enemies encountered! There are " + numberEnemies + " enemies. Starting battle...");
                     result = Battle.fight(this, parser);
                 }
             }
