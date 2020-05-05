@@ -148,6 +148,15 @@ public class Player extends Character
     }
 
     /**
+     * Return the size of the stack (the number of rooms the player has already moved through).
+     * @return The size of the stack as an int.
+     */
+    public int getSizePreviousRooms()
+    {
+        return previousRooms.size();
+    }
+    
+    /**
      * Return the room where the player is right now.
      * @return The current room.
      */
