@@ -171,7 +171,7 @@ public class Game
             "a weapon to kill someone or something", "ammunition for your gun", "item so you can recover health"
         };
         
-        int itemCounter = 30, zombieCounter = 60, index = -1;
+        int itemCounter = 25, zombieCounter = 40, index = -1;
         Room temp = null;
         
         while(itemCounter-- != 0)
@@ -215,9 +215,13 @@ public class Game
     private void printWelcome()
     {
         System.out.println();
-        System.out.println("Welcome to the World of Zuul!");
-        System.out.println("World of Zuul is a new, incredibly boring adventure game.");
-        System.out.println("Type 'help' if you need help.");
+        System.out.println("......harsh white light pierces your eyes as you struggle out of a deep slumber.");
+        System.out.println("...what happened? ...where am I? ...who am I?");
+        System.out.println("Turning your head, you find a memo on the bed next to your head.");
+        System.out.println("Do you want to read it? Type 'read' or just leave with the command 'go out'.");
+        System.out.println();
+        System.out.println("<Type 'help' if you need help>");
+        System.out.println("P.S. Do not type help if you can help it. There's no help for you in this hell.");
         System.out.println();
         System.out.println(player.getCurrentRoom().getLongDescription());
     }
@@ -237,7 +241,15 @@ public class Game
         }
 
         String commandWord = command.getCommandWord();
-        if (commandWord.equals("help")) {
+        if (commandWord.equals("read")) {
+            readMemo();
+            player.move(new Command("go", "out", ""));
+        }
+        else if (player.getCurrentRoom().getIdCode() == 0 && commandWord.equals("go")) {
+            quickDeath();
+            wantToQuit = true;
+        }
+        else if (commandWord.equals("help")) {
             printHelp();
         }
         else if (commandWord.equals("go") || commandWord.equals("run")) {
@@ -254,7 +266,7 @@ public class Game
             
             if(result.equals("back"))
             {
-                // Go back to the previous room.
+                player.goBack(new Command("back", "", "")); // Go back to the previous room.
             }
             else if(result.equals("dead"))
             {
@@ -271,23 +283,37 @@ public class Game
         return wantToQuit;
     }
 
+    private void readMemo()
+    {
+        System.out.println("Memo read.");
+        System.out.println("You pick up the gun and step out the door.");
+    }
+    
+    private void quickDeath()
+    {
+        System.out.println("You rush out the door, desperate to find what is this place and why you are here. There has to be some— ");
+        System.out.println("Something grabs your shoulder and spins you around. You catch a glimpse of a grotesque face before it flashes towards your throat— ");
+        System.out.println();
+        System.out.println("GAME OVER");
+        System.out.println();
+        System.out.println("......well, that was stupid. Try again?");
+    }
+    
     /**
-     * Print out some help information.
-     * Here we print some stupid, cryptic message and a list of the 
-     * command words.
+     * Print out some help information, and a list of the command words the player can use.
      */
     private void printHelp() 
     {
-        System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
+        System.out.println("Who am I? Where am I? What is going on here?");
+        System.out.println("......you have no choice but to follow the instructions on the note.");
+        System.out.println("You have to find the way out. Find the elevators.");
         System.out.println();
-        System.out.println("Your command words are:");
+        System.out.println("Valid command words are: ");
         parser.showCommands();
     }
     
     /** 
-     * "Quit" was entered. Check the rest of the command to see
-     * whether we really quit the game.
+     * "Quit" was entered. Check the rest of the command to see whether we really quit the game.
      * @return true, if this command quits the game, false otherwise.
      */
     private boolean quit(Command command) 

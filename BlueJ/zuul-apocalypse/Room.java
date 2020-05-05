@@ -73,6 +73,11 @@ public class Room
         return exits.get(direction);
     }
     
+    public int getIdCode()
+    {
+        return identificationCode;
+    }
+    
     /**
      * Define the description of this room.
      * @param description The description for this room.
