@@ -49,7 +49,6 @@ public class Player extends Character
                 // Save current room to previousStates stack
                 previousRooms.push(currentRoom);
                 currentRoom = nextRoom;
-                System.out.println(currentRoom.getLongDescription());
             
                 if(currentRoom.getAllZombies().size() != 0)
                 {

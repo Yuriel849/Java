@@ -244,6 +244,7 @@ public class Game
         if (commandWord.equals("read")) {
             readMemo();
             player.move(new Command("go", "out", ""), parser);
+            System.out.println(player.getCurrentRoom().getLongDescription());
         }
         else if (player.getCurrentRoom().getIdCode() == 0 && commandWord.equals("go")) {
             quickDeath();
@@ -262,6 +263,10 @@ public class Game
             else if(result.equals("dead"))
             {
                 wantToQuit = true;
+            }
+            else
+            {
+                System.out.println(player.getCurrentRoom().getLongDescription());
             }
         }
         else if (commandWord.equals("take")) {
