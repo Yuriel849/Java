@@ -29,29 +29,37 @@ public class Player extends Character
      * The player moves in one direction. If there is an exit in that direction,
      * move to the new room; otherwise print an error message.
      */
-    public void move(Command command)
+    public String move(Command command, Parser parser)
     {
+        String result = "";
+        
         if(!command.hasSecondWord()) {
             // if there is no second word, we don't know where to go...
             System.out.println("Go where?");
-            return;
-        }
-
-        String direction = command.getSecondWord();
-
-        // Try to leave current room.
-        Room nextRoom = currentRoom.getExit(direction);
-
-        if (nextRoom == null) {
-            System.out.println("There is no door!");
         }
         else {
-            // Save current room to previousStates stack
-            previousRooms.push(currentRoom);
+            String direction = command.getSecondWord();
+
+            // Try to leave current room.
+            Room nextRoom = currentRoom.getExit(direction);
+            if (nextRoom == null) {
+                System.out.println("There is no door!");
+            }
+            else {
+                // Save current room to previousStates stack
+                previousRooms.push(currentRoom);
+                currentRoom = nextRoom;
+                System.out.println(currentRoom.getLongDescription());
             
-            currentRoom = nextRoom;
-            System.out.println(currentRoom.getLongDescription());
+                if(currentRoom.getAllZombies().size() != 0)
+                {
+                    System.out.println("Enemies encountered! Starting battle...");
+                    result = Battle.fight(this, parser);
+                }
+            }
         }
+        
+        return result;
     }
     
     /**
@@ -126,7 +134,6 @@ public class Player extends Character
         }
         else {
             
-            previousRooms.pop(); // pop and throw previous room
             previousRooms.pop(); // pop and throw previous room
             previousRoom = previousRooms.pop(); // Pop the last item on the previousStates stack.
             

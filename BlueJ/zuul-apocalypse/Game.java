@@ -243,7 +243,7 @@ public class Game
         String commandWord = command.getCommandWord();
         if (commandWord.equals("read")) {
             readMemo();
-            player.move(new Command("go", "out", ""));
+            player.move(new Command("go", "out", ""), parser);
         }
         else if (player.getCurrentRoom().getIdCode() == 0 && commandWord.equals("go")) {
             quickDeath();
@@ -253,16 +253,7 @@ public class Game
             printHelp();
         }
         else if (commandWord.equals("go") || commandWord.equals("run")) {
-            player.move(command);
-        }
-        else if (commandWord.equals("take")) {
-            player.takeItem(command);
-        }
-        else if (commandWord.equals("leave")) {
-            player.leaveItem(command);
-        }
-        else if (commandWord.equals("fight")) {
-            String result = Battle.fight(player, parser);
+            String result = player.move(command, parser);
             
             if(result.equals("back"))
             {
@@ -270,8 +261,14 @@ public class Game
             }
             else if(result.equals("dead"))
             {
-                return true;
+                wantToQuit = true;
             }
+        }
+        else if (commandWord.equals("take")) {
+            player.takeItem(command);
+        }
+        else if (commandWord.equals("leave")) {
+            player.leaveItem(command);
         }
         else if (commandWord.equals("quit")) {
             wantToQuit = quit(command);
