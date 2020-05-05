@@ -56,6 +56,10 @@ public class Player extends Character
                     System.out.println("Enemies encountered! There are " + numberEnemies + " enemies. Starting battle...");
                     result = Battle.fight(this, parser);
                 }
+                else if(currentRoom.getIdCode() == 26)
+                {
+                    result = "winGame";
+                }
             }
         }
         
