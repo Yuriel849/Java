@@ -28,9 +28,10 @@ public class Game
     private Pack pack;
     
     // Time challenge variables
-    private long typingStartTime = 0;
+    private long typingStartTime;
     private long typingEndTime;
-    private int typingCounter = 0;
+    private int typingCounter;
+    private long typingDuration;
     
     private static final int maxItems = 5;
     private static final int maxZombies = 3;
@@ -43,6 +44,9 @@ public class Game
         player = new Player();
         createRooms();
         parser = new Parser();
+        
+        typingStartTime = 0;
+        typingCounter = 0;
     }
 
     /**
@@ -203,20 +207,22 @@ public class Game
      */
     public void play() 
     {            
+        boolean finished;
         printWelcome();
-
-        // Enter the main command loop. Here we repeatedly read commands and execute them until the game is over.
-        boolean finished = false;
         
-        // Starting Challenge
+        // Start typing challenge
+        finished = false;
+        System.out.println("You are now restrained to the bed and need to type \"break\" as fast as possible to break free");
         while(!finished) {
             Command command = parser.getCommand(); // get command from parser
-            
             finished = processCommandStartChallenge(command); // process command according to start game challenge
-            
         }
         
         // Main gameplay
+        // Enter the main command loop. Here we repeatedly read commands and execute them until the game is over.
+        finished = false;
+        System.out.println();
+        System.out.println(player.getCurrentRoom().getLongDescription());
         while(!finished) {
             Command command = parser.getCommand();
             finished = processCommand(command);
@@ -237,8 +243,6 @@ public class Game
         System.out.println();
         System.out.println("<Type 'help' if you need help>");
         System.out.println("P.S. Do not type help if you can help it. There's no help for you in this hell.");
-        System.out.println();
-        System.out.println(player.getCurrentRoom().getLongDescription());
     }
 
     /**
@@ -313,8 +317,6 @@ public class Game
     private boolean processCommandStartChallenge(Command command) 
     {
         boolean wantToQuit = false;
-        
-
 
         if(command.isUnknown()) {
             System.out.println("I don't know what you mean...");
@@ -329,13 +331,24 @@ public class Game
             wantToQuit = quit(command);
         }
         else if (commandWord.equals("break")) {
-            if (typingStartTime == 0) {
+            if (typingCounter == 0) {
                 typingStartTime = System.currentTimeMillis();
                 typingCounter++;
             }
+            else if (typingCounter == 1) {
+                typingCounter++;
+            }
             else if (typingCounter == 2) {
-                if (typingStartTime - System.currentTimeMillis() < 5000) {
-                    
+                typingEndTime = System.currentTimeMillis();
+                typingDuration = typingEndTime - typingStartTime;
+                if (typingDuration > 5000) {
+                    System.out.println("You failed :(. You need to try again to start moving");
+                    typingStartTime = 0;
+                    typingCounter = 0;
+                }
+                else {
+                    System.out.println("You broke free! You can now start moving");
+                    return true;
                 }
             }
         }
