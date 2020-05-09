@@ -21,7 +21,6 @@ public class CommandWords
         "help",
         "take",
         "leave",
-        "fight",
         "run",
         "attack",
         "back",
