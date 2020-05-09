@@ -27,6 +27,11 @@ public class Game
     
     private Pack pack;
     
+    // Time challenge variables
+    private long typingStartTime = 0;
+    private long typingEndTime;
+    private int typingCounter = 0;
+    
     private static final int maxItems = 5;
     private static final int maxZombies = 3;
         
@@ -202,6 +207,16 @@ public class Game
 
         // Enter the main command loop. Here we repeatedly read commands and execute them until the game is over.
         boolean finished = false;
+        
+        // Starting Challenge
+        while(!finished) {
+            Command command = parser.getCommand(); // get command from parser
+            
+            finished = processCommandStartChallenge(command); // process command according to start game challenge
+            
+        }
+        
+        // Main gameplay
         while(!finished) {
             Command command = parser.getCommand();
             finished = processCommand(command);
@@ -270,7 +285,45 @@ public class Game
         // else command not recognised.
         return wantToQuit;
     }
+    
+    /**
+     * Given a command, process (that is: execute) the command for the starting challenge.
+     * @param command The command to be processed.
+     * @return true If the command ends the game, false otherwise.
+     */
+    private boolean processCommandStartChallenge(Command command) 
+    {
+        boolean wantToQuit = false;
+        
 
+
+        if(command.isUnknown()) {
+            System.out.println("I don't know what you mean...");
+            return false;
+        }
+
+        String commandWord = command.getCommandWord();
+        if (commandWord.equals("help")) {
+            printHelp();
+        }
+        else if (commandWord.equals("quit")) {
+            wantToQuit = quit(command);
+        }
+        else if (commandWord.equals("break")) {
+            if (typingStartTime == 0) {
+                typingStartTime = System.currentTimeMillis();
+                typingCounter++;
+            }
+            else if (typingCounter == 2) {
+                if (typingStartTime - System.currentTimeMillis() < 5000) {
+                    
+                }
+            }
+        }
+        // else command not recognised.
+        return wantToQuit;
+    }
+    
     /**
      * Print out some help information.
      * Here we print some stupid, cryptic message and a list of the 

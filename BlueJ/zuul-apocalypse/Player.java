@@ -139,7 +139,7 @@ public class Player extends Character
             }
         }
     }
-
+    
     /**
      * Return the room where the player is right now.
      * @return The current room.
