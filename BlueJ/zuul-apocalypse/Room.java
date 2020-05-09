@@ -14,7 +14,7 @@ import java.util.*;
  * @version (Original) 2016.02.29
  * 
  * @author (Custom) Yuriel
- * @version (Custom) 2020.04.27
+ * @version (Custom) 2020.05.05
  */
 
 public class Room 
@@ -73,6 +73,11 @@ public class Room
         return exits.get(direction);
     }
     
+    public int getIdCode()
+    {
+        return identificationCode;
+    }
+    
     /**
      * Define the description of this room.
      * @param description The description for this room.
@@ -99,7 +104,7 @@ public class Room
      */
     public String getLongDescription()
     {
-        return "You are " + description + getAllString() + ".\n" + getExitString();
+        return "You are in a " + description + getAllString() + ".\n" + getExitString();
     }
     
     /**

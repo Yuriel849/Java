@@ -4,7 +4,7 @@ import java.util.Stack;
  * Class Player
  *
  * @author Yuriel and Mo
- * @version 2020.05.03
+ * @version 2020.05.06
  */
 public class Player extends Character
 {
@@ -29,29 +29,41 @@ public class Player extends Character
      * The player moves in one direction. If there is an exit in that direction,
      * move to the new room; otherwise print an error message.
      */
-    public void move(Command command)
+    public String move(Command command, Parser parser)
     {
+        int numberEnemies = 0;
+        String result = "";
+        
         if(!command.hasSecondWord()) {
             // if there is no second word, we don't know where to go...
             System.out.println("Go where?");
-            return;
-        }
-
-        String direction = command.getSecondWord();
-
-        // Try to leave current room.
-        Room nextRoom = currentRoom.getExit(direction);
-
-        if (nextRoom == null) {
-            System.out.println("There is no door!");
         }
         else {
-            // Save current room to previousStates stack
-            previousRooms.push(currentRoom);
+            String direction = command.getSecondWord();
+
+            // Try to leave current room.
+            Room nextRoom = currentRoom.getExit(direction);
+            if (nextRoom == null) {
+                System.out.println("There is no door!");
+            }
+            else {
+                // Save current room to previousStates stack
+                previousRooms.push(currentRoom);
+                currentRoom = nextRoom;
             
-            currentRoom = nextRoom;
-            System.out.println(currentRoom.getLongDescription());
+                if((numberEnemies = currentRoom.getAllZombies().size()) != 0)
+                {
+                    System.out.println("Enemies encountered! There are " + numberEnemies + " enemies. Starting battle...");
+                    result = Battle.fight(this, parser);
+                }
+                else if(currentRoom.getIdCode() == 26)
+                {
+                    result = "winGame";
+                }
+            }
         }
+        
+        return result;
     }
     
     /**
@@ -125,7 +137,7 @@ public class Player extends Character
             }
         }
         else {
-            
+
             previousRooms.pop(); // pop and throw previous room
             previousRooms.pop(); // pop and throw previous room
             previousRoom = previousRooms.pop(); // Pop the last item on the previousStates stack.
@@ -138,6 +150,15 @@ public class Player extends Character
                 System.out.println(currentRoom.getLongDescription());
             }
         }
+    }
+    
+    /**
+     * Return the size of the stack (the number of rooms the player has already moved through).
+     * @return The size of the stack as an int.
+     */
+    public int getSizePreviousRooms()
+    {
+        return previousRooms.size();
     }
     
     /**
