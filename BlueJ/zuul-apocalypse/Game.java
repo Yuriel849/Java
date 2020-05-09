@@ -27,6 +27,8 @@ public class Game
     
     private Pack pack;
     
+    private boolean finished;
+    
     // Time challenge variables
     private long typingStartTime;
     private long typingEndTime;
@@ -207,22 +209,26 @@ public class Game
      */
     public void play() 
     {            
-        boolean finished;
+        boolean finishedTypingChallenge;
         printWelcome();
         
-        // Start typing challenge
+        finishedTypingChallenge = false;
         finished = false;
+        
+        // Start typing challenge
         System.out.println("You are now restrained to the bed and need to type \"break\" as fast as possible to break free");
-        while(!finished) {
+        while(!finishedTypingChallenge) {
             Command command = parser.getCommand(); // get command from parser
-            finished = processCommandStartChallenge(command); // process command according to start game challenge
+            finishedTypingChallenge = processCommandStartChallenge(command); // process command according to typing challenge
         }
         
         // Main gameplay
         // Enter the main command loop. Here we repeatedly read commands and execute them until the game is over.
-        finished = false;
-        System.out.println();
-        System.out.println(player.getCurrentRoom().getLongDescription());
+        if (!finished) {
+            System.out.println();
+            System.out.println(player.getCurrentRoom().getLongDescription());
+        }
+        
         while(!finished) {
             Command command = parser.getCommand();
             finished = processCommand(command);
@@ -329,6 +335,7 @@ public class Game
         }
         else if (commandWord.equals("quit")) {
             wantToQuit = quit(command);
+            finished = wantToQuit;
         }
         else if (commandWord.equals("break")) {
             if (typingCounter == 0) {
@@ -341,7 +348,7 @@ public class Game
             else if (typingCounter == 2) {
                 typingEndTime = System.currentTimeMillis();
                 typingDuration = typingEndTime - typingStartTime;
-                if (typingDuration > 5000) {
+                if (typingDuration > 4100) {
                     System.out.println("You failed :(. You need to try again to start moving");
                     typingStartTime = 0;
                     typingCounter = 0;
