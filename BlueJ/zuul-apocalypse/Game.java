@@ -364,7 +364,7 @@ public class Game
     }
     
     /**
-     * Win the memo before leaving the first room.
+     * Read the memo before leaving the first room.
      */
     private void readMemo()
     {
