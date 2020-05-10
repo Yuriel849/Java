@@ -10,3 +10,4 @@ A repository of my studies of the Java language.
 
 ## Notes
 Set up JUnit: File -> New -> JUnit Test Case -> (add path, if required) -> Finish
+
