@@ -46,6 +46,7 @@ public class Facility implements IWindFarm
         this.name = name;
     }
     
+    @Override
     public String getCountry()
     {
         return country;
@@ -55,7 +56,8 @@ public class Facility implements IWindFarm
     {
         this.country = country;
     }
-    
+
+    @Override
     public double getCapacity()
     {
         return capacity;
@@ -79,6 +81,7 @@ public class Facility implements IWindFarm
     /**
      * Print out information on this facility to the terminal.
      */
+    @Override
     public void print()
     {
         System.out.printf("| %-20s %-10.0f %-15s %-6d |\n",

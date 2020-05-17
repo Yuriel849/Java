@@ -40,6 +40,7 @@ public class WindFarm extends Facility
     /**
      * Print out information on this wind farm to the terminal.
      */
+    @Override
     public void print()
     {
         System.out.printf("| %-20s %-10.0f %-15s %-10d %-6d |\n",
