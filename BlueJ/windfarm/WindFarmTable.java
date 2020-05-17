@@ -12,7 +12,7 @@ public class WindFarmTable
     // Name of the wind farm
     private String name;
     // ArrayList with data on wind farms
-    private ArrayList<WindFarm> array;
+    private ArrayList<IWindFarm> array;
     // Boolean to indicate for method initList() whether the list has already been initialized or not
     private boolean initialized = false;
     
@@ -24,7 +24,7 @@ public class WindFarmTable
     public WindFarmTable(String name)
     {
         this.name = name;
-        array = new ArrayList<WindFarm>();
+        array = new ArrayList<IWindFarm>();
     }
     
     /**
@@ -60,7 +60,7 @@ public class WindFarmTable
      * 
      * @param powerStation One WindFarm object
      */
-    public void addPowerStation(WindFarm powerStation)
+    public void addPowerStation(IWindFarm powerStation)
     {
         array.add(powerStation);
     }
@@ -74,7 +74,7 @@ public class WindFarmTable
     {
         double totalPower = 0;
         
-        for(WindFarm farm : array)
+        for(IWindFarm farm : array)
         {
             totalPower += farm.getCapacity();
         }
@@ -94,7 +94,7 @@ public class WindFarmTable
         String country;
         double capacity;
         
-        for(WindFarm farm : array)
+        for(IWindFarm farm : array)
         {
             country = farm.getCountry();
             capacity = result.getOrDefault(country, 0.0);
@@ -110,11 +110,11 @@ public class WindFarmTable
      * @param String The string to match with the country field of wind farm objects.
      * @return HashSet containing wind farm objects where the country field matches the parameter.
      */
-    public HashSet<WindFarm> findWindFarms(String country)
+    public HashSet<IWindFarm> findWindFarms(String country)
     {
-        HashSet<WindFarm> result = new HashSet<>();
+        HashSet<IWindFarm> result = new HashSet<>();
         
-        for(WindFarm farm : array)
+        for(IWindFarm farm : array)
         {
             if(farm.getCountry().equals(country))
             {
@@ -132,12 +132,12 @@ public class WindFarmTable
      */
     public void listWindFarms(String country)
     {
-        HashSet<WindFarm> result = findWindFarms(country);
+        HashSet<IWindFarm> result = findWindFarms(country);
         
         printTableHeader();
-        WindFarm.printHeader();
+        IWindFarm.printHeader();
         printLine();
-        for(WindFarm farm : result)
+        for(IWindFarm farm : result)
         {
             farm.print();
         }
@@ -150,9 +150,9 @@ public class WindFarmTable
     public void listByCountry()
     {
         printTableHeader();
-        WindFarm.printHeader();
+        IWindFarm.printHeader();
         
-        for(WindFarm farm : array)
+        for(IWindFarm farm : array)
         {
             printLine();
             System.out.printf("|                     >> %-20s <<                    |\n", farm.getCountry().toLowerCase());
@@ -168,16 +168,16 @@ public class WindFarmTable
      * 
      * @return HashMap containing a country as the key and a set of all the wind farms in that country as the value.
      */
-    public HashMap<String, HashSet<WindFarm>> mapByCountry()
+    public HashMap<String, HashSet<IWindFarm>> mapByCountry()
     {
-        HashMap<String, HashSet<WindFarm>> countryMap = new HashMap<>();
+        HashMap<String, HashSet<IWindFarm>> countryMap = new HashMap<>();
         String country;
-        HashSet<WindFarm> farmSet;
+        HashSet<IWindFarm> farmSet;
         
-        for(WindFarm farm : array)
+        for(IWindFarm farm : array)
         {
             country = farm.getCountry();
-            farmSet = countryMap.getOrDefault(country, new HashSet<WindFarm>());
+            farmSet = countryMap.getOrDefault(country, new HashSet<IWindFarm>());
             farmSet.add(farm);
             
             countryMap.put(country, farmSet);
@@ -193,9 +193,9 @@ public class WindFarmTable
     public void printTable()
     {
         printTableHeader();
-        WindFarm.printHeader();
+        IWindFarm.printHeader();
         printLine();
-        for(WindFarm farm : array)
+        for(IWindFarm farm : array)
         {
             farm.print();
         }
@@ -226,7 +226,7 @@ public class WindFarmTable
      * 
      * @param HashMap The map containing the country as the key and a set of all the wind farms in that country as the value.
      */
-    public void printMap(HashMap<String, HashSet<WindFarm>> countryMap)
+    public void printMap(HashMap<String, HashSet<IWindFarm>> countryMap)
     {
         printTableHeader();
         
@@ -234,10 +234,10 @@ public class WindFarmTable
         {
             System.out.printf("|     >> Country : %-14s                                   |\n", country.toLowerCase());
             printLine();
-            WindFarm.printHeader();
+            IWindFarm.printHeader();
             printLine();
 
-            for(WindFarm farm : countryMap.get(country))
+            for(IWindFarm farm : countryMap.get(country))
             {
                 farm.print();
             }

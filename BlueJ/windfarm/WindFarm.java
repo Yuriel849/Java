@@ -5,7 +5,7 @@
  * @author Yuriel
  * @date 25.03.2020
  */
-public class WindFarm
+public class WindFarm implements IWindFarm
 {
     // Name of the wind farm
     private String name;
@@ -93,14 +93,5 @@ public class WindFarm
     {
         System.out.printf("| %-20s %-10.0f %-15s %-10d %-6d |\n",
             name, capacity, country, numberTurbines, year);
-    }
-    
-    /**
-     * Print a header for a table displaying information in wind farms to the terminal.
-     */
-    public static void printHeader()
-    {
-        System.out.printf("| %-20s %-10s %-15s %-10s %-6s |\n",
-            "Name", "Capacity", "Country", "Turbines", "Year");
     }
 }
