@@ -1,7 +1,5 @@
 package implementation;
 
-import common.*;
-
 /**
  * The WindFarm class holds information on one wind farm.
  * Specifically, the name, country (location), generation capacity, number of turbines, and year of commissioning.
@@ -9,18 +7,10 @@ import common.*;
  * @author Yuriel
  * @date 25.03.2020
  */
-public class WindFarm implements IWindFarm
+public class WindFarm extends Facility
 {
-    // Name of the wind farm
-    private String name;
-    // Name of the country (location of wind farm)
-    private String country;
-    // Wind farm's generation capacity in MW
-    private double capacity;
     // Number of turbines
     private int numberTurbines;
-    // Year of commissioning
-    private int year;
     
     /**
      * Constructor for objects of class WindFarm
@@ -33,43 +23,10 @@ public class WindFarm implements IWindFarm
      */
     public WindFarm(String name, String country, double capacity, int numberTurbines, int year)
     {
-        this.name = name;
-        this.country = country;
-        this.capacity = capacity;
+        super(name, country, capacity, year);
         this.numberTurbines = numberTurbines;
-        this.year = year;
     }
 
-    public String getName()
-    {
-        return name;
-    }
-    
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-    
-    public String getCountry()
-    {
-        return country;
-    }
-    
-    public void setCountry(String country)
-    {
-        this.country = country;
-    }
-    
-    public double getCapacity()
-    {
-        return capacity;
-    }
-    
-    public void setCapacity(double capacity)
-    {
-        this.capacity = capacity;
-    }
-    
     public int getNumberTurbines()
     {
         return numberTurbines;
@@ -78,16 +35,6 @@ public class WindFarm implements IWindFarm
     public void setNumberTurbines(int numberTurbines)
     {
         this.numberTurbines = numberTurbines;
-    }
-    
-    public int getYear()
-    {
-        return year;
-    }
-    
-    public void setYear(int year)
-    {
-        this.year = year;
     }
     
     /**
