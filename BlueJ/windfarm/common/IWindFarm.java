@@ -1,3 +1,5 @@
+package common;
+
 public interface IWindFarm
 {
     public static void printHeader()

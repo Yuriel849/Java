@@ -1,3 +1,7 @@
+package implementation;
+
+import common.*;
+
 /**
  * The WindFarm class holds information on one wind farm.
  * Specifically, the name, country (location), generation capacity, number of turbines, and year of commissioning.
