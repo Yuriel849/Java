@@ -2,12 +2,12 @@ package implementation;
 
 import common.*;
 
-
 /**
- * Write a description of class Facility here.
+ * The Facility class is a generic class holding information on a facility, for example a wind farm.
+ * Fields are name, country (location), generation capacity, and year of commissioning.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Yuriel
+ * @date 17.05.2020
  */
 public class Facility implements IWindFarm
 {
@@ -21,12 +21,12 @@ public class Facility implements IWindFarm
     protected int year;
     
     /**
-     * Constructor for objects of class WindFarm
+     * Constructor for objects of class Facility
      * 
-     * @param name The name of the wind farm
-     * @param country The country in which the wind farm is located
-     * @param capacity The generation capacity of the wind farm, calculated as number of turbines * each turbine's generation capability
-     * @param year The year the wind farm was commissioned
+     * @param name The name of the facility
+     * @param country The country in which the facility is located
+     * @param capacity The generation capacity of the facility, calculated as number of turbines * each turbine's generation capability
+     * @param year The year the facility was commissioned
      */
     public Facility(String name, String country, double capacity, int year)
     {
@@ -77,7 +77,7 @@ public class Facility implements IWindFarm
     }
     
     /**
-     * Print out information on this wind farm to the terminal.
+     * Print out information on this facility to the terminal.
      */
     public void print()
     {

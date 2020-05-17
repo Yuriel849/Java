@@ -5,7 +5,7 @@ package implementation;
  * Specifically, the name, country (location), generation capacity, number of turbines, and year of commissioning.
  *
  * @author Yuriel
- * @date 25.03.2020
+ * @date 17.05.2020
  */
 public class WindFarm extends Facility
 {

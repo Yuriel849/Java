@@ -9,7 +9,7 @@ import implementation.*;
  * all the information as a single table about the wind farms saved in this object.
  *
  * @author Yuriel
- * @date 16.04.2020
+ * @date 17.05.2020
  */
 public class WindFarmTable
 {

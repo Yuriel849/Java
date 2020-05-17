@@ -2,10 +2,11 @@ import client.*;
 import implementation.*;
 
 /**
- * Write a description of class Application here.
+ * The Application class holds the static method main().
+ * The main() method creates, initializes, and prints a WindFarmTable.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Yuriel
+ * @date 17.05.2020
  */
 public class Application
 {

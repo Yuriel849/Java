@@ -1,5 +1,11 @@
 package common;
 
+/**
+ * The IWindFarm interface
+ *
+ * @author Yuriel
+ * @date 17.05.2020
+ */
 public interface IWindFarm
 {
     public static void printHeader()
