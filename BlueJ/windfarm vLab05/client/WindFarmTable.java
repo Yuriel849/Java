@@ -1,4 +1,8 @@
+package client;
+
 import java.util.*;
+import common.*;
+import implementation.*;
 
 /**
  * The WindFarmTable class holds multiple WindFarm objects and can print

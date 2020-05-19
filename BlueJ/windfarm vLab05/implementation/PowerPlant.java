@@ -1,3 +1,7 @@
+package implementation;
+
+import common.*;
+
 /**
  * Write a description of class PowerPlant here.
  *

@@ -1,3 +1,7 @@
+package implementation;
+
+import common.*;
+
 /**
  * The Facility class is a generic class holding information on a facility, for example a wind farm.
  * Fields are name, country (location), generation capacity, and year of commissioning.

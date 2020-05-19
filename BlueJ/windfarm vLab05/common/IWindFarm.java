@@ -1,3 +1,5 @@
+package common;
+
 /**
  * The IWindFarm interface
  *
