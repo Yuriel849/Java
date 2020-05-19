@@ -9,6 +9,8 @@ public class WindFarm extends Facility
 {
     // Number of turbines
     private int numberTurbines;
+    // Year of commissioning
+    protected int year;
     
     /**
      * Constructor for objects of class WindFarm
@@ -21,8 +23,9 @@ public class WindFarm extends Facility
      */
     public WindFarm(String name, String country, double capacity, int numberTurbines, int year)
     {
-        super(name, country, capacity, year);
+        super(name, country, capacity);
         this.numberTurbines = numberTurbines;
+        this.year = year;
     }
     
     public int getNumberTurbines()
@@ -33,6 +36,16 @@ public class WindFarm extends Facility
     public void setNumberTurbines(int numberTurbines)
     {
         this.numberTurbines = numberTurbines;
+    }
+    
+    public int getYear()
+    {
+        return year;
+    }
+    
+    public void setYear(int year)
+    {
+        this.year = year;
     }
 
     /**

@@ -13,8 +13,6 @@ public class Facility implements IWindFarm
     protected String country;
     // Wind farm's generation capacity in MW
     protected double capacity;
-    // Year of commissioning
-    protected int year;
     
     /**
      * Constructor for objects of class Facility
@@ -24,12 +22,11 @@ public class Facility implements IWindFarm
      * @param capacity The generation capacity of the facility, calculated as number of turbines * each turbine's generation capability
      * @param year The year the facility was commissioned
      */
-    public Facility(String name, String country, double capacity, int year)
+    public Facility(String name, String country, double capacity)
     {
         this.name = name;
         this.country = country;
         this.capacity = capacity;
-        this.year = year;
     }
 
     public String getName()
@@ -62,16 +59,6 @@ public class Facility implements IWindFarm
     {
         this.capacity = capacity;
     }
-        
-    public int getYear()
-    {
-        return year;
-    }
-    
-    public void setYear(int year)
-    {
-        this.year = year;
-    }
     
     /**
      * Print out information on this facility to the terminal.
@@ -79,7 +66,7 @@ public class Facility implements IWindFarm
     @Override
     public void print()
     {
-        System.out.printf("| %-20s %-10.0f %-15s %-6d |\n",
-            name, capacity, country, year);
+        System.out.printf("| %-20s %-10.0f %-15s |\n",
+            name, capacity, country);
     }
 }
