@@ -1,12 +1,12 @@
 package common;
 
 /**
- * The IWindFarm interface
+ * The Facility interface
  *
  * @author Yuriel
- * @date 19.05.2020
+ * @date 20.05.2020
  */
-public interface IWindFarm
+public interface Facility
 {
     public static void printHeader()
     {

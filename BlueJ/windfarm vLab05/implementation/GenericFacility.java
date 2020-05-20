@@ -3,13 +3,13 @@ package implementation;
 import common.*;
 
 /**
- * The Facility class is a generic class holding information on a facility, for example a wind farm.
+ * The GenericFacility class is a generic class holding information on a facility, for example a wind farm.
  * Fields are name, country (location), generation capacity, and year of commissioning.
  *
  * @author Yuriel
  * @date 19.05.2020
  */
-public class Facility implements IWindFarm
+public class GenericFacility implements Facility
 {
     // Name of the wind farm
     protected String name;
@@ -26,7 +26,7 @@ public class Facility implements IWindFarm
      * @param capacity The generation capacity of the facility, calculated as number of turbines * each turbine's generation capability
      * @param year The year the facility was commissioned
      */
-    public Facility(String name, String country, double capacity)
+    public GenericFacility(String name, String country, double capacity)
     {
         this.name = name;
         this.country = country;

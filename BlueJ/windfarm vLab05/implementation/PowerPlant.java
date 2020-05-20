@@ -8,7 +8,7 @@ import common.*;
  * Mo
  * 01/04/2020
  */
-public class PowerPlant extends Facility
+public class PowerPlant extends GenericFacility
 {
     private int constructionStart;
     private int connectionYear;

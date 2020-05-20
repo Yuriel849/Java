@@ -9,7 +9,7 @@ import common.*;
  * @author Yuriel
  * @date 19.05.2020
  */
-public class WindFarm extends Facility
+public class WindFarm extends GenericFacility
 {
     // Number of turbines
     private int numberTurbines;
