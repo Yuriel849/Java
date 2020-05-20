@@ -9,7 +9,7 @@ import common.*;
  * @author Yuriel
  * @date 19.05.2020
  */
-public class GenericFacility implements Facility
+public abstract class GenericFacility implements Facility
 {
     // Name of the wind farm
     protected String name;
@@ -64,13 +64,5 @@ public class GenericFacility implements Facility
         this.capacity = capacity;
     }
     
-    /**
-     * Print out information on this facility to the terminal.
-     */
-    @Override
-    public void print()
-    {
-        System.out.printf("| %-20s %-10.0f %-15s |\n",
-            name, capacity, country);
-    }
+    public void print() {}
 }
