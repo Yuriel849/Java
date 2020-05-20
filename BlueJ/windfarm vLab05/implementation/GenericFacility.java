@@ -7,16 +7,16 @@ import common.*;
  * Fields are name, country (location), generation capacity, and year of commissioning.
  *
  * @author Yuriel
- * @date 19.05.2020
+ * @date 20.05.2020
  */
 public abstract class GenericFacility implements Facility
 {
     // Name of the wind farm
-    protected String name;
+    private String name;
     // Name of the country (location of wind farm)
-    protected String country;
+    private String country;
     // Wind farm's generation capacity in MW
-    protected double capacity;
+    private double capacity;
     
     /**
      * Constructor for objects of class Facility

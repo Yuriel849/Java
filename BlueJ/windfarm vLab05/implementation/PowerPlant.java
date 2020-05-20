@@ -27,7 +27,7 @@ public class PowerPlant extends GenericFacility
     {
         //String heading = String.format("%-20s | %-15s | %-12s | %-15s | %-15s", "Name", "Country", "Capacity", "Contstruction Date", "Connection Date");
         String row = String.format("| %-20s %-10s %-15s %-10s %-6s |\n",
-        this.name, this.capacity, this.country, this.constructionStart, this.connectionYear);
+        getName(), getCapacity(), getCountry(), constructionStart, connectionYear);
         
         // print list
         System.out.println(row);
