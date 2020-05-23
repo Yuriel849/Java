@@ -2,10 +2,11 @@ package implementation;
 
 
 /**
- * Write a description of class SolarPark here.
+ * The SolarPark class holds information on one solar park.
+ * Specifically, the name, country (location), generation capacity, land size, and (expected) year of connection.
  *
  * @author Yuriel
- * @version 20.05.2020
+ * @version 23.05.2020
  */
 public class SolarPark extends GenericFacility
 {
@@ -14,11 +15,23 @@ public class SolarPark extends GenericFacility
 
     /**
      * Constructor for objects of class SolarPark
+     * 
+     * @param name The name of the solar park
+     * @param country The country in which the solar park is located
+     * @param capacity The generation capacity of solar park
+     * @param landSize The size of the land on which the solar park is built
+     * @param connectionYear The (expected) year when the solar park will be connected to the power grid
      */
     public SolarPark(String name, String country, double capacity, int landSize, int connectionYear)
     {
         super(name, country, capacity);
         this.landSize = landSize;
         this.connectionYear = connectionYear;
+    }
+    
+    public void print() {
+        String row = String.format("| %-20s | %-20s | %-15s | %-15s | %-18s | %-18s | %-18s | %-9s |\n",
+        		getName(), getCountry(), getCapacity(), "N/A", "N/A", "N/A", connectionYear, landSize);
+        System.out.print(row);
     }
 }
