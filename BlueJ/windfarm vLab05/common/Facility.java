@@ -60,7 +60,7 @@ public interface Facility
         System.out.println(buff.toString());
     }
     
-    // Abstract methods called in the WindFarmTable class
+    // Abstract methods called in the Facility class and its subclasses
     void print();
     double getCapacity();
 }
