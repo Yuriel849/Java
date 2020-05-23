@@ -6,8 +6,8 @@ import common.*;
  * The WindFarm class holds information on one wind farm.
  * Specifically, the name, country (location), generation capacity, number of turbines, and year of commissioning.
  *
- * @author Yuriel
- * @date 20.05.2020
+ * @author Yuriel & Mo
+ * @date 23.05.2020
  */
 public class WindFarm extends GenericFacility
 {
@@ -55,10 +55,8 @@ public class WindFarm extends GenericFacility
     /**
      * Print out information on this wind farm to the terminal.
      */
-    @Override
     public void print()
     {
-        
     	String row = String.format("| %-20s | %-20s | %-15s | %-15s | %-18s | %-18s | %-18s | %-9s |\n",
             getName(), getCountry(), getCapacity(), numberTurbines, year, "N/A", "N/A", "N/A");
     	

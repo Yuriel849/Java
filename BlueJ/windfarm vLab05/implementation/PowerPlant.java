@@ -3,10 +3,11 @@ package implementation;
 import common.*;
 
 /**
- * Write a description of class PowerPlant here.
+ * The PowerPlant class holds information on one wind farm.
+ * Specifically, the name, country (location), generation capacity, year when construction started, and (expected) year of connection.
  *
- * Mo
- * 01/04/2020
+ * @author Mo & Yuriel
+ * @date 23.05.2020
  */
 public class PowerPlant extends GenericFacility
 {
@@ -15,6 +16,12 @@ public class PowerPlant extends GenericFacility
 
     /**
      * Constructor for objects of class PowerPlant
+     * 
+     * @param name The name of the power plant
+     * @param country The country in which the power plant is located
+     * @param capacity The generation capacity of power plant
+     * @param constructionStart The year when the construction of the power plant started
+     * @param connectionYear The (expected) year when the power plant will be connected to the power grid
      */
     public PowerPlant(String name, String country, double capacity, int constructionStart, int connectionYear) 
     {
@@ -23,14 +30,13 @@ public class PowerPlant extends GenericFacility
         this.connectionYear = connectionYear;
     }
     
+    /**
+     * Print out information on this power plant to the terminal.
+     */
     public void print()
     {
-        //String x = "| %-20s | %-20s | %-15s | %-15s | %-18s | %-18s | %-18s | %-9s |\n"
-    	
     	String row = String.format("| %-20s | %-20s | %-15s | %-15s | %-18s | %-18s | %-18s | %-9s |\n",
         		getName(), getCountry(), getCapacity(), "N/A", "N/A", constructionStart, connectionYear, "N/A");
-        
-        // print list
         System.out.print(row);
     }
 }

@@ -4,10 +4,10 @@ import common.*;
 
 /**
  * The GenericFacility class is a generic class holding information on a facility, for example a wind farm.
- * Fields are name, country (location), generation capacity, and year of commissioning.
+ * Fields are name, country (location), and generation capacity.
  *
- * @author Yuriel
- * @date 20.05.2020
+ * @author Yuriel & Mo
+ * @date 23.05.2020
  */
 public abstract class GenericFacility implements Facility
 {
@@ -24,7 +24,6 @@ public abstract class GenericFacility implements Facility
      * @param name The name of the facility
      * @param country The country in which the facility is located
      * @param capacity The generation capacity of the facility, calculated as number of turbines * each turbine's generation capability
-     * @param year The year the facility was commissioned
      */
     public GenericFacility(String name, String country, double capacity)
     {
@@ -63,6 +62,4 @@ public abstract class GenericFacility implements Facility
     {
         this.capacity = capacity;
     }
-    
-    public void print() {}
 }
