@@ -1,14 +1,20 @@
+package implementation;
+
+import common.*;
+
 /**
  * The WindFarm class holds information on one wind farm.
  * Specifically, the name, country (location), generation capacity, number of turbines, and year of commissioning.
  *
- * @author Yuriel
- * @date 19.05.2020
+ * @author Yuriel & Mo
+ * @date 23.05.2020
  */
-public class WindFarm extends Facility
+public class WindFarm extends GenericFacility
 {
     // Number of turbines
     private int numberTurbines;
+    // Year of commissioning
+    private int year;
     
     /**
      * Constructor for objects of class WindFarm
@@ -21,8 +27,9 @@ public class WindFarm extends Facility
      */
     public WindFarm(String name, String country, double capacity, int numberTurbines, int year)
     {
-        super(name, country, capacity, year);
+        super(name, country, capacity);
         this.numberTurbines = numberTurbines;
+        this.year = year;
     }
     
     public int getNumberTurbines()
@@ -34,14 +41,25 @@ public class WindFarm extends Facility
     {
         this.numberTurbines = numberTurbines;
     }
+    
+    public int getYear()
+    {
+        return year;
+    }
+    
+    public void setYear(int year)
+    {
+        this.year = year;
+    }
 
     /**
      * Print out information on this wind farm to the terminal.
      */
-    @Override
     public void print()
     {
-        System.out.printf("| %-20s %-10.0f %-15s %-10d %-6d |\n",
-            name, capacity, country, numberTurbines, year);
+    	String row = String.format("| %-20s | %-20s | %-15s | %-15s | %-18s | %-18s | %-18s | %-9s |\n",
+            getName(), getCountry(), getCapacity(), numberTurbines, year, "N/A", "N/A", "N/A");
+    	
+    	System.out.print(row);
     }
 }
