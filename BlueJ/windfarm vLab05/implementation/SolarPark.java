@@ -22,13 +22,13 @@ public class SolarPark extends GenericFacility
      * @param landSize The size of the land on which the solar park is built
      * @param connectionYear The (expected) year when the solar park will be connected to the power grid
      */
-    public SolarPark(String name, String country, double capacity, int landSize, int connectionYear)
+    public SolarPark(String name, String country, double capacity, int connectionYear, int landSize)
     {
         super(name, country, capacity);
         this.landSize = landSize;
         this.connectionYear = connectionYear;
     }
-    
+
     public void print() {
         String printName = getName();
         if(printName.length() > 20) {
