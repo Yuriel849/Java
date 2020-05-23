@@ -30,13 +30,33 @@ public class PowerPlant extends GenericFacility
         this.connectionYear = connectionYear;
     }
     
+    public int getConstructionStart()
+    {
+        return constructionStart;
+    }
+    
+    public void setConstructionStart(int constructionStart)
+    {
+        this.constructionStart = constructionStart;
+    }
+    
+    public int getConnectionYear()
+    {
+        return connectionYear;
+    }
+    
+    public void setConnectionYear(int connectionYear)
+    {
+        this.connectionYear = connectionYear;
+    }
+    
     /**
      * Print out information on this power plant to the terminal.
      */
     public void print()
     {
-    	String row = String.format("| %-20s | %-20s | %-15s | %-15s | %-18s | %-18s | %-18s | %-9s |\n",
-        		getName(), getCountry(), getCapacity(), "N/A", "N/A", constructionStart, connectionYear, "N/A");
+        String row = String.format("| %-20s | %-20s | %-15s | %-15s | %-18s | %-18s | %-18s | %-9s |\n",
+                getName(), getCountry(), getCapacity(), "N/A", "N/A", constructionStart, connectionYear == -1 ? "UNKNOWN" : connectionYear, "N/A");
         System.out.print(row);
     }
 }
