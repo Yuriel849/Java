@@ -25,16 +25,12 @@ public class PowerPlant extends GenericFacility
     
     public void print()
     {
-<<<<<<< HEAD
-        System.out.printf("| %-20s %-10.0f %-15s %-10d %-6d |\n", 
-        		this.name, this.capacity, this.country, this.constructionStart, this.connectionYear);
-=======
-        //String heading = String.format("%-20s | %-15s | %-12s | %-15s | %-15s", "Name", "Country", "Capacity", "Contstruction Date", "Connection Date");
-        String row = String.format("| %-20s %-10s %-15s %-10s %-6s |\n",
-        getName(), getCapacity(), getCountry(), constructionStart, connectionYear);
+        //String x = "| %-20s | %-20s | %-15s | %-15s | %-18s | %-18s | %-18s | %-9s |\n"
+    	
+    	String row = String.format("| %-20s | %-20s | %-15s | %-15s | %-18s | %-18s | %-18s | %-9s |\n",
+        		getName(), getCountry(), getCapacity(), "N/A", "N/A", constructionStart, connectionYear, "N/A");
         
         // print list
-        System.out.println(row);
->>>>>>> 7fc2eb31d2916cfab50820cf0bc8814e58ca0693
+        System.out.print(row);
     }
 }

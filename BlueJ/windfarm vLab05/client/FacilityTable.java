@@ -58,21 +58,16 @@ public class FacilityTable
     
     public void printTable()
     {
-        System.out.println("_____________________________________________________________________");
-        System.out.printf("|                        < %-15s >                       |\n", name.toUpperCase());
-        printLine();
-        Facility.printHeader();
-        printLine();
+        //System.out.println("_____________________________________________________________________");
+        //System.out.printf("|                        < %-15s >                       |\n", name.toUpperCase());
+        //printLine();
+        Facility.printHeader(name.toUpperCase());
+        Facility.dashedLine();
         for(Facility farm : array)
         {
             farm.print();
         }
-        printLine();
-    }
-    
-    private void printLine()
-    {
-        System.out.println("---------------------------------------------------------------------");
+        Facility.dashedLine();
     }
 
 }

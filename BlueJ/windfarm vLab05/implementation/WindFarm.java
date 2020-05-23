@@ -58,7 +58,10 @@ public class WindFarm extends GenericFacility
     @Override
     public void print()
     {
-        System.out.printf("| %-20s %-10.0f %-15s %-10d %-6d |\n",
-            getName(), getCapacity(), getCountry(), numberTurbines, year);
+        
+    	String row = String.format("| %-20s | %-20s | %-15s | %-15s | %-18s | %-18s | %-18s | %-9s |\n",
+            getName(), getCountry(), getCapacity(), numberTurbines, year, "N/A", "N/A", "N/A");
+    	
+    	System.out.print(row);
     }
 }
