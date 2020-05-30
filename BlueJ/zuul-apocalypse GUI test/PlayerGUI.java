@@ -21,8 +21,7 @@ public class PlayerGUI extends JFrame
     /**
      * Create the frame with an image area at the top, a text area in the middle, and an input field with button at the bottom.
      */
-    public PlayerGUI()
-    {
+    public PlayerGUI() {
         setTitle("Zuul-Apocalypse Game User Interface");
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent ev)
@@ -33,28 +32,45 @@ public class PlayerGUI extends JFrame
 
         final Container contentPane = getContentPane();
 //        contentPane.add(setupImageDisplay());
-//        contentPane.add(setupTextArea());
+        contentPane.add(setupTextArea());
         contentPane.add(setupUserInput());
 
         setSize(PREFERRED_SIZE);
     }
     
-    public void showWindow()
-    {
+    public void showWindow() {
         setVisible(true);
     }
 
-    public Dimension getPreferredSize()
-    {
+    public Dimension getPreferredSize() {
         return PREFERRED_SIZE;
     }
 
     /**
+     * Set up the text area.
+     * @return The completed panel.
+     */
+    private Container setupTextArea() {
+        // Set up the area where text will be displayed.
+        final JTextArea textArea = new JTextArea(10, 50);
+        textArea.setEditable(false);
+        JScrollPane scrollArea =
+                new JScrollPane(textArea,
+                                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+                                JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new BorderLayout());
+        panel.add(scrollArea, BorderLayout.CENTER);
+
+        return panel;
+    }
+    
+    /**
      * Set up the user input area with one text input field and an OK button.
      * @return The completed panel.
      */
-    private Container setupUserInput()
-    {
+    private Container setupUserInput() {
         // Set up the text input field.
         Box inputLabelArea = Box.createHorizontalBox();
         inputLabelArea.add(new JLabel("Enter command", JLabel.LEFT));
