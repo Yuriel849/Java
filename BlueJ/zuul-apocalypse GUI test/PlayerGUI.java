@@ -82,8 +82,10 @@ public class PlayerGUI extends JFrame
      */
     private Container setupTextArea() {
         // Set up the area where text will be displayed.
-        textArea = new JTextArea(10, 50);
+        textArea = new JTextArea(10, 30);
         textArea.setEditable(false);
+        textArea.setLineWrap(true);
+        textArea.setFont(textArea.getFont().deriveFont(18f));
         JScrollPane scrollArea =
                 new JScrollPane(textArea,
                                 JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
@@ -106,7 +108,7 @@ public class PlayerGUI extends JFrame
         inputLabelArea.add(new JLabel("  Enter command  ", JLabel.LEFT));
         inputLabelArea.add(Box.createGlue());
         final JTextField inputField = new JTextField(1000);
-        inputField.setFont(inputField.getFont().deriveFont(10f));
+        inputField.setFont(inputField.getFont().deriveFont(18f));
         Box inputArea = Box.createHorizontalBox();
         inputArea.add(inputLabelArea);
         inputArea.add(inputField);
