@@ -11,7 +11,7 @@ import java.io.*;
  * Class PlayerGUI.
  *
  * @author Yuriel
- * @version 2020.05.30
+ * @version 2020.05.31
  */
 public class PlayerGUI extends JFrame
 {
@@ -63,7 +63,7 @@ public class PlayerGUI extends JFrame
         label.setSize(800, 590);
         
         try {
-            image = ImageIO.read(new File("./DSC02883.jpg"));
+            image = ImageIO.read(new File("./DSC02883.jpg")); // File name is static for this test project
         } catch (IOException e) {
             e.printStackTrace();
         }

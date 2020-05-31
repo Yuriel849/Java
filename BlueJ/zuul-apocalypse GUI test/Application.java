@@ -3,7 +3,7 @@
  * Class Application with the main method.
  *
  * @author Yuriel
- * @version 2020.05.30
+ * @version 2020.05.31
  */
 public class Application {
     private static PlayerGUI interact;
