@@ -134,6 +134,8 @@ public class PlayerGUI extends JFrame
         buttonArea.add(clear);
         inputArea.add(buttonArea);
         
+        getRootPane().setDefaultButton(submit);
+        
         // Layout the details area above the button area.
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
