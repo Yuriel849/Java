@@ -102,4 +102,6 @@ hs_err_pid*
 ## ignoring target file
 target/
 
+*.jpg
+
 # End of https://www.gitignore.io/api/java,eclipse,java-web
