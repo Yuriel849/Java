@@ -13,13 +13,13 @@ import java.util.*;
 public class PlayerGUI extends JFrame
 {
     // Size preferences for this frame.
-    private static final int PREFERRED_WIDTH = 500;
-    private static final int PREFERRED_HEIGHT = 500;
-    private static final Dimension PREFERRED_SIZE =
-                            new Dimension(PREFERRED_WIDTH,PREFERRED_HEIGHT);
+    private static final int PREFERRED_WIDTH = 1200;
+    private static final int PREFERRED_HEIGHT = 600;
+    private static final Dimension PREFERRED_SIZE = new Dimension(PREFERRED_WIDTH,PREFERRED_HEIGHT);
     
     /**
-     * Create the frame with an image area at the top, a text area in the middle, and an input field with button at the bottom.
+     * Create the frame with an image area in the center and a text area on its right,
+     * and an input field with submit and clear buttons at the bottom.
      */
     public PlayerGUI() {
         setTitle("Zuul-Apocalypse Game User Interface");
@@ -31,9 +31,10 @@ public class PlayerGUI extends JFrame
         });
 
         final Container contentPane = getContentPane();
-//        contentPane.add(setupImageDisplay());
-        contentPane.add(setupTextArea());
-        contentPane.add(setupUserInput());
+        contentPane.setLayout(new BorderLayout());
+        contentPane.add(new JButton("north"), BorderLayout.CENTER);
+        contentPane.add(setupTextArea(), BorderLayout.EAST);
+        contentPane.add(setupUserInput(), BorderLayout.SOUTH);
 
         setSize(PREFERRED_SIZE);
     }
@@ -46,6 +47,26 @@ public class PlayerGUI extends JFrame
         return PREFERRED_SIZE;
     }
 
+    /**
+     * Set up the image display area.
+     * @return The completed panel.
+     */
+    private Container setupImageDisplay() {
+        // Set up the area where text will be displayed.
+        final JTextArea textArea = new JTextArea(10, 50);
+        textArea.setEditable(false);
+        JScrollPane scrollArea =
+                new JScrollPane(textArea,
+                                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+                                JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new BorderLayout());
+        panel.add(scrollArea, BorderLayout.CENTER);
+
+        return panel;
+    }
+    
     /**
      * Set up the text area.
      * @return The completed panel.
@@ -71,20 +92,14 @@ public class PlayerGUI extends JFrame
      * @return The completed panel.
      */
     private Container setupUserInput() {
-        // Set up the text input field.
+        // Set up the label and text input field.
         Box inputLabelArea = Box.createHorizontalBox();
-        inputLabelArea.add(new JLabel("Enter command", JLabel.LEFT));
+        inputLabelArea.add(new JLabel("Enter command  ", JLabel.LEFT));
         inputLabelArea.add(Box.createGlue());
         final JTextField inputField = new JTextField(30);
-        Box inputArea = Box.createVerticalBox();
+        Box inputArea = Box.createHorizontalBox();
         inputArea.add(inputLabelArea);
         inputArea.add(inputField);
-
-        // Layout the entry-details fields in a panel.
-        Box singleLineFields = Box.createVerticalBox();
-        singleLineFields.add(inputArea);
-        JPanel detailsPanel = new JPanel();
-        detailsPanel.add(singleLineFields);
 
         // Set up the buttons.
         JPanel buttonArea = new JPanel();
@@ -101,12 +116,12 @@ public class PlayerGUI extends JFrame
         );
         buttonArea.add(submit);
         buttonArea.add(clear);
-
+        inputArea.add(buttonArea);
+        
         // Layout the details area above the button area.
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
-        panel.add(detailsPanel, BorderLayout.CENTER);
-        panel.add(buttonArea, BorderLayout.SOUTH);
+        panel.add(inputArea, BorderLayout.CENTER);
         return panel;
     }
 }
