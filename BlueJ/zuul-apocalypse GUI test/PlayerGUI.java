@@ -19,6 +19,7 @@ public class PlayerGUI extends JFrame
     private static final int PREFERRED_WIDTH = 1200;
     private static final int PREFERRED_HEIGHT = 600;
     private static final Dimension PREFERRED_SIZE = new Dimension(PREFERRED_WIDTH,PREFERRED_HEIGHT);
+    private JTextArea textArea;
     
     /**
      * Create the frame with an image area in the center and a text area on its right,
@@ -81,7 +82,7 @@ public class PlayerGUI extends JFrame
      */
     private Container setupTextArea() {
         // Set up the area where text will be displayed.
-        final JTextArea textArea = new JTextArea(10, 50);
+        textArea = new JTextArea(10, 50);
         textArea.setEditable(false);
         JScrollPane scrollArea =
                 new JScrollPane(textArea,
@@ -116,7 +117,11 @@ public class PlayerGUI extends JFrame
         JButton clear = new JButton("Clear");
 
         // Take the necessary action to add the new details.
-        submit.addActionListener(e -> {});
+        submit.addActionListener(e -> {
+                textArea.append(inputField.getText() + "\n");
+                inputField.setText("");
+            }
+        );
 
         // Clear the data-entry areas.
         clear.addActionListener(e -> {
