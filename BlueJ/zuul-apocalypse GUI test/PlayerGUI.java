@@ -1,8 +1,11 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.*;
 import javax.swing.*;
 import javax.swing.event.*;
 import java.util.*;
+import javax.imageio.*;
+import java.io.*;
 
 /**
  * Class PlayerGUI.
@@ -32,7 +35,7 @@ public class PlayerGUI extends JFrame
 
         final Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
-        contentPane.add(new JButton("north"), BorderLayout.CENTER);
+        contentPane.add(setupImageDisplay(), BorderLayout.CENTER);
         contentPane.add(setupTextArea(), BorderLayout.EAST);
         contentPane.add(setupUserInput(), BorderLayout.SOUTH);
 
@@ -52,18 +55,23 @@ public class PlayerGUI extends JFrame
      * @return The completed panel.
      */
     private Container setupImageDisplay() {
-        // Set up the area where text will be displayed.
-        final JTextArea textArea = new JTextArea(10, 50);
-        textArea.setEditable(false);
-        JScrollPane scrollArea =
-                new JScrollPane(textArea,
-                                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
-                                JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-
         JPanel panel = new JPanel();
-        panel.setLayout(new BorderLayout());
-        panel.add(scrollArea, BorderLayout.CENTER);
-
+        JLabel label = new JLabel();
+        Image image = null;
+        
+        label.setSize(800, 590);
+        
+        try {
+            image = ImageIO.read(new File("./DSC02883.jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        Image scaledImage = image.getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon imageIcon = new ImageIcon(scaledImage);
+        label = new JLabel(imageIcon);
+        panel.add(label);
+        
         return panel;
     }
     
@@ -94,9 +102,10 @@ public class PlayerGUI extends JFrame
     private Container setupUserInput() {
         // Set up the label and text input field.
         Box inputLabelArea = Box.createHorizontalBox();
-        inputLabelArea.add(new JLabel("Enter command  ", JLabel.LEFT));
+        inputLabelArea.add(new JLabel("  Enter command  ", JLabel.LEFT));
         inputLabelArea.add(Box.createGlue());
-        final JTextField inputField = new JTextField(30);
+        final JTextField inputField = new JTextField(1000);
+        inputField.setFont(inputField.getFont().deriveFont(10f));
         Box inputArea = Box.createHorizontalBox();
         inputArea.add(inputLabelArea);
         inputArea.add(inputField);
