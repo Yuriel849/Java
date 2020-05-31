@@ -19,7 +19,9 @@ public class PlayerGUI extends JFrame
     private static final int PREFERRED_WIDTH = 1200;
     private static final int PREFERRED_HEIGHT = 600;
     private static final Dimension PREFERRED_SIZE = new Dimension(PREFERRED_WIDTH,PREFERRED_HEIGHT);
+
     private JTextArea textArea;
+    private Image image;
     
     /**
      * Create the frame with an image area in the center and a text area on its right,
@@ -58,7 +60,6 @@ public class PlayerGUI extends JFrame
     private Container setupImageDisplay() {
         JPanel panel = new JPanel();
         JLabel label = new JLabel();
-        Image image = null;
         
         label.setSize(800, 590);
         
