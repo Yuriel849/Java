@@ -1,6 +1,12 @@
 import client.*;
 import implementation.*;
 
+/**
+ * The Application class with the main method
+ *
+ * @author Mo
+ * @date 01.06.2020
+ */
 public class Application {
     // Class fields
     private static FacilityTable table;
@@ -16,9 +22,9 @@ public class Application {
     }
     
     /**
-     * Initialize the list with dummy data
+     * Initialize the list with dummy data.
      */
-    public static void initList()
+    private static void initList()
     {
         if(initialized == false)
         {   
