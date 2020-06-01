@@ -4,19 +4,23 @@ package common;
  * The Facility interface
  *
  * @author Yuriel & Mo
- * @date 23.05.2020
+ * @date 01.06.2020
  */
 public interface Facility
 {
     // Static String to hold formatted table header
-    static String tableHeader = String.format("| %-20s | %-20s | %-15s | %-15s | %-18s | %-18s | %-18s | %-9s |\n",
-            "Name", "Country", "Capacity", "No. of Turbines", "Year commissioned",
-            "Construction Start", "Planned Connection", "Land Size");;
+    public static String tableHeader = String.format("| %-20s | %-20s | %-15s | %-15s | %-18s | %-18s | %-18s | %-9s |\n",
+            "Name", "Country", "Capacity", "No. of Turbines", "Year commissioned", "Construction Start", "Planned Connection", "Land Size");;
     // Static integer to hold table width
-    static int tableWidth = tableHeader.length() - 1;
+    public static int tableWidth = tableHeader.length() - 1;
     
+    /**
+     * Print the header of the table.
+     * 
+     * @param tableTitle The title of the table.
+     */
     public static void printHeader(String tableTitle) {
-        straightLine();
+        dashedLine();
         printCentred(tableTitle);
         dashedLine();
         
@@ -24,6 +28,9 @@ public interface Facility
         dashedLine();
     }
     
+    /**
+     * Print a horizontal dashed line ("-") the width of the table.
+     */
     public static void dashedLine() {
         for(int i = 0; i < tableWidth; i++) {
             System.out.printf("-");
@@ -31,14 +38,10 @@ public interface Facility
         System.out.printf("\n");
     }
     
-    public static void straightLine() {
-        for(int i = 0; i < tableWidth; i++) {
-            System.out.printf("_");
-        }
-        System.out.printf("\n");
-    }
-    
-    private static void printCentred(String str) {
+    /**
+     * Print the information 
+     */
+    public static void printCentred(String str) {
         int left = ((tableWidth-4) - str.length()) / 2;
         int right = (tableWidth-4) - left - str.length();
         String repeatedChar = " ";
@@ -60,7 +63,7 @@ public interface Facility
         System.out.println(buff.toString());
     }
     
-    // Abstract methods called in the Facility class and its subclasses
-    void print();
-    double getCapacity();
+    // Abstract methods implemented in the Facility class and its subclasses
+    public void print();
+    public double getCapacity();
 }
