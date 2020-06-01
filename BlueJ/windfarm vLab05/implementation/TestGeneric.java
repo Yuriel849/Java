@@ -43,6 +43,12 @@ public class TestGeneric
     {
     }
 
+    /**
+     * JUnit Tests should be for automated testing only, not for manual testing (ex) Printing to the terminal).
+     * 
+     * Despite this, this test method was created to test and visually confirm that the list was polymorphic
+     * and could hold instances of WindFarm, PowerPlant, and SolarPark.
+     */
     @Test
     public void TestPrintPolymorphicList()
     {
