@@ -13,7 +13,7 @@ public class Application {
         showInterface();
     }
     
-    public static void showInterface()
+    private static void showInterface()
     {
         interact.setVisible(true);
     }
