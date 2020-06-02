@@ -1,13 +1,17 @@
+package implementation;
+
+// import libraries
 import java.util.Stack;
+// import packages
+import common.*;
 
 /**
  * Class Player
  *
  * @author Yuriel and Mo
- * @version 2020.05.06
+ * @version 2020.06.02
  */
-public class Player extends Character
-{
+public class Player extends Character {
     // A pack being carried by the player as an inventory (maximum 10 items).
     private Pack pack;
     // The room where the player is currently located.
@@ -18,8 +22,7 @@ public class Player extends Character
     /**
      * Default constructor for objects of class Player.
      */
-    public Player()
-    {
+    public Player() {
         super("The Player", "Obviously I am I.");
         pack = new Pack();
         previousRooms = new Stack();
@@ -29,8 +32,7 @@ public class Player extends Character
      * The player moves in one direction. If there is an exit in that direction,
      * move to the new room; otherwise print an error message.
      */
-    public String move(Command command, Parser parser)
-    {
+    public String move(Command command, UserInterfaceable parser) {
         int numberEnemies = 0;
         String result = "";
         
@@ -69,8 +71,7 @@ public class Player extends Character
     /**
      * Take the designated item from the room and put it in the player's pack (inventory).
      */
-    public void takeItem(Command command)
-    {
+    public void takeItem(Command command) {
         Item target = currentRoom.takeItem(command.getSecondWord()); // Returns null if the designated item is not in the room.
         
         if(target == null)
@@ -86,8 +87,7 @@ public class Player extends Character
     /**
      * Remove the designated item from the player's pack and put it back in the room.
      */
-    public void leaveItem(Command command)
-    {
+    public void leaveItem(Command command) {
         Item target = pack.getFromPack(command.getSecondWord());
         
         if(target == null)
@@ -106,8 +106,7 @@ public class Player extends Character
      * @param command
      * @return
      */
-    public void goBack(Command command)
-    {
+    public void goBack(Command command) {
         // Field to hold the previous state of the player
         Room previousRoom;
         
@@ -156,8 +155,7 @@ public class Player extends Character
      * Return the size of the stack (the number of rooms the player has already moved through).
      * @return The size of the stack as an int.
      */
-    public int getSizePreviousRooms()
-    {
+    public int getSizePreviousRooms() {
         return previousRooms.size();
     }
     
@@ -165,8 +163,7 @@ public class Player extends Character
      * Return the room where the player is right now.
      * @return The current room.
      */
-    public Room getCurrentRoom()
-    {
+    public Room getCurrentRoom() {
         return currentRoom;
     }
     
@@ -174,8 +171,7 @@ public class Player extends Character
      * Set the room where the player is right now.
      * @param room The current room.
      */
-    public void setCurrentRoom(Room room)
-    {
+    public void setCurrentRoom(Room room) {
         currentRoom = room;
     }
 }

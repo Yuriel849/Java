@@ -1,14 +1,18 @@
+package implementation;
+
+// import libraries
 import java.util.ArrayList;
+// import packages
+import common.*;
 
 /**
  * Class Battle
  *
  * @author Yuriel
- * @version 2020.05.06
+ * @version 2020.06.02
  */
-public class Battle
-{
-    public static String fight(Player player, Parser parser)
+public class Battle {
+    public static String fight(Player player, UserInterfaceable parser)
     {
         ArrayList<Zombie> zombies = player.getCurrentRoom().getAllZombies();
         int index = zombies.size() - 1, health = player.getHealth();

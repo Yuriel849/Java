@@ -1,4 +1,9 @@
+// import libraries
 import java.util.ArrayList;
+// import Packages
+import implementation.*;
+import common.*;
+import client.*;
 
 /**
  *  This class is the main class of the "World of Zuul" application. 
@@ -17,23 +22,23 @@ import java.util.ArrayList;
  * @version (Original) 2016.02.29
  * 
  * @author (Custom) Yuriel and Mo
- * @version (Custom) 2020.05.09
+ * @version (Custom) 2020.06.02
  */
 
 public class Game 
 {
-    private Player player;
-    private Parser parser;
+    private static Player player;
+    private static Parser parser;
     
-    private Pack pack;
+    private static Pack pack;
     
-    private boolean finished;
+    private static boolean finished;
     
     // Time challenge variables
-    private long typingStartTime;
-    private long typingEndTime;
-    private int typingCounter;
-    private long typingDuration;
+    private static long typingStartTime;
+    private static long typingEndTime;
+    private static int typingCounter;
+    private static long typingDuration;
     
     private static final int maxItems = 5;
     private static final int maxZombies = 3;
@@ -41,7 +46,7 @@ public class Game
     /**
      * Create the game and initialise its internal map.
      */
-    public Game() 
+    public static void main(String[] args) 
     {
         player = new Player();
         createRooms();
@@ -49,13 +54,15 @@ public class Game
         
         typingStartTime = 0;
         typingCounter = 0;
+        
+        Game.play();
     }
 
     /**
      * Create all the rooms and link their exits together, and randomly set a description for each room and add items to each room.
      * Each room will be randomly allocated up to five items and three zombies, with the exception of hallways, which will have only zombies.
      */
-    private void createRooms()
+    private static void createRooms()
     {
         ArrayList<Room> gameMap = new ArrayList<>();
         Room temp;
@@ -131,7 +138,7 @@ public class Game
      * Initialize descriptions for all the rooms.
      * @param gameMap The ArrayList holding all the rooms.
      */
-    private void setDescriptions(ArrayList<Room> gameMap)
+    private static void setDescriptions(ArrayList<Room> gameMap)
     {
         // A constant array that holds all valid Room descriptions
         final String[] descriptions = {
@@ -172,7 +179,7 @@ public class Game
      * Hallways may hold only zombies.
      * @param gameMap The ArrayList holding all the rooms.
      */
-    private void populateRooms(ArrayList<Room> gameMap)
+    private static void populateRooms(ArrayList<Room> gameMap)
     {
         // A constant array that holds all valid item descriptions
         final String[] names = {
@@ -207,7 +214,7 @@ public class Game
     /**
      *  Main play routine.  Loops until end of play.
      */
-    public void play() 
+    public static void play() 
     {            
         boolean finishedTypingChallenge;
         printWelcome();
@@ -239,7 +246,7 @@ public class Game
     /**
      * Print out the opening message for the player.
      */
-    private void printWelcome()
+    private static void printWelcome()
     {
         System.out.println();
         System.out.println("......harsh white light pierces your eyes as you struggle out of a deep slumber.");
@@ -256,7 +263,7 @@ public class Game
      * @param command The command to be processed.
      * @return true If the command ends the game, false otherwise.
      */
-    private boolean processCommand(Command command) 
+    private static boolean processCommand(Command command) 
     {
         boolean wantToQuit = false;
 
@@ -320,7 +327,7 @@ public class Game
      * @param command The command to be processed.
      * @return true If the command ends the game, false otherwise.
      */
-    private boolean processCommandStartChallenge(Command command) 
+    private static boolean processCommandStartChallenge(Command command) 
     {
         boolean wantToQuit = false;
 
@@ -366,7 +373,7 @@ public class Game
     /**
      * Read the memo before leaving the first room.
      */
-    private void readMemo()
+    private static void readMemo()
     {
         System.out.println("Memo read.");
         System.out.println("You pick up the gun and step out the door.");
@@ -375,7 +382,7 @@ public class Game
     /**
      * Leave the first room without reading the memo, and die immediately.
      */
-    private void quickDeath()
+    private static void quickDeath()
     {
         System.out.println("You rush out the door, desperate to find what is this place and why you are here. There has to be some— ");
         System.out.println("Something grabs your shoulder and spins you around. You catch a glimpse of a grotesque face before it flashes towards your throat— ");
@@ -388,7 +395,7 @@ public class Game
     /**
      * Reach the elevator and win the game.
      */
-    private void winGame()
+    private static void winGame()
     {
         System.out.println("You're finally here... you reached the elevators...");
         System.out.println();
@@ -399,7 +406,7 @@ public class Game
     /**
      * Print out some help information, and a list of the command words the player can use.
      */
-    private void printHelp() 
+    private static void printHelp() 
     {
         System.out.println("Who am I? Where am I? What is going on here?");
         System.out.println("......you have no choice but to follow the instructions on the note.");
@@ -413,7 +420,7 @@ public class Game
      * "Quit" was entered. Check the rest of the command to see whether we really quit the game.
      * @return true, if this command quits the game, false otherwise.
      */
-    private boolean quit(Command command) 
+    private static boolean quit(Command command) 
     {
         if(command.hasSecondWord()) {
             System.out.println("Quit what?");

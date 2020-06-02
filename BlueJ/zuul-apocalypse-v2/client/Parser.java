@@ -1,4 +1,10 @@
+package client;
+
+// import libraries
 import java.util.Scanner;
+// import packages
+import implementation.CommandWords;
+import common.*;
 
 /**
  * This class is part of the "World of Zuul" application. 
@@ -17,10 +23,9 @@ import java.util.Scanner;
  * @version (Original) 2016.02.29
  * 
  * @author (Custom) Yuriel and Mo
- * @version (Custom) 2020.05.05
+ * @version (Custom) 2020.06.02
  */
-public class Parser 
-{
+public class Parser implements UserInterfaceable{
     private CommandWords commands;  // holds all valid command words
     private Scanner reader;         // source of command input
 
