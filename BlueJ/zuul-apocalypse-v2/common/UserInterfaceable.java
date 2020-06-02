@@ -8,6 +8,7 @@ package common;
  * @version 2020.06.02
  */
 public interface UserInterfaceable {
+    void showCommands();
     Command getCommand();
     //void updateImg(String filePath); 
 }
