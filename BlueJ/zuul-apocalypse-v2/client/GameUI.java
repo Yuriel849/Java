@@ -1,3 +1,4 @@
+
 package client;
 
 import java.awt.*;
@@ -17,7 +18,7 @@ import common.*;
  * @author Yuriel
  * @version 2020.06.03.
  */
-public class GameUI extends JFrame implements UI
+public class GameUI extends JFrame implements UserInterfaceable
 {
     // Size preferences for this frame.
     private static final int PREFERRED_WIDTH = 1200;
@@ -58,6 +59,10 @@ public class GameUI extends JFrame implements UI
      */
     @Override
     public void changeImage(String fileName) {
+    }
+    
+    @Override
+    public Command getCommand() {
     }
     
     public void showWindow() {
