@@ -1,4 +1,4 @@
- 
+package common; 
 
 /**
  * This class is part of the "World of Zuul" application. 

@@ -1,7 +1,8 @@
- 
-
+package client;
 
 import java.util.Scanner;
+
+import common.*;
 
 /**
  * This class is part of the "World of Zuul" application. 
