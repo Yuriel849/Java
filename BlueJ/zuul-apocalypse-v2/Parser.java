@@ -1,10 +1,7 @@
-package client;
+ 
 
-// import libraries
+
 import java.util.Scanner;
-// import packages
-import implementation.CommandWords;
-import common.*;
 
 /**
  * This class is part of the "World of Zuul" application. 

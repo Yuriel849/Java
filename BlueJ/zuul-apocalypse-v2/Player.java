@@ -1,9 +1,5 @@
-package implementation;
-
-// import libraries
+ 
 import java.util.Stack;
-// import packages
-import common.*;
 
 /**
  * Class Player

@@ -1,9 +1,7 @@
-package implementation;
+ 
 
-// import libraries
+
 import java.util.ArrayList;
-// import packages
-import common.*;
 
 /**
  * Class Battle
