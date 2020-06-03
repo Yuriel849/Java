@@ -63,6 +63,7 @@ public class GameUI extends JFrame implements UserInterfaceable
     
     @Override
     public Command getCommand() {
+        return new Command("test", "test", "test");
     }
     
     public void showWindow() {
