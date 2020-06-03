@@ -8,8 +8,10 @@ package common;
  * @version 2020.06.03
  */
 public interface UserInterfaceable {
-//    void showCommands();
-//    Command getCommand();
+    /**
+     * Gets valid commands from the GUI to be processed by the GameEngine.
+     */
+    Command getCommand();
     
     /**
      * Displays text about the game in a JTextArea in the GUI.
@@ -27,7 +29,6 @@ public interface UserInterfaceable {
     
     /**
      * Start the user interface for interaction with the user.
-     *
      */
     void enable();
 }
