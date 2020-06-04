@@ -111,7 +111,7 @@ public class GameUI extends JFrame implements UserInterfaceable
         label.setSize(800, 590);
         
         try {
-            image = ImageIO.read(new File("./images/room.jpg")); // File name is static for this test project
+            image = ImageIO.read(new File("./images/room.jpg")); // When starting the GUI for the first time, loads this image as the initial image
         } catch (IOException e) {
             e.printStackTrace();
         }
