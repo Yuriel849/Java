@@ -1,4 +1,3 @@
-
 package client;
 
 import java.awt.*;
@@ -16,7 +15,7 @@ import common.*;
  * Class GraphicUI
  *
  * @author Yuriel
- * @version 2020.06.03.
+ * @version 2020.06.04.
  */
 public class GameUI extends JFrame implements UserInterfaceable
 {
@@ -25,9 +24,14 @@ public class GameUI extends JFrame implements UserInterfaceable
     private static final int PREFERRED_HEIGHT = 600;
     private static final Dimension PREFERRED_SIZE = new Dimension(PREFERRED_WIDTH,PREFERRED_HEIGHT);
 
-    private JTextArea gameTextArea;
-    private JTextArea userTextArea;
+    private JTextArea upperTextArea;
+    private JTextArea lowerTextArea;
     private Image image;
+    
+    // Three command words to be received from user input and put into a Command object for the game engine
+    private String commandFirst = "";
+    private String commandSecond = "";
+    private String commandThird = "";
     
     /**
      * Create the frame with an image area in the center and a text area on its right,
@@ -44,26 +48,48 @@ public class GameUI extends JFrame implements UserInterfaceable
         setSize(PREFERRED_SIZE);
     }
     
-    /** Displays text in a JTextArea in the GUI.
+    /**
+     * Displays text about the game in the upper JTextArea in the GUI.
      *
      * @param msg The text to be displayed.
      */
     @Override
-    public void print(String text) {
+    public void printUpper(String text) {
+    }
+    
+    /**
+     * Displays text about the game in the lower JTextArea in the GUI.
+     *
+     * @param msg The text to be displayed.
+     */
+    @Override
+    public void printLower(String text) {
     }
     
     /**
      * Changes the image displayed in the GUI.
      * 
-     * @param fileName The name of the image file to be displayed.
+     * @param newImage The new Image object to be displayed.
      */
     @Override
-    public void changeImage(String fileName) {
+    public void changeImage(Image newImage) {
     }
     
+    /**
+     * Returns the first three words of the user input to the game engine.
+     * Resets the three Strings commandFirst, commandSecond, commandThird to empty Strings ("").
+     * 
+     * @return Command object containing the first three words of the user input.
+     */
     @Override
     public Command getCommand() {
-        return new Command("test", "test", "test");
+        Command returnValue = new Command(commandFirst, commandSecond, commandThird);
+
+        commandFirst = "";
+        commandSecond = "";
+        commandThird = "";
+        
+        return returnValue;
     }
     
     public void showWindow() {
@@ -102,10 +128,10 @@ public class GameUI extends JFrame implements UserInterfaceable
         JPanel panel = new JPanel();
         
         panel.setLayout(new BorderLayout());
-        gameTextArea = initTextArea(gameTextArea);
-        userTextArea = initTextArea(userTextArea);
-        panel.add(setupTextArea(gameTextArea), BorderLayout.NORTH);
-        panel.add(setupTextArea(userTextArea), BorderLayout.CENTER);
+        upperTextArea = initTextArea(upperTextArea);
+        lowerTextArea = initTextArea(lowerTextArea);
+        panel.add(setupTextArea(upperTextArea), BorderLayout.NORTH);
+        panel.add(setupTextArea(lowerTextArea), BorderLayout.CENTER);
         panel.add(setupUserInput(), BorderLayout.SOUTH);
         
         return panel;
@@ -141,14 +167,10 @@ public class GameUI extends JFrame implements UserInterfaceable
      * @return The completed panel.
      */
     private Container setupUserInput() {
-        // Set up the label and text input field.
-        Box inputLabelArea = Box.createHorizontalBox();
-        inputLabelArea.add(new JLabel("  Enter command  ", JLabel.LEFT));
-        inputLabelArea.add(Box.createGlue());
+        // Set up the text input field.
         final JTextField inputField = new JTextField(1000);
         inputField.setFont(inputField.getFont().deriveFont(18f));
         Box inputArea = Box.createHorizontalBox();
-        inputArea.add(inputLabelArea);
         inputArea.add(inputField);
 
         // Set up the buttons.
@@ -156,10 +178,22 @@ public class GameUI extends JFrame implements UserInterfaceable
         JButton submit = new JButton("OK");
         JButton clear = new JButton("Clear");
 
-        // Take the necessary action to add the new details.
+        // Take the first three words of the user input and put them into the three Strings, commandFirst, commandSecond, commandThird.
         submit.addActionListener(e -> {
-                userTextArea.append(inputField.getText() + "\n");
-                inputField.setText("");
+                StringTokenizer inputLine = new StringTokenizer(inputField.getText());
+                
+                if(inputLine.hasMoreTokens()) {
+                    commandFirst = inputLine.nextToken();
+                    if(inputLine.hasMoreTokens()) {
+                        commandSecond = inputLine.nextToken();
+                        if(inputLine.hasMoreTokens()) {
+                            commandThird = inputLine.nextToken();
+                        }
+                    }
+                }
+                // The rest of the user input is ignored.
+
+                inputField.setText(""); // Clear the input field.
             }
         );
 
