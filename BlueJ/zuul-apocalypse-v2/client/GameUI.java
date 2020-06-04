@@ -58,6 +58,7 @@ public class GameUI extends JFrame implements UserInterfaceable
      */
     @Override
     public void printUpper(String text) {
+        upperTextArea.append(text);
     }
     
     /**
@@ -67,6 +68,7 @@ public class GameUI extends JFrame implements UserInterfaceable
      */
     @Override
     public void printLower(String text) {
+        lowerTextArea.append(text);
     }
     
     /**
