@@ -23,10 +23,13 @@ public class GameUI extends JFrame implements UserInterfaceable
     private static final int PREFERRED_WIDTH = 1200;
     private static final int PREFERRED_HEIGHT = 600;
     private static final Dimension PREFERRED_SIZE = new Dimension(PREFERRED_WIDTH,PREFERRED_HEIGHT);
+    private static final int IMG_PREFERRED_WIDTH = 800;
+    private static final int IMG_PREFERRED_HEIGHT = 600;
+    private static final Dimension IMAGE_PREFERRED_SIZE = new Dimension(IMG_PREFERRED_WIDTH,IMG_PREFERRED_HEIGHT);
 
     private JTextArea upperTextArea;
     private JTextArea lowerTextArea;
-    private Image image;
+    private JLabel imageLabel = new JLabel();
     
     // Three command words to be received from user input and put into a Command object for the game engine
     private String commandFirst = "";
@@ -73,6 +76,7 @@ public class GameUI extends JFrame implements UserInterfaceable
      */
     @Override
     public void changeImage(Image newImage) {
+        imageLabel.setIcon(new ImageIcon(newImage.getScaledInstance(IMG_PREFERRED_WIDTH, IMG_PREFERRED_HEIGHT, Image.SCALE_SMOOTH)));
     }
     
     /**
@@ -107,8 +111,7 @@ public class GameUI extends JFrame implements UserInterfaceable
     private Container setupImageDisplay() {
         JPanel panel = new JPanel();
         JLabel label = new JLabel();
-        
-        label.setSize(800, 590);
+        Image image = null;
         
         try {
             image = ImageIO.read(new File("./images/room.jpg")); // When starting the GUI for the first time, loads this image as the initial image
@@ -116,12 +119,10 @@ public class GameUI extends JFrame implements UserInterfaceable
             e.printStackTrace();
         }
         
-        Image scaledImage = image.getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_SMOOTH);
-        ImageIcon imageIcon = new ImageIcon(scaledImage);
-        label = new JLabel(imageIcon);
-        panel.add(label);
+        ImageIcon imageIcon = new ImageIcon(image.getScaledInstance(IMG_PREFERRED_WIDTH, IMG_PREFERRED_HEIGHT, Image.SCALE_SMOOTH));
+        imageLabel.setIcon(imageIcon);
         
-        return panel;
+        return imageLabel;
     }
     
     private Container setupIOArea() {
