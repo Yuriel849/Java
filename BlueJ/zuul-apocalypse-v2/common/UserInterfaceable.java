@@ -1,7 +1,6 @@
 package common;
 
 import java.awt.Image;
-
 /**
  * Interface UserInterfaceable
  * Once enabled, will display text and change images in the GUI.

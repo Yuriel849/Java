@@ -17,27 +17,32 @@ public class Player extends Character {
     private Room currentRoom;
     // The Stack holding the previous states of the player.
     private Stack<Room> previousRooms;
+    // The GUI of the game
+    private UserInterfaceable gameInterface;
     
     /**
      * Default constructor for objects of class Player.
      */
-    public Player() {
+    public Player(UserInterfaceable gameInterface) {
         super("The Player", "Obviously I am I.");
+        
+        this.gameInterface = gameInterface;
+        
         pack = new Pack();
-        previousRooms = new Stack();
+        previousRooms = new Stack<Room>();
     }
     
     /** 
      * The player moves in one direction. If there is an exit in that direction,
      * move to the new room; otherwise print an error message.
      */
-    public String move(Command command, UserInterfaceable parser) {
+    public String move(Command command) {
         int numberEnemies = 0;
         String result = "";
         
         if(!command.hasSecondWord()) {
             // if there is no second word, we don't know where to go...
-            System.out.println("Go where?");
+        	gameInterface.printLower("Go where?");
         }
         else {
             String direction = command.getSecondWord();
@@ -45,17 +50,18 @@ public class Player extends Character {
             // Try to leave current room.
             Room nextRoom = currentRoom.getExit(direction);
             if (nextRoom == null) {
-                System.out.println("There is no door!");
+            	gameInterface.printLower("There is no door!");
             }
             else {
                 // Save current room to previousStates stack
                 previousRooms.push(currentRoom);
                 currentRoom = nextRoom;
-            
-                if((numberEnemies = currentRoom.getAllZombies().size()) != 0)
+                
+                numberEnemies = currentRoom.getAllZombies().size();
+                if(numberEnemies != 0)
                 {
-                    System.out.println("Enemies encountered! There are " + numberEnemies + " enemies. Starting battle...");
-                    result = Battle.fight(this, parser);
+                	gameInterface.printLower("Enemies encountered! There are + numberEnemies +  enemies. Starting battle...");
+                    result = Battle.fight(this, gameInterface);
                 }
                 else if(currentRoom.getIdCode() == 26)
                 {
@@ -75,11 +81,11 @@ public class Player extends Character {
         
         if(target == null)
         {
-            System.out.println("There is no such object here!");
+        	gameInterface.printLower("There is no such object here!");
         }
         else if(pack.putInPack(target) != true)
         {
-            System.out.println("Your pack is already full! You cannot add another item!");
+        	gameInterface.printLower("Your pack is already full! You cannot add another item!");
         }
     }
 
@@ -91,11 +97,11 @@ public class Player extends Character {
         
         if(target == null)
         {
-            System.out.println("Which object do you mean? I can't find it in the pack...");
+        	gameInterface.printLower("Which object do you mean? I can't find it in the pack...");
         }
         else if(currentRoom.addToList(target) != true)
         {
-            System.out.println("The room is already full. Your item was thrown away!");
+        	gameInterface.printLower("The room is already full. Your item was thrown away!");
         }
     }
     
@@ -114,11 +120,11 @@ public class Player extends Character {
             previousRoom = previousRooms.pop(); // Pop the last item on the previousStates stack.
             
             if (previousRooms.empty()) {
-                System.out.println("You can't go back");
+            	gameInterface.printLower("You can't go back");
             }
             else {
                 currentRoom = previousRoom;
-                System.out.println(currentRoom.getLongDescription());
+                gameInterface.printUpper(currentRoom.getLongDescription());
             }
         }
         else if (command.hasSecondWord()) {
@@ -127,11 +133,11 @@ public class Player extends Character {
             previousRoom = previousRooms.pop(); // Pop the last item on the previousStates stack.
             
             if (previousRooms.empty()) {
-                System.out.println("You can't go back two rooms.");
+            	gameInterface.printLower("You can't go back two rooms.");
             }
             else {
                 currentRoom = previousRoom;
-                System.out.println(currentRoom.getLongDescription());
+                gameInterface.printUpper(currentRoom.getLongDescription());
             }
         }
         else {
@@ -141,11 +147,11 @@ public class Player extends Character {
             previousRoom = previousRooms.pop(); // Pop the last item on the previousStates stack.
             
             if (previousRooms.empty()) {
-                System.out.println("You can't go back three rooms.");
+            	gameInterface.printLower("You can't go back three rooms.");
             }
             else {
                 currentRoom = previousRoom;
-                System.out.println(currentRoom.getLongDescription());
+                gameInterface.printUpper(currentRoom.getLongDescription());
             }
         }
     }

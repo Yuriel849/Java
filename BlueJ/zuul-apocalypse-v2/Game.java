@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 import implementation.*;
+import common.*;
 import client.*;
 
 /**
@@ -23,30 +24,25 @@ import client.*;
  * @version (Custom) 2020.06.02
  */
 
-public class Game 
-{   
+public class Game {   
     private static Player player;
     private static ArrayList<Room> gameMap;
-    private static Parser parser;
+    private static UserInterfaceable gameInterface;
     private static GameEngine gameEngine;
-    
-
-    
+   
     private static final int maxItems = 5;
     private static final int maxZombies = 3;
 
     /**
-     * Create the game and initialise its internal map.
+     * Create the game and initialize its internal map.
      */
     public static void main(String[] args) 
     {
-        player = new Player();
+        player = new Player(gameInterface);
         createRooms();
-        parser = new Parser();
+        gameInterface = new GameUI();
         
-        
-        
-        gameEngine = new GameEngine(player, gameMap, parser);
+        gameEngine = new GameEngine(player, gameMap, gameInterface);
         gameEngine.play();
     }
 

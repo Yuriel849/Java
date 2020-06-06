@@ -31,16 +31,17 @@ public class GameUI extends JFrame implements UserInterfaceable
     private JTextArea lowerTextArea;
     private JLabel imageLabel = new JLabel();
     
-    // Three command words to be received from user input and put into a Command object for the game engine
-    private String commandFirst = "";
-    private String commandSecond = "";
-    private String commandThird = "";
-    
+    // Input text field
+    private JTextField inputField;
+    private LinkedList<Command> outstandingCommands;
+
     /**
      * Create the frame with an image area in the center and a text area on its right,
      * and an input field with submit and clear buttons at the bottom.
      */
     public GameUI() {
+        outstandingCommands = new LinkedList<Command>();
+        
         setTitle("Zuul-Apocalypse v2 Game User Interface");
 
         final Container contentPane = getContentPane();
@@ -59,6 +60,7 @@ public class GameUI extends JFrame implements UserInterfaceable
     @Override
     public void printUpper(String text) {
         upperTextArea.append(text);
+        upperTextArea.append("\n");
     }
     
     /**
@@ -89,16 +91,14 @@ public class GameUI extends JFrame implements UserInterfaceable
      */
     @Override
     public Command getCommand() {
-        Command returnValue = new Command(commandFirst, commandSecond, commandThird);
-
-        commandFirst = "";
-        commandSecond = "";
-        commandThird = "";
-        
-        return returnValue;
+        if(outstandingCommands.isEmpty()) {
+            return new Command(null, null, null);
+        }
+        else
+            return outstandingCommands.poll();
     }
     
-    public void showWindow() {
+    public void enable() {
         setVisible(true);
     }
 
@@ -171,7 +171,7 @@ public class GameUI extends JFrame implements UserInterfaceable
      */
     private Container setupUserInput() {
         // Set up the text input field.
-        final JTextField inputField = new JTextField(1000);
+        inputField = new JTextField(1000);
         inputField.setFont(inputField.getFont().deriveFont(18f));
         Box inputArea = Box.createHorizontalBox();
         inputArea.add(inputField);
@@ -183,21 +183,38 @@ public class GameUI extends JFrame implements UserInterfaceable
 
         // Take the first three words of the user input and put them into the three Strings, commandFirst, commandSecond, commandThird.
         submit.addActionListener(e -> {
-                StringTokenizer inputLine = new StringTokenizer(inputField.getText());
-                
-                if(inputLine.hasMoreTokens()) {
-                    commandFirst = inputLine.nextToken();
-                    if(inputLine.hasMoreTokens()) {
-                        commandSecond = inputLine.nextToken();
-                        if(inputLine.hasMoreTokens()) {
-                            commandThird = inputLine.nextToken();
-                        }
-                    }
+            String inputLine;   // will hold the full input line
+            String word1 = null;
+            String word2 = null;
+            String word3 = null;
+    
+            inputLine = inputField.getText().trim();
+    
+            // Find up to two words on the line.
+            Scanner tokenizer = new Scanner(inputLine);
+            if(tokenizer.hasNext()) {
+                word1 = tokenizer.next();      // get first word
+                if(tokenizer.hasNext()) {
+                    word2 = tokenizer.next();      // get second word
+                    if(tokenizer.hasNext()) {
+                    word3 = tokenizer.next();      // get second word
+                    // note: we just ignore the rest of the input line.
+                    } 
                 }
-                // The rest of the user input is ignored.
-
-                inputField.setText(""); // Clear the input field.
             }
+            Command returnCommand = new Command(word1, word2, word3);
+            // Setting text field to empty string after processing command
+            inputField.setText("");
+            
+            // Now check whether this word is known. If so, create a command
+            // with it. If not, create a "null" command (for unknown command).
+            if(returnCommand.isCommand()) {
+                outstandingCommands.add(returnCommand);
+            }
+            else {
+                outstandingCommands.add(new Command(null, word2, word3));
+            }
+        }
         );
 
         // Clear the data-entry areas.

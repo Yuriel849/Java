@@ -62,10 +62,10 @@ public class Command
      * Check whether a given String is a valid command word. 
      * @return true if it is, false if it isn't.
      */
-    public boolean isCommand(String aString)
+    public boolean isCommand()
     {
         for(int i = 0; i < validCommands.length; i++) {
-            if(validCommands[i].equals(aString))
+            if(validCommands[i].equals(this.commandWord))
                 return true;
         }
         // if we get here, the string was not found in the commands
@@ -75,12 +75,16 @@ public class Command
     /**
      * Print all valid commands to System.out.
      */
-    public void showAll() 
+    public static String returnAll() 
     {
+        StringBuilder output = new StringBuilder();
+                         
         for(String command: validCommands) {
-            System.out.print(command + "  ");
+            output.append(command + "  ");
         }
-        System.out.println();
+        output.append("\n");
+        
+        return output.toString();
     }
 
     /**
