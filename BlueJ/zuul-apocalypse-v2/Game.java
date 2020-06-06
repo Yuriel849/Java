@@ -21,7 +21,7 @@ import client.*;
  * @version (Original) 2016.02.29
  * 
  * @author (Custom) Yuriel and Mo
- * @version (Custom) 2020.06.02
+ * @version (Custom) 2020.06.06
  */
 
 public class Game {   
@@ -38,9 +38,9 @@ public class Game {
      */
     public static void main(String[] args) 
     {
-        player = new Player(gameInterface);
-        createRooms();
         gameInterface = new GameUI();
+        player = new Player(gameInterface); // Must first instantiate the GameUI!
+        createRooms();
         
         gameEngine = new GameEngine(player, gameMap, gameInterface);
         gameEngine.play();
