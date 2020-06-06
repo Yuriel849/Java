@@ -163,7 +163,7 @@ public class GameUI extends JFrame implements UserInterfaceable
         scrollArea.getVerticalScrollBar().addAdjustmentListener(
             new AdjustmentListener() {
                 public void adjustmentValueChanged(AdjustmentEvent e) {
-                    textArea.select(textArea.getHeight()+1000,0);
+                    textArea.select(textArea.getHeight()+1000000,0);
                 }
             });
         JPanel panel = new JPanel();
