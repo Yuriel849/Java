@@ -1,4 +1,4 @@
- package implementation;
+package implementation;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,8 +8,8 @@ import common.*;
 /**
  * Write a description of class GameEngine here.
  *
- * @author Mo
- * @version 2020.06.02
+ * @author Mo and Yuriel
+ * @version 2020.06.06
  */
 public class GameEngine {
     private Player player;
@@ -44,7 +44,7 @@ public class GameEngine {
      *  Main play routine.  Loops until end of play.
      */
     public void play() {
-    	gameInterface.enable();
+        gameInterface.enable();
         boolean finishedTypingChallenge;
         gameInterface.printLower(outputMessages.get("welcome"));
         
@@ -61,7 +61,7 @@ public class GameEngine {
         // Main gameplay
         // Enter the main command loop. Here we repeatedly read commands and execute them until the game is over.
         if (!finished) {
-        	gameInterface.printUpper(player.getCurrentRoom().getLongDescription());
+            gameInterface.printUpper(player.getCurrentRoom().getLongDescription());
         }
         
         while(!finished) {
@@ -80,13 +80,16 @@ public class GameEngine {
     {
         boolean wantToQuit = false;
 
-        if(command.isUnknown()) {
-            gameInterface.printLower(outputMessages.get("unkownCommand"));
+        String commandWord = command.getCommandWord();
+        
+        if (command.isUnknown()) {
             return false;
         }
-
-        String commandWord = command.getCommandWord();
-        if (commandWord.equals("read")) {
+        else if (commandWord.equals("UNKW")) {
+            gameInterface.printLower(outputMessages.get("unknownCommand"));
+            return false;
+        }
+        else if (commandWord.equals("read")) {
             gameInterface.printLower(outputMessages.get("memo"));
             player.move(new Command("go", "out", ""));
             gameInterface.printUpper(player.getCurrentRoom().getLongDescription());
@@ -116,7 +119,7 @@ public class GameEngine {
             }
             else
             {
-            	gameInterface.printUpper(player.getCurrentRoom().getLongDescription());
+                gameInterface.printUpper(player.getCurrentRoom().getLongDescription());
             }
         }
         else if (commandWord.equals("take")) {
@@ -143,7 +146,7 @@ public class GameEngine {
     private boolean processCommandStartChallenge(Command command) 
     {
         final Command emptyCommand = new Command(null, null, null);
-    	boolean wantToQuit = false;
+        boolean wantToQuit = false;
 
         if(command.equals(emptyCommand)) {
             return false;
@@ -195,7 +198,7 @@ public class GameEngine {
     private boolean quit(Command command) 
     {
         if(command.hasSecondWord()) {
-        	gameInterface.printUpper("Quit what?");
+            gameInterface.printUpper("Quit what?");
             return false;
         }
         else {

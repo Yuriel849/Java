@@ -8,7 +8,7 @@ import common.*;
  * Class Battle
  *
  * @author Yuriel
- * @version 2020.06.02
+ * @version 2020.06.06
  */
 public class Battle {
     public static String fight(Player player, UserInterfaceable gameInterface)
