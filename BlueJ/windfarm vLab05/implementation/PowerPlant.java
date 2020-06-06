@@ -7,7 +7,7 @@ import common.*;
  * Specifically, the name, country (location), generation capacity, year when construction started, and (expected) year of connection.
  *
  * @author Mo & Yuriel
- * @date 23.05.2020
+ * @date 06.06.2020
  */
 public class PowerPlant extends GenericFacility
 {

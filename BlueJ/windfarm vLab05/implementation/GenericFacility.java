@@ -7,7 +7,7 @@ import common.*;
  * Fields are name, country (location), and generation capacity.
  *
  * @author Yuriel & Mo
- * @date 23.05.2020
+ * @date 06.06.2020
  */
 public abstract class GenericFacility implements Facility
 {
@@ -44,8 +44,9 @@ public abstract class GenericFacility implements Facility
      */
     protected void printGeneric()
     {
+        // Abbreviate the name of the facility as "XXX..." in case the name of the facility is too long
         String printName = name;
-        if(printName.length() > 20) {
+        if(printName.length() > 20) { // Space for the name in the table is only 20 characters
             printName = printName.substring(0, 17) + "...";
         }
         

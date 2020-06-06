@@ -7,7 +7,7 @@ import common.*;
  * Specifically, the name, country (location), generation capacity, number of turbines, and year of commissioning.
  *
  * @author Yuriel & Mo
- * @date 23.05.2020
+ * @date 06.06.2020
  */
 public class WindFarm extends GenericFacility
 {

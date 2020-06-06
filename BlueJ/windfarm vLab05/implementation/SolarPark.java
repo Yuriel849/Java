@@ -6,7 +6,7 @@ package implementation;
  * Specifically, the name, country (location), generation capacity, land size, and (expected) year of connection.
  *
  * @author Yuriel
- * @version 23.05.2020
+ * @version 06.06.2020
  */
 public class SolarPark extends GenericFacility
 {
