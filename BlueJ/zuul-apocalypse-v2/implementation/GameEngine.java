@@ -176,12 +176,12 @@ public class GameEngine {
                 typingEndTime = System.currentTimeMillis();
                 typingDuration = typingEndTime - typingStartTime;
                 if (typingDuration > 4100) {
-                    System.out.println("You failed :(. You need to try again to start moving");
+                    System.out.println("You failed :( You need to try again to start moving.\n");
                     typingStartTime = 0;
                     typingCounter = 0;
                 }
                 else {
-                    System.out.println("You broke free! You can now start moving");
+                    System.out.println("You broke free! You can now start moving.\n");
                     return true;
                 }
             }
@@ -252,6 +252,6 @@ public class GameEngine {
                                     )
                            );
         outputMessages.put("unknownCommand", "I don't know what you mean..\n");
-        outputMessages.put("bye", "Thank you for playing.  Good bye.");
+        outputMessages.put("bye", "\nThank you for playing.  Good bye.");
     }
 }

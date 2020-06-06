@@ -19,22 +19,22 @@ public class Battle {
         String result = "", commandWord = "";
         boolean targetDead = false;
         
-        gameInterface.printLower("You can choose to attack or run back to the last room.\nMake up your mind and type 'attack' or 'run'.");
+        gameInterface.printLower("You can choose to attack or run back to the last room.\nMake up your mind and type 'attack' or 'run'.\n");
         
         while(index >= 0 || health > 0)
         {
-            gameInterface.printLower("Attack or run?");
+            gameInterface.printLower("Attack or run?\n");
             while((commandWord = gameInterface.getCommand().getCommandWord()) == null);
             
             if(commandWord.equals("run"))
             {
                 if(player.getSizePreviousRooms() == 1)
                 {
-                    gameInterface.printLower("There's nowhere to run to... you must fight.");
+                    gameInterface.printLower("There's nowhere to run to... you must fight.\n");
                 }
                 else
                 {
-                    gameInterface.printLower("You ran away from the zombies.");
+                    gameInterface.printLower("You ran away from the zombies.\n");
                     result = "back";
                     break;
                 }
@@ -47,7 +47,7 @@ public class Battle {
             
             if(health <= 0)
             {
-                gameInterface.printLower("You are dead... (Yeah~~!!)");
+                gameInterface.printLower("You are dead... (Yeah~~!!)\n");
                 result = "dead";
                 break;
             }
@@ -63,7 +63,7 @@ public class Battle {
                 }
                 else
                 {
-                    gameInterface.printLower("You've won! Your health is " + health + ". Let's move on.");
+                    gameInterface.printLower("\nYou've won! Your health is " + health + ". Let's move on.\n");
                     break;
                 }
             }
@@ -79,12 +79,12 @@ public class Battle {
         
         if(damage == 0)
         {
-            gameInterface.printLower("You missed! No damage done!");
+            gameInterface.printLower("You missed! No damage done!\n");
         }
         else
         {
             zombieIsDead = target.reduceHealth(damage);
-            gameInterface.printLower("Hit! " + damage + " damage inflicted. Zombie's health is now " + ((target.getHealth() < 0) ? 0 : target.getHealth()) + ".");
+            gameInterface.printLower("Hit! " + damage + " damage inflicted. Zombie's health is now " + ((target.getHealth() < 0) ? 0 : target.getHealth()) + ".\n");
             
             if(target.getHealth() <= 0)
             {
@@ -101,12 +101,12 @@ public class Battle {
         
         if(damage == 0)
         {
-            gameInterface.printLower("You took no damage!");
+            gameInterface.printLower("You took no damage!\n");
         }
         else
         {
             playerHealth -= damage;
-            gameInterface.printLower("No! You took " + damage + " damage. Your health is now " + playerHealth + ".");
+            gameInterface.printLower("No! You took " + damage + " damage. Your health is now " + playerHealth + ".\n");
         }
         
         return playerHealth;
