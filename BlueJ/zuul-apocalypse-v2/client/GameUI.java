@@ -94,8 +94,9 @@ public class GameUI extends JFrame implements UserInterfaceable
         if(outstandingCommands.isEmpty()) {
             return new Command(null, null, null);
         }
-        else
+        else {
             return outstandingCommands.poll();
+        }
     }
     
     public void enable() {
