@@ -55,8 +55,8 @@ public class PowerPlant extends GenericFacility
      */
     public void print()
     {
-        String row = String.format("| %-20s | %-20s | %-15s | %-15s | %-18s | %-18s | %-18s | %-9s |\n",
-                getName(), getCountry(), getCapacity(), "N/A", "N/A", constructionStart, connectionYear == -1 ? "UNKNOWN" : connectionYear, "N/A");
-        System.out.print(row);
+        printGeneric();
+        System.out.print(String.format(" %-15s | %-18s | %-18s | %-18s | %-9s |\n",
+            "N/A", "N/A", constructionStart, connectionYear == -1 ? "UNKNOWN" : connectionYear, "N/A"));
     }
 }

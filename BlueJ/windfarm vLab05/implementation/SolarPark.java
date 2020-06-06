@@ -30,13 +30,8 @@ public class SolarPark extends GenericFacility
     }
 
     public void print() {
-        String printName = getName();
-        if(printName.length() > 20) {
-            printName = printName.substring(0, 17) + "...";
-        }
-        
-        String row = String.format("| %-20s | %-20s | %-15s | %-15s | %-18s | %-18s | %-18s | %-9s |\n",
-        		printName, getCountry(), getCapacity(), "N/A", "N/A", "N/A", connectionYear, landSize == -1 ? "UNKNOWN" : landSize);
-        System.out.print(row);
+        printGeneric();
+        System.out.print(String.format(" %-15s | %-18s | %-18s | %-18s | %-9s |\n",
+            "N/A", "N/A", "N/A", connectionYear, landSize == -1 ? "UNKNOWN" : landSize));
     }
 }
