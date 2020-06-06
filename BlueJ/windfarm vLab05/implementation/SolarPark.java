@@ -1,6 +1,5 @@
 package implementation;
 
-
 /**
  * The SolarPark class holds information on one solar park.
  * Specifically, the name, country (location), generation capacity, land size, and (expected) year of connection.
@@ -29,6 +28,9 @@ public class SolarPark extends GenericFacility
         this.connectionYear = connectionYear;
     }
 
+    /**
+     * Print out information on this solar park to the terminal.
+     */
     public void print() {
         printGeneric();
         System.out.print(String.format(" %-15s | %-18s | %-18s | %-18s | %-9s |\n",
