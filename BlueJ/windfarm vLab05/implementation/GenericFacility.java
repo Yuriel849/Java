@@ -32,34 +32,9 @@ public abstract class GenericFacility implements Facility
         this.capacity = capacity;
     }
 
-    public String getName()
-    {
-        return name;
-    }
-    
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-    
-    public String getCountry()
-    {
-        return country;
-    }
-    
-    public void setCountry(String country)
-    {
-        this.country = country;
-    }
-
     @Override
     public double getCapacity()
     {
         return capacity;
-    }
-    
-    public void setCapacity(double capacity)
-    {
-        this.capacity = capacity;
     }
 }
