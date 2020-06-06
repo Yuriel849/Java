@@ -15,7 +15,7 @@ import common.*;
  * Class GraphicUI
  *
  * @author Yuriel
- * @version 2020.06.04.
+ * @version 2020.06.06.
  */
 public class GameUI extends JFrame implements UserInterfaceable
 {
