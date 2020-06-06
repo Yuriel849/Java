@@ -160,6 +160,12 @@ public class GameUI extends JFrame implements UserInterfaceable
                                 JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
                                 JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
+        scrollArea.getVerticalScrollBar().addAdjustmentListener(
+            new AdjustmentListener() {
+                public void adjustmentValueChanged(AdjustmentEvent e) {
+                    textArea.select(textArea.getHeight()+1000,0);
+                }
+            });
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
         panel.add(scrollArea, BorderLayout.CENTER);
@@ -213,7 +219,7 @@ public class GameUI extends JFrame implements UserInterfaceable
                 outstandingCommands.add(returnCommand);
             }
             else {
-                outstandingCommands.add(new Command(null, word2, word3));
+                outstandingCommands.add(new Command("UNKW", word2, word3));
             }
         }
         );
