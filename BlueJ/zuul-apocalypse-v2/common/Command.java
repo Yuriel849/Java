@@ -1,3 +1,5 @@
+package common;
+
 /**
  * This class is part of the "World of Zuul" application. 
  * "World of Zuul" is a very simple, text based adventure game.  
@@ -17,11 +19,26 @@
  * @version (Original) 2016.02.29
  * 
  * @author (Custom) Yuriel and Mo
- * @version (Custom) 2020.05.05
+ * @version (Custom) 2020.06.03
  */
 
 public class Command
 {
+    // a constant array that holds all valid command words
+    private static final String[] validCommands = {
+        "go",
+        "quit",
+        "help",
+        "take",
+        "leave",
+        "fight",
+        "run",
+        "attack",
+        "back",
+        "read",
+        "break"
+    };
+    
     private String commandWord;
     private String secondWord;
     private String thirdWord;
@@ -39,6 +56,35 @@ public class Command
         this.commandWord = firstWord;
         this.secondWord = secondWord;
         this.thirdWord = thirdWord;
+    }
+    
+    /**
+     * Check whether a given String is a valid command word. 
+     * @return true if it is, false if it isn't.
+     */
+    public boolean isCommand()
+    {
+        for(int i = 0; i < validCommands.length; i++) {
+            if(validCommands[i].equals(this.commandWord))
+                return true;
+        }
+        // if we get here, the string was not found in the commands
+        return false;
+    }
+
+    /**
+     * Print all valid commands to System.out.
+     */
+    public static String returnAll() 
+    {
+        StringBuilder output = new StringBuilder();
+                         
+        for(String command: validCommands) {
+            output.append(command + "  ");
+        }
+        output.append("\n");
+        
+        return output.toString();
     }
 
     /**
