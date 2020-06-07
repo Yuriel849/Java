@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.awt.Image;
+import javax.imageio.*;
+import java.io.*;
 
 import implementation.*;
 import common.*;
@@ -134,6 +137,15 @@ public class Game {
             "laboratory", "security station", "storeroom", "control room", "mechanical room", "hallway"
         };
         
+        // A constant array holding the Images that are instantiated once when the game is loading (Other images are instantiated as needed).
+        final Image[] roomImages = new Image[descriptions.length];
+        roomImages[0] = getImage("./images/laboratory.jpg");
+        roomImages[1] = getImage("./images/security station.jpg");
+        roomImages[2] = getImage("./images/storeroom.jpg");
+        roomImages[3] = getImage("./images/control room.jpg");
+        roomImages[4] = getImage("./images/mechanical room.jpg");
+        roomImages[5] = getImage("./images/hallway.jpg");
+        
         int counter = 9; // Set 9 Rooms as hallways (Route from the starting room to the end room)
         
         // Designate hallways
@@ -146,7 +158,17 @@ public class Game {
         gameMap.get(19).setDescription(descriptions[5]);
         gameMap.get(24).setDescription(descriptions[5]);
         gameMap.get(25).setDescription(descriptions[5]);
-        
+        // Assign images to hallways
+        gameMap.get(1).setImage(roomImages[5]);
+        gameMap.get(2).setImage(roomImages[5]);
+        gameMap.get(7).setImage(roomImages[5]);
+        gameMap.get(8).setImage(roomImages[5]);
+        gameMap.get(13).setImage(roomImages[5]);
+        gameMap.get(18).setImage(roomImages[5]);
+        gameMap.get(19).setImage(roomImages[5]);
+        gameMap.get(24).setImage(roomImages[5]);
+        gameMap.get(25).setImage(roomImages[5]);
+                
         // Randomly set descriptions for the Rooms, unless it already has a description (hallways already have descriptions)
         while(counter != 25)
         {
@@ -157,6 +179,7 @@ public class Game {
             if(temp.getShortDescription() == null)
             {
                 temp.setDescription(descriptions[randomDescription]);
+                temp.setImage(roomImages[randomDescription]);
                 counter++;
             }
         }
@@ -198,5 +221,23 @@ public class Game {
         {
             gameMap.get((int) (Math.random() * 25) + 1).addToList(new Zombie()); // Add new Zombie object to a randomly selected room
         }
+    }
+    
+    /**
+     * Gets the Image object corresponding to the given file name (path).
+     * 
+     * @param filename The path of the image.
+     * @return The image at the given path.
+     */
+    private static Image getImage(String filename) {
+        Image image = null;
+        
+        try {
+            image = ImageIO.read(new File(filename));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        return image;
     }
 }

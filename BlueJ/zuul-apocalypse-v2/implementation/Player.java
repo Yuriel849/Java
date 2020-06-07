@@ -59,7 +59,12 @@ public class Player extends Character {
                 // Save current room to previousStates stack
                 previousRooms.push(currentRoom);
                 currentRoom = nextRoom;
-                gameInterface.changeImage(getImage("./images/" + currentRoom.getFilename() + ".jpg"));
+
+                Image nextImage = currentRoom.getImage();
+                if(nextImage == null) {
+                    nextImage = getImage("./images/" + currentRoom.getFilename() + ".jpg");
+                }
+                gameInterface.changeImage(nextImage);
                                 
                 numberEnemies = currentRoom.getAllZombies().size();
                 if(numberEnemies != 0)

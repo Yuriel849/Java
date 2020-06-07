@@ -28,7 +28,7 @@ public class Room
     private ArrayList<Item> items;          // Stores the items put in this room. Maximum 5 items per room.
     private ArrayList<Zombie> zombies;      // Stores the zombies in this room. Maximum 3 zombies per room.
     private String filename;                // The file name and path of the image for this room.
-    private Image image;                    // Stores the Image object for this room.
+    private Image image = null;                    // Stores the Image object for this room.
     
     /**
      * Create a room with no description and the designated ID code. Initially there are no exits.
