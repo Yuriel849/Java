@@ -2,6 +2,9 @@ package implementation;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.awt.*;
+import javax.imageio.*;
+import java.io.*;
 
 import common.*;
 
@@ -95,6 +98,7 @@ public class GameEngine {
             gameInterface.printUpper(player.getCurrentRoom().getLongDescription());
         }
         else if (player.getCurrentRoom().getIdCode() == 0 && commandWord.equals("go")) {
+            gameInterface.changeImage(getImage("./images/be_attacked.png"));
             gameInterface.printLower(outputMessages.get("quickDeath"));
             wantToQuit = true;
         }
@@ -253,5 +257,23 @@ public class GameEngine {
                            );
         outputMessages.put("unknownCommand", "I don't know what you mean..\n");
         outputMessages.put("bye", "\nThank you for playing.  Good bye.");
+    }
+    
+    /**
+     * Gets the Image object corresponding to the given file name (path).
+     * 
+     * @param filename The path of the image.
+     * @return The image at the given path.
+     */
+    private Image getImage(String filename) {
+        Image image = null;
+        
+        try {
+            image = ImageIO.read(new File(filename));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        return image;
     }
 }
