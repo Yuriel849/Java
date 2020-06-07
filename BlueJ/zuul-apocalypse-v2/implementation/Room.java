@@ -1,6 +1,7 @@
 package implementation;
 
 import java.util.*;
+import java.awt.Image;
 
 /**
  * Class Room - a room in an adventure game.
@@ -16,7 +17,7 @@ import java.util.*;
  * @version (Original) 2016.02.29
  * 
  * @author (Custom) Yuriel
- * @version (Custom) 2020.05.05
+ * @version (Custom) 2020.06.06
  */
 
 public class Room 
@@ -26,7 +27,9 @@ public class Room
     private HashMap<String, Room> exits;    // Stores exits of this room.
     private ArrayList<Item> items;          // Stores the items put in this room. Maximum 5 items per room.
     private ArrayList<Zombie> zombies;      // Stores the zombies in this room. Maximum 3 zombies per room.
-
+    private String filename;                // The file name and path of the image for this room.
+    private Image image;                    // Stores the Image object for this room.
+    
     /**
      * Create a room with no description and the designated ID code. Initially there are no exits.
      * @param identificationCode The room's ID code, a two-digit number.
@@ -80,6 +83,22 @@ public class Room
         return identificationCode;
     }
     
+    public String getFilename() {
+        return filename;
+    }
+    
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+    
+    public Image getImage() {
+        return image;
+    }
+    
+    public void setImage(Image image) {
+        this.image = image;
+    }
+
     /**
      * Define the description of this room.
      * @param description The description for this room.
@@ -87,6 +106,7 @@ public class Room
     public void setDescription(String description)
     {
         this.description = description;
+        setFilename(description);
     }
 
     /**

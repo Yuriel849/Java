@@ -79,6 +79,7 @@ public class Game {
             {
                 temp = gameMap.get(26);
                 temp.setDescription("elevator");
+                temp.setFilename("abandoned_room_1");
             }
             
             if(i == 1 || i == 6 || i == 11 || i == 16 || i == 21)

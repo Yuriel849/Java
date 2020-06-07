@@ -2,7 +2,7 @@ package implementation;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.awt.*;
+import java.awt.Image;
 import javax.imageio.*;
 import java.io.*;
 

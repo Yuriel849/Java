@@ -1,6 +1,9 @@
 package implementation;
 
 import java.util.Stack;
+import java.awt.Image;
+import javax.imageio.*;
+import java.io.*;
 
 import common.*;
 
@@ -56,7 +59,8 @@ public class Player extends Character {
                 // Save current room to previousStates stack
                 previousRooms.push(currentRoom);
                 currentRoom = nextRoom;
-                
+                gameInterface.changeImage(getImage("./images/" + currentRoom.getFilename() + ".jpg"));
+                                
                 numberEnemies = currentRoom.getAllZombies().size();
                 if(numberEnemies != 0)
                 {
@@ -120,6 +124,7 @@ public class Player extends Character {
             }
             else {
                 currentRoom = previousRoom;
+                gameInterface.changeImage(getImage("./images/" + currentRoom.getFilename() + ".jpg"));
                 gameInterface.printUpper(currentRoom.getLongDescription());
             }
         }
@@ -132,6 +137,7 @@ public class Player extends Character {
             }
             else {
                 currentRoom = previousRoom;
+                gameInterface.changeImage(getImage("./images/" + currentRoom.getFilename() + ".jpg"));
                 gameInterface.printUpper(currentRoom.getLongDescription());
             }
         }
@@ -145,6 +151,7 @@ public class Player extends Character {
             }
             else {
                 currentRoom = previousRoom;
+                gameInterface.changeImage(getImage("./images/" + currentRoom.getFilename() + ".jpg"));
                 gameInterface.printUpper(currentRoom.getLongDescription());
             }
         }
@@ -172,5 +179,23 @@ public class Player extends Character {
      */
     public void setCurrentRoom(Room room) {
         currentRoom = room;
+    }
+    
+    /**
+     * Gets the Image object corresponding to the given file name (path).
+     * 
+     * @param filename The path of the image.
+     * @return The image at the given path.
+     */
+    private Image getImage(String filename) {
+        Image image = null;
+        
+        try {
+            image = ImageIO.read(new File(filename));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        return image;
     }
 }
