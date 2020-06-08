@@ -21,10 +21,10 @@ import client.*;
  *  executes the commands that the parser returns.
  * 
  * @author (Original) Michael Kölling and David J. Barnes
- * @version (Original) 2016.02.29
+ * @version (Original) 2016.02.29.
  * 
  * @author (Custom) Yuriel and Mo
- * @version (Custom) 2020.06.06
+ * @version (Custom) 2020.06.07.
  */
 
 public class Game {   

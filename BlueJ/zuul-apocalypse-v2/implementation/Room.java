@@ -14,10 +14,10 @@ import java.awt.Image;
  * stores a reference to the neighboring room.
  * 
  * @author (Original) Michael Kölling and David J. Barnes
- * @version (Original) 2016.02.29
+ * @version (Original) 2016.02.29.
  * 
  * @author (Custom) Yuriel
- * @version (Custom) 2020.06.06
+ * @version (Custom) 2020.06.07.
  */
 
 public class Room 

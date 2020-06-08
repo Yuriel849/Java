@@ -11,7 +11,7 @@ import common.*;
  * Class Player
  *
  * @author Yuriel and Mo
- * @version 2020.06.06
+ * @version 2020.06.07.
  */
 public class Player extends Character {
     // A pack being carried by the player as an inventory (maximum 10 items).
