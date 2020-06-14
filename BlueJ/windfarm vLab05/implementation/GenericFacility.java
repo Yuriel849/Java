@@ -42,7 +42,7 @@ public abstract class GenericFacility implements Facility
      * Method to print the name, country, and capacity of a facility.
      * To be called by the subclass before printing the information specific to .
      */
-    protected void printGeneric()
+    public void print()
     {
         // Abbreviate the name of the facility as "XXX..." in case the name of the facility is too long
         String printName = name;

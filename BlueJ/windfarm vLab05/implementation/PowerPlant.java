@@ -53,9 +53,10 @@ public class PowerPlant extends GenericFacility
     /**
      * Print out information on this power plant to the terminal.
      */
+    @Override
     public void print()
     {
-        printGeneric();
+        super.print();
         System.out.print(String.format(" %-15s | %-18s | %-18s | %-18s | %-9s |\n",
             "N/A", "N/A", constructionStart, connectionYear == -1 ? "UNKNOWN" : connectionYear, "N/A"));
     }

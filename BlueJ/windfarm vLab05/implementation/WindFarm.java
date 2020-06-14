@@ -55,9 +55,10 @@ public class WindFarm extends GenericFacility
     /**
      * Print out information on this wind farm to the terminal.
      */
+    @Override
     public void print()
     {
-        printGeneric();
+        super.print();
         System.out.print(String.format(" %-15s | %-18s | %-18s | %-18s | %-9s |\n",
             numberTurbines, year, "N/A", "N/A", "N/A"));
     }

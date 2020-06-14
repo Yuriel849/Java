@@ -31,8 +31,9 @@ public class SolarPark extends GenericFacility
     /**
      * Print out information on this solar park to the terminal.
      */
+    @Override
     public void print() {
-        printGeneric();
+        super.print();
         System.out.print(String.format(" %-15s | %-18s | %-18s | %-18s | %-9s |\n",
             "N/A", "N/A", "N/A", connectionYear, landSize == -1 ? "UNKNOWN" : landSize));
     }
