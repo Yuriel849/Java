@@ -8,6 +8,8 @@ A repository of my studies of the Java language.
 "BlueJ" is a folder for the BlueJ projects created and utilized in the course Software Construction 2 at HAW Hamburg (SoSe2020). <br>
 > BlueJ version: 4.2.2 (Java version 11.0.2)
 
+"Data Structures & Algorithms" is a folder for IntelliJ projects where I studied the basics of data structures & algorithms with Java. <br>
+
 ## Notes
 Set up JUnit: File -> New -> JUnit Test Case -> (add path, if required) -> Finish
 
