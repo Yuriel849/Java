@@ -26,7 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f362bd9-e0ae-4077-9347-d573272c3108" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +47,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="IntelliJ_test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -74,6 +75,7 @@
       <updated>1595712590838</updated>
       <workItem from="1595712600066" duration="735000" />
       <workItem from="1595771143081" duration="56000" />
+      <workItem from="1595771458714" duration="108000" />
     </task>
     <task id="LOCAL-00001" summary="Rename and move IntelliJ project into a folder">
       <created>1595712691915</created>
