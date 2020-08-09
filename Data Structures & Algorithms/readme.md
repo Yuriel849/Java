@@ -38,3 +38,9 @@ Software engineering design patterns:
     Comparator
     Locator
 
+1. Template method pattern
+    
+    A (abstract) base class provides a concrete behavior that calls on an abstract method.
+    This abstract method is implemented by a subclass, at which point, the concrete behavior is defined.
+
+

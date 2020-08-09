@@ -6,12 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f362bd9-e0ae-4077-9347-d573272c3108" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DS&amp;A Studies/src/mixin/BoxedItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DS&amp;A Studies/src/mixin/Insurable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DS&amp;A Studies/src/mixin/Sellable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DS&amp;A Studies/src/mixin/Transportable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BlueJ/zuul-apocalypse-v2/package.bluej" beforeDir="false" afterPath="$PROJECT_DIR$/../BlueJ/zuul-apocalypse-v2/package.bluej" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +82,7 @@
       <workItem from="1596135391097" duration="543000" />
       <workItem from="1596912136779" duration="82000" />
       <workItem from="1596912255222" duration="296000" />
-      <workItem from="1596997391332" duration="882000" />
+      <workItem from="1596997391332" duration="3628000" />
     </task>
     <task id="LOCAL-00001" summary="Rename and move IntelliJ project into a folder">
       <created>1595712691915</created>
@@ -102,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595772022537</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="mixin with interfaces">
+      <created>1596998303477</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1596998303477</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,7 +139,8 @@
     <MESSAGE value="Rename and move IntelliJ project into a folder" />
     <MESSAGE value="readme update" />
     <MESSAGE value="mixin" />
-    <option name="LAST_COMMIT_MESSAGE" value="mixin" />
+    <MESSAGE value="mixin with interfaces" />
+    <option name="LAST_COMMIT_MESSAGE" value="mixin with interfaces" />
   </component>
   <component name="WindowStateProjectService">
     <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1596135177746">
