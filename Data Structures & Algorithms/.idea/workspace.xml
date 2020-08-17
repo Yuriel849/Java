@@ -25,7 +25,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f362bd9-e0ae-4077-9347-d573272c3108" name="Default Changelist" comment="">
+    <list default="true" id="8f362bd9-e0ae-4077-9347-d573272c3108" name="Default Changelist" comment="Circularly linked list">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +106,7 @@
       <workItem from="1596997391332" duration="5547000" />
       <workItem from="1597077621722" duration="20000" />
       <workItem from="1597602803965" duration="1913000" />
-      <workItem from="1597677382041" duration="937000" />
+      <workItem from="1597677382041" duration="4404000" />
     </task>
     <task id="LOCAL-00001" summary="Rename and move IntelliJ project into a folder">
       <created>1595712691915</created>
@@ -143,7 +143,21 @@
       <option name="project" value="LOCAL" />
       <updated>1597677550222</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Singly linked list">
+      <created>1597678827430</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1597678827430</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Circularly linked list">
+      <created>1597681000101</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1597681000101</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,13 +193,23 @@
     <MESSAGE value="mixin with interfaces" />
     <MESSAGE value="readme update" />
     <MESSAGE value="Insertion sort" />
-    <option name="LAST_COMMIT_MESSAGE" value="Insertion sort" />
+    <MESSAGE value="Singly linked list" />
+    <MESSAGE value="Circularly linked list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Circularly linked list" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1597678872893">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1597678872893" />
     <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1596135177746">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1596135177746" />
+    <state x="323" y="0" key="CommitChangelistDialog2" timestamp="1597678453452">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="323" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1597678453452" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1595715057255">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
