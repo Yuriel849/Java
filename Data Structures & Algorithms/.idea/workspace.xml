@@ -66,6 +66,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.IntelliJ_test" />
@@ -93,6 +106,7 @@
       <workItem from="1596997391332" duration="5547000" />
       <workItem from="1597077621722" duration="20000" />
       <workItem from="1597602803965" duration="1913000" />
+      <workItem from="1597677382041" duration="937000" />
     </task>
     <task id="LOCAL-00001" summary="Rename and move IntelliJ project into a folder">
       <created>1595712691915</created>
@@ -122,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597001887810</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Insertion sort">
+      <created>1597677550222</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1597677550222</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,7 +178,8 @@
     <MESSAGE value="mixin" />
     <MESSAGE value="mixin with interfaces" />
     <MESSAGE value="readme update" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme update" />
+    <MESSAGE value="Insertion sort" />
+    <option name="LAST_COMMIT_MESSAGE" value="Insertion sort" />
   </component>
   <component name="WindowStateProjectService">
     <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1596135177746">
