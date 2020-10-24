@@ -25,7 +25,7 @@ public class StackOfDoubles {
 
     public double pop() {
         double result = stackArray[--N];
-        if(N == stackArray.length / 4) {
+        if(N != 0 && N <= (double) stackArray.length / 4) {
             resize(stackArray.length / 2);
         }
         return result;
