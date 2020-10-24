@@ -14,6 +14,14 @@ public class ArithmeticTerm {
         return expression;
     }
 
+    public void setExpression(String expression) {
+        this.expression = expression;
+    }
+
+    public String getExpression() {
+        return expression;
+    }
+
     public void reverse() {
         Stack<String> reverseStack = new Stack<>();
         StringTokenizer tokenizer = new StringTokenizer(expression);
@@ -32,33 +40,67 @@ public class ArithmeticTerm {
         Stack<String> operators = new Stack<>();
         StringTokenizer tokenizer = new StringTokenizer(expression);
         String result = "";
-        int parenthesesCount = 0; // Counts the number of opening parentheses, reduced for each closing parenthesis.
-        int count = 0; // Counts number of operands & operators after each opening parenthesis.
+        int count = 0;
 
         while(tokenizer.hasMoreTokens()) {
             String token = tokenizer.nextToken();
             if (token.equals("+") || token.equals("-") || token.equals("*")
                     || token.equals("/") || token.equals("^") || token.equals("%")
-                    || token.equals("sqrt")) {
+                    || token.equals("sqrt") || token.equals("++") || token.equals("--")) {
                 operators.push(token);
             } else if (token.equals("(")) {
-                parenthesesCount++;
+                count++;
             } else if (token.equals(")")) {
-                parenthesesCount--;
+                count--;
                 result += operators.pop() + " ";
             } else if(token.matches("[+-]?\\d*(e[+-]?\\d+|\\.[0-9]+)?")) {
                 result += Double.parseDouble(token) + " ";
-                count++;
             } else {
                 System.out.printf("Illegal value detected : %s", token);
             }
         }
 
-        if(parenthesesCount != 0) {
+        if(count != 0) {
             System.out.printf("The number of parentheses is incorrect.");
             System.exit(1);
         }
 
         return result;
+    }
+
+    public Double evaluate() {
+        StringTokenizer st = new StringTokenizer(expression);
+        StackOfDoubles stack1 = new StackOfDoubles();
+
+        while(st.hasMoreTokens()) {
+            String s = st.nextToken();
+
+            try {
+                double d = Double.parseDouble(s);
+                stack1.push(d);
+            } catch(Exception e) {
+                double d1 = stack1.pop();
+
+                switch(s) {
+                    case "+":
+                        stack1.push(stack1.pop()+d1); break;
+                    case "-":
+                        stack1.push(stack1.pop()-d1); break;
+                    case "/":
+                        stack1.push(stack1.pop()/d1); break;
+                    case "*":
+                        stack1.push(stack1.pop()*d1); break;
+                    case "^":
+                        stack1.push(Math.pow(stack1.pop(),d1)); break;
+                    case "sqrt":
+                        stack1.push(Math.sqrt(d1)); break;
+                    case "++":
+                        stack1.push(d1+1); break;
+                    case "--":
+                        stack1.push(d1-1); break;
+                }
+            }
+        }
+        return stack1.pop();
     }
 }
