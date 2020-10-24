@@ -2,7 +2,6 @@ package edu.hamburg.haw;
 
 public class Main {
     private static ArithmeticTerm term;
-
     // Test Strings
     private static String testString1 = "5.1 9 8.88 + 4 sqrt 6 / ^ 7 - *";
     private static String evaluateTest1 = "( ( 4.3 * 1e-1 ) - ( ( ++ .4 ) + 5.5 ) )";

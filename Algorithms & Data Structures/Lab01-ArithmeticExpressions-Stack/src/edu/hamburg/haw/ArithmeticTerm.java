@@ -6,21 +6,15 @@ import java.util.StringTokenizer;
 public class ArithmeticTerm {
     private String expression;
 
-    public ArithmeticTerm(String expression) {
-        this.expression = expression;
-    }
+    public ArithmeticTerm(String expression) { this.expression = expression; }
 
     public String toString() {
         return expression;
     }
 
-    public void setExpression(String expression) {
-        this.expression = expression;
-    }
+    public void setExpression(String expression) { this.expression = expression; }
 
-    public String getExpression() {
-        return expression;
-    }
+    public String getExpression() { return expression; }
 
     public void reverse() {
         Stack<String> reverseStack = new Stack<>();
