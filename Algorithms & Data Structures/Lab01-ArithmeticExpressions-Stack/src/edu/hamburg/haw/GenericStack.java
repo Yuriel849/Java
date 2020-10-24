@@ -13,10 +13,10 @@ public class GenericStack<T> {
         return first == null;
     }
 
-    public void push(T newDouble) {
+    public void push(T item) {
         Node second = first;
         first = new Node();
-        first.item = newDouble;
+        first.item = item;
         first.next = second;
     }
 
