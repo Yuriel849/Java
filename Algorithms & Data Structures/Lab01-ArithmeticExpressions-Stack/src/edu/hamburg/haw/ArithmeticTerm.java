@@ -3,19 +3,40 @@ package edu.hamburg.haw;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
+/**
+ * A class to contain an Arithmetic Expression and carry out operations on it.
+ * A FPAE or an expression in postfix (Reverse Polish) notation can be converted and/or evaluated.
+ * @author Yuriel
+ * @version 25.10.2020.
+ */
 public class ArithmeticTerm {
     private String expression;
 
+    /**
+     * Constructor, instantiates ArithmeticTerm with the designated expression.
+     */
     public ArithmeticTerm(String expression) { this.expression = expression; }
 
+    /**
+     * Returns the expression as a string value.
+     * Effectively a getter/accessor method.
+     * @return The expression.
+     */
     public String toString() {
         return expression;
     }
 
+    /**
+     * Sets a new expression.
+     * @param expression The new expression to replace the old.
+     */
     public void setExpression(String expression) { this.expression = expression; }
 
-    public String getExpression() { return expression; }
-
+    /**
+     * Tokenizes the expression and places it in reverse order.
+     * The new reversed expression replaces the old expression.
+     * For example, "4 * 10" becomes "10 * 4".
+     */
     public void reverse() {
         Stack<String> reverseStack = new Stack<>();
         StringTokenizer tokenizer = new StringTokenizer(expression);
@@ -30,6 +51,10 @@ public class ArithmeticTerm {
         }
     }
 
+    /**
+     * Converts a FPAE into postfix notation.
+     * @return The FPAE in postfix notation.
+     */
     public String convert() {
         Stack<String> operators = new Stack<>();
         StringTokenizer tokenizer = new StringTokenizer(expression);
@@ -62,6 +87,10 @@ public class ArithmeticTerm {
         return result;
     }
 
+    /**
+     * Evaluates a postfix expression into the result.
+     * @return The Double value of the result.
+     */
     public Double evaluate() {
         StringTokenizer st = new StringTokenizer(expression);
         StackOfDoubles stack1 = new StackOfDoubles();

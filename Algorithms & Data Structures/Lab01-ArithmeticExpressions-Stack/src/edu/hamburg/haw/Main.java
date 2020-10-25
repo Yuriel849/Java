@@ -1,5 +1,10 @@
 package edu.hamburg.haw;
 
+/**
+ * Main class of this lab-01 project. Contains the static main method.
+ * @author Yuriel
+ * @version 25.10.2020.
+ */
 public class Main {
     private static ArithmeticTerm term;
     // Test Strings
@@ -37,6 +42,10 @@ public class Main {
         main2();
     }
 
+    /**
+     * Problem 3.
+     * Converts a Fully Parenthesized Arithmetic Expression (FPAE) into postfix notation, which is then evaluated.
+     */
     public static void main2() {
         term = new ArithmeticTerm(evaluateTest5);
         term.setExpression(term.convert());
