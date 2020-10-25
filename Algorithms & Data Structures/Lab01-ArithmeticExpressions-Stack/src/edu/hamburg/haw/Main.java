@@ -6,9 +6,11 @@ package edu.hamburg.haw;
  * @version 25.10.2020.
  */
 public class Main {
-    private static ArithmeticTerm term;
+    private static ArithmeticTerm term = new ArithmeticTerm("test");
+    private static Double result = 0.0;
     // Test Strings
     private static String testString1 = "5.1 9 8.88 + 4 sqrt 6 / ^ 7 - *";
+    // FPAE convert() and evaluate() test cases.
     private static String evaluateTest1 = "( ( 4.3 * 1e-1 ) - ( ( ++ .4 ) + 5.5 ) )";
     private static String evaluateTest2 = "( 5.1 * ( ( ( 9 + 8.88 ) ^ ( ( sqrt 4 ) / 6 ) ) - 7 ) )";
     private static String evaluateTest3 = "( ( ( sqrt ( 5 * 72.401 ) ) + 8.1530 ) / ( -12.458 ^ +5 ) )";
@@ -17,27 +19,15 @@ public class Main {
 
     public static void main(String[] args) {
         // PROBLEM 1.2 : Test toString() & reverse() with test string 1.
-//        term = new ArithmeticTerm(testString1);
+//        term.setExpression(testString1);
 //	      System.out.println(term.toString());
 //	      term.reverse();
 //        System.out.println(term.toString());
         // PROBLEM 1.2 : Test toString() & reverse() with test string 2.
-//        term = new ArithmeticTerm(evaluateTest2);
+//        term.setExpression(evaluateTest2);
 //        System.out.println(term.toString());
 //        term.reverse();
 //        System.out.println(term.toString());
-
-        // PROBLEM 3.1 : Test evaluate() with 5 test cases.
-//        term = new ArithmeticTerm(evaluateTest1);
-//        System.out.println(term.convert());
-//        term = new ArithmeticTerm(evaluateTest2);
-//        System.out.println(term.convert());
-//        term = new ArithmeticTerm(evaluateTest3);
-//        System.out.println(term.convert());
-//        term = new ArithmeticTerm(evaluateTest4);
-//        System.out.println(term.convert());
-//        term = new ArithmeticTerm(evaluateTest5);
-//        System.out.println(term.convert());
 
         main2();
     }
@@ -47,9 +37,30 @@ public class Main {
      * Converts a Fully Parenthesized Arithmetic Expression (FPAE) into postfix notation, which is then evaluated.
      */
     public static void main2() {
-        term = new ArithmeticTerm(evaluateTest5);
+        // Test Case 1
+        term.setExpression(evaluateTest1);
         term.setExpression(term.convert());
-        Double result = term.evaluate();
-        System.out.printf("\n\"%s\" evalutes to \"%f\"\n", evaluateTest5, result);
+        result = term.evaluate();
+        System.out.printf("\n\"%s\" evalutes to \"%f\"", evaluateTest1, result);
+        // Test Case 2
+        term.setExpression(evaluateTest2);
+        term.setExpression(term.convert());
+        result = term.evaluate();
+        System.out.printf("\n\"%s\" evalutes to \"%f\"", evaluateTest2, result);
+        // Test Case 3
+        term.setExpression(evaluateTest3);
+        term.setExpression(term.convert());
+        result = term.evaluate();
+        System.out.printf("\n\"%s\" evalutes to \"%f\"", evaluateTest3, result);
+        // Test Case 4
+        term.setExpression(evaluateTest4);
+        term.setExpression(term.convert());
+        result = term.evaluate();
+        System.out.printf("\n\"%s\" evalutes to \"%f\"", evaluateTest4, result);
+        // Test Case 5
+        term.setExpression(evaluateTest5);
+        term.setExpression(term.convert());
+        result = term.evaluate();
+        System.out.printf("\n\"%s\" evalutes to \"%f\"", evaluateTest5, result);
     }
 }
