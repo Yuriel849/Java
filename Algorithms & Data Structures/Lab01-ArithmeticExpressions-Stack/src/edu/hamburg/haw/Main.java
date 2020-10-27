@@ -41,26 +41,26 @@ public class Main {
         term.setExpression(evaluateTest1);
         term.setExpression(term.convert());
         result = term.evaluate();
-        System.out.printf("\n\"%s\" evalutes to \"%f\"", evaluateTest1, result);
+        System.out.printf("\n\"%s\" evaluates to \"%f\"", evaluateTest1, result);
         // Test Case 2
         term.setExpression(evaluateTest2);
         term.setExpression(term.convert());
         result = term.evaluate();
-        System.out.printf("\n\"%s\" evalutes to \"%f\"", evaluateTest2, result);
+        System.out.printf("\n\"%s\" evaluates to \"%f\"", evaluateTest2, result);
         // Test Case 3
         term.setExpression(evaluateTest3);
         term.setExpression(term.convert());
         result = term.evaluate();
-        System.out.printf("\n\"%s\" evalutes to \"%f\"", evaluateTest3, result);
+        System.out.printf("\n\"%s\" evaluates to \"%f\"", evaluateTest3, result);
         // Test Case 4
         term.setExpression(evaluateTest4);
         term.setExpression(term.convert());
         result = term.evaluate();
-        System.out.printf("\n\"%s\" evalutes to \"%f\"", evaluateTest4, result);
+        System.out.printf("\n\"%s\" evaluates to \"%f\"", evaluateTest4, result);
         // Test Case 5
         term.setExpression(evaluateTest5);
         term.setExpression(term.convert());
         result = term.evaluate();
-        System.out.printf("\n\"%s\" evalutes to \"%f\"", evaluateTest5, result);
+        System.out.printf("\n\"%s\" evaluates to \"%f\"", evaluateTest5, result);
     }
 }
