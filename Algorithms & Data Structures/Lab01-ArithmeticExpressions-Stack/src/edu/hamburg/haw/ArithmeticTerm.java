@@ -60,6 +60,7 @@ public class ArithmeticTerm {
         Stack<String> operators = new Stack<>();
         StringTokenizer tokenizer = new StringTokenizer(expression);
         String result = "";
+        int parenthesesCount = 0;
         boolean parenthesisError = false;
 
         while(tokenizer.hasMoreTokens()) {
@@ -67,20 +68,25 @@ public class ArithmeticTerm {
             if(token.matches("[+-]?\\d*(e[+-]?\\d+|\\.[0-9]+)?")
                     && !token.equals("++") && !token.equals("--")
                     && !token.equals("+") && !token.equals("-")) {
+                parenthesesCount--;
                 result += Double.parseDouble(token) + " ";
             } else {
                 switch (token) {
                     case "sqrt":
                     case "++":
                     case "--":
+                        parenthesesCount--;
                     case "+":
                     case "-":
                     case "*":
                     case "/":
                     case "^":
                     case "%":
+                        parenthesesCount--;
                         operators.push(token); break;
                     case ")":
+                        if(parenthesesCount > 0)
+                            parenthesesCount--;
                         if(operators.empty()) { // Terminates if popping an empty stack.
                             System.out.printf("The number of parentheses in %s is incorrect.", expression);
                             System.exit(2);
@@ -88,6 +94,7 @@ public class ArithmeticTerm {
                             result += operators.pop() + " ";
                         break;
                     case "(":
+                        parenthesesCount += 3;
                         break;
                     default:
                         System.out.printf("Illegal value detected : %s", token);
@@ -96,7 +103,10 @@ public class ArithmeticTerm {
         }
 
         if(!operators.empty()) { // Terminates if operators are still on the stack after processing an expression.
-            System.out.printf("The number of parentheses in %s is incorrect.", expression);
+            System.out.printf("%s is not a valid FPAE.", expression);
+            System.exit(2);
+        } else if (parenthesesCount != 0) { // Terminates if the format inside a pair of parentheses is incorrect.
+            System.out.printf("The format inside the parentheses in %s is incorrect.", expression);
             System.exit(2);
         }
 
