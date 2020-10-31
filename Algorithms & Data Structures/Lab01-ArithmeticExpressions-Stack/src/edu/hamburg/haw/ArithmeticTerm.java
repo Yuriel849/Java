@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
  * A class to contain an Arithmetic Expression and carry out operations on it.
  * A FPAE or an expression in postfix (Reverse Polish) notation can be converted and/or evaluated.
  * @author Yuriel
- * @version 25.10.2020.
+ * @version 31.10.2020.
  */
 public class ArithmeticTerm {
     private String expression;

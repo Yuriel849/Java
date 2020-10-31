@@ -3,7 +3,7 @@ package edu.hamburg.haw;
 /**
  * Main class of this lab-01 project. Contains the static main method.
  * @author Yuriel
- * @version 25.10.2020.
+ * @version 31.10.2020.
  */
 public class Main {
     private static ArithmeticTerm term = new ArithmeticTerm("test");
