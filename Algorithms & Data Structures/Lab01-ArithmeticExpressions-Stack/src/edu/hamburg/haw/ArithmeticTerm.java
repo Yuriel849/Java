@@ -53,6 +53,7 @@ public class ArithmeticTerm {
 
     /**
      * Converts a FPAE into postfix notation.
+     *
      * @return The FPAE in postfix notation.
      */
     public String convert() {
@@ -69,24 +70,22 @@ public class ArithmeticTerm {
                 result += Double.parseDouble(token) + " ";
             } else {
                 switch (token) {
+                    case "sqrt":
+                    case "++":
+                    case "--":
                     case "+":
                     case "-":
                     case "*":
                     case "/":
                     case "^":
                     case "%":
-                    case "sqrt":
-                    case "++":
-                    case "--":
                         operators.push(token); break;
                     case ")":
-                        if(operators.empty()) {
+                        if(operators.empty())
                             parenthesisError = true;
-                            break;
-                        } else {
+                        else
                             result += operators.pop() + " ";
-                            break;
-                        }
+                        break;
                     case "(":
                         break;
                     default:
@@ -94,8 +93,8 @@ public class ArithmeticTerm {
                 }
             }
 
-            if(parenthesisError == true || !operators.empty()) {
-                System.out.println("The number of parentheses in this expression is incorrect.");
+            if(parenthesisError == true) {
+                System.out.printf("The number of parentheses in %s is incorrect.", expression);
                 System.exit(2);
             }
         }
