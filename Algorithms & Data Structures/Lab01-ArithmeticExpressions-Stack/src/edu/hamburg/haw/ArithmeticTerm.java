@@ -94,7 +94,7 @@ public class ArithmeticTerm {
                 }
             }
 
-            if(parenthesisError == true) {
+            if(parenthesisError == true || !operators.empty()) {
                 System.out.println("The number of parentheses in this expression is incorrect.");
                 System.exit(2);
             }
