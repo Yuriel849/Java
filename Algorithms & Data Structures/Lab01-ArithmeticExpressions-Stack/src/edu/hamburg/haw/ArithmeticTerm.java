@@ -81,9 +81,10 @@ public class ArithmeticTerm {
                     case "%":
                         operators.push(token); break;
                     case ")":
-                        if(operators.empty())
-                            parenthesisError = true;
-                        else
+                        if(operators.empty()) { // Terminates if popping an empty stack.
+                            System.out.printf("The number of parentheses in %s is incorrect.", expression);
+                            System.exit(2);
+                        } else
                             result += operators.pop() + " ";
                         break;
                     case "(":
@@ -92,11 +93,11 @@ public class ArithmeticTerm {
                         System.out.printf("Illegal value detected : %s", token);
                 }
             }
+        }
 
-            if(parenthesisError == true) {
-                System.out.printf("The number of parentheses in %s is incorrect.", expression);
-                System.exit(2);
-            }
+        if(!operators.empty()) { // Terminates if operators are still on the stack after processing an expression.
+            System.out.printf("The number of parentheses in %s is incorrect.", expression);
+            System.exit(2);
         }
 
         return result;
