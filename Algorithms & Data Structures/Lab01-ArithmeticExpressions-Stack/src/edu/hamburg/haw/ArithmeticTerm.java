@@ -59,29 +59,45 @@ public class ArithmeticTerm {
         Stack<String> operators = new Stack<>();
         StringTokenizer tokenizer = new StringTokenizer(expression);
         String result = "";
-        int count = 0;
+        boolean parenthesisError = false;
 
         while(tokenizer.hasMoreTokens()) {
             String token = tokenizer.nextToken();
-            if (token.equals("+") || token.equals("-") || token.equals("*")
-                    || token.equals("/") || token.equals("^") || token.equals("%")
-                    || token.equals("sqrt") || token.equals("++") || token.equals("--")) {
-                operators.push(token);
-            } else if (token.equals("(")) {
-                count++;
-            } else if (token.equals(")")) {
-                count--;
-                result += operators.pop() + " ";
-            } else if(token.matches("[+-]?\\d*(e[+-]?\\d+|\\.[0-9]+)?")) {
+            if(token.matches("[+-]?\\d*(e[+-]?\\d+|\\.[0-9]+)?")
+                    && !token.equals("++") && !token.equals("--")
+                    && !token.equals("+") && !token.equals("-")) {
                 result += Double.parseDouble(token) + " ";
             } else {
-                System.out.printf("Illegal value detected : %s", token);
+                switch (token) {
+                    case "+":
+                    case "-":
+                    case "*":
+                    case "/":
+                    case "^":
+                    case "%":
+                    case "sqrt":
+                    case "++":
+                    case "--":
+                        operators.push(token); break;
+                    case ")":
+                        if(operators.empty()) {
+                            parenthesisError = true;
+                            break;
+                        } else {
+                            result += operators.pop() + " ";
+                            break;
+                        }
+                    case "(":
+                        break;
+                    default:
+                        System.out.printf("Illegal value detected : %s", token);
+                }
             }
-        }
 
-        if(count != 0) {
-            System.out.printf("The number of parentheses is incorrect.");
-            System.exit(1);
+            if(parenthesisError == true) {
+                System.out.println("The number of parentheses in this expression is incorrect.");
+                System.exit(2);
+            }
         }
 
         return result;
