@@ -66,14 +66,14 @@ public class Main {
     }
 
     public static void main3() {
-        Node four = new Node("4");
-        Node sqrt = new Node("sqrt", four, null);
-        Node twoFirst = new Node("2");
-        Node three = new Node("3");
-        Node pow = new Node("^", twoFirst, three);
-        Node mult = new Node("*", sqrt, pow);
-        Node twoSecond = new Node("2");
-        Node div = new Node("/", mult, twoSecond);
+        Tree.BiNode four = new Tree.BiNode("4");
+        Tree.BiNode sqrt = new Tree.BiNode("sqrt", four, null);
+        Tree.BiNode twoFirst = new Tree.BiNode("2");
+        Tree.BiNode three = new Tree.BiNode("3");
+        Tree.BiNode pow = new Tree.BiNode("^", twoFirst, three);
+        Tree.BiNode mult = new Tree.BiNode("*", sqrt, pow);
+        Tree.BiNode twoSecond = new Tree.BiNode("2");
+        Tree.BiNode div = new Tree.BiNode("/", mult, twoSecond);
 
         Tree tree = new Tree(div);
         System.out.println(tree);
