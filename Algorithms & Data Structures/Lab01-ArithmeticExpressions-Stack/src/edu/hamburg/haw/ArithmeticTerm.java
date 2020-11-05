@@ -75,6 +75,9 @@ public class ArithmeticTerm {
                     case "sqrt":
                     case "++":
                     case "--":
+                    case "sin":
+                    case "cos":
+                    case "exp":
                         parenthesesCount--;
                     case "+":
                     case "-":
