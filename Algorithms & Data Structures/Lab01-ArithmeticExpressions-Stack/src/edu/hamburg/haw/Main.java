@@ -29,7 +29,8 @@ public class Main {
 //        term.reverse();
 //        System.out.println(term.toString());
 
-        main2();
+//        main2();
+        main3();
     }
 
     /**
@@ -62,5 +63,19 @@ public class Main {
         term.setExpression(term.convert());
         result = term.evaluate();
         System.out.printf("\n\"%s\" evaluates to \"%f\"", evaluateTest5, result);
+    }
+
+    public static void main3() {
+        Node four = new Node("4");
+        Node sqrt = new Node("sqrt", four, null);
+        Node twoFirst = new Node("2");
+        Node three = new Node("3");
+        Node pow = new Node("^", twoFirst, three);
+        Node mult = new Node("*", sqrt, pow);
+        Node twoSecond = new Node("2");
+        Node div = new Node("/", mult, twoSecond);
+
+        Tree tree = new Tree(div);
+        System.out.println(tree);
     }
 }
