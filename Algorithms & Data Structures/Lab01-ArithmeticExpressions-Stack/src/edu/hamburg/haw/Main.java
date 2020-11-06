@@ -66,16 +66,19 @@ public class Main {
     }
 
     public static void main3() {
-        Tree.BiNode four = new Tree.BiNode("4");
-        Tree.BiNode sqrt = new Tree.BiNode("sqrt", four, null);
-        Tree.BiNode twoFirst = new Tree.BiNode("2");
-        Tree.BiNode three = new Tree.BiNode("3");
-        Tree.BiNode pow = new Tree.BiNode("^", twoFirst, three);
-        Tree.BiNode mult = new Tree.BiNode("*", sqrt, pow);
-        Tree.BiNode twoSecond = new Tree.BiNode("2");
-        Tree.BiNode div = new Tree.BiNode("/", mult, twoSecond);
+        term.setExpression("( ( ( sin ( ( 4 * 3.14 ) / 3 ) ) * exp ( ( - ( ( sqrt 2 ) - 1 ) ) / 8 ) ) / sqrt ( 6 * 3.14 ) )");
+        System.out.println(term.convert());
 
-        Tree tree = new Tree(div);
-        System.out.println(tree);
+//        Tree.BiNode four = new Tree.BiNode("4");
+//        Tree.BiNode sqrt = new Tree.BiNode("sqrt", four, null);
+//        Tree.BiNode twoFirst = new Tree.BiNode("2");
+//        Tree.BiNode three = new Tree.BiNode("3");
+//        Tree.BiNode pow = new Tree.BiNode("^", twoFirst, three);
+//        Tree.BiNode mult = new Tree.BiNode("*", sqrt, pow);
+//        Tree.BiNode twoSecond = new Tree.BiNode("2");
+//        Tree.BiNode div = new Tree.BiNode("/", mult, twoSecond);
+//
+//        Tree tree = new Tree(div);
+//        System.out.println(tree);
     }
 }

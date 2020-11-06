@@ -104,7 +104,7 @@ public class ArithmeticTerm {
                 }
             }
         }
-
+        
         if(!operators.empty()) { // Terminates if operators are still on the stack after processing an expression.
             System.out.printf("%s is not a valid FPAE.", expression);
             System.exit(2);
