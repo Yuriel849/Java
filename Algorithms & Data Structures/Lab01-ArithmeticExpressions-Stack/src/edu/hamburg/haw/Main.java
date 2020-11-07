@@ -83,6 +83,12 @@ public class Main {
         // Problem 5 Task 3 - Call inorderTraversal() on the tree from Task 2.
         tree.inorderTraversal();
         System.out.println(tree.getResult());
-
+        // Problem 5 Task 4 - Call infixGenerator() on the tree from Task 2.
+        tree.infixGenerator();
+        String result = tree.getResult();
+        System.out.println(result);
+        term.setExpression(result);
+        term.setExpression(term.convert());
+        System.out.println(term.evaluate());
     }
 }
