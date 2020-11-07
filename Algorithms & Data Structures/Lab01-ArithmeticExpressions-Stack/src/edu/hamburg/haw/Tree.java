@@ -18,8 +18,23 @@ public class Tree {
     }
 
     private BiNode root;
+    private StringBuilder result = new StringBuilder("");
 
     public Tree(BiNode root) {
         this.root = root;
+    }
+
+    public String getResult() {
+        return result.toString();
+    }
+
+    private void inorderTraversal(BiNode node) {
+        if(node.left != null) inorderTraversal(node.left);
+        result.append(node.item).append(" ");
+        if(node.right != null) inorderTraversal(node.right);
+    }
+
+    public void inorderTraversal() {
+        inorderTraversal(root);
     }
 }
