@@ -1,7 +1,7 @@
 package edu.hamburg.haw;
 
 /**
- * Main class of the second lab session. Contains the static main method.
+ * Main class of the first lab session.
  * @author Yuriel
  * @version 07.11.2020.
  */
