@@ -1,7 +1,5 @@
 package edu.hamburg.haw;
 
-import java.util.function.BinaryOperator;
-
 public class Tree {
     public static class BiNode {
         public String item;
@@ -27,8 +25,10 @@ public class Tree {
     }
 
     public String getResult() {
-        return result.toString();
+        return result.toString().stripTrailing();
     }
+
+    private boolean hasChild(BiNode node) { return node.left != null || node.right != null; }
 
     private void inorderTraversal(BiNode node) {
         if(node.left != null) inorderTraversal(node.left);
@@ -42,20 +42,15 @@ public class Tree {
     }
 
     private void infixGenerator(BiNode node) {
-        if(node.left != null) {
-            result.append("( ");
-            infixGenerator(node.left);
-        }
+        if(hasChild(node)) result.append("( ");
+        if(node.left != null) infixGenerator(node.left);
         result.append(node.item).append(" ");
-        if(node.right != null) {
-            infixGenerator(node.right);
-            result.append(") ");
-        }
+        if(node.right != null) infixGenerator(node.right);
+        if(hasChild(node)) result.append(") ");
     }
 
     public void infixGenerator() {
         result.delete(0, result.length());
-        result.append("( ");
         infixGenerator(root);
     }
 }
