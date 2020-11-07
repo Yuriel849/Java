@@ -1,11 +1,11 @@
 package edu.hamburg.haw;
 
 /**
- * Main class of this lab-01 project. Contains the static main method.
+ * Main class of the second lab session. Contains the static main method.
  * @author Yuriel
- * @version 31.10.2020.
+ * @version 07.11.2020.
  */
-public class Main {
+public class FirstLab {
     private static ArithmeticTerm term = new ArithmeticTerm("test");
     private static Double result = 0.0;
     // Test Strings
@@ -17,20 +17,19 @@ public class Main {
     private static String evaluateTest4 = "( ( 5 % 3 ) * ( ( ( 0.5 ^ 30 ) - 9.2 ) / ( -.15 + ( sqrt 9 ) ) ) )";
     private static String evaluateTest5 = "( ( ( ( ( 10 + 2 ) - ( 8.1027 * 2.23234 ) ) / ( sqrt ( sqrt 35 ) ) ) % 15.2350 ) ^ 2 )";
 
-    public static void main(String[] args) {
-        // PROBLEM 1.2 : Test toString() & reverse() with test string 1.
+    public static void main1(String[] args) {
+        // Problem 1 Task 2 : Test toString() & reverse() with test string 1.
 //        term.setExpression(testString1);
 //	      System.out.println(term.toString());
 //	      term.reverse();
 //        System.out.println(term.toString());
-        // PROBLEM 1.2 : Test toString() & reverse() with test string 2.
+        // Test toString() & reverse() with test string 2.
 //        term.setExpression(evaluateTest2);
 //        System.out.println(term.toString());
 //        term.reverse();
 //        System.out.println(term.toString());
 
-//        main2();
-        main3();
+        main2();
     }
 
     /**
@@ -63,32 +62,5 @@ public class Main {
         term.setExpression(term.convert());
         result = term.evaluate();
         System.out.printf("\n\"%s\" evaluates to \"%f\"", evaluateTest5, result);
-    }
-
-    public static void main3() {
-//        term.setExpression("( ( ( sin ( ( 4 * 3.14 ) / 3 ) ) * exp ( ( - ( ( sqrt 2 ) - 1 ) ) / 8 ) ) / sqrt ( 6 * 3.14 ) )");
-//        System.out.println(term.convert());
-
-        // Problem 5 Task 2 - Constructor a tree with the expression ( ( ( sqrt 4 ) * ( 2 ^ 3 ) ) / 2 ).
-        Tree.BiNode four = new Tree.BiNode("4");
-        Tree.BiNode sqrt = new Tree.BiNode("sqrt", null, four);
-        Tree.BiNode twoFirst = new Tree.BiNode("2");
-        Tree.BiNode three = new Tree.BiNode("3");
-        Tree.BiNode pow = new Tree.BiNode("^", twoFirst, three);
-        Tree.BiNode mult = new Tree.BiNode("*", sqrt, pow);
-        Tree.BiNode twoSecond = new Tree.BiNode("2");
-        Tree.BiNode div = new Tree.BiNode("/", mult, twoSecond);
-
-        Tree tree = new Tree(div);
-        // Problem 5 Task 3 - Call inorderTraversal() on the tree from Task 2.
-        tree.inorderTraversal();
-        System.out.println(tree.getResult());
-        // Problem 5 Task 4 - Call infixGenerator() on the tree from Task 2.
-        tree.infixGenerator();
-        String result = tree.getResult();
-        System.out.println(result);
-        term.setExpression(result);
-        term.setExpression(term.convert());
-        System.out.println(term.evaluate());
     }
 }
