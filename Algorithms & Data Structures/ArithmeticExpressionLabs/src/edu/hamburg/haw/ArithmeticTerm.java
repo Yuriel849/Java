@@ -14,6 +14,7 @@ public class ArithmeticTerm {
 
     /**
      * Constructor, instantiates ArithmeticTerm with the designated expression.
+     * @param expression The expression of the new ArithmeticTerm object to be created.
      */
     public ArithmeticTerm(String expression) { this.expression = expression; }
 

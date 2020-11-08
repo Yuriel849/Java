@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5273ea62-5289-4d19-8aee-4dbaa1c1d8f1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hamburg/haw/ArithmeticTerm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hamburg/haw/ArithmeticTerm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hamburg/haw/SecondLab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hamburg/haw/SecondLab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hamburg/haw/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hamburg/haw/Tree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,19 +59,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.SecondLab" />
@@ -86,7 +74,8 @@
       <option name="presentableId" value="Default" />
       <updated>1604767788583</updated>
       <workItem from="1604767793685" duration="3747000" />
-      <workItem from="1604828175319" duration="17181000" />
+      <workItem from="1604828175319" duration="17489000" />
+      <workItem from="1604851294790" duration="609000" />
     </task>
     <servers />
   </component>
@@ -110,22 +99,30 @@
       <screen x="0" y="0" width="1463" height="783" />
     </state>
     <state x="324" y="32" key="#Plugins/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604772138317" />
-    <state width="1422" height="197" key="GridCell.Tab.0.bottom" timestamp="1604848787336">
+    <state x="446" y="111" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1604851834726">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state width="1422" height="197" key="GridCell.Tab.0.bottom/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604848787336" />
-    <state width="1422" height="197" key="GridCell.Tab.0.center" timestamp="1604848787335">
+    <state x="446" y="111" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604851834726" />
+    <state x="512" y="146" key="FileChooserDialogImpl" timestamp="1604851833931">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state width="1422" height="197" key="GridCell.Tab.0.center/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604848787335" />
-    <state width="1422" height="197" key="GridCell.Tab.0.left" timestamp="1604848787335">
+    <state x="512" y="146" key="FileChooserDialogImpl/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604851833931" />
+    <state width="1422" height="197" key="GridCell.Tab.0.bottom" timestamp="1604850900085">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state width="1422" height="197" key="GridCell.Tab.0.left/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604848787335" />
-    <state width="1422" height="197" key="GridCell.Tab.0.right" timestamp="1604848787336">
+    <state width="1422" height="197" key="GridCell.Tab.0.bottom/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604850900085" />
+    <state width="1422" height="197" key="GridCell.Tab.0.center" timestamp="1604850900084">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state width="1422" height="197" key="GridCell.Tab.0.right/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604848787336" />
+    <state width="1422" height="197" key="GridCell.Tab.0.center/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604850900084" />
+    <state width="1422" height="197" key="GridCell.Tab.0.left" timestamp="1604850900084">
+      <screen x="0" y="0" width="1463" height="783" />
+    </state>
+    <state width="1422" height="197" key="GridCell.Tab.0.left/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604850900084" />
+    <state width="1422" height="197" key="GridCell.Tab.0.right" timestamp="1604850900085">
+      <screen x="0" y="0" width="1463" height="783" />
+    </state>
+    <state width="1422" height="197" key="GridCell.Tab.0.right/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604850900085" />
     <state x="312" y="134" key="IDE.errors.dialog" timestamp="1604772121891">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
@@ -152,7 +149,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/edu/hamburg/haw/ArithmeticTerm.java</url>
-          <line>143</line>
+          <line>144</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

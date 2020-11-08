@@ -32,6 +32,7 @@ public class Tree {
 
     /**
      * Constructor, instantiates Tree with the designated BiNode as the root node.
+     * @param root The root of the tree to be constructed.
      */
     public Tree(BiNode root) { this.root = root; }
 
