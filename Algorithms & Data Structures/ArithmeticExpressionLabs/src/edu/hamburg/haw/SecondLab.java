@@ -12,7 +12,7 @@ public class SecondLab {
     private static Double result = 0.0;
 
     public static void main(String[] args) {
-        term.setExpression("( ( ( sin ( ( 4 * 3.14 ) / 3 ) ) * ( exp ( - ( ( sqrt 2 ) - 1 ) / 8 ) ) ) / ( sqrt ( 6 * 3.14 ) ) )");
+        term.setExpression("( ( ( sin ( ( 4 * pi ) / 3 ) ) * ( exp ( - ( ( sqrt 2 ) - 1 ) / 8 ) ) ) / ( sqrt ( 6 * pi ) ) )");
         System.out.println(term.convert());
 
 //        // Problem 5 Task 2 - Construct a tree with the expression "( ( ( sqrt 4 ) * ( 2 ^ 3 ) ) / 2 )".

@@ -73,19 +73,15 @@ public class ArithmeticTerm {
                 result += Double.parseDouble(token) + " ";
             } else {
                 switch (token) {
-                    case "sqrt":
-                    case "++":
-                    case "--":
-                    case "sin":
-                    case "cos":
-                    case "exp":
+                    case "pi":
                         parenthesesCount--;
-                    case "+":
-                    case "-":
-                    case "*":
-                    case "/":
-                    case "^":
-                    case "%":
+                        result += "pi "; break;
+                    // Unary operators
+                    case "sqrt": case "++": case "--": case "sin": case "cos": case "exp":
+                        parenthesesCount--;
+                    // Binary operators
+                    case "+": case "-": case "*": case "/": case "^": case "%":
+                        // Negative sign ("-")
                         if(negative == true && token.equals("-") && tokenizer.nextToken().equals("(")) {
                             result += "-1 ";
                             operators.push("*");
@@ -121,8 +117,6 @@ public class ArithmeticTerm {
         }
         
         if(!operators.empty()) { // Terminates if operators are still on the stack after processing an expression.
-            while(!operators.empty()) System.out.println(operators.pop());
-            System.out.println(result);
             System.out.printf("%s is not a valid FPAE.", expression);
             System.exit(2);
         } else if (parenthesesCount != 0) { // Terminates if the format inside a pair of parentheses is incorrect.
