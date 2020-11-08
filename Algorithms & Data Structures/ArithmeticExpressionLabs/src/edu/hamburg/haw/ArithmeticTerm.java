@@ -61,7 +61,8 @@ public class ArithmeticTerm {
         StringTokenizer tokenizer = new StringTokenizer(expression);
         String result = "";
         int parenthesesCount = 0;
-        boolean parenthesisError = false;
+        boolean parenthesisError = false, negative = false;
+        int parenAtNeg = -10;
 
         while(tokenizer.hasMoreTokens()) {
             String token = tokenizer.nextToken();
@@ -85,18 +86,32 @@ public class ArithmeticTerm {
                     case "/":
                     case "^":
                     case "%":
-                        parenthesesCount--;
-                        operators.push(token); break;
-                    case ")":
-                        if(parenthesesCount > 0)
+                        if(negative == true && token.equals("-") && tokenizer.nextToken().equals("(")) {
+                            result += "-1 ";
+                            operators.push("*");
+                            parenAtNeg = parenthesesCount;
+                            parenthesesCount += 3;
+                        } else {
+                            operators.push(token);
                             parenthesesCount--;
+                        }
+                        negative = false;
+                        break;
+                    case ")":
                         if(operators.empty()) { // Terminates if popping an empty stack.
                             System.out.printf("The number of parentheses in %s is incorrect.", expression);
                             System.exit(2);
-                        } else
+                        } else if (parenAtNeg == parenthesesCount) {
                             result += operators.pop() + " ";
+                            parenAtNeg = -10;
+                        }
+                        result += operators.pop() + " ";
+                        negative = false;
+                        if(parenthesesCount > 0)
+                            parenthesesCount--;
                         break;
                     case "(":
+                        negative = true;
                         parenthesesCount += 3;
                         break;
                     default:
@@ -106,6 +121,8 @@ public class ArithmeticTerm {
         }
         
         if(!operators.empty()) { // Terminates if operators are still on the stack after processing an expression.
+            while(!operators.empty()) System.out.println(operators.pop());
+            System.out.println(result);
             System.out.printf("%s is not a valid FPAE.", expression);
             System.exit(2);
         } else if (parenthesesCount != 0) { // Terminates if the format inside a pair of parentheses is incorrect.
