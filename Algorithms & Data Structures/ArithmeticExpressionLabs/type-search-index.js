@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"edu.hamburg.haw","l":"ArithmeticTerm"},{"p":"edu.hamburg.haw","l":"Tree.BiNode"},{"p":"edu.hamburg.haw","l":"FirstLab"},{"p":"edu.hamburg.haw","l":"GenericStack"},{"p":"edu.hamburg.haw","l":"SecondLab"},{"p":"edu.hamburg.haw","l":"StackOfDoubles"},{"p":"edu.hamburg.haw","l":"Tree"}]

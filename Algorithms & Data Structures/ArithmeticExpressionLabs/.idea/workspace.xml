@@ -21,7 +21,70 @@
   <component name="ChangeListManager">
     <list default="true" id="5273ea62-5289-4d19-8aee-4dbaa1c1d8f1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hamburg/haw/SecondLab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hamburg/haw/SecondLab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allclasses-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allpackages-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/constant-values.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deprecated-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/hamburg/haw/ArithmeticTerm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/hamburg/haw/FirstLab.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/hamburg/haw/GenericStack.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/hamburg/haw/SecondLab.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/hamburg/haw/StackOfDoubles.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/hamburg/haw/Tree.BiNode.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/hamburg/haw/Tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/hamburg/haw/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/hamburg/haw/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/element-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/help-doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-10.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-11.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-12.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-13.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/member-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/overview-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/external/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/images/ui-bg_glass_65_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/images/ui-icons_222222_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/images/ui-icons_454545_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/images/ui-icons_888888_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/jquery-3.4.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/jquery-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/jquery-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/jquery-ui.structure.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/jquery-ui.structure.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/jszip-utils/dist/jszip-utils-ie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/jszip-utils/dist/jszip-utils-ie.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/jszip-utils/dist/jszip-utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/jszip-utils/dist/jszip-utils.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/jszip/dist/jszip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/jszip/dist/jszip.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hamburg/haw/ArithmeticTerm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hamburg/haw/ArithmeticTerm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/type-search-index.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +120,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.SecondLab" />
@@ -73,7 +147,7 @@
       <updated>1604767788583</updated>
       <workItem from="1604767793685" duration="3747000" />
       <workItem from="1604828175319" duration="17489000" />
-      <workItem from="1604851294790" duration="1914000" />
+      <workItem from="1604851294790" duration="3942000" />
     </task>
     <servers />
   </component>
@@ -97,30 +171,30 @@
       <screen x="0" y="0" width="1463" height="783" />
     </state>
     <state x="324" y="32" key="#Plugins/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604772138317" />
-    <state x="446" y="111" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1604851913868">
+    <state x="446" y="111" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1604855310159">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state x="446" y="111" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604851913868" />
-    <state x="512" y="146" key="FileChooserDialogImpl" timestamp="1604851833931">
+    <state x="446" y="111" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604855310159" />
+    <state x="512" y="146" key="FileChooserDialogImpl" timestamp="1604855309281">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state x="512" y="146" key="FileChooserDialogImpl/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604851833931" />
-    <state width="1422" height="197" key="GridCell.Tab.0.bottom" timestamp="1604853269592">
+    <state x="512" y="146" key="FileChooserDialogImpl/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604855309281" />
+    <state width="1422" height="197" key="GridCell.Tab.0.bottom" timestamp="1604857262496">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state width="1422" height="197" key="GridCell.Tab.0.bottom/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604853269592" />
-    <state width="1422" height="197" key="GridCell.Tab.0.center" timestamp="1604853269592">
+    <state width="1422" height="197" key="GridCell.Tab.0.bottom/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604857262496" />
+    <state width="1422" height="197" key="GridCell.Tab.0.center" timestamp="1604857262496">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state width="1422" height="197" key="GridCell.Tab.0.center/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604853269592" />
-    <state width="1422" height="197" key="GridCell.Tab.0.left" timestamp="1604853269591">
+    <state width="1422" height="197" key="GridCell.Tab.0.center/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604857262496" />
+    <state width="1422" height="197" key="GridCell.Tab.0.left" timestamp="1604857262495">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state width="1422" height="197" key="GridCell.Tab.0.left/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604853269591" />
-    <state width="1422" height="197" key="GridCell.Tab.0.right" timestamp="1604853269592">
+    <state width="1422" height="197" key="GridCell.Tab.0.left/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604857262495" />
+    <state width="1422" height="197" key="GridCell.Tab.0.right" timestamp="1604857262496">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state width="1422" height="197" key="GridCell.Tab.0.right/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604853269592" />
+    <state width="1422" height="197" key="GridCell.Tab.0.right/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604857262496" />
     <state x="312" y="134" key="IDE.errors.dialog" timestamp="1604772121891">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
