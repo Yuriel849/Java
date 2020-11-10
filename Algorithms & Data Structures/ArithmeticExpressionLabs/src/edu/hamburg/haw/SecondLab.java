@@ -12,9 +12,6 @@ public class SecondLab {
     private static Double result = 0.0;
 
     public static void main(String[] args) {
-        term.setExpression("( ( ( sin ( ( 4 * pi ) / 3 ) ) * ( exp ( - ( ( sqrt 2 ) - 1 ) / 8 ) ) ) / ( sqrt ( 6 * pi ) ) )");
-        System.out.println(term.convert());
-
         // Problem 5 Task 2 - Construct a tree with the expression "( ( ( sqrt 4 ) * ( 2 ^ 3 ) ) / 2 )".
         Tree.BiNode four = new Tree.BiNode("4");
         Tree.BiNode sqrt = new Tree.BiNode("sqrt", null, four);
@@ -32,7 +29,27 @@ public class SecondLab {
         String result = tree.infixGenerator();
         System.out.println("Parenthesized Infix Expression : "+ result);
         term.setExpression(result);
-        term.setExpression(term.convert());
+        String postfixExpression01 = term.convert();
+        term.setExpression(postfixExpression01);
         System.out.println("Evaluated result : " + term.evaluate());
+
+        term.setExpression("( ( ( sin ( ( 4 * pi ) / 3 ) ) * ( exp ( - ( ( sqrt 2 ) - 1 ) / 8 ) ) ) / ( sqrt ( 6 * pi ) ) )");
+        String postfixExpression02 = term.convert();
+        System.out.println(postfixExpression02);
+
+        // Problem 5 Lab Task 1 - Test partner's code to process postfix expressions.
+        System.out.println(postfixExpression01);
+        Tree processTree01 = new Tree(postfixExpression01);
+        System.out.println(postfixExpression02);
+        Tree processTree02 = new Tree(postfixExpression02);
+
+        main2(postfixExpression01);
+    }
+
+    // Problem 5 Lab Task 2 - Generate a fully parenthesized infix expression from a postfix expression.
+    public static void main2(String exp) {
+        Tree tree = new Tree(exp);
+        String infixExp = tree.infixGenerator();
+        System.out.println(infixExp);
     }
 }
