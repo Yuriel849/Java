@@ -5,7 +5,7 @@ package edu.hamburg.haw;
  * The main methods and related codes for the first lab session can be found in FirstLab.java.
  *
  * @author Yuriel
- * @version 08.11.2020.
+ * @version 13.11.2020.
  */
 public class SecondLab {
     private static ArithmeticTerm term = new ArithmeticTerm("test");
@@ -42,9 +42,13 @@ public class SecondLab {
         Tree processTree01 = new Tree(postfixExpression01);
         System.out.println("Creating a tree 02 : " + postfixExpression02);
         Tree processTree02 = new Tree(postfixExpression02);
-
         main2(postfixExpression01);
         main2(postfixExpression02);
+
+        // Test additional test cases of different complexity.
+        main2("5.0 72.401 * sqrt 8.153 + -12.458 5.0 ^ /");
+        main2("5.0 exp 0.5 30.0 ^ 9.2 - -0.15 9.0 sqrt + / *");
+        main2("10.0 2.0 + 8.1027 2.23234 * - 35.0 sqrt sqrt / 15.235 * 2.0 ^");
     }
 
     // Problem 5 Lab Task 2 - Generate a fully parenthesized infix expression from a postfix expression.
