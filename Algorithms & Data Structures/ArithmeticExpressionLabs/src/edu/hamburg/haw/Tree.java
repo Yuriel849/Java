@@ -87,6 +87,7 @@ public class Tree {
      * @param node The root node.
      */
     private void infixGenerator(BiNode node) {
+        // Terminate tree traversal if this tree is incorrect.
         if((isOperator(node.term) && !hasChild(node))
                 || (!isOperator(node.term) && hasChild(node))
                 || (isBinaryOperator(node.term) && (node.left != null))) {
