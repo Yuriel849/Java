@@ -38,18 +38,19 @@ public class SecondLab {
         System.out.println(postfixExpression02);
 
         // Problem 5 Lab Task 1 - Test partner's code to process postfix expressions.
-        System.out.println(postfixExpression01);
+        System.out.println("Creating a tree 01 : " + postfixExpression01);
         Tree processTree01 = new Tree(postfixExpression01);
-        System.out.println(postfixExpression02);
+        System.out.println("Creating a tree 02 : " + postfixExpression02);
         Tree processTree02 = new Tree(postfixExpression02);
 
         main2(postfixExpression01);
+        main2(postfixExpression02);
     }
 
     // Problem 5 Lab Task 2 - Generate a fully parenthesized infix expression from a postfix expression.
     public static void main2(String exp) {
         Tree tree = new Tree(exp);
         String infixExp = tree.infixGenerator();
-        System.out.println(infixExp);
+        System.out.println("Fully parenthesized infix expression : " + infixExp);
     }
 }
