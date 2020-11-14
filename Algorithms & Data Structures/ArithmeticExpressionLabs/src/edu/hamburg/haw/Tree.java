@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
  * Class Tree.
  * Represents a binary tree.
  * @author Yuriel
- * @version 08.11.2020.
+ * @version 14.11.2020.
  */
 public class Tree {
     /**
@@ -117,60 +117,42 @@ public class Tree {
      * @param postfix The postfix expression to convert into a binary tree.
      * @return The root node of the newly constructed Tree.
      */
-    BiNode construct(String postfix) //prep task 4.2
-    {
+    BiNode construct(String postfix) {
         Stack<BiNode> stack1 = new Stack<>();
         StringTokenizer st = new StringTokenizer(postfix);
-        while(st.hasMoreTokens())
-        {
+        while(st.hasMoreTokens()) {
             String s = st.nextToken();
 
-            if(isOperator(s))
-            {
-                if(s.equals("sqrt") || s.equals("sin") || s.equals("cos") || s.equals("exp"))
-                {
-                    if(stack1.isEmpty())
-                    {
+            if(isOperator(s)) {
+                if(s.equals("sqrt") || s.equals("sin") || s.equals("cos") || s.equals("exp")) {
+                    if(stack1.isEmpty()) {
                         System.out.println("No Operand to perform task");
                         System.exit(2);
-                    }
-                    else
-                    {
+                    } else {
                         BiNode right = stack1.pop();
                         stack1.push(new BiNode(s,null,right));
                     }
-                }
-                else
-                {
-                    if(stack1.size()<2)
-                    {
+                } else {
+                    if(stack1.size()<2) {
                         System.out.println("Not enough Operands to perform task");
                         System.exit(2);
-                    }
-                    else
-                    {
+                    } else {
                         BiNode right = stack1.pop();
                         BiNode left = stack1.pop();
                         stack1.push(new BiNode(s,left,right));
                     }
                 }
-            }
-            else if(s.matches("[+-]?\\d*(e[+-]?\\d+|\\.[0-9]+)?"))
-            {
+            } else if(s.matches("[+-]?\\d*(e[+-]?\\d+|\\.[0-9]+)?")) {
                 stack1.push(new BiNode(s));
-            }
-            else if(s.equals("pi"))
-            {
+            } else if(s.equals("pi")) {
                 stack1.push(new BiNode("3.141592"));
-            }
-            else
-            {
+            } else {
                 System.out.printf("%s is not a valid expression.", postfix);
                 System.exit(2);
             }
         }
-        if(!stack1.isEmpty())
-        {
+
+        if(!stack1.isEmpty()) {
             return stack1.pop();
         }
         return null;
@@ -181,10 +163,8 @@ public class Tree {
      * @param s The operator String.
      * @return True, if the parameter s is an operator; false, if s is not an operator.
      */
-    private boolean isOperator(String s) //checks if the string sent is an operator or not
-    {
-        switch (s)
-        {
+    private boolean isOperator(String s) {
+        switch (s) {
             case "*":
             case "/":
             case "^":
@@ -195,7 +175,6 @@ public class Tree {
             case "cos":
             case "exp":
                 return true;
-
             default:
                 return false;
         }

@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5273ea62-5289-4d19-8aee-4dbaa1c1d8f1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hamburg/haw/SecondLab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hamburg/haw/SecondLab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hamburg/haw/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hamburg/haw/Tree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,17 +71,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.SecondLab" />
@@ -101,7 +90,8 @@
       <workItem from="1604828175319" duration="17489000" />
       <workItem from="1604851294790" duration="3942000" />
       <workItem from="1605009090188" duration="3863000" />
-      <workItem from="1605300211262" duration="3857000" />
+      <workItem from="1605300211262" duration="5503000" />
+      <workItem from="1605383569168" duration="730000" />
     </task>
     <servers />
   </component>
@@ -137,22 +127,22 @@
       <screen x="0" y="0" width="1463" height="783" />
     </state>
     <state x="512" y="146" key="FileChooserDialogImpl/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1605012031112" />
-    <state width="1422" height="197" key="GridCell.Tab.0.bottom" timestamp="1605302852542">
+    <state width="740" height="656" key="GridCell.Tab.0.bottom" timestamp="1605309438300">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state width="1422" height="197" key="GridCell.Tab.0.bottom/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1605302852542" />
-    <state width="1422" height="197" key="GridCell.Tab.0.center" timestamp="1605302852541">
+    <state width="740" height="656" key="GridCell.Tab.0.bottom/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1605309438300" />
+    <state width="740" height="656" key="GridCell.Tab.0.center" timestamp="1605309438300">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state width="1422" height="197" key="GridCell.Tab.0.center/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1605302852541" />
-    <state width="1422" height="197" key="GridCell.Tab.0.left" timestamp="1605302852541">
+    <state width="740" height="656" key="GridCell.Tab.0.center/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1605309438300" />
+    <state width="740" height="656" key="GridCell.Tab.0.left" timestamp="1605309438299">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state width="1422" height="197" key="GridCell.Tab.0.left/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1605302852541" />
-    <state width="1422" height="197" key="GridCell.Tab.0.right" timestamp="1605302852542">
+    <state width="740" height="656" key="GridCell.Tab.0.left/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1605309438299" />
+    <state width="740" height="656" key="GridCell.Tab.0.right" timestamp="1605309438300">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state width="1422" height="197" key="GridCell.Tab.0.right/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1605302852542" />
+    <state width="740" height="656" key="GridCell.Tab.0.right/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1605309438300" />
     <state x="312" y="134" key="IDE.errors.dialog" timestamp="1604772121891">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
