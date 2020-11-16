@@ -20,8 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5273ea62-5289-4d19-8aee-4dbaa1c1d8f1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Record(Lab03)/src/Insertion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Record(Lab03)/src/Record.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Record(Lab03)/src/Records.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Record(Lab03)/src/Selection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Record(Lab03)/src/Sort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hamburg/haw/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hamburg/haw/Tree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +45,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/HAW Hamburg/3. Semester/Algorithms &amp; Data Structures (AD)/AD Lab02/BinaryTree/BinaryTree" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Record" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunManager" selected="Application.SecondLab">
@@ -91,7 +95,8 @@
       <workItem from="1604851294790" duration="3942000" />
       <workItem from="1605009090188" duration="3863000" />
       <workItem from="1605300211262" duration="5503000" />
-      <workItem from="1605383569168" duration="730000" />
+      <workItem from="1605383569168" duration="1324000" />
+      <workItem from="1605477302102" duration="1272000" />
     </task>
     <servers />
   </component>
@@ -123,10 +128,10 @@
       <screen x="0" y="0" width="1463" height="783" />
     </state>
     <state x="446" y="111" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604855310159" />
-    <state x="512" y="146" key="FileChooserDialogImpl" timestamp="1605012031112">
+    <state x="512" y="146" key="FileChooserDialogImpl" timestamp="1605477433975">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state x="512" y="146" key="FileChooserDialogImpl/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1605012031112" />
+    <state x="512" y="146" key="FileChooserDialogImpl/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1605477433975" />
     <state width="740" height="656" key="GridCell.Tab.0.bottom" timestamp="1605309438300">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
@@ -155,6 +160,10 @@
       <screen x="0" y="0" width="1463" height="783" />
     </state>
     <state x="504" y="305" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604840292456" />
+    <state x="323" y="12" key="new project wizard" timestamp="1605478051296">
+      <screen x="0" y="0" width="1463" height="783" />
+    </state>
+    <state x="323" y="12" key="new project wizard/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1605478051296" />
     <state x="389" y="177" key="run.anything.popup" timestamp="1604840686178">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
