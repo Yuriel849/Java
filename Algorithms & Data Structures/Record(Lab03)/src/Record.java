@@ -6,8 +6,7 @@
  * @author Wolfgang Renz
  * @version Nov. 3, 2020
  */
-public class Record implements Comparable<Record>
-{
+public class Record implements Comparable<Record> {
     // instance variables - replace the example below with your own
     private Integer n;
     private String s;
@@ -15,16 +14,14 @@ public class Record implements Comparable<Record>
     /**
      * Constructor for objects of class Record
      */
-    public Record(int i, String str)
-    {
+    public Record(int i, String str) {
         // initialise instance variables
         n= i;
         s= str;
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return n+"-"+s;
     }
 
@@ -34,8 +31,7 @@ public class Record implements Comparable<Record>
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int compareTo(Record rec)
-    {
+    public int compareTo(Record rec) {
         //return s.compareTo(rec.s); //alternative sorting w.r.t. the string
         return n.compareTo(rec.n);
     }

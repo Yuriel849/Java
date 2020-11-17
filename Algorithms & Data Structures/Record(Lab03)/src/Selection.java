@@ -10,17 +10,14 @@
  * @author Wolfgang Renz
  * @version Nov. 3, 2020
  */
-public class Selection extends Sort
-{
+public class Selection extends Sort {
     // Comparable is a raw type. References to generic type Comparable<T> should be parameterized
-    public static void sort(Object[] a)
-    {
+    public static void sort(Object[] a) {
         int N = a.length;
-        for (int i = 0; i < N; i++) // i: destination site
-        {
+        for (int i = 0; i < N; i++) { // i: destination site
             int min = i; // index of minimum candidate
-            for (int j = i+1; j < N; j++){
-                if (less(a[j], a[min])){
+            for (int j = i+1; j < N; j++) {
+                if (less(a[j], a[min])) {
                     min = j; // better minimum candidate found
                 }
             }
