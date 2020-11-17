@@ -1,7 +1,7 @@
 /**
- * class Selection from Sedgewick.
+ * Class Selection from Sedgewick.
  * It was not type-safe because Comparable was used generically.
- * Here is the solution choosen by Java's Arrays.sort():
+ * Here is the solution chosen by Java's Arrays.sort():
  * It might throw a ClassCastException if the object is not mutually comparable.
  * I would still prefer Sedgewick's solution because the compiler
  * tells me that my objects do not implement Comparable if they don't.
