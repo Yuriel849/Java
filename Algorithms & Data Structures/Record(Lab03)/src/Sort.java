@@ -37,5 +37,30 @@ public abstract class Sort {
         return sorted;
     }
 
-    
+    /**
+     * Checks if all array elements in the range left <= array-index < border are
+     * smaller than all elements in the range border <= array-index < right.
+     * @author Yuriel
+     * @version 18.11.2020.
+     */
+    boolean isPartitioned(Comparable a[], int left, int border, int right) {
+        boolean partitioned = false;
+        Comparable leftPart = a[left], rightPart = a[border];
+
+        // Find largest element in left partition.
+        for(int i = left+1; i < border; i++)
+            if(leftPart.compareTo(a[i]) < 0)
+                leftPart = a[i];
+
+        // Find smallest element in right partition.
+        for(int i = border+1; i < right; i++)
+            if(rightPart.compareTo(a[i]) > 0)
+                rightPart = a[i];
+
+        // Compare, largest element in left should be equal or smaller than smallest element in right.
+        if(leftPart.compareTo(rightPart) <= 0)
+            partitioned = true;
+
+        return partitioned;
+    }
 }
