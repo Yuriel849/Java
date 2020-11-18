@@ -21,4 +21,21 @@ public abstract class Sort {
         // type cast to Record
         return (((Comparable)v).compareTo((Comparable)w) < 0);
     }
+
+    /**
+     * Checks if the array 'a' is sorted for left <= array-index < right.
+     * @author Yuriel
+     * @version 18.11.2020.
+     */
+    boolean isSorted(Comparable a[], int left, int right) {
+        boolean sorted = true;
+
+        for(int i = left; i < right; i++)
+            if(a[i].compareTo(a[i+1]) > 0) // compareTo() should return 0 or negative integer if 'a' is sorted.
+                sorted = false;
+
+        return sorted;
+    }
+
+    
 }
