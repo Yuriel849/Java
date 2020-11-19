@@ -1,5 +1,5 @@
 /**
- * class Insertion from Sedgewick.
+ * Class Insertion from Sedgewick.
  * It was not type-safe because Comparable was used generically.
  * Here is the solution chosen by Java's Arrays.sort():
  * It might throw a ClassCastException if the object is not mutually comparable.
