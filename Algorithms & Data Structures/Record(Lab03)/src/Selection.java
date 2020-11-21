@@ -15,6 +15,7 @@ public class Selection extends Sort {
     public static void sort(Object[] a) {
         int N = a.length;
         System.out.println("Selection, is sorted before sorting? : " + isSorted(a, 0, N-1));
+        System.out.println("Selection, is partitioned before sorting? : " + isPartitioned(a, 0, (N-1)/2, N-1));
         for (int i = 0; i < N; i++) { // i: destination site
             int min = i; // index of minimum candidate
             for (int j = i+1; j < N; j++) {
@@ -26,5 +27,6 @@ public class Selection extends Sort {
             exch(a, i, min);
         }
         System.out.println("Selection, is sorted after sorting? : " + isSorted(a, 0, N-1));
+        System.out.println("Selection, is partitioned after sorting? : " + isPartitioned(a, 0, (N-1)/2, N-1));
     }
 }
