@@ -14,7 +14,7 @@ public class Insertion extends Sort {
     // Comparable is a raw type. References to generic type Comparable<T> should be parameterized
     public static void sort(Object[] a) {
         int N = a.length;
-        System.out.println("Insertion, is sorted before sorting? : " + isSorted((Comparable[]) a, 0, N-1));
+        System.out.println("Insertion, is sorted before sorting? : " + isSorted(a, 0, N-1));
         for (int i = 1; i < N; i++) {
             for (int j = i; j > 0; j--) {
                 if (less(a[j], a[j-1])) {
@@ -23,8 +23,8 @@ public class Insertion extends Sort {
                     break; // input dependent
                 }
             }
-            assert isSorted((Comparable[]) a, 0, i);
+            assert isSorted(a, 0, i);
         }
-        System.out.println("Insertion, is sorted after sorting? : " + isSorted((Comparable[]) a, 0, N-1));
+        System.out.println("Insertion, is sorted after sorting? : " + isSorted(a, 0, N-1));
     }
 }

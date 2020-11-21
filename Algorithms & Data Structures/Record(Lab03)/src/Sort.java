@@ -27,11 +27,12 @@ public abstract class Sort {
      * @author Yuriel
      * @version 18.11.2020.
      */
-    protected static boolean isSorted(Comparable a[], int left, int right) {
+    protected static boolean isSorted(Object[] a, int left, int right) {
         boolean sorted = true;
+        Comparable[] arr = (Comparable[]) a;
 
         for(int i = left; i < right; i++)
-            if(a[i].compareTo(a[i+1]) > 0) // compareTo() should return 0 or negative integer if 'a' is sorted.
+            if(arr[i].compareTo(arr[i+1]) > 0) // compareTo() should return 0 or negative integer if 'a' is sorted.
                 sorted = false;
 
         return sorted;
@@ -43,19 +44,19 @@ public abstract class Sort {
      * @author Yuriel
      * @version 18.11.2020.
      */
-    protected static boolean isPartitioned(Comparable a[], int left, int border, int right) {
+    protected static boolean isPartitioned(Object[] a, int left, int border, int right) {
         boolean partitioned = false;
-        Comparable leftPart = a[left], rightPart = a[border];
+        Comparable leftPart = (Comparable) a[left], rightPart = (Comparable) a[border];
 
         // Find largest element in left partition.
         for(int i = left+1; i < border; i++)
             if(leftPart.compareTo(a[i]) < 0)
-                leftPart = a[i];
+                leftPart = (Comparable) a[i];
 
         // Find smallest element in right partition.
         for(int i = border+1; i < right; i++)
             if(rightPart.compareTo(a[i]) > 0)
-                rightPart = a[i];
+                rightPart = (Comparable) a[i];
 
         // Compare, largest element in left should be equal or smaller than smallest element in right.
         if(leftPart.compareTo(rightPart) <= 0)
