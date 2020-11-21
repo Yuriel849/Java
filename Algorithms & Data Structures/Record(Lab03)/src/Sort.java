@@ -27,7 +27,7 @@ public abstract class Sort {
      * @author Yuriel
      * @version 18.11.2020.
      */
-    boolean isSorted(Comparable a[], int left, int right) {
+    protected static boolean isSorted(Comparable a[], int left, int right) {
         boolean sorted = true;
 
         for(int i = left; i < right; i++)
@@ -43,7 +43,7 @@ public abstract class Sort {
      * @author Yuriel
      * @version 18.11.2020.
      */
-    boolean isPartitioned(Comparable a[], int left, int border, int right) {
+    protected static boolean isPartitioned(Comparable a[], int left, int border, int right) {
         boolean partitioned = false;
         Comparable leftPart = a[left], rightPart = a[border];
 

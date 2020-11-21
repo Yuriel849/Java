@@ -62,18 +62,18 @@ public class Records {
 
     public static void main(String[] a) {
         Records recs= new Records(N);
-        System.out.println( recs);
+        System.out.println(recs);
 
         System.out.println("\n Stable Sort Test for Insertion Sort:");
         recs.shuffle();
-        System.out.println( recs);
+        System.out.println(recs);
         recs.insertionSort();
-        System.out.println( recs);
+        System.out.println(recs);
 
         System.out.println("\n Stable Sort Test for Selection Sort:");
         recs.shuffle();
-        System.out.println( recs);
+        System.out.println(recs);
         recs.selectionSort();
-        System.out.println( recs);
+        System.out.println(recs);
     }
 }

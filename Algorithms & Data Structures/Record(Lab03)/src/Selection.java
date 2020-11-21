@@ -14,6 +14,7 @@ public class Selection extends Sort {
     // Comparable is a raw type. References to generic type Comparable<T> should be parameterized
     public static void sort(Object[] a) {
         int N = a.length;
+        System.out.println("Insertion, is sorted before sorting? : " + isSorted((Comparable[]) a, 0, N-1));
         for (int i = 0; i < N; i++) { // i: destination site
             int min = i; // index of minimum candidate
             for (int j = i+1; j < N; j++) {
@@ -24,5 +25,6 @@ public class Selection extends Sort {
             // now min is the index of the minimum
             exch(a, i, min);
         }
+        System.out.println("Insertion, is sorted after sorting? : " + isSorted((Comparable[]) a, 0, N-1));
     }
 }
