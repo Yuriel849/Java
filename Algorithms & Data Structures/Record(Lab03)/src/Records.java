@@ -47,17 +47,19 @@ public class Records {
 
     public void shuffle() {
         Collections.shuffle(list, new Random(System.currentTimeMillis()));
-        recs= list.toArray(recs); // not required, why?
+        // recs= list.toArray(recs); // Not required because changes to list are reflected in array, and vice versa.
     }
 
     public void insertionSort() {
         Insertion.sort(recs);
-        list= Arrays.asList(recs); // not required, why?
     }
 
     public void selectionSort() {
         Selection.sort(recs);
-        list= Arrays.asList(recs); // not required, why?
+    }
+
+    public void quicksort() {
+        Quicksort.sort(recs);
     }
 
     public static void main(String[] a) {
@@ -74,6 +76,12 @@ public class Records {
         recs.shuffle();
         System.out.println(recs);
         recs.selectionSort();
+        System.out.println(recs);
+
+        System.out.println("\n Stable Sort Test for Quicksort:");
+        recs.shuffle();
+        System.out.println(recs);
+        recs.quicksort();
         System.out.println(recs);
     }
 }
