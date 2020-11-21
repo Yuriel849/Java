@@ -23,6 +23,7 @@ public class Insertion extends Sort {
                     break; // input dependent
                 }
             }
+            assert isSorted((Comparable[]) a, 0, i);
         }
         System.out.println("Insertion, is sorted after sorting? : " + isSorted((Comparable[]) a, 0, N-1));
     }
