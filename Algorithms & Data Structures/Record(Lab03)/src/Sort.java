@@ -13,21 +13,38 @@
 public abstract class Sort {
     private static int compares = 0, copies = 0;
 
+    /**
+     * Resets the counter for comparison and copy operations.
+     * @author Yuriel
+     * @version 22.11.2020.
+     */
     protected static void reset() {
         compares = 0;
         copies = 0;
     }
 
+    /**
+     * Returns the number of comparison operations.
+     * @return The number of comparison operations.
+     * @author Yuriel
+     * @version 22.11.2020.
+     */
     public static int getCompares() {
         return compares;
     }
 
+    /**
+     * Returns the number of copy operations.
+     * @return The number of copy operations.
+     * @author Yuriel
+     * @version 22.11.2020.
+     */
     public static int getCopies() {
         return copies;
     }
 
     protected static void exch(Object[] a, int i, int j) {
-        copies += 3;
+        copies += 3; // 3 copy operations to exchange two values (incl. temp)
         Object t = a[i];
         a[i] = a[j];
         a[j] = t;

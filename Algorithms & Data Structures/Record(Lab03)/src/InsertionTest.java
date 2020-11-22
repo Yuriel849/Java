@@ -2,6 +2,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Tests the sort method in the Insertion class.
+ * Checks that the number of copy and comparison operations in the algorithm
+ * matches the theoretically expected number of operations.
+ */
 class InsertionTest {
     @Test
     void sort() {
