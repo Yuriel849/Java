@@ -7,6 +7,7 @@
 public class Quicksort extends Sort {
     // Comparable is a raw type. References to generic type Comparable<T> should be parameterized
     public static void sort(Object[] a) {
+        reset();
         int N = a.length;
         System.out.println("Quicksort, is sorted before sorting? : " + isSorted(a, 0, N-1));
         sort(a, 0, N - 1);

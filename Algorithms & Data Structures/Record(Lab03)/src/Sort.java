@@ -11,14 +11,30 @@
  * @version Nov. 3, 2020
  */
 public abstract class Sort {
+    private static int compares = 0, copies = 0;
+
+    protected static void reset() {
+        compares = 0;
+        copies = 0;
+    }
+
+    public static int getCompares() {
+        return compares;
+    }
+
+    public static int getCopies() {
+        return copies;
+    }
+
     protected static void exch(Object[] a, int i, int j) {
+        copies += 3;
         Object t = a[i];
         a[i] = a[j];
         a[j] = t;
     }
 
     protected static boolean less(Object v, Object w) {
-        // type cast to Record
+        compares++;
         return (((Comparable)v).compareTo((Comparable)w) < 0);
     }
 

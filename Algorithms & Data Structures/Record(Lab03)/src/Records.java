@@ -71,17 +71,22 @@ public class Records {
         System.out.println(recs);
         recs.insertionSort();
         System.out.println(recs);
+        System.out.println("#(cmp) : " + Sort.getCompares() + ", #(cpy) : " + Sort.getCopies());
+
 
         System.out.println("\n Stable Sort Test for Selection Sort:");
         recs.shuffle();
         System.out.println(recs);
         recs.selectionSort();
         System.out.println(recs);
+        System.out.println("#(cmp) : " + Sort.getCompares() + ", #(cpy) : " + Sort.getCopies());
+
 
         System.out.println("\n Stable Sort Test for Quicksort:");
         recs.shuffle();
         System.out.println(recs);
         recs.quicksort();
         System.out.println(recs);
+        System.out.println("#(cmp) : " + Sort.getCompares() + ", #(cpy) : " + Sort.getCopies());
     }
 }
