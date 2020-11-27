@@ -78,6 +78,7 @@ public abstract class UseCase {
                 switch(sortCase) {
                     case "SortCase": usecase= new SortCase(tableCase, N); break;
                     case "InsertionCase": usecase= new InsertionCase(tableCase, N); break;
+                    case "QuicksortCase": usecase= new QuicksortCase(tableCase, N); break;
                 }
                 // check for all sort cases and instantiate them accordingly!
                 if(usecase != null) {
@@ -104,6 +105,7 @@ public abstract class UseCase {
 
     public static void main(String arg [] ) {
         makeTable("InsertionCase");
+        makeTable("QuicksortCase");
 
         System.out.println("\nFor testing use single use cases like this:\n");
         UseCase usecase = new InsertionCase( InputCase.REVERSE, 4);
