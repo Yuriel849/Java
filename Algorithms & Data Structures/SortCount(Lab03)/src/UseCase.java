@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  *  This class UseCase is for demonstration only!
  *  It shows how to use enum in switch/case, loop over it's values and its name printing.
@@ -56,14 +58,12 @@ public abstract class UseCase {
         sortAndCount();
         String results;
         // do the formatting job !
-        results = " " + comp + " " + copy + " " + format; // for demo only
+        results = String.format("%10s comparisons & %10s copies", comp, copy);
         return results;
     }
 
     public void writeResults(String format) {
-        System.out.print (size + " "); // first part of suitable format
-        format= format.substring(0);   // skip part consumed
-        System.out.println(getResults(format));
+        System.out.println(String.format("N - %4d", size) + getResults(format));
     }
 
     public static void makeTable(String sortCase) {
@@ -99,17 +99,17 @@ public abstract class UseCase {
     }
 
     private void initRandom() {
+        Random generator = new Random(1050);
         for(int i = 0; i < size; i++)
-            arr[i] = (int) (Math.random() * size * 3);
+            arr[i] = (int) (generator.nextInt(size * 4));
     }
 
     public static void main(String arg [] ) {
         makeTable("InsertionCase");
         makeTable("QuicksortCase");
 
-        System.out.println("\nFor testing use single use cases like this:\n");
-        UseCase usecase = new InsertionCase( InputCase.REVERSE, 4);
-        System.out.println(usecase + usecase.getResults("... formatted"));
-
+//        System.out.println("\nFor testing use single use cases like this:\n");
+//        UseCase usecase = new InsertionCase( InputCase.REVERSE, 4);
+//        System.out.println(usecase + usecase.getResults("... formatted"));
     }
 }
