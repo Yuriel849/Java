@@ -1,16 +1,15 @@
-
 /**
  *  This class UseCase is for demonstration only!
- *  It shows how to use enum in switch/case, loop over it's values and it's name printing.
+ *  It shows how to use enum in switch/case, loop over it's values and its name printing.
  *
  * @author Wolfgang Renz, HAW Hamburg 
  * @version Nov. 14, 2020
  */
-public abstract class UseCase
-{
-    public static final int kmax= 15;
+public abstract class UseCase {
+    public static final int kmax= 13;
     public static final int Nmax= (int) Math.round(Math.pow(2, kmax));
     public static final int M= 20;  // sample size
+    public static Integer[] arr;
 
     // instance variables:
     private InputCase inputCase;
@@ -20,27 +19,27 @@ public abstract class UseCase
 
     abstract void sortAndCount();
 
-    protected UseCase(InputCase inputCase, int size)
-    {
+    protected UseCase(InputCase inputCase, int size) {
         // initialise instance variables
         this.size = size;
         this.inputCase= inputCase;
-        if (inputCase == InputCase.AVG){
+        arr = new Integer[size];
+        if (inputCase == InputCase.AVG) {
             iterations = M;
-        } else{
+        } else {
             iterations= 1;
         }
 
-        switch(inputCase){
+        switch(inputCase) {
             case SORTED:
-                // initAscending();
+                initAscending();
                 break;
             case REVERSE:
-                // initDescending();
+                initDescending();
                 break;
             case RANDOM:
             case AVG:
-                // initRandom();
+                initRandom();
                 break;
 
             default:
@@ -49,13 +48,11 @@ public abstract class UseCase
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return inputCase + " case for size " + size + ":";
     }
 
-    String getResults(String format)
-    {
+    String getResults(String format) {
         sortAndCount();
         String results;
         // do the formatting job !
@@ -63,41 +60,54 @@ public abstract class UseCase
         return results;
     }
 
-    public void writeResults(String format)
-    {
+    public void writeResults(String format) {
         System.out.print (size + " "); // first part of suitable format
         format= format.substring(0);   // skip part consumed
         System.out.println(getResults(format));
     }
 
-    public static void makeTable(String sortCase)
-    {
-        for (InputCase tableCase: InputCase.values()){
+    public static void makeTable(String sortCase) {
+        for (InputCase tableCase: InputCase.values()) {
             int N=1;
             System.out.println(tableCase + " case:");
             System.out.println("Formatted Columns Header: N, #(cmp), #(cmp)");
             String format= "suitable format";
-            for(int k=1; k<=kmax; k++){
+            for(int k=1; k<=kmax; k++) {
                 N*= 2;
                 UseCase usecase = null;
-                if (sortCase.equals("SortCase")){
-                    usecase= new SortCase(tableCase, N);
+                switch(sortCase) {
+                    case "SortCase": usecase= new SortCase(tableCase, N); break;
+                    case "InsertionCase": usecase= new InsertionCase(tableCase, N); break;
                 }
                 // check for all sort cases and instantiate them accordingly!
-                if(usecase != null){
+                if(usecase != null) {
                     usecase.writeResults(format);
                 }
             }
         }
     }
 
-    public static void main(String arg [] )
-    {
-        makeTable("SortCase");
+    private void initAscending() {
+        initRandom();
+        Insertion.sort(arr);
+    }
+
+    private void initDescending() {
+        initRandom();
+        Insertion.reverseSort(arr);
+    }
+
+    private void initRandom() {
+        for(int i = 0; i < size; i++)
+            arr[i] = (int) (Math.random() * size * 3);
+    }
+
+    public static void main(String arg [] ) {
+        makeTable("InsertionCase");
 
         System.out.println("\nFor testing use single use cases like this:\n");
-        UseCase usecase = new SortCase( InputCase.RANDOM, 32);
-        System.out.println(usecase + usecase.getResults("... formated"));
+        UseCase usecase = new InsertionCase( InputCase.REVERSE, 4);
+        System.out.println(usecase + usecase.getResults("... formatted"));
 
     }
 }

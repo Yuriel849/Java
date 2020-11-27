@@ -15,8 +15,6 @@ public class Insertion extends Sort {
     public static void sort(Object[] a) {
         reset();
         int N = a.length;
-        System.out.println("Insertion, is sorted before sorting? : " + isSorted(a, 0, N-1));
-        System.out.println("Insertion, is partitioned before sorting? : " + isPartitioned(a, 0, (N-1)/2, N-1));
         for (int i = 1; i < N; i++) {
             for (int j = i; j > 0; j--) {
                 if (less(a[j], a[j-1])) {
@@ -27,7 +25,21 @@ public class Insertion extends Sort {
             }
             assert isSorted(a, 0, i);
         }
-        System.out.println("Insertion, is sorted after sorting? : " + isSorted(a, 0, N-1));
-        System.out.println("Insertion, is partitioned after sorting? : " + isPartitioned(a, 0, (N-1)/2, N-1));
     }
+
+    public static void reverseSort(Object[] a) {
+        reset();
+        int N = a.length;
+        for (int i = 1; i < N; i++) {
+            for (int j = i; j > 0; j--) {
+                if (more(a[j], a[j-1])) {
+                    exch(a, j, j-1);
+                } else {
+                    break; // input dependent
+                }
+            }
+            assert isSorted(a, 0, i);
+        }
+    }
+
 }

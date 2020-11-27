@@ -55,6 +55,11 @@ public abstract class Sort {
         return (((Comparable)v).compareTo((Comparable)w) < 0);
     }
 
+    protected static boolean more(Object v, Object w) {
+        compares++;
+        return (((Comparable)v).compareTo((Comparable)w) > 0);
+    }
+
     /**
      * Checks if the array 'a' is sorted for left <= array-index < right.
      * @author Yuriel
