@@ -38,15 +38,7 @@ public abstract class UseCase {
         switch(inputCase) {
             case SORTED: initAscending(); break;
             case REVERSE: initDescending(); break;
-            case RANDOM: initRandom(); break;
-            case AVG:
-                for(int i = 0; i < M; i++)
-                    for(int j = 0; j < size; j++)
-                        arr[j] += (int) (generator.nextInt(size * 4));
-                for(int i = 0; i < size; i++)
-                    arr[i] /= M;
-                break;
-
+            case RANDOM: case AVG: initRandom(); break;
             default:
                 ;
         }
@@ -58,7 +50,15 @@ public abstract class UseCase {
     }
 
     String getResults(String format) {
-        sortAndCount();
+        int totalComp = 0, totalCopy = 0;
+        for(int i = 0; i < iterations; i++) {
+            sortAndCount();
+            totalComp += comp;
+            totalCopy += copy;
+            initRandom();
+        }
+        comp = totalComp / iterations;
+        copy = totalCopy / iterations;
         String results;
         // do the formatting job !
         results = String.format("%10s comparisons & %10s copies", comp, copy);
@@ -73,7 +73,7 @@ public abstract class UseCase {
         for (InputCase tableCase: InputCase.values()) {
             int N=1;
             System.out.println(tableCase + " case:");
-            System.out.println("Formatted Columns Header: N, #(cmp), #(cmp)");
+            System.out.println("Formatted Columns Header: N, #(cmp), #(cpy)");
             String format= "suitable format";
             for(int k=1; k<=kmax; k++) {
                 N*= 2;
