@@ -18,6 +18,7 @@ public abstract class UseCase {
     private int size;
     private int iterations; // for averaging a sample
     protected int comp, copy; // results to be written by sub-class
+    private Random generator = new Random(1050);
 
     abstract void sortAndCount();
 
@@ -26,6 +27,8 @@ public abstract class UseCase {
         this.size = size;
         this.inputCase= inputCase;
         arr = new Integer[size];
+        for(int i = 0; i < size; i++)
+            arr[i] = 0;
         if (inputCase == InputCase.AVG) {
             iterations = M;
         } else {
@@ -33,15 +36,15 @@ public abstract class UseCase {
         }
 
         switch(inputCase) {
-            case SORTED:
-                initAscending();
-                break;
-            case REVERSE:
-                initDescending();
-                break;
-            case RANDOM:
+            case SORTED: initAscending(); break;
+            case REVERSE: initDescending(); break;
+            case RANDOM: initRandom(); break;
             case AVG:
-                initRandom();
+                for(int i = 0; i < M; i++)
+                    for(int j = 0; j < size; j++)
+                        arr[j] += (int) (generator.nextInt(size * 4));
+                for(int i = 0; i < size; i++)
+                    arr[i] /= M;
                 break;
 
             default:
@@ -99,7 +102,6 @@ public abstract class UseCase {
     }
 
     private void initRandom() {
-        Random generator = new Random(1050);
         for(int i = 0; i < size; i++)
             arr[i] = (int) (generator.nextInt(size * 4));
     }
