@@ -1,6 +1,8 @@
 /**
+ * UseCase for Insertion Sort.
+ *
  * @author Yuriel
- * @version 27.11.2020.
+ * @version 29.11.2020.
  */
 public class InsertionCase extends UseCase {
     /**
