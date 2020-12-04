@@ -56,7 +56,7 @@ public class BST<Key extends Comparable<Key>, Value> implements SymbolTable<Key,
         Node x = root;
         while(x != null) {
             int cmp = key.compareTo(x.key);
-            if(cmp == 0) return x.val;
+            if(cmp == 0 && x.val != null) return x.val;
             else if(cmp < 0) x = x.left;
             else x = x.right;
         }
@@ -68,7 +68,8 @@ public class BST<Key extends Comparable<Key>, Value> implements SymbolTable<Key,
     }
 
     public void remove(Key key) {
-
+        if(contains(key))
+            put(key, null);
     }
 
     public Iterator<Key> iterator() {
