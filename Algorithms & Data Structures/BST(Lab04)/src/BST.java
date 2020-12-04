@@ -1,6 +1,10 @@
 import java.util.Iterator;
 import java.util.Stack;
 
+/**
+ * @author Yuriel
+ * @version 2020.12.04.
+ */
 public class BST<Key extends Comparable<Key>, Value> implements SymbolTable<Key, Value>, Iterable<Key> {
     private Node root;
 
