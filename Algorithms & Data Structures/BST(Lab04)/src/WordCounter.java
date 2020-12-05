@@ -129,6 +129,8 @@ public class WordCounter
     {
         System.out.println(printCount());
         System.out.println(printInverted());
+        System.out.println("Maximum tree depth : " + counts.maxTreeDepth());
+        System.out.println("Mean tree depth : " + counts.meanTreeDepth());
     }
 
     private String printCount() {

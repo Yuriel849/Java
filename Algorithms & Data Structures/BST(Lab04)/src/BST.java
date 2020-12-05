@@ -7,6 +7,7 @@ import java.util.Stack;
  */
 public class BST<Key extends Comparable<Key>, Value> implements SymbolTable<Key, Value>, Iterable<Key> {
     private Node root;
+    private int max, sumDepths, numNodes; // Maximum tree depth, Sum of all Nodes' depths, Number of Nodes in the tree
 
     private class Node {
         Key key;
@@ -78,5 +79,39 @@ public class BST<Key extends Comparable<Key>, Value> implements SymbolTable<Key,
 
     public Iterator<Key> iterator() {
         return new BSTIterator();
+    }
+
+    /**
+     * Returns the maximum depth of the tree.
+     * @return The maximum tree depth of this binary search tree.
+     */
+    public int maxTreeDepth() {
+        max = 0;
+        sumDepths = 0;
+        numNodes = 0;
+        traverse(root, max + 1);
+        return max;
+    }
+
+    /**
+     * Traverse the tree in pre-order.
+     * @param node The current Node.
+     * @param depth The tree depth at the current Node (Node's depth + 1).
+     */
+    private void traverse(Node node, int depth) {
+        sumDepths += depth - 1; // Node's depth is (tree's depth - 1)
+        numNodes++;
+        if(depth > max) max = depth;
+        if(node.left != null) traverse(node.left, depth + 1);
+        if(node.right != null) traverse(node.right, depth + 1);
+    }
+
+    /**
+     * Calculate the mean depth of the tree as the sum of all Nodes' depths divided by the number of Nodes.
+     * @return The mean tree depth.
+     */
+    public int meanTreeDepth() {
+        maxTreeDepth();
+        return sumDepths / numNodes;
     }
 }
