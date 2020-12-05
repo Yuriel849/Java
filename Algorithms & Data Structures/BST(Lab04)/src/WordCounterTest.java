@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -48,11 +49,11 @@ public class WordCounterTest
         wordCoun1.addWord("a");
         wordCoun1.addWord("a");
         wordCoun1.addWord("b");
-        HashSet<String> value= new HashSet<String>();
+        ArrayList<String> value= new ArrayList<String>();
         value.add("a");
         value.add("b");
-        HashSet<String> set = wordCoun1.getWords();
-        assertEquals(set, value);
+        ArrayList<String> list = wordCoun1.getWords();
+        assertEquals(list, value);
     }
 
     @Test

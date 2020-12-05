@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -18,8 +19,8 @@ public class WordCounter
     // Associate each word with a count.
 //    private HashMap<String, Integer> counts;
 //    private HashMap<Integer, HashSet<String> > inverted;
-    private BST<String, Integer> counts;
-    private BST<Integer, HashSet<String>> inverted;
+    private RedBlackBST<String, Integer> counts;
+    private RedBlackBST<Integer, HashSet<String>> inverted;
     // will contain the histogram with the integer over the words
 
     /**
@@ -27,7 +28,7 @@ public class WordCounter
      */
     public WordCounter()
     {
-        counts = new BST<>();
+        counts = new RedBlackBST<>();
         updateInverted(); //instance variable
     }
 
@@ -59,13 +60,13 @@ public class WordCounter
      *
      * @return the set of all words
      */
-    public HashSet<String> getWords()
+    public ArrayList<String> getWords()
     {
         Iterator<String> iterator = counts.iterator();
-        HashSet<String> set = new HashSet<>();
+        ArrayList<String> list = new ArrayList<>();
         while(iterator.hasNext())
-            set.add(iterator.next());
-        return set;
+            list.add(iterator.next());
+        return list;
     }
 
     public HashSet<Integer> getInverted()
@@ -80,7 +81,7 @@ public class WordCounter
     private void updateInverted() // always to be called after changing counts!!
     // in order to keep inverted consistent!!!
     {
-        inverted = new BST<Integer, HashSet<String>>();
+        inverted = new RedBlackBST<Integer, HashSet<String>>();
         // counts.keySet() returns all the words in the HashMap keys
         for (String word: getWords()) {
             int counter = counts.get(word); // returns the number of occurencies of the word
@@ -103,9 +104,9 @@ public class WordCounter
      *
      * @return The return value
      */
-    public BST<Integer, HashSet<String> > calculateInverted()
+    public RedBlackBST<Integer, HashSet<String> > calculateInverted()
     {
-        BST<Integer, HashSet<String>> inverted = new BST<>();
+        RedBlackBST<Integer, HashSet<String>> inverted = new RedBlackBST<>();
         // counts.keySet() returns all the words in the HashMap keys
         for (String word: getWords()) {
             int counter= counts.get(word); // returns the number of occurencies of the word
@@ -129,8 +130,8 @@ public class WordCounter
     {
         System.out.println(printCount());
         System.out.println(printInverted());
-        System.out.println("Maximum tree depth : " + counts.maxTreeDepth());
-        System.out.println("Mean tree depth : " + counts.meanTreeDepth());
+//        System.out.println("Maximum tree depth : " + counts.maxTreeDepth());
+//        System.out.println("Mean tree depth : " + counts.meanTreeDepth());
     }
 
     private String printCount() {
