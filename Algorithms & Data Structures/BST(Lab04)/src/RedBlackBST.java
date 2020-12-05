@@ -1,13 +1,11 @@
-package redblack;
-
 import java.util.Iterator;
 import java.util.Stack;
 
 /**
  * @author Yuriel
- * @version 2020.12.05.
+ * @version 2020.12.06.
  */
-public class RedBlackBST<Key extends Comparable<Key>, Value> implements Iterable<Key> {
+public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTable<Key, Value>, Iterable<Key> {
     private static final boolean RED = true;
     private static final boolean BLACK = false;
 
