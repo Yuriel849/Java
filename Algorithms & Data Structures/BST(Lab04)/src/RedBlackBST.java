@@ -118,4 +118,38 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTa
         x.left.color = RED;
         return x;
     }
+
+    /**
+     * Returns the maximum depth of the tree.
+     * @return The maximum tree depth of this binary search tree.
+     */
+    public int maxTreeDepth() {
+        max = 0;
+        sumDepths = 0;
+        numNodes = 0;
+        traverse(root, max + 1);
+        return max;
+    }
+
+    /**
+     * Traverse the tree in pre-order.
+     * @param node The current Node.
+     * @param depth The tree depth at the current Node (Node's depth + 1).
+     */
+    private void traverse(Node node, int depth) {
+        sumDepths += depth - 1; // Node's depth is (tree's depth - 1)
+        numNodes++;
+        if(depth > max) max = depth;
+        if(node.left != null) traverse(node.left, depth + 1);
+        if(node.right != null) traverse(node.right, depth + 1);
+    }
+
+    /**
+     * Calculate the mean depth of the tree as the sum of all Nodes' depths divided by the number of Nodes.
+     * @return The mean tree depth.
+     */
+    public int meanTreeDepth() {
+        maxTreeDepth();
+        return sumDepths / numNodes;
+    }
 }
