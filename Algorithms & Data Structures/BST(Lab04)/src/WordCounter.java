@@ -11,8 +11,8 @@ import java.util.Iterator;
  * @version    1.0 (2016.02.29)
  *
  * Modified to use the BST class instead of HashMaps.
- * @author Yuriel
- * @version    2020.12.04.
+ * @author     Yuriel
+ * @version    2020.12.07.
  */
 public class WordCounter
 {
@@ -124,7 +124,6 @@ public class WordCounter
 
     /**
      * print the HashMap containing the counted words
-     *
      */
     public void print()
     {
@@ -134,6 +133,9 @@ public class WordCounter
         System.out.println("Mean tree depth : " + counts.meanTreeDepth());
     }
 
+    /**
+     * Format the contents of the RedBlackBST object "counts" into a readable string.
+     */
     private String printCount() {
         StringBuilder string = new StringBuilder();
         string.append("{ ");
@@ -144,6 +146,9 @@ public class WordCounter
         return string.toString();
     }
 
+    /**
+     * Format the contents of the RedBlackBST object "inverted" into a readable string.
+     */
     private String printInverted() {
         StringBuilder string = new StringBuilder();
         string.append("{ ");

@@ -2,8 +2,10 @@ import java.util.Iterator;
 import java.util.Stack;
 
 /**
+ * A variation of the Sedgewick implementation of a left-leaning red-black binary search tree.
+ *
  * @author Yuriel
- * @version 2020.12.06.
+ * @version 2020.12.07.
  */
 public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTable<Key, Value>, Iterable<Key> {
     private static final boolean RED = true;
@@ -49,11 +51,24 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTa
         }
     }
 
+    /**
+     * Inserts the given key and value into the tree.
+     * If the key already exists, the given value overwrites the preexisting value.
+     * If the key does not exist, a new node is created with this key and value.
+     * @param key
+     * @param value
+     */
     public void put(Key key, Value val) {
         root = insert(root, key, val);
         root.color = BLACK;
     }
 
+    /**
+     * A private method called recursively to handle the insertion.
+     * @param x
+     * @param key
+     * @param value
+     */
     private Node insert(Node x, Key key, Value val) {
         if(x == null) return new Node(key, val, RED);
         if(isRed(x.left) && isRed(x.left.left)) x = splitFourNode(x);
@@ -65,6 +80,10 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTa
         return x;
     }
 
+    /**
+     * Gets the value of the given key from the binary search tree.
+     * If the key does not exist, returns null.
+     */
     public Value get(Key key) {
         Node x = root;
         while(x != null) {
@@ -76,6 +95,9 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTa
         return null;
     }
 
+    /**
+     * Checks if the given key exists in the binary search tree and returns true or false.
+     */
     public boolean contains(Key key) {
         return get(key) != null;
     }
@@ -87,6 +109,9 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTa
         return new BSTIterator();
     }
 
+    /**
+     * Affects a local transformation to balance the binary search tree by rotating two connected nodes to the left.
+     */
     private Node rotateLeft(Node h) {
         Node v = h.right;
         h.right = v.left;
@@ -94,6 +119,9 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTa
         return v;
     }
 
+    /**
+     * Affects a local transformation to balance the binary search tree by rotating two connected nodes to the right.
+     */
     private Node rotateRight(Node h) {
         Node u = h.left;
         h.left = u.right;
@@ -101,17 +129,27 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTa
         return u;
     }
 
+    /**
+     * Checks whether the given node's relationship with its parent node is red or black.
+     * @return true if red, false if black or if this node is null.
+     */
     private boolean isRed(Node x) {
         if (x == null) return false;
         return (x.color == RED);
     }
 
+    /**
+     * Splits a 4-node by moving the middle key to the parent node and making two new 2-nodes from the remaining keys.
+     */
     private Node splitFourNode(Node h) {
         Node x = rotateRight(h);
         x.left.color = BLACK;
         return x;
     }
 
+    /**
+     * Makes this part of the tree lean left to create a left-leaning tree.
+     */
     private Node leanLeft(Node h) {
         Node x = rotateLeft(h);
         x.color = x.left.color;

@@ -2,8 +2,10 @@ import java.util.Iterator;
 import java.util.Stack;
 
 /**
+ * A variation of the Sedgewick implementation of a binary search tree.
+ *
  * @author Yuriel
- * @version 2020.12.04.
+ * @version 2020.12.07.
  */
 public class BST<Key extends Comparable<Key>, Value> implements SymbolTable<Key, Value>, Iterable<Key> {
     private Node root;
@@ -44,10 +46,23 @@ public class BST<Key extends Comparable<Key>, Value> implements SymbolTable<Key,
         }
     }
 
+    /**
+     * Inserts the given key and value into the tree.
+     * If the key already exists, the given value overwrites the preexisting value.
+     * If the key does not exist, a new node is created with this key and value.
+     * @param key
+     * @param value
+     */
     public void put(Key key, Value val) {
         root = put(root, key, val);
     }
 
+    /**
+     * A private method called recursively to handle the insertion.
+     * @param x
+     * @param key
+     * @param value
+     */
     private Node put(Node x, Key key, Value val) {
         if(x == null) return new Node(key, val);
         int cmp = key.compareTo(x.key);
@@ -57,6 +72,10 @@ public class BST<Key extends Comparable<Key>, Value> implements SymbolTable<Key,
         return x;
     }
 
+    /**
+     * Gets the value of the given key from the binary search tree.
+     * If the key does not exist, returns null.
+     */
     public Value get(Key key) {
         Node x = root;
         while(x != null) {
@@ -68,10 +87,17 @@ public class BST<Key extends Comparable<Key>, Value> implements SymbolTable<Key,
         return null;
     }
 
+    /**
+     * Checks if the given key exists in the binary search tree and returns true or false.
+     */
     public boolean contains(Key key) {
         return get(key) != null;
     }
 
+    /**
+     * Removes the node with the given key from the binary search tree.
+     * Does not perform true deletion but just sets the value of the node with the given key to null.
+     */
     public void remove(Key key) {
         if(contains(key))
             put(key, null);
