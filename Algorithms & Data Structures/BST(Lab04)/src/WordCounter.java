@@ -12,7 +12,7 @@ import java.util.Iterator;
  *
  * Modified to use the BST class instead of HashMaps.
  * @author     Yuriel
- * @version    2020.12.07.
+ * @version    2020.12.09.
  */
 public class WordCounter
 {
@@ -54,36 +54,14 @@ public class WordCounter
         counts.put(word, counter == null ? 1 : counter + 1);
         updateInverted();
     }
-    
-    /**
-     * get all words
-     *
-     * @return the set of all words
-     */
-    public ArrayList<String> getWords()
-    {
-        Iterator<String> iterator = counts.iterator();
-        ArrayList<String> list = new ArrayList<>();
-        while(iterator.hasNext())
-            list.add(iterator.next());
-        return list;
-    }
-
-    public HashSet<Integer> getInverted()
-    {
-        Iterator<Integer> iterator = inverted.iterator();
-        HashSet<Integer> set = new HashSet<>();
-        while(iterator.hasNext())
-            set.add(iterator.next());
-        return set;
-    }
 
     private void updateInverted() // always to be called after changing counts!!
     // in order to keep inverted consistent!!!
     {
         inverted = new RedBlackBST<Integer, HashSet<String>>();
-        // counts.keySet() returns all the words in the HashMap keys
-        for (String word: getWords()) {
+        Iterator iterator = counts.iterator();
+        while(iterator.hasNext()) {
+            String word = (String) iterator.next();
             int counter = counts.get(word); // returns the number of occurencies of the word
             // i.e. the y-values in the histogram !
             HashSet<String> tmp = inverted.get(counts.get(word));// returns the hashSet of words
@@ -107,8 +85,9 @@ public class WordCounter
     public RedBlackBST<Integer, HashSet<String> > calculateInverted()
     {
         RedBlackBST<Integer, HashSet<String>> inverted = new RedBlackBST<>();
-        // counts.keySet() returns all the words in the HashMap keys
-        for (String word: getWords()) {
+        Iterator iterator = counts.iterator();
+        while(iterator.hasNext()) {
+            String word = (String) iterator.next();
             int counter= counts.get(word); // returns the number of occurencies of the word
             // i.e. the y-values in the histogram !
             HashSet<String> tmp = inverted.get(counts.get(word));// returns the hashSet of words
@@ -139,7 +118,9 @@ public class WordCounter
     private String printCount() {
         StringBuilder string = new StringBuilder();
         string.append("{ ");
-        for (String word: getWords()){
+        Iterator iterator = counts.iterator();
+        while(iterator.hasNext()) {
+            String word = (String) iterator.next();
             string.append(word + "=" + counts.get(word) + ", ");
         }
         string.append(" }");
@@ -152,7 +133,9 @@ public class WordCounter
     private String printInverted() {
         StringBuilder string = new StringBuilder();
         string.append("{ ");
-        for (Integer count: getInverted()){
+        Iterator iterator = inverted.iterator();
+        while(iterator.hasNext()) {
+            Integer count = (Integer) iterator.next();
             string.append(count + "=" + inverted.get(count) + ", ");
         }
         string.append(" }");
