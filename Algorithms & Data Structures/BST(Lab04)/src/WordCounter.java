@@ -17,8 +17,6 @@ import java.util.Iterator;
 public class WordCounter
 {
     // Associate each word with a count.
-//    private HashMap<String, Integer> counts;
-//    private HashMap<Integer, HashSet<String> > inverted;
     private RedBlackBST<String, Integer> counts;
     private RedBlackBST<Integer, HashSet<String>> inverted;
     // will contain the histogram with the integer over the words
@@ -106,37 +104,23 @@ public class WordCounter
      */
     public void print()
     {
-        System.out.println(printCount());
-        System.out.println(printInverted());
+        System.out.println(iteratePrint(counts));
+        System.out.println(iteratePrint(inverted));
         System.out.println("Maximum tree depth : " + counts.maxTreeDepth());
         System.out.println("Mean tree depth : " + counts.meanTreeDepth());
     }
 
     /**
-     * Format the contents of the RedBlackBST object "counts" into a readable string.
+     * Format the contents of the RedBlackBST object passed as an argument into a readable string.
+     * @param tree The RedBlackBST object passed as an argument.
      */
-    private String printCount() {
+    private String iteratePrint(RedBlackBST tree) {
         StringBuilder string = new StringBuilder();
         string.append("{ ");
-        Iterator iterator = counts.iterator();
+        Iterator iterator = tree.iterator();
         while(iterator.hasNext()) {
-            String word = (String) iterator.next();
-            string.append(word + "=" + counts.get(word) + ", ");
-        }
-        string.append(" }");
-        return string.toString();
-    }
-
-    /**
-     * Format the contents of the RedBlackBST object "inverted" into a readable string.
-     */
-    private String printInverted() {
-        StringBuilder string = new StringBuilder();
-        string.append("{ ");
-        Iterator iterator = inverted.iterator();
-        while(iterator.hasNext()) {
-            Integer count = (Integer) iterator.next();
-            string.append(count + "=" + inverted.get(count) + ", ");
+            Comparable word = (Comparable) iterator.next();
+            string.append(word + "=" + tree.get(word) + ", ");
         }
         string.append(" }");
         return string.toString();
