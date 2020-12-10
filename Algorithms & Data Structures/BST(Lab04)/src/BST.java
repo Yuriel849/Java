@@ -9,15 +9,19 @@ import java.util.Stack;
  */
 public class BST<Key extends Comparable<Key>, Value> implements SymbolTable<Key, Value>, Iterable<Key> {
     private Node root;
-    private int max, sumDepths, numNodes; // Maximum tree depth, Sum of all Nodes' depths, Number of Nodes in the tree
+    private int max,   // Maximum tree depth, sum of all Nodes' depths, number of Nodes in the tree
+            sumDepths, // Sum of all Nodes' depths
+            numNodes;  // Number of Nodes in the tree
 
     private class Node {
         Key key;
         Value val;
+        int depth;
         Node left, right;
-        Node(Key key, Value val) {
+        Node(Key key, Value val, int depth) {
             this.key = key;
             this.val = val;
+            this.depth = depth;
         }
     }
 
@@ -31,9 +35,7 @@ public class BST<Key extends Comparable<Key>, Value> implements SymbolTable<Key,
             }
         }
 
-        BSTIterator() {
-            pushLeft(root);
-        }
+        BSTIterator() { pushLeft(root); }
 
         public boolean hasNext() {
             return !stack.isEmpty();
@@ -41,6 +43,9 @@ public class BST<Key extends Comparable<Key>, Value> implements SymbolTable<Key,
 
         public Key next() {
             Node x = stack.pop();
+            sumDepths += x.depth;
+            numNodes++;
+            if(x.depth > max) max = x.depth;
             pushLeft(x.right);
             return x.key;
         }
@@ -51,24 +56,25 @@ public class BST<Key extends Comparable<Key>, Value> implements SymbolTable<Key,
      * If the key already exists, the given value overwrites the preexisting value.
      * If the key does not exist, a new node is created with this key and value.
      * @param key
-     * @param value
+     * @param val
      */
     public void put(Key key, Value val) {
-        root = put(root, key, val);
+        root = put(root, key, val, 0);
     }
 
     /**
      * A private method called recursively to handle the insertion.
      * @param x
      * @param key
-     * @param value
+     * @param val
+     * @param parentDepth
      */
-    private Node put(Node x, Key key, Value val) {
-        if(x == null) return new Node(key, val);
+    private Node put(Node x, Key key, Value val, int parentDepth) {
+        if(x == null) return new Node(key, val, parentDepth);
         int cmp = key.compareTo(x.key);
         if(cmp == 0) x.val = val;
-        else if(cmp < 0) x.left = put(x.left, key, val);
-        else x.right = put(x.right, key, val);
+        else if(cmp < 0) x.left = put(x.left, key, val, parentDepth+1);
+        else x.right = put(x.right, key, val, parentDepth+1);
         return x;
     }
 
@@ -104,6 +110,9 @@ public class BST<Key extends Comparable<Key>, Value> implements SymbolTable<Key,
     }
 
     public Iterator<Key> iterator() {
+        max = 0;
+        sumDepths = 0;
+        numNodes = 0;
         return new BSTIterator();
     }
 
@@ -112,24 +121,9 @@ public class BST<Key extends Comparable<Key>, Value> implements SymbolTable<Key,
      * @return The maximum tree depth of this binary search tree.
      */
     public int maxTreeDepth() {
-        max = 0;
-        sumDepths = 0;
-        numNodes = 0;
-        traverse(root, max + 1);
+        Iterator<Key> iterator = iterator();
+        while(iterator.hasNext()) iterator.next();
         return max;
-    }
-
-    /**
-     * Traverse the tree in pre-order.
-     * @param node The current Node.
-     * @param depth The tree depth at the current Node (Node's depth + 1).
-     */
-    private void traverse(Node node, int depth) {
-        sumDepths += depth - 1; // Node's depth is (tree's depth - 1)
-        numNodes++;
-        if(depth > max) max = depth;
-        if(node.left != null) traverse(node.left, depth + 1);
-        if(node.right != null) traverse(node.right, depth + 1);
     }
 
     /**
