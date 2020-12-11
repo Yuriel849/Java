@@ -2,13 +2,19 @@ import java.io.*;
 import java.util.HashSet;
 import java.util.Scanner;
 
+/**
+ * A file reading class.
+ *
+ * @author Yuriel
+ * @version 2020.12.11.
+ */
 public class TextReader {
     /**
-     * Read a line of text from standard input (the text terminal),
-     * and return it as a set of words.
+     * Read from a txt file and return it as a set of words.
+     * @throws FileNotFoundException, IOException
      *
-     * @return  A set of Strings, where each String is one of the
-     *          words typed by the user
+     * @param fileName The name of the txt file that should be read.
+     * @return  A set of Strings, where each String is one of the words in the txt file that is read.
      */
     public HashSet<String> read(String fileName) {
         HashSet<String> set = new HashSet<>();
