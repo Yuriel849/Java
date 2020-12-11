@@ -5,7 +5,7 @@ import java.util.Stack;
  * A variation of the Sedgewick implementation of a left-leaning red-black binary search tree.
  *
  * @author Yuriel
- * @version 2020.12.07.
+ * @version 2020.12.11.
  */
 public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTable<Key, Value>, Iterable<Key> {
     private static final boolean RED = true;
@@ -14,14 +14,18 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTa
     private Node root;
     private int max, sumDepths, numNodes; // Maximum tree depth, Sum of all Nodes' depths, Number of Nodes in the tree
 
+    public int getNumNodes() { return numNodes; }
+
     private class Node {
         Key key;
         Value val;
+        int depth;
         Node left, right;
         boolean color; // Color of incoming link from parent Node.
-        Node(Key key, Value val, boolean color) {
+        Node(Key key, Value val, int depth, boolean color) {
             this.key = key;
             this.val = val;
+            this.depth = depth;
             this.color = color;
         }
     }
@@ -46,6 +50,9 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTa
 
         public Key next() {
             Node x = stack.pop();
+            sumDepths += x.depth;
+            numNodes++;
+            if(x.depth > max) max = x.depth;
             pushLeft(x.right);
             return x.key;
         }
@@ -59,7 +66,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTa
      * @param value
      */
     public void put(Key key, Value val) {
-        root = insert(root, key, val);
+        root = insert(root, key, val, 0);
         root.color = BLACK;
     }
 
@@ -67,15 +74,16 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTa
      * A private method called recursively to handle the insertion.
      * @param x
      * @param key
-     * @param value
+     * @param val
+     * @param parentDepth
      */
-    private Node insert(Node x, Key key, Value val) {
-        if(x == null) return new Node(key, val, RED);
+    private Node insert(Node x, Key key, Value val, int parentDepth) {
+        if(x == null) return new Node(key, val, parentDepth, RED);
         if(isRed(x.left) && isRed(x.left.left)) x = splitFourNode(x);
         int cmp = key.compareTo(x.key);
         if(cmp == 0) x.val = val;
-        else if(cmp < 0) x.left = insert(x.left, key, val);
-        else x.right = insert(x.right, key, val);
+        else if(cmp < 0) x.left = insert(x.left, key, val, parentDepth + 1);
+        else x.right = insert(x.right, key, val, parentDepth + 1);
         if(isRed(x.right)) x = leanLeft(x);
         return x;
     }
@@ -106,6 +114,9 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTa
     }
 
     public Iterator<Key> iterator() {
+        max = 0;
+        sumDepths = 0;
+        numNodes = 0;
         return new BSTIterator();
     }
 
@@ -162,24 +173,9 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTa
      * @return The maximum tree depth of this binary search tree.
      */
     public int maxTreeDepth() {
-        max = 0;
-        sumDepths = 0;
-        numNodes = 0;
-        traverse(root, max + 1);
+        Iterator<Key> iterator = iterator();
+        while(iterator.hasNext()) iterator.next();
         return max;
-    }
-
-    /**
-     * Traverse the tree in pre-order.
-     * @param node The current Node.
-     * @param depth The tree depth at the current Node (Node's depth + 1).
-     */
-    private void traverse(Node node, int depth) {
-        sumDepths += depth - 1; // Node's depth is (tree's depth - 1)
-        numNodes++;
-        if(depth > max) max = depth;
-        if(node.left != null) traverse(node.left, depth + 1);
-        if(node.right != null) traverse(node.right, depth + 1);
     }
 
     /**
