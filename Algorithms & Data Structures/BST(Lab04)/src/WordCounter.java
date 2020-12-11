@@ -17,8 +17,8 @@ import java.util.Iterator;
 public class WordCounter
 {
     // Associate each word with a count.
-    private RedBlackBST<String, Integer> counts;
-    private RedBlackBST<Integer, HashSet<String>> inverted;
+    private BST<String, Integer> counts;
+    private BST<Integer, HashSet<String>> inverted;
     // will contain the histogram with the integer over the words
 
     /**
@@ -26,7 +26,7 @@ public class WordCounter
      */
     public WordCounter()
     {
-        counts = new RedBlackBST<>();
+        counts = new BST<>();
         updateInverted(); //instance variable
     }
 
@@ -56,7 +56,7 @@ public class WordCounter
     private void updateInverted() // always to be called after changing counts!!
     // in order to keep inverted consistent!!!
     {
-        inverted = new RedBlackBST<Integer, HashSet<String>>();
+        inverted = new BST<Integer, HashSet<String>>();
         Iterator iterator = counts.iterator();
         while(iterator.hasNext()) {
             String word = (String) iterator.next();
@@ -80,9 +80,9 @@ public class WordCounter
      *
      * @return The return value
      */
-    public RedBlackBST<Integer, HashSet<String> > calculateInverted()
+    public BST<Integer, HashSet<String> > calculateInverted()
     {
-        RedBlackBST<Integer, HashSet<String>> inverted = new RedBlackBST<>();
+        BST<Integer, HashSet<String>> inverted = new BST<>();
         Iterator iterator = counts.iterator();
         while(iterator.hasNext()) {
             String word = (String) iterator.next();
@@ -104,8 +104,9 @@ public class WordCounter
      */
     public void print()
     {
-        System.out.println(iteratePrint(counts));
-        System.out.println(iteratePrint(inverted));
+//        System.out.println(iteratePrint(counts));
+//        System.out.println(iteratePrint(inverted));
+        System.out.println("Number of nodes : " + counts.getNumNodes());
         System.out.println("Maximum tree depth : " + counts.maxTreeDepth());
         System.out.println("Mean tree depth : " + counts.meanTreeDepth());
     }
@@ -114,7 +115,7 @@ public class WordCounter
      * Format the contents of the RedBlackBST object passed as an argument into a readable string.
      * @param tree The RedBlackBST object passed as an argument.
      */
-    private String iteratePrint(RedBlackBST tree) {
+    private String iteratePrint(BST tree) {
         StringBuilder string = new StringBuilder();
         string.append("{ ");
         Iterator iterator = tree.iterator();

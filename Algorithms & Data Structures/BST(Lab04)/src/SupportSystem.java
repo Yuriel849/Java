@@ -18,6 +18,7 @@ public class SupportSystem
     private InputReader reader;
     private Responder responder;
     private WordCounter counter;
+    private TextReader textReader;
     
     /**
      * Creates a technical support system.
@@ -27,6 +28,7 @@ public class SupportSystem
         reader = new InputReader();
         responder = new Responder();
         counter = new WordCounter();
+        textReader = new TextReader();
     }
 
     /**
@@ -43,6 +45,10 @@ public class SupportSystem
             HashSet<String> input = reader.getInput();
 
             if(input.contains("bye")) {
+                finished = true;
+            }
+            else if(input.contains("dracula")) {
+                counter.addWords(textReader.read("Dracula"));
                 finished = true;
             }
             else {
