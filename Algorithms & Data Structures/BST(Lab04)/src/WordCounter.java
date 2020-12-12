@@ -17,8 +17,8 @@ import java.util.Iterator;
 public class WordCounter
 {
     // Associate each word with a count.
-    private BST<String, Integer> counts;
-    private BST<Integer, HashSet<String>> inverted;
+    private RedBlackBST<String, Integer> counts;
+    private RedBlackBST<Integer, HashSet<String>> inverted;
     // will contain the histogram with the integer over the words
 
     /**
@@ -26,7 +26,7 @@ public class WordCounter
      */
     public WordCounter()
     {
-        counts = new BST<>();
+        counts = new RedBlackBST<>();
         updateInverted(); //instance variable
     }
 
@@ -56,7 +56,7 @@ public class WordCounter
     private void updateInverted() // always to be called after changing counts!!
     // in order to keep inverted consistent!!!
     {
-        inverted = new BST<Integer, HashSet<String>>();
+        inverted = new RedBlackBST<Integer, HashSet<String>>();
         Iterator iterator = counts.iterator();
         while(iterator.hasNext()) {
             String word = (String) iterator.next();
@@ -80,9 +80,9 @@ public class WordCounter
      *
      * @return The return value
      */
-    public BST<Integer, HashSet<String> > calculateInverted()
+    public RedBlackBST<Integer, HashSet<String> > calculateInverted()
     {
-        BST<Integer, HashSet<String>> inverted = new BST<>();
+        RedBlackBST<Integer, HashSet<String>> inverted = new RedBlackBST<>();
         Iterator iterator = counts.iterator();
         while(iterator.hasNext()) {
             String word = (String) iterator.next();
@@ -104,7 +104,7 @@ public class WordCounter
      */
     public void print()
     {
-        System.out.println(iteratePrint(counts));
+        //System.out.println(iteratePrint(counts));
         //System.out.println(iteratePrint(inverted));
         System.out.println("Histogram : ");
         getDepthHistogram();
@@ -117,7 +117,7 @@ public class WordCounter
      * Format the contents of the (RedBlack)BST object passed as an argument into a readable string.
      * @param tree The (RedBlack)BST object passed as an argument.
      */
-    private String iteratePrint(BST tree) {
+    private String iteratePrint(RedBlackBST tree) {
         StringBuilder string = new StringBuilder();
         string.append("{ ");
         Iterator iterator = tree.iterator();

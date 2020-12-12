@@ -51,8 +51,10 @@ public class SupportSystem
             if(input.contains("bye")) {
                 finished = true;
             }
-            else if(input.contains("dracula")) {
-                counter.addWords(textReader.read("Dracula"));
+            else if(input.contains("histogram")) {
+                counter.addWords(textReader.read("HenryV"));
+                counter.print();
+                counter.addWords(textReader.read("AMidsummerNight'sDream"));
                 finished = true;
             }
             else {

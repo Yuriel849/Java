@@ -145,6 +145,6 @@ public class BST<Key extends Comparable<Key>, Value> implements SymbolTable<Key,
      */
     public int meanTreeDepth() {
         maxTreeDepth();
-        return sumDepths / numNodes;
+        return Math.round((float) sumDepths / numNodes);
     }
 }

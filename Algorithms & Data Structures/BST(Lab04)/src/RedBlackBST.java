@@ -103,6 +103,17 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTa
         return null;
     }
 
+    public int getDepth(Key key) {
+        Node x = root;
+        while(x != null) {
+            int cmp = key.compareTo(x.key);
+            if(cmp == 0 && x.val != null) return x.depth;
+            else if(cmp < 0) x = x.left;
+            else x = x.right;
+        }
+        return -1;
+    }
+
     /**
      * Checks if the given key exists in the binary search tree and returns true or false.
      */
@@ -188,6 +199,6 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTa
      */
     public int meanTreeDepth() {
         maxTreeDepth();
-        return sumDepths / numNodes;
+        return Math.round((float) sumDepths / numNodes);
     }
 }
