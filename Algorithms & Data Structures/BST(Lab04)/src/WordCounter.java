@@ -12,7 +12,7 @@ import java.util.Iterator;
  *
  * Modified to use the BST class instead of HashMaps.
  * @author     Yuriel
- * @version    2020.12.09.
+ * @version    2020.12.12.
  */
 public class WordCounter
 {
@@ -104,16 +104,18 @@ public class WordCounter
      */
     public void print()
     {
-//        System.out.println(iteratePrint(counts));
-//        System.out.println(iteratePrint(inverted));
+        System.out.println(iteratePrint(counts));
+        //System.out.println(iteratePrint(inverted));
+        System.out.println("Histogram : ");
+        getDepthHistogram();
         System.out.println("Number of nodes : " + counts.getNumNodes());
         System.out.println("Maximum tree depth : " + counts.maxTreeDepth());
         System.out.println("Mean tree depth : " + counts.meanTreeDepth());
     }
 
     /**
-     * Format the contents of the RedBlackBST object passed as an argument into a readable string.
-     * @param tree The RedBlackBST object passed as an argument.
+     * Format the contents of the (RedBlack)BST object passed as an argument into a readable string.
+     * @param tree The (RedBlack)BST object passed as an argument.
      */
     private String iteratePrint(BST tree) {
         StringBuilder string = new StringBuilder();
@@ -125,5 +127,19 @@ public class WordCounter
         }
         string.append(" }");
         return string.toString();
+    }
+
+    /**
+     * Prints a node depth histogram of the (RedBlack)BST "counts".
+     */
+    private void getDepthHistogram() {
+        HashMap<Integer, Integer> histogram = new HashMap<>(); // Key is depth, value is number of nodes at that depth.
+        Iterator iterator = counts.iterator();
+        int depth;
+        while(iterator.hasNext()) {
+            depth = counts.getDepth((String) iterator.next());
+            histogram.put(depth, histogram.getOrDefault(depth, 0) + 1);
+        }
+        System.out.println(histogram);
     }
 }

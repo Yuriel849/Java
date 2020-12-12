@@ -5,13 +5,15 @@ import java.util.Stack;
  * A variation of the Sedgewick implementation of a binary search tree.
  *
  * @author Yuriel
- * @version 2020.12.07.
+ * @version 2020.12.11.
  */
 public class BST<Key extends Comparable<Key>, Value> implements SymbolTable<Key, Value>, Iterable<Key> {
     private Node root;
     private int max,   // Maximum tree depth, sum of all Nodes' depths, number of Nodes in the tree
             sumDepths, // Sum of all Nodes' depths
             numNodes;  // Number of Nodes in the tree
+
+    public int getNumNodes() { return numNodes; }
 
     private class Node {
         Key key;
@@ -91,6 +93,17 @@ public class BST<Key extends Comparable<Key>, Value> implements SymbolTable<Key,
             else x = x.right;
         }
         return null;
+    }
+
+    public int getDepth(Key key) {
+        Node x = root;
+        while(x != null) {
+            int cmp = key.compareTo(x.key);
+            if(cmp == 0 && x.val != null) return x.depth;
+            else if(cmp < 0) x = x.left;
+            else x = x.right;
+        }
+        return -1;
     }
 
     /**

@@ -12,6 +12,10 @@ import java.util.HashSet;
  * 
  * @author     Michael Kölling and David J. Barnes
  * @version    1.0 (2016.02.29)
+ *
+ * Modified for this lab.
+ * @author     Yuriel
+ * @version    2020.12.11.
  */
 public class SupportSystem
 {
