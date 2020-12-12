@@ -63,7 +63,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTa
      * If the key already exists, the given value overwrites the preexisting value.
      * If the key does not exist, a new node is created with this key and value.
      * @param key
-     * @param value
+     * @param val
      */
     public void put(Key key, Value val) {
         root = insert(root, key, val, 0);
@@ -127,6 +127,8 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTa
         Node v = h.right;
         h.right = v.left;
         v.left = h;
+        h.depth++;
+        v.depth--;
         return v;
     }
 
@@ -137,6 +139,8 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTa
         Node u = h.left;
         h.left = u.right;
         u.right = h;
+        h.depth++;
+        u.depth--;
         return u;
     }
 
