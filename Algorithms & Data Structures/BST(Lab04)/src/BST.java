@@ -5,7 +5,7 @@ import java.util.Stack;
  * A variation of the Sedgewick implementation of a binary search tree.
  *
  * @author Yuriel
- * @version 2020.12.11.
+ * @version 2020.12.13.
  */
 public class BST<Key extends Comparable<Key>, Value> implements SymbolTable<Key, Value>, Iterable<Key> {
     private Node root;
