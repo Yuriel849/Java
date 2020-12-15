@@ -5,7 +5,7 @@ import java.util.Stack;
  * A variation of the Sedgewick implementation of a left-leaning red-black binary search tree.
  *
  * @author Yuriel
- * @version 2020.12.11.
+ * @version 2020.12.15.
  */
 public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTable<Key, Value>, Iterable<Key> {
     private static final boolean RED = true;
@@ -103,6 +103,11 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTa
         return null;
     }
 
+    /**
+     * Gets the depth of the Node with the given key.
+     * @param key
+     * @return Depth of the Node with the given key. Returns -1 if there is no Node with the given key.
+     */
     public int getDepth(Key key) {
         Node x = root;
         while(x != null) {

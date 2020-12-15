@@ -95,6 +95,11 @@ public class BST<Key extends Comparable<Key>, Value> implements SymbolTable<Key,
         return null;
     }
 
+    /**
+     * Gets the depth of the Node with the given key.
+     * @param key
+     * @return Depth of the Node with the given key. Returns -1 if there is no Node with the given key.
+     */
     public int getDepth(Key key) {
         Node x = root;
         while(x != null) {
@@ -141,7 +146,7 @@ public class BST<Key extends Comparable<Key>, Value> implements SymbolTable<Key,
 
     /**
      * Calculate the mean depth of the tree as the sum of all Nodes' depths divided by the number of Nodes.
-     * @return The mean tree depth.
+     * @return The rounded integer value of the mean tree depth.
      */
     public int meanTreeDepth() {
         maxTreeDepth();
