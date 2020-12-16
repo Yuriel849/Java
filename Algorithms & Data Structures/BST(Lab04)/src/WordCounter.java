@@ -12,7 +12,7 @@ import java.util.Iterator;
  *
  * Modified to use the BST class instead of HashMaps.
  * @author     Yuriel
- * @version    2020.12.12.
+ * @version    2020.12.16.
  */
 public class WordCounter
 {
@@ -53,50 +53,44 @@ public class WordCounter
         updateInverted();
     }
 
-    private void updateInverted() // always to be called after changing counts!!
-    // in order to keep inverted consistent!!!
-    {
+    /**
+     * Always called after changing "counts" in order to keep "inverted" consistent
+     */
+    private void updateInverted() {
         inverted = new RedBlackBST<Integer, HashSet<String>>();
-        Iterator iterator = counts.iterator();
-        while(iterator.hasNext()) {
-            String word = (String) iterator.next();
-            int counter = counts.get(word); // returns the number of occurencies of the word
-            // i.e. the y-values in the histogram !
-            HashSet<String> tmp = inverted.get(counts.get(word));// returns the hashSet of words
-            // in inverted for the y-value 
-            // or null if that integer is not in the keys of inverted
-            if(tmp == null) tmp = new HashSet<String>();
-            // inverted.getOrDefault(counter, new HashSet<String>());
-            tmp.add(word);
-            inverted.put(counter, tmp);
-        }
+        changeInverted(inverted); // Ignores returned BST.
     }
 
     /**
-     * Method calculateInverted 
-     * to demonstrate the implementation of problems 8,9 in Lab 3
-     * contains redundant code taken from method private updateInverted
+     * Method calculateInverted to demonstrate the implementation of problems 8,9 in Lab 3.
      * Think the HashMap in terms of Histogram and inverted Histogram (sketch in the lecture)
      *
      * @return The return value
      */
-    public RedBlackBST<Integer, HashSet<String> > calculateInverted()
-    {
-        RedBlackBST<Integer, HashSet<String>> inverted = new RedBlackBST<>();
+    public RedBlackBST<Integer, HashSet<String> > calculateInverted() {
+        return changeInverted(new RedBlackBST<Integer, HashSet<String>>());
+    }
+
+    /**
+     * Private method called by both updateInverted() and calculateInverted().
+     * Created to remove duplicate code.
+     * updateInverted() ignores the returned BST, while calculateInverted() returns the returned BST.
+     */
+    private RedBlackBST<Integer, HashSet<String>> changeInverted(RedBlackBST<Integer, HashSet<String>> bst) {
         Iterator iterator = counts.iterator();
         while(iterator.hasNext()) {
             String word = (String) iterator.next();
             int counter= counts.get(word); // returns the number of occurencies of the word
             // i.e. the y-values in the histogram !
-            HashSet<String> tmp = inverted.get(counts.get(word));// returns the hashSet of words
-            // in inverted for the y-value 
+            HashSet<String> tmp = bst.get(counts.get(word));// returns the hashSet of words
+            // in inverted for the y-value
             // or null if that integer is not in the keys of inverted
             if(tmp == null) tmp = new HashSet<String>();
             // inverted.getOrDefault(counter, new HashSet<String>()); // replaces the last 2 lines
             tmp.add(word);
-            inverted.put(counter, tmp);
+            bst.put(counter, tmp);
         }
-        return inverted;
+        return bst;
     }
 
     /**
