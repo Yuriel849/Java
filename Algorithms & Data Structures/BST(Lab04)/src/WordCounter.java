@@ -12,20 +12,16 @@ import java.util.Iterator;
  *
  * Modified to use the BST class instead of HashMaps.
  * @author     Yuriel
- * @version    2020.12.16.
+ * @version    2020.12.17.
  */
-public class WordCounter
-{
-    // Associate each word with a count.
-    private RedBlackBST<String, Integer> counts;
-    private RedBlackBST<Integer, HashSet<String>> inverted;
-    // will contain the histogram with the integer over the words
+public class WordCounter {
+    private RedBlackBST<String, Integer> counts; // Associate each word with a count.
+    private RedBlackBST<Integer, HashSet<String>> inverted; // Histogram with the integer over the words.
 
     /**
      * Create a WordCounter
      */
-    public WordCounter()
-    {
+    public WordCounter() {
         counts = new RedBlackBST<>();
         updateInverted(); //instance variable
     }
@@ -34,27 +30,24 @@ public class WordCounter
      * Update the usage count of all words in input.
      * @param input A set of words entered by the user.
      */
-    public void addWords(HashSet<String> input)
-    {
+    public void addWords(HashSet<String> input) {
         for(String word : input) {
             addWord(word);
         }
     }
 
     /**
-     * Method addWord and update the counts of all words
-     *
-     * @param word A word to be added
+     * Method addWord and update the counts of all words.
+     * @param word A word to be added.
      */
-    public void addWord(String word)
-    {
+    public void addWord(String word) {
         Integer counter = counts.get(word);
         counts.put(word, counter == null ? 1 : counter + 1);
         updateInverted();
     }
 
     /**
-     * Always called after changing "counts" in order to keep "inverted" consistent
+     * Always called after changing "counts" in order to keep "inverted" consistent.
      */
     private void updateInverted() {
         inverted = new RedBlackBST<Integer, HashSet<String>>();
@@ -63,9 +56,8 @@ public class WordCounter
 
     /**
      * Method calculateInverted to demonstrate the implementation of problems 8,9 in Lab 3.
-     * Think the HashMap in terms of Histogram and inverted Histogram (sketch in the lecture)
-     *
-     * @return The return value
+     * Think of the HashMap in terms of Histogram and inverted Histogram (sketch in the lecture).
+     * @return A (RedBlack)BST object.
      */
     public RedBlackBST<Integer, HashSet<String> > calculateInverted() {
         return changeInverted(new RedBlackBST<Integer, HashSet<String>>());
@@ -75,6 +67,8 @@ public class WordCounter
      * Private method called by both updateInverted() and calculateInverted().
      * Created to remove duplicate code.
      * updateInverted() ignores the returned BST, while calculateInverted() returns the returned BST.
+     * @param bst A (RedBlack)BST object.
+     * @return The "bst" passed as an argument, after updating with the contents of "count".
      */
     private RedBlackBST<Integer, HashSet<String>> changeInverted(RedBlackBST<Integer, HashSet<String>> bst) {
         Iterator iterator = counts.iterator();
@@ -96,8 +90,7 @@ public class WordCounter
     /**
      * print the HashMap containing the counted words
      */
-    public void print()
-    {
+    public void print() {
         //System.out.println(iteratePrint(counts));
         //System.out.println(iteratePrint(inverted));
         System.out.println("Histogram : ");
@@ -110,6 +103,7 @@ public class WordCounter
     /**
      * Format the contents of the (RedBlack)BST object passed as an argument into a readable string.
      * @param tree The (RedBlack)BST object passed as an argument.
+     * @return The contents of the (RedBlack)BST argument as a String.
      */
     private String iteratePrint(RedBlackBST tree) {
         StringBuilder string = new StringBuilder();

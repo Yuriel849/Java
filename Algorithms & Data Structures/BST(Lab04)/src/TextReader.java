@@ -6,13 +6,12 @@ import java.util.Scanner;
  * A file reading class.
  *
  * @author Yuriel
- * @version 2020.12.11.
+ * @version 2020.12.17.
  */
 public class TextReader {
     /**
      * Read from a txt file and return it as a set of words.
-     * @throws FileNotFoundException, IOException
-     *
+     * Nothing is done (method returns null) if FileNotFoundException or IOException occurs.
      * @param fileName The name of the txt file that should be read.
      * @return  A set of Strings, where each String is one of the words in the txt file that is read.
      */
