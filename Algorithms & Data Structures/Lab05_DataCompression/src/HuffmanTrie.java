@@ -1,12 +1,17 @@
 /**
+ * Huffman Trie class.
  *
  * Parts of the code were taken from: https://algs4.cs.princeton.edu/code/edu/princeton/cs/algs4/Huffman.java.html
+ *
+ * @author Yuriel
+ * @version 2021.01.03.
  */
+
 public class HuffmanTrie {
-    // alphabet size of extended ASCII
+    // Alphabet size of extended ASCII
     private static final int R = 256;
 
-    // Huffman trie node
+    // Node inner class for Huffman trie
     private static class Node implements Comparable<Node> {
         private final char ch;
         private final int freq;
@@ -30,15 +35,22 @@ public class HuffmanTrie {
         }
     }
 
+    /**
+     * Constructs a Huffman trie from the given String input.
+     *
+     * @param input The source String to convert into a Huffman trie.
+     * @return The root Node of the constructed Huffman trie.
+     */
     public static Node constructTrie(String input) {
         int[] freq = new int[R];
         for(int i = 0; i < input.length(); i++) {
             freq[(int)input.charAt(i)]++;
         }
 
-        for(int i = 0; i < R; i++)
-            if(freq[i] > 0)
-                System.out.printf((char) i + " : " + freq[i] + "\n");
+        // Print the freq array to check that frequency tabulation is successful.
+//        for(int i = 0; i < R; i++)
+//            if(freq[i] > 0)
+//                System.out.printf((char) i + " : " + freq[i] + "\n");
 
         MinPQ<Node> pq = new MinPQ<Node>();
         for(int i = 0; i < 128; i++)
