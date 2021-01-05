@@ -91,7 +91,12 @@ public class HuffmanTrie {
         String s1 = "she_sells_sea_shells_by_the_seashore";
         String s2 = "selly_sells_her_shorts_by_the_seattle_store";
 
-        System.out.println(encodeTrie(constructTrie(s1)));
+        // Generate tree T1
+        String t1 = encodeTrie(constructTrie(s1));
+        System.out.println(t1);
+        // Generate tree T3
+        String t3 = encodeTrie(constructTrie(s2));
+        System.out.println(t3);
 
 
     }
