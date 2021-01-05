@@ -67,8 +67,32 @@ public class HuffmanTrie {
         return pq.delMin();
     }
 
+    /**
+     * Encodes a Huffman trie into a String, by going over the trie in pre-order traversal.
+     * THe trie's inner nodes are represented by a star ("*").
+     *
+     * @param root The root of the Huffman trie to be encoded.
+     * @return The String representation of the encoded Huffman trie.
+     */
+    public static String encodeTrie(Node root) {
+        return preorderTraversal(root);
+    }
+
+    private static String preorderTraversal(Node node) {
+        String value = "" + node.ch;
+        if(node.left != null)
+            value += preorderTraversal(node.left);
+        if(node.right != null)
+            value += preorderTraversal(node.right);
+        return value;
+    }
+
     public static void main(String[] args) {
         String s1 = "she_sells_sea_shells_by_the_seashore";
-        Node root = constructTrie(s1);
+        String s2 = "selly_sells_her_shorts_by_the_seattle_store";
+
+        System.out.println(encodeTrie(constructTrie(s1)));
+
+
     }
 }
