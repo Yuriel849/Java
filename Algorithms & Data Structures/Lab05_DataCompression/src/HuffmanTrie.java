@@ -47,11 +47,6 @@ public class HuffmanTrie {
             freq[(int)input.charAt(i)]++;
         }
 
-        // Print the freq array to check that frequency tabulation is successful.
-//        for(int i = 0; i < R; i++)
-//            if(freq[i] > 0)
-//                System.out.printf((char) i + " : " + freq[i] + "\n");
-
         MinPQ<Node> pq = new MinPQ<Node>();
         for(int i = 0; i < 128; i++)
             if(freq[i] > 0)
@@ -79,6 +74,7 @@ public class HuffmanTrie {
     }
 
     private static String preorderTraversal(Node node) {
+        System.out.print(node.ch);
         String value = "" + node.ch;
         if(node.left != null)
             value += preorderTraversal(node.left);
@@ -93,10 +89,10 @@ public class HuffmanTrie {
 
         // Generate tree T1
         String t1 = encodeTrie(constructTrie(s1));
-        System.out.println(t1);
+        System.out.println("\n" + t1);
         // Generate tree T3
-        String t3 = encodeTrie(constructTrie(s2));
-        System.out.println(t3);
+//        String t3 = encodeTrie(constructTrie(s2));
+//        System.out.println(t3);
 
 
     }
