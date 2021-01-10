@@ -7,7 +7,7 @@ import java.util.Map;
  * Parts of the code were taken from: https://algs4.cs.princeton.edu/code/edu/princeton/cs/algs4/Huffman.java.html
  *
  * @author Yuriel
- * @version 2021.01.03.
+ * @version 2021.01.09.
  */
 
 public class HuffmanTrie {
@@ -87,6 +87,13 @@ public class HuffmanTrie {
         return value;
     }
 
+    /**
+     * Encodes the given String "source" using a Huffman trie, the root of which is passed as the argument Node "root".
+     *
+     * @param root The root Node of the Huffman trie to use to encode the source.
+     * @param source The String to encode into a binary digit representation.
+     * @return The binary digit representation of the source, as encoded with the given Huffman trie.
+     */
     public static String encode(Node root, String source) {
         setCharBinaryCodes(root, new StringBuilder());
         StringBuilder result = new StringBuilder();
@@ -99,6 +106,13 @@ public class HuffmanTrie {
         return result.toString();
     }
 
+    /**
+     * A recursive method that generates the binary code for a character in a Huffman trie,
+     * and saves the character and its matching binary code to a HashMap.
+     *
+     * @param node The root of the Huffman trie to be used.
+     * @param prefix A StringBuilder instance used recursively.
+     */
     private static void setCharBinaryCodes (Node node, StringBuilder prefix) {
         if (node != null) {
             if (node.left == null && node.right == null) {
@@ -123,9 +137,9 @@ public class HuffmanTrie {
         String encodedS1 = encode(root, s1); // Encode s1 with T1
         System.out.printf("T1 as String : %s \ns1 encoded : %s \nNumber of bits : %d \n", t1, encodedS1, encodedS1.length());
 
-        root = constructTrie(s2); // Generate tree T1
-        String t3 = encodeTrie(root);  // Generate String representation of T1
-        String encodedS2 = encode(root, s2); // Encode s1 with T1
+        root = constructTrie(s2); // Generate tree T3
+        String t3 = encodeTrie(root);  // Generate String representation of T3
+        String encodedS2 = encode(root, s2); // Encode s2 with T3
         System.out.printf("T3 as String : %s \ns2 encoded : %s \nNumber of bits : %d \n", t3, encodedS2, encodedS2.length());
     }
 }
