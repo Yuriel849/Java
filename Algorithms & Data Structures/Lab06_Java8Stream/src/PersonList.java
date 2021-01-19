@@ -18,8 +18,18 @@ public class PersonList {
         return "";
     }
 
+    public int getAverageOfAges() {
+        return list.stream()
+                .map(Person::getAge)
+                .peek(System.out::println)
+                .reduce(0, Integer::sum)
+                / list.size();
+    }
+
     public static void main(String[] args) {
         PersonList list = new PersonList();
         list.toString();
+
+        System.out.println("Average of everyone's ages is " + list.getAverageOfAges());
     }
 }

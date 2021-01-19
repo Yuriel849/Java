@@ -4,6 +4,26 @@ public class Person {
     private int age;
     private final String nationality;
 
+    public String getName() {
+        return name;
+    }
+
+    public char getSex() {
+        return sex;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getNationality() {
+        return nationality;
+    }
+
     public Person(String name, char sex, int age, String nationality) {
         this.name = name;
         this.sex = sex;
