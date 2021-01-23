@@ -11,19 +11,15 @@ public class HashFunction {
     }
 
     public int hashCode() {
-        int hash = 0, x = 0, newHash = 0;
+        int hash = 0;
         for (int i = 0; i < s.length(); i++) {
             if(Character.isUpperCase(s.charAt(i))) { // Uppercase letters
-                x = (s.charAt(i) - 38);
-                newHash = x % M;
-                hash += newHash ;
+                hash = (s.charAt(i) - 38) + (53 * hash);
             } else if(Character.isLowerCase(s.charAt(i))) { // Lowercase letters
-                x = (s.charAt(i) - 96);
-                newHash = x % M;
-                hash += newHash ;
+                hash = (s.charAt(i) - 96) + (53 * hash);
             }
         }
-        return A * hash;
+        return (A * hash) % 31;
     }
 
     @Override
