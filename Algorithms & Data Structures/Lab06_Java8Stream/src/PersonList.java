@@ -25,44 +25,42 @@ public class PersonList {
     }
 
     public int getAverageOfAges() {
-        return list.stream()
-                .peek(System.out::println)
-                .map(Person::getAge)
-                .peek(System.out::println)
-                .reduce(0, Integer::sum)
-                / list.size();
+        return getAverageOfAges(null);
     }
 
     public int getAverageOfAges(Predicate<Person> condition) {
-        List<Person> filteredList = getPersonsByCondition(condition);
-        return filteredList.stream()
-                .peek(System.out::println)
+        List<Person> list2 = list;
+        if(condition != null)
+             list2 = getPersonsByCondition(condition);
+
+        return list2.stream()
+//                .peek(System.out::println)
                 .map(Person::getAge)
-                .peek(System.out::println)
+//                .peek(System.out::println)
                 .reduce(0, Integer::sum)
-                / filteredList.size();
+                / list2.size();
     }
 
     public List<Person> getPersonsByCondition(Predicate<Person> condition) {
         return list.stream()
-                .peek(System.out::println)
+//                .peek(System.out::println)
                 .filter(condition)
-                .peek(System.out::println)
+//                .peek(System.out::println)
                 .collect(Collectors.toList());
     }
 
     public static void main(String[] args) {
         PersonList list = new PersonList();
-//        list.toString();
+        list.toString();
 
-//        System.out.println("Average of everyone's ages is " + list.getAverageOfAges());
+        System.out.println("Average of everyone's ages is " + list.getAverageOfAges());
 
         Predicate<Person> femaleOver18 = p -> p.getSex() == 'F' && p.getAge() > 18;
-//        PersonList filteredList = new PersonList(list.getPersonsByCondition(femaleOver18));
-//        System.out.println("Displaying everyone: ");
-//        list.toString();
-//        System.out.println("Displaying only women older than 18: ");
-//        filteredList.toString();
+        PersonList filteredList = new PersonList(list.getPersonsByCondition(femaleOver18));
+        System.out.println("Displaying everyone: ");
+        list.toString();
+        System.out.println("Displaying only women older than 18: ");
+        filteredList.toString();
         System.out.println("Displaying average age of women older than 18: " + list.getAverageOfAges(femaleOver18));
     }
 }
