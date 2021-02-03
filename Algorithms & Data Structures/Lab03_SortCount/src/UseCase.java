@@ -59,10 +59,7 @@ public abstract class UseCase {
         }
         comp = totalComp / iterations;
         copy = totalCopy / iterations;
-        String results;
-        // do the formatting job !
-        results = String.format("%10s comparisons & %10s copies", comp, copy);
-        return results;
+        return String.format("%10s comparisons & %10s copies", comp, copy);
     }
 
     public void writeResults(String format) {
