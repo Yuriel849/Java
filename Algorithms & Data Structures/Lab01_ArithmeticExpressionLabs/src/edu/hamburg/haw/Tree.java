@@ -56,12 +56,12 @@ public class Tree {
 
     /**
      * Traverses the tree in order, with the given node as the root.
-     * @param node The root node.
+     * A private method called recursively.
      */
     private void inorderTraversal(BiNode node) {
         if((isOperator(node.term) && !hasChild(node))
                 || (!isOperator(node.term) && hasChild(node))
-                || (isBinaryOperator(node.term) && (node.left != null))) {
+                || (isUnaryOperator(node.term) && (node.left != null))) {
             System.out.println("This tree is incorrect.\nTerminating program.");
             System.exit(2);
         }
@@ -90,7 +90,7 @@ public class Tree {
         // Terminate tree traversal if this tree is incorrect.
         if((isOperator(node.term) && !hasChild(node))
                 || (!isOperator(node.term) && hasChild(node))
-                || (isBinaryOperator(node.term) && (node.left != null))) {
+                || (isUnaryOperator(node.term) && (node.left != null))) {
             System.out.println("This tree is incorrect.\nTerminating program.");
             System.exit(2);
         }
@@ -181,11 +181,11 @@ public class Tree {
     }
 
     /**
-     * Checks whether the designated String is a binary operator or not.
+     * Checks whether the designated String is a unary operator or not.
      * @param s The operator String.
-     * @return True, if the parameter s is a binary operator; false, if s is not a binary operator.
+     * @return True, if the parameter s is a unary operator; false, if s is not a unary operator.
      */
-    private boolean isBinaryOperator(String s) {
+    private boolean isUnaryOperator(String s) {
         switch (s) {
             case "sqrt":
             case "sin":
