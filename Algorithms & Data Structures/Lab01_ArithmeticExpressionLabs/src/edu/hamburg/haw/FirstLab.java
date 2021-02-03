@@ -3,7 +3,7 @@ package edu.hamburg.haw;
 /**
  * Main class of the first lab session.
  * @author Yuriel
- * @version 07.11.2020.
+ * @version 03.02.2021.
  */
 public class FirstLab {
     private static ArithmeticTerm term = new ArithmeticTerm("test");
@@ -17,13 +17,13 @@ public class FirstLab {
     private static String evaluateTest4 = "( ( 5 % 3 ) * ( ( ( 0.5 ^ 30 ) - 9.2 ) / ( -.15 + ( sqrt 9 ) ) ) )";
     private static String evaluateTest5 = "( ( ( ( ( 10 + 2 ) - ( 8.1027 * 2.23234 ) ) / ( sqrt ( sqrt 35 ) ) ) % 15.2350 ) ^ 2 )";
 
-    public static void main1(String[] args) {
+    public static void main(String[] args) {
         // Problem 1 Task 2 : Test toString() & reverse() with test string 1.
 //        term.setExpression(testString1);
 //	      System.out.println(term.toString());
 //	      term.reverse();
 //        System.out.println(term.toString());
-        // Test toString() & reverse() with test string 2.
+        // Problem 1 Task 2 : Test toString() & reverse() with test string 2.
 //        term.setExpression(evaluateTest2);
 //        System.out.println(term.toString());
 //        term.reverse();
