@@ -84,6 +84,7 @@ public class Tree {
     /**
      * Traverses the tree in order, using the given BiNode as the root node,
      * and creates a fully parenthesized infix expression with the node values.
+     * A private method called recursively.
      * @param node The root node.
      */
     private void infixGenerator(BiNode node) {

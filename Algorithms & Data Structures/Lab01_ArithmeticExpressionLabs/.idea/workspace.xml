@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5273ea62-5289-4d19-8aee-4dbaa1c1d8f1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hamburg/haw/FirstLab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hamburg/haw/FirstLab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hamburg/haw/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hamburg/haw/Tree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,10 +49,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab03_Record" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.FirstLab">
+  <component name="RunManager" selected="Application.SecondLab">
     <configuration name="FirstLab" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.hamburg.haw.FirstLab" />
       <module name="ArithmeticExpressionLabs" />
@@ -92,6 +92,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SecondLab" />
         <item itemvalue="Application.FirstLab" />
       </list>
     </recent_temporary>
@@ -114,7 +115,7 @@
       <workItem from="1612353941163" duration="51000" />
       <workItem from="1612354018593" duration="79000" />
       <workItem from="1612354171223" duration="70000" />
-      <workItem from="1612354269121" duration="1080000" />
+      <workItem from="1612354269121" duration="3756000" />
     </task>
     <servers />
   </component>
