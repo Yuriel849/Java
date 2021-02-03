@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
  * Class Tree.
  * Represents a binary tree.
  * @author Yuriel
- * @version 14.11.2020.
+ * @version 03.02.2021.
  */
 public class Tree {
     /**

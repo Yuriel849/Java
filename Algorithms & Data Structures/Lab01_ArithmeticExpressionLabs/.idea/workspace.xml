@@ -20,12 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5273ea62-5289-4d19-8aee-4dbaa1c1d8f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Record(Lab03)/src/Insertion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Record(Lab03)/src/Record.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Record(Lab03)/src/Records.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Record(Lab03)/src/Selection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Record(Lab03)/src/Sort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hamburg/haw/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hamburg/haw/Tree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +30,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1jyEAe7aeI0yP8j1QA98ZOnl9zp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -45,10 +49,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Record" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.SecondLab">
+  <component name="RunManager" selected="Application.FirstLab">
     <configuration name="FirstLab" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.hamburg.haw.FirstLab" />
       <module name="ArithmeticExpressionLabs" />
@@ -75,12 +79,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.SecondLab" />
-        <item itemvalue="Application.FirstLab" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -97,6 +95,10 @@
       <workItem from="1605300211262" duration="5503000" />
       <workItem from="1605383569168" duration="1324000" />
       <workItem from="1605477302102" duration="1272000" />
+      <workItem from="1612353941163" duration="51000" />
+      <workItem from="1612354018593" duration="79000" />
+      <workItem from="1612354171223" duration="70000" />
+      <workItem from="1612354269121" duration="886000" />
     </task>
     <servers />
   </component>
@@ -114,74 +116,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="324" y="32" key="#Plugins" timestamp="1604772138317">
-      <screen x="0" y="0" width="1463" height="783" />
-    </state>
-    <state x="324" y="32" key="#Plugins/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604772138317" />
-    <state x="187" y="46" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605301162518">
-      <screen x="0" y="0" width="1463" height="783" />
-    </state>
-    <state x="187" y="46" key="#com.intellij.execution.impl.EditConfigurationsDialog/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1605301162518" />
-    <state x="446" y="111" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1604855310159">
-      <screen x="0" y="0" width="1463" height="783" />
-    </state>
-    <state x="446" y="111" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604855310159" />
-    <state x="512" y="146" key="FileChooserDialogImpl" timestamp="1605477433975">
-      <screen x="0" y="0" width="1463" height="783" />
-    </state>
-    <state x="512" y="146" key="FileChooserDialogImpl/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1605477433975" />
-    <state width="740" height="656" key="GridCell.Tab.0.bottom" timestamp="1605309438300">
-      <screen x="0" y="0" width="1463" height="783" />
-    </state>
-    <state width="740" height="656" key="GridCell.Tab.0.bottom/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1605309438300" />
-    <state width="740" height="656" key="GridCell.Tab.0.center" timestamp="1605309438300">
-      <screen x="0" y="0" width="1463" height="783" />
-    </state>
-    <state width="740" height="656" key="GridCell.Tab.0.center/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1605309438300" />
-    <state width="740" height="656" key="GridCell.Tab.0.left" timestamp="1605309438299">
-      <screen x="0" y="0" width="1463" height="783" />
-    </state>
-    <state width="740" height="656" key="GridCell.Tab.0.left/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1605309438299" />
-    <state width="740" height="656" key="GridCell.Tab.0.right" timestamp="1605309438300">
-      <screen x="0" y="0" width="1463" height="783" />
-    </state>
-    <state width="740" height="656" key="GridCell.Tab.0.right/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1605309438300" />
-    <state x="312" y="134" key="IDE.errors.dialog" timestamp="1604772121891">
-      <screen x="0" y="0" width="1463" height="783" />
-    </state>
-    <state x="312" y="134" key="IDE.errors.dialog/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604772121891" />
-    <state x="263" y="36" key="SettingsEditor" timestamp="1604769487628">
-      <screen x="0" y="0" width="1463" height="783" />
-    </state>
-    <state x="263" y="36" key="SettingsEditor/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604769487628" />
-    <state x="504" y="305" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604840292456">
-      <screen x="0" y="0" width="1463" height="783" />
-    </state>
-    <state x="504" y="305" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604840292456" />
-    <state x="323" y="12" key="new project wizard" timestamp="1605478051296">
-      <screen x="0" y="0" width="1463" height="783" />
-    </state>
-    <state x="323" y="12" key="new project wizard/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1605478051296" />
-    <state x="389" y="177" key="run.anything.popup" timestamp="1604840686178">
-      <screen x="0" y="0" width="1463" height="783" />
-    </state>
-    <state x="389" y="177" key="run.anything.popup/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604840686178" />
-    <state x="394" y="104" width="672" height="678" key="search.everywhere.popup" timestamp="1604772126995">
-      <screen x="0" y="0" width="1463" height="783" />
-    </state>
-    <state x="394" y="104" width="672" height="678" key="search.everywhere.popup/-3840.0.1536.836/0.0.1463.783@0.0.1463.783" timestamp="1604772126995" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/edu/hamburg/haw/ArithmeticTerm.java</url>
-          <line>144</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
