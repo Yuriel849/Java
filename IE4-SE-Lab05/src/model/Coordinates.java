@@ -1,4 +1,6 @@
-public class Pair {
+package model;
+
+public class Coordinates {
     String x;
     String y;
 
