@@ -3,12 +3,15 @@ package boundary;
 import cleaner.Cleaner;
 
 public class CommandRelay {
-    void sendCommand(String cleanMode, Cleaner cleaner) {
+    static public boolean sendCommand(Cleaner cleaner) {
+        boolean response = false;
 
+        if(Robot.sendCommand(cleaner)) { response = true; }
+
+        return response;
     }
 
-    String updateProgress() {
-
-        return null;
+    static public String updateProgress() {
+        return Robot.requestUpdate();
     }
 }

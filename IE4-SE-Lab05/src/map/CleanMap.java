@@ -14,4 +14,7 @@ public class CleanMap implements Map {
     public ArrayList<Coordinates> getCoord() {
         return coordinates;
     }
+
+    @Override
+    public void setCoord(Coordinates coord) { coordinates.add(coord); }
 }

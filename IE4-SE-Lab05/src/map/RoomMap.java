@@ -3,11 +3,12 @@ package map;
 import model.Coordinates;
 
 public class RoomMap extends MapDecorator {
-    RoomMap(CleanMap map) {
+    public RoomMap(Map map) {
         super.map = map;
     }
 
-    void setCoord(Coordinates coord) {
-
+    @Override
+    public void setCoord(Coordinates coord) {
+        map.setCoord(coord);
     }
 }
