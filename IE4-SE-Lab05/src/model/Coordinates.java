@@ -1,5 +1,8 @@
 package model;
 
+/**
+ * Class to hold the two-dimensional coordinate data for the cleaning map.
+ */
 public class Coordinates {
     double x;
     double y;
