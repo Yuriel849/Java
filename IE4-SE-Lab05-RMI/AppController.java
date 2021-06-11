@@ -2,38 +2,33 @@ import java.rmi.Naming;
 
 /**
  * The central controller class for managing the interaction with other classes.
- * When the controller receives the user’s chosen command,
- * it creates the command.
- * @author (Divyesh Joshi)
- * @version (2.0)
+ * When the controller receives the user's chosen command, it creates the command.
+ * @author Divyesh Joshi
+ * @author Myungjun Kim
+ * @version 2021.06.11
  */
-public class MainController
-{
-    // instance variables - replace the example below with your own
+public class AppController {
     String cmd;
-    boolean status;
+    IStatus status;
+    
     /**
      * Constructor for objects of class MainController
      */
-    public MainController(String cmd)
-    {     
-        // initialise instance variables
+    public AppController(String cmd) {     
         this.cmd = cmd;
         status = createCommand();
-        if(!status)
+        if(status == null)
             System.out.println("Enter appropriate command");
     }
 
-    public boolean createCommand()
-    {
+    public IStatus createCommand() {
         try {
             IRobotController robot = (IRobotController) Naming.lookup("rmi://127.0.0.1/robotController");
             System.out.println("Transmitting to the Robot: "+cmd+"\n");
-            robot.commandRobot(cmd);
-            return true;
+            return robot.commandRobot(cmd);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return false;
+        return null;
     }
 }

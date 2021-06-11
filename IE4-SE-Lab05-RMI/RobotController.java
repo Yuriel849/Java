@@ -3,49 +3,66 @@ import java.rmi.server.UnicastRemoteObject;
 
 /**
  * Robot System.
- * the methods are just a prototype 
- * @version (2.0)
+ * 
+ * @author Divyesh Joshi
+ * @author Myungjun Kim
+ * @version 2021.06.11
  */
-public class RobotController extends UnicastRemoteObject implements IRobotController
-{
-    // instance variables - replace the example below with your own
+public class RobotController extends UnicastRemoteObject implements IRobotController {
     String cmd;
+    Status status;
+    boolean success = false;
+    ICommandFactory command;
 
-    public RobotController() throws RemoteException {}
-    
-    public void commandRobot(String cmd) throws RemoteException {
-        // initialise instance variables
-        this.cmd = cmd;
-        if(cmd.equals("Auto Mode"))
-                autoMode();
-        else if(cmd.equals("Pause"))
-                pauseMode();
-        else if(cmd.equals("Return Home"))       
-                returnHome();
+    public RobotController() throws RemoteException {
+        status = new Status(null, 100);
     }
     
-    /**
-     * Return Home method
-     */
-    private void returnHome()
-    {
-        // put your code here
-        System.out.println("Activated: "+cmd+"\n");
+    public IStatus commandRobot(String cmd) throws RemoteException {
+        this.cmd = cmd;
+        if(cmd.equals("Auto Mode")) {
+            success = autoMode();
+            if(success) {
+                status.setMode(cmd);
+            }
+        }
+        else if(cmd.equals("Pause")) {
+            success = pauseMode();
+            if(success) {
+                status.setMode(cmd);
+            }
+        }
+        else if(cmd.equals("Return Home")) {
+            success = returnHome();
+            if(success) {
+                status.setMode(cmd);
+            }
+        }
+        
+        return status;
     }
     
     /**
      * Auto Mode method
      */
-    private void autoMode()
-    {
-        System.out.println("Activated: "+cmd+"\n");
+    private boolean autoMode() {
+        command = new AutoCommandFactory();
+        return command.createICommand();
     }
     
     /**
      * Pause method
      */
-    private void pauseMode()
-    {
-        System.out.println("Activated: "+cmd+"\n");
+    private boolean pauseMode() {
+        command = new PauseCommandFactory();
+        return command.createICommand();
+    }
+    
+    /**
+     * Return Home method
+     */
+    private boolean returnHome() {
+        command = new ReturnHomeCommandFactory();
+        return command.createICommand();
     }
 }

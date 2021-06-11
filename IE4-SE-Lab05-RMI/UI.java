@@ -1,5 +1,3 @@
- 
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -8,24 +6,21 @@ import java.util.*;
 import java.io.*;
 
 /**
- * GUI or cleaning Robot app.
- * Only few of the options are included
- * @author (Divyesh Joshi)
- * @version (2.0)
+ * Demonstrator GUI for the cleaning robot app.
+ * Only few of the options are included.
+ * @author Divyesh Joshi
+ * @version 2021.06.11
  */
-public class UI extends JFrame
-{
-    // instance variables 
+public class UI extends JFrame {
     private JButton button1,button2,button3;
     private JTextArea info;
     private JPanel panel,panel1,panel2,panel3;
-    private MainController command;
+    private AppController command;
+    
     /**
      * Constructor for objects of class UI
      */
-    public UI()
-    {
-        // initialise instance variables
+    public UI() {
         button1 = new JButton("Return Home");
         button2 = new JButton("Auto Mode");
         button3 = new JButton("Pause");
@@ -35,8 +30,7 @@ public class UI extends JFrame
         add(setUpPanel());
         setTitle("Cleaning Robot");
         addWindowListener(new WindowAdapter() {
-                public void windowClosing(WindowEvent ev)
-                {
+                public void windowClosing(WindowEvent ev) {
                     setVisible(false);
                 }
             });
@@ -52,27 +46,25 @@ public class UI extends JFrame
      * Precondition: User's clicks the desired button.
      * Postcondition: main controller object created with command.
      */
-    public void setUpButtons()
-    {
+    public void setUpButtons() {
         button1.addActionListener(e->{
-                command = new MainController("Return Home");
+                command = new AppController("Return Home");
                 info.append("\nReturn Home Mode\n");
             }
         );
         button2.addActionListener(e->{
-                command = new MainController("Auto Mode");
+                command = new AppController("Auto Mode");
                 info.append("\nAuto Mode\n");
             }
         );
         button3.addActionListener(e->{
-                command = new MainController("Pause");
+                command = new AppController("Pause");
                 info.append("\nPause\n");
             }
         );
     }
 
-    private Container setUpPanel()
-    {
+    private Container setUpPanel() {
         panel = new JPanel();
         panel.setLayout(new BorderLayout());
         panel1 = new JPanel();

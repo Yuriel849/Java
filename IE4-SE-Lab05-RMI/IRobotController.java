@@ -1,15 +1,13 @@
- 
-
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 /**
- * Write a description of interface IRobotController here.
+ * Interface used to access the server of the robot.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Divyesh Joshi
+ * @author Myungjun Kim
+ * @version 2021.06.11
  */
-public interface IRobotController extends Remote
-{
-    void commandRobot(String cmd) throws RemoteException;
+public interface IRobotController extends Remote {
+    IStatus commandRobot(String cmd) throws RemoteException;
 }

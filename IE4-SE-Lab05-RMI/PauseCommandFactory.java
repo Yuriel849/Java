@@ -1,26 +1,23 @@
-import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
-
 /**
  * Creates pause command object and transfer the command.
  *
- * @author (Divyesh Joshi)
- * @version (2.0)
+ * @author Divyesh Joshi
+ * @author Myungjun Kim
+ * @version 2021.06.11
  */
-public class PauseCommandFactory extends UnicastRemoteObject implements ICommandFactory
-{
+public class PauseCommandFactory implements ICommandFactory {
     
     /**
      * Constructor for objects of class PauseCommandFactory
      */
-    public PauseCommandFactory() throws RemoteException {}
+    public PauseCommandFactory() {}
 
     /**
      * 
      * Post Condition: ICommandRobot object is created 
      */
-    public void createICommand() throws RemoteException
-    {
-        ICommandRobot pause = new PauseCommand("Pause");
+    public boolean createICommand() {
+        ICommand pause = new PauseCommand("Pause");
+        return false;
     }
 }

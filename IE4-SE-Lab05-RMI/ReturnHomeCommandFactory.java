@@ -1,25 +1,22 @@
-import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
-
 /**
  * Creates Return command object and transfer the command.
  *
- * @author (Divyesh Joshi)
- * @version (2.0)
+ * @author Divyesh Joshi
+ * @author Myungjun Kim
+ * @version 2021.06.11
  */
-public class ReturnHomeCommandFactory extends UnicastRemoteObject implements ICommandFactory
-{
+public class ReturnHomeCommandFactory implements ICommandFactory {
     /**
      * Constructor for objects of class ReturnHomeCommandFactory
      */
-    public ReturnHomeCommandFactory() throws RemoteException {}
+    public ReturnHomeCommandFactory() {}
 
     /**
      * 
      * Post Condition: ICommandRobot object is created 
      */
-    public void createICommand() throws RemoteException
-    {
-        ICommandRobot returnHome = new ReturnHomeCommand("Return Home");
+    public boolean createICommand() {
+        ICommand returnHome = new ReturnHomeCommand("Return Home");
+        return false;
     }
 }

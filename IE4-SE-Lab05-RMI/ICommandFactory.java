@@ -1,16 +1,13 @@
-import java.rmi.Remote;
-import java.rmi.RemoteException;
-
 /**
- * ICommandFactory Interface.
+ * ICommandFactory interface.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Divyesh Joshi
+ * @author Myungjun Kim
+ * @version 2021.06.11
  */
-public interface ICommandFactory extends Remote
-{
+public interface ICommandFactory {
     /**
      * TO be implemented by all classes implementing this interface
      */
-    void createICommand() throws RemoteException;
+    boolean createICommand();
 }
