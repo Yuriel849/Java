@@ -25,7 +25,7 @@ public class RobotServer
 
     public static void main(String [] args) throws Exception {
         startRegistry();
-        IRobotController controller = new RobotController();
-        Naming.rebind("robotController", controller);
+        IRobotController server = new RobotController();
+        Naming.rebind("server", server);
     }
 }

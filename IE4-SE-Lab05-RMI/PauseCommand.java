@@ -1,21 +1,20 @@
 /**
- * Pause command class, implements the ICommandRobot interface.
+ * Pause command class, implements the ICommand interface.
  * 
- * @author (Divyesh Joshi)
- * @version (2.0)
+ * @author Divyesh Joshi
+ * @author Myungjun Kim
+ * @version 2021.06.12
  */
 public class PauseCommand implements ICommand {
-    // instance variables 
-    private String commandToTransmit;
+    private String command;
+    private boolean state = false;
     
     /**
      * Constructor for objects of class PauseCommand
      */
-    public PauseCommand(String commandToTransmit) {
-        // initialise instance variables
-        this.commandToTransmit = commandToTransmit;
-        updateProgress();
-        executeCommand();
+    public PauseCommand(String command) {
+        this.command = command;
+        executeCommand();   
     }
 
     /**
@@ -24,9 +23,13 @@ public class PauseCommand implements ICommand {
      * Postcondition: appropriate object is created.
      */
     public void executeCommand() {
+        System.out.println("Creating chosen command: " + command + "\n");
+        System.out.println("Executing command: " + command + "\n");
+        System.out.println("Robot has stopped");
+        state = true;
     }
-
-    public void updateProgress() {
-        System.out.println("Creating chosen command: "+commandToTransmit+"\n");
+     
+    public boolean getState() {
+        return state;
     }
 }

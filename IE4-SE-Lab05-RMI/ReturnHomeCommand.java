@@ -1,22 +1,20 @@
 /**
- * Return Home command class, implements the ICommandRobot interface.
+ * Return Home command class, implements the ICommand interface.
  * 
  * @author Divyesh Joshi
- * @version 2021.06.11
+ * @author Myungjun Kim
+ * @version 2021.06.12
  */
 public class ReturnHomeCommand implements ICommand {
-    // instance variables 
-    private String commandToTransmit;
+    private String command;
+    private boolean state = false;
 
     /**
      * Constructor for objects of class ReturnHomeCommand gets the command to transmit as a string
      */
-    public ReturnHomeCommand(String commandToTransmit) {
-        // initialise instance variables
-        this.commandToTransmit = commandToTransmit;
-        updateProgress();
-        executeCommand();
-        
+    public ReturnHomeCommand(String command) {
+        this.command = command;
+        executeCommand();        
     }
 
     /**
@@ -25,9 +23,13 @@ public class ReturnHomeCommand implements ICommand {
      * Postcondition: appropriate object is created.
      */
     public void executeCommand() {
+        System.out.println("Creating chosen command: " + command + "\n");
+        System.out.println("Executing command: " + command + "\n");
+        System.out.println("Robot returning home to the charging dock");
+        state = true;
     }
-    
-    public void updateProgress() {
-        System.out.println("Creating chosen command: "+commandToTransmit+"\n");
+     
+    public boolean getState() {
+        return state;
     }
 }

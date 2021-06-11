@@ -17,6 +17,6 @@ public class AutoCommandFactory implements ICommandFactory {
      */
     public boolean createICommand() {
         ICommand auto = new AutoCommand("Auto Mode");
-        return false;
+        return auto.getState();
     }
 }

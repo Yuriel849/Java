@@ -23,9 +23,9 @@ public class AppController {
 
     public IStatus createCommand() {
         try {
-            IRobotController robot = (IRobotController) Naming.lookup("rmi://127.0.0.1/robotController");
+            IRobotController server = (IRobotController) Naming.lookup("rmi://127.0.0.1/server");
             System.out.println("Transmitting to the Robot: "+cmd+"\n");
-            return robot.commandRobot(cmd);
+            return server.commandRobot(cmd);
         } catch (Exception e) {
             e.printStackTrace();
         }

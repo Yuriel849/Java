@@ -1,18 +1,19 @@
 /**
- * Auto Mode command class, implements the ICommandRobot interface.
+ * Auto Mode command class, implements the ICommand interface.
  * 
  * @author Divyesh Joshi
- * @version 2021.06.11
+ * @author Myungjun Kim
+ * @version 2021.06.12
  */
 public class AutoCommand implements ICommand {
-    private String commandToTransmit;
+    private String command;
+    private boolean state = false;
     
     /**
      * Constructor for objects of class AutoCommand
      */
-    public AutoCommand(String commandToTransmit) {
-        this.commandToTransmit = commandToTransmit;
-        updateProgress();
+    public AutoCommand(String command) {
+        this.command = command;
         executeCommand();
     }
 
@@ -22,9 +23,12 @@ public class AutoCommand implements ICommand {
      * Postcondition: appropriate object is created.
      */
     public void executeCommand() {
+        System.out.println("Creating chosen command: " + command + "\n");
+        System.out.println("Executing command: " + command + "\n");
+        state = true;
     }
     
-    public void updateProgress() {
-        System.out.println("Creating chosen command: "+commandToTransmit+"\n");
+    public boolean getState() {
+        return state;
     }
 }

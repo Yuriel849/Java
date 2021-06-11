@@ -9,4 +9,6 @@ public interface ICommand {
      * To be implemented by classes
      */
     void executeCommand();
+    
+    boolean getState();
 }
