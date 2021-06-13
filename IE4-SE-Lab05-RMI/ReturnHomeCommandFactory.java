@@ -15,8 +15,8 @@ public class ReturnHomeCommandFactory implements ICommandFactory {
      * 
      * Post Condition: ICommandRobot object is created 
      */
-    public boolean createICommand() {
+    public void createICommand(Status status) {
         ICommand returnHome = new ReturnHomeCommand("Return Home");
-        return false;
+        returnHome.executeCommand(status);
     }
 }

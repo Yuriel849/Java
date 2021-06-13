@@ -15,7 +15,7 @@ public class UI extends JFrame {
     private JButton button1,button2,button3;
     private JTextArea info;
     private JPanel panel,panel1,panel2,panel3;
-    private AppController command;
+    private IStatus status;
     
     /**
      * Constructor for objects of class UI
@@ -48,18 +48,33 @@ public class UI extends JFrame {
      */
     public void setUpButtons() {
         button1.addActionListener(e->{
-                command = new AppController("Return Home");
-                info.append("\nReturn Home Mode\n");
+                try {
+                    status = new AppController("Return Home").createCommand();
+                    info.append(status.getMsg() + "(Battery: " + status.getBatteryLvl() + ")" + "\n");
+                    // info.append("\nReturn Home Mode\n");
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
             }
         );
         button2.addActionListener(e->{
-                command = new AppController("Auto Mode");
-                info.append("\nAuto Mode\n");
+                try {
+                    status = new AppController("Auto Mode").createCommand();
+                    info.append(status.getMsg() + "(Battery: " + status.getBatteryLvl() + ")" + "\n");
+                    // info.append("\nAuto Mode\n");
+                } catch (Exception e2) {
+                    e2.printStackTrace();
+                }
             }
         );
         button3.addActionListener(e->{
-                command = new AppController("Pause");
-                info.append("\nPause\n");
+                try {
+                    status = new AppController("Pause").createCommand();
+                    info.append(status.getMsg() + "(Battery: " + status.getBatteryLvl() + ")" + "\n");
+                    // info.append("\nPause\n");
+                } catch (Exception e3) {
+                    e3.printStackTrace();
+                }
             }
         );
     }

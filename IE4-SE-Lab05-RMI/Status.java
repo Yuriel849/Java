@@ -11,6 +11,7 @@ import java.rmi.server.UnicastRemoteObject;
  */
 public class Status extends UnicastRemoteObject implements IStatus {
     private String mode;
+    private String msg;
     private int batteryLvl;
     
     /**
@@ -35,6 +36,26 @@ public class Status extends UnicastRemoteObject implements IStatus {
      */
     public String getMode() throws RemoteException {
         return mode;
+    }
+    
+    /**
+     * Set a message about the current status of the robot.
+     * @param msg the message
+     */
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+    
+    /**
+     * Get the message about the current status of the robot.
+     * @return the message
+     */
+    public String getMsg() throws RemoteException {
+        if(msg != null) {
+            return msg;
+        } else {
+            return "There is no message.";
+        }
     }
     
     /**

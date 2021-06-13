@@ -16,9 +16,6 @@ public class AppController {
      */
     public AppController(String cmd) {     
         this.cmd = cmd;
-        status = createCommand();
-        if(status == null)
-            System.out.println("Enter appropriate command");
     }
 
     public IStatus createCommand() {
@@ -29,6 +26,7 @@ public class AppController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        
         return null;
     }
 }

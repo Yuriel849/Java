@@ -7,14 +7,12 @@
  */
 public class AutoCommand implements ICommand {
     private String command;
-    private boolean state = false;
     
     /**
      * Constructor for objects of class AutoCommand
      */
     public AutoCommand(String command) {
         this.command = command;
-        executeCommand();
     }
 
     /**
@@ -22,13 +20,18 @@ public class AutoCommand implements ICommand {
      * Precondition: User's chooses a valid command.
      * Postcondition: appropriate object is created.
      */
-    public void executeCommand() {
+    public void executeCommand(Status status) {
         System.out.println("Creating chosen command: " + command + "\n");
-        System.out.println("Executing command: " + command + "\n");
-        state = true;
-    }
-    
-    public boolean getState() {
-        return state;
+        try {
+            if(status.getBatteryLvl() > 50) {
+                System.out.println("Executing command: " + command + "\n");
+                status.setBatteryLvl(status.getBatteryLvl() - 10);
+                status.setMsg("Starting automatic cleaning");
+            } else {
+                status.setMsg("Insufficient battery levels to execute your command.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

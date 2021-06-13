@@ -9,5 +9,6 @@ import java.rmi.RemoteException;
  */
 public interface IStatus extends Remote {
     String getMode() throws RemoteException;
+    String getMsg() throws RemoteException;
     int getBatteryLvl() throws RemoteException;    
 }

@@ -9,5 +9,5 @@ public interface ICommandFactory {
     /**
      * TO be implemented by all classes implementing this interface
      */
-    boolean createICommand();
+    void createICommand(Status status);
 }

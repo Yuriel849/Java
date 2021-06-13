@@ -7,14 +7,12 @@
  */
 public class PauseCommand implements ICommand {
     private String command;
-    private boolean state = false;
     
     /**
      * Constructor for objects of class PauseCommand
      */
     public PauseCommand(String command) {
         this.command = command;
-        executeCommand();   
     }
 
     /**
@@ -22,14 +20,9 @@ public class PauseCommand implements ICommand {
      * Precondition: User's chooses a valid command.
      * Postcondition: appropriate object is created.
      */
-    public void executeCommand() {
+    public void executeCommand(Status status) {
         System.out.println("Creating chosen command: " + command + "\n");
         System.out.println("Executing command: " + command + "\n");
-        System.out.println("Robot has stopped");
-        state = true;
-    }
-     
-    public boolean getState() {
-        return state;
+        status.setMsg("Robot has stopped");
     }
 }

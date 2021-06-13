@@ -16,8 +16,8 @@ public class PauseCommandFactory implements ICommandFactory {
      * 
      * Post Condition: ICommandRobot object is created 
      */
-    public boolean createICommand() {
+    public void createICommand(Status status) {
         ICommand pause = new PauseCommand("Pause");
-        return false;
+        pause.executeCommand(status);
     }
 }

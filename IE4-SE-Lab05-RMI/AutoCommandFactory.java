@@ -15,8 +15,8 @@ public class AutoCommandFactory implements ICommandFactory {
      * 
      * Post Condition: ICommandRobot object is created 
      */
-    public boolean createICommand() {
+    public void createICommand(Status status) {
         ICommand auto = new AutoCommand("Auto Mode");
-        return auto.getState();
+        auto.executeCommand(status);
     }
 }

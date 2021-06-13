@@ -7,14 +7,12 @@
  */
 public class ReturnHomeCommand implements ICommand {
     private String command;
-    private boolean state = false;
 
     /**
      * Constructor for objects of class ReturnHomeCommand gets the command to transmit as a string
      */
     public ReturnHomeCommand(String command) {
-        this.command = command;
-        executeCommand();        
+        this.command = command;    
     }
 
     /**
@@ -22,14 +20,20 @@ public class ReturnHomeCommand implements ICommand {
      * Precondition: User's chooses a valid command.
      * Postcondition: appropriate object is created.
      */
-    public void executeCommand() {
+    public void executeCommand(Status status) {
         System.out.println("Creating chosen command: " + command + "\n");
-        System.out.println("Executing command: " + command + "\n");
-        System.out.println("Robot returning home to the charging dock");
-        state = true;
-    }
-     
-    public boolean getState() {
-        return state;
+        
+        try {
+            if(status.getBatteryLvl() > 30) {
+                System.out.println("Executing command: " + command + "\n");
+                System.out.println("Robot returning home to the charging dock");
+                status.setBatteryLvl(status.getBatteryLvl() - 10);
+                status.setMsg("Returning to the charging dock.");
+            } else {
+                status.setMsg("Battery levels are too low to return home.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
