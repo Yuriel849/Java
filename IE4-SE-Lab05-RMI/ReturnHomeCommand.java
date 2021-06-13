@@ -3,7 +3,7 @@
  * 
  * @author Divyesh Joshi
  * @author Myungjun Kim
- * @version 2021.06.12
+ * @version 2021.06.13
  */
 public class ReturnHomeCommand implements ICommand {
     private String command;
@@ -16,9 +16,9 @@ public class ReturnHomeCommand implements ICommand {
     }
 
     /**
-     * Creates an object of class CommandTransmittor
-     * Precondition: User's chooses a valid command.
-     * Postcondition: appropriate object is created.
+     * If the robot's battery has more than 30 percent charge, the robot will return hom to the charging dock.
+     * If not, the robot will give feedback that the battery levels are too low to execute the user's command.
+     * @param status
      */
     public void executeCommand(Status status) {
         System.out.println("Creating chosen command: " + command + "\n");

@@ -3,7 +3,7 @@
  * 
  * @author Divyesh Joshi
  * @author Myungjun Kim
- * @version 2021.06.12
+ * @version 2021.06.13
  */
 public class AutoCommand implements ICommand {
     private String command;
@@ -16,9 +16,9 @@ public class AutoCommand implements ICommand {
     }
 
     /**
-     * Creates an object of class CommandTransmittor
-     * Precondition: User's chooses a valid command.
-     * Postcondition: appropriate object is created.
+     * If the robot's battery has more than 50 percent charge, will start cleaning in automatic mode.
+     * If not, will not start cleaning and will respond that battery levels are insufficient.
+     * @param status
      */
     public void executeCommand(Status status) {
         System.out.println("Creating chosen command: " + command + "\n");

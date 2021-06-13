@@ -3,7 +3,7 @@
  *
  * @author Divyesh Joshi
  * @author Myungjun Kim
- * @version 2021.06.11
+ * @version 2021.06.13
  */
 public class AutoCommandFactory implements ICommandFactory {
     /**
@@ -12,8 +12,9 @@ public class AutoCommandFactory implements ICommandFactory {
     public AutoCommandFactory() {}
 
     /**
-     * 
-     * Post Condition: ICommandRobot object is created 
+     * Creates a AutoCommand object and executes.
+     * Post Condition: ICommandRobot object is created
+     * @param status
      */
     public void createICommand(Status status) {
         ICommand auto = new AutoCommand("Auto Mode");

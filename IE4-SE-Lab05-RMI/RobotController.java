@@ -6,7 +6,7 @@ import java.rmi.server.UnicastRemoteObject;
  * 
  * @author Divyesh Joshi
  * @author Myungjun Kim
- * @version 2021.06.11
+ * @version 2021.06.13
  */
 public class RobotController extends UnicastRemoteObject implements IRobotController {
     Status status;
@@ -16,6 +16,11 @@ public class RobotController extends UnicastRemoteObject implements IRobotContro
         status = new Status(null, 100);
     }
     
+    /**
+     * Method called from the client side to execute the client's commands.
+     * If the client's command is to execute "Auto Mode" cleaning, return home to the charging dock, or pause, the robot will comply.
+     * Otherwise, the client will be given feedback that the command was wrong.
+     */
     public IStatus commandRobot(String cmd) throws RemoteException {
         status.setMode(cmd);
         

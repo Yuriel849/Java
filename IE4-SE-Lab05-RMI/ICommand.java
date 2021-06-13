@@ -2,7 +2,8 @@
  * Interface ICommandRobot.
  *
  * @author Divyesh Joshi
- * @version 2021.06.11
+ * @author Myungjun Kim
+ * @version 2021.06.13
  */
 public interface ICommand {
     /**

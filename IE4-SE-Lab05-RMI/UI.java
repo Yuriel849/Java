@@ -9,7 +9,8 @@ import java.io.*;
  * Demonstrator GUI for the cleaning robot app.
  * Only few of the options are included.
  * @author Divyesh Joshi
- * @version 2021.06.11
+ * @author Myungjun Kim
+ * @version 2021.06.13
  */
 public class UI extends JFrame {
     private JButton button1,button2,button3;
@@ -40,11 +41,10 @@ public class UI extends JFrame {
     }
 
     /**
-     * Sets up the actionlistener of each button
-
-     * Creates an object of class CommandTransmittor
+     * Sets up the actionlistener for each button.
+     * 
      * Precondition: User's clicks the desired button.
-     * Postcondition: main controller object created with command.
+     * Postcondition: User's desired command transmitted to server then feedback received from the server.
      */
     public void setUpButtons() {
         button1.addActionListener(e->{

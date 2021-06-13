@@ -6,10 +6,10 @@ import java.rmi.registry.Registry;
 import java.rmi.server.RemoteServer;
 
 /**
- * Write a description of class RobotServer here.
+ * RobotServer class to the start the server side of the RMI implementation.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Myungjun Kim
+ * @version 2021.06.13
  */
 public class RobotServer
 {

@@ -5,7 +5,7 @@ import java.rmi.Naming;
  * When the controller receives the user's chosen command, it creates the command.
  * @author Divyesh Joshi
  * @author Myungjun Kim
- * @version 2021.06.11
+ * @version 2021.06.13
  */
 public class AppController {
     String cmd;

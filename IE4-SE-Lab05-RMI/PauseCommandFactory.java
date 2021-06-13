@@ -3,7 +3,7 @@
  *
  * @author Divyesh Joshi
  * @author Myungjun Kim
- * @version 2021.06.11
+ * @version 2021.06.13
  */
 public class PauseCommandFactory implements ICommandFactory {
     
@@ -13,8 +13,9 @@ public class PauseCommandFactory implements ICommandFactory {
     public PauseCommandFactory() {}
 
     /**
-     * 
-     * Post Condition: ICommandRobot object is created 
+     * Creates a PauseCommand object and executes.
+     * Post Condition: ICommandRobot object is created
+     * @param status
      */
     public void createICommand(Status status) {
         ICommand pause = new PauseCommand("Pause");

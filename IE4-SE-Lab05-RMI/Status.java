@@ -7,7 +7,7 @@ import java.rmi.server.UnicastRemoteObject;
  * The fields may only be set in the server, the client can only read the fields.
  *
  * @author Myungjun Kim
- * @version 2021.06.11
+ * @version 2021.06.13
  */
 public class Status extends UnicastRemoteObject implements IStatus {
     private String mode;

@@ -3,7 +3,7 @@
  * 
  * @author Divyesh Joshi
  * @author Myungjun Kim
- * @version 2021.06.12
+ * @version 2021.06.13
  */
 public class PauseCommand implements ICommand {
     private String command;
@@ -16,9 +16,8 @@ public class PauseCommand implements ICommand {
     }
 
     /**
-     * Creates an object of class CommandTransmittor
-     * Precondition: User's chooses a valid command.
-     * Postcondition: appropriate object is created.
+     * The robot will pause whatever it is doing.
+     * @param status
      */
     public void executeCommand(Status status) {
         System.out.println("Creating chosen command: " + command + "\n");
