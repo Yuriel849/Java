@@ -1,5 +1,6 @@
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.io.Serializable;
 
 /**
  * Class used by the cleaning robot to give feedback about its current status to the app.
@@ -9,7 +10,7 @@ import java.rmi.server.UnicastRemoteObject;
  * @author Myungjun Kim
  * @version 2021.06.13
  */
-public class Status extends UnicastRemoteObject implements IStatus {
+public class Status extends UnicastRemoteObject implements IStatus, Serializable {
     private String mode;
     private String msg;
     private int batteryLvl;
