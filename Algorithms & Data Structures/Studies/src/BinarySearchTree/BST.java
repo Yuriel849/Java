@@ -228,11 +228,15 @@ public class BST<Key extends Comparable<Key>, Value> implements Iterable<Key> {
      * and a successor will be the node with the smallest key that is larger than 55.
      * @param key
      * @return Array holding the predecessor and successor nodes.
+     * Array values are null if no predecessor or successor exists.
      */
     public Node[] inorderPredSuc(Key key) { return inorderPredSuc(root, key); }
 
     /**
-     *
+     * A private method called recursively to find the inorder predecessor and successor nodes for the given key.
+     * @param node
+     * @param key
+     * @return Array holding the predecessor and successor nodes.
      */
     private Node[] inorderPredSuc(Node node, Key key) {
         // Array to return, initialize with null.
