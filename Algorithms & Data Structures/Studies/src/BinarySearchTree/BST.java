@@ -1,6 +1,7 @@
 package BinarySearchTree;
 
 import java.util.Iterator;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -165,21 +166,25 @@ public class BST<Key extends Comparable<Key>, Value> implements Iterable<Key> {
 
     /**
      * Traverses the tree in order and prints the key of each node.
+     * @return A stack holding the ordered nodes of this tree.
      */
-    public void inorderTraversal() { inorderTraversal(root); }
+    public Queue<Node> inorderTraversal() { return inorderTraversal(root); }
 
     /**
      * A private method called recursively to handle inorder traversal of the tree.
      * @param node
+     * @return A stack holding the ordered nodes of this tree.
      */
-    private void inorderTraversal(Node node) {
+    private Queue<Node> inorderTraversal(Node node) {
         Stack<Node> stack = new Stack<>();
+        Queue<Node> queue = new Queue<>();
         while(node != null || !stack.isEmpty()) {
             if(node!= null) {
                 stack.add(node);
                 node = node.left;
             } else {
                 node = stack.pop();
+                queue. .(node);
                 System.out.print(node.key + "  ");
                 node = node.right;
             }
@@ -302,5 +307,27 @@ public class BST<Key extends Comparable<Key>, Value> implements Iterable<Key> {
     public int meanTreeDepth() {
         maxTreeDepth();
         return Math.round((float) sumDepths / numNodes);
+    }
+
+    /**
+     * Checks if this binary tree is a binary search tree or not.
+     * @return True, if this tree is a binary search tree.
+     */
+    public boolean isBST() {
+        Stack<Node> stack = inorderTraversal();
+        while(!stack.isEmpty()) {
+
+        }
+        boolean isBst = true;
+        Node x = root;
+        while(x != null) {
+
+            int cmp = x.left.key.compareTo(x.key);
+            if(cmp == 0 && x.val != null) return x.val;
+            else if(cmp < 0) x = x.left;
+            else x = x.right;
+        }
+
+        return true;
     }
 }
